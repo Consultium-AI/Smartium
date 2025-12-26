@@ -32,9 +32,12 @@ const HomePage = () => (
   </>
 )
 
+// Get the base URL from Vite config for GitHub Pages compatibility
+const basename = import.meta.env.BASE_URL
+
 function App() {
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="relative min-h-screen overflow-hidden">
         <Routes>
           <Route path="/" element={<HomePage />} />
