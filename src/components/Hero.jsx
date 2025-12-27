@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
