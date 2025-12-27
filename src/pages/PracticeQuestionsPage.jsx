@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { 
   ClipboardCheck, Home, ChevronLeft, ChevronRight, 
-  Check, X, RotateCcw, Trophy, Target, BookOpen,
-  CheckCircle, XCircle, Circle
+  RotateCcw, Trophy, Target, BookOpen,
+  CheckCircle, XCircle
 } from 'lucide-react'
 
 const PracticeQuestionsPage = () => {
@@ -206,9 +206,7 @@ const PracticeQuestionsPage = () => {
   const handleSelectAnswer = (questionId, letter) => {
     if (revealedAnswers[questionId]) return
     setSelectedAnswers(prev => ({ ...prev, [questionId]: letter }))
-  }
-
-  const handleRevealAnswer = (questionId) => {
+    // Immediately reveal the answer after selection
     setRevealedAnswers(prev => ({ ...prev, [questionId]: true }))
   }
 
@@ -447,42 +445,29 @@ const PracticeQuestionsPage = () => {
                     Vorige
                   </button>
 
-                  <div className="flex items-center gap-3">
-                    {selectedAnswers[currentQ.id] && !revealedAnswers[currentQ.id] && (
-                      <motion.button
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        onClick={() => handleRevealAnswer(currentQ.id)}
-                        className="px-5 py-2.5 bg-accent-500 text-white rounded-xl font-medium hover:bg-accent-600 transition-colors flex items-center gap-2"
-                      >
-                        <Check className="w-4 h-4" />
-                        Controleer
-                      </motion.button>
-                    )}
-                    {revealedAnswers[currentQ.id] && (
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className={`px-4 py-2 rounded-xl font-medium flex items-center gap-2 ${
-                          selectedAnswers[currentQ.id] === currentQ.correctAnswer
-                            ? "bg-emerald-100 text-emerald-700"
-                            : "bg-red-100 text-red-700"
-                        }`}
-                      >
-                        {selectedAnswers[currentQ.id] === currentQ.correctAnswer ? (
-                          <>
-                            <CheckCircle className="w-5 h-5" />
-                            Correct!
-                          </>
-                        ) : (
-                          <>
-                            <XCircle className="w-5 h-5" />
-                            Helaas, antwoord was {currentQ.correctAnswer}
-                          </>
-                        )}
-                      </motion.div>
-                    )}
-                  </div>
+                  {revealedAnswers[currentQ.id] && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className={`px-4 py-2 rounded-xl font-medium flex items-center gap-2 ${
+                        selectedAnswers[currentQ.id] === currentQ.correctAnswer
+                          ? "bg-emerald-100 text-emerald-700"
+                          : "bg-red-100 text-red-700"
+                      }`}
+                    >
+                      {selectedAnswers[currentQ.id] === currentQ.correctAnswer ? (
+                        <>
+                          <CheckCircle className="w-5 h-5" />
+                          Correct!
+                        </>
+                      ) : (
+                        <>
+                          <XCircle className="w-5 h-5" />
+                          Antwoord was {currentQ.correctAnswer}
+                        </>
+                      )}
+                    </motion.div>
+                  )}
 
                   <button
                     onClick={handleNext}
