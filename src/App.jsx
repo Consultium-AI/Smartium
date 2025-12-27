@@ -5,7 +5,7 @@ import Features from './components/Features'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import ParticleBackground from './components/ParticleBackground'
-import FlashcardsPage from './pages/FlashcardsPage'
+import PracticeQuestionsPage from './pages/PracticeQuestionsPage'
 import SummaryPage from './pages/SummaryPage'
 
 // Home page component - Clean, professional layout
@@ -31,7 +31,7 @@ function App() {
       <div className="relative min-h-screen overflow-hidden">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/flashcards" element={<FlashcardsPage />} />
+          <Route path="/oefenvragen" element={<PracticeQuestionsPage />} />
           <Route path="/summary" element={<SummaryPage />} />
         </Routes>
       </div>

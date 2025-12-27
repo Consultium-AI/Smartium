@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, BookOpen, Brain, FileText } from 'lucide-react'
+import { ArrowRight, BookOpen, ClipboardCheck, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
@@ -38,7 +38,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl text-navy-600 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Samenvattingen en flashcards voor anatomie en embryologie. 
+            Samenvattingen en oefenvragen voor anatomie en embryologie. 
             Gemaakt door studenten, voor studenten.
           </motion.p>
 
@@ -70,7 +70,7 @@ const Hero = () => {
               </motion.div>
             </Link>
 
-            <Link to="/flashcards">
+            <Link to="/oefenvragen">
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
@@ -78,13 +78,13 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-accent-100 text-accent-600 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                    <Brain className="w-6 h-6" />
+                    <ClipboardCheck className="w-6 h-6" />
                   </div>
                   <div className="text-left">
                     <h3 className="font-bold text-navy-800 group-hover:text-accent-600 transition-colors">
-                      Flashcards
+                      Oefenvragen
                     </h3>
-                    <p className="text-sm text-navy-500">15 kaarten beschikbaar</p>
+                    <p className="text-sm text-navy-500">15 meerkeuzevragen</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-accent-500 ml-auto transition-colors" />
                 </div>

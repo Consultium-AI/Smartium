@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, Brain } from 'lucide-react'
+import { FileText, ClipboardCheck } from 'lucide-react'
 
 const Footer = () => {
   const navLinks = [
     { name: 'Samenvattingen', href: '/summary', icon: FileText },
-    { name: 'Flashcards', href: '/flashcards', icon: Brain },
+    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
   ]
 
   return (

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, FileText, Brain, Home } from 'lucide-react'
+import { Menu, X, FileText, ClipboardCheck, Home } from 'lucide-react'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,7 +19,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Samenvattingen', href: '/summary', icon: FileText },
-    { name: 'Flashcards', href: '/flashcards', icon: Brain },
+    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
   ]
 
   return (

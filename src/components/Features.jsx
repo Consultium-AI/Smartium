@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, Brain, BookOpen, Lightbulb } from 'lucide-react'
+import { FileText, ClipboardCheck, BookOpen, Lightbulb } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Features = () => {
@@ -17,11 +17,11 @@ const Features = () => {
       link: '/summary',
     },
     {
-      icon: Brain,
-      title: 'Interactieve Flashcards',
-      description: 'Oefen met flip-kaarten die je helpen concepten te onthouden. Houd je voortgang bij terwijl je leert.',
+      icon: ClipboardCheck,
+      title: 'Oefenvragen',
+      description: 'Test je kennis met meerkeuzevragen. Directe feedback en uitleg bij elk antwoord.',
       color: 'accent',
-      link: '/flashcards',
+      link: '/oefenvragen',
     },
   ]
 
