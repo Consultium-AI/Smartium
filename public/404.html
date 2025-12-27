@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <title>Smartium</title>
   <script>
     // Single Page Apps for GitHub Pages
     // https://github.com/rafgraph/spa-github-pages
-    // This script takes the current url and converts the path and query
-    // string into just a query string, and then redirects the browser
-    // to the new url with only a query string and hash fragment.
-    var pathSegmentsToKeep = 1;
+    // This script redirects to index.html with the path as a query parameter
+    // Works for both custom domain and GitHub Pages subpath
+    
     var l = window.location;
+    var path = l.pathname;
+    
+    // Remove leading slash and encode
+    var pathname = path.slice(1).replace(/&/g, '~and~');
+    
+    // Redirect to index.html with path as query parameter
     l.replace(
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      '/' + '?/' + pathname +
       (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
       l.hash
     );
@@ -23,4 +27,3 @@
 <body>
 </body>
 </html>
-

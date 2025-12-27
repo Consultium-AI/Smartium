@@ -23,11 +23,20 @@ const HomePage = () => (
 )
 
 // Get the base URL from Vite config for GitHub Pages compatibility
-const basename = import.meta.env.BASE_URL
+// For custom domain (smartium.nl), use empty string
+// For GitHub Pages subpath (/Smartium/), use the base path
+const getBasename = () => {
+  const baseUrl = import.meta.env.BASE_URL
+  // If we're on a custom domain (not consultium-ai.github.io), use empty basename
+  if (window.location.hostname === 'smartium.nl' || window.location.hostname === 'www.smartium.nl') {
+    return ''
+  }
+  return baseUrl
+}
 
 function App() {
   return (
-    <Router basename={basename}>
+    <Router basename={getBasename()}>
       <div className="relative min-h-screen overflow-hidden">
         <Routes>
           <Route path="/" element={<HomePage />} />
