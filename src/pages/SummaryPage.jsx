@@ -73,7 +73,7 @@ const SummaryPage = () => {
           <div className="flex items-center justify-between h-20">
             <Link to="/" className="flex items-center gap-3 group">
               <motion.img
-                src="/smartium-logo.png"
+                src={`${import.meta.env.BASE_URL}smartium-logo.png`}
                 alt="Smartium"
                 className="w-10 h-10 object-contain"
                 whileHover={{ rotate: [0, -5, 5, 0] }}
