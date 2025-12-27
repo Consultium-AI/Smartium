@@ -300,10 +300,10 @@ const SummaryPage = () => {
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
                   <p>
-                    Tijdens de vroege ontwikkeling van de ledematen ontstaan arm- en beenknoppen uit <strong>mesenchymaal weefsel</strong> dat afkomstig is uit het laterale plaatmesoderm. Aan de distale rand wordt het ectoderm dikker en vormt de <strong>apicale ectodermale richel (AER)</strong>.
+                    Tijdens de vroege ontwikkeling van de ledematen ontstaan arm- en beenknoppen uit <strong>mesenchymaal weefsel</strong> dat afkomstig is uit het <strong>laterale plaatmesoderm</strong>, met daaroverheen een laag ectoderm. Aan de distale rand van zo'n ledemaatknop wordt het ectoderm dikker en vormt het de <strong>apicale ectodermale richel (AER)</strong>.
                   </p>
                   <p>
-                    De AER is essentieel voor de proximodistale uitgroei omdat deze signalen afgeeft die het onderliggende mesenchym in een ongedifferentieerde, snel delende toestand houdt.
+                    De AER is essentieel voor de <strong>proximodistale uitgroei</strong> (van romp naar hand/voet), omdat deze richel signalen afgeeft die het onderliggende mesenchym in een ongedifferentieerde, snel delende toestand houdt. Daardoor blijft er een zone bestaan waarin cellen blijven prolifereren, terwijl cellen die verder van de AER af komen juist gaan differentiëren.
                   </p>
                   
                   <div className="p-5 bg-slate-50 rounded-xl border-l-4 border-primary-400">
@@ -311,13 +311,13 @@ const SummaryPage = () => {
                       <Target className="w-4 h-4 text-primary-500" />
                       Inductie-concept
                     </h4>
-                    <p className="text-slate-600 m-0 text-sm">
-                      Organen en structuren worden gevormd door interacties tussen cellen en weefsels. Een "inductor" geeft signalen af en een "responder" reageert hierop. Alleen competent weefsel kan op inductieve prikkels reageren.
+                    <p className="text-slate-600 m-0">
+                      Dit principe past binnen het bredere concept van <strong>inductie</strong>: organen en structuren worden gevormd door interacties tussen cellen en weefsels, waarbij een "inductor" een signaal afgeeft en een "responder" dit signaal ontvangt en daarop reageert. Alleen wanneer het responderweefsel <em>competent</em> is, kan het daadwerkelijk op die inductieve prikkel reageren.
                     </p>
                   </div>
                   
                   <p>
-                    De epitheel-mesenchym interactie tussen AER en mesenchym is een klassiek voorbeeld van inductie.
+                    In de ledemaatontwikkeling is de <strong>epitheel–mesenchym interactie</strong> tussen AER (ectoderm/epitheel) en mesenchym een klassiek voorbeeld van zulke inductie.
                   </p>
                 </div>
               </section>
@@ -331,35 +331,38 @@ const SummaryPage = () => {
                     <Layers className="w-5 h-5 text-accent-600" />
                   </div>
                   <h2 className="text-xl font-bold text-slate-900">
-                    Proximodistale opbouw
+                    Proximodistale opbouw en vingervorming
                   </h2>
                 </div>
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
                   <p>
-                    De proximodistale opbouw bestaat uit drie opeenvolgende segmenten:
+                    De proximodistale opbouw van een ledemaat kan je beschrijven in <strong>drie opeenvolgende segmenten</strong>:
                   </p>
                   
                   <div className="grid md:grid-cols-3 gap-3">
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <div className="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center font-bold text-sm mb-3">1</div>
                       <h4 className="font-bold text-slate-800 text-sm">Stylopod</h4>
-                      <p className="text-slate-500 text-sm mt-1">Bovenarm/bovenbeen: humerus of femur</p>
+                      <p className="text-slate-500 text-sm mt-1">Bovenarm of bovenbeen: humerus of femur</p>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <div className="w-8 h-8 bg-accent-500 text-white rounded-lg flex items-center justify-center font-bold text-sm mb-3">2</div>
                       <h4 className="font-bold text-slate-800 text-sm">Zeugopod</h4>
-                      <p className="text-slate-500 text-sm mt-1">Onderarm/onderbeen: radius/ulna, tibia/fibula</p>
+                      <p className="text-slate-500 text-sm mt-1">Onderarm of onderbeen: radius/ulna en tibia/fibula</p>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <div className="w-8 h-8 bg-emerald-500 text-white rounded-lg flex items-center justify-center font-bold text-sm mb-3">3</div>
                       <h4 className="font-bold text-slate-800 text-sm">Autopod</h4>
-                      <p className="text-slate-500 text-sm mt-1">Hand/voet: carpalia, metacarpalia, digiti</p>
+                      <p className="text-slate-500 text-sm mt-1">Hand/voet: carpalia/tarsalia, metacarpalia/metatarsalia en de digiti</p>
                     </div>
                   </div>
                   
                   <p>
-                    Vingers en tenen ontstaan doordat in de gebieden tussen de digitale stralen <strong>geprogrammeerde celdood (apoptose)</strong> optreedt. Dit verklaart syndactylie bij verstoorde apoptose.
+                    Terwijl de ledemaat verder groeit, verschijnt distaal een <strong>hand- of voetplaat</strong>. De uiteindelijke vorming van afzonderlijke vingers en tenen gebeurt niet doordat er "gaten" worden uitgesneden, maar doordat in de gebieden tussen de digitale stralen <strong>geprogrammeerde celdood (apoptose)</strong> optreedt.
+                  </p>
+                  <p>
+                    Daardoor verdwijnen de weefselbruggen tussen de stralen en blijven afzonderlijke vingers of tenen over. Dit mechanisme is een kernidee om te onthouden bij het begrijpen van <em>aangeboren afwijkingen</em> waarbij vingers of tenen juist vergroeid blijven.
                   </p>
                 </div>
               </section>
@@ -379,7 +382,10 @@ const SummaryPage = () => {
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
                   <p>
-                    Door de rotatie van ledematen tijdens de embryonale ontwikkeling krijgt de anatomische ligging verschillende interpretaties:
+                    Naast de proximodistale organisatie speelt ook de oriëntatie van de ledemaat een rol via de hoofdas(sen), waaronder het onderscheid tussen <strong>pre-axiaal</strong> en <strong>post-axiaal</strong>.
+                  </p>
+                  <p>
+                    In de proximodistale ontwikkeling ligt craniaal de pre-axiale begrenzing en caudaal de post-axiale begrenzing. Door de <strong>rotatie van de ledematen</strong> tijdens de embryonale ontwikkeling wordt de uiteindelijke anatomische ligging in het bovenste en onderste lidmaat anders geïnterpreteerd:
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-4">
@@ -391,11 +397,11 @@ const SummaryPage = () => {
                       <ul className="space-y-2 text-blue-700 text-sm">
                         <li className="flex items-center gap-2">
                           <ArrowRight className="w-3 h-3" />
-                          Pre-axiaal = radiale zijde
+                          Pre-axiaal defect → <strong>radiale zijde</strong>
                         </li>
                         <li className="flex items-center gap-2">
                           <ArrowRight className="w-3 h-3" />
-                          Post-axiaal = ulnaire zijde
+                          Post-axiaal defect → <strong>ulnaire zijde</strong>
                         </li>
                       </ul>
                     </div>
@@ -407,15 +413,19 @@ const SummaryPage = () => {
                       <ul className="space-y-2 text-emerald-700 text-sm">
                         <li className="flex items-center gap-2">
                           <ArrowRight className="w-3 h-3" />
-                          Pre-axiaal = tibiale zijde
+                          Pre-axiaal defect → <strong>tibiale zijde</strong>
                         </li>
                         <li className="flex items-center gap-2">
                           <ArrowRight className="w-3 h-3" />
-                          Post-axiaal = fibulaire zijde
+                          Post-axiaal defect → <strong>fibulaire zijde</strong>
                         </li>
                       </ul>
                     </div>
                   </div>
+                  
+                  <p>
+                    Dit kader helpt bij het plaatsen van <em>reductiedefecten</em> en variaties in ledemaatvorming.
+                  </p>
                 </div>
               </section>
 
@@ -433,23 +443,27 @@ const SummaryPage = () => {
                 </div>
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
+                  <p>
+                    Voor het begrijpen van sensibiliteit in arm en hand is het onderscheid tussen <strong>dermatomen</strong> en <strong>huidverzorgingsgebieden</strong> belangrijk.
+                  </p>
+                  
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="p-5 bg-amber-50 rounded-xl border border-amber-200">
                       <h4 className="font-bold text-amber-800 mb-2">Dermatoom</h4>
-                      <p className="text-amber-700 text-sm">
-                        Huidgebied geïnnerveerd door <strong>één spinaal segment</strong>.
+                      <p className="text-amber-700">
+                        Een huidgebied dat sensibel wordt geïnnerveerd door <strong>één spinaal segment</strong> (één ruggenmergzenuw).
                       </p>
                     </div>
                     <div className="p-5 bg-teal-50 rounded-xl border border-teal-200">
                       <h4 className="font-bold text-teal-800 mb-2">Huidverzorgingsgebied</h4>
-                      <p className="text-teal-700 text-sm">
-                        Perifere zenuw met vezels uit <strong>meerdere spinale niveaus</strong>.
+                      <p className="text-teal-700">
+                        Het resultaat van de ontwikkeling van plexussen (bijvoorbeeld plexus brachialis) en bestaat meestal uit vezels van <strong>meerdere spinale niveaus</strong>.
                       </p>
                     </div>
                   </div>
                   
                   <p>
-                    Perifere zenuwen zoals n. medianus, ulnaris en radialis bevatten vezels van meerdere segmenten door plexusvorming.
+                    Huidverzorgingsgebieden van perifere zenuwen (zoals <strong>nervus medianus</strong>, <strong>ulnaris</strong> en <strong>radialis</strong>) zijn het resultaat van plexusvorming en bevatten vezels van meerdere spinale niveaus.
                   </p>
                   
                   <div className="p-5 bg-rose-50 rounded-xl border-l-4 border-rose-400">
@@ -457,8 +471,8 @@ const SummaryPage = () => {
                       <Stethoscope className="w-4 h-4" />
                       Klinische relevantie
                     </h4>
-                    <p className="text-rose-700 text-sm m-0">
-                      Een laesie op wortelniveau presenteert anders dan een perifere zenuwlaesie.
+                    <p className="text-rose-700 m-0">
+                      Dit verklaart waarom een laesie op <strong>wortelniveau</strong> (dermatoompatroon) anders presenteert dan een <strong>perifere zenuwlaesie</strong> (huidverzorgingsgebied).
                     </p>
                   </div>
                 </div>
@@ -478,30 +492,39 @@ const SummaryPage = () => {
                 </div>
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
+                  <p>
+                    De ontwikkeling van botten kan op <strong>twee hoofdmanieren</strong> verlopen:
+                  </p>
+                  
                   <div className="space-y-4">
                     <div className="p-5 bg-indigo-50 rounded-xl border border-indigo-200">
                       <h4 className="font-bold text-indigo-800 mb-3">Endochondrale botvorming</h4>
-                      <p className="text-indigo-700 text-sm mb-3">
-                        Via een kraakbeenmodel: mesenchym → chondrocyten → kraakbeen → bot
+                      <p className="text-indigo-700 mb-3">
+                        Bij endochondrale botvorming ontstaat eerst een <strong>kraakbeenmodel</strong>: mesenchymale cellen differentiëren naar chondrocyten, waarna een kraakbenige aanleg zichtbaar wordt. Vervolgens ontstaan ossificatiecentra; <strong>vascularisatie</strong> speelt hierbij een belangrijke rol doordat bloedvaten binnendringen en de omgeving geschikt maken voor osteoblastdifferentiatie en botmatrixvorming.
                       </p>
                       <div className="flex flex-wrap items-center gap-2 text-xs">
                         <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Mesenchym</span>
                         <span className="text-indigo-400">→</span>
-                        <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Kraakbeen</span>
+                        <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Kraakbeenmodel</span>
                         <span className="text-indigo-400">→</span>
                         <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Primaire ossificatie</span>
                         <span className="text-indigo-400">→</span>
+                        <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Secundaire ossificatie</span>
+                        <span className="text-indigo-400">→</span>
                         <span className="px-2.5 py-1 bg-indigo-200 text-indigo-800 rounded-full">Groeischijf</span>
                       </div>
+                      <p className="text-indigo-600 text-sm mt-3">
+                        Zo vormt zich primair bot, later gevolgd door secundaire ossificatiecentra, terwijl lengtegroei mogelijk blijft via de groeischijf.
+                      </p>
                     </div>
                     
                     <div className="p-5 bg-slate-100 rounded-xl border border-slate-200">
-                      <h4 className="font-bold text-slate-800 mb-3">Desmale verbening</h4>
-                      <p className="text-slate-600 text-sm mb-3">
-                        Geen kraakbeenmodel: mesenchym → osteoblasten → botmatrix
+                      <h4 className="font-bold text-slate-800 mb-3">Desmale (intramembraneuze) verbening</h4>
+                      <p className="text-slate-600 mb-3">
+                        Bij desmale verbening is er <strong>geen kraakbeenmodel</strong>: mesenchym differentieert direct naar osteoblasten die botmatrix produceren.
                       </p>
-                      <p className="text-slate-500 text-xs">
-                        Voorbeelden: platte schedelbotten, clavicula
+                      <p className="text-slate-500 text-sm">
+                        Dit komt onder andere voor bij platte beenderen zoals delen van de schedel.
                       </p>
                     </div>
                   </div>
@@ -522,42 +545,48 @@ const SummaryPage = () => {
                 </div>
                 
                 <div className="text-slate-700 space-y-4 leading-relaxed">
-                  <p className="font-medium">Vier hoofdtypen:</p>
+                  <p>
+                    <strong>Juncturae</strong> zijn de manieren waarop botten met elkaar verbonden kunnen zijn. Sommige verbindingen zijn nauwelijks beweeglijk, andere juist sterk beweeglijk. Er worden <strong>vier hoofdtypen</strong> onderscheiden:
+                  </p>
                   
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <h4 className="font-bold text-slate-800 text-sm">Junctura fibrosa</h4>
-                      <p className="text-slate-500 text-sm mt-1">Bindweefsel · bv. syndesmose</p>
+                      <p className="text-slate-500 text-sm mt-1">Bindweefselverbinding, zoals een syndesmose</p>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <h4 className="font-bold text-slate-800 text-sm">Junctura cartilaginea</h4>
-                      <p className="text-slate-500 text-sm mt-1">Kraakbeen · bv. discus intervertebralis</p>
+                      <p className="text-slate-500 text-sm mt-1">Kraakbeenverbinding, zoals de discus intervertebralis</p>
                     </div>
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                       <h4 className="font-bold text-slate-800 text-sm">Junctura ossea</h4>
-                      <p className="text-slate-500 text-sm mt-1">Botfusie · bv. acetabulum</p>
+                      <p className="text-slate-500 text-sm mt-1">Botverbinding, zoals fusie van botdelen</p>
                     </div>
                     <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
                       <h4 className="font-bold text-emerald-800 text-sm">Junctura synovialis</h4>
-                      <p className="text-emerald-600 text-sm mt-1">Meest beweeglijk · bv. schouder, enkel</p>
+                      <p className="text-emerald-600 text-sm mt-1">Synoviaal gewricht (diarthrose) - het meest beweeglijk</p>
                     </div>
                   </div>
 
-                  <div className="p-5 bg-slate-50 rounded-xl border border-slate-200 mt-6">
-                    <h4 className="font-bold text-slate-800 mb-4">Synoviaal gewricht: 2 kapsellagen</h4>
+                  <p>
+                    <strong>Synoviale gewrichten</strong> worden gekenmerkt door gewrichtsvlakken met <strong>hyalien kraakbeen</strong>, een gewrichtsspleet en een <strong>gewrichtskapsel (capsula articularis)</strong>.
+                  </p>
+
+                  <div className="p-5 bg-slate-50 rounded-xl border border-slate-200">
+                    <h4 className="font-bold text-slate-800 mb-4">Het gewrichtskapsel bestaat uit twee lagen:</h4>
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
                         <span className="w-7 h-7 bg-primary-500 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0">1</span>
                         <div>
                           <span className="font-medium text-slate-800">Membrana synovialis</span>
-                          <span className="text-slate-500 text-sm ml-2">binnenlaag - produceert synovia</span>
+                          <span className="text-slate-500 ml-2">(binnenste laag)</span>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="w-7 h-7 bg-accent-500 text-white rounded-lg flex items-center justify-center font-bold text-xs shrink-0">2</span>
                         <div>
                           <span className="font-medium text-slate-800">Membrana fibrosa</span>
-                          <span className="text-slate-500 text-sm ml-2">buitenlaag - stabiliteit</span>
+                          <span className="text-slate-500 ml-2">(buitenste laag)</span>
                         </div>
                       </div>
                     </div>
@@ -566,12 +595,16 @@ const SummaryPage = () => {
                   <div className="p-5 bg-cyan-50 rounded-xl border-l-4 border-cyan-400">
                     <h4 className="font-bold text-cyan-800 mb-2 flex items-center gap-2">
                       <Droplets className="w-4 h-4" />
-                      Synovia
+                      Synovia (gewrichtsvloeistof)
                     </h4>
-                    <p className="text-cyan-700 text-sm m-0">
-                      Voedt het hyaliene kraakbeen en vermindert wrijving tussen gewrichtsvlakken.
+                    <p className="text-cyan-700 m-0">
+                      De membrana synovialis produceert <strong>synovia</strong> (gewrichtsvloeistof), wat essentieel is voor voeding van het hyaliene kraakbeen en voor het verminderen van wrijving tussen de gewrichtsvlakken.
                     </p>
                   </div>
+                  
+                  <p>
+                    Daarmee sluiten de thema's van ontwikkeling, weefselinteractie en uiteindelijke functie van het bewegingsapparaat logisch op elkaar aan.
+                  </p>
                 </div>
               </section>
 
