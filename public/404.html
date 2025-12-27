@@ -1,29 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Smartium</title>
-  <script>
-    // Single Page Apps for GitHub Pages
-    // https://github.com/rafgraph/spa-github-pages
-    // This script redirects to index.html with the path as a query parameter
-    // Works for both custom domain and GitHub Pages subpath
-    
-    var l = window.location;
-    var path = l.pathname;
-    
-    // Remove leading slash and encode
-    var pathname = path.slice(1).replace(/&/g, '~and~');
-    
-    // Redirect to index.html with path as query parameter
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      '/' + '?/' + pathname +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
-  </script>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/smartium-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smartium - Studeer Slimmer</title>
+    <meta name="description" content="Studiemateriaal voor geneeskundestudenten. Samenvattingen en oefenvragen voor anatomie en embryologie." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <!-- Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Handle redirect from 404.html for GitHub Pages SPA
+      // Works for both custom domain and GitHub Pages subpath
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            '/' + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
