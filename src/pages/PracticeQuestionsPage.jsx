@@ -239,6 +239,226 @@ const embryogeneseQuestions = [
   },
 ]
 
+// Foetale beeldvorming questions (18)
+const beeldvormingQuestions = [
+  {
+    id: 1,
+    question: "Wat meet Doppler echografie bij foetale beeldvorming?",
+    options: [
+      { letter: "A", text: "Botdichtheid van de foetus" },
+      { letter: "B", text: "Snelheid en richting van de bloedstroom" },
+      { letter: "C", text: "Hoeveel vruchtwater er aanwezig is" },
+      { letter: "D", text: "De zuurstofsaturatie van de moeder" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 2,
+    question: "Waarvoor wordt Doppler echografie in dit kader vooral gebruikt?",
+    options: [
+      { letter: "A", text: "Het bepalen van de foetale lengtegroei" },
+      { letter: "B", text: "Het meten van foetale hartfunctie en het detecteren van hartafwijkingen" },
+      { letter: "C", text: "Het opsporen van nierstenen bij de moeder" },
+      { letter: "D", text: "Het meten van de dikte van de placenta" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 3,
+    question: "Hoe groot is het hart ongeveer rond 13 weken zwangerschap volgens de lesstof?",
+    options: [
+      { letter: "A", text: "Zo groot als een amandel" },
+      { letter: "B", text: "Zo groot als een walnoot" },
+      { letter: "C", text: "Zo groot als een maiskorrel" },
+      { letter: "D", text: "Zo groot als een druif" },
+    ],
+    correctAnswer: "C",
+    category: "Beeldvorming",
+  },
+  {
+    id: 4,
+    question: "Hoe groot is het hart ongeveer rond 20 weken zwangerschap volgens de lesstof?",
+    options: [
+      { letter: "A", text: "Zo groot als een amandel" },
+      { letter: "B", text: "Zo groot als een rijstkorrel" },
+      { letter: "C", text: "Zo groot als een erwt" },
+      { letter: "D", text: "Zo groot als een kers" },
+    ],
+    correctAnswer: "A",
+    category: "Beeldvorming",
+  },
+  {
+    id: 5,
+    question: "Wat is het hoofddoel van de 13 wekenecho?",
+    options: [
+      { letter: "A", text: "Vaststellen van de foetale bloedgroep" },
+      { letter: "B", text: "Screening op structurele afwijkingen" },
+      { letter: "C", text: "Definitieve diagnose van chromosoomafwijkingen" },
+      { letter: "D", text: "Bepalen van de exacte bevallingsdatum met zekerheid" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 6,
+    question: "Welke volgorde van bekijken wordt in de module als voorbeeld gebruikt bij de screening?",
+    options: [
+      { letter: "A", text: "Alleen transversaal, geen sagittaal" },
+      { letter: "B", text: "Eerst sagittale sweep, daarna transversale sweep" },
+      { letter: "C", text: "Eerst Doppler, daarna alleen 3D" },
+      { letter: "D", text: "Alleen een stilstaand beeld van het hoofd" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 7,
+    question: "Wat is in een sagittale doorsnede vaak relatief goed te herkennen rond 13 weken?",
+    options: [
+      { letter: "A", text: "Alle hartkleppen afzonderlijk" },
+      { letter: "B", text: "Contouren van het hoofd met neus en boven- en onderkaak" },
+      { letter: "C", text: "De volledige longsegmenten" },
+      { letter: "D", text: "De exacte vingerkootjes van beide handen" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 8,
+    question: "Wat zie je bij het begin van de transversale sweep vaak goed bij een doorsnede door het hoofd?",
+    options: [
+      { letter: "A", text: "Alleen de maag en blaas" },
+      { letter: "B", text: "Linker en rechter hersenhelft, met structuren in de hersenkamers" },
+      { letter: "C", text: "Alleen de wervelkolom in lengte-as" },
+      { letter: "D", text: "Uitsluitend de placenta" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 9,
+    question: "Wat zijn de twee relatief echogene structuren in de hersenkamers die vaak worden herkend als plexus choroideus?",
+    options: [
+      { letter: "A", text: "Spieren die de fontanel vormen" },
+      { letter: "B", text: "Netwerk in de ventrikels dat betrokken is bij aanmaak van hersenvocht" },
+      { letter: "C", text: "De eerste aanleg van de hersenstam" },
+      { letter: "D", text: "De ooglenzen" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 10,
+    question: "Waarom zijn armen en benen met handen en voeten bij een 2D echo in dit stadium vaak lastig in een beeld te beoordelen?",
+    options: [
+      { letter: "A", text: "Omdat ledematen altijd achter de placenta liggen" },
+      { letter: "B", text: "Omdat ze vaak in verschillende richtingen uitsteken en niet in een vlak vallen" },
+      { letter: "C", text: "Omdat botten nog niet zichtbaar zijn op echografie" },
+      { letter: "D", text: "Omdat de echo alleen het hoofd kan tonen" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 11,
+    question: "Welke buik- en bekkenstructuren zijn in principe relatief makkelijk te herkennen tijdens de transversale sweep?",
+    options: [
+      { letter: "A", text: "Maag en blaas" },
+      { letter: "B", text: "Alvleesklier en milt" },
+      { letter: "C", text: "Galblaas en appendix" },
+      { letter: "D", text: "Longslagaders" },
+    ],
+    correctAnswer: "A",
+    category: "Beeldvorming",
+  },
+  {
+    id: 12,
+    question: "Wat is typisch voor een omphalocele?",
+    options: [
+      { letter: "A", text: "Darmlissen vrij in het vruchtwater zonder bedekkende structuur" },
+      { letter: "B", text: "Ingewanden buiten de buikholte in een uitstulping ter hoogte van de navelstreng" },
+      { letter: "C", text: "Alleen een afwijkende stand van het been" },
+      { letter: "D", text: "Een open schedeldak zonder hersenweefsel" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 13,
+    question: "Wat is typisch voor gastroschisis volgens het onderscheid in de module?",
+    options: [
+      { letter: "A", text: "Buikwand open, darmlissen kunnen in het vruchtwater liggen" },
+      { letter: "B", text: "Ingewanden zitten altijd in de navelstreng met een zak eromheen" },
+      { letter: "C", text: "Het is uitsluitend een hartafwijking" },
+      { letter: "D", text: "Het is een afwijking van de plexus choroideus" },
+    ],
+    correctAnswer: "A",
+    category: "Beeldvorming",
+  },
+  {
+    id: 14,
+    question: "Waarop kan een beeld passen waarbij de wervelbogen niet goed zijn ontwikkeld?",
+    options: [
+      { letter: "A", text: "Omphalocele" },
+      { letter: "B", text: "Open rug (spina bifida)" },
+      { letter: "C", text: "Alleen een normale variant" },
+      { letter: "D", text: "Trisomie 21 als directe diagnose" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 15,
+    question: "Welke uitspraak over chromosoomafwijkingen en de 13 wekenecho klopt het best?",
+    options: [
+      { letter: "A", text: "De 13 wekenecho is de beste test om trisomie 21 definitief vast te stellen" },
+      { letter: "B", text: "De 13 wekenecho is niet geschikt om chromosoomafwijkingen vast te stellen; daarvoor is NIPT bedoeld" },
+      { letter: "C", text: "Chromosoomafwijkingen zijn alleen te zien op Doppler" },
+      { letter: "D", text: "Chromosoomafwijkingen zijn altijd zichtbaar als een omphalocele" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 16,
+    question: "Wat is het doel van de IMITAS-studie zoals genoemd in de module?",
+    options: [
+      { letter: "A", text: "Onderzoeken of de voordelen van de 13 wekenecho opwegen tegen de nadelen" },
+      { letter: "B", text: "Een nieuwe echo-techniek ontwikkelen die MRI vervangt" },
+      { letter: "C", text: "Vaststellen dat de 20 wekenecho overbodig is" },
+      { letter: "D", text: "Vergelijken van NIPT met bloeddrukmeting" },
+    ],
+    correctAnswer: "A",
+    category: "Beeldvorming",
+  },
+  {
+    id: 17,
+    question: "Wat is volgens het materiaal een mogelijke nadeel van vroege screening rond 13 weken?",
+    options: [
+      { letter: "A", text: "Alle afwijkingen zijn altijd direct en zeker zichtbaar" },
+      { letter: "B", text: "Bevindingen kunnen onduidelijk of tijdelijk zijn en onrust of extra onderzoeken veroorzaken" },
+      { letter: "C", text: "Het maakt vervolgdiagnostiek onmogelijk" },
+      { letter: "D", text: "Het verlaagt de beeldkwaliteit van de 20 wekenecho" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+  {
+    id: 18,
+    question: "Wat gebeurt er doorgaans als bij de 13 wekenecho een structurele afwijking wordt vermoed?",
+    options: [
+      { letter: "A", text: "Er gebeurt niets, want het is te vroeg" },
+      { letter: "B", text: "Verwijzing voor prenatale diagnostiek en een geavanceerd echografisch onderzoek (GUO)" },
+      { letter: "C", text: "Meteen behandelen met medicatie" },
+      { letter: "D", text: "Alleen opnieuw kijken bij de bevalling" },
+    ],
+    correctAnswer: "B",
+    category: "Beeldvorming",
+  },
+]
+
 // Extremiteiten questions (15)
 const extremiteitenQuestions = [
   {
@@ -430,22 +650,29 @@ const PracticeQuestionsPage = () => {
   // Determine which questions to show
   const getQuestions = () => {
     if (lmeParam === 'embryogenese') return embryogeneseQuestions
+    if (lmeParam === 'beeldvorming') return beeldvormingQuestions
     if (lmeParam === 'extremiteiten') return extremiteitenQuestions
     // Default: show all questions combined
-    return [...embryogeneseQuestions.map((q, i) => ({ ...q, id: i + 1 })), 
-            ...extremiteitenQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + i + 1 }))]
+    const allQuestions = [
+      ...embryogeneseQuestions.map((q, i) => ({ ...q, id: i + 1 })),
+      ...beeldvormingQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + i + 1 })),
+      ...extremiteitenQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + beeldvormingQuestions.length + i + 1 }))
+    ]
+    return allQuestions
   }
 
   const getTitle = () => {
     if (lmeParam === 'embryogenese') return 'Embryogenese Bouwplan'
+    if (lmeParam === 'beeldvorming') return 'Foetale Beeldvorming'
     if (lmeParam === 'extremiteiten') return 'Extremiteiten & Gewrichtsleer'
     return 'Alle Oefenvragen'
   }
 
   const getSubtitle = () => {
     if (lmeParam === 'embryogenese') return 'Test je kennis met 19 meerkeuzevragen over embryogenese.'
+    if (lmeParam === 'beeldvorming') return 'Test je kennis met 18 meerkeuzevragen over foetale beeldvorming.'
     if (lmeParam === 'extremiteiten') return 'Test je kennis met 15 meerkeuzevragen over gewrichtsleer en embryologie.'
-    return 'Test je kennis met 34 meerkeuzevragen over alle LMEs.'
+    return 'Test je kennis met 52 meerkeuzevragen over alle LMEs.'
   }
 
   const questions = getQuestions()
@@ -571,12 +798,18 @@ const PracticeQuestionsPage = () => {
           
           {/* LME Filter Buttons */}
           {!lmeParam && (
-            <div className="flex justify-center gap-3 mt-4">
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
               <Link
                 to="/oefenvragen?lme=embryogenese"
                 className="px-4 py-2 bg-primary-100 text-primary-700 rounded-lg text-sm font-medium hover:bg-primary-200 transition-colors"
               >
                 Embryogenese (19)
+              </Link>
+              <Link
+                to="/oefenvragen?lme=beeldvorming"
+                className="px-4 py-2 bg-teal-100 text-teal-700 rounded-lg text-sm font-medium hover:bg-teal-200 transition-colors"
+              >
+                Beeldvorming (18)
               </Link>
               <Link
                 to="/oefenvragen?lme=extremiteiten"
