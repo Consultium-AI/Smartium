@@ -1,200 +1,457 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { 
   ClipboardCheck, Home, ChevronLeft, ChevronRight, 
   RotateCcw, Trophy, Target, BookOpen,
-  CheckCircle, XCircle
+  CheckCircle, XCircle, ArrowLeft
 } from 'lucide-react'
 
+// Embryogenese questions (19)
+const embryogeneseQuestions = [
+  {
+    id: 1,
+    question: "Wanneer begint de differentiatie van ectoderm naar zenuwweefsel met vorming van de neurale plaat?",
+    options: [
+      { letter: "A", text: "Dag 8 na conceptie" },
+      { letter: "B", text: "Dag 16 na conceptie" },
+      { letter: "C", text: "Dag 28 na conceptie" },
+      { letter: "D", text: "Week 6 na conceptie" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 2,
+    question: "Welke structuur geeft signalen die de neurale plaat induceren?",
+    options: [
+      { letter: "A", text: "Somieten" },
+      { letter: "B", text: "Notochord" },
+      { letter: "C", text: "Allantois" },
+      { letter: "D", text: "Trofoblast" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 3,
+    question: "Wat ontstaat uit de neurale plaat na vouwen en fusie?",
+    options: [
+      { letter: "A", text: "Somiet" },
+      { letter: "B", text: "Neurale buis" },
+      { letter: "C", text: "Primitieve darm" },
+      { letter: "D", text: "Intra-embryonaal coeloom" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 4,
+    question: "Op welke dag na bevruchting begint de sluiting van de neurale buis volgens de stof?",
+    options: [
+      { letter: "A", text: "18 dagen" },
+      { letter: "B", text: "20 dagen" },
+      { letter: "C", text: "22 dagen" },
+      { letter: "D", text: "28 dagen" },
+    ],
+    correctAnswer: "C",
+    category: "Embryogenese",
+  },
+  {
+    id: 5,
+    question: "Welke uitspraak over de neuropori is juist?",
+    options: [
+      { letter: "A", text: "De neuropori liggen lateraal van de neurale groeve" },
+      { letter: "B", text: "De neuropori zijn tijdelijke openingen aan craniale en caudale zijde" },
+      { letter: "C", text: "De neuropori vormen later de buikwand" },
+      { letter: "D", text: "De neuropori zijn uitgroeisels van de dooierzak" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 6,
+    question: "Falen van sluiting van het craniale deel van de neurale buis kan leiden tot:",
+    options: [
+      { letter: "A", text: "Spina bifida" },
+      { letter: "B", text: "Anencefalie" },
+      { letter: "C", text: "Gastroschisis" },
+      { letter: "D", text: "Mesonephros agenese" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 7,
+    question: "Craniorachischisis betekent meestal:",
+    options: [
+      { letter: "A", text: "Alleen caudale sluitingsfout van de neurale buis" },
+      { letter: "B", text: "Alleen craniale sluitingsfout van de neurale buis" },
+      { letter: "C", text: "Groot deel van de neurale buis sluit niet" },
+      { letter: "D", text: "Fout in innesteling (nidatie)" },
+    ],
+    correctAnswer: "C",
+    category: "Embryogenese",
+  },
+  {
+    id: 8,
+    question: "De neurale lijst (neural crest) ontstaat op de overgang van:",
+    options: [
+      { letter: "A", text: "Endoderm en mesoderm" },
+      { letter: "B", text: "Mesoderm en ectoderm" },
+      { letter: "C", text: "Neurale plaat/buis en ectoderm" },
+      { letter: "D", text: "Trofoblast en endometrium" },
+    ],
+    correctAnswer: "C",
+    category: "Embryogenese",
+  },
+  {
+    id: 9,
+    question: "Uit de neurale lijst ontstaat in deze module vooral:",
+    options: [
+      { letter: "A", text: "Het centrale zenuwstelsel" },
+      { letter: "B", text: "Het perifere zenuwstelsel" },
+      { letter: "C", text: "De placenta" },
+      { letter: "D", text: "Het endometrium" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 10,
+    question: "Tijdens week 4 verandert het embryo van een schijf naar een cilinder vooral door:",
+    options: [
+      { letter: "A", text: "Alleen gastrulatie" },
+      { letter: "B", text: "Alleen somietvorming" },
+      { letter: "C", text: "Kromming in meerdere richtingen (folding)" },
+      { letter: "D", text: "Placenta groei" },
+    ],
+    correctAnswer: "C",
+    category: "Embryogenese",
+  },
+  {
+    id: 11,
+    question: "Door hoofdplooiing ontstaat ventraal van de buccofaryngeale membraan de ruimte die later de mondholte wordt, genaamd:",
+    options: [
+      { letter: "A", text: "Cloaca" },
+      { letter: "B", text: "Stomodeum" },
+      { letter: "C", text: "Mesonephros" },
+      { letter: "D", text: "Allantois" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 12,
+    question: "De cloacale membraan ligt in relatie tot:",
+    options: [
+      { letter: "A", text: "Einddarm en allantois" },
+      { letter: "B", text: "Voordarm en longknoppen" },
+      { letter: "C", text: "Notochord en neurale plaat" },
+      { letter: "D", text: "Trofoblast en chorion" },
+    ],
+    correctAnswer: "A",
+    category: "Embryogenese",
+  },
+  {
+    id: 13,
+    question: "De allantois ontstaat als uitstulping van de:",
+    options: [
+      { letter: "A", text: "Amnionholte" },
+      { letter: "B", text: "Dooierzak richting hechtsteel" },
+      { letter: "C", text: "Neurale buis richting ectoderm" },
+      { letter: "D", text: "Trofoblast richting endometrium" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 14,
+    question: "Wat is de juiste beschrijving van de primitieve darmvorming?",
+    options: [
+      { letter: "A", text: "Ectoderm vormt een buis en wordt primitieve darm" },
+      { letter: "B", text: "Endoderm vormt een buis en wordt primitieve darm" },
+      { letter: "C", text: "Mesoderm vormt een buis en wordt primitieve darm" },
+      { letter: "D", text: "Trofoblast vormt een buis en wordt primitieve darm" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 15,
+    question: "Welke structuur blijft tijdelijk via de dooierzaksteel verbonden met de dooierzak?",
+    options: [
+      { letter: "A", text: "Voordarm" },
+      { letter: "B", text: "Middendarm" },
+      { letter: "C", text: "Einddarm" },
+      { letter: "D", text: "Trachea" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 16,
+    question: "De trachea en longen groeien vanaf ongeveer dag 22 uit de:",
+    options: [
+      { letter: "A", text: "Primitieve einddarm dorsaal" },
+      { letter: "B", text: "Primitieve voordarm ventraal" },
+      { letter: "C", text: "Primitieve middendarm lateraal" },
+      { letter: "D", text: "Extra-embryonale dooierzak" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 17,
+    question: "Tussen lever en longaanleg ligt het septum transversum, waaruit later vooral ontstaat:",
+    options: [
+      { letter: "A", text: "Nier (mesonephros)" },
+      { letter: "B", text: "Diafragma" },
+      { letter: "C", text: "Ruggenmerg" },
+      { letter: "D", text: "Placenta" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 18,
+    question: "Transversale kromming (laterale folding) resulteert uiteindelijk in:",
+    options: [
+      { letter: "A", text: "Opening van neuropori" },
+      { letter: "B", text: "Vorming van buikwand en ligging primitieve darm in buikholte" },
+      { letter: "C", text: "Vorming van neurale lijst" },
+      { letter: "D", text: "Splitsing van trofoblast en embryoblast" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+  {
+    id: 19,
+    question: "Een gevolg van falen van ventrale sluiting bij kromming kan zijn:",
+    options: [
+      { letter: "A", text: "Neurale buisdefect (altijd)" },
+      { letter: "B", text: "Buikwanddefect met naar buiten treden van darmen of blaas" },
+      { letter: "C", text: "Situs inversus" },
+      { letter: "D", text: "Alleen placenta problematiek" },
+    ],
+    correctAnswer: "B",
+    category: "Embryogenese",
+  },
+]
+
+// Extremiteiten questions (15)
+const extremiteitenQuestions = [
+  {
+    id: 1,
+    question: "Welke junctura is het meest beweeglijk?",
+    options: [
+      { letter: "A", text: "Junctura fibrosa" },
+      { letter: "B", text: "Junctura cartilaginea" },
+      { letter: "C", text: "Junctura ossea" },
+      { letter: "D", text: "Junctura synovialis" },
+    ],
+    correctAnswer: "D",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 2,
+    question: "Wat is de wetenschappelijke naam van gewrichtsvloeistof?",
+    options: [
+      { letter: "A", text: "Serum" },
+      { letter: "B", text: "Synovia" },
+      { letter: "C", text: "Liquor" },
+      { letter: "D", text: "Chondrin" },
+    ],
+    correctAnswer: "B",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 3,
+    question: "Uit welke twee lagen bestaat de capsula articularis?",
+    options: [
+      { letter: "A", text: "Membrana elastica + membrana ossea" },
+      { letter: "B", text: "Membrana synovialis + membrana fibrosa" },
+      { letter: "C", text: "Membrana mucosa + membrana serosa" },
+      { letter: "D", text: "Perichondrium + periost" },
+    ],
+    correctAnswer: "B",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 4,
+    question: "De verbinding tussen distale tibia en fibula (syndesmose) is een voorbeeld van:",
+    options: [
+      { letter: "A", text: "Junctura synovialis" },
+      { letter: "B", text: "Junctura fibrosa" },
+      { letter: "C", text: "Junctura cartilaginea" },
+      { letter: "D", text: "Junctura ossea" },
+    ],
+    correctAnswer: "B",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 5,
+    question: "De discus intervertebralis hoort bij:",
+    options: [
+      { letter: "A", text: "Junctura cartilaginea" },
+      { letter: "B", text: "Junctura synovialis" },
+      { letter: "C", text: "Junctura ossea" },
+      { letter: "D", text: "Junctura fibrosa" },
+    ],
+    correctAnswer: "A",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 6,
+    question: "Het acetabulum ontstaat uiteindelijk door benige fusie van ilium, pubis en ischium. Dit is:",
+    options: [
+      { letter: "A", text: "Junctura synovialis" },
+      { letter: "B", text: "Junctura fibrosa" },
+      { letter: "C", text: "Junctura ossea" },
+      { letter: "D", text: "Junctura cartilaginea" },
+    ],
+    correctAnswer: "C",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 7,
+    question: "Welk type gewricht is het heupgewricht?",
+    options: [
+      { letter: "A", text: "Zadelgewricht" },
+      { letter: "B", text: "Rolgewricht" },
+      { letter: "C", text: "Scharniergewricht" },
+      { letter: "D", text: "Kogelgewricht" },
+    ],
+    correctAnswer: "D",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 8,
+    question: "De articulatio humero-ulnaris (elleboog) is vooral een:",
+    options: [
+      { letter: "A", text: "Kogelgewricht" },
+      { letter: "B", text: "Scharniergewricht" },
+      { letter: "C", text: "Zadelgewricht" },
+      { letter: "D", text: "Vlak gewricht" },
+    ],
+    correctAnswer: "B",
+    category: "Gewrichtsleer",
+  },
+  {
+    id: 9,
+    question: "Flexie en extensie gebeuren primair in welk vlak?",
+    options: [
+      { letter: "A", text: "Frontaal (coronaal)" },
+      { letter: "B", text: "Transversaal" },
+      { letter: "C", text: "Sagittaal" },
+      { letter: "D", text: "Oblique vlak" },
+    ],
+    correctAnswer: "C",
+    category: "Anatomie",
+  },
+  {
+    id: 10,
+    question: "Welke drie anatomische vlakken zijn correct?",
+    options: [
+      { letter: "A", text: "Sagittaal, coronair, axiaal" },
+      { letter: "B", text: "Sagittaal, frontaal/coronaal, transversaal" },
+      { letter: "C", text: "Frontaal, longitudinaal, transversaal" },
+      { letter: "D", text: "Coronaal, diagonaal, sagittaal" },
+    ],
+    correctAnswer: "B",
+    category: "Anatomie",
+  },
+  {
+    id: 11,
+    question: "Welke uitspraak over dermatomes is juist?",
+    options: [
+      { letter: "A", text: "Een dermatoom hoort bij één perifere zenuw (zoals n. medianus)" },
+      { letter: "B", text: "Een dermatoom hoort bij één spinaal segment" },
+      { letter: "C", text: "Een dermatoom ontstaat pas na geboorte" },
+      { letter: "D", text: "Dermatomes en perifere huidgebieden zijn altijd identiek" },
+    ],
+    correctAnswer: "B",
+    category: "Neuroanatomie",
+  },
+  {
+    id: 12,
+    question: "Waarom vallen huidgebieden van perifere zenuwen vaak niet samen met dermatomes?",
+    options: [
+      { letter: "A", text: "Omdat perifere zenuwen alleen motorische vezels bevatten" },
+      { letter: "B", text: "Omdat perifere zenuwen vezels uit meerdere spinale segmenten bevatten (plexus)" },
+      { letter: "C", text: "Omdat dermatomes alleen in de romp bestaan" },
+      { letter: "D", text: "Omdat synovia de innervatie beïnvloedt" },
+    ],
+    correctAnswer: "B",
+    category: "Neuroanatomie",
+  },
+  {
+    id: 13,
+    question: "Wat is de belangrijkste rol van de AER in de ledemaatontwikkeling?",
+    options: [
+      { letter: "A", text: "Het start directe botvorming (desmale ossificatie)" },
+      { letter: "B", text: "Het houdt distaal mesenchym prolifererend en ongedifferentieerd" },
+      { letter: "C", text: "Het vormt de synovia" },
+      { letter: "D", text: "Het bepaalt dermatomes" },
+    ],
+    correctAnswer: "B",
+    category: "Embryologie",
+  },
+  {
+    id: 14,
+    question: "Waardoor scheiden vingers/tenen zich uit de hand-/voetplaat?",
+    options: [
+      { letter: "A", text: "Verbening van het kraakbeen tussen de vingers" },
+      { letter: "B", text: "Apoptose tussen de digitale stralen" },
+      { letter: "C", text: "Verdikking van het periost" },
+      { letter: "D", text: "Toename van synovia" },
+    ],
+    correctAnswer: "B",
+    category: "Embryologie",
+  },
+  {
+    id: 15,
+    question: "Welke volgorde past bij proximodistale segmenten van de ledemaat?",
+    options: [
+      { letter: "A", text: "Autopod → zeugopod → stylopod" },
+      { letter: "B", text: "Zeugopod → autopod → stylopod" },
+      { letter: "C", text: "Stylopod → zeugopod → autopod" },
+      { letter: "D", text: "Stylopod → autopod → zeugopod" },
+    ],
+    correctAnswer: "C",
+    category: "Embryologie",
+  },
+]
+
 const PracticeQuestionsPage = () => {
+  const [searchParams] = useSearchParams()
+  const lmeParam = searchParams.get('lme')
+  
+  // Determine which questions to show
+  const getQuestions = () => {
+    if (lmeParam === 'embryogenese') return embryogeneseQuestions
+    if (lmeParam === 'extremiteiten') return extremiteitenQuestions
+    // Default: show all questions combined
+    return [...embryogeneseQuestions.map((q, i) => ({ ...q, id: i + 1 })), 
+            ...extremiteitenQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + i + 1 }))]
+  }
+
+  const getTitle = () => {
+    if (lmeParam === 'embryogenese') return 'Embryogenese Bouwplan'
+    if (lmeParam === 'extremiteiten') return 'Extremiteiten & Gewrichtsleer'
+    return 'Alle Oefenvragen'
+  }
+
+  const getSubtitle = () => {
+    if (lmeParam === 'embryogenese') return 'Test je kennis met 19 meerkeuzevragen over embryogenese.'
+    if (lmeParam === 'extremiteiten') return 'Test je kennis met 15 meerkeuzevragen over gewrichtsleer en embryologie.'
+    return 'Test je kennis met 34 meerkeuzevragen over alle LMEs.'
+  }
+
+  const questions = getQuestions()
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
-  const [showResults, setShowResults] = useState(false)
   const [revealedAnswers, setRevealedAnswers] = useState({})
-
-  const questions = [
-    {
-      id: 1,
-      question: "Welke junctura is het meest beweeglijk?",
-      options: [
-        { letter: "A", text: "Junctura fibrosa" },
-        { letter: "B", text: "Junctura cartilaginea" },
-        { letter: "C", text: "Junctura ossea" },
-        { letter: "D", text: "Junctura synovialis" },
-      ],
-      correctAnswer: "D",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 2,
-      question: "Wat is de wetenschappelijke naam van gewrichtsvloeistof?",
-      options: [
-        { letter: "A", text: "Serum" },
-        { letter: "B", text: "Synovia" },
-        { letter: "C", text: "Liquor" },
-        { letter: "D", text: "Chondrin" },
-      ],
-      correctAnswer: "B",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 3,
-      question: "Uit welke twee lagen bestaat de capsula articularis?",
-      options: [
-        { letter: "A", text: "Membrana elastica + membrana ossea" },
-        { letter: "B", text: "Membrana synovialis + membrana fibrosa" },
-        { letter: "C", text: "Membrana mucosa + membrana serosa" },
-        { letter: "D", text: "Perichondrium + periost" },
-      ],
-      correctAnswer: "B",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 4,
-      question: "De verbinding tussen distale tibia en fibula (syndesmose) is een voorbeeld van:",
-      options: [
-        { letter: "A", text: "Junctura synovialis" },
-        { letter: "B", text: "Junctura fibrosa" },
-        { letter: "C", text: "Junctura cartilaginea" },
-        { letter: "D", text: "Junctura ossea" },
-      ],
-      correctAnswer: "B",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 5,
-      question: "De discus intervertebralis hoort bij:",
-      options: [
-        { letter: "A", text: "Junctura cartilaginea" },
-        { letter: "B", text: "Junctura synovialis" },
-        { letter: "C", text: "Junctura ossea" },
-        { letter: "D", text: "Junctura fibrosa" },
-      ],
-      correctAnswer: "A",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 6,
-      question: "Het acetabulum ontstaat uiteindelijk door benige fusie van ilium, pubis en ischium. Dit is:",
-      options: [
-        { letter: "A", text: "Junctura synovialis" },
-        { letter: "B", text: "Junctura fibrosa" },
-        { letter: "C", text: "Junctura ossea" },
-        { letter: "D", text: "Junctura cartilaginea" },
-      ],
-      correctAnswer: "C",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 7,
-      question: "Welk type gewricht is het heupgewricht?",
-      options: [
-        { letter: "A", text: "Zadelgewricht" },
-        { letter: "B", text: "Rolgewricht" },
-        { letter: "C", text: "Scharniergewricht" },
-        { letter: "D", text: "Kogelgewricht" },
-      ],
-      correctAnswer: "D",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 8,
-      question: "De articulatio humero-ulnaris (elleboog) is vooral een:",
-      options: [
-        { letter: "A", text: "Kogelgewricht" },
-        { letter: "B", text: "Scharniergewricht" },
-        { letter: "C", text: "Zadelgewricht" },
-        { letter: "D", text: "Vlak gewricht" },
-      ],
-      correctAnswer: "B",
-      category: "Gewrichtsleer",
-    },
-    {
-      id: 9,
-      question: "Flexie en extensie gebeuren primair in welk vlak?",
-      options: [
-        { letter: "A", text: "Frontaal (coronaal)" },
-        { letter: "B", text: "Transversaal" },
-        { letter: "C", text: "Sagittaal" },
-        { letter: "D", text: "Oblique vlak" },
-      ],
-      correctAnswer: "C",
-      category: "Anatomie",
-    },
-    {
-      id: 10,
-      question: "Welke drie anatomische vlakken zijn correct?",
-      options: [
-        { letter: "A", text: "Sagittaal, coronair, axiaal" },
-        { letter: "B", text: "Sagittaal, frontaal/coronaal, transversaal" },
-        { letter: "C", text: "Frontaal, longitudinaal, transversaal" },
-        { letter: "D", text: "Coronaal, diagonaal, sagittaal" },
-      ],
-      correctAnswer: "B",
-      category: "Anatomie",
-    },
-    {
-      id: 11,
-      question: "Welke uitspraak over dermatomes is juist?",
-      options: [
-        { letter: "A", text: "Een dermatoom hoort bij één perifere zenuw (zoals n. medianus)" },
-        { letter: "B", text: "Een dermatoom hoort bij één spinaal segment" },
-        { letter: "C", text: "Een dermatoom ontstaat pas na geboorte" },
-        { letter: "D", text: "Dermatomes en perifere huidgebieden zijn altijd identiek" },
-      ],
-      correctAnswer: "B",
-      category: "Neuroanatomie",
-    },
-    {
-      id: 12,
-      question: "Waarom vallen huidgebieden van perifere zenuwen vaak niet samen met dermatomes?",
-      options: [
-        { letter: "A", text: "Omdat perifere zenuwen alleen motorische vezels bevatten" },
-        { letter: "B", text: "Omdat perifere zenuwen vezels uit meerdere spinale segmenten bevatten (plexus)" },
-        { letter: "C", text: "Omdat dermatomes alleen in de romp bestaan" },
-        { letter: "D", text: "Omdat synovia de innervatie beïnvloedt" },
-      ],
-      correctAnswer: "B",
-      category: "Neuroanatomie",
-    },
-    {
-      id: 13,
-      question: "Wat is de belangrijkste rol van de AER in de ledemaatontwikkeling?",
-      options: [
-        { letter: "A", text: "Het start directe botvorming (desmale ossificatie)" },
-        { letter: "B", text: "Het houdt distaal mesenchym prolifererend en ongedifferentieerd" },
-        { letter: "C", text: "Het vormt de synovia" },
-        { letter: "D", text: "Het bepaalt dermatomes" },
-      ],
-      correctAnswer: "B",
-      category: "Embryologie",
-    },
-    {
-      id: 14,
-      question: "Waardoor scheiden vingers/tenen zich uit de hand-/voetplaat?",
-      options: [
-        { letter: "A", text: "Verbening van het kraakbeen tussen de vingers" },
-        { letter: "B", text: "Apoptose tussen de digitale stralen" },
-        { letter: "C", text: "Verdikking van het periost" },
-        { letter: "D", text: "Toename van synovia" },
-      ],
-      correctAnswer: "B",
-      category: "Embryologie",
-    },
-    {
-      id: 15,
-      question: "Welke volgorde past bij proximodistale segmenten van de ledemaat?",
-      options: [
-        { letter: "A", text: "Autopod → zeugopod → stylopod" },
-        { letter: "B", text: "Zeugopod → autopod → stylopod" },
-        { letter: "C", text: "Stylopod → zeugopod → autopod" },
-        { letter: "D", text: "Stylopod → autopod → zeugopod" },
-      ],
-      correctAnswer: "C",
-      category: "Embryologie",
-    },
-  ]
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -226,11 +483,6 @@ const PracticeQuestionsPage = () => {
     setSelectedAnswers({})
     setRevealedAnswers({})
     setCurrentQuestion(0)
-    setShowResults(false)
-  }
-
-  const handleFinish = () => {
-    setShowResults(true)
   }
 
   const getOptionStyle = (questionId, letter) => {
@@ -287,6 +539,23 @@ const PracticeQuestionsPage = () => {
       </header>
 
       <main className="container-custom py-8 md:py-12">
+        {/* Back to Summary */}
+        {lmeParam && (
+          <motion.div
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="mb-6 max-w-3xl mx-auto"
+          >
+            <Link
+              to={`/summary?lme=${lmeParam}`}
+              className="inline-flex items-center gap-2 text-navy-600 hover:text-primary-600 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span className="font-medium">Terug naar samenvatting</span>
+            </Link>
+          </motion.div>
+        )}
+
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -294,11 +563,29 @@ const PracticeQuestionsPage = () => {
           className="text-center mb-8"
         >
           <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">
-            Anatomie & Embryologie <span className="text-accent-500">Oefenvragen</span>
+            {getTitle()} <span className="text-accent-500">Oefenvragen</span>
           </h1>
           <p className="text-navy-500">
-            Test je kennis met 15 meerkeuzevragen over gewrichtsleer en embryologie.
+            {getSubtitle()}
           </p>
+          
+          {/* LME Filter Buttons */}
+          {!lmeParam && (
+            <div className="flex justify-center gap-3 mt-4">
+              <Link
+                to="/oefenvragen?lme=embryogenese"
+                className="px-4 py-2 bg-primary-100 text-primary-700 rounded-lg text-sm font-medium hover:bg-primary-200 transition-colors"
+              >
+                Embryogenese (19)
+              </Link>
+              <Link
+                to="/oefenvragen?lme=extremiteiten"
+                className="px-4 py-2 bg-accent-100 text-accent-700 rounded-lg text-sm font-medium hover:bg-accent-200 transition-colors"
+              >
+                Extremiteiten (15)
+              </Link>
+            </div>
+          )}
         </motion.div>
 
         {/* Progress Bar */}
@@ -366,7 +653,7 @@ const PracticeQuestionsPage = () => {
                         : "bg-navy-100 text-navy-500 hover:bg-navy-200"
                 }`}
               >
-                {q.id}
+                {index + 1}
               </button>
             )
           })}
@@ -512,7 +799,7 @@ const PracticeQuestionsPage = () => {
                   className="px-6 py-3 bg-white/20 text-white rounded-xl font-semibold hover:bg-white/30 transition-colors flex items-center gap-2"
                 >
                   <BookOpen className="w-5 h-5" />
-                  Naar Samenvatting
+                  Naar Samenvattingen
                 </Link>
               </div>
             </div>
@@ -531,7 +818,7 @@ const PracticeQuestionsPage = () => {
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium"
           >
             <BookOpen className="w-4 h-4" />
-            Bekijk de samenvatting
+            Bekijk de samenvattingen
           </Link>
         </motion.div>
       </main>
@@ -545,4 +832,3 @@ const PracticeQuestionsPage = () => {
 }
 
 export default PracticeQuestionsPage
-
