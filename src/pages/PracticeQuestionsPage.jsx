@@ -459,6 +459,190 @@ const beeldvormingQuestions = [
   },
 ]
 
+// Extra embryonale structuren questions (15)
+const extraembryonaalQuestions = [
+  {
+    id: 1,
+    question: "Wat is een belangrijke voorwaarde voordat de blastocyst kan innestelen in het endometrium?",
+    options: [
+      { letter: "A", text: "Vorming van de neurale buis" },
+      { letter: "B", text: "Sluiting van de chorionholte" },
+      { letter: "C", text: "Uitkomen uit de zona pellucida" },
+      { letter: "D", text: "Productie van foetale urine" },
+    ],
+    correctAnswer: "C",
+    category: "Innesteling",
+  },
+  {
+    id: 2,
+    question: "Welke trofoblastlaag is vooral verantwoordelijk voor invasie in het endometrium tijdens innesteling?",
+    options: [
+      { letter: "A", text: "Syncytiotrofoblast" },
+      { letter: "B", text: "Cytotrofoblast" },
+      { letter: "C", text: "Epiblast" },
+      { letter: "D", text: "Hypoblast" },
+    ],
+    correctAnswer: "A",
+    category: "Innesteling",
+  },
+  {
+    id: 3,
+    question: "Wat is een klassieke klinische consequentie van verstoord transport van het conceptus naar de uterus?",
+    options: [
+      { letter: "A", text: "Spina bifida" },
+      { letter: "B", text: "Extra uteriene zwangerschap, vaak in de eileider" },
+      { letter: "C", text: "Placenta previa" },
+      { letter: "D", text: "Polyhydramnion" },
+    ],
+    correctAnswer: "B",
+    category: "Innesteling",
+  },
+  {
+    id: 4,
+    question: "De dooierzak is bij de mens vooral belangrijk in het vroege stadium voor welke functie?",
+    options: [
+      { letter: "A", text: "Opslag van grote voedingsreserves zoals bij vogels" },
+      { letter: "B", text: "Vroege bloedvorming en bijdrage aan vaatontwikkeling" },
+      { letter: "C", text: "Aanmaak van vruchtwater in het derde trimester" },
+      { letter: "D", text: "Vorming van de spiraalarterieen in de uteruswand" },
+    ],
+    correctAnswer: "B",
+    category: "Dooierzak",
+  },
+  {
+    id: 5,
+    question: "Welke verbinding kan persisteren en leiden tot een Meckel divertikel?",
+    options: [
+      { letter: "A", text: "Rest van de chorionholte" },
+      { letter: "B", text: "Rest van de zona pellucida" },
+      { letter: "C", text: "Persistente verbinding tussen dooierzak en darm" },
+      { letter: "D", text: "Rest van de amnionholte" },
+    ],
+    correctAnswer: "C",
+    category: "Dooierzak",
+  },
+  {
+    id: 6,
+    question: "Wat gebeurt er doorgaans met de chorionholte naarmate de zwangerschap vordert?",
+    options: [
+      { letter: "A", text: "Wordt groter en blijft tot de partus bestaan" },
+      { letter: "B", text: "Verdwijnt doordat amnion en chorion tegen elkaar aan komen te liggen" },
+      { letter: "C", text: "Verandert in de intervillieuze ruimte" },
+      { letter: "D", text: "Wordt de navelstreng" },
+    ],
+    correctAnswer: "B",
+    category: "Vliezen",
+  },
+  {
+    id: 7,
+    question: "Wat is een kernfunctie van vruchtwater gedurende de zwangerschap?",
+    options: [
+      { letter: "A", text: "Directe menging van maternale en foetale erytrocyten mogelijk maken" },
+      { letter: "B", text: "Mechanische bescherming en ruimte voor beweging en groei" },
+      { letter: "C", text: "Vorming van de placenta villi stimuleren" },
+      { letter: "D", text: "Zorgen dat de dooierzak permanent blijft bestaan" },
+    ],
+    correctAnswer: "B",
+    category: "Amnion",
+  },
+  {
+    id: 8,
+    question: "Welke tweelingconfiguratie is het meest passend bij een latere splitsing met een placenta en twee amnionholtes?",
+    options: [
+      { letter: "A", text: "Dichoriaal diamniotisch" },
+      { letter: "B", text: "Monochoriaal diamniotisch" },
+      { letter: "C", text: "Monochoriaal monoamniotisch" },
+      { letter: "D", text: "Dichoriaal monoamniotisch" },
+    ],
+    correctAnswer: "B",
+    category: "Tweelingen",
+  },
+  {
+    id: 9,
+    question: "Waarom geeft een monochoriale monoamniotische zwangerschap extra risico?",
+    options: [
+      { letter: "A", text: "Omdat er altijd twee placenta's zijn" },
+      { letter: "B", text: "Omdat er geen dooierzak wordt gevormd" },
+      { letter: "C", text: "Door kans op verstrengeling van navelstrengen in een amnionholte" },
+      { letter: "D", text: "Omdat er geen syncytiotrofoblast ontstaat" },
+    ],
+    correctAnswer: "C",
+    category: "Tweelingen",
+  },
+  {
+    id: 10,
+    question: "Waar komt het maternale bloed in de placenta primair terecht voordat uitwisseling plaatsvindt?",
+    options: [
+      { letter: "A", text: "In de foetale capillairen in de villi" },
+      { letter: "B", text: "In de amnionholte" },
+      { letter: "C", text: "In de intervillieuze ruimte via spiraalarterieen" },
+      { letter: "D", text: "In de dooierzak via vitelliene vaten" },
+    ],
+    correctAnswer: "C",
+    category: "Placenta",
+  },
+  {
+    id: 11,
+    question: "Welke uitspraak over de placenta villi is het meest correct?",
+    options: [
+      { letter: "A", text: "Ze bevatten maternale bloedvaten die direct met foetaal bloed mengen" },
+      { letter: "B", text: "Ze vergroten het uitwisselingsoppervlak en bevatten foetale vaten" },
+      { letter: "C", text: "Ze zijn holtes gevuld met vruchtwater" },
+      { letter: "D", text: "Ze vormen de spiraalarterieen in de uteruswand" },
+    ],
+    correctAnswer: "B",
+    category: "Placenta",
+  },
+  {
+    id: 12,
+    question: "Wat is de belangrijkste laag die in het onderwijs vaak wordt genoemd als cruciaal onderdeel van de bloed-placenta barriere?",
+    options: [
+      { letter: "A", text: "Endometrium" },
+      { letter: "B", text: "Myometrium" },
+      { letter: "C", text: "Syncytiotrofoblast" },
+      { letter: "D", text: "Perimetrium" },
+    ],
+    correctAnswer: "C",
+    category: "Barriere",
+  },
+  {
+    id: 13,
+    question: "Wat gebeurt er met de diffusieafstand in de placenta gedurende de zwangerschap?",
+    options: [
+      { letter: "A", text: "Neemt toe doordat de barriere dikker wordt" },
+      { letter: "B", text: "Neemt af doordat de barriere dunner wordt en capillairen dichter bij de buitenlaag liggen" },
+      { letter: "C", text: "Blijft gelijk omdat de cytotrofoblast laag altijd aanwezig blijft" },
+      { letter: "D", text: "Neemt af omdat de intervillieuze ruimte verdwijnt" },
+    ],
+    correctAnswer: "B",
+    category: "Barriere",
+  },
+  {
+    id: 14,
+    question: "Welke stof passeert doorgaans relatief gemakkelijk de bloed-placenta barriere vanwege vetoplosbaarheid?",
+    options: [
+      { letter: "A", text: "Albumine" },
+      { letter: "B", text: "Alcohol" },
+      { letter: "C", text: "Grote bacterien" },
+      { letter: "D", text: "Volledige erytrocyten" },
+    ],
+    correctAnswer: "B",
+    category: "Barriere",
+  },
+  {
+    id: 15,
+    question: "Welke maternale antistofklasse is belangrijk voor passieve immuniteit van de foetus doordat deze kan passeren?",
+    options: [
+      { letter: "A", text: "IgA" },
+      { letter: "B", text: "IgE" },
+      { letter: "C", text: "IgG" },
+      { letter: "D", text: "IgM" },
+    ],
+    correctAnswer: "C",
+    category: "Barriere",
+  },
+]
+
 // Extremiteiten questions (15)
 const extremiteitenQuestions = [
   {
@@ -651,12 +835,14 @@ const PracticeQuestionsPage = () => {
   const getQuestions = () => {
     if (lmeParam === 'embryogenese') return embryogeneseQuestions
     if (lmeParam === 'beeldvorming') return beeldvormingQuestions
+    if (lmeParam === 'extraembryonaal') return extraembryonaalQuestions
     if (lmeParam === 'extremiteiten') return extremiteitenQuestions
     // Default: show all questions combined
     const allQuestions = [
       ...embryogeneseQuestions.map((q, i) => ({ ...q, id: i + 1 })),
       ...beeldvormingQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + i + 1 })),
-      ...extremiteitenQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + beeldvormingQuestions.length + i + 1 }))
+      ...extraembryonaalQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + beeldvormingQuestions.length + i + 1 })),
+      ...extremiteitenQuestions.map((q, i) => ({ ...q, id: embryogeneseQuestions.length + beeldvormingQuestions.length + extraembryonaalQuestions.length + i + 1 }))
     ]
     return allQuestions
   }
@@ -664,6 +850,7 @@ const PracticeQuestionsPage = () => {
   const getTitle = () => {
     if (lmeParam === 'embryogenese') return 'Embryogenese Bouwplan'
     if (lmeParam === 'beeldvorming') return 'Foetale Beeldvorming'
+    if (lmeParam === 'extraembryonaal') return 'Extra Embryonale Structuren'
     if (lmeParam === 'extremiteiten') return 'Extremiteiten & Gewrichtsleer'
     return 'Alle Oefenvragen'
   }
@@ -671,8 +858,9 @@ const PracticeQuestionsPage = () => {
   const getSubtitle = () => {
     if (lmeParam === 'embryogenese') return 'Test je kennis met 19 meerkeuzevragen over embryogenese.'
     if (lmeParam === 'beeldvorming') return 'Test je kennis met 18 meerkeuzevragen over foetale beeldvorming.'
+    if (lmeParam === 'extraembryonaal') return 'Test je kennis met 15 meerkeuzevragen over extra embryonale structuren.'
     if (lmeParam === 'extremiteiten') return 'Test je kennis met 15 meerkeuzevragen over gewrichtsleer en embryologie.'
-    return 'Test je kennis met 52 meerkeuzevragen over alle LMEs.'
+    return 'Test je kennis met 67 meerkeuzevragen over alle LMEs.'
   }
 
   const questions = getQuestions()
@@ -810,6 +998,12 @@ const PracticeQuestionsPage = () => {
                 className="px-4 py-2 bg-teal-100 text-teal-700 rounded-lg text-sm font-medium hover:bg-teal-200 transition-colors"
               >
                 Beeldvorming (18)
+              </Link>
+              <Link
+                to="/oefenvragen?lme=extraembryonaal"
+                className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium hover:bg-purple-200 transition-colors"
+              >
+                Extra Embryonaal (15)
               </Link>
               <Link
                 to="/oefenvragen?lme=extremiteiten"
