@@ -3,142 +3,47 @@ import { useState, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import {
   ChevronLeft, ChevronRight, CheckCircle, XCircle,
-  RotateCcw, Trophy, Target, BookOpen, ArrowLeft,
-  GraduationCap, AlertTriangle
+  RotateCcw, Trophy, Target, ArrowLeft,
+  AlertTriangle
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import { examQuestions } from '../questions/examQuestions'
 
-// ─── Import all Blok 4 question arrays ───────────────────────────
-// We re-declare a minimal version here to avoid circular imports from the massive PracticeQuestionsPage.
-// Each array has ~18 questions. We pick specific indices per exam.
-
-import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
-import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
-import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
-import { lme2QuestionsMap } from '../questions/lme2-virale-verwekkers-gastro-enteritis'
-import { lme3QuestionsMap } from '../questions/lme3-welk-antibioticum-kies-ik'
-import { casus10Lme1QuestionsMap } from '../questions/casus10-lme1-dwang-en-drang-historisch-perspectief'
-import { casus10Lme2QuestionsMap } from '../questions/casus10-lme2-immunomodulatie'
-import { casus10Lme3QuestionsMap } from '../questions/casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas'
-import { casus10Lme4QuestionsMap } from '../questions/casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie'
-import { casus11Lme1QuestionsMap } from '../questions/casus11-lme1-leefstijl-en-immuunsysteem'
-import { casus12Lme1QuestionsMap } from '../questions/casus12-lme1-antibioticaresistentie-en-therapie'
-import { casus12Lme2QuestionsMap } from '../questions/casus12-lme2-sepsis'
-import { casus12Lme3QuestionsMap } from '../questions/casus12-lme3-patient-en-medicatieveiligheid'
-import { casus12Lme4QuestionsMap } from '../questions/casus12-lme4-zorggerelateerde-infecties'
-import { casus13Lme1QuestionsMap } from '../questions/casus13-lme1-antibiotica-introductie'
-import { casus13Lme2QuestionsMap } from '../questions/casus13-lme2-antibiotica-resistentie'
-
-// ─── Inline Blok 4 simple questions (copied refs) ────────────────
-// We import them dynamically by re-reading PracticeQuestionsPage at runtime won't work,
-// so we build the pool from the question maps + re-export a helper.
-// For simple LMEs we need the arrays. Since they're only in PracticeQuestionsPage as const,
-// we extract questions from there by also exporting them. But since that file is huge,
-// we take a practical shortcut: build exams from the image-based maps (which we have)
-// and for simple LMEs we construct questions inline.
-
-// Helper to get all questions from a map as a flat array
-const flattenMap = (map) =>
-  Object.values(map).flat()
-
-// ─── Build the full Blok 4 question pool from image-based maps ──
-const imagePools = {
-  'Schimmelinfecties': flattenMap(lme5QuestionsMap),
-  'VOW Milt': flattenMap(lme6QuestionsMap),
-  'Parasitaire verwekkers': flattenMap(lme1QuestionsMap),
-  'Virale verwekkers gastro-enteritis': flattenMap(lme2QuestionsMap),
-  'Antibioticakeuze': flattenMap(lme3QuestionsMap),
-  'Dwang en drang': flattenMap(casus10Lme1QuestionsMap),
-  'Immunomodulatie': flattenMap(casus10Lme2QuestionsMap),
-  'Morele dilemmas vaccineren': flattenMap(casus10Lme3QuestionsMap),
-  'Wiskunde vaccinatie': flattenMap(casus10Lme4QuestionsMap),
-  'Leefstijl immuunsysteem': flattenMap(casus11Lme1QuestionsMap),
-  'Antibioticaresistentie therapie': flattenMap(casus12Lme1QuestionsMap),
-  'Sepsis': flattenMap(casus12Lme2QuestionsMap),
-  'Medicatieveiligheid': flattenMap(casus12Lme3QuestionsMap),
-  'Zorggerelateerde infecties': flattenMap(casus12Lme4QuestionsMap),
-  'Antibiotica Introductie': flattenMap(casus13Lme1QuestionsMap),
-  'Antibiotica Resistentie': flattenMap(casus13Lme2QuestionsMap),
-}
-
-// Seeded pseudo-random for deterministic exam generation
+// Seeded pseudo-random voor deterministische shuffling
 function seededRandom(seed) {
   let s = seed
   return () => {
-    s = (s * 16807 + 0) % 2147483647
+    s = (s * 16807) % 2147483647
     return (s - 1) / 2147483646
   }
 }
 
-// Vragen over 'welk hoofdstuk' / module-structuur zijn geen stofvragen - filter ze uit
-const HOOFDSTUK_PATTERNS = [
-  /welk hoofdstuk\s+(hoort|bespreekt|past)/i,
-  /uit hoeveel hoofdstukken/i,
-  /welke vraag staat centraal in hoofdstuk/i,
-  /bij welk drieluik hoort/i,
-  /welk onderwerp valt onder hoofdstuk/i,
-  /wat valt onder hoofdstuk/i,
-]
-function isHoofdstukQuestion(q) {
-  if (HOOFDSTUK_PATTERNS.some(p => p.test(q.question))) return true
-  if (['Structuur', 'Module-context'].includes(q.category)) return true
-  if (q.category === 'Inhoud' && /hoofdstuk|structuur van de module/i.test(q.question)) return true
-  return false
-}
-
-// Strip hints uit antwoordopties (geen " – past bij andere..." etc.)
-const HINT_PATTERN = /\s*[–\-]\s*(dit is besproken|past bij een andere|een andere mogelijkheid|een afleider die|elders in de leerstof).*$/i
-function stripOptionHints(options) {
-  return options.map(o => ({
-    ...o,
-    text: o.text.replace(HINT_PATTERN, '').trim()
-  }))
-}
-
 function processQuestion(q, rng) {
-  let { options, correctAnswer } = q
+  const { options, correctAnswer } = q
   const correctOption = options.find(o => o.letter === correctAnswer)
   if (!correctOption) return { ...q, id: q.id }
 
-  // 1. Strip hints uit opties
-  const cleaned = stripOptionHints(options)
-
-  // 2. Shuffle options (Fisher-Yates)
-  const shuffled = [...cleaned]
+  const shuffled = [...options]
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
     ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
 
-  // 3. Reassign letters A,B,C,D to new order
   const letters = ['A', 'B', 'C', 'D']
   const reordered = shuffled.map((opt, i) => ({ ...opt, letter: letters[i] }))
-  const correctCleanText = correctOption.text.replace(HINT_PATTERN, '').trim()
-  const newCorrectLetter = reordered.find(o => o.text === correctCleanText)?.letter ?? letters[0]
+  const newCorrectLetter = reordered.find(o => o.text === correctOption.text)?.letter ?? letters[0]
 
   return { ...q, options: reordered, correctAnswer: newCorrectLetter }
 }
 
-function buildExam(examNumber) {
-  const rng = seededRandom(examNumber * 7919 + 42)
-  const allQuestions = []
-
-  Object.entries(imagePools).forEach(([category, questions]) => {
-    questions.forEach(q => {
-      if (!isHoofdstukQuestion(q)) {
-        allQuestions.push({ ...q, category: q.category || category })
-      }
-    })
-  })
-
-  // Shuffle questions with seeded random
-  for (let i = allQuestions.length - 1; i > 0; i--) {
+function buildExam() {
+  const rng = seededRandom(Date.now() % 100000)
+  const shuffled = [...examQuestions]
+  for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
-    ;[allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]]
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
-
-  // Pick first 60, process each (shuffle options, strip hints), assign IDs
-  return allQuestions.slice(0, 60).map((q, i) => processQuestion({ ...q, id: i + 1 }, rng))
+  return shuffled.map((q, i) => processQuestion({ ...q, id: i + 1 }, rng))
 }
 
 function calculateGrade(correct, total) {
@@ -146,14 +51,6 @@ function calculateGrade(correct, total) {
   if (pct <= 0.6) return 1 + (pct / 0.6) * 4.5
   return 5.5 + ((pct - 0.6) / 0.4) * 4.5
 }
-
-const EXAM_NAMES = [
-  'Oefententamen 1',
-  'Oefententamen 2',
-  'Oefententamen 3',
-  'Oefententamen 4',
-  'Oefententamen 5',
-]
 
 // ─── Exam Selection Screen ───────────────────────────────────────
 const ExamSelection = () => (
@@ -163,40 +60,33 @@ const ExamSelection = () => (
     <main className="container-custom py-8 md:py-12">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">
-          <span className="text-primary-500">Oefententamens</span> Blok 4
+          <span className="text-primary-500">Oefententamen</span> Blok 4
         </h1>
-        <p className="text-navy-500">5 tentamens van 60 vragen – test je kennis voor het echte werk</p>
+        <p className="text-navy-500">60 inhoudelijke vragen – gebaseerd op de stof uit alle samenvattingen</p>
       </motion.div>
 
-      <div className="max-w-2xl mx-auto space-y-4">
-        {EXAM_NAMES.map((name, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
+      <div className="max-w-2xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <Link
+            to="/tentamen?nr=1"
+            className="flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all group"
           >
-            <Link
-              to={`/tentamen?nr=${i + 1}`}
-              className="flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg group-hover:bg-primary-200 transition-colors">
-                  {i + 1}
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900">{name}</h3>
-                  <p className="text-sm text-slate-500">60 vragen · alle onderwerpen · ~45 min</p>
-                </div>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg group-hover:bg-primary-200 transition-colors">
+                1
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 transition-colors" />
-            </Link>
-          </motion.div>
-        ))}
+              <div>
+                <h3 className="font-bold text-slate-900">Oefententamen Blok 4</h3>
+                <p className="text-sm text-slate-500">60 vragen · alle onderwerpen · ~45 min</p>
+              </div>
+            </div>
+            <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 transition-colors" />
+          </Link>
+        </motion.div>
       </div>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500">
-        <p>60% correct = 5,5 · Diverse vragen uit alle weken en casussen</p>
+        <p>60% correct = 5,5 · Inhoudelijke vragen uit antibiotica, sepsis, immunomodulatie, vaccinatie, infecties en meer</p>
       </motion.div>
     </main>
   </div>
@@ -293,7 +183,7 @@ const GradeResult = ({ correct, total, onReset }) => {
             className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Alle tentamens
+            Terug
           </Link>
         </div>
       </motion.div>
@@ -302,8 +192,9 @@ const GradeResult = ({ correct, total, onReset }) => {
 }
 
 // ─── Exam Active Screen ──────────────────────────────────────────
-const ExamActive = ({ examNumber }) => {
-  const questions = useMemo(() => buildExam(examNumber), [examNumber])
+const ExamActive = () => {
+  const [refreshKey, setRefreshKey] = useState(0)
+  const questions = useMemo(() => buildExam(), [refreshKey])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
@@ -329,6 +220,7 @@ const ExamActive = ({ examNumber }) => {
     setRevealedAnswers({})
     setCurrentQuestion(0)
     setSubmitted(false)
+    setRefreshKey(k => k + 1)
   }
 
   const getOptionStyle = (questionId, letter) => {
@@ -351,7 +243,6 @@ const ExamActive = ({ examNumber }) => {
 
   return (
     <>
-      {/* Progress */}
       <div className="max-w-3xl mx-auto mb-6">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-4">
@@ -384,7 +275,6 @@ const ExamActive = ({ examNumber }) => {
         </div>
       </div>
 
-      {/* Question dots */}
       <div className="flex flex-wrap justify-center gap-1.5 mb-6 max-w-3xl mx-auto">
         {questions.map((q, index) => {
           const isAnswered = selectedAnswers[q.id] !== undefined
@@ -414,7 +304,6 @@ const ExamActive = ({ examNumber }) => {
         })}
       </div>
 
-      {/* Question card */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentQuestion}
@@ -521,7 +410,7 @@ const ExamPage = () => {
   const [searchParams] = useSearchParams()
   const examNr = parseInt(searchParams.get('nr'))
 
-  if (!examNr || examNr < 1 || examNr > 5) return <ExamSelection />
+  if (!examNr || examNr !== 1) return <ExamSelection />
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
@@ -540,12 +429,12 @@ const ExamPage = () => {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-navy-900 mb-1">
-            {EXAM_NAMES[examNr - 1]} <span className="text-primary-500">Blok 4</span>
+            Oefententamen <span className="text-primary-500">Blok 4</span>
           </h1>
           <p className="text-navy-500 text-sm">60 vragen · 60% is voldoende (5,5)</p>
         </motion.div>
 
-        <ExamActive examNumber={examNr} />
+        <ExamActive />
       </main>
 
       <footer className="py-6 text-center text-navy-400 text-sm border-t border-navy-100 mt-12">
