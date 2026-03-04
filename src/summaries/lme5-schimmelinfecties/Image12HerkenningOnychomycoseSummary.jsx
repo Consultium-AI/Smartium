@@ -1,13 +1,14 @@
 import { Square } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12HerkenningOnychomycoseSummary = () => {
+const Image12HerkenningOnychomycoseSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'onychomycose', title: 'Onychomycose', icon: Square },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Onychomycose"
       description="Visuele kenmerken van onychomycose: gele verkleuring, olievlek en onycholyse."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 12"

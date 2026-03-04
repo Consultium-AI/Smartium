@@ -14,14 +14,14 @@ export const image02MenuQuestions = [
   },
   {
     id: 2,
-    question: "Welke aspecten van parasitaire gastro-enteritis komen in deze module aan bod?",
+    question: "Uit hoeveel hoofdstukken bestaat deze module?",
     options: [
-      { letter: "A", text: "Meest voorkomende darmparasieten, klachten en diagnostiek" },
-      { letter: "B", text: "Alleen virale verwekkers" },
-      { letter: "C", text: "Alleen chirurgische behandeling" },
-      { letter: "D", text: "Alleen vaccinatie" },
+      { letter: "A", text: "Twee" },
+      { letter: "B", text: "Drie" },
+      { letter: "C", text: "Vier" },
+      { letter: "D", text: "Vijf" },
     ],
     correctAnswer: "A",
-    category: "Parasitaire gastro-enteritis",
+    category: "Structuur",
   },
 ]

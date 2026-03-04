@@ -1,13 +1,14 @@
 import { CircleDot } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14HerkenningTineaCorporisRandSummary = () => {
+const Image14HerkenningTineaCorporisRandSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'randactiviteit', title: 'Randactiviteit tinea corporis', icon: CircleDot },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea corporis met randactiviteit"
       description="Typische kenmerken: ronde scherpbegrensde plaque met randactiviteit en schilfering aan de rand."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 14"

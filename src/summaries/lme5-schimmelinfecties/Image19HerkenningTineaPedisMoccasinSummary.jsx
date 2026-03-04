@@ -1,13 +1,14 @@
 import { Footprints } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19HerkenningTineaPedisMoccasinSummary = () => {
+const Image19HerkenningTineaPedisMoccasinSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'moccasin', title: 'Tinea pedis moccasin patroon', icon: Footprints },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea pedis moccasin patroon"
       description="Moccasin patroon: erythematosquameuze laesies op voetzolen en voetranden."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 19"

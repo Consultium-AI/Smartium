@@ -1,13 +1,14 @@
 import { Footprints } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08HerkenningTineaPedisSummary = () => {
+const Image08HerkenningTineaPedisSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'herkenning', title: 'Herkenning tinea pedis', icon: Footprints },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea pedis"
       description="Typische presentatie van tinea pedis (zwemmerseczeem) in de interdigitale ruimte."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 8"

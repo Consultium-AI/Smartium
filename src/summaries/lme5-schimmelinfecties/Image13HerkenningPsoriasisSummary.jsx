@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13HerkenningPsoriasisSummary = () => {
+const Image13HerkenningPsoriasisSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'psoriasis', title: 'Psoriasis (geen schimmel)', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Psoriasis (geen schimmel)"
       description="Differentiatie tussen psoriasis en schimmelinfectie: grove schilfering niet typisch aan de rand."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 13"

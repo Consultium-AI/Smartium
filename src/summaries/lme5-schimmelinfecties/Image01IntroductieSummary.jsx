@@ -1,13 +1,14 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01IntroductieSummary = () => {
+const Image01IntroductieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie en leerdoelen', icon: BookOpen },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Introductie – Schimmelinfecties van de huid, nagels en haren"
       description="Leerdoelen, doelgroep en inhoud van de module over schimmelinfecties van de huid, nagels en haren."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 1"

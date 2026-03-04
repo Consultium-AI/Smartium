@@ -1,13 +1,14 @@
 import { FlaskConical } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23DiagnostiekKweekSummary = () => {
+const Image23DiagnostiekKweekSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'kweek', title: 'Schimmelkweek', icon: FlaskConical },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Diagnostiek – Schimmelkweek"
       description="Schimmelkweek voor typering van de schimmelsoort; Trichophyton interdigitale."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 23"

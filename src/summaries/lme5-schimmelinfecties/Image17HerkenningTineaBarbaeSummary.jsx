@@ -1,13 +1,14 @@
 import { Circle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17HerkenningTineaBarbaeSummary = () => {
+const Image17HerkenningTineaBarbaeSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'barbae', title: 'Tinea barbae', icon: Circle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea barbae"
       description="Schimmelinfectie in de baardstreek met folliculaire pustels en folliculitis."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 17"

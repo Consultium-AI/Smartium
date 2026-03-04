@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09HerkenningEczeemSummary = () => {
+const Image09HerkenningEczeemSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'differentieel', title: 'Differentieel: eczeem', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Eczeem (geen schimmel)"
       description="Differentiatie tussen eczeem en schimmelinfectie: lokalisatie in flexuren en lichenificatie."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 9"

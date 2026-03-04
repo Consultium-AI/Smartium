@@ -1,13 +1,14 @@
 import { CheckCircle2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image25EindeSummary = () => {
+const Image25EindeSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'einde', title: 'Leerpunten en literatuur', icon: CheckCircle2 },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Einde – Schimmelinfecties"
       description="Leerpunten en gebruikte literatuur van de module."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 25"

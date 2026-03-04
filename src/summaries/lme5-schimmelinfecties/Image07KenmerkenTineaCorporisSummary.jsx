@@ -1,13 +1,14 @@
 import { CheckCircle2, XCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07KenmerkenTineaCorporisSummary = () => {
+const Image07KenmerkenTineaCorporisSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'kenmerkend', title: 'Kenmerkend vs. niet kenmerkend', icon: CheckCircle2 },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kenmerken – Tinea corporis"
       description="Differentiatie tussen kenmerken die passen bij een schimmelinfectie en kenmerken die niet kenmerkend zijn."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 7"

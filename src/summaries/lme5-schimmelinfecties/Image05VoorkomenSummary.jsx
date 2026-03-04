@@ -1,13 +1,14 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05VoorkomenSummary = () => {
+const Image05VoorkomenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'voorkomen', title: 'Voorkomen dermatomycosen', icon: BarChart3 },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voorkomen – Dermatomycosen"
       description="Feiten over prevalentie en epidemiologie van schimmelinfecties van de huid."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 5"

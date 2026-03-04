@@ -2,15 +2,15 @@
 export const image02MenuQuestions = [
   {
     id: 1,
-    question: "Welke benaderingen van veiligheid komen in de medicatieveiligheid-module aan bod?",
+    question: "Welk hoofdstuk hoort bij de medicatieveiligheid-module?",
     options: [
       { letter: "A", text: "Safety I en Safety II" },
-      { letter: "B", text: "Alleen technische veiligheid" },
-      { letter: "C", text: "Alleen patiëntveiligheid" },
-      { letter: "D", text: "Alleen medicatiecontrole" },
+      { letter: "B", text: "Antibioticaresistentie" },
+      { letter: "C", text: "Sepsis" },
+      { letter: "D", text: "Chirurgie" },
     ],
     correctAnswer: "A",
-    category: "Medicatieveiligheid",
+    category: "Inhoud",
   },
   {
     id: 2,

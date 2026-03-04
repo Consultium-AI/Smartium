@@ -1,13 +1,14 @@
 import { Info } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03InleidingSummary = () => {
+const Image03InleidingSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'inleiding', title: 'Inleiding huidinfecties', icon: Info },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Inleiding – Huidinfecties"
       description="Achtergrond over huidinfecties: oorzaken, factoren en verwekkers."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 3"

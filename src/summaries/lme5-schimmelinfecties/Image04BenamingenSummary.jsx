@@ -1,13 +1,14 @@
 import { Tag } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04BenamingenSummary = () => {
+const Image04BenamingenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'benamingen', title: 'Benamingen dermatomycosen', icon: Tag },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Benamingen – Dermatomycosen"
       description="Medische benamingen voor schimmelinfecties afhankelijk van de locatie op het lichaam."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 4"

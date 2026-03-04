@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15HerkenningImpetigoSummary = () => {
+const Image15HerkenningImpetigoSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'impetigo', title: 'Impetigo (geen schimmel)', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Impetigo/krentenbaard (geen schimmel)"
       description="Impetigo: bacteriële infectie met gelige korsten, veroorzaakt door Staphylococcus aureus."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 15"

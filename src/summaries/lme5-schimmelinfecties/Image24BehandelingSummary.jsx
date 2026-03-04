@@ -1,13 +1,14 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24BehandelingSummary = () => {
+const Image24BehandelingSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'behandeling', title: 'Behandeling', icon: Pill },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Behandeling – Schimmelinfecties"
       description="Antimycotica: topicale en orale behandeling; gevoeligheid per verwekker."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 24"

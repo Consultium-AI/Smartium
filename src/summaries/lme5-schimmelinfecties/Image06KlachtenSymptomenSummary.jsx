@@ -1,13 +1,14 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06KlachtenSymptomenSummary = () => {
+const Image06KlachtenSymptomenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'klachten', title: 'Klachten en symptomen', icon: AlertCircle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Klachten en symptomen – Schimmelinfecties"
       description="Typische presentatie en klachten bij schimmelinfecties van de huid."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 6"

@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { BookOpen, ClipboardCheck, Clock, FileText, ChevronUp } from 'lucide-react'
 
-const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practiceLink, children }) => {
+const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practiceLink, children, standalone = true }) => {
+  if (!standalone) return <>{children}</>
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 

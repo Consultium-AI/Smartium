@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18HerkenningEczeemBenenSummary = () => {
+const Image18HerkenningEczeemBenenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'eczeem', title: 'Eczeem op donkere huid', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Eczeem (geen schimmel)"
       description="Eczeem op donkere huid: erytheem minder zichtbaar, voorkeurslocatie flexuren, papels en krabeffecten."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 18"

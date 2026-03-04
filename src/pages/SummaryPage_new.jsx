@@ -753,7 +753,6 @@ import {
           className="max-w-3xl mx-auto"
         >
           <h1 className="text-3xl font-bold text-slate-900 mb-2 text-center">Samenvattingen</h1>
-          <p className="text-slate-500 text-center mb-8">Kies een LME om de samenvatting te bekijken.</p>
 
           <div className="space-y-3">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">

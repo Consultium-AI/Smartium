@@ -1,13 +1,14 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21DiagnostiekKOHSummary = () => {
+const Image21DiagnostiekKOHSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'koh', title: 'KOH-preparaat', icon: Microscope },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Diagnostiek – KOH-preparaat"
       description="Aantonen van schimmeldraden met kaliumhydroxide preparaat."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 21"

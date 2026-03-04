@@ -52,7 +52,7 @@ import {
 } from './summary/SummaryBlok4Week4'
 import TuberculoseBijMigrantenSummary from '../summaries/TuberculoseBijMigrantenSummary'
 import TuberculoseInleidingSummary from '../summaries/TuberculoseInleidingSummary'
-import * as LME5Summaries from '../summaries/lme5-schimmelinfecties'
+import Lme5SchimmelinfectiesSummary from '../summaries/lme5-schimmelinfecties/Lme5SchimmelinfectiesSummary'
 import * as LME6Summaries from '../summaries/lme6-voorbereiding-vow-milt'
 import * as LME1Summaries from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis'
 import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
@@ -198,7 +198,7 @@ const SummaryPage = () => {
             {
               name: "Casus 7",
               lmes: [
-                { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", type: "image-based", baseId: "lme5-schimmelinfecties", imageCount: 25 },
+                { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", available: true },
                 { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", type: "image-based", baseId: "lme6-voorbereiding-vow-milt", imageCount: 14 }
               ]
             },
@@ -758,42 +758,13 @@ const SummaryPage = () => {
     )
   }
 
-  // LME 5: Schimmelinfecties van de huid, nagels en haren (Week 5 Casus 7)
-  const lme5ComponentMap = {
-    'lme5-schimmelinfecties-image01': 'Image01IntroductieSummary',
-    'lme5-schimmelinfecties-image02': 'Image02MenuSummary',
-    'lme5-schimmelinfecties-image03': 'Image03InleidingSummary',
-    'lme5-schimmelinfecties-image04': 'Image04BenamingenSummary',
-    'lme5-schimmelinfecties-image05': 'Image05VoorkomenSummary',
-    'lme5-schimmelinfecties-image06': 'Image06KlachtenSymptomenSummary',
-    'lme5-schimmelinfecties-image07': 'Image07KenmerkenTineaCorporisSummary',
-    'lme5-schimmelinfecties-image08': 'Image08HerkenningTineaPedisSummary',
-    'lme5-schimmelinfecties-image09': 'Image09HerkenningEczeemSummary',
-    'lme5-schimmelinfecties-image10': 'Image10HerkenningTineaCorporisBlaasjesSummary',
-    'lme5-schimmelinfecties-image11': 'Image11HerkenningTineaCapitisSummary',
-    'lme5-schimmelinfecties-image12': 'Image12HerkenningOnychomycoseSummary',
-    'lme5-schimmelinfecties-image13': 'Image13HerkenningPsoriasisSummary',
-    'lme5-schimmelinfecties-image14': 'Image14HerkenningTineaCorporisRandSummary',
-    'lme5-schimmelinfecties-image15': 'Image15HerkenningImpetigoSummary',
-    'lme5-schimmelinfecties-image16': 'Image16HerkenningPsoriasisNagelsSummary',
-    'lme5-schimmelinfecties-image17': 'Image17HerkenningTineaBarbaeSummary',
-    'lme5-schimmelinfecties-image18': 'Image18HerkenningEczeemBenenSummary',
-    'lme5-schimmelinfecties-image19': 'Image19HerkenningTineaPedisMoccasinSummary',
-    'lme5-schimmelinfecties-image20': 'Image20HerkenningPityriasisVersicolorSummary',
-    'lme5-schimmelinfecties-image21': 'Image21DiagnostiekKOHSummary',
-    'lme5-schimmelinfecties-image22': 'Image22DiagnostiekWoodsLampSummary',
-    'lme5-schimmelinfecties-image23': 'Image23DiagnostiekKweekSummary',
-    'lme5-schimmelinfecties-image24': 'Image24BehandelingSummary',
-    'lme5-schimmelinfecties-image25': 'Image25EindeSummary',
-  }
-  const LME5Component = lme5ComponentMap[lme] && LME5Summaries[lme5ComponentMap[lme]]
-  if (LME5Component) {
+  if (lme === 'lme5-schimmelinfecties') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <LME5Component />
+          <Lme5SchimmelinfectiesSummary />
         </main>
         <Footer />
       </div>
@@ -1411,7 +1382,6 @@ const SummaryPage = () => {
           className="max-w-3xl mx-auto"
         >
           <h1 className="text-3xl font-bold text-slate-900 mb-2 text-center">Samenvattingen</h1>
-          <p className="text-slate-500 text-center mb-8">Kies een LME om de samenvatting te bekijken.</p>
 
           <div className="space-y-3">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">

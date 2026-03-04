@@ -1,13 +1,14 @@
 import { Droplets } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20HerkenningPityriasisVersicolorSummary = () => {
+const Image20HerkenningPityriasisVersicolorSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'pityriasis', title: 'Pityriasis versicolor', icon: Droplets },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Pityriasis versicolor"
       description="Oppervlakkige schimmelinfectie met hypopigmentatie, vaak op romp en bovenste extremiteiten."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 20"

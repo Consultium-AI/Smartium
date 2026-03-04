@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16HerkenningPsoriasisNagelsSummary = () => {
+const Image16HerkenningPsoriasisNagelsSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'psoriasis-nagels', title: 'Psoriasis nagels (geen schimmel)', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Psoriasis nagels (geen schimmel)"
       description="Nagelpsoriasis: putjes in de nagel, geen schimmelinfectie."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 16"

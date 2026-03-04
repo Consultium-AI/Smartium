@@ -1,13 +1,14 @@
 import { Lightbulb } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22DiagnostiekWoodsLampSummary = () => {
+const Image22DiagnostiekWoodsLampSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'woods', title: "Wood's lamp", icon: Lightbulb },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Diagnostiek – Wood's lamp"
       description="UVA-licht voor fluorescentie van schimmels en gisten."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 22"

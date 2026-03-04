@@ -1,13 +1,14 @@
 import { Circle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11HerkenningTineaCapitisSummary = () => {
+const Image11HerkenningTineaCapitisSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'capitis', title: 'Tinea capitis', icon: Circle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea capitis"
       description="Kenmerken van tinea capitis: pustels, kale plekken, afgebroken haren en korsten."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 11"

@@ -1,13 +1,14 @@
 import { CircleDot } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10HerkenningTineaCorporisBlaasjesSummary = () => {
+const Image10HerkenningTineaCorporisBlaasjesSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'blaasjes', title: 'Tinea corporis met blaasjes', icon: CircleDot },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Herkenning – Tinea corporis met forse immuunreactie"
       description="Tinea corporis kan gepaard gaan met blaasjes en bultjes door een forse immuunreactie."
       caseLabel="Week 5 Casus 7 LME 5: Afbeelding 10"
