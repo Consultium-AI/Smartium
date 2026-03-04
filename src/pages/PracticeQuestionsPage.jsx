@@ -8536,8 +8536,8 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 13: Een piloot met koorts",
             lmes: [
-{ id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "simple", questionsMap: casus13Lme1QuestionsMap },
-                { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "simple", questionsMap: casus13Lme2QuestionsMap }
+              { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "simple", questionsMap: casus13Lme1QuestionsMap },
+              { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "simple", questionsMap: casus13Lme2QuestionsMap }
             ]
           }
         ]
