@@ -56,7 +56,7 @@ import Lme5SchimmelinfectiesSummary from '../summaries/lme5-schimmelinfecties/Lm
 import Lme6VoorbereidingVowMiltSummary from '../summaries/lme6-voorbereiding-vow-milt/Lme6VoorbereidingVowMiltSummary'
 import Lme1ParasitaireVerwekkersSummary from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis/Lme1ParasitaireVerwekkersSummary'
 import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
-import * as LME3Summaries from '../summaries/lme3-welk-antibioticum-kies-ik'
+import Lme3WelkAntibioticumKiesIkSummary from '../summaries/lme3-welk-antibioticum-kies-ik/Lme3WelkAntibioticumKiesIkSummary'
 import * as Casus10LME1Summaries from '../summaries/casus10-lme1-dwang-en-drang-historisch-perspectief'
 import * as Casus10LME2Summaries from '../summaries/casus10-lme2-immunomodulatie'
 import * as Casus10LME3Summaries from '../summaries/casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas'
@@ -207,7 +207,7 @@ const SummaryPage = () => {
               lmes: [
                 { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", available: true },
                 { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", baseId: "lme2-virale-verwekkers-gastro-enteritis", imageCount: 24 },
-                { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", type: "image-based", baseId: "lme3-welk-antibioticum-kies-ik", imageCount: 14 }
+                { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", available: true }
               ]
             },
             {
@@ -838,31 +838,13 @@ const SummaryPage = () => {
     )
   }
 
-  // LME 3: Welk antibioticum kies ik (Week 5 Casus 9)
-  const lme3ComponentMap = {
-    'lme3-welk-antibioticum-kies-ik-image01': 'Image01IntroductieSummary',
-    'lme3-welk-antibioticum-kies-ik-image02': 'Image02MenuSummary',
-    'lme3-welk-antibioticum-kies-ik-image03': 'Image03IntroductieStofnamenSummary',
-    'lme3-welk-antibioticum-kies-ik-image04': 'Image04PrincipesFocusSummary',
-    'lme3-welk-antibioticum-kies-ik-image05': 'Image05EmpirieSummary',
-    'lme3-welk-antibioticum-kies-ik-image06': 'Image06ToedieningswegSummary',
-    'lme3-welk-antibioticum-kies-ik-image07': 'Image07GevoeligheidSummary',
-    'lme3-welk-antibioticum-kies-ik-image08': 'Image08EUCASTSummary',
-    'lme3-welk-antibioticum-kies-ik-image09': 'Image09FarmacokinetiekSummary',
-    'lme3-welk-antibioticum-kies-ik-image10': 'Image10FarmacodynamiekSummary',
-    'lme3-welk-antibioticum-kies-ik-image11': 'Image11ContraIndicatiesSummary',
-    'lme3-welk-antibioticum-kies-ik-image12': 'Image12KostenSummary',
-    'lme3-welk-antibioticum-kies-ik-image13': 'Image13RichtlijnenSummary',
-    'lme3-welk-antibioticum-kies-ik-image14': 'Image14CombinatiesSummary',
-  }
-  const LME3Component = lme3ComponentMap[lme] && LME3Summaries[lme3ComponentMap[lme]]
-  if (LME3Component) {
+  if (lme === 'lme3-welk-antibioticum-kies-ik') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <LME3Component />
+          <Lme3WelkAntibioticumKiesIkSummary />
         </main>
         <Footer />
       </div>

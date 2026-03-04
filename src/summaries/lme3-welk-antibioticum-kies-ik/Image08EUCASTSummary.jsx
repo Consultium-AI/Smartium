@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08EUCASTSummary = () => {
+const Image08EUCASTSummary = ({ standalone = true }) => {
   const toc = [{ id: 'eucast', title: 'EUCAST', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Gevoeligheid EUCAST"
       description="EUCAST richtlijnen voor gevoeligheidsinterpretatie."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 8"

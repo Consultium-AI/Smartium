@@ -1,10 +1,11 @@
 import { HeartPulse } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10FarmacodynamiekSummary = () => {
+const Image10FarmacodynamiekSummary = ({ standalone = true }) => {
   const toc = [{ id: 'pd', title: 'Farmacodynamiek', icon: HeartPulse }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Farmacodynamiek"
       description="Effect antibioticum op verwekker. Oraal vs IV."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 10"

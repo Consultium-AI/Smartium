@@ -1,10 +1,11 @@
 import { TestTube } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07GevoeligheidSummary = () => {
+const Image07GevoeligheidSummary = ({ standalone = true }) => {
   const toc = [{ id: 'gevoeligheid', title: 'Gevoeligheid MIC MBC', icon: TestTube }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Gevoeligheid – MIC en MBC"
       description="Microdilutie, MIC en MBC bepaling."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 7"

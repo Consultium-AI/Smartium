@@ -1,10 +1,11 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04PrincipesFocusSummary = () => {
+const Image04PrincipesFocusSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'focus', title: 'Focus van de infectie', icon: Target }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Principes – Focus van de infectie"
       description="Het bepalen van de infectiebron en doelorganen bij antibioticakeuze."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 4"

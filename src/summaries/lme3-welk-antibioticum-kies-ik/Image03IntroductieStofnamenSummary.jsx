@@ -1,10 +1,11 @@
 import { FileText } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03IntroductieStofnamenSummary = () => {
+const Image03IntroductieStofnamenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'stofnamen', title: 'Stofnamen', icon: FileText }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Stofnamen vs merknamen"
       description="Gebruik generieke namen voor antibiotica."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 3"

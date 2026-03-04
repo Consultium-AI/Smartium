@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14CombinatiesSummary = () => {
+const Image14CombinatiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'combinaties', title: 'Combinaties antibiotica', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Combinaties antibiotica"
       description="Redenen voor combinatietherapie."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 14"

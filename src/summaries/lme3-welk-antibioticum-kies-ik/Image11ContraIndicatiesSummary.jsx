@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11ContraIndicatiesSummary = () => {
+const Image11ContraIndicatiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ci', title: 'Relatieve contra-indicaties', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Relatieve contra-indicaties"
       description="Bijwerkingen en toxiciteit van antibiotica."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 11"

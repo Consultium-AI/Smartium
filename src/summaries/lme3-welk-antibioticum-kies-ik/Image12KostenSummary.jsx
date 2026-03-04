@@ -1,10 +1,11 @@
 import { DollarSign } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12KostenSummary = () => {
+const Image12KostenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'kosten', title: 'Kosten', icon: DollarSign }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kosten"
       description="Kostenoverwegingen bij antibioticakeuze."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 12"

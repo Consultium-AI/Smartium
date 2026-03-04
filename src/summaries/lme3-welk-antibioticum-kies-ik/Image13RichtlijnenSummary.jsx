@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13RichtlijnenSummary = () => {
+const Image13RichtlijnenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'richtlijnen', title: 'Richtlijnen', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Richtlijnen"
       description="SWAB en antibioticaboekje."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 13"

@@ -1,10 +1,11 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05EmpirieSummary = () => {
+const Image05EmpirieSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'empirie', title: 'Empirische therapie', icon: Microscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Principes – Empirische vs breed-spectrum therapie"
       description="Wanneer smal-spectrum en wanneer breed-spectrum antibiotica."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 5"

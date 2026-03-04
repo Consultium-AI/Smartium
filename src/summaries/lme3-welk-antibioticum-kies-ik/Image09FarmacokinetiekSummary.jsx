@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09FarmacokinetiekSummary = () => {
+const Image09FarmacokinetiekSummary = ({ standalone = true }) => {
   const toc = [{ id: 'pk', title: 'Farmacokinetiek', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Farmacokinetiek"
       description="Processen antibioticum in lichaam."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 9"

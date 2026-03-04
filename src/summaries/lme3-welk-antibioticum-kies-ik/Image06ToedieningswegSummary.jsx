@@ -1,13 +1,14 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06ToedieningswegSummary = () => {
+const Image06ToedieningswegSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'toediening', title: 'Toedieningsweg en dosering', icon: Pill },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Toedieningsweg en dosering"
       description="Twee voorwaarden voor genezing: farmacokinetiek en farmacodynamiek."
       caseLabel="Week 5 Casus 9 LME 3: Afbeelding 6"
