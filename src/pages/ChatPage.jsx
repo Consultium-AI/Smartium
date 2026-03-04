@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Send, Bot, User, Loader2, ChevronDown, Plus, MessageSquare, Menu } from 'lucide-react'
+import { Send, Bot, User, Loader2, ChevronDown, Trash2, MessageSquare, Menu } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
 
@@ -164,19 +164,10 @@ const ChatPage = () => {
     })
   }, [currentChatId])
 
-  const startNewChat = (initialUserMessage = null) => {
-    const id = generateId()
-    const msgs = initialUserMessage ? [INITIAL_MESSAGE, initialUserMessage] : [INITIAL_MESSAGE]
-    const newChat = { id, title: getChatTitle(msgs), messages: msgs, createdAt: Date.now(), updatedAt: Date.now() }
-    setChats(prev => {
-      const updated = [newChat, ...prev].slice(0, 50)
-      saveChats(updated)
-      return updated
-    })
-    setCurrentChatId(id)
+  const clearChat = () => {
+    if (!currentChatId) return
+    setMessages([INITIAL_MESSAGE])
     setInput('')
-    setSidebarOpen(true)
-    return id
   }
 
   const selectChat = (id) => {
@@ -261,11 +252,13 @@ const ChatPage = () => {
         >
           <div className="p-3 border-b border-slate-100 flex items-center justify-between min-h-[52px]">
             <button
-              onClick={startNewChat}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+              onClick={clearChat}
+              disabled={!currentChatId}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              title="Chat leegmaken"
             >
-              <Plus className="w-4 h-4" />
-              Nieuwe chat
+              <Trash2 className="w-4 h-4" />
+              Clear chat
             </button>
             <button
               onClick={() => setSidebarOpen(false)}
@@ -323,11 +316,13 @@ const ChatPage = () => {
             Stel een vraag over de leerstof – antwoorden met directe verwijzingen
           </p>
           <button
-            onClick={startNewChat}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+            onClick={clearChat}
+            disabled={!currentChatId}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            title="Chat leegmaken"
           >
-            <Plus className="w-4 h-4" />
-            Nieuwe chat
+            <Trash2 className="w-4 h-4" />
+            Clear chat
           </button>
         </motion.div>
 
