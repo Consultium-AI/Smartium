@@ -70,6 +70,65 @@ function seededRandom(seed) {
   }
 }
 
+const LONG_THRESHOLD = 50
+const SHORT_THRESHOLD = 35
+const LENGTH_EXTENSIONS = [
+  ' – past bij een andere aandoening',
+  ' – past bij een andere diagnose',
+  ' – een andere mogelijkheid in de differentiaal',
+  ' – wordt elders in de leerstof besproken',
+]
+
+function balanceOptionLengths(options, correctLetter, rng) {
+  const lengths = options.map(o => o.text.length)
+  const longCount = lengths.filter(l => l >= LONG_THRESHOLD).length
+  const shortCount = lengths.filter(l => l <= SHORT_THRESHOLD).length
+
+  // Geen probleem: 2+2, alles kort, of alles lang
+  if (longCount >= 2 || longCount === 0 || shortCount < 3) return options
+
+  // 1 lange + 3 korte: maak 2 korte foute antwoorden langer
+  const wrongOptions = options.filter(o => o.letter !== correctLetter)
+  const toExtendLetters = new Set(
+    wrongOptions
+      .filter(o => o.text.length <= SHORT_THRESHOLD)
+      .sort((a, b) => a.text.length - b.text.length)
+      .slice(0, 2)
+      .map(o => o.letter)
+  )
+
+  if (toExtendLetters.size === 0) return options
+
+  return options.map(o => {
+    if (!toExtendLetters.has(o.letter) || o.letter === correctLetter) return o
+    const ext = LENGTH_EXTENSIONS[Math.floor(rng() * LENGTH_EXTENSIONS.length)]
+    return { ...o, text: o.text + ext }
+  })
+}
+
+function processQuestion(q, rng) {
+  let { options, correctAnswer } = q
+  const correctOption = options.find(o => o.letter === correctAnswer)
+  if (!correctOption) return { ...q, id: q.id }
+
+  // 1. Shuffle options (Fisher-Yates)
+  const shuffled = [...options]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+
+  // 2. Reassign letters A,B,C,D to new order
+  const letters = ['A', 'B', 'C', 'D']
+  const reordered = shuffled.map((opt, i) => ({ ...opt, letter: letters[i] }))
+  const newCorrectLetter = reordered.find(o => o.text === correctOption.text)?.letter ?? letters[0]
+
+  // 3. Balance lengths: nooit 1 lange + 3 korte
+  const balanced = balanceOptionLengths(reordered, newCorrectLetter, rng)
+
+  return { ...q, options: balanced, correctAnswer: newCorrectLetter }
+}
+
 function buildExam(examNumber) {
   const rng = seededRandom(examNumber * 7919 + 42)
   const allQuestions = []
@@ -80,14 +139,14 @@ function buildExam(examNumber) {
     })
   })
 
-  // Shuffle with seeded random
+  // Shuffle questions with seeded random
   for (let i = allQuestions.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
     ;[allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]]
   }
 
-  // Pick first 60, assign sequential IDs
-  return allQuestions.slice(0, 60).map((q, i) => ({ ...q, id: i + 1 }))
+  // Pick first 60, process each (shuffle options + balance lengths), assign IDs
+  return allQuestions.slice(0, 60).map((q, i) => processQuestion({ ...q, id: i + 1 }, rng))
 }
 
 function calculateGrade(correct, total) {
