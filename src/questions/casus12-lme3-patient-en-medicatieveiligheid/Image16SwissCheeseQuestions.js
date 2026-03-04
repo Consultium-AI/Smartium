@@ -5,9 +5,9 @@ export const image16SwissCheeseQuestions = [
     question: "Waarvoor wordt het Swiss Cheese Model gebruikt?",
     options: [
       { letter: "A", text: "Weergeven van systematische barrières – incident wanneer gaten op één lijn komen" },
-      { letter: "B", text: "Analyseren van successen" },
-      { letter: "C", text: "Voorspellen van het weer" },
-      { letter: "D", text: "Medicatie bereiden" },
+      { letter: "B", text: "Analyseren van successen en wat goed gaat" },
+      { letter: "C", text: "Voorspellen van het weer en klimaat" },
+      { letter: "D", text: "Medicatie bereiden en doseren" },
     ],
     correctAnswer: "A",
     category: "Swiss Cheese",

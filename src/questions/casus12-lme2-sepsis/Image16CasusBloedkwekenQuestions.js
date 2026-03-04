@@ -5,9 +5,9 @@ export const image16CasusBloedkwekenQuestions = [
     question: "Wat is de juiste volgorde bij verdenking sepsis?",
     options: [
       { letter: "A", text: "Eerst bloedkweken afnemen, daarna zo snel mogelijk empirische antibiotica starten" },
-      { letter: "B", text: "Eerst antibiotica, dan bloedkweken" },
-      { letter: "C", text: "Alleen bloedkweken" },
-      { letter: "D", text: "Alleen antibiotica" },
+      { letter: "B", text: "Eerst antibiotica starten, daarna pas bloedkweken afnemen" },
+      { letter: "C", text: "Alleen bloedkweken afnemen en wachten op uitslag" },
+      { letter: "D", text: "Alleen empirische antibiotica zonder bloedkweken" },
     ],
     correctAnswer: "A",
     category: "Diagnostiek",

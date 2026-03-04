@@ -5,9 +5,9 @@ export const image10PreventieveMaatregelenLijstQuestions = [
     question: "Noem 2 andere belangrijke doelen van de te nemen maatregelen om patiënten te beschermen tegen postoperatieve wondinfecties (naast het verbeteren van de conditie van de patiënt).",
     options: [
       { letter: "A", text: "Het voorkomen van besmetting vanuit de patiënt en het voorkomen van besmetting vanuit de omgeving" },
-      { letter: "B", text: "Minder operaties uitvoeren en meer medicatie geven" },
-      { letter: "C", text: "Langere opnameduur en meer antibiotica" },
-      { letter: "D", text: "Geen isolatie en geen handhygiëne" },
+      { letter: "B", text: "Minder operaties uitvoeren en meer profylactische medicatie geven" },
+      { letter: "C", text: "Langere opnameduur en meer breedspectrum antibiotica" },
+      { letter: "D", text: "Geen isolatiemaatregelen en geen handhygiëne toepassen" },
     ],
     correctAnswer: "A",
     category: "Preventie",

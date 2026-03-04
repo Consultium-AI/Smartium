@@ -70,37 +70,27 @@ function seededRandom(seed) {
   }
 }
 
-const LONG_THRESHOLD = 50
-const SHORT_THRESHOLD = 35
+const OUTLIER_MARGIN = 12 // max verschil tussen langste en op-een-na langste
 const LENGTH_EXTENSIONS = [
-  ' – past bij een andere aandoening',
-  ' – past bij een andere diagnose',
-  ' – een andere mogelijkheid in de differentiaal',
-  ' – wordt elders in de leerstof besproken',
+  ' – past bij een andere aandoening of categorie',
+  ' – past bij een andere diagnose in de differentiaal',
+  ' – een andere mogelijkheid die elders in de leerstof wordt besproken',
+  ' – een afleider die bij een andere vraagstelling wel van toepassing is',
+  ' – past bij een andere definitie of classificatie in de literatuur',
 ]
 
 function balanceOptionLengths(options, correctLetter, rng) {
-  const lengths = options.map(o => o.text.length)
-  const longCount = lengths.filter(l => l >= LONG_THRESHOLD).length
-  const shortCount = lengths.filter(l => l <= SHORT_THRESHOLD).length
+  const maxLen = Math.max(...options.map(o => o.text.length))
+  const sorted = [...options].sort((a, b) => b.text.length - a.text.length)
+  const secondLen = sorted[1]?.text.length ?? 0
 
-  // Geen probleem: 2+2, alles kort, of alles lang
-  if (longCount >= 2 || longCount === 0 || shortCount < 3) return options
+  // Geen outlier: langste is niet > OUTLIER_MARGIN langer dan op-een-na langste
+  if (maxLen - secondLen <= OUTLIER_MARGIN) return options
 
-  // 1 lange + 3 korte: maak 2 korte foute antwoorden langer
-  const wrongOptions = options.filter(o => o.letter !== correctLetter)
-  const toExtendLetters = new Set(
-    wrongOptions
-      .filter(o => o.text.length <= SHORT_THRESHOLD)
-      .sort((a, b) => a.text.length - b.text.length)
-      .slice(0, 2)
-      .map(o => o.letter)
-  )
-
-  if (toExtendLetters.size === 0) return options
-
+  // Er is 1 duidelijke langste: verleng alle foute antwoorden tot minstens (maxLen - OUTLIER_MARGIN)
+  const targetMin = maxLen - OUTLIER_MARGIN
   return options.map(o => {
-    if (!toExtendLetters.has(o.letter) || o.letter === correctLetter) return o
+    if (o.letter === correctLetter || o.text.length >= targetMin) return o
     const ext = LENGTH_EXTENSIONS[Math.floor(rng() * LENGTH_EXTENSIONS.length)]
     return { ...o, text: o.text + ext }
   })

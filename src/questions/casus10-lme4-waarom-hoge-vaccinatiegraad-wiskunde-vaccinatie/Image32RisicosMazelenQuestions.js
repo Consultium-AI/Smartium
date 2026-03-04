@@ -5,9 +5,9 @@ export const image32RisicosMazelenQuestions = [
     question: "Welke complicaties kunnen optreden bij mazelen?",
     options: [
       { letter: "A", text: "Longontsteking, encefalitis, en in zeldzame gevallen subacute scleroserende panencefalitis (SSPE)" },
-      { letter: "B", text: "Alleen milde koorts" },
-      { letter: "C", text: "Geen ernstige complicaties" },
-      { letter: "D", text: "Alleen huiduitslag" },
+      { letter: "B", text: "Alleen milde koorts en voorbijgaande malaise zonder gevolgen" },
+      { letter: "C", text: "Geen ernstige complicaties; mazelen is een self-limiting ziekte" },
+      { letter: "D", text: "Alleen huiduitslag en conjunctivitis zonder orgaanschade" },
     ],
     correctAnswer: "A",
     category: "Risico's mazelen",

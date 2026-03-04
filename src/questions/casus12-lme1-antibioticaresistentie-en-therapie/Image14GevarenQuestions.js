@@ -17,9 +17,9 @@ export const image14GevarenQuestions = [
     question: "Zijn resistente micro-organismen per definitie gevaarlijker dan gevoelige?",
     options: [
       { letter: "A", text: "Nee, maar ze leiden wel tot meer problemen (inferieure behandeling, meer bijwerkingen, hogere kosten)" },
-      { letter: "B", text: "Ja, altijd" },
-      { letter: "C", text: "Nee, ze zijn even gevaarlijk" },
-      { letter: "D", text: "Alleen in het ziekenhuis" },
+      { letter: "B", text: "Ja, resistente stammen zijn per definitie virulenter" },
+      { letter: "C", text: "Nee, ze zijn even gevaarlijk als gevoelige stammen" },
+      { letter: "D", text: "Alleen in het ziekenhuis zijn ze gevaarlijker" },
     ],
     correctAnswer: "A",
     category: "Gevaren",

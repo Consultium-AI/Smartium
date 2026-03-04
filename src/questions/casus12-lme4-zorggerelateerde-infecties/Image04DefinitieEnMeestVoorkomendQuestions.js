@@ -4,10 +4,10 @@ export const image04DefinitieEnMeestVoorkomendQuestions = [
     id: 1,
     question: "Welke van de volgende zijn de 4 meest voorkomende zorggerelateerde infecties?",
     options: [
-      { letter: "A", text: "Endocarditis, sepsis, osteomyelitis, cellulitis" },
+      { letter: "A", text: "Endocarditis, sepsis, osteomyelitis en cellulitis als meest voorkomend" },
       { letter: "B", text: "Urineweginfectie, onderste luchtweginfectie, lijninfectie, postoperatieve wondinfectie (POWI)" },
-      { letter: "C", text: "Meningitis, encefalitis, hepatitis, HIV" },
-      { letter: "D", text: "Malaria, tuberculose, AIDS, griep" },
+      { letter: "C", text: "Meningitis, encefalitis, hepatitis en HIV-infectie" },
+      { letter: "D", text: "Malaria, tuberculose, AIDS en griep als ziekenhuisinfecties" },
     ],
     correctAnswer: "B",
     category: "Zorggerelateerde infecties",

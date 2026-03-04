@@ -5,9 +5,9 @@ export const image18TerminologieIntroQuestions = [
     question: "Welke termen worden gebruikt in het kader van zorggerelateerde infecties?",
     options: [
       { letter: "A", text: "Endogene vs. exogene bronnen, primaire vs. secundaire infecties, community acquired vs. hospital acquired" },
-      { letter: "B", text: "Alleen virale vs. bacteriële infecties" },
-      { letter: "C", text: "Acuut vs. chronisch" },
-      { letter: "D", text: "Mild vs. ernstig" },
+      { letter: "B", text: "Alleen virale vs. bacteriële infecties als indeling van zorggerelateerde infecties" },
+      { letter: "C", text: "Acuut vs. chronisch als enige onderscheidende classificatie" },
+      { letter: "D", text: "Mild vs. ernstig op basis van ziekteduur en symptoomlast" },
     ],
     correctAnswer: "A",
     category: "Terminologie",

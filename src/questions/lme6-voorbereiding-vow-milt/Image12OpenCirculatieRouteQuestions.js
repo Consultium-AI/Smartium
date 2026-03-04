@@ -5,9 +5,9 @@ export const image12OpenCirculatieRouteQuestions = [
     question: "Wat gebeurt er nadat het bloed in het parenchym van de rode pulpa terecht is gekomen?",
     options: [
       { letter: "A", text: "Het wordt gefilterd, waarna het terugstroomt de veneuze sinussen in" },
-      { letter: "B", text: "Het stroomt direct naar de miltvene" },
-      { letter: "C", text: "Het wordt opgeslagen" },
-      { letter: "D", text: "Het verdwijnt" },
+      { letter: "B", text: "Het stroomt direct naar de miltvene zonder filtratie" },
+      { letter: "C", text: "Het wordt opgeslagen in het parenchym" },
+      { letter: "D", text: "Het verdwijnt in de extracellulaire ruimte" },
     ],
     correctAnswer: "A",
     category: "Open circulatie",

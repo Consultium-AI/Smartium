@@ -5,9 +5,9 @@ export const image05VoorkomenQuestions = [
     question: "Komen dermatomycosen vaker voor bij kinderen dan bij volwassenen?",
     options: [
       { letter: "A", text: "Nee, alleen tinea capitis wordt vaker gezien onder 11 jaar" },
-      { letter: "B", text: "Ja, bij alle dermatomycosen" },
-      { letter: "C", text: "Nee, ze komen even vaak voor" },
-      { letter: "D", text: "Ja, vooral onychomycose" },
+      { letter: "B", text: "Ja, bij alle dermatomycosen komen ze vaker voor bij kinderen" },
+      { letter: "C", text: "Nee, ze komen even vaak voor bij kinderen en volwassenen" },
+      { letter: "D", text: "Ja, vooral onychomycose wordt vaker bij kinderen gezien" },
     ],
     correctAnswer: "A",
     category: "Prevalentie",

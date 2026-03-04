@@ -5,9 +5,9 @@ export const image01IntroductieQuestions = [
     question: "Wat is het leerdoel van deze module over zorggerelateerde infecties?",
     options: [
       { letter: "A", text: "Te beredeneren welke onbedoelde schadelijke effecten kunnen optreden als gevolg van patiëntenzorg op individueel niveau" },
-      { letter: "B", text: "Antibiotica kunnen produceren" },
-      { letter: "C", text: "Vaccins kunnen toedienen" },
-      { letter: "D", text: "Gram-kleuring kunnen uitvoeren" },
+      { letter: "B", text: "Antibiotica kunnen produceren en resistentiepatronen kunnen voorspellen" },
+      { letter: "C", text: "Vaccins kunnen toedienen en het RVP-schema kunnen uitvoeren" },
+      { letter: "D", text: "Gram-kleuring kunnen uitvoeren en bacteriën kunnen identificeren" },
     ],
     correctAnswer: "A",
     category: "Leerdoelen",

@@ -17,9 +17,9 @@ export const image13GeslotenCirculatieQuestions = [
     question: "Waarom stroomt het bloed sneller via de gesloten circulatie?",
     options: [
       { letter: "A", text: "Omdat het bloed binnen de vaten blijft en direct van arteriole naar veneuze sinus stroomt" },
-      { letter: "B", text: "Omdat er minder bloed doorheen stroomt" },
-      { letter: "C", text: "Omdat de vaten wijder zijn" },
-      { letter: "D", text: "Omdat er geen filtratie plaatsvindt" },
+      { letter: "B", text: "Omdat er minder bloed doorheen stroomt dan via de open circulatie" },
+      { letter: "C", text: "Omdat de vaten wijder zijn en de weerstand lager is" },
+      { letter: "D", text: "Omdat er geen filtratie plaatsvindt in het parenchym" },
     ],
     correctAnswer: "A",
     category: "Gesloten circulatie",

@@ -5,9 +5,9 @@ export const image20HerkenningPityriasisVersicolorQuestions = [
     question: "Hoe presenteert pityriasis versicolor zich typisch?",
     options: [
       { letter: "A", text: "Hypopigmentatie (lichtere plekken) op romp en bovenste extremiteiten met fijne schilfering" },
-      { letter: "B", text: "Annulaire plek met randactiviteit" },
-      { letter: "C", text: "Gelige korsten" },
-      { letter: "D", text: "Putjes in de nagel" },
+      { letter: "B", text: "Annulaire plek met randactiviteit en centrale opheldering, typisch voor dermatofyten" },
+      { letter: "C", text: "Gelige korsten en honingraat-achtige crustae, passend bij impetigo" },
+      { letter: "D", text: "Putjes in de nagel en onycholyse, kenmerkend voor onychomycose" },
     ],
     correctAnswer: "A",
     category: "Kliniek",

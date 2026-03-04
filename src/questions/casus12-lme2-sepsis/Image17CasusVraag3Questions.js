@@ -17,9 +17,9 @@ export const image17CasusVraag3Questions = [
     question: "Septische shock is gedefinieerd als:",
     options: [
       { letter: "A", text: "Sepsis + acuut circulatoir falen met persisterende hypotensie ondanks vochtresuscitatie" },
-      { letter: "B", text: "Alleen bacteriemie" },
-      { letter: "C", text: "Alleen koorts" },
-      { letter: "D", text: "Alleen tachycardie" },
+      { letter: "B", text: "Alleen bacteriemie zonder systemische ontstekingsreactie" },
+      { letter: "C", text: "Alleen koorts en verhoogde ontstekingsparameters" },
+      { letter: "D", text: "Alleen tachycardie en perifere vasodilatatie" },
     ],
     correctAnswer: "A",
     category: "Septische shock",

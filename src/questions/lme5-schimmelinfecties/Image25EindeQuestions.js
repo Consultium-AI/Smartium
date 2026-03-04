@@ -5,9 +5,9 @@ export const image25EindeQuestions = [
     question: "Wat moet je na deze module kennen?",
     options: [
       { letter: "A", text: "Benamingen, symptomen en klinische presentatie, diagnostiek en globaal beleid" },
-      { letter: "B", text: "Alleen chirurgische behandeling" },
-      { letter: "C", text: "Alleen laboratoriumtechnieken" },
-      { letter: "D", text: "Alleen epidemiologie" },
+      { letter: "B", text: "Alleen chirurgische behandeling en excisie-indicaties" },
+      { letter: "C", text: "Alleen laboratoriumtechnieken en kweekmethoden" },
+      { letter: "D", text: "Alleen epidemiologie en prevalentiecijfers" },
     ],
     correctAnswer: "A",
     category: "Leerpunten",

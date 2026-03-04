@@ -17,9 +17,9 @@ export const image02MenuQuestions = [
     question: "Waarop gaat deze voorbereidende e-module in?",
     options: [
       { letter: "A", text: "Bloedcirculatie en globale opbouw van de milt" },
-      { letter: "B", text: "Alleen chirurgische anatomie" },
-      { letter: "C", text: "Alleen embryologie" },
-      { letter: "D", text: "Alleen klinische presentatie" },
+      { letter: "B", text: "Alleen chirurgische anatomie en splenectomie" },
+      { letter: "C", text: "Alleen embryologie en ontwikkeling" },
+      { letter: "D", text: "Alleen klinische presentatie bij splenomegalie" },
     ],
     correctAnswer: "A",
     category: "Inhoud",
