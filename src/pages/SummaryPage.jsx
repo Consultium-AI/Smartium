@@ -1111,7 +1111,7 @@ const SummaryPage = () => {
     'casus12-lme3-patient-en-medicatieveiligheid-image12': 'Image12PrismaBijnaFoutSummary',
     'casus12-lme3-patient-en-medicatieveiligheid-image13': 'Image13PrismaCategoriserenSummary',
     'casus12-lme3-patient-en-medicatieveiligheid-image14': 'Image14OplossingenOrganisatiefalenSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image15': 'Image15Prisummary',
+    'casus12-lme3-patient-en-medicatieveiligheid-image15': 'Image15PRISummary',
     'casus12-lme3-patient-en-medicatieveiligheid-image16': 'Image16SwissCheeseSummary',
     'casus12-lme3-patient-en-medicatieveiligheid-image17': 'Image17SecondVictimIntroSummary',
     'casus12-lme3-patient-en-medicatieveiligheid-image18': 'Image18PriDefinitieSummary',
