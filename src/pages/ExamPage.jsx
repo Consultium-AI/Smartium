@@ -70,30 +70,29 @@ function seededRandom(seed) {
   }
 }
 
-const OUTLIER_MARGIN = 18 // max verschil tussen langste en op-een-na langste
-const LENGTH_EXTENSIONS = [
-  ' – past bij een andere aandoening of categorie',
-  ' – past bij een andere diagnose in de differentiaal',
-  ' – een andere mogelijkheid die elders in de leerstof wordt besproken',
-  ' – een afleider die bij een andere vraagstelling wel van toepassing is',
-  ' – past bij een andere definitie of classificatie in de literatuur',
+// Vragen over 'welk hoofdstuk' / module-structuur zijn geen stofvragen - filter ze uit
+const HOOFDSTUK_PATTERNS = [
+  /welk hoofdstuk\s+(hoort|bespreekt|past)/i,
+  /uit hoeveel hoofdstukken/i,
+  /welke vraag staat centraal in hoofdstuk/i,
+  /bij welk drieluik hoort/i,
+  /welk onderwerp valt onder hoofdstuk/i,
+  /wat valt onder hoofdstuk/i,
 ]
+function isHoofdstukQuestion(q) {
+  if (HOOFDSTUK_PATTERNS.some(p => p.test(q.question))) return true
+  if (['Structuur', 'Module-context'].includes(q.category)) return true
+  if (q.category === 'Inhoud' && /hoofdstuk|structuur van de module/i.test(q.question)) return true
+  return false
+}
 
-function balanceOptionLengths(options, correctLetter, rng) {
-  const maxLen = Math.max(...options.map(o => o.text.length))
-  const sorted = [...options].sort((a, b) => b.text.length - a.text.length)
-  const secondLen = sorted[1]?.text.length ?? 0
-
-  // Geen outlier: langste is niet > OUTLIER_MARGIN langer dan op-een-na langste
-  if (maxLen - secondLen <= OUTLIER_MARGIN) return options
-
-  // Er is 1 duidelijke langste: verleng alle foute antwoorden tot minstens (maxLen - OUTLIER_MARGIN)
-  const targetMin = maxLen - OUTLIER_MARGIN
-  return options.map(o => {
-    if (o.letter === correctLetter || o.text.length >= targetMin) return o
-    const ext = LENGTH_EXTENSIONS[Math.floor(rng() * LENGTH_EXTENSIONS.length)]
-    return { ...o, text: o.text + ext }
-  })
+// Strip hints uit antwoordopties (geen " – past bij andere..." etc.)
+const HINT_PATTERN = /\s*[–\-]\s*(dit is besproken|past bij een andere|een andere mogelijkheid|een afleider die|elders in de leerstof).*$/i
+function stripOptionHints(options) {
+  return options.map(o => ({
+    ...o,
+    text: o.text.replace(HINT_PATTERN, '').trim()
+  }))
 }
 
 function processQuestion(q, rng) {
@@ -101,22 +100,23 @@ function processQuestion(q, rng) {
   const correctOption = options.find(o => o.letter === correctAnswer)
   if (!correctOption) return { ...q, id: q.id }
 
-  // 1. Shuffle options (Fisher-Yates)
-  const shuffled = [...options]
+  // 1. Strip hints uit opties
+  const cleaned = stripOptionHints(options)
+
+  // 2. Shuffle options (Fisher-Yates)
+  const shuffled = [...cleaned]
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
     ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
 
-  // 2. Reassign letters A,B,C,D to new order
+  // 3. Reassign letters A,B,C,D to new order
   const letters = ['A', 'B', 'C', 'D']
   const reordered = shuffled.map((opt, i) => ({ ...opt, letter: letters[i] }))
-  const newCorrectLetter = reordered.find(o => o.text === correctOption.text)?.letter ?? letters[0]
+  const correctCleanText = correctOption.text.replace(HINT_PATTERN, '').trim()
+  const newCorrectLetter = reordered.find(o => o.text === correctCleanText)?.letter ?? letters[0]
 
-  // 3. Balance lengths: nooit 1 lange + 3 korte
-  const balanced = balanceOptionLengths(reordered, newCorrectLetter, rng)
-
-  return { ...q, options: balanced, correctAnswer: newCorrectLetter }
+  return { ...q, options: reordered, correctAnswer: newCorrectLetter }
 }
 
 function buildExam(examNumber) {
@@ -125,7 +125,9 @@ function buildExam(examNumber) {
 
   Object.entries(imagePools).forEach(([category, questions]) => {
     questions.forEach(q => {
-      allQuestions.push({ ...q, category: q.category || category })
+      if (!isHoofdstukQuestion(q)) {
+        allQuestions.push({ ...q, category: q.category || category })
+      }
     })
   })
 
@@ -135,7 +137,7 @@ function buildExam(examNumber) {
     ;[allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]]
   }
 
-  // Pick first 60, process each (shuffle options + balance lengths), assign IDs
+  // Pick first 60, process each (shuffle options, strip hints), assign IDs
   return allQuestions.slice(0, 60).map((q, i) => processQuestion({ ...q, id: i + 1 }, rng))
 }
 
