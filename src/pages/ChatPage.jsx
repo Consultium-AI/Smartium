@@ -1,9 +1,42 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Send, Bot, User, Loader2, ChevronDown } from 'lucide-react'
+import { Send, Bot, User, Loader2, ChevronDown, Plus, MessageSquare, Menu } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
+
+const STORAGE_KEY = 'smartium-chat-chats'
+const INITIAL_MESSAGE = { role: 'assistant', content: 'Hoi! Ik ben Smartium AI. Stel me een vraag over de leerstof en ik geef je een kort antwoord met verwijzing naar de relevante samenvatting.' }
+
+function loadChats() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
+function saveChats(chats) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(chats))
+  } catch (e) {
+    console.warn('Chat opslaan mislukt:', e)
+  }
+}
+
+function generateId() {
+  return 'chat-' + Date.now() + '-' + Math.random().toString(36).slice(2, 9)
+}
+
+function getChatTitle(messages) {
+  const firstUser = messages.find(m => m.role === 'user')
+  if (!firstUser) return 'Nieuwe chat'
+  const text = firstUser.content.slice(0, 50)
+  return text.length < firstUser.content.length ? text + '…' : text
+}
 
 const LME_LIST = lmeIndex.map(l => `- ${l.name} (id: ${l.id}) [${l.blok}, ${l.week}, ${l.casus}] – Onderwerpen: ${l.topics}`).join('\n')
 
@@ -92,14 +125,66 @@ const MessageBubble = ({ message }) => {
 }
 
 const ChatPage = () => {
-  const [messages, setMessages] = useState([
-    { role: 'assistant', content: 'Hoi! Ik ben Smartium AI. Stel me een vraag over de leerstof en ik geef je een kort antwoord met verwijzing naar de relevante samenvatting.' }
-  ])
+  const [chats, setChats] = useState(() => loadChats())
+  const [currentChatId, setCurrentChatId] = useState(null)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [answerMode, setAnswerMode] = useState('short')
+  const [sidebarOpen, setSidebarOpen] = useState(true)
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
+
+  const currentChat = chats.find(c => c.id === currentChatId)
+  const messages = currentChat?.messages ?? [INITIAL_MESSAGE]
+
+  const persistChat = useCallback((chatId, msgs) => {
+    if (!chatId) return
+    const title = getChatTitle(msgs)
+    setChats(prev => {
+      const updated = prev.some(c => c.id === chatId)
+        ? prev.map(c => c.id === chatId ? { ...c, messages: msgs, title, updatedAt: Date.now() } : c)
+        : [...prev, { id: chatId, title, messages: msgs, createdAt: Date.now(), updatedAt: Date.now() }]
+      saveChats(updated)
+      return updated
+    })
+  }, [])
+
+  useEffect(() => {
+    if (chats.length === 0) {
+      const id = generateId()
+      setChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
+      setCurrentChatId(id)
+      saveChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
+    } else if (!currentChatId) {
+      const sorted = [...chats].sort((a, b) => (b.updatedAt ?? b.createdAt) - (a.updatedAt ?? a.createdAt))
+      setCurrentChatId(sorted[0].id)
+    }
+  }, [chats.length, currentChatId])
+
+  const setMessages = useCallback((updater) => {
+    const next = typeof updater === 'function' ? updater(messages) : updater
+    if (currentChatId) persistChat(currentChatId, next)
+  }, [currentChatId, messages, persistChat])
+
+  const startNewChat = (initialUserMessage = null) => {
+    const id = generateId()
+    const msgs = initialUserMessage ? [INITIAL_MESSAGE, initialUserMessage] : [INITIAL_MESSAGE]
+    const newChat = { id, title: getChatTitle(msgs), messages: msgs, createdAt: Date.now(), updatedAt: Date.now() }
+    setChats(prev => {
+      const updated = [newChat, ...prev].slice(0, 50)
+      saveChats(updated)
+      return updated
+    })
+    setCurrentChatId(id)
+    setInput('')
+    setSidebarOpen(true)
+    return id
+  }
+
+  const selectChat = (id) => {
+    setCurrentChatId(id)
+    setSidebarOpen(false)
+  }
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -110,8 +195,12 @@ const ChatPage = () => {
     if (!trimmed || loading) return
 
     const userMessage = { role: 'user', content: trimmed }
-    const newMessages = [...messages, userMessage]
-    setMessages(newMessages)
+    let chatId = currentChatId
+    const isNewChat = !chatId
+    if (isNewChat) chatId = startNewChat(userMessage)
+
+    const newMessages = isNewChat ? [INITIAL_MESSAGE, userMessage] : [...messages, userMessage]
+    if (!isNewChat) setMessages(newMessages)
     setInput('')
     setLoading(true)
 
@@ -163,7 +252,67 @@ const ChatPage = () => {
       <Navbar />
       <div className="h-20" />
 
-      <main className="flex-1 flex flex-col max-w-3xl mx-auto w-full px-4">
+      <div className="flex-1 flex min-h-0">
+        {/* Sidebar - chat history */}
+        <aside className={`shrink-0 flex flex-col border-r border-slate-200 bg-white transition-all duration-200 overflow-hidden
+          ${sidebarOpen
+            ? 'w-64 md:w-64 fixed md:relative inset-y-0 left-0 z-20 md:z-auto pt-20 md:pt-0 shadow-xl md:shadow-none'
+            : 'w-0 md:w-0'
+          }`}
+          style={sidebarOpen ? { top: 0, bottom: 0 } : {}}
+        >
+          <div className="p-3 border-b border-slate-100 flex items-center justify-between min-h-[52px]">
+            <button
+              onClick={startNewChat}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+            >
+              <Plus className="w-4 h-4" />
+              Nieuwe chat
+            </button>
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="p-2 rounded-lg hover:bg-slate-100 text-slate-500"
+              title="Sidebar sluiten"
+            >
+              <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto py-2">
+            {chats.map((chat) => (
+              <button
+                key={chat.id}
+                onClick={() => selectChat(chat.id)}
+                className={`w-full text-left px-4 py-2.5 text-sm truncate transition-colors ${
+                  chat.id === currentChatId
+                    ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-500'
+                    : 'text-slate-600 hover:bg-slate-50'
+                }`}
+              >
+                <MessageSquare className="w-4 h-4 inline-block mr-2 text-slate-400" />
+                {chat.title}
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        {sidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black/20 z-10 md:hidden"
+            onClick={() => setSidebarOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+        {!sidebarOpen && (
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="fixed left-4 bottom-24 z-10 p-2 rounded-xl bg-white border border-slate-200 shadow-md hover:bg-slate-50"
+            title="Chatgeschiedenis"
+          >
+            <Menu className="w-5 h-5 text-slate-600" />
+          </button>
+        )}
+
+      <main className="flex-1 flex flex-col max-w-3xl mx-auto w-full px-4 min-w-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -239,6 +388,7 @@ const ChatPage = () => {
           </div>
         </div>
       </main>
+      </div>
     </div>
   )
 }
