@@ -85,7 +85,7 @@ const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practic
           <div className="px-6 py-8 md:px-8 md:py-10 border-b border-slate-100">
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">
-                Blok 3 · Week 1
+                Blok 4
               </span>
               <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium">
                 {caseLabel}

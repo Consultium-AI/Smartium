@@ -1,35 +1,70 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { FileText, Home, ArrowLeft } from 'lucide-react'
+import { Link, useSearchParams } from 'react-router-dom'
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
+import Navbar from '../../components/Navbar'
+
+const SUMMARY_ORDER = [
+  'embryogenese',
+  'beeldvorming',
+  'extraembryonaal',
+  'extremiteiten',
+  'aangeboren-immuniteit-herkenning',
+  'introductie-bacteriologie',
+  'introductie-immunologie',
+  'introductie-mycologie',
+  'introductie-parasitologie',
+  'introductie-virologie',
+  'voorbereiding-vow-microbiologie',
+  'aangeboren-immuniteit-respons',
+  'antibiotica-leerlijn',
+  'introductie-antimicrobiele-therapie',
+  'urineweginfecties',
+  'infectiepreventie',
+  'introductie-luchtweginfecties',
+  'microscopische-anatomie-luchtwegen',
+  'pathofysiologie-virale-luchtweginfecties',
+  'vervolg-introductie-virologie-2',
+  'virale-diagnostiek',
+  'cytokinen',
+  'infectieuze-oorzaken-koorts',
+  'niet-infectieuze-oorzaken-koorts',
+  'ontstekingsmediatoren',
+  'wat-is-koorts',
+  'specifieke-verwekkers-lagere-luchtweginfecties',
+  'therapie-lagere-luchtweginfecties',
+  'homing-migratie-recirculatie',
+  'infectieuze-lymfadenopathie',
+  'introductie-verworven-immuniteit',
+  'secundaire-lymfoide-organen',
+  'antivirale-therapie',
+  'de-grote-drie-malaria',
+  'duurzame-hiv-zorg',
+  'immunologische-consequenties-hiv',
+  'tuberculose-bij-migranten',
+  'tuberculose-inleiding',
+  ...Array.from({ length: 25 }, (_, i) => `lme5-schimmelinfecties-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 14 }, (_, i) => `lme6-voorbereiding-vow-milt-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 11 }, (_, i) => `lme1-parasitaire-verwekkers-gastro-enteritis-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 24 }, (_, i) => `lme2-virale-verwekkers-gastro-enteritis-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 14 }, (_, i) => `lme3-welk-antibioticum-kies-ik-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 25 }, (_, i) => `casus10-lme1-dwang-en-drang-historisch-perspectief-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 27 }, (_, i) => `casus10-lme2-immunomodulatie-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 35 }, (_, i) => `casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 38 }, (_, i) => `casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 21 }, (_, i) => `casus11-lme1-leefstijl-en-immuunsysteem-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 15 }, (_, i) => `casus12-lme1-antibioticaresistentie-en-therapie-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 23 }, (_, i) => `casus12-lme2-sepsis-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 35 }, (_, i) => `casus12-lme3-patient-en-medicatieveiligheid-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 20 }, (_, i) => `casus12-lme4-zorggerelateerde-infecties-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 24 }, (_, i) => `casus13-lme1-antibiotica-introductie-image${String(i + 1).padStart(2, '0')}`),
+  ...Array.from({ length: 18 }, (_, i) => `casus13-lme2-antibiotica-resistentie-image${String(i + 1).padStart(2, '0')}`),
+]
 
 export const Header = () => (
-  <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
-    <div className="container-custom">
-      <div className="flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src={`${import.meta.env.BASE_URL}smartium-logo.png`}
-            alt="Smartium"
-            className="w-10 h-10 object-contain"
-          />
-          <span className="text-xl font-bold gradient-text">Smartium</span>
-        </Link>
-        
-        <div className="flex items-center gap-2 px-4 py-2 bg-slate-100 text-slate-700 rounded-full">
-          <FileText className="w-4 h-4" />
-          <span className="font-medium text-sm">Samenvatting</span>
-        </div>
-
-        <Link
-          to="/"
-          className="flex items-center gap-2 text-slate-600 hover:text-primary-600 transition-colors"
-        >
-          <Home className="w-4 h-4" />
-          <span className="hidden sm:inline font-medium">Home</span>
-        </Link>
-      </div>
-    </div>
-  </header>
+  <>
+    <Navbar />
+    <div className="h-20" />
+  </>
 )
 
 export const BackButton = () => (
@@ -48,8 +83,41 @@ export const BackButton = () => (
   </motion.div>
 )
 
-export const Footer = () => (
-  <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-200 mt-12">
-    <p>© {new Date().getFullYear()} Smartium</p>
-  </footer>
-)
+export const Footer = () => {
+  const [searchParams] = useSearchParams()
+  const lme = searchParams.get('lme')
+  const currentIndex = lme ? SUMMARY_ORDER.indexOf(lme) : -1
+  const prevLme = currentIndex > 0 ? SUMMARY_ORDER[currentIndex - 1] : null
+  const nextLme = currentIndex >= 0 && currentIndex < SUMMARY_ORDER.length - 1 ? SUMMARY_ORDER[currentIndex + 1] : null
+
+  return (
+    <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-200 mt-12">
+      {lme && lme !== 'index' && (prevLme || nextLme) && (
+        <div className="container-custom mb-6">
+          <div className="max-w-3xl mx-auto flex items-center justify-between gap-3">
+            {prevLme ? (
+              <Link
+                to={`/summary?lme=${prevLme}`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-slate-700 hover:text-primary-600 hover:border-primary-300 transition-colors"
+              >
+                <ChevronLeft className="w-4 h-4" />
+                Vorige samenvatting
+              </Link>
+            ) : <span />}
+
+            {nextLme ? (
+              <Link
+                to={`/summary?lme=${nextLme}`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 text-slate-700 hover:text-primary-600 hover:border-primary-300 transition-colors"
+              >
+                Volgende samenvatting
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+            ) : <span />}
+          </div>
+        </div>
+      )}
+      <p>© {new Date().getFullYear()} Smartium</p>
+    </footer>
+  )
+}

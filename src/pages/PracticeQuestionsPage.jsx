@@ -2,11 +2,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { 
-  ClipboardCheck, Home, ChevronLeft, ChevronRight, ChevronDown,
+  ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen, Shuffle,
   CheckCircle, XCircle, ArrowLeft,
   Calendar, Stethoscope, GraduationCap, Shield
 } from 'lucide-react'
+import Navbar from '../components/Navbar'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -8545,10 +8546,25 @@ const practiceQuestionsCourseStructure = {
   }
 }
 
+const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
+  .flatMap(blok => blok.weeks)
+  .flatMap(week => week.cases)
+  .flatMap(casus => casus.lmes)
+  .flatMap(lmeItem => (
+    lmeItem.type === 'simple'
+      ? [lmeItem.id]
+      : getImagesFromMap(lmeItem.questionsMap).map(img => img.id)
+  ))
+
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
   const [expandedBlok, setExpandedBlok] = useState(null)
+  const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
+  const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
+  const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
+    ? PRACTICE_QUESTION_ORDER[currentPracticeIndex + 1]
+    : null
 
   const getLmeQuestionCount = (lmeItem) => {
     if (lmeItem.type === 'image-based' && lmeItem.questionsMap) return getQuestionCount(lmeItem.questionsMap)
@@ -8921,34 +8937,8 @@ const PracticeQuestionsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-navy-100">
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src={`${import.meta.env.BASE_URL}smartium-logo.png`}
-                alt="Smartium"
-                className="w-10 h-10 object-contain"
-              />
-              <span className="text-xl font-bold gradient-text">Smartium</span>
-            </Link>
-            
-            <div className="flex items-center gap-2 px-4 py-2 bg-accent-100 text-accent-700 rounded-full">
-              <ClipboardCheck className="w-4 h-4" />
-              <span className="font-medium text-sm">Oefenvragen</span>
-            </div>
-
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-navy-600 hover:text-primary-600 transition-colors"
-            >
-              <Home className="w-4 h-4" />
-              <span className="hidden sm:inline font-medium">Terug naar Home</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
+      <div className="h-20" />
 
       <main className="container-custom py-8 md:py-12">
         {/* Back to Summary / Overzicht */}
@@ -9402,6 +9392,36 @@ const PracticeQuestionsPage = () => {
                   Naar Samenvattingen
                 </Link>
               </div>
+            </div>
+          </motion.div>
+        )}
+
+        {/* Previous / Next Practice Set */}
+        {lmeParam && lmeParam !== 'alle-random' && (prevPracticeLme || nextPracticeLme) && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="max-w-3xl mx-auto mt-8"
+          >
+            <div className="flex items-center justify-between gap-3">
+              {prevPracticeLme ? (
+                <Link
+                  to={`/oefenvragen?lme=${prevPracticeLme}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-navy-200 text-navy-700 hover:text-primary-600 hover:border-primary-300 transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Vorige oefenvragen
+                </Link>
+              ) : <span />}
+              {nextPracticeLme ? (
+                <Link
+                  to={`/oefenvragen?lme=${nextPracticeLme}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-navy-200 text-navy-700 hover:text-primary-600 hover:border-primary-300 transition-colors"
+                >
+                  Volgende oefenvragen
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              ) : <span />}
             </div>
           </motion.div>
         )}
