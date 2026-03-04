@@ -1151,29 +1151,29 @@ const SummaryPage = () => {
                                     </div>
                                   </div>
                                 ) : (
-                                  <Link
-                                    key={lmeIndex}
-                                    to={`/summary?lme=${lmeItem.id}`}
-                                    className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="p-1.5 rounded-lg bg-emerald-200">
-                                        <BookOpen className="w-4 h-4 text-emerald-700" />
-                                      </div>
-                                      <div>
-                                        <span className="font-medium text-emerald-800 text-sm">
-                                          LME: {lmeItem.name}
+                                <Link
+                                  key={lmeIndex}
+                                  to={`/summary?lme=${lmeItem.id}`}
+                                  className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
+                                >
+                                  <div className="flex items-center gap-3">
+                                    <div className="p-1.5 rounded-lg bg-emerald-200">
+                                      <BookOpen className="w-4 h-4 text-emerald-700" />
+                                    </div>
+                                    <div>
+                                      <span className="font-medium text-emerald-800 text-sm">
+                                        LME: {lmeItem.name}
+                                      </span>
+                                      <div className="flex items-center gap-3 mt-0.5">
+                                        <span className="text-xs text-emerald-600 flex items-center gap-1">
+                                          <Clock className="w-3 h-3" />
+                                          ~15 min
                                         </span>
-                                        <div className="flex items-center gap-3 mt-0.5">
-                                          <span className="text-xs text-emerald-600 flex items-center gap-1">
-                                            <Clock className="w-3 h-3" />
-                                            ~15 min
-                                          </span>
-                                        </div>
                                       </div>
                                     </div>
-                                    <ChevronRight className="w-4 h-4 text-emerald-500" />
-                                  </Link>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-emerald-500" />
+                                </Link>
                                 )
                               ))}
                             </div>

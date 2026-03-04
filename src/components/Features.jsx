@@ -94,12 +94,12 @@ const Features = () => {
 
                   <h3 className={`text-2xl font-bold mb-3 transition-colors ${
                     feature.color === 'accent'
-                      ? 'text-navy-900 group-hover:text-accent-600'
-                      : 'text-navy-900 group-hover:text-primary-600'
+                      ? 'text-navy-900 dark:text-slate-100 group-hover:text-accent-600 dark:group-hover:text-accent-400'
+                      : 'text-navy-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400'
                   }`}>
                     {feature.title}
                   </h3>
-                  <p className="text-navy-500 leading-relaxed text-lg">
+                  <p className="text-navy-500 dark:text-slate-300 leading-relaxed text-lg">
                     {feature.description}
                   </p>
                 </motion.div>

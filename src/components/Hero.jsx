@@ -16,7 +16,7 @@ const Hero = () => {
           >
             <BookOpen className="w-4 h-4 text-primary-600" />
             <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
-              Leerjaar 1
+              Nieuw curriculum
             </span>
           </motion.div>
 
@@ -53,14 +53,14 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                className="p-6 bg-white rounded-2xl shadow-soft border border-navy-100 hover:border-primary-300 hover:shadow-glow transition-all cursor-pointer group"
+                className="p-6 bg-white dark:bg-slate-800/50 rounded-2xl shadow-soft dark:shadow-none border border-navy-100 dark:border-slate-600/50 hover:border-primary-300 dark:hover:border-primary-500/50 hover:shadow-glow dark:hover:shadow-glow transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-primary-100 dark:bg-primary-500/30 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div className="text-left">
-                    <h3 className="font-bold text-navy-800 group-hover:text-primary-600 transition-colors">
+                    <h3 className="font-bold text-navy-800 dark:text-slate-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                       Samenvattingen
                     </h3>
                     <p className="text-sm text-navy-500 dark:text-slate-400">Leerjaar 1</p>

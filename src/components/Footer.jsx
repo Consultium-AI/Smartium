@@ -9,7 +9,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="pt-16 pb-8 bg-white dark:bg-slate-900/50 border-t border-navy-100 dark:border-slate-700/50">
+    <footer className="relative z-10 pt-16 pb-8 bg-white dark:bg-slate-900/50 border-t border-navy-100 dark:border-slate-700/50">
       <div className="container-custom">
         <div className="flex flex-col items-center text-center mb-12">
           {/* Brand */}
