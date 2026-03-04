@@ -376,12 +376,13 @@ const ChatPage = () => {
               <select
                 value={answerMode}
                 onChange={(e) => setAnswerMode(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-500/50 cursor-pointer min-w-[140px]"
+                title={answerMode === 'short' ? 'Korte antwoorden' : 'Uitgebreide antwoorden'}
+                className="appearance-none w-10 h-10 p-0 text-transparent bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-500/50 cursor-pointer"
               >
                 <option value="short">Korte antwoorden</option>
                 <option value="extended">Uitgebreide antwoorden</option>
               </select>
-              <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
+              <ChevronDown className="absolute inset-0 m-auto w-4 h-4 text-slate-500 dark:text-slate-400 pointer-events-none" />
             </div>
             <button
               onClick={sendMessage}
