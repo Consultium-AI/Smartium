@@ -1,13 +1,14 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04OorzakenSummary = () => {
+const Image04OorzakenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'oorzaken', title: 'Oorzaken virale gastro-enteritis', icon: Bug },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Oorzaken van virale gastro-enteritis"
       description="Frequente virale verwekkers en risicogroepen voor complicaties."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 4"

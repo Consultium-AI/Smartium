@@ -1,10 +1,11 @@
 import { Syringe } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23RotavirusvaccinSummary = () => {
+const Image23RotavirusvaccinSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'vaccin', title: 'Rotavirusvaccin', icon: Syringe }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Rotavirusvaccin"
       description="Schema en contra-indicaties van het rotavirusvaccin in het RVP."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 23"

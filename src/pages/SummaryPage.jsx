@@ -55,7 +55,7 @@ import TuberculoseInleidingSummary from '../summaries/TuberculoseInleidingSummar
 import Lme5SchimmelinfectiesSummary from '../summaries/lme5-schimmelinfecties/Lme5SchimmelinfectiesSummary'
 import Lme6VoorbereidingVowMiltSummary from '../summaries/lme6-voorbereiding-vow-milt/Lme6VoorbereidingVowMiltSummary'
 import Lme1ParasitaireVerwekkersSummary from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis/Lme1ParasitaireVerwekkersSummary'
-import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
+import Lme2ViraleVerwekkersSummary from '../summaries/lme2-virale-verwekkers-gastro-enteritis/Lme2ViraleVerwekkersSummary'
 import Lme3WelkAntibioticumKiesIkSummary from '../summaries/lme3-welk-antibioticum-kies-ik/Lme3WelkAntibioticumKiesIkSummary'
 import Casus10Lme1DwangEnDrangSummary from '../summaries/casus10-lme1-dwang-en-drang-historisch-perspectief/Casus10Lme1DwangEnDrangSummary'
 import Casus10Lme2ImmunomodulatieSummary from '../summaries/casus10-lme2-immunomodulatie/Casus10Lme2ImmunomodulatieSummary'
@@ -206,7 +206,7 @@ const SummaryPage = () => {
               name: "Casus 9",
               lmes: [
                 { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", available: true },
-                { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", baseId: "lme2-virale-verwekkers-gastro-enteritis", imageCount: 24 },
+                { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", available: true },
                 { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", available: true }
               ]
             },
@@ -797,41 +797,13 @@ const SummaryPage = () => {
     )
   }
 
-  // LME 2: Virale verwekkers van gastro-enteritis (Week 5 Casus 9)
-  const lme2ComponentMap = {
-    'lme2-virale-verwekkers-gastro-enteritis-image01': 'Image01IntroductieSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image02': 'Image02MenuSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image03': 'Image03KindsterfteSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image04': 'Image04OorzakenSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image05': 'Image05RotavirusSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image06': 'Image06NorovirusSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image07': 'Image07AdenovirusSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image08': 'Image08AstrovirusSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image09': 'Image09EpidemiologieSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image10': 'Image10TransmissieSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image11': 'Image11PathogeneseSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image12': 'Image12CasusHematologieSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image13': 'Image13DiagnostiekSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image14': 'Image14BehandelingSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image15': 'Image15CasusEliseSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image16': 'Image16AnamneseEliseSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image17': 'Image17LichamelijkOnderzoekSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image18': 'Image18LichamelijkEliseSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image19': 'Image19DehydratieTabelSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image20': 'Image20DifferentiaaldiagnoseSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image21': 'Image21VerwekkerSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image22': 'Image22DiagnostiekBehandelingSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image23': 'Image23RotavirusvaccinSummary',
-    'lme2-virale-verwekkers-gastro-enteritis-image24': 'Image24SamenvattingSummary',
-  }
-  const LME2Component = lme2ComponentMap[lme] && LME2Summaries[lme2ComponentMap[lme]]
-  if (LME2Component) {
+  if (lme === 'lme2-virale-verwekkers-gastro-enteritis') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <LME2Component />
+          <Lme2ViraleVerwekkersSummary />
         </main>
         <Footer />
       </div>

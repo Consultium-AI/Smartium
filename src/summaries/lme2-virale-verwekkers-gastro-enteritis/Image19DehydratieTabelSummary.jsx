@@ -1,10 +1,11 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19DehydratieTabelSummary = () => {
+const Image19DehydratieTabelSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'tabel', title: 'Hoe ziek is Elise', icon: AlertCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Hoe ziek is Elise"
       description="Dehydratietabel en behandelindicatie."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 19"

@@ -1,7 +1,7 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06NorovirusSummary = () => {
+const Image06NorovirusSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'verwekker', title: 'Verwekker', icon: Microscope },
     { id: 'kliniek', title: 'Kliniek', icon: Microscope },
@@ -9,6 +9,7 @@ const Image06NorovirusSummary = () => {
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Norovirus"
       description="Kenmerken, kliniek en morfologie van norovirusinfectie."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 6"

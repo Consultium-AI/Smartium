@@ -1,13 +1,14 @@
 import { Stethoscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17LichamelijkOnderzoekSummary = () => {
+const Image17LichamelijkOnderzoekSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'lo', title: 'Lichamelijk onderzoek en dehydratie', icon: Stethoscope },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Lichamelijk onderzoek – dehydratie-inschatting"
       description="Vitale parameters en formule voor inschatting dehydratiepercentage."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 17"

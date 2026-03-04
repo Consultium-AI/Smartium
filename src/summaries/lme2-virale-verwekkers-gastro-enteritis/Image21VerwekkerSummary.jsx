@@ -1,10 +1,11 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21VerwekkerSummary = () => {
+const Image21VerwekkerSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'verwekker', title: 'Meest waarschijnlijke verwekker', icon: Target }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Meest waarschijnlijke verwekker"
       description="Rotavirus als meest waarschijnlijke oorzaak bij Elise."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 21"

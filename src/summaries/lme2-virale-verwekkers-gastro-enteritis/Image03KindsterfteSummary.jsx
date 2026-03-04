@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03KindsterfteSummary = () => {
+const Image03KindsterfteSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'sterfte', title: 'Oorzaken kindsterfte gastro-enteritis', icon: AlertTriangle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Oorzaken van kindsterfte door gastro-enteritis"
       description="Wereldwijde ziektelast, virale verwekkers en preventieve maatregelen."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 3"

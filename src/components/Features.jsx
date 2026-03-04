@@ -26,7 +26,7 @@ const Features = () => {
   ]
 
   const benefits = [
-    { icon: BookOpen, text: 'NIEUW curriculum geneeskunde' },
+    { icon: BookOpen, text: 'Nieuw curriculum geneeskunde' },
     { icon: Lightbulb, text: 'Door studenten gemaakt' },
   ]
 

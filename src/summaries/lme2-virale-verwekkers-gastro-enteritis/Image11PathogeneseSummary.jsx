@@ -1,13 +1,14 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11PathogeneseSummary = () => {
+const Image11PathogeneseSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'patho', title: 'Pathogenese virale diarree', icon: Activity },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Pathogenese virale diarree"
       description="Mechanismen van vochtverlies en rol van rotavirus enterotoxine."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 11"

@@ -16,7 +16,7 @@ const Hero = () => {
           >
             <BookOpen className="w-4 h-4 text-primary-600" />
             <span className="text-sm font-medium text-primary-700">
-              NIEUW curriculum geneeskunde
+              Leerjaar 1
             </span>
           </motion.div>
 
@@ -63,7 +63,7 @@ const Hero = () => {
                     <h3 className="font-bold text-navy-800 group-hover:text-primary-600 transition-colors">
                       Samenvattingen
                     </h3>
-                    <p className="text-sm text-navy-500">NIEUW curriculum geneeskunde</p>
+                    <p className="text-sm text-navy-500">Leerjaar 1</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-primary-500 ml-auto transition-colors" />
                 </div>

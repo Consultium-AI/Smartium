@@ -1,13 +1,14 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01IntroductieSummary = () => {
+const Image01IntroductieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie en leerdoelen', icon: BookOpen },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Introductie – Virale verwekkers van gastro-enteritis"
       description="Leerdoelen, doelgroep en inhoud van de module over virale oorzaken van diarree."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 1"

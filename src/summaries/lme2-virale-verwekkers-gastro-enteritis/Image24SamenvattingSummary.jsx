@@ -1,10 +1,11 @@
 import { FileText } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24SamenvattingSummary = () => {
+const Image24SamenvattingSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'samenvatting', title: 'Samenvatting', icon: FileText }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Samenvatting virale gastro-enteritis"
       description="Kernpunten van de module virale verwekkers van gastro-enteritis."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 24"

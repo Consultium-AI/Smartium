@@ -1,13 +1,14 @@
 import { TestTube } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13DiagnostiekSummary = () => {
+const Image13DiagnostiekSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'diag', title: 'Diagnostiek virale gastro-enteritis', icon: TestTube },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Diagnostiek virale gastro-enteritis"
       description="Moleculaire detectie en multiplex assays voor virale verwekkers."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 13"

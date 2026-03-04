@@ -1,13 +1,14 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09EpidemiologieSummary = () => {
+const Image09EpidemiologieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'epi', title: 'Epidemiologie virale gastro-enteritis', icon: BarChart3 },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Epidemiologie virale gastro-enteritis"
       description="Seizoenspatronen en uitbraken van rotavirus, norovirus, adenovirus en astrovirus."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 9"

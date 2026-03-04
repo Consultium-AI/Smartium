@@ -1,10 +1,11 @@
 import { ListChecks } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20DifferentiaaldiagnoseSummary = () => {
+const Image20DifferentiaaldiagnoseSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'dd', title: 'Differentiaaldiagnose', icon: ListChecks }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Differentiaaldiagnose diarree"
       description="Bacteriele, virale en parasitaire oorzaken van diarree."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 20"

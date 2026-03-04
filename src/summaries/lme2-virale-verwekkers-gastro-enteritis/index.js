@@ -1,4 +1,5 @@
-// LME 2: Virale verwekkers van gastro-enteritis (Week 5 Casus 9) - Image-based summaries
+// LME 2: Virale verwekkers van gastro-enteritis (Week 5 Casus 9)
+export { default as Lme2ViraleVerwekkersSummary } from './Lme2ViraleVerwekkersSummary'
 export { default as Image01IntroductieSummary } from './Image01IntroductieSummary'
 export { default as Image02MenuSummary } from './Image02MenuSummary'
 export { default as Image03KindsterfteSummary } from './Image03KindsterfteSummary'

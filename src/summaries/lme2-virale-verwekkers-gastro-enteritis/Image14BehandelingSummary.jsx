@@ -1,13 +1,14 @@
 import { HeartPulse } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14BehandelingSummary = () => {
+const Image14BehandelingSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'behandeling', title: 'Behandeling virale gastro-enteritis', icon: HeartPulse },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Behandeling virale gastro-enteritis"
       description="Supportive care, rehydratie en wanneer ziekenhuisopname nodig is."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 14"

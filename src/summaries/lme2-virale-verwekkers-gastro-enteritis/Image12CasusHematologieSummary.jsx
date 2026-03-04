@@ -1,13 +1,14 @@
 import { User } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12CasusHematologieSummary = () => {
+const Image12CasusHematologieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'casus', title: 'Casus hematologie – materiaal', icon: User },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Casus hematologie – Materiaal"
       description="Patient met AML en diarree: keuze van materiaal voor diagnostiek."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 12"

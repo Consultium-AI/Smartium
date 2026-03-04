@@ -1,13 +1,14 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02MenuSummary = () => {
+const Image02MenuSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie virale gastro-enteritis', icon: LayoutList },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Virale verwekkers van gastro-enteritis"
       description="Inleiding op de module: aspecten van virale gastro-enteritis via vragen en casussen."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 2"

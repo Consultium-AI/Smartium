@@ -1,7 +1,7 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08AstrovirusSummary = () => {
+const Image08AstrovirusSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'verwekker', title: 'Verwekker', icon: Microscope },
     { id: 'kliniek', title: 'Kliniek', icon: Microscope },
@@ -9,6 +9,7 @@ const Image08AstrovirusSummary = () => {
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Astrovirus"
       description="Kenmerken en kliniek van astrovirus gastro-enteritis."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 8"

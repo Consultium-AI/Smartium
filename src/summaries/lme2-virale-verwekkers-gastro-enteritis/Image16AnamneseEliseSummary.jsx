@@ -1,13 +1,14 @@
 import { ClipboardList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16AnamneseEliseSummary = () => {
+const Image16AnamneseEliseSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'anamnese', title: 'Anamnese ouders Elise', icon: ClipboardList },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Anamnese ouders Elise"
       description="Bevindingen uit de anamnese bij Elise, 11 maanden."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 16"

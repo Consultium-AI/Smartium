@@ -1,10 +1,11 @@
 import { Stethoscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18LichamelijkEliseSummary = () => {
+const Image18LichamelijkEliseSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'lo', title: 'Lichamelijk onderzoek Elise', icon: Stethoscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Lichamelijk onderzoek Elise"
       description="Bevindingen van het lichamelijk onderzoek bij Elise."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 18"

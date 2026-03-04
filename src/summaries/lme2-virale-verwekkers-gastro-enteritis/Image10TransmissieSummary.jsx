@@ -1,10 +1,11 @@
 import { Share2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10TransmissieSummary = () => {
+const Image10TransmissieSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'trans', title: 'Transmissieroute', icon: Share2 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Transmissieroute virale gastro-enteritis"
       description="Feco-orale overdracht, infectiedosis en aerogene verspreiding."
       caseLabel="Week 5 Casus 9 LME 2: Afbeelding 10"

@@ -8495,7 +8495,7 @@ const practiceQuestionsCourseStructure = {
             name: "Casus 9",
             lmes: [
               { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", type: "simple", questionsMap: lme1QuestionsMap },
-              { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", questionsMap: lme2QuestionsMap },
+              { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "simple", questionsMap: lme2QuestionsMap },
               { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", type: "simple", questionsMap: lme3QuestionsMap }
             ]
           },
@@ -8536,8 +8536,8 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 13: Een piloot met koorts",
             lmes: [
-              { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "simple", questionsMap: casus13Lme1QuestionsMap }
-              { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "simple", questionsMap: casus13Lme2QuestionsMap }
+{ id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "simple", questionsMap: casus13Lme1QuestionsMap },
+                { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "simple", questionsMap: casus13Lme2QuestionsMap }
             ]
           }
         ]
@@ -8675,6 +8675,7 @@ const PracticeQuestionsPage = () => {
     // LME 6: Voorbereiding VOW Milt (per LME, alle vragen gecombineerd)
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return Object.values(lme6QuestionsMap).flat()
     if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return Object.values(lme1QuestionsMap).flat()
+    if (lmeParam === 'lme2-virale-verwekkers-gastro-enteritis') return Object.values(lme2QuestionsMap).flat()
     if (lmeParam === 'lme3-welk-antibioticum-kies-ik') return Object.values(lme3QuestionsMap).flat()
     if (lme5QuestionsMap[lmeParam]) return lme5QuestionsMap[lmeParam]
     if (lme6QuestionsMap[lmeParam]) return lme6QuestionsMap[lmeParam]
@@ -8805,6 +8806,7 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'lme5-schimmelinfecties') return 'Schimmelinfecties van de huid, nagels en haren'
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return 'Voorbereiding VOW Milt'
     if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return 'Parasitaire verwekkers van gastro-enteritis'
+    if (lmeParam === 'lme2-virale-verwekkers-gastro-enteritis') return 'Virale verwekkers van gastro-enteritis'
     if (lmeParam === 'lme3-welk-antibioticum-kies-ik') return 'Welk antibioticum kies ik'
     if (lme5QuestionsMap[lmeParam]) return `Schimmelinfecties – Afbeelding ${lmeParam.replace('lme5-schimmelinfecties-image', '')}`
     if (lme6QuestionsMap[lmeParam]) return `Voorbereiding VOW Milt – Afbeelding ${lmeParam.replace('lme6-voorbereiding-vow-milt-image', '')}`
@@ -8879,6 +8881,7 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'lme5-schimmelinfecties') return `Test je kennis met ${getQuestionCount(lme5QuestionsMap)} meerkeuzevragen over schimmelinfecties.`
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return `Test je kennis met ${getQuestionCount(lme6QuestionsMap)} meerkeuzevragen over de milt.`
     if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return `Test je kennis met ${getQuestionCount(lme1QuestionsMap)} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`
+    if (lmeParam === 'lme2-virale-verwekkers-gastro-enteritis') return `Test je kennis met ${getQuestionCount(lme2QuestionsMap)} meerkeuzevragen over virale verwekkers van gastro-enteritis.`
     if (lmeParam === 'lme3-welk-antibioticum-kies-ik') return `Test je kennis met ${getQuestionCount(lme3QuestionsMap)} meerkeuzevragen over antibioticakeuze.`
     if (lmeParam === 'casus10-lme1-dwang-en-drang-historisch-perspectief') return `Test je kennis met ${getQuestionCount(casus10Lme1QuestionsMap)} meerkeuzevragen over dwang en drang in historisch perspectief.`
     if (lmeParam === 'casus10-lme2-immunomodulatie') return `Test je kennis met ${getQuestionCount(casus10Lme2QuestionsMap)} meerkeuzevragen over immunomodulatie.`
