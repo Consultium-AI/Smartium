@@ -1,6 +1,6 @@
 import {
   BookOpen, LayoutList, Info, Tag, BarChart3, Stethoscope, Circle,
-  Footprints, Droplets, CircleDot, Scalpel, Sparkles, Microscope,
+  Footprints, Droplets, CircleDot, Sparkles, Microscope,
   Lightbulb, FlaskConical, Pill, CheckCircle2
 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
@@ -43,11 +43,11 @@ const Lme5SchimmelinfectiesSummary = () => {
     { id: 'sect-09', title: 'Herkenning eczeem', icon: Droplets },
     { id: 'sect-10', title: 'Herkenning tinea corporis blaasjes', icon: CircleDot },
     { id: 'sect-11', title: 'Herkenning tinea capitis', icon: Sparkles },
-    { id: 'sect-12', title: 'Herkenning onychomycose', icon: Scalpel },
+    { id: 'sect-12', title: 'Herkenning onychomycose', icon: Circle },
     { id: 'sect-13', title: 'Herkenning psoriasis', icon: Circle },
     { id: 'sect-14', title: 'Herkenning tinea corporis rand', icon: Circle },
     { id: 'sect-15', title: 'Herkenning impetigo', icon: Droplets },
-    { id: 'sect-16', title: 'Herkenning psoriasis nagels', icon: Scalpel },
+    { id: 'sect-16', title: 'Herkenning psoriasis nagels', icon: Circle },
     { id: 'sect-17', title: 'Herkenning tinea barbae', icon: Stethoscope },
     { id: 'sect-18', title: 'Herkenning eczeem benen', icon: Droplets },
     { id: 'sect-19', title: 'Herkenning tinea pedis moccasin', icon: Footprints },
