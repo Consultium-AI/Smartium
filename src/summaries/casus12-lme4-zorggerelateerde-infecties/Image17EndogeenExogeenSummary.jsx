@@ -1,13 +1,14 @@
 import { GitBranch } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17EndogeenExogeenSummary = () => {
+const Image17EndogeenExogeenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'bronnen', title: 'Endogene en exogene bronnen', icon: GitBranch },
     { id: 'pseudomonas', title: 'Pseudomonas aeruginosa', icon: GitBranch },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bron van de infectie – Endogeen en exogeen"
       description="Transmissieroutes, exogene bronnen en Pseudomonas aeruginosa bij nosocomiale pneumonie."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 17"

@@ -1,10 +1,11 @@
 import { Calendar } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07RVPFeedbackSummary = () => {
+const Image07RVPFeedbackSummary = ({ standalone = true }) => {
   const toc = [{ id: 'rvp', title: 'RVP en transmissie', icon: Calendar }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="RVP-vaccinatieschema en transmissie"
       description="Het vaccinatieschema van het Rijksvaccinatieprogramma en transmissieroutes."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 7"

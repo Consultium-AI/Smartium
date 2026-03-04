@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07LeefstijlInvloedSummary = () => {
+const Image07LeefstijlInvloedSummary = ({ standalone = true }) => {
   const toc = [{ id: 'invloed', title: 'Invloed op het immuunsysteem', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Leefstijlfactoren en invloed op immuunsysteem (2)"
       description="Volgorde van invloed en mechanismen per factor."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 7"

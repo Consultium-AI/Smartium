@@ -1,10 +1,11 @@
 import { Dna } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image35HPVIntroSummary = () => {
+const Image35HPVIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'hpv', title: 'Complexere modellen: HPV', icon: Dna }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Complexere modellen: HPV-vaccinatie"
       description="H8 – HPV verschilt van andere RVP-ziekten: seksueel overdraagbaar, diverse typen, HPV-kanker na vele jaren."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 35"

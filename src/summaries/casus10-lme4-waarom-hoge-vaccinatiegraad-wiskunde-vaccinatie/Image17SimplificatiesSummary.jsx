@@ -1,10 +1,11 @@
 import { ListChecks } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17SimplificatiesSummary = () => {
+const Image17SimplificatiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'simplificaties', title: 'Simplificaties van het SIR-model', icon: ListChecks }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Simplificaties van het SIR-model"
       description="Welke vereenvoudigingen worden gemaakt en wanneer varianten nodig zijn."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 17"

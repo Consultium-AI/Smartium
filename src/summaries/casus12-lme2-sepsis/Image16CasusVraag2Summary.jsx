@@ -1,10 +1,11 @@
 import { Droplets } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16CasusVraag2Summary = () => {
+const Image16CasusVraag2Summary = ({ standalone = true }) => {
   const toc = [{ id: 'bloedkweken', title: 'Casus – Vraag 2: Bloedkweken', icon: Droplets }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Casus: 78-jarige man – Vraag 2"
       description="Bloedkweken bij sepsis."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 16"

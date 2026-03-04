@@ -1,7 +1,7 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04OntstaanResistentieSummary = () => {
+const Image04OntstaanResistentieSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'ontstaan', title: 'Hoe ontstaat resistentie?', icon: AlertTriangle },
     { id: 'wapenwedloop', title: 'Natuurlijke wapenwedloop', icon: AlertTriangle },
@@ -9,6 +9,7 @@ const Image04OntstaanResistentieSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Het ontstaan van antimicrobiële resistentie"
       description="Oorzaken en mechanismen van het ontstaan van antibioticaresistentie."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 4"

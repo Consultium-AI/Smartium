@@ -1,10 +1,11 @@
 import { ShieldCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12VoorkomenMRSASummary = () => {
+const Image12VoorkomenMRSASummary = ({ standalone = true }) => {
   const toc = [{ id: 'voorkomen', title: 'Voorkomen van MRSA', icon: ShieldCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voorkomen van MRSA"
       description="Strategieën om MRSA-kolonisatie en -infecties te voorkomen in Nederland."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 12"

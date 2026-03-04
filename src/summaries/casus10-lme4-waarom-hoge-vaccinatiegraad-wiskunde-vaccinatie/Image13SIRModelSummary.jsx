@@ -1,10 +1,11 @@
 import { GitBranch } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13SIRModelSummary = () => {
+const Image13SIRModelSummary = ({ standalone = true }) => {
   const toc = [{ id: 'sir', title: 'Het SIR-model', icon: GitBranch }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Het SIR-model en z'n varianten"
       description="S – Susceptible (Vatbaar), I – Infected (Geïnfecteerd), R – Recovered (Immuun)."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 13"

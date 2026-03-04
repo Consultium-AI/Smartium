@@ -1,10 +1,11 @@
 import { ClipboardList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22IndicatieEiwitsyntheseremmersSummary = () => {
+const Image22IndicatieEiwitsyntheseremmersSummary = ({ standalone = true }) => {
   const toc = [{ id: 'indicatie', title: 'Indicatie en bijzonderheden', icon: ClipboardList }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Indicatie eiwitsyntheseremmers"
       description="Indicaties en bijzonderheden van macroliden, clindamycine en fusidinezuur."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 22"

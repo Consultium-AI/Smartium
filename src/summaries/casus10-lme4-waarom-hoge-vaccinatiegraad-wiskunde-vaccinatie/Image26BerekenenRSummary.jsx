@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image26BerekenenRSummary = () => {
+const Image26BerekenenRSummary = ({ standalone = true }) => {
   const toc = [{ id: 'berekenen', title: 'Berekenen van R', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Berekenen van het R-getal"
       description="Van ziekenhuisopnames naar gerapporteerde infecties (12 juni 2020)."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 26"

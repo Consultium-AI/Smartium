@@ -1,10 +1,11 @@
 import { CheckCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15SamenvattingSummary = () => {
+const Image15SamenvattingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'samenvatting', title: 'Samenvatting', icon: CheckCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Samenvatting – Antibioticaresistentie en BRMO's"
       description="Kernpunten van de module over antibioticaresistentie."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 15"

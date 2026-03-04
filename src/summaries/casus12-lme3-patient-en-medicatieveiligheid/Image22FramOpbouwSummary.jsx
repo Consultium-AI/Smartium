@@ -1,10 +1,11 @@
 import { Hexagon } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22FramOpbouwSummary = () => {
+const Image22FramOpbouwSummary = ({ standalone = true }) => {
   const toc = [{ id: 'opbouw', title: 'FRAM – De opbouw', icon: Hexagon }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="FRAM – De opbouw"
       description="Functies, aspecten en de zeshoek-structuur."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 22"

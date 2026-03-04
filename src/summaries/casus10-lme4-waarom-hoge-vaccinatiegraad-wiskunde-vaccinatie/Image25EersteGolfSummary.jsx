@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image25EersteGolfSummary = () => {
+const Image25EersteGolfSummary = ({ standalone = true }) => {
   const toc = [{ id: 'eerstegolf', title: 'De eerste COVID-19 golf', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De eerste COVID-19 golf in Nederland"
       description="R-getal, ziekenhuisopnames en maatregelen in 2020."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 25"

@@ -1,13 +1,14 @@
 import { FlaskConical } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16TestEcoliSummary = () => {
+const Image16TestEcoliSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'casus', title: 'Casus E. coli urosepsis', icon: FlaskConical },
     { id: 'interpretatie', title: 'Interpretatie gevoeligheidsspectrum', icon: FlaskConical },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Test je kennis – E. coli"
       description="Interpretatie van het gevoeligheidsspectrum bij E. coli urosepsis."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 16"

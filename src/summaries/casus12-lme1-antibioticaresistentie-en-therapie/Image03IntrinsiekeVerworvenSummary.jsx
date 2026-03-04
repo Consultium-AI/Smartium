@@ -1,10 +1,11 @@
 import { Dna } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03IntrinsiekeVerworvenSummary = () => {
+const Image03IntrinsiekeVerworvenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'intrinsiek', title: 'Intrinsieke en verworven resistentie', icon: Dna }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Intrinsieke en verworven resistentie"
       description="Mechanismen waarmee bacteriën resistentie kunnen verkrijgen: mutatie, transformatie en conjugatie."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 3"

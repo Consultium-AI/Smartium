@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image28RisicosLageVaccinatiegraadSummary = () => {
+const Image28RisicosLageVaccinatiegraadSummary = ({ standalone = true }) => {
   const toc = [{ id: 'formule', title: 'Formule kritische vaccinatiegraad', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Formule voor de kritische vaccinatiegraad"
       description="f = 1 − 1/R₀ – afleiding en voorbeelden."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 28"

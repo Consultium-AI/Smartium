@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image36HPVModelSummary = () => {
+const Image36HPVModelSummary = ({ standalone = true }) => {
   const toc = [{ id: 'hpvmodel', title: 'HPV-model – Levensjaren gewonnen', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="HPV-model – Levensjaren gewonnen"
       description="Vergelijking meisjes-vaccinatie vs. meisjes + jongens bij verschillende vaccinatiegraden."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 36"

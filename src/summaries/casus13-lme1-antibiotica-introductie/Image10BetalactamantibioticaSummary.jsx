@@ -1,13 +1,14 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10BetalactamantibioticaSummary = () => {
+const Image10BetalactamantibioticaSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'mechanisme', title: 'Werkingsmechanisme', icon: Pill },
     { id: 'allergie', title: 'Allergie en resistentie', icon: Pill },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bètalactamantibiotica"
       description="De belangrijkste celwandsyntheseremmers: werkingsmechanisme, allergie en bètalactamases."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 10"

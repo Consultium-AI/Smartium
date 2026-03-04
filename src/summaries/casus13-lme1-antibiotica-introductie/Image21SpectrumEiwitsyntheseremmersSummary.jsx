@@ -1,10 +1,11 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21SpectrumEiwitsyntheseremmersSummary = () => {
+const Image21SpectrumEiwitsyntheseremmersSummary = ({ standalone = true }) => {
   const toc = [{ id: 'spectrum', title: 'Spectrum eiwitsyntheseremmers', icon: Microscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Spectrum eiwitsyntheseremmers"
       description="Spectrum van macroliden en clindamycine."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 21"

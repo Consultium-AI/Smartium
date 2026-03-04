@@ -1,10 +1,11 @@
 import { Church } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14ZwartekousenkerkSummary = () => {
+const Image14ZwartekousenkerkSummary = ({ standalone = true }) => {
   const toc = [{ id: 'biblebelt', title: 'Zwartekousenkerk en Bible Belt', icon: Church }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Zwartekousenkerk"
       description="Bible Belt, SGP en segregatie in de klas."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 14"

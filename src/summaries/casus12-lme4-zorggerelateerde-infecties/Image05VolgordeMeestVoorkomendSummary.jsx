@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05VolgordeMeestVoorkomendSummary = () => {
+const Image05VolgordeMeestVoorkomendSummary = ({ standalone = true }) => {
   const toc = [{ id: 'volgorde', title: 'Volgorde van meest naar minst voorkomend', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Volgorde zorggerelateerde infecties – Meest naar minst voorkomend"
       description="De volgorde van de vier meest voorkomende zorggerelateerde infecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 5"

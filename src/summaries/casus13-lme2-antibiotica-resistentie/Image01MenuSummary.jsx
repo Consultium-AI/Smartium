@@ -1,10 +1,11 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01MenuSummary = () => {
+const Image01MenuSummary = ({ standalone = true }) => {
   const toc = [{ id: 'menu', title: 'Menu Antibioticaresistentie', icon: LayoutList }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Antibioticaresistentie"
       description="Introductie thema en overzicht van de e-module Antibioticaresistentie."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 1"

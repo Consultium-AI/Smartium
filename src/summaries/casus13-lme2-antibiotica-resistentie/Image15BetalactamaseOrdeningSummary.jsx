@@ -1,10 +1,11 @@
 import { ArrowRight } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15BetalactamaseOrdeningSummary = () => {
+const Image15BetalactamaseOrdeningSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ordening', title: 'Bètalactamase – volgorde resistentie', icon: ArrowRight }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bètalactamase – volgorde van resistentie"
       description="Ordening van bètalactamases van minst naar meest resistent."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 15"

@@ -1,10 +1,11 @@
 import { ClipboardList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15Prisummary = () => {
+const Image15Prisummary = ({ standalone = true }) => {
   const toc = [{ id: 'pri', title: 'Prospectieve Risico-Inventarisatie', icon: ClipboardList }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De Prospectieve Risico-Inventarisatie (PRI)"
       description="Prospectieve analyse van risico&apos;s, aanpak en barrières."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 15"

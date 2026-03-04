@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14CeftriaxonMeropenemSummary = () => {
+const Image14CeftriaxonMeropenemSummary = ({ standalone = true }) => {
   const toc = [{ id: 'classificatie', title: 'Ceftriaxon en meropenem', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Ceftriaxon en meropenem"
       description="Classificatie van ceftriaxon (cefalosporine) en meropenem (carbapenem)."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 14"

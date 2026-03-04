@@ -1,13 +1,14 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08NaslagwerkSummary = () => {
+const Image08NaslagwerkSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'aantal', title: 'Aantal antibiotica', icon: BookOpen },
     { id: 'inhoud', title: 'Inhoud naslagwerk', icon: BookOpen },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Naslagwerk"
       description="Overzicht van de 15 antibiotica en wat je per antibioticum in het naslagwerk vindt."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 8"

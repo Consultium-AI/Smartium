@@ -57,17 +57,17 @@ import Lme6VoorbereidingVowMiltSummary from '../summaries/lme6-voorbereiding-vow
 import Lme1ParasitaireVerwekkersSummary from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis/Lme1ParasitaireVerwekkersSummary'
 import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
 import Lme3WelkAntibioticumKiesIkSummary from '../summaries/lme3-welk-antibioticum-kies-ik/Lme3WelkAntibioticumKiesIkSummary'
-import * as Casus10LME1Summaries from '../summaries/casus10-lme1-dwang-en-drang-historisch-perspectief'
-import * as Casus10LME2Summaries from '../summaries/casus10-lme2-immunomodulatie'
-import * as Casus10LME3Summaries from '../summaries/casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas'
-import * as Casus10LME4Summaries from '../summaries/casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie'
-import * as Casus11LME1Summaries from '../summaries/casus11-lme1-leefstijl-en-immuunsysteem'
+import Casus10Lme1DwangEnDrangSummary from '../summaries/casus10-lme1-dwang-en-drang-historisch-perspectief/Casus10Lme1DwangEnDrangSummary'
+import Casus10Lme2ImmunomodulatieSummary from '../summaries/casus10-lme2-immunomodulatie/Casus10Lme2ImmunomodulatieSummary'
+import Casus10Lme3RechtvaardigingSummary from '../summaries/casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas/Casus10Lme3RechtvaardigingSummary'
+import Casus10Lme4WiskundeVaccinatieSummary from '../summaries/casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie/Casus10Lme4WiskundeVaccinatieSummary'
+import Casus11Lme1LeefstijlSummary from '../summaries/casus11-lme1-leefstijl-en-immuunsysteem/Casus11Lme1LeefstijlSummary'
 import * as Casus12LME1Summaries from '../summaries/casus12-lme1-antibioticaresistentie-en-therapie'
-import * as Casus12LME2Summaries from '../summaries/casus12-lme2-sepsis'
-import * as Casus12LME3Summaries from '../summaries/casus12-lme3-patient-en-medicatieveiligheid'
-import * as Casus12LME4Summaries from '../summaries/casus12-lme4-zorggerelateerde-infecties'
-import * as Casus13LME1Summaries from '../summaries/casus13-lme1-antibiotica-introductie'
-import * as Casus13LME2Summaries from '../summaries/casus13-lme2-antibiotica-resistentie'
+import Casus12Lme2SepsisSummary from '../summaries/casus12-lme2-sepsis/Casus12Lme2SepsisSummary'
+import Casus12Lme3PatientMedicatieveiligheidSummary from '../summaries/casus12-lme3-patient-en-medicatieveiligheid/Casus12Lme3PatientMedicatieveiligheidSummary'
+import Casus12Lme4ZorggerelateerdeInfectiesSummary from '../summaries/casus12-lme4-zorggerelateerde-infecties/Casus12Lme4ZorggerelateerdeInfectiesSummary'
+import Casus13Lme1AntibioticaIntroductieSummary from '../summaries/casus13-lme1-antibiotica-introductie/Casus13Lme1AntibioticaIntroductieSummary'
+import Casus13Lme2AntibioticaResistentieSummary from '../summaries/casus13-lme2-antibiotica-resistentie/Casus13Lme2AntibioticaResistentieSummary'
 
 // Main Summary Page Component
 const SummaryPage = () => {
@@ -213,10 +213,10 @@ const SummaryPage = () => {
             {
               name: "Casus 10: Vaccinatie",
               lmes: [
-                { id: "casus10-lme1-dwang-en-drang-historisch-perspectief", name: "Dwang en drang in historisch perspectief", type: "image-based", baseId: "casus10-lme1-dwang-en-drang-historisch-perspectief", imageCount: 25 },
-                { id: "casus10-lme2-immunomodulatie", name: "Immunomodulatie", type: "image-based", baseId: "casus10-lme2-immunomodulatie", imageCount: 27 },
-                { id: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", name: "Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren", type: "image-based", baseId: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", imageCount: 35 },
-                { id: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", name: "Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie", type: "image-based", baseId: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", imageCount: 38 }
+                { id: "casus10-lme1-dwang-en-drang-historisch-perspectief", name: "Dwang en drang in historisch perspectief", available: true },
+                { id: "casus10-lme2-immunomodulatie", name: "Immunomodulatie", available: true },
+                { id: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", name: "Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren", available: true },
+                { id: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", name: "Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie", available: true }
               ]
             }
           ]
@@ -227,16 +227,16 @@ const SummaryPage = () => {
             {
               name: "Casus 11: Primaire immuundeficiënties",
               lmes: [
-                { id: "casus11-lme1-leefstijl-en-immuunsysteem", name: "Leefstijl en immuunsysteem", type: "image-based", baseId: "casus11-lme1-leefstijl-en-immuunsysteem", imageCount: 21 }
+                { id: "casus11-lme1-leefstijl-en-immuunsysteem", name: "Leefstijl en immuunsysteem", available: true }
               ]
             },
             {
               name: "Casus 12: Lijninfecties & resistenties",
               lmes: [
-                { id: "casus12-lme1-antibioticaresistentie-en-therapie", name: "Antibioticaresistentie en therapie", type: "image-based", baseId: "casus12-lme1-antibioticaresistentie-en-therapie", imageCount: 15 },
-                { id: "casus12-lme2-sepsis", name: "Sepsis", type: "image-based", baseId: "casus12-lme2-sepsis", imageCount: 32 },
-                { id: "casus12-lme3-patient-en-medicatieveiligheid", name: "Patient- en medicatieveiligheid", type: "image-based", baseId: "casus12-lme3-patient-en-medicatieveiligheid", imageCount: 35 },
-                { id: "casus12-lme4-zorggerelateerde-infecties", name: "Zorggerelateerde infecties", type: "image-based", baseId: "casus12-lme4-zorggerelateerde-infecties", imageCount: 36 }
+                { id: "casus12-lme1-antibioticaresistentie-en-therapie", name: "Antibioticaresistentie en therapie", available: true },
+                { id: "casus12-lme2-sepsis", name: "Sepsis", available: true },
+                { id: "casus12-lme3-patient-en-medicatieveiligheid", name: "Patient- en medicatieveiligheid", available: true },
+                { id: "casus12-lme4-zorggerelateerde-infecties", name: "Zorggerelateerde infecties", available: true }
               ]
             }
           ]
@@ -247,8 +247,8 @@ const SummaryPage = () => {
             {
               name: "Casus 13: Een piloot met koorts",
               lmes: [
-                { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "image-based", baseId: "casus13-lme1-antibiotica-introductie", imageCount: 24 },
-                { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "image-based", baseId: "casus13-lme2-antibiotica-resistentie", imageCount: 18 }
+                { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", available: true },
+                { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", available: true }
               ]
             }
           ]
@@ -851,468 +851,143 @@ const SummaryPage = () => {
     )
   }
 
-  // Casus 10 LME 1: Dwang en drang in historisch perspectief (Week 5 Casus 10 Vaccinatie)
-  const casus10Lme1ComponentMap = {
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image01': 'Image01IntroductieSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image02': 'Image02MenuSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image03': 'Image03IntroductieGeschiedenisSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image04': 'Image04IndirectePlichtSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image05': 'Image05BijwerkingenSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image06': 'Image06PlichtOpPauzeSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image07': 'Image07NationaleVeiligheidSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image08': 'Image08QuizFactorenDalingSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image09': 'Image09WettelijkGeregeldeDrangSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image10': 'Image10NietIedereenDoetMeeSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image11': 'Image11SpanningenElspeetSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image12': 'Image12RijksvaccinatieprogrammaSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image13': 'Image13WeigeraarsSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image14': 'Image14ZwartekousenkerkSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image15': 'Image15GewetensbezwaarSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image16': 'Image16QuizReligieuzeBezwarenSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image17': 'Image17WorstelingWeigeraarsSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image18': 'Image18ReflectieCommunicatieSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image19': 'Image19WorstelingArtsenSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image20': 'Image20KlontjesPepernotenSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image21': 'Image21WorstelingSamenlevingSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image22': 'Image22EnNuCoronaSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image23': 'Image23ReflectieGrapperhausSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image24': 'Image24MaatschappelijkeControversieSummary',
-    'casus10-lme1-dwang-en-drang-historisch-perspectief-image25': 'Image25SlotSummary',
-  }
-  const Casus10LME1Component = casus10Lme1ComponentMap[lme] && Casus10LME1Summaries[casus10Lme1ComponentMap[lme]]
-  if (Casus10LME1Component) {
+  if (lme === 'casus10-lme1-dwang-en-drang-historisch-perspectief') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus10LME1Component />
+          <Casus10Lme1DwangEnDrangSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 10 LME 2: Immunomodulatie (Week 5 Casus 10 Vaccinatie)
-  const casus10Lme2ComponentMap = {
-    'casus10-lme2-immunomodulatie-image01': 'Image01IntroductieSummary',
-    'casus10-lme2-immunomodulatie-image02': 'Image02MenuSummary',
-    'casus10-lme2-immunomodulatie-image03': 'Image03PrincipesImmuunsuppressieSummary',
-    'casus10-lme2-immunomodulatie-image04': 'Image04ImmunosuppressivaSummary',
-    'casus10-lme2-immunomodulatie-image05': 'Image05CorticosteroidenSummary',
-    'casus10-lme2-immunomodulatie-image06': 'Image06SynthetischeGlucocorticoïdenSummary',
-    'casus10-lme2-immunomodulatie-image07': 'Image07QuizCorticosteroidenSummary',
-    'casus10-lme2-immunomodulatie-image08': 'Image08BijwerkingenOverzichtSummary',
-    'casus10-lme2-immunomodulatie-image09': 'Image09PrednisonEnAlternatievenSummary',
-    'casus10-lme2-immunomodulatie-image10': 'Image10CalcineurineRemmersSummary',
-    'casus10-lme2-immunomodulatie-image11': 'Image11QuizCalcineurineSummary',
-    'casus10-lme2-immunomodulatie-image12': 'Image12AntiTNFAlphaSummary',
-    'casus10-lme2-immunomodulatie-image13': 'Image13AntiTNFStructurenSummary',
-    'casus10-lme2-immunomodulatie-image14': 'Image14BiologicalsOverzichtSummary',
-    'casus10-lme2-immunomodulatie-image15': 'Image15WerkingVaccinsSummary',
-    'casus10-lme2-immunomodulatie-image16': 'Image16PassieveImmunisatieSummary',
-    'casus10-lme2-immunomodulatie-image17': 'Image17QuizRabiesSummary',
-    'casus10-lme2-immunomodulatie-image18': 'Image18ImmunostimulantiaSummary',
-    'casus10-lme2-immunomodulatie-image19': 'Image19VaccinTypenSummary',
-    'casus10-lme2-immunomodulatie-image20': 'Image20ActieveImmunisatieSummary',
-    'casus10-lme2-immunomodulatie-image21': 'Image21AdjuvantenSummary',
-    'casus10-lme2-immunomodulatie-image22': 'Image22SlotSummary',
-    'casus10-lme2-immunomodulatie-image23': 'Image23AntimetabolietenSummary',
-    'casus10-lme2-immunomodulatie-image24': 'Image24AntigenPresentatieSummary',
-    'casus10-lme2-immunomodulatie-image25': 'Image25ImmunologischGeheugenSummary',
-    'casus10-lme2-immunomodulatie-image26': 'Image26EindeSummary',
-    'casus10-lme2-immunomodulatie-image27': 'Image27SlotSummary',
-  }
-  const Casus10LME2Component = casus10Lme2ComponentMap[lme] && Casus10LME2Summaries[casus10Lme2ComponentMap[lme]]
-  if (Casus10LME2Component) {
+  if (lme === 'casus10-lme2-immunomodulatie') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus10LME2Component />
+          <Casus10Lme2ImmunomodulatieSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 10 LME 3: Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren (Week 5 Casus 10 Vaccinatie)
-  const casus10Lme3ComponentMap = {
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image01': 'Image01IntroductieSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image02': 'Image02MenuSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image03': 'Image03DwangEnDrangSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image04': 'Image04EthischeRechtvaardigingSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image05': 'Image05AutonomiePaternalismeSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image06': 'Image06KindEnOudersSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image07': 'Image07GroepsimmuniteitSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image08': 'Image08CasusSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image09': 'Image09RolArtsSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image10': 'Image10ProportioneelSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image11': 'Image11SubsidiariteitSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image12': 'Image12UtilismeSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image13': 'Image13DeontologieSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image14': 'Image14VertrouwenSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image15': 'Image15ReflectieSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image16': 'Image16KwetsbarenSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image17': 'Image17QuizSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image18': 'Image18ToegangsbewijsSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image19': 'Image19SlotSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image20': 'Image20InformatieVoorlichtingSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image21': 'Image21BezwarenOudersSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image22': 'Image22MedischeContraIndicatiesSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image23': 'Image23MaatschappelijkDebatSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image24': 'Image24WetgevingSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image25': 'Image25KinderrechtenSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image26': 'Image26RisicocommunicatieSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image27': 'Image27AlternatievenSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image28': 'Image28GezamenlijkeBesluitvormingSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image29': 'Image29EmpathieSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image30': 'Image30GrenzenSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image31': 'Image31VerantwoordelijkheidSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image32': 'Image32SlotSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image33': 'Image33SlotSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image34': 'Image34SlotSummary',
-    'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image35': 'Image35SlotSummary',
-  }
-  const Casus10LME3Component = casus10Lme3ComponentMap[lme] && Casus10LME3Summaries[casus10Lme3ComponentMap[lme]]
-  if (Casus10LME3Component) {
+  if (lme === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus10LME3Component />
+          <Casus10Lme3RechtvaardigingSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 10 LME 4: Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie (Week 5 Casus 10 Vaccinatie)
-  const casus10Lme4ComponentMap = {
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image01': 'Image01IntroductieSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image02': 'Image02InleidingSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image03': 'Image03MenuSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image04': 'Image04WiskundigeModellenSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image05': 'Image05TransmissieSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image06': 'Image06QuizDirecteTransmissieSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image07': 'Image07RVPFeedbackSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image08': 'Image08BasisreproductiegetalSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image09': 'Image09DefinitieR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image10': 'Image10TransmissieboomR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image11': 'Image11SchattenR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image12': 'Image12EnkeleWaardenR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image13': 'Image13SIRModelSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image14': 'Image14SIRKermackSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image15': 'Image15SIRVergelijkingenSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image16': 'Image16SIRTrendsSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image17': 'Image17SimplificatiesSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image18': 'Image18ModelVariantenSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image19': 'Image19FormuleR0IntroSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image20': 'Image20AfleidenR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image21': 'Image21MaatregelenR0Summary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image22': 'Image22ContactmatrixSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image23': 'Image23EffectiefRSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image24': 'Image24DefinitieReSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image25': 'Image25EersteGolfSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image26': 'Image26BerekenenRSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image27': 'Image27KritischeVaccinatiegraadSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image28': 'Image28RisicosLageVaccinatiegraadSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image29': 'Image29SlotSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image30': 'Image30SlotSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image31': 'Image31ImperfectVaccinSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image32': 'Image32RisicosMazelenSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image33': 'Image33RisicosCRSSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image34': 'Image34SlotSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image35': 'Image35HPVIntroSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image36': 'Image36HPVModelSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image37': 'Image37SlotSummary',
-    'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image38': 'Image38SlotSummary',
-  }
-  const Casus10LME4Component = casus10Lme4ComponentMap[lme] && Casus10LME4Summaries[casus10Lme4ComponentMap[lme]]
-  if (Casus10LME4Component) {
+  if (lme === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus10LME4Component />
+          <Casus10Lme4WiskundeVaccinatieSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 11 LME 1: Leefstijl en immuunsysteem (Week 6 Casus 11 Primaire immuundeficiënties)
-  const casus11Lme1ComponentMap = {
-    'casus11-lme1-leefstijl-en-immuunsysteem-image01': 'Image01IntroductieSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image02': 'Image02MenuSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image03': 'Image03ExposoomSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image04': 'Image04ExposoomCategorieenSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image05': 'Image05ExposoomOntstekingSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image06': 'Image06LeefstijlfactorenSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image07': 'Image07LeefstijlInvloedSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image08': 'Image08InflammagingSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image09': 'Image09ImmunosenescenceSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image10': 'Image10TrainedImmunitySummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image11': 'Image11VoedingIntroSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image12': 'Image12WestersDieetSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image13': 'Image13MicronutriëntenSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image14': 'Image14IjzergebrekSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image15': 'Image15DIIIntroSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image16': 'Image16DIIVoedingsmiddelenSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image17': 'Image17BewegingSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image18': 'Image18SlaapSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image19': 'Image19StressSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image20': 'Image20CTRAMeditatieSummary',
-    'casus11-lme1-leefstijl-en-immuunsysteem-image21': 'Image21AfsluitingSummary',
-  }
-  const Casus11LME1Component = casus11Lme1ComponentMap[lme] && Casus11LME1Summaries[casus11Lme1ComponentMap[lme]]
-  if (Casus11LME1Component) {
+  if (lme === 'casus11-lme1-leefstijl-en-immuunsysteem') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus11LME1Component />
+          <Casus11Lme1LeefstijlSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 12 LME 3: Voorbereiding Patient- en medicatieveiligheid (Week 6 Casus 12 Lijninfecties & resistenties)
-  const casus12Lme3ComponentMap = {
-    'casus12-lme3-patient-en-medicatieveiligheid-image01': 'Image01IntroductieSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image02': 'Image02MenuSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image03': 'Image03SafetyISafetyIISummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image04': 'Image04StappenMedicatieprocesSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image05': 'Image05FoutenMedicatieprocesSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image06': 'Image06DefinitiesSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image07': 'Image07StudiesSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image08': 'Image08MeldenSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image09': 'Image09ToedienfoutSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image10': 'Image10SecondVictimAnalyserenSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image11': 'Image11PrismaSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image12': 'Image12PrismaBijnaFoutSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image13': 'Image13PrismaCategoriserenSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image14': 'Image14OplossingenOrganisatiefalenSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image15': 'Image15PRISummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image16': 'Image16SwissCheeseSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image17': 'Image17SecondVictimIntroSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image18': 'Image18PriDefinitieSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image19': 'Image19SafetyIIBrilSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image20': 'Image20FramWaiWadSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image21': 'Image21FramTheorieSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image22': 'Image22FramOpbouwSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image23': 'Image23FramVoorbeeldSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image24': 'Image24FramCasusSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image25': 'Image25FramPraktijkSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image26': 'Image26QuizSafetyISummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image27': 'Image27QuizSafetyIISummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image28': 'Image28QuizFramSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image29': 'Image29QuizPrismaSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image30': 'Image30QuizFysiekeBarriereSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image31': 'Image31QuizSysteemgerichtSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image32': 'Image32QuizSwissCheeseSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image33': 'Image33QuizSecondVictimSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image34': 'Image34QuizPrismaBijnaSummary',
-    'casus12-lme3-patient-en-medicatieveiligheid-image35': 'Image35QuizFramVariatieSummary',
-  }
-  const Casus12LME3Component = casus12Lme3ComponentMap[lme] && Casus12LME3Summaries[casus12Lme3ComponentMap[lme]]
-  if (Casus12LME3Component) {
+  if (lme === 'casus12-lme3-patient-en-medicatieveiligheid') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus12LME3Component />
+          <Casus12Lme3PatientMedicatieveiligheidSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 12 LME 4: Zorggerelateerde infecties (Week 6 Casus 12 Lijninfecties & resistenties)
-  const casus12Lme4ComponentMap = {
-    'casus12-lme4-zorggerelateerde-infecties-image01': 'Image01IntroductieSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image02': 'Image02MenuSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image03': 'Image03WatZijnZorggerelateerdeSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image04': 'Image04DefinitieEnMeestVoorkomendSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image05': 'Image05VolgordeMeestVoorkomendSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image06': 'Image06PostoperatieveWondinfectiesIntroSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image07': 'Image07POWIClassificatieSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image08': 'Image08SAureusDragerschapSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image09': 'Image09PreventieveMaatregelenIntroSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image10': 'Image10PreventieveMaatregelenLijstSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image11': 'Image11PreoperatiefScherenSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image12': 'Image12AntibiotischeProfylaxeSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image13': 'Image13SurveillanceSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image14': 'Image14UrineweginfectiesIntroSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image15': 'Image15UWIEcoliSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image16': 'Image16BronVanDeInfectieIntroSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image17': 'Image17EndogeenExogeenSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image18': 'Image18TerminologieIntroSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image19': 'Image19HospitalAcquiredSummary',
-    'casus12-lme4-zorggerelateerde-infecties-image20': 'Image20PrimaireSecundaireSepsisSummary',
-  }
-  const Casus12LME4Component = casus12Lme4ComponentMap[lme] && Casus12LME4Summaries[casus12Lme4ComponentMap[lme]]
-  if (Casus12LME4Component) {
+  if (lme === 'casus12-lme4-zorggerelateerde-infecties') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus12LME4Component />
+          <Casus12Lme4ZorggerelateerdeInfectiesSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 13 LME 1: Antibiotica Introductie (Week 7 Casus 13 Een piloot met koorts)
-  const casus13Lme1ComponentMap = {
-    'casus13-lme1-antibiotica-introductie-image01': 'Image01IntroductieSummary',
-    'casus13-lme1-antibiotica-introductie-image02': 'Image02MenuSummary',
-    'casus13-lme1-antibiotica-introductie-image03': 'Image03AchtergrondIntroSummary',
-    'casus13-lme1-antibiotica-introductie-image04': 'Image04GeschiedenisFlemingSummary',
-    'casus13-lme1-antibiotica-introductie-image05': 'Image05DiscoveryVoidSummary',
-    'casus13-lme1-antibiotica-introductie-image06': 'Image06CategorieenAntibioticaSummary',
-    'casus13-lme1-antibiotica-introductie-image07': 'Image07BasiskennisIntroSummary',
-    'casus13-lme1-antibiotica-introductie-image08': 'Image08NaslagwerkSummary',
-    'casus13-lme1-antibiotica-introductie-image09': 'Image09CelwandsyntheseremmersIntroSummary',
-    'casus13-lme1-antibiotica-introductie-image10': 'Image10BetalactamantibioticaSummary',
-    'casus13-lme1-antibiotica-introductie-image11': 'Image11PenicillinesOnderverdelingSummary',
-    'casus13-lme1-antibiotica-introductie-image12': 'Image12PenicillineVsAmoxicillineSummary',
-    'casus13-lme1-antibiotica-introductie-image13': 'Image13AmoxicillineVsAugmentinSummary',
-    'casus13-lme1-antibiotica-introductie-image14': 'Image14CeftriaxonMeropenemSummary',
-    'casus13-lme1-antibiotica-introductie-image15': 'Image15NucleinezursyntheseremmersSummary',
-    'casus13-lme1-antibiotica-introductie-image16': 'Image16BijwerkingenNucleinezurSummary',
-    'casus13-lme1-antibiotica-introductie-image17': 'Image17FoliumzuurmetabolismeSummary',
-    'casus13-lme1-antibiotica-introductie-image18': 'Image18UWINitrofurantoineSummary',
-    'casus13-lme1-antibiotica-introductie-image19': 'Image19UWINierinsufficientieSummary',
-    'casus13-lme1-antibiotica-introductie-image20': 'Image20EiwitsyntheseremmersSummary',
-    'casus13-lme1-antibiotica-introductie-image21': 'Image21SpectrumEiwitsyntheseremmersSummary',
-    'casus13-lme1-antibiotica-introductie-image22': 'Image22IndicatieEiwitsyntheseremmersSummary',
-    'casus13-lme1-antibiotica-introductie-image23': 'Image23DoxycyclineSummary',
-    'casus13-lme1-antibiotica-introductie-image24': 'Image24TestJeKennisSpectrumSummary',
-  }
-  const Casus13LME1Component = casus13Lme1ComponentMap[lme] && Casus13LME1Summaries[casus13Lme1ComponentMap[lme]]
-  if (Casus13LME1Component) {
+  if (lme === 'casus13-lme1-antibiotica-introductie') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus13LME1Component />
+          <Casus13Lme1AntibioticaIntroductieSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 13 LME 2: Antibiotica Resistentie (Week 7 Casus 13 Een piloot met koorts)
-  const casus13Lme2ComponentMap = {
-    'casus13-lme2-antibiotica-resistentie-image01': 'Image01MenuSummary',
-    'casus13-lme2-antibiotica-resistentie-image02': 'Image02IntroductieSummary',
-    'casus13-lme2-antibiotica-resistentie-image03': 'Image03NaslagwerkSummary',
-    'casus13-lme2-antibiotica-resistentie-image04': 'Image04OntstaanResistentieSummary',
-    'casus13-lme2-antibiotica-resistentie-image05': 'Image05DierhouderijSummary',
-    'casus13-lme2-antibiotica-resistentie-image06': 'Image06ResistentePopulatieSummary',
-    'casus13-lme2-antibiotica-resistentie-image07': 'Image07ResistentiemechanismenIntroSummary',
-    'casus13-lme2-antibiotica-resistentie-image08': 'Image08NatuurlijkVsVerkregenSummary',
-    'casus13-lme2-antibiotica-resistentie-image09': 'Image09InactivatieSummary',
-    'casus13-lme2-antibiotica-resistentie-image10': 'Image10AmpCCarbapenemaseSummary',
-    'casus13-lme2-antibiotica-resistentie-image11': 'Image11InfluxVerminderenSummary',
-    'casus13-lme2-antibiotica-resistentie-image12': 'Image12VancomycineSaureusSummary',
-    'casus13-lme2-antibiotica-resistentie-image13': 'Image13EffluxSummary',
-    'casus13-lme2-antibiotica-resistentie-image14': 'Image14AangrijpingspuntSummary',
-    'casus13-lme2-antibiotica-resistentie-image15': 'Image15BetalactamaseOrdeningSummary',
-    'casus13-lme2-antibiotica-resistentie-image16': 'Image16TestEcoliSummary',
-    'casus13-lme2-antibiotica-resistentie-image17': 'Image17TestProteusSummary',
-    'casus13-lme2-antibiotica-resistentie-image18': 'Image18ConclusieSummary',
-  }
-  const Casus13LME2Component = casus13Lme2ComponentMap[lme] && Casus13LME2Summaries[casus13Lme2ComponentMap[lme]]
-  if (Casus13LME2Component) {
+  if (lme === 'casus13-lme2-antibiotica-resistentie') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus13LME2Component />
+          <Casus13Lme2AntibioticaResistentieSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 12 LME 2: Sepsis (Week 6 Casus 12 Lijninfecties & resistenties)
-  const casus12Lme2ComponentMap = {
-    'casus12-lme2-sepsis-image01': 'Image01IntroductieSummary',
-    'casus12-lme2-sepsis-image02': 'Image02MenuSummary',
-    'casus12-lme2-sepsis-image03': 'Image03MaatschappelijkeImpactSummary',
-    'casus12-lme2-sepsis-image04': 'Image04Definities2016Summary',
-    'casus12-lme2-sepsis-image05': 'Image05DefinitieSepsisSummary',
-    'casus12-lme2-sepsis-image06': 'Image06TermenSummary',
-    'casus12-lme2-sepsis-image07': 'Image07OorzakenSummary',
-    'casus12-lme2-sepsis-image08': 'Image08GramSummary',
-    'casus12-lme2-sepsis-image09': 'Image09InfectiefocusSummary',
-    'casus12-lme2-sepsis-image10': 'Image10FocuscontroleSummary',
-    'casus12-lme2-sepsis-image11': 'Image11EmpirischeAntibioticaSummary',
-    'casus12-lme2-sepsis-image12': 'Image12DiagnostiekSummary',
-    'casus12-lme2-sepsis-image13': 'Image13DuurBehandelingSummary',
-    'casus12-lme2-sepsis-image14': 'Image14ScreeningSummary',
-    'casus12-lme2-sepsis-image15': 'Image15CasusVraag1Summary',
-    'casus12-lme2-sepsis-image16': 'Image16CasusVraag2Summary',
-    'casus12-lme2-sepsis-image17': 'Image17CasusVraag3Summary',
-    'casus12-lme2-sepsis-image18': 'Image18CasusVraag4Summary',
-    'casus12-lme2-sepsis-image19': 'Image19CasusVraag5Summary',
-    'casus12-lme2-sepsis-image20': 'Image20EpidemiologieSummary',
-    'casus12-lme2-sepsis-image21': 'Image21DefinitiesSummary',
-    'casus12-lme2-sepsis-image22': 'Image22FocusSummary',
-    'casus12-lme2-sepsis-image23': 'Image23BehandelingSummary',
-  }
-  const Casus12LME2Component = casus12Lme2ComponentMap[lme] && Casus12LME2Summaries[casus12Lme2ComponentMap[lme]]
-  if (Casus12LME2Component) {
+  if (lme === 'casus12-lme2-sepsis') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus12LME2Component />
+          <Casus12Lme2SepsisSummary />
         </main>
         <Footer />
       </div>
     )
   }
 
-  // Casus 12 LME 1: Antibioticaresistentie en therapie (Week 6 Casus 12 Lijninfecties & resistenties)
-  const casus12Lme1ComponentMap = {
-    'casus12-lme1-antibioticaresistentie-en-therapie-image01': 'Image01IntroductieSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image02': 'Image02MenuSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image03': 'Image03IntrinsiekeVerworvenSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image04': 'Image04NatuurlijkeResistentieSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image05': 'Image05CelwandSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image06': 'Image06BetalactamSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image07': 'Image07WildtypeSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image08': 'Image08ResistentiemechanismenSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image09': 'Image09BetalactamResistentieSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image10': 'Image10SAureusSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image11': 'Image11MRSASummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image12': 'Image12VoorkomenMRSASummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image13': 'Image13BRMOSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image14': 'Image14GevarenSummary',
-    'casus12-lme1-antibioticaresistentie-en-therapie-image15': 'Image15SamenvattingSummary',
-  }
-  const Casus12LME1Component = casus12Lme1ComponentMap[lme] && Casus12LME1Summaries[casus12Lme1ComponentMap[lme]]
-  if (Casus12LME1Component) {
+  if (lme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <Casus12LME1Component />
+          <Casus12Lme1AntibioticaresistentieSummary />
         </main>
         <Footer />
       </div>

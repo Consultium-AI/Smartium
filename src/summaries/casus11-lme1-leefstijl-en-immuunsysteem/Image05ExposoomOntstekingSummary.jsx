@@ -1,10 +1,11 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05ExposoomOntstekingSummary = () => {
+const Image05ExposoomOntstekingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ontsteking', title: 'Ontsteking als exposoomfactor?', icon: AlertCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Exposoom (3) – Ontsteking als exposoomfactor?"
       description="Argumenten voor en tegen het rekenen van ontsteking tot het exposoom."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 5"

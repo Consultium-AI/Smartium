@@ -1,10 +1,11 @@
 import { HelpCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11QuizCalcineurineSummary = () => {
+const Image11QuizCalcineurineSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz calcineurine-remmers', icon: HelpCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz: Calcineurine-remmers"
       description="Kenmerkende bijwerking: nefrotoxiciteit."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 11"

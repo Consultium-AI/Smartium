@@ -1,10 +1,11 @@
 import { Search } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14ScreeningSummary = () => {
+const Image14ScreeningSummary = ({ standalone = true }) => {
   const toc = [{ id: 'screening', title: 'Screening tools', icon: Search }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Screening tools: SIRS, qSOFA en SOFA"
       description="Vergelijking van SIRS, qSOFA en SOFA voor sepsis-screening."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 14"

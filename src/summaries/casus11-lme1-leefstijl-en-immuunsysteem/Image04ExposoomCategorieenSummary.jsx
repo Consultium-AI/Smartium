@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04ExposoomCategorieenSummary = () => {
+const Image04ExposoomCategorieenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'categorieen', title: 'Drie categorieën van het exposoom', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Exposoom (2) – Categorieën"
       description="Algemene externe, specifieke externe en specifieke interne factoren."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 4"

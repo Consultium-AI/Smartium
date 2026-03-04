@@ -1,10 +1,11 @@
 import { FlaskConical } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17QuizRabiesSummary = () => {
+const Image17QuizRabiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'rabies', title: 'Rabies – passieve en actieve immunisatie', icon: FlaskConical }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Rabies"
       description="Behandeling bij mogelijke blootstelling aan rabies."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 17"

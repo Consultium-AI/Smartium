@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06PostoperatieveWondinfectiesIntroSummary = () => {
+const Image06PostoperatieveWondinfectiesIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'powi', title: 'Postoperatieve wondinfecties', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Postoperatieve wondinfecties"
       description="Introductie op postoperatieve wondinfecties (POWI) als belangrijke zorggerelateerde infectie."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 6"

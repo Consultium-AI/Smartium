@@ -1,10 +1,11 @@
 import { Building2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19HospitalAcquiredSummary = () => {
+const Image19HospitalAcquiredSummary = ({ standalone = true }) => {
   const toc = [{ id: 'hospital', title: 'Hospital acquired', icon: Building2 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Terminologie – Hospital acquired"
       description="Waarom het belangrijk is de definitie van 'hospital acquired' te kennen op de SEH."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 19"

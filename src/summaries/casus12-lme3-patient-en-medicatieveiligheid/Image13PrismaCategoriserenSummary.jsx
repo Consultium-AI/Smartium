@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13PrismaCategoriserenSummary = () => {
+const Image13PrismaCategoriserenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'categoriseren', title: 'Organisatiefalen vs menselijk falen', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="PRISMA – Categoriseren van oorzaken"
       description="Voorbeelden van organisatiefalen en menselijk falen."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 13"

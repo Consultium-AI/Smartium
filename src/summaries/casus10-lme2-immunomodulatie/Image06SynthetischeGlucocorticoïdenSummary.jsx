@@ -1,13 +1,14 @@
 import { FlaskConical } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06SynthetischeGlucocorticoïdenSummary = () => {
+const Image06SynthetischeGlucocorticoïdenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'cortisol', title: 'Basisstructuur cortisol', icon: FlaskConical },
     { id: 'synthetisch', title: 'Synthetische glucocorticoïden', icon: FlaskConical },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Synthetische glucocorticoïden"
       description="Structuur van cortisol en voorbeelden van synthetische glucocorticoïden."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 6"

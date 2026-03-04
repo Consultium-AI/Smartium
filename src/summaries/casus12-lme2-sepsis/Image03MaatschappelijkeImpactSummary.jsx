@@ -1,10 +1,11 @@
 import { Globe } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03MaatschappelijkeImpactSummary = () => {
+const Image03MaatschappelijkeImpactSummary = ({ standalone = true }) => {
   const toc = [{ id: 'impact', title: 'Maatschappelijke impact', icon: Globe }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De maatschappelijke impact van sepsis"
       description="Wereldwijde en Nederlandse cijfers over sepsis en de gevolgen voor overlevenden."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 3"

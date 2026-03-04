@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21DefinitiesSummary = () => {
+const Image21DefinitiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'definities', title: 'Kernbegrippen', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kernbegrippen sepsis"
       description="Orgaanfalen, bacteriemie, vochtresuscitatie, SOFA en mortaliteit."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 21"

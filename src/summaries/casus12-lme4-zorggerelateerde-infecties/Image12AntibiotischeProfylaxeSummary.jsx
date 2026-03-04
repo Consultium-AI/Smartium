@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12AntibiotischeProfylaxeSummary = () => {
+const Image12AntibiotischeProfylaxeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'profylaxe', title: 'Preoperatieve antibiotische profylaxe', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Preoperatieve antibiotische profylaxe"
       description="Wanneer en waarom preoperatieve antibiotische profylaxe wordt voorgeschreven."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 12"

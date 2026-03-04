@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07NationaleVeiligheidSummary = () => {
+const Image07NationaleVeiligheidSummary = ({ standalone = true }) => {
   const toc = [{ id: 'veiligheid', title: 'Nationale veiligheid', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Nationale veiligheid"
       description="Dalende vaccinatiegraad en staatscommissie 1937."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 7"

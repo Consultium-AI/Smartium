@@ -1,10 +1,11 @@
 import { Scale } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09WettelijkGeregeldeDrangSummary = () => {
+const Image09WettelijkGeregeldeDrangSummary = ({ standalone = true }) => {
   const toc = [{ id: 'drang', title: 'Wettelijk geregelde drang', icon: Scale }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wettelijk geregelde drang"
       description="1940-1971: vrijstellingen medisch en gewetensbezwaar."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 9"

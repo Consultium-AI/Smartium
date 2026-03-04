@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20EiwitsyntheseremmersSummary = () => {
+const Image20EiwitsyntheseremmersSummary = ({ standalone = true }) => {
   const toc = [{ id: 'eiwit', title: 'Eiwitsyntheseremmers (50S)', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Eiwitsyntheseremmers (50S)"
       description="Macroliden, lincosamiden en fusidinezuur."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 20"

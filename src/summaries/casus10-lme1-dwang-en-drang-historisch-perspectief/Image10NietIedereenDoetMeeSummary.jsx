@@ -1,10 +1,11 @@
 import { Users } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10NietIedereenDoetMeeSummary = () => {
+const Image10NietIedereenDoetMeeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'weigeraars', title: 'Niet iedereen doet mee', icon: Users }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Niet iedereen doet mee"
       description="Religieuze weigeraars en polio-uitbraken jaren 60."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 10"

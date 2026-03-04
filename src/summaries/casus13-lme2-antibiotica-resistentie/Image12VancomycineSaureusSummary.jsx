@@ -1,10 +1,11 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12VancomycineSaureusSummary = () => {
+const Image12VancomycineSaureusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'vancomycine', title: 'Vancomycine-resistentie S. aureus', icon: Microscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Vancomycine-resistentie bij S. aureus"
       description="Mechanisme van vancomycine-resistentie door verdikking van de peptidoglycanlaag."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 12"

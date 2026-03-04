@@ -1,13 +1,14 @@
 import { HeartPulse } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20PrimaireSecundaireSepsisSummary = () => {
+const Image20PrimaireSecundaireSepsisSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'primaire', title: 'Primaire sepsis', icon: HeartPulse },
     { id: 'secundaire', title: 'Secundaire sepsis', icon: HeartPulse },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Terminologie – Primaire en secundaire sepsis"
       description="Het onderscheid tussen primaire en secundaire sepsis."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 20"

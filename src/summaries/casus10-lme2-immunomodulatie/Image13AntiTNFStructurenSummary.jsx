@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13AntiTNFStructurenSummary = () => {
+const Image13AntiTNFStructurenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'structuren', title: 'Anti-TNF structuren', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Anti-TNF-alpha structuren"
       description="Verschillende vormen: humaan en deels dierlijk."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 13"

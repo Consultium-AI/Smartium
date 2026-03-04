@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06QuizDirecteTransmissieSummary = () => {
+const Image06QuizDirecteTransmissieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – Directe transmissie', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Directe transmissie bij RVP-ziekten"
       description="Welke ziekten uit het Rijksvaccinatieprogramma worden direct overgedragen?"
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 6"

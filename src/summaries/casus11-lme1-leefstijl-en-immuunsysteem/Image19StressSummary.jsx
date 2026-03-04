@@ -1,10 +1,11 @@
 import { Brain } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19StressSummary = () => {
+const Image19StressSummary = ({ standalone = true }) => {
   const toc = [{ id: 'stress', title: 'Stress, ontspanning en verbinding', icon: Brain }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Andere leefstijlfactoren (3) – Stress, ontspanning en verbinding"
       description="Cortisol, burn-out en de koppeling tussen psychische stress en immuunsysteem."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 19"

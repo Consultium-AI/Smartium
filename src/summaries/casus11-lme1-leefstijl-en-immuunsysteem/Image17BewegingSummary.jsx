@@ -1,10 +1,11 @@
 import { Footprints } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17BewegingSummary = () => {
+const Image17BewegingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'beweging', title: 'Beweging en immuunsysteem', icon: Footprints }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Andere leefstijlfactoren (1) – Beweging"
       description="Effect van beweging en inactiviteit op ontsteking en immuunrespons."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 17"

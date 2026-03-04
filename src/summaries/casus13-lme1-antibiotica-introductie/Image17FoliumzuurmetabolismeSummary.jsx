@@ -1,10 +1,11 @@
 import { Beaker } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17FoliumzuurmetabolismeSummary = () => {
+const Image17FoliumzuurmetabolismeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'foliumzuur', title: 'Remmers van foliumzuurmetabolisme', icon: Beaker }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Remmers van foliumzuurmetabolisme"
       description="Cotrimoxazol en trimethoprim – indicaties en bijwerkingen."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 17"

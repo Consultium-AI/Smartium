@@ -1,10 +1,11 @@
 import { Droplets } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14IjzergebrekSummary = () => {
+const Image14IjzergebrekSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ijzer', title: 'Ijzergebrek en neutrofielen', icon: Droplets }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (4) – Ijzergebrek"
       description="Effect van ijzergebrek op neutrofielen en bactericide functie."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 14"

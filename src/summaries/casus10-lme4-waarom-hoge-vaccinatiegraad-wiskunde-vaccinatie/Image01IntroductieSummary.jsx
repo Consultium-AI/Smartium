@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01IntroductieSummary = () => {
+const Image01IntroductieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'intro', title: 'Introductie en leerdoelen', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Introductie – Waarom een hoge vaccinatiegraad?"
       description="Leerdoelen en inhoud van de module over de wiskunde van vaccinatie."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 1"

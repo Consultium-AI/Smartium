@@ -1,10 +1,11 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13BRMOSummary = () => {
+const Image13BRMOSummary = ({ standalone = true }) => {
   const toc = [{ id: 'brmo', title: 'BRMO', icon: Bug }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="BRMO – Bijzonder resistente micro-organismen"
       description="Definitie, criteria en voorbeelden van BRMO's."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 13"

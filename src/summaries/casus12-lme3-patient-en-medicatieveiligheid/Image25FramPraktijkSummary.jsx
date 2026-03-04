@@ -1,10 +1,11 @@
 import { Building2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image25FramPraktijkSummary = () => {
+const Image25FramPraktijkSummary = ({ standalone = true }) => {
   const toc = [{ id: 'praktijk', title: 'FRAM in de praktijk', icon: Building2 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="FRAM in de praktijk"
       description="WAI en WAD bestuderen en vergelijken."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 25"

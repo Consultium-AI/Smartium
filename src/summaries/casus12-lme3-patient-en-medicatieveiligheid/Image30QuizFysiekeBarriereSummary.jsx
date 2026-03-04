@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image30QuizFysiekeBarriereSummary = () => {
+const Image30QuizFysiekeBarriereSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – Fysieke barrière', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Fysieke barrière"
       description="Fysieke barrières voorkomen automatisch fouten."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 30"

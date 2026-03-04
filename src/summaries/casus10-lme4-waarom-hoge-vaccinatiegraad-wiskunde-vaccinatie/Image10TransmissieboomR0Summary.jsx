@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10TransmissieboomR0Summary = () => {
+const Image10TransmissieboomR0Summary = ({ standalone = true }) => {
   const toc = [{ id: 'transmissieboom', title: 'R₀ uit de transmissieboom', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="R₀ berekenen uit een transmissieboom"
       description="Hoe R₀ wordt bepaald uit meerdere generaties en waarom toeval een rol speelt."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 10"

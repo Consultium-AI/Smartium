@@ -1,10 +1,11 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09InfectiefocusSummary = () => {
+const Image09InfectiefocusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'focus', title: 'Infectiefocus', icon: Target }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Infectiefocus"
       description="Meest voorkomende bronnen van sepsis en volgorde van prevalentie."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 9"

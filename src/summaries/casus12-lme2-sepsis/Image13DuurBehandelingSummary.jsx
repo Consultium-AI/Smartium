@@ -1,10 +1,11 @@
 import { Clock } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13DuurBehandelingSummary = () => {
+const Image13DuurBehandelingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'duur', title: 'Duur van behandeling', icon: Clock }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Waarom infectiefocus zoeken – Duur van behandeling"
       description="Beïnvloeding van behandelduur door infectiefocus."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 13"

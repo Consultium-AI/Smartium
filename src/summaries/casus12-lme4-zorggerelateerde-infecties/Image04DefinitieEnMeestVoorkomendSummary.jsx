@@ -1,13 +1,14 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04DefinitieEnMeestVoorkomendSummary = () => {
+const Image04DefinitieEnMeestVoorkomendSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'definitie', title: 'Definitie en impact', icon: AlertTriangle },
     { id: 'meest', title: 'Meest voorkomende infecties', icon: AlertTriangle },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wat zijn zorggerelateerde infecties? – Definitie en impact"
       description="Definitie, wereldwijde impact en de vier meest voorkomende zorggerelateerde infecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 4"

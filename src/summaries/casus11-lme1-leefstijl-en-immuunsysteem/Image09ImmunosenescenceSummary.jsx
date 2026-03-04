@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09ImmunosenescenceSummary = () => {
+const Image09ImmunosenescenceSummary = ({ standalone = true }) => {
   const toc = [{ id: 'immunosenescence', title: 'Immunosenescence en epigenetica', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Inflammaging (2) – Immunosenescence en epigenetica"
       description="Veroudering van het immuunsysteem en epigenetische veranderingen."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 9"

@@ -1,10 +1,12 @@
 import { Scale } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04EthischeRechtvaardigingSummary = () => {
+const Image04EthischeRechtvaardigingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'rechtvaardiging', title: 'Ethische rechtvaardiging', icon: Scale }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Ethische rechtvaardiging"
       description="Wanneer is dwang of drang bij vaccinatie moreel gerechtvaardigd?"
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 4"

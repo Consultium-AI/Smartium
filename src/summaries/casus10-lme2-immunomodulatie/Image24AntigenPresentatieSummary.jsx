@@ -1,10 +1,11 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24AntigenPresentatieSummary = () => {
+const Image24AntigenPresentatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'presentatie', title: 'Antigenpresentatie', icon: Microscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Antigenpresentatie"
       description="DC en macrofagen presenteren antigenen aan T- en B-cellen."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 24"

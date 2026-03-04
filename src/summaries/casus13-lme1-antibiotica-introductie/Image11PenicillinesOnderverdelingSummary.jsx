@@ -1,13 +1,14 @@
 import { List } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11PenicillinesOnderverdelingSummary = () => {
+const Image11PenicillinesOnderverdelingSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'groepen', title: 'Groepen bètalactam', icon: List },
     { id: 'penicillines', title: 'Penicillines', icon: List },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Onderverdeling bètalactamantibiotica"
       description="Penicillines, cefalosporines, carbapenems en onderverdeling penicillines."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 11"

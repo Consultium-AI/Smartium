@@ -1,10 +1,11 @@
 import { Users } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21WorstelingSamenlevingSummary = () => {
+const Image21WorstelingSamenlevingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'samenleving', title: 'Worsteling samenleving', icon: Users }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Worsteling samenleving"
       description="Kruisinga, debat verplichte vaccinatie, geen verplichting."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 21"

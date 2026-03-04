@@ -1,10 +1,11 @@
 import { GitBranch } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11PrismaSummary = () => {
+const Image11PrismaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'prisma', title: 'PRISMA-analyse', icon: GitBranch }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De PRISMA-analyse"
       description="Retrospectieve analyse met oorzakenboom en categorisatie van oorzaken."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 11"

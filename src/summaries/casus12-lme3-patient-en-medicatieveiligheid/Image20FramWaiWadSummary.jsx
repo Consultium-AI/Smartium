@@ -1,10 +1,11 @@
 import { Video } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20FramWaiWadSummary = () => {
+const Image20FramWaiWadSummary = ({ standalone = true }) => {
   const toc = [{ id: 'waiwad', title: 'Safety II en FRAM – WAI vs WAD', icon: Video }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Safety II en FRAM"
       description="Work-as-imagined (WAI) versus Work-as-done (WAD)."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 20"

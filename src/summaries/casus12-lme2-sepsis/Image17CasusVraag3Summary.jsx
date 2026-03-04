@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17CasusVraag3Summary = () => {
+const Image17CasusVraag3Summary = ({ standalone = true }) => {
   const toc = [{ id: 'septische-shock', title: 'Casus – Vraag 3: Septische shock', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Casus: 78-jarige man – Vraag 3"
       description="Diagnose septische shock."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 17"

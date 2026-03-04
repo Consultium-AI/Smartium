@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16PassieveImmunisatieSummary = () => {
+const Image16PassieveImmunisatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'passief', title: 'Passieve immunisatie', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Passieve immunisatie"
       description="Immunoglobulinen voor directe bescherming."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 16"

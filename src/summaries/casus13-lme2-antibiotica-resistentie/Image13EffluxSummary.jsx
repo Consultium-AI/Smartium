@@ -1,10 +1,11 @@
 import { ArrowUpFromLine } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13EffluxSummary = () => {
+const Image13EffluxSummary = ({ standalone = true }) => {
   const toc = [{ id: 'efflux', title: 'Efflux van antibiotica', icon: ArrowUpFromLine }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Efflux van antibiotica"
       description="Resistentiemechanisme: actieve uitscheiding van antibiotica door de bacterie."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 13"

@@ -1,10 +1,11 @@
 import { User } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08SAureusDragerschapSummary = () => {
+const Image08SAureusDragerschapSummary = ({ standalone = true }) => {
   const toc = [{ id: 'dragerschap', title: 'S. aureus en dragerschap', icon: User }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="S. aureus bij schone ingrepen – Dragerschap"
       description="Waarom S. aureus de belangrijkste veroorzaker is van POWI bij schone ingrepen."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 8"

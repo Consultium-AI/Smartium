@@ -1,10 +1,11 @@
 import { Pizza } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12WestersDieetSummary = () => {
+const Image12WestersDieetSummary = ({ standalone = true }) => {
   const toc = [{ id: 'westers', title: 'Westers dieet', icon: Pizza }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (2) – Westers dieet"
       description="Directe en indirecte effecten van het westerse dieet op het immuunsysteem."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 12"

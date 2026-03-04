@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image33RisicosCRSSummary = () => {
+const Image33RisicosCRSSummary = ({ standalone = true }) => {
   const toc = [{ id: 'crs', title: 'Congenitaal rubellasyndroom', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Risico's – Hogere gemiddelde infectieleeftijd en CRS"
       description="Bij rodehond: bij te lage vaccinatiegraad meer CRS dan zonder vaccinatie."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 33"

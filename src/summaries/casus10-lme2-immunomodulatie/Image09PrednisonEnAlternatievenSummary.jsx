@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09PrednisonEnAlternatievenSummary = () => {
+const Image09PrednisonEnAlternatievenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'prednison', title: 'Prednison en alternatieven', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Prednison en alternatieven"
       description="Infectierisico en alternatieve immunosuppressiva."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 9"

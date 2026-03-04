@@ -1,7 +1,7 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24TestJeKennisSpectrumSummary = () => {
+const Image24TestJeKennisSpectrumSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'flucloxacilline', title: 'Flucloxacilline', icon: Target },
     { id: 'metronidazol', title: 'Metronidazol', icon: Target },
@@ -9,6 +9,7 @@ const Image24TestJeKennisSpectrumSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Test je kennis – Spectrum"
       description="Het spectrum van flucloxacilline, metronidazol en clindamycine."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 24"

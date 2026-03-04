@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image32RisicosMazelenSummary = () => {
+const Image32RisicosMazelenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'risicos', title: 'Risico\'s van een te lage vaccinatiegraad', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Risico's van een te lage vaccinatiegraad"
       description="H7 – Introductie: mazelen als voorbeeld."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 32"

@@ -1,10 +1,12 @@
 import { Scale } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10ProportioneelSummary = () => {
+const Image10ProportioneelSummary = ({ standalone = true }) => {
   const toc = [{ id: 'proportie', title: 'Proportioneel ingrijpen', icon: Scale }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Proportioneel ingrijpen"
       description="Het proportionaliteitsbeginsel bij vaccinatiebeleid."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 10"

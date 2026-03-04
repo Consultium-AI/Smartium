@@ -1,13 +1,14 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01IntroductieSummary = () => {
+const Image01IntroductieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie en leerdoelen', icon: BookOpen },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Introductie – Dwang en drang in historisch perspectief"
       description="Leerdoelen, doelgroep en inhoud van de module over vaccinatiebeleid en spanningen tussen individuele vrijheid en collectieve gezondheid."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 1"

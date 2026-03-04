@@ -1,10 +1,11 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10SAureusSummary = () => {
+const Image10SAureusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'saureus', title: 'Resistentiemechanisme bij S. aureus', icon: Bug }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Welk resistentiemechanisme bij S. aureus?"
       description="PBP2a-modificatie als oorzaak van resistentie voor alle beta-lactam antibiotica."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 10"

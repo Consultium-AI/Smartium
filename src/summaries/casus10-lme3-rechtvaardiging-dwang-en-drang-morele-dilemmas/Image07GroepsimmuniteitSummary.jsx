@@ -1,10 +1,12 @@
 import { Users } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07GroepsimmuniteitSummary = () => {
+const Image07GroepsimmuniteitSummary = ({ standalone = true }) => {
   const toc = [{ id: 'groep', title: 'Groepsimmuniteit', icon: Users }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Groepsimmuniteit"
       description="Het collectieve belang van vaccinatie."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 7"

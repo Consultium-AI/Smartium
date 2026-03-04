@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05BijwerkingenSummary = () => {
+const Image05BijwerkingenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'bijwerkingen', title: 'Bijwerkingen', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bijwerkingen"
       description="Leerplicht, Bond tegen Verplichte Vaccinatie en postvaccinale encephalitis."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 5"

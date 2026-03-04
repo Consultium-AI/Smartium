@@ -1,10 +1,11 @@
 import { CheckCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21AfsluitingSummary = () => {
+const Image21AfsluitingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'afsluiting', title: 'Afsluiting en leefstijladviezen', icon: CheckCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Afsluiting en reflectie"
       description="Leefstijladviezen vanuit immunologisch perspectief."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 21"

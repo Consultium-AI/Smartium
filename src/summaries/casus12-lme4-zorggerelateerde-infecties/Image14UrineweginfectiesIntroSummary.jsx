@@ -1,10 +1,11 @@
 import { Droplets } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14UrineweginfectiesIntroSummary = () => {
+const Image14UrineweginfectiesIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'uwi', title: 'Urineweginfecties', icon: Droplets }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Urineweginfecties"
       description="Introductie op urineweginfecties als zorggerelateerde infectie."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 14"

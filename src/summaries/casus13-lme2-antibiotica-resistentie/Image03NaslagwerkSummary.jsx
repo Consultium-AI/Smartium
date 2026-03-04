@@ -1,10 +1,11 @@
 import { FileText } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03NaslagwerkSummary = () => {
+const Image03NaslagwerkSummary = ({ standalone = true }) => {
   const toc = [{ id: 'naslagwerk', title: 'Naslagwerk antibiotica', icon: FileText }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Naslagwerk – Antibiotica"
       description="Overzicht van de 15 antibiotica en het naslagwerk in deze e-learning."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 3"

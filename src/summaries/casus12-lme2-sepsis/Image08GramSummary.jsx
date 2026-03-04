@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08GramSummary = () => {
+const Image08GramSummary = ({ standalone = true }) => {
   const toc = [{ id: 'gram', title: 'Gram-positief en gram-negatief', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Gram-positieve en gram-negatieve bacteriën bij sepsis"
       description="Prevalentie en TLR-herkenning van bacteriële componenten."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 8"

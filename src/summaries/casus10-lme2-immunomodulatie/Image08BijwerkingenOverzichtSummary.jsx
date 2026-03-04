@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08BijwerkingenOverzichtSummary = () => {
+const Image08BijwerkingenOverzichtSummary = ({ standalone = true }) => {
   const toc = [{ id: 'bijwerkingen', title: 'Bijwerkingen overzicht', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bijwerkingen corticosteroïden – overzicht"
       description="Uitgebreide lijst van bijwerkingen."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 8"

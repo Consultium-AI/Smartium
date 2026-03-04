@@ -1,10 +1,11 @@
 import { FlaskConical } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04GeschiedenisFlemingSummary = () => {
+const Image04GeschiedenisFlemingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'geschiedenis', title: 'Geschiedenis penicilline', icon: FlaskConical }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Geschiedenis – Ontdekking penicilline"
       description="Alexander Fleming en de ontdekking van penicilline."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 4"

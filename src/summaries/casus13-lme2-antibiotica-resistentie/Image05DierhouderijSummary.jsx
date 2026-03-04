@@ -1,7 +1,7 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05DierhouderijSummary = () => {
+const Image05DierhouderijSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'dierhouderij', title: 'Antibioticagebruik in de dierhouderij', icon: BarChart3 },
     { id: 'maran', title: 'Resultaten MARAN 2023', icon: BarChart3 },
@@ -9,6 +9,7 @@ const Image05DierhouderijSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Antibioticagebruik in de dierhouderij"
       description="Antibioticagebruik en resistentie in de Nederlandse veehouderij."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 5"

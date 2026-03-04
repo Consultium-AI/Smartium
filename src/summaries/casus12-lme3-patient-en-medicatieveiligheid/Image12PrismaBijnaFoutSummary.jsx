@@ -1,10 +1,11 @@
 import { GitMerge } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12PrismaBijnaFoutSummary = () => {
+const Image12PrismaBijnaFoutSummary = ({ standalone = true }) => {
   const toc = [{ id: 'bijnafout', title: 'PRISMA bij bijna-fout', icon: GitMerge }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="PRISMA bij bijna-fout"
       description="Faalzijde en herstelzijde bij near miss."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 12"

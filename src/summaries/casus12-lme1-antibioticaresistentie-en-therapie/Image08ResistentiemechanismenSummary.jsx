@@ -1,10 +1,11 @@
 import { Settings } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08ResistentiemechanismenSummary = () => {
+const Image08ResistentiemechanismenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'mechanismen', title: 'Resistentiemechanismen', icon: Settings }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Resistentiemechanismen"
       description="Vier belangrijke manieren waarop bacteriën resistent kunnen worden voor antibiotica."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 8"

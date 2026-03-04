@@ -1,10 +1,11 @@
 import { BookHeart } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15GewetensbezwaarSummary = () => {
+const Image15GewetensbezwaarSummary = ({ standalone = true }) => {
   const toc = [{ id: 'geweten', title: 'Gewetensbezwaar', icon: BookHeart }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Gewetensbezwaar"
       description="Heidelberg Catechismus, Gods voorzienigheid."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 15"

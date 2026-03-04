@@ -1,10 +1,11 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22EnNuCoronaSummary = () => {
+const Image22EnNuCoronaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'corona', title: 'En nu: Corona 2020', icon: Bug }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="En nu: Corona 2020"
       description="Kerken, SGP Van der Staaij vs Grapperhaus."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 22"

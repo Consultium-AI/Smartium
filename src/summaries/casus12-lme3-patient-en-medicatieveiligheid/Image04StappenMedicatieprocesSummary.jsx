@@ -1,10 +1,11 @@
 import { ListOrdered } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04StappenMedicatieprocesSummary = () => {
+const Image04StappenMedicatieprocesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'stappen', title: 'Stappen medicatieproces', icon: ListOrdered }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Stappen medicatieproces"
       description="De 6 stappen van het medicatieproces en mogelijke fouten per stap."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 4"

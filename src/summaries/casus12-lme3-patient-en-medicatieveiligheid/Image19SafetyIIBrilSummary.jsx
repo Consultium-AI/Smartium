@@ -1,10 +1,11 @@
 import { Glasses } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19SafetyIIBrilSummary = () => {
+const Image19SafetyIIBrilSummary = ({ standalone = true }) => {
   const toc = [{ id: 'safety2', title: 'De Safety II-bril', icon: Glasses }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De Safety II-bril"
       description="Leren van wat goed gaat in plaats van alleen fouten."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 19"

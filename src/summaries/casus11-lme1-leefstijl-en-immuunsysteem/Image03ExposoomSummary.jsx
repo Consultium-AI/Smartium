@@ -1,10 +1,11 @@
 import { Globe } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03ExposoomSummary = () => {
+const Image03ExposoomSummary = ({ standalone = true }) => {
   const toc = [{ id: 'exposoom', title: 'Het exposoom', icon: Globe }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Exposoom (1)"
       description="Alle factoren die invloed hebben op ons functioneren en immuunsysteem."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 3"

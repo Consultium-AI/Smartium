@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09CelwandsyntheseremmersIntroSummary = () => {
+const Image09CelwandsyntheseremmersIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'celwand', title: 'Celwandsyntheseremmers', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Celwandsyntheseremmers"
       description="Antibiotica die aanhechten aan de celwand of het celmembraan."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 9"

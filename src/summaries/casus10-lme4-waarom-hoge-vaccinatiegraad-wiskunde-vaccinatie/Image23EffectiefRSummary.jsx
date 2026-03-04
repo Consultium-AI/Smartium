@@ -1,10 +1,11 @@
 import { TrendingDown } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23EffectiefRSummary = () => {
+const Image23EffectiefRSummary = ({ standalone = true }) => {
   const toc = [{ id: 'effectiefr', title: 'Het effectief reproductiegetal R', icon: TrendingDown }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Het effectief reproductiegetal R"
       description="R over de tijd – wanneer is R < 1?"
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 23"

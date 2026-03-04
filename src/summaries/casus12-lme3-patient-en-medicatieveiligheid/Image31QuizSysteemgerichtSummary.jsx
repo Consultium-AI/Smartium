@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image31QuizSysteemgerichtSummary = () => {
+const Image31QuizSysteemgerichtSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – Systeemgerichte aanpak', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Systeemgerichte aanpak"
       description="Systeemgerichte aanpak richt zich op technologische en organisatorische oorzaken."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 31"

@@ -1,13 +1,14 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18ConclusieSummary = () => {
+const Image18ConclusieSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'toename', title: 'Toename wereldwijde resistentie', icon: AlertCircle },
     { id: 'tijdlijn', title: 'Ontdekking en resistentie', icon: AlertCircle },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Conclusie – Antibioticaresistentie"
       description="Samenvatting van de wereldwijde dreiging van antibioticaresistentie."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 18"

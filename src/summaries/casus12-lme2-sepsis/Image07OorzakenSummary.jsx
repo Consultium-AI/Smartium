@@ -1,10 +1,11 @@
 import { HelpCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07OorzakenSummary = () => {
+const Image07OorzakenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'oorzaken', title: 'Oorzaken van sepsis', icon: HelpCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Oorzaken van sepsis"
       description="Gram-positieve en gram-negatieve bacteriën als belangrijkste verwekkers."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 7"

@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04NatuurlijkeResistentieSummary = () => {
+const Image04NatuurlijkeResistentieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'natuurlijk', title: 'Natuurlijke resistentie – Vancomycine', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Natuurlijke resistentie – Vancomycine en gramnegatieven"
       description="Waarom gramnegatieve bacteriën intrinsiek resistent zijn voor vancomycine."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 4"

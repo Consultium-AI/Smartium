@@ -1,10 +1,11 @@
 import { Dna } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15NucleinezursyntheseremmersSummary = () => {
+const Image15NucleinezursyntheseremmersSummary = ({ standalone = true }) => {
   const toc = [{ id: 'nucleinezur', title: 'Nucleïnezuursyntheseremmers', icon: Dna }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Nucleïnezuursyntheseremmers"
       description="Antibiotica die de bacteriële nucleïnezuursynthese remmen."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 15"

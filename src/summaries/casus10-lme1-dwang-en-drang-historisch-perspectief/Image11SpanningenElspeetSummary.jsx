@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11SpanningenElspeetSummary = () => {
+const Image11SpanningenElspeetSummary = ({ standalone = true }) => {
   const toc = [{ id: 'spanningen', title: 'Spanningen Elspeet', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Spanningen Elspeet"
       description="12 februari 1966: protest en omgeduwde auto's."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 11"

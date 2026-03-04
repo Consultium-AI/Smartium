@@ -1,7 +1,7 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14AangrijpingspuntSummary = () => {
+const Image14AangrijpingspuntSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'aangrijpingspunt', title: 'Aangrijpingspunt aanpassen', icon: Target },
     { id: 'ribosoom', title: 'Verandering in het ribosoom', icon: Target },
@@ -9,6 +9,7 @@ const Image14AangrijpingspuntSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Aangrijpingspunt aanpassen"
       description="Resistentiemechanisme: verandering van het doelwit waarop het antibioticum bindt."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 14"

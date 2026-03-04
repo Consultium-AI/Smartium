@@ -1,10 +1,11 @@
 import { Apple } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16DIIVoedingsmiddelenSummary = () => {
+const Image16DIIVoedingsmiddelenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'dii-voeding', title: 'DII – Pro- en anti-inflammatoire voeding', icon: Apple }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (6) – DII en voedingsmiddelen"
       description="Welke voedingsmiddelen pro- of anti-inflammatoir zijn."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 16"

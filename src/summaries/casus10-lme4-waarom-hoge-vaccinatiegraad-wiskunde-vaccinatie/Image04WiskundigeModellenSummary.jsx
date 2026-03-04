@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04WiskundigeModellenSummary = () => {
+const Image04WiskundigeModellenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'modellen', title: 'Waarom wiskundige modellen?', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Waarom wiskundige modellen in de infectieziekte-epidemiologie?"
       description="Introductie van het eerste hoofdstuk over het nut van wiskundige modellen."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 4"

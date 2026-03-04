@@ -1,10 +1,11 @@
 import { TrendingUp } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16SIRTrendsSummary = () => {
+const Image16SIRTrendsSummary = ({ standalone = true }) => {
   const toc = [{ id: 'trends', title: 'Trends over de tijd', icon: TrendingUp }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="SIR-model – Trends over de tijd"
       description="Hoe S, I en R veranderen bij R₀ > 1."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 16"

@@ -1,13 +1,14 @@
 import { Syringe } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20ActieveImmunisatieSummary = () => {
+const Image20ActieveImmunisatieSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'vaccinatie', title: 'Vaccinatie', icon: Syringe },
     { id: 'principe', title: 'Principe van vaccinatie', icon: Syringe },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Actieve immunisatie – Vaccinatie"
       description="Vaccinatie als effectieve vorm van immunostimulatie."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 20"

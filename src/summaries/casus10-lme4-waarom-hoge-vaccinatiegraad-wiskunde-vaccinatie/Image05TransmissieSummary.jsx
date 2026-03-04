@@ -1,10 +1,11 @@
 import { ArrowRightLeft } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05TransmissieSummary = () => {
+const Image05TransmissieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'transmissie', title: 'Directe en indirecte transmissie', icon: ArrowRightLeft }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Transmissie – Direct en indirect"
       description="Waarom een hoge vaccinatiegraad essentieel is en hoe transmissie plaatsvindt."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 5"

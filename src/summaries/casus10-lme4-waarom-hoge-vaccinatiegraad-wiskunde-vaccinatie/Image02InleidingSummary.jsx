@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02InleidingSummary = () => {
+const Image02InleidingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'inleiding', title: 'Inleiding', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Inleiding – Wiskunde van vaccinatie"
       description="Waarom een hoge vaccinatiegraad nodig is en hoe deze wordt bepaald."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 2"

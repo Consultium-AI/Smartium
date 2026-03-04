@@ -8502,10 +8502,10 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 10: Vaccinatie",
             lmes: [
-              { id: "casus10-lme1-dwang-en-drang-historisch-perspectief", name: "Dwang en drang in historisch perspectief", type: "image-based", questionsMap: casus10Lme1QuestionsMap },
-              { id: "casus10-lme2-immunomodulatie", name: "Immunomodulatie", type: "image-based", questionsMap: casus10Lme2QuestionsMap },
-              { id: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", name: "Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren", type: "image-based", questionsMap: casus10Lme3QuestionsMap },
-              { id: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", name: "Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie", type: "image-based", questionsMap: casus10Lme4QuestionsMap }
+              { id: "casus10-lme1-dwang-en-drang-historisch-perspectief", name: "Dwang en drang in historisch perspectief", type: "simple", questionsMap: casus10Lme1QuestionsMap },
+              { id: "casus10-lme2-immunomodulatie", name: "Immunomodulatie", type: "simple", questionsMap: casus10Lme2QuestionsMap },
+              { id: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", name: "Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren", type: "simple", questionsMap: casus10Lme3QuestionsMap },
+              { id: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", name: "Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie", type: "simple", questionsMap: casus10Lme4QuestionsMap }
             ]
           }
         ]
@@ -8516,16 +8516,16 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 11: Primaire immuundeficiënties",
             lmes: [
-              { id: "casus11-lme1-leefstijl-en-immuunsysteem", name: "Leefstijl en immuunsysteem", type: "image-based", questionsMap: casus11Lme1QuestionsMap }
+              { id: "casus11-lme1-leefstijl-en-immuunsysteem", name: "Leefstijl en immuunsysteem", type: "simple", questionsMap: casus11Lme1QuestionsMap }
             ]
           },
           {
             name: "Casus 12: Lijninfecties & resistenties",
             lmes: [
-              { id: "casus12-lme1-antibioticaresistentie-en-therapie", name: "Antibioticaresistentie en therapie", type: "image-based", questionsMap: casus12Lme1QuestionsMap },
-              { id: "casus12-lme2-sepsis", name: "Sepsis", type: "image-based", questionsMap: casus12Lme2QuestionsMap },
-              { id: "casus12-lme3-patient-en-medicatieveiligheid", name: "Patient- en medicatieveiligheid", type: "image-based", questionsMap: casus12Lme3QuestionsMap },
-              { id: "casus12-lme4-zorggerelateerde-infecties", name: "Zorggerelateerde infecties", type: "image-based", questionsMap: casus12Lme4QuestionsMap }
+              { id: "casus12-lme1-antibioticaresistentie-en-therapie", name: "Antibioticaresistentie en therapie", type: "simple", questionsMap: casus12Lme1QuestionsMap },
+              { id: "casus12-lme2-sepsis", name: "Sepsis", type: "simple", questionsMap: casus12Lme2QuestionsMap },
+              { id: "casus12-lme3-patient-en-medicatieveiligheid", name: "Patient- en medicatieveiligheid", type: "simple", questionsMap: casus12Lme3QuestionsMap },
+              { id: "casus12-lme4-zorggerelateerde-infecties", name: "Zorggerelateerde infecties", type: "simple", questionsMap: casus12Lme4QuestionsMap }
             ]
           }
         ]
@@ -8536,8 +8536,8 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 13: Een piloot met koorts",
             lmes: [
-              { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "image-based", questionsMap: casus13Lme1QuestionsMap },
-              { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "image-based", questionsMap: casus13Lme2QuestionsMap }
+              { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "simple", questionsMap: casus13Lme1QuestionsMap }
+              { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "simple", questionsMap: casus13Lme2QuestionsMap }
             ]
           }
         ]
@@ -8684,27 +8684,38 @@ const PracticeQuestionsPage = () => {
     if (lme2QuestionsMap[lmeParam]) return lme2QuestionsMap[lmeParam]
     // LME 3: Welk antibioticum kies ik
     if (lme3QuestionsMap[lmeParam]) return lme3QuestionsMap[lmeParam]
-    // Casus 10 LME 1: Dwang en drang in historisch perspectief
+    // Casus 10 LME 1: Dwang en drang in historisch perspectief (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus10-lme1-dwang-en-drang-historisch-perspectief') return Object.values(casus10Lme1QuestionsMap).flat()
     if (casus10Lme1QuestionsMap[lmeParam]) return casus10Lme1QuestionsMap[lmeParam]
-    // Casus 10 LME 2: Immunomodulatie
+    // Casus 10 LME 2: Immunomodulatie (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus10-lme2-immunomodulatie') return Object.values(casus10Lme2QuestionsMap).flat()
     if (casus10Lme2QuestionsMap[lmeParam]) return casus10Lme2QuestionsMap[lmeParam]
-    // Casus 10 LME 3: Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren
+    // Casus 10 LME 3: Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') return Object.values(casus10Lme3QuestionsMap).flat()
     if (casus10Lme3QuestionsMap[lmeParam]) return casus10Lme3QuestionsMap[lmeParam]
-    // Casus 10 LME 4: Waarom hoge vaccinatiegraad - De wiskunde van vaccinatie
+    // Casus 10 LME 4: Waarom hoge vaccinatiegraad - De wiskunde van vaccinatie (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') return Object.values(casus10Lme4QuestionsMap).flat()
     if (casus10Lme4QuestionsMap[lmeParam]) return casus10Lme4QuestionsMap[lmeParam]
-    // Casus 11 LME 1: Leefstijl en immuunsysteem (Week 6 Casus 11 Primaire immuundeficiënties)
+    // Casus 11 LME 1: Leefstijl en immuunsysteem (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus11-lme1-leefstijl-en-immuunsysteem') return Object.values(casus11Lme1QuestionsMap).flat()
     if (casus11Lme1QuestionsMap[lmeParam]) return casus11Lme1QuestionsMap[lmeParam]
-    // Casus 12 LME 1: Antibioticaresistentie en therapie
+    // Casus 12 LME 1: Antibioticaresistentie en therapie (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus12-lme1-antibioticaresistentie-en-therapie') return Object.values(casus12Lme1QuestionsMap).flat()
     if (casus12Lme1QuestionsMap[lmeParam]) return casus12Lme1QuestionsMap[lmeParam]
-    // Casus 12 LME 2: Sepsis
+    // Casus 12 LME 2: Sepsis (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus12-lme2-sepsis') return Object.values(casus12Lme2QuestionsMap).flat()
     if (casus12Lme2QuestionsMap[lmeParam]) return casus12Lme2QuestionsMap[lmeParam]
-    // Casus 12 LME 3: Voorbereiding Patient- en medicatieveiligheid
+    // Casus 12 LME 3: Voorbereiding Patient- en medicatieveiligheid (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus12-lme3-patient-en-medicatieveiligheid') return Object.values(casus12Lme3QuestionsMap).flat()
     if (casus12Lme3QuestionsMap[lmeParam]) return casus12Lme3QuestionsMap[lmeParam]
-    // Casus 12 LME 4: Zorggerelateerde infecties
+    // Casus 12 LME 4: Zorggerelateerde infecties (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus12-lme4-zorggerelateerde-infecties') return Object.values(casus12Lme4QuestionsMap).flat()
     if (casus12Lme4QuestionsMap[lmeParam]) return casus12Lme4QuestionsMap[lmeParam]
-    // Casus 13 LME 1: Antibiotica Introductie
+    // Casus 13 LME 1: Antibiotica Introductie (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus13-lme1-antibiotica-introductie') return Object.values(casus13Lme1QuestionsMap).flat()
     if (casus13Lme1QuestionsMap[lmeParam]) return casus13Lme1QuestionsMap[lmeParam]
-    // Casus 13 LME 2: Antibiotica Resistentie
+    // Casus 13 LME 2: Antibiotica Resistentie (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return Object.values(casus13Lme2QuestionsMap).flat()
     if (casus13Lme2QuestionsMap[lmeParam]) return casus13Lme2QuestionsMap[lmeParam]
     // Default (incl. alle-random): show all questions combined
     const blok3Count = embryogeneseQuestions.length + beeldvormingQuestions.length + extraembryonaalQuestions.length + extremiteitenQuestions.length
@@ -8800,16 +8811,27 @@ const PracticeQuestionsPage = () => {
     if (lme1QuestionsMap[lmeParam]) return `Parasitaire verwekkers gastro-enteritis – Afbeelding ${lmeParam.replace('lme1-parasitaire-verwekkers-gastro-enteritis-image', '')}`
     if (lme2QuestionsMap[lmeParam]) return `Virale verwekkers gastro-enteritis – Afbeelding ${lmeParam.replace('lme2-virale-verwekkers-gastro-enteritis-image', '')}`
     if (lme3QuestionsMap[lmeParam]) return `Welk antibioticum kies ik – Afbeelding ${lmeParam.replace('lme3-welk-antibioticum-kies-ik-image', '')}`
+    if (lmeParam === 'casus10-lme1-dwang-en-drang-historisch-perspectief') return 'Dwang en drang in historisch perspectief'
     if (casus10Lme1QuestionsMap[lmeParam]) return `Dwang en drang in historisch perspectief – Afbeelding ${lmeParam.replace('casus10-lme1-dwang-en-drang-historisch-perspectief-image', '')}`
+    if (lmeParam === 'casus10-lme2-immunomodulatie') return 'Immunomodulatie'
     if (casus10Lme2QuestionsMap[lmeParam]) return `Immunomodulatie – Afbeelding ${lmeParam.replace('casus10-lme2-immunomodulatie-image', '')}`
+    if (lmeParam === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') return "Rechtvaardiging dwang en drang – Morele dilemma's bij vaccineren"
     if (casus10Lme3QuestionsMap[lmeParam]) return `Rechtvaardiging dwang en drang – Afbeelding ${lmeParam.replace('casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas-image', '')}`
+    if (lmeParam === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') return 'Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie'
     if (casus10Lme4QuestionsMap[lmeParam]) return `De wiskunde van vaccinatie – Afbeelding ${lmeParam.replace('casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie-image', '')}`
+    if (lmeParam === 'casus11-lme1-leefstijl-en-immuunsysteem') return 'Leefstijl en immuunsysteem'
     if (casus11Lme1QuestionsMap[lmeParam]) return `Leefstijl en immuunsysteem – Afbeelding ${lmeParam.replace('casus11-lme1-leefstijl-en-immuunsysteem-image', '')}`
+    if (lmeParam === 'casus12-lme1-antibioticaresistentie-en-therapie') return 'Antibioticaresistentie en therapie'
     if (casus12Lme1QuestionsMap[lmeParam]) return `Antibioticaresistentie en therapie – Afbeelding ${lmeParam.replace('casus12-lme1-antibioticaresistentie-en-therapie-image', '')}`
+    if (lmeParam === 'casus12-lme2-sepsis') return 'Sepsis'
     if (casus12Lme2QuestionsMap[lmeParam]) return `Sepsis – Afbeelding ${lmeParam.replace('casus12-lme2-sepsis-image', '')}`
+    if (lmeParam === 'casus12-lme3-patient-en-medicatieveiligheid') return 'Patient- en medicatieveiligheid'
     if (casus12Lme3QuestionsMap[lmeParam]) return `Patient- en medicatieveiligheid – Afbeelding ${lmeParam.replace('casus12-lme3-patient-en-medicatieveiligheid-image', '')}`
+    if (lmeParam === 'casus12-lme4-zorggerelateerde-infecties') return 'Zorggerelateerde infecties'
     if (casus12Lme4QuestionsMap[lmeParam]) return `Zorggerelateerde infecties – Afbeelding ${lmeParam.replace('casus12-lme4-zorggerelateerde-infecties-image', '')}`
+    if (lmeParam === 'casus13-lme1-antibiotica-introductie') return 'Antibiotica Introductie'
     if (casus13Lme1QuestionsMap[lmeParam]) return `Antibiotica Introductie – Afbeelding ${lmeParam.replace('casus13-lme1-antibiotica-introductie-image', '')}`
+    if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return 'Antibiotica Resistentie'
     if (casus13Lme2QuestionsMap[lmeParam]) return `Antibiotica Resistentie – Afbeelding ${lmeParam.replace('casus13-lme2-antibiotica-resistentie-image', '')}`
     if (lmeParam === 'alle-random') return 'Alle vragen (random)'
     return 'Alle Oefenvragen'
@@ -8858,22 +8880,33 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return `Test je kennis met ${getQuestionCount(lme6QuestionsMap)} meerkeuzevragen over de milt.`
     if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return `Test je kennis met ${getQuestionCount(lme1QuestionsMap)} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`
     if (lmeParam === 'lme3-welk-antibioticum-kies-ik') return `Test je kennis met ${getQuestionCount(lme3QuestionsMap)} meerkeuzevragen over antibioticakeuze.`
+    if (lmeParam === 'casus10-lme1-dwang-en-drang-historisch-perspectief') return `Test je kennis met ${getQuestionCount(casus10Lme1QuestionsMap)} meerkeuzevragen over dwang en drang in historisch perspectief.`
+    if (lmeParam === 'casus10-lme2-immunomodulatie') return `Test je kennis met ${getQuestionCount(casus10Lme2QuestionsMap)} meerkeuzevragen over immunomodulatie.`
+    if (lmeParam === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') return `Test je kennis met ${getQuestionCount(casus10Lme3QuestionsMap)} meerkeuzevragen over rechtvaardiging dwang en drang – morele dilemma's bij vaccineren.`
+    if (lmeParam === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') return `Test je kennis met ${getQuestionCount(casus10Lme4QuestionsMap)} meerkeuzevragen over de wiskunde van vaccinatie.`
+    if (lmeParam === 'casus11-lme1-leefstijl-en-immuunsysteem') return `Test je kennis met ${getQuestionCount(casus11Lme1QuestionsMap)} meerkeuzevragen over leefstijl en immuunsysteem.`
+    if (lmeParam === 'casus12-lme1-antibioticaresistentie-en-therapie') return `Test je kennis met ${getQuestionCount(casus12Lme1QuestionsMap)} meerkeuzevragen over antibioticaresistentie en therapie.`
+    if (lmeParam === 'casus12-lme2-sepsis') return `Test je kennis met ${getQuestionCount(casus12Lme2QuestionsMap)} meerkeuzevragen over sepsis.`
+    if (lmeParam === 'casus12-lme3-patient-en-medicatieveiligheid') return `Test je kennis met ${getQuestionCount(casus12Lme3QuestionsMap)} meerkeuzevragen over patient- en medicatieveiligheid.`
+    if (lmeParam === 'casus12-lme4-zorggerelateerde-infecties') return `Test je kennis met ${getQuestionCount(casus12Lme4QuestionsMap)} meerkeuzevragen over zorggerelateerde infecties.`
+    if (lmeParam === 'casus13-lme1-antibiotica-introductie') return `Test je kennis met ${getQuestionCount(casus13Lme1QuestionsMap)} meerkeuzevragen over antibiotica introductie.`
+    if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return `Test je kennis met ${getQuestionCount(casus13Lme2QuestionsMap)} meerkeuzevragen over antibiotica resistentie.`
     if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
     if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`
     if (lme1QuestionsMap[lmeParam]) return `Test je kennis met ${lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`
     if (lme2QuestionsMap[lmeParam]) return `Test je kennis met ${lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over virale verwekkers van gastro-enteritis.`
     if (lme3QuestionsMap[lmeParam]) return `Test je kennis met ${lme3QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibioticakeuze.`
-    if (casus10Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over dwang en drang in historisch perspectief.`
-    if (casus10Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over immunomodulatie.`
-    if (casus10Lme3QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme3QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over rechtvaardiging dwang en drang – morele dilemma's bij vaccineren.`
-    if (casus10Lme4QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme4QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de wiskunde van vaccinatie.`
-    if (casus11Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus11Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over leefstijl en immuunsysteem.`
-    if (casus12Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibioticaresistentie en therapie.`
-    if (casus12Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over sepsis.`
-    if (casus12Lme3QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme3QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over patient- en medicatieveiligheid.`
-    if (casus12Lme4QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme4QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over zorggerelateerde infecties.`
-    if (casus13Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus13Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibiotica introductie.`
-    if (casus13Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus13Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibiotica resistentie.`
+    if (casus10Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over dwang en drang in historisch perspectief.` // image-based fallback
+    if (casus10Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over immunomodulatie.` // image-based fallback
+    if (casus10Lme3QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme3QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over rechtvaardiging dwang en drang – morele dilemma's bij vaccineren.` // image-based fallback
+    if (casus10Lme4QuestionsMap[lmeParam]) return `Test je kennis met ${casus10Lme4QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de wiskunde van vaccinatie.` // image-based fallback
+    if (casus11Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus11Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over leefstijl en immuunsysteem.` // image-based fallback
+    if (casus12Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibioticaresistentie en therapie.` // image-based fallback
+    if (casus12Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over sepsis.` // image-based fallback
+    if (casus12Lme3QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme3QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over patient- en medicatieveiligheid.` // image-based fallback
+    if (casus12Lme4QuestionsMap[lmeParam]) return `Test je kennis met ${casus12Lme4QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over zorggerelateerde infecties.` // image-based fallback
+    if (casus13Lme1QuestionsMap[lmeParam]) return `Test je kennis met ${casus13Lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibiotica introductie.` // image-based fallback
+    if (casus13Lme2QuestionsMap[lmeParam]) return `Test je kennis met ${casus13Lme2QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over antibiotica resistentie.` // image-based fallback
     if (lmeParam === 'alle-random') return 'Oefen alle meerkeuzevragen in willekeurige volgorde.'
     return 'Test je kennis met 607 meerkeuzevragen over alle LMEs.'
   }

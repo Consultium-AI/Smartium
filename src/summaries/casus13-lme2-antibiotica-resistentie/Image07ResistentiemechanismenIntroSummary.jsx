@@ -1,10 +1,11 @@
 import { Video } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07ResistentiemechanismenIntroSummary = () => {
+const Image07ResistentiemechanismenIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'mechanismen', title: 'Resistentiemechanismen', icon: Video }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Resistentiemechanismen – Introductie"
       description="Overzicht van natuurlijke en verkregen resistentiemechanismen."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 7"

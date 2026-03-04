@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07StudiesSummary = () => {
+const Image07StudiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'studies', title: 'Studies naar medicatiefouten', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Studies naar medicatiefouten"
       description="Omvang van het probleem: Nivel- en HARM-onderzoek."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 7"

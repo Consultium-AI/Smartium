@@ -1,7 +1,7 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06CategorieenAntibioticaSummary = () => {
+const Image06CategorieenAntibioticaSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'spectrum', title: 'Werkingsspectrum', icon: Layers },
     { id: 'structuur', title: 'Chemische structuur', icon: Layers },
@@ -9,6 +9,7 @@ const Image06CategorieenAntibioticaSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Categorieën antibiotica"
       description="Drie manieren om antibiotica te categoriseren."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 6"

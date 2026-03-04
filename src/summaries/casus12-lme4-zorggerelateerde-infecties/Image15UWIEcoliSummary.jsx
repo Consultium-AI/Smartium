@@ -1,10 +1,11 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15UWIEcoliSummary = () => {
+const Image15UWIEcoliSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ecoli', title: 'E. coli als verwekker', icon: Bug }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="UWI – Meest voorkomende verwekker"
       description="Escherichia coli als belangrijkste verwekker van urineweginfecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 15"

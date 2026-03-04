@@ -1,10 +1,11 @@
 import { TrendingUp } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10TrainedImmunitySummary = () => {
+const Image10TrainedImmunitySummary = ({ standalone = true }) => {
   const toc = [{ id: 'trained', title: 'Trained immunity en tolerantie', icon: TrendingUp }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Trained immunity en tolerantie"
       description="Versterkte of verzwakte respons bij herhaalde stimulatie."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 10"

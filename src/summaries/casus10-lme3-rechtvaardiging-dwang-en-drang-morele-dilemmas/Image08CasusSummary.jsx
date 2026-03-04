@@ -1,10 +1,12 @@
 import { Stethoscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08CasusSummary = () => {
+const Image08CasusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'casus', title: 'Casus', icon: Stethoscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Casus"
       description="Praktisch moreel dilemma bij vaccinatie."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 8"

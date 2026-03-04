@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19VaccinTypenSummary = () => {
+const Image19VaccinTypenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'vaccintypen', title: 'Vaccintypen', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Typen vaccins"
       description="Levend verzwakt, geïnactiveerd, subunit en mRNA vaccins."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 19"

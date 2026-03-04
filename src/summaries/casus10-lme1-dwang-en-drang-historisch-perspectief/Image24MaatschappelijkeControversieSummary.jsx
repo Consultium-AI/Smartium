@@ -1,10 +1,11 @@
 import { Link2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24MaatschappelijkeControversieSummary = () => {
+const Image24MaatschappelijkeControversieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'slot', title: 'Maatschappelijke controversie', icon: Link2 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Maatschappelijke controversie"
       description="Slot: rol artsen als bruggenbouwers."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 24"

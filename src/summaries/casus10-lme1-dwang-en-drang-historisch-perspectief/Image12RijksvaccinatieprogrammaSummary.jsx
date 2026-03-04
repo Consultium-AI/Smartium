@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12RijksvaccinatieprogrammaSummary = () => {
+const Image12RijksvaccinatieprogrammaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'rvp', title: 'Rijksvaccinatieprogramma', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Rijksvaccinatieprogramma"
       description="Post-WWII, jaren 60-70, circa 90% vaccinatiegraad."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 12"

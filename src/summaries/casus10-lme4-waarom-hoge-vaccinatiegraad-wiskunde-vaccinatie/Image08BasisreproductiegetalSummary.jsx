@@ -1,10 +1,11 @@
 import { GitBranch } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08BasisreproductiegetalSummary = () => {
+const Image08BasisreproductiegetalSummary = ({ standalone = true }) => {
   const toc = [{ id: 'r0', title: 'Het basisreproductiegetal R₀', icon: GitBranch }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Het basisreproductiegetal R₀"
       description="Visuele weergave van de transmissieketen en R₀."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 8"

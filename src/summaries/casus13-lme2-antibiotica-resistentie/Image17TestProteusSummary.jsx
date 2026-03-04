@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17TestProteusSummary = () => {
+const Image17TestProteusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'casus', title: 'Test je kennis – Proteus vulgaris', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Test je kennis – Proteus vulgaris en AMP-C"
       description="Casus: welke antibiotica zijn geschikt bij chronische prostatitis met AMP-C-producerende Proteus vulgaris?"
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 17"

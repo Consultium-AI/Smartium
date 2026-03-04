@@ -1,10 +1,11 @@
 import { Utensils } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11VoedingIntroSummary = () => {
+const Image11VoedingIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'voeding-intro', title: 'Voeding en immuunsysteem – introductie', icon: Utensils }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (1)"
       description="Kritiek op commerciële immune boosters en wat een goed afgesteld immuunsysteem is."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 11"

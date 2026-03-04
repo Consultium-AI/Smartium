@@ -1,10 +1,11 @@
 import { Heart } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image17WorstelingWeigeraarsSummary = () => {
+const Image17WorstelingWeigeraarsSummary = ({ standalone = true }) => {
   const toc = [{ id: 'worsteling', title: 'Worsteling weigeraars', icon: Heart }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Worsteling weigeraars"
       description="Staphorst 1971, Kier Bouman, horizontale vs verticale verantwoordelijkheid."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 17"

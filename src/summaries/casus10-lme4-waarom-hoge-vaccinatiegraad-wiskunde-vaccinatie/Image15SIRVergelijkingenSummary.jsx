@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15SIRVergelijkingenSummary = () => {
+const Image15SIRVergelijkingenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'vergelijkingen', title: 'SIR-vergelijkingen', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De wiskunde van het SIR-model"
       description="Parameters β en γ, en de differentiaalvergelijkingen."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 15"

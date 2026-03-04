@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03PrincipesImmuunsuppressieSummary = () => {
+const Image03PrincipesImmuunsuppressieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'principes', title: 'Principes van immuunsuppressie', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Principes van immuunsuppressie"
       description="Aangrijpingspunten van immuunsuppressieve medicijnen."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 3"

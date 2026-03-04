@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03SafetyISafetyIISummary = () => {
+const Image03SafetyISafetyIISummary = ({ standalone = true }) => {
   const toc = [{ id: 'safety', title: 'Safety I en Safety II', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Safety I en Safety II"
       description="Verschil tussen Safety I (foutgericht) en Safety II (krachtgericht) denken."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 3"

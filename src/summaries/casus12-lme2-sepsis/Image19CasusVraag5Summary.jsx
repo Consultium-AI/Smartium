@@ -1,10 +1,11 @@
 import { Zap } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19CasusVraag5Summary = () => {
+const Image19CasusVraag5Summary = ({ standalone = true }) => {
   const toc = [{ id: 'vasopressor', title: 'Casus – Vraag 5: Vasopressor', icon: Zap }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Casus: 78-jarige man – Vraag 5"
       description="Vasopressor bij septische shock."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 19"

@@ -1,10 +1,11 @@
 import { FileWarning } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08MeldenSummary = () => {
+const Image08MeldenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'melden', title: 'Wat gebeurt er na een incident? – Melden', icon: FileWarning }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wat gebeurt er na een incident? – Melden"
       description="Calamiteiten, meldplicht en blame-free rapporteren."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 8"

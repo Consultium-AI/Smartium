@@ -1,10 +1,11 @@
 import { Pause } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06PlichtOpPauzeSummary = () => {
+const Image06PlichtOpPauzeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'pauze', title: 'De plicht op pauze', icon: Pause }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De plicht op pauze"
       description="Suspensie van de pokkenvaccinatieplicht 1929-1939."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 6"

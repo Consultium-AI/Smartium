@@ -1,10 +1,11 @@
 import { Lightbulb } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14OplossingenOrganisatiefalenSummary = () => {
+const Image14OplossingenOrganisatiefalenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'oplossingen', title: 'Oplossingen voor organisatiefalen', icon: Lightbulb }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Oplossingen voor organisatiefalen"
       description="Voorbeelden van verbetermaatregelen bij organisatiefalen."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 14"

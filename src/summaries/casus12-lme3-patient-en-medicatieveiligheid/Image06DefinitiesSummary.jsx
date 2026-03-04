@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06DefinitiesSummary = () => {
+const Image06DefinitiesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'definities', title: 'Definities medicatiefouten', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Medicatiefouten – definities"
       description="Schade, onbedoelde schade, vermijdbare en niet-vermijdbare schade."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 6"

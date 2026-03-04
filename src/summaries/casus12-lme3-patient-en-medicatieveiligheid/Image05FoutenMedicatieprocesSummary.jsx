@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05FoutenMedicatieprocesSummary = () => {
+const Image05FoutenMedicatieprocesSummary = ({ standalone = true }) => {
   const toc = [{ id: 'fouten', title: 'Fouten binnen het medicatieproces', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Fouten binnen het medicatieproces"
       description="Voorbeelden van medicatiefouten per stap van het medicatieproces."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 5"

@@ -1,10 +1,11 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21FramTheorieSummary = () => {
+const Image21FramTheorieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'theorie', title: 'FRAM – De theorie', icon: BookOpen }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="FRAM – De theorie"
       description="FRAM analyseert proces op papier versus praktijk."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 21"

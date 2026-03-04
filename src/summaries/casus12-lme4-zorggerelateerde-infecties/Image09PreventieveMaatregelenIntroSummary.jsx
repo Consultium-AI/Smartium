@@ -1,10 +1,11 @@
 import { ShieldCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09PreventieveMaatregelenIntroSummary = () => {
+const Image09PreventieveMaatregelenIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'preventie', title: 'Preventieve maatregelen', icon: ShieldCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Preventieve maatregelen"
       description="Introductie op preventieve maatregelen tegen zorggerelateerde infecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 9"

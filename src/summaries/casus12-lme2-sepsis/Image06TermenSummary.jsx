@@ -1,10 +1,11 @@
 import { List } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06TermenSummary = () => {
+const Image06TermenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'termen', title: 'Termen en definities', icon: List }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Sepsis, septische shock, bacteriemie en andere termen"
       description="Onderscheid tussen sepsis, septische shock, bacteriemie, orgaandysfunctie, intravasale infectie en SIRS."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 6"

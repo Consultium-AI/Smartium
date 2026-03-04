@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06BetalactamSummary = () => {
+const Image06BetalactamSummary = ({ standalone = true }) => {
   const toc = [{ id: 'betalactam', title: 'Beta-lactam antibiotica', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Beta-lactam antibiotica"
       description="Voorbeelden van beta-lactam antibiotica: penicillinen, cefalosporinen en carbapenems."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 6"

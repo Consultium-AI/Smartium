@@ -1,10 +1,11 @@
 import { Dna } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06ResistentePopulatieSummary = () => {
+const Image06ResistentePopulatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'populatie', title: 'Ontstaan van een resistente populatie', icon: Dna }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Ontstaan van een resistente populatie"
       description="Hoe antibiotica gevoelige bacteriën doodt en resistente bacteriën overleven."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 6"

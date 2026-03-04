@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18UWINitrofurantoineSummary = () => {
+const Image18UWINitrofurantoineSummary = ({ standalone = true }) => {
   const toc = [{ id: 'uwi', title: 'Eerste keus UWI', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Urineweginfectie – Eerste keus"
       description="NHG-standaard eerste keus bij ongecompliceerde urineweginfectie."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 18"

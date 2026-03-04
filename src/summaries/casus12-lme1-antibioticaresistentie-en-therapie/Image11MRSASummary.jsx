@@ -1,10 +1,11 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11MRSASummary = () => {
+const Image11MRSASummary = ({ standalone = true }) => {
   const toc = [{ id: 'mrsa', title: 'MRSA', icon: AlertCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="MRSA"
       description="Definitie en mechanisme van methicilline-resistente Staphylococcus aureus."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 11"

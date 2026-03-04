@@ -1,10 +1,11 @@
 import { Crosshair } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22FocusSummary = () => {
+const Image22FocusSummary = ({ standalone = true }) => {
   const toc = [{ id: 'focus', title: 'Infectiefocus en behandeling', icon: Crosshair }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Infectiefocus en behandeling"
       description="Longen, abdomen, focuscontrole, empirische therapie en bloedkweken."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 22"

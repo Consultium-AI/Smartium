@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05CelwandSummary = () => {
+const Image05CelwandSummary = ({ standalone = true }) => {
   const toc = [{ id: 'celwand', title: 'Celwandstructuur Gram+ en Gram-', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Celwandstructuur – Gram-positief en Gram-negatief"
       description="Verschillen in celwandopbouw tussen grampositieve en gramnegatieve bacteriën."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 5"

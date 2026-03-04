@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16BijwerkingenNucleinezurSummary = () => {
+const Image16BijwerkingenNucleinezurSummary = ({ standalone = true }) => {
   const toc = [{ id: 'bijwerkingen', title: 'Bijwerkingen nucleïnezuursyntheseremmers', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Bijwerkingen nucleïnezuursyntheseremmers"
       description="Belangrijke bijwerkingen van ciprofloxacin, nitrofurantoïne en metronidazol."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 16"

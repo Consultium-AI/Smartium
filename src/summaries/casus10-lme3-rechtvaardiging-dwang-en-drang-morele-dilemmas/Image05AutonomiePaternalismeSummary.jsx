@@ -1,10 +1,12 @@
 import { User } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05AutonomiePaternalismeSummary = () => {
+const Image05AutonomiePaternalismeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'autonomie', title: 'Autonomie en paternalisme', icon: User }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Autonomie en paternalisme"
       description="De spanning tussen respect voor autonomie en paternalistisch ingrijpen."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 5"

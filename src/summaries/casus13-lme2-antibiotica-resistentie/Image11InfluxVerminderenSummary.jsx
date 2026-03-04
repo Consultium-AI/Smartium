@@ -1,7 +1,7 @@
 import { ArrowDownToLine } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11InfluxVerminderenSummary = () => {
+const Image11InfluxVerminderenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'influx', title: 'Influx verminderen', icon: ArrowDownToLine },
     { id: 'gramnegatief', title: 'Gramnegatieve bacteriën', icon: ArrowDownToLine },
@@ -9,6 +9,7 @@ const Image11InfluxVerminderenSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Influx verminderen"
       description="Resistentiemechanisme: vermindering van antibioticumopname in de bacterie."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 11"

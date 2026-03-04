@@ -1,10 +1,12 @@
 import { Scale } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03DwangEnDrangSummary = () => {
+const Image03DwangEnDrangSummary = ({ standalone = true }) => {
   const toc = [{ id: 'begrippen', title: 'Dwang en drang', icon: Scale }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Dwang en drang"
       description="Het onderscheid tussen dwang en drang bij vaccinatie."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 3"

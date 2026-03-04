@@ -1,10 +1,11 @@
 import { History } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14SIRKermackSummary = () => {
+const Image14SIRKermackSummary = ({ standalone = true }) => {
   const toc = [{ id: 'kermack', title: 'Kermack & McKendrick', icon: History }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Het SIR-model – Kermack & McKendrick (1927)"
       description="Oorsprong en aannames van het SIR-model."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 14"

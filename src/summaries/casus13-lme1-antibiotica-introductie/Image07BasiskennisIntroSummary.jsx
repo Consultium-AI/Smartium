@@ -1,10 +1,11 @@
 import { BookMarked } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07BasiskennisIntroSummary = () => {
+const Image07BasiskennisIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'basiskennis', title: 'Basiskennis antibiotica', icon: BookMarked }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Basiskennis antibiotica"
       description="Wat je leert over belangrijke antibiotica in dit hoofdstuk."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 7"

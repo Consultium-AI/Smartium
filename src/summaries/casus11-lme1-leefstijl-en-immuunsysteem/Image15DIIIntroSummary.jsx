@@ -1,10 +1,11 @@
 import { BarChart2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image15DIIIntroSummary = () => {
+const Image15DIIIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'dii', title: 'Dietary Inflammatory Index', icon: BarChart2 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (5) – Dietary Inflammatory Index"
       description="Pro- en anti-inflammatoire markers en voedingscomponenten."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 15"

@@ -1,10 +1,11 @@
 import { Beaker } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21AdjuvantenSummary = () => {
+const Image21AdjuvantenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'adjuvanten', title: 'Adjuvanten', icon: FlaskConical }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Adjuvanten"
       description="Stoffen die de immuunrespons versterken."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 21"

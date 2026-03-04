@@ -1,10 +1,11 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07WildtypeSummary = () => {
+const Image07WildtypeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'wildtype', title: 'Wild-type gevoeligheid', icon: Target }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wild-type gevoeligheid"
       description="Intrinsieke resistentie van S. aureus voor metronidazol."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 7"

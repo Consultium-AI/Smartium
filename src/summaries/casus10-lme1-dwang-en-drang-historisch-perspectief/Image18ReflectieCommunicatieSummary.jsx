@@ -1,10 +1,11 @@
 import { MessageCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18ReflectieCommunicatieSummary = () => {
+const Image18ReflectieCommunicatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'reflectie', title: 'Reflectie communicatie', icon: MessageCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Reflectie: Communicatiestrategieën"
       description="Respect, empathie en gedeelde waarden."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 18"

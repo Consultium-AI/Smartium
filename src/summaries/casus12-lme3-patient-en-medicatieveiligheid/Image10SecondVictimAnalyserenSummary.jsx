@@ -1,13 +1,14 @@
 import { MessageCircle, Search } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10SecondVictimAnalyserenSummary = () => {
+const Image10SecondVictimAnalyserenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'praten', title: 'Erover praten', icon: MessageCircle },
     { id: 'analyseren', title: 'Analyseren', icon: Search },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wat gebeurt er na een incident? – Praten en analyseren"
       description="Second victim, ondersteuning en PRISMA/PRI-analyse."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 10"

@@ -1,10 +1,11 @@
 import { Brain } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image25ImmunologischGeheugenSummary = () => {
+const Image25ImmunologischGeheugenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'geheugen', title: 'Immunologisch geheugen', icon: Brain }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Immunologisch geheugen"
       description="Memory B- en T-cellen voor langdurige bescherming na vaccinatie."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 25"

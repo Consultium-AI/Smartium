@@ -1,13 +1,14 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12AntiTNFAlphaSummary = () => {
+const Image12AntiTNFAlphaSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'antiTNF', title: 'Anti-TNF-alpha', icon: Target },
     { id: 'pleiotroop', title: 'Pleiotroop effect TNF-alpha', icon: Target },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Anti-TNF-alpha"
       description="Anti-TNF-alpha als biological en het pleiotrope effect van TNF-alpha."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 12"

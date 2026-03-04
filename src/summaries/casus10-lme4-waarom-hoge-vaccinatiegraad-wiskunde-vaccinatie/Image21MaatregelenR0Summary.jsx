@@ -1,10 +1,11 @@
 import { Shield } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image21MaatregelenR0Summary = () => {
+const Image21MaatregelenR0Summary = ({ standalone = true }) => {
   const toc = [{ id: 'maatregelen', title: 'Maatregelen en R₀', icon: Shield }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Maatregelen en de parameters van R₀"
       description="Welke maatregelen beïnvloeden b, c of D?"
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 21"

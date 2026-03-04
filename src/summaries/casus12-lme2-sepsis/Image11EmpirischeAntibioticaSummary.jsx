@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11EmpirischeAntibioticaSummary = () => {
+const Image11EmpirischeAntibioticaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'empirisch', title: 'Empirische antibiotica', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Waarom infectiefocus zoeken – Empirische antibiotica"
       description="Keuze van empirische antibiotica op basis van infectiefocus."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 11"

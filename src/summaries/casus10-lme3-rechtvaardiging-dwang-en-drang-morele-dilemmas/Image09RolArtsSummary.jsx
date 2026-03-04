@@ -1,10 +1,12 @@
 import { Stethoscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09RolArtsSummary = () => {
+const Image09RolArtsSummary = ({ standalone = true }) => {
   const toc = [{ id: 'arts', title: 'Rol van de arts', icon: Stethoscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
+
       title="Rol van de arts"
       description="De arts als adviseur en vertrouwenspersoon."
       caseLabel="Week 5 Casus 10 LME 3: Afbeelding 9"

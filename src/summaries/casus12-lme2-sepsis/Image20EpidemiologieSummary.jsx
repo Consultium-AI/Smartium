@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20EpidemiologieSummary = () => {
+const Image20EpidemiologieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'epidemiologie', title: 'Epidemiologie', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Epidemiologie van sepsis"
       description="Wereldwijde en Nederlandse cijfers, mortaliteit en gevolgen voor overlevenden."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 20"

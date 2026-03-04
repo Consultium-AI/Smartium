@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23DoxycyclineSummary = () => {
+const Image23DoxycyclineSummary = ({ standalone = true }) => {
   const toc = [{ id: 'doxy', title: 'Doxycycline (30S)', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Doxycycline"
       description="Tetracycline – 30S-ribosomaal subunit, indicaties en bijwerkingen."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 23"

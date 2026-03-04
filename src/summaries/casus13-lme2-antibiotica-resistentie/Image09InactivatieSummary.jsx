@@ -1,7 +1,7 @@
 import { Zap } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09InactivatieSummary = () => {
+const Image09InactivatieSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'inactivatie', title: 'Inactivatie door bètalactamase', icon: Zap },
     { id: 'smal', title: 'Smalspectrum bètalactamase', icon: Zap },
@@ -9,6 +9,7 @@ const Image09InactivatieSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Inactivatie – Resistentiemechanisme"
       description="Bètalactamase als resistentiemechanisme: smalspectrum en ESBL."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 9"

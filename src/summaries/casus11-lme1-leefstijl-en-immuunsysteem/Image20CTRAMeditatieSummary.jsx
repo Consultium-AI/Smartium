@@ -1,10 +1,11 @@
 import { Heart } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20CTRAMeditatieSummary = () => {
+const Image20CTRAMeditatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'ctra', title: 'CTRA, stress en meditatie', icon: Heart }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Andere leefstijlfactoren (4) – CTRA, stress en meditatie"
       description="Childhood trauma, stresshormonen, microbioom en effect van meditatie."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 20"

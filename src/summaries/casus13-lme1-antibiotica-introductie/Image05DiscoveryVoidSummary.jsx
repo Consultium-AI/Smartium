@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05DiscoveryVoidSummary = () => {
+const Image05DiscoveryVoidSummary = ({ standalone = true }) => {
   const toc = [{ id: 'void', title: 'Discovery void', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Geschiedenis – Discovery void"
       description="De periode na 1987 waarin geen nieuwe klassen antibiotica zijn ontdekt."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 5"

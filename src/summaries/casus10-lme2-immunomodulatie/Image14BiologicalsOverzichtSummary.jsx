@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14BiologicalsOverzichtSummary = () => {
+const Image14BiologicalsOverzichtSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'biologicals', title: 'Biologicals overzicht', icon: Layers },
     { id: 'targets', title: 'Aangrijpingspunten', icon: Layers },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Biologicals – Overzicht"
       description="Overzicht van biologicals en hun aangrijpingspunten in het immuunsysteem."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 14"

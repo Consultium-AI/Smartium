@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image32QuizSwissCheeseSummary = () => {
+const Image32QuizSwissCheeseSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – Swiss Cheese Model', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Swiss Cheese Model"
       description="Het Swiss Cheese Model toont systematische barrières."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 32"

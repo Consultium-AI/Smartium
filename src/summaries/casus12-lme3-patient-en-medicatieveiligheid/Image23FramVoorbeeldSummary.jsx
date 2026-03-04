@@ -1,10 +1,11 @@
 import { ArrowRight } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23FramVoorbeeldSummary = () => {
+const Image23FramVoorbeeldSummary = ({ standalone = true }) => {
   const toc = [{ id: 'voorbeeld', title: 'FRAM – Output als input', icon: ArrowRight }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="FRAM – Output als input"
       description="De output van een activiteit is de input van de volgende."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 23"

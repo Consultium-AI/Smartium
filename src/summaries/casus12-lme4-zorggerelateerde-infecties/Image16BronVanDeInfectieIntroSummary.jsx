@@ -1,10 +1,11 @@
 import { Search } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16BronVanDeInfectieIntroSummary = () => {
+const Image16BronVanDeInfectieIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'bron', title: 'De bron van de infectie', icon: Search }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="De bron van de infectie"
       description="Introductie op het identificeren van infectiebronnen in het ziekenhuis."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 16"

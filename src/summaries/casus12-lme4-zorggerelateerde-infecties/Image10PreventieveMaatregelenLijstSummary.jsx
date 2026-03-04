@@ -1,13 +1,14 @@
 import { ListChecks } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10PreventieveMaatregelenLijstSummary = () => {
+const Image10PreventieveMaatregelenLijstSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'maatregelen', title: 'Preventieve maatregelen', icon: ListChecks },
     { id: 'doelen', title: 'Doelen van maatregelen tegen POWI', icon: ListChecks },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Preventieve maatregelen – Lijst en doelen"
       description="Overzicht van preventieve maatregelen en hun doelen bij postoperatieve wondinfecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 10"

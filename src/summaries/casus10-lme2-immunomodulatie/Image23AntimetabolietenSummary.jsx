@@ -1,13 +1,14 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23AntimetabolietenSummary = () => {
+const Image23AntimetabolietenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'antimetabolieten', title: 'Antimetabolieten', icon: Pill },
     { id: 'methotrexaat', title: 'Methotrexaat', icon: Pill },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Antimetabolieten"
       description="Methotrexaat als antimetaboliet en werkingsmechanisme bij reumatoïde artritis."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 23"

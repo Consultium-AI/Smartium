@@ -1,10 +1,11 @@
 import { Moon } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18SlaapSummary = () => {
+const Image18SlaapSummary = ({ standalone = true }) => {
   const toc = [{ id: 'slaap', title: 'Slaap en circadiaan ritme', icon: Moon }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Andere leefstijlfactoren (2) – Slaap en circadiaan ritme"
       description="Invloed van slaap en dag-nachtritme op het immuunsysteem."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 18"

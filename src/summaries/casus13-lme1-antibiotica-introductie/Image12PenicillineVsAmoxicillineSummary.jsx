@@ -1,10 +1,11 @@
 import { GitCompare } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12PenicillineVsAmoxicillineSummary = () => {
+const Image12PenicillineVsAmoxicillineSummary = ({ standalone = true }) => {
   const toc = [{ id: 'verschil', title: 'Verschil penicilline en amoxicilline', icon: GitCompare }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Penicilline vs. amoxicilline"
       description="Het belangrijkste verschil in spectrum tussen penicilline en amoxicilline."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 12"

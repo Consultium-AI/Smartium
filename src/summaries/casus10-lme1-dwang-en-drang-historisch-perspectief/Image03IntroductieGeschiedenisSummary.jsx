@@ -1,10 +1,11 @@
 import { History } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03IntroductieGeschiedenisSummary = () => {
+const Image03IntroductieGeschiedenisSummary = ({ standalone = true }) => {
   const toc = [{ id: 'geschiedenis', title: 'Geschiedenis', icon: History }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Geschiedenis en actualiteit"
       description="Van pokkenbriefje tot corona-toegangsbewijs."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 3"

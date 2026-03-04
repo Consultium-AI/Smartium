@@ -1,10 +1,11 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05DefinitieSepsisSummary = () => {
+const Image05DefinitieSepsisSummary = ({ standalone = true }) => {
   const toc = [{ id: 'definitie', title: 'Definitie van sepsis', icon: AlertCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Definitie van sepsis"
       description="Sepsis-3 definitie en essentiële elementen."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 5"

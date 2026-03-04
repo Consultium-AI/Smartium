@@ -1,10 +1,11 @@
 import { CheckCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image29SlotSummary = () => {
+const Image29SlotSummary = ({ standalone = true }) => {
   const toc = [{ id: 'groepsimmuniteit', title: 'Groepsimmuniteit – scenario\'s', icon: CheckCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Groepsimmuniteit – Drie scenario's"
       description="Geen immunisatie vs. gedeeltelijke vs. hoge immunisatie."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 29"

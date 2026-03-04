@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10CalcineurineRemmersSummary = () => {
+const Image10CalcineurineRemmersSummary = ({ standalone = true }) => {
   const toc = [{ id: 'calcineurine', title: 'Calcineurine-remmers', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Calcineurine-remmers"
       description="Toepassing en nefrotoxiciteit."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 10"

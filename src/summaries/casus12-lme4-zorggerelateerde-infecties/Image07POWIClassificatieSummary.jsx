@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07POWIClassificatieSummary = () => {
+const Image07POWIClassificatieSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'verwekker', title: 'Belangrijkste verwekker', icon: Layers },
     { id: 'classificatie', title: 'Classificatie ingrepen', icon: Layers },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Postoperatieve wondinfecties – Classificatie"
       description="Staphylococcus aureus als belangrijkste verwekker en de classificatie van chirurgische ingrepen."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 7"

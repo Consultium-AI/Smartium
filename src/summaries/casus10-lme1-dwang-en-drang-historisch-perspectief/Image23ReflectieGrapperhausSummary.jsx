@@ -1,10 +1,11 @@
 import { Scale } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image23ReflectieGrapperhausSummary = () => {
+const Image23ReflectieGrapperhausSummary = ({ standalone = true }) => {
   const toc = [{ id: 'grapperhaus', title: 'Reflectie Grapperhaus', icon: Scale }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Reflectie Grapperhaus"
       description="Multiculturele samenleving, balans volksgezondheid en religieuze vrijheid."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 23"

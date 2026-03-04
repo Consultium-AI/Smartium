@@ -1,10 +1,11 @@
 import { Zap } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18ImmunostimulantiaSummary = () => {
+const Image18ImmunostimulantiaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'immunostimulantia', title: 'Immunostimulantia', icon: Zap }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Immunostimulantia"
       description="Middelen die het immuunsysteem stimuleren."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 18"

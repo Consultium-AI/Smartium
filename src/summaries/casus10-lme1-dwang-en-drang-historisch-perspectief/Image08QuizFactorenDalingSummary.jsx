@@ -1,10 +1,11 @@
 import { HelpCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08QuizFactorenDalingSummary = () => {
+const Image08QuizFactorenDalingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Factoren daling vaccinatiegraad', icon: HelpCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz: Factoren daling"
       description="Pokkenbriefje, bijwerkingen en religieuze bezwaren."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 8"

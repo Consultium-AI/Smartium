@@ -1,10 +1,11 @@
 import { FileText } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04Definities2016Summary = () => {
+const Image04Definities2016Summary = ({ standalone = true }) => {
   const toc = [{ id: 'definities', title: 'Sepsis 2016 consensus definities', icon: FileText }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Sepsis en septische shock – 2016 consensus definities"
       description="Klinische criteria voor sepsis: infectie + SOFA-score."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 4"

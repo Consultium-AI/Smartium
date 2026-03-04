@@ -1,10 +1,11 @@
 import { Pill } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20KlontjesPepernotenSummary = () => {
+const Image20KlontjesPepernotenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'sabin', title: 'Klontjes als pepernoten', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Klontjes als pepernoten"
       description="Sabin oraal vaccin en geheim inenten in Staphorst."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 20"

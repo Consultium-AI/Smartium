@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06LeefstijlfactorenSummary = () => {
+const Image06LeefstijlfactorenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'leefstijl', title: 'Leefstijlfactoren en leefstijlziekten', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Leefstijlfactoren en leefstijlziekten (1)"
       description="Het leefstijlroer en voorbeelden van leefstijlziekten."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 6"

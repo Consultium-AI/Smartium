@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image34QuizPrismaBijnaSummary = () => {
+const Image34QuizPrismaBijnaSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – PRISMA bij bijna-incident', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – PRISMA bij bijna-incident"
       description="PRISMA is geschikt voor retrospectieve analyse van bijna-incidenten."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 34"

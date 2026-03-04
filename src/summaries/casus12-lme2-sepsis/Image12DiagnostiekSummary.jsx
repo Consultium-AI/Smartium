@@ -1,10 +1,11 @@
 import { Stethoscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12DiagnostiekSummary = () => {
+const Image12DiagnostiekSummary = ({ standalone = true }) => {
   const toc = [{ id: 'diagnostiek', title: 'Diagnostiek', icon: Stethoscope }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Waarom infectiefocus zoeken – Diagnostiek"
       description="Gerichte diagnostiek op basis van vermoedelijke focus."
       caseLabel="Week 6 Casus 12 LME 2: Afbeelding 12"

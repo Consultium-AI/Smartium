@@ -1,10 +1,11 @@
 import { BookMarked } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18TerminologieIntroSummary = () => {
+const Image18TerminologieIntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'terminologie', title: 'Terminologie', icon: BookMarked }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Terminologie"
       description="Introductie op de terminologie bij zorggerelateerde infecties."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 18"

@@ -5,6 +5,7 @@ const Image13MicronutriëntenSummary = () => {
   const toc = [{ id: 'micronutriënten', title: 'Micronutriënten', icon: Pill }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Voeding en immuunsysteem (3) – Micronutriënten"
       description="Vitamine A, D en ijzer en hun rol in het immuunsysteem."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 13"

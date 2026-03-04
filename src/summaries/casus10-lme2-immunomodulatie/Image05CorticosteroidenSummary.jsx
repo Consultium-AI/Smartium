@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05CorticosteroidenSummary = () => {
+const Image05CorticosteroidenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'corticosteroiden', title: 'Corticosteroïden', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Corticosteroïden"
       description="Definitie, toepassingen en werkingsmechanismen."
       caseLabel="Week 5 Casus 10 LME 2: Afbeelding 5"

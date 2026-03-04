@@ -1,10 +1,11 @@
 import { AlertCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19UWINierinsufficientieSummary = () => {
+const Image19UWINierinsufficientieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'nier', title: 'UWI bij nierinsufficiëntie', icon: AlertCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="UWI bij nierinsufficiëntie"
       description="Nitrofurantoïne en trimethoprim bij verminderde nierfunctie."
       caseLabel="Week 7 Casus 13 LME 1: Afbeelding 19"

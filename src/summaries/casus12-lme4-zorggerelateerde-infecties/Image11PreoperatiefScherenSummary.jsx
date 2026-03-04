@@ -1,10 +1,11 @@
 import { XCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11PreoperatiefScherenSummary = () => {
+const Image11PreoperatiefScherenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'scheren', title: 'Preoperatief scheren', icon: XCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Preoperatief scheren – Geen preventieve maatregel"
       description="Waarom preoperatief scheren van de huid geen bijdrage levert aan het voorkomen van POWI."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 11"

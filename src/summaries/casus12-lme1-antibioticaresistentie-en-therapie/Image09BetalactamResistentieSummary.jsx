@@ -1,10 +1,11 @@
 import { AlertTriangle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09BetalactamResistentieSummary = () => {
+const Image09BetalactamResistentieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'betalactam-res', title: 'Resistentie voor beta-lactam antibiotica', icon: AlertTriangle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Resistentie voor beta-lactam antibiotica"
       description="Vier groepen verworven resistentie met voorbeelden."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 9"

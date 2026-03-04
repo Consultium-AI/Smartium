@@ -1,10 +1,11 @@
 import { FileText } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04IndirectePlichtSummary = () => {
+const Image04IndirectePlichtSummary = ({ standalone = true }) => {
   const toc = [{ id: 'plicht', title: 'Indirecte plicht', icon: FileText }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Indirecte plicht"
       description="Wet 1872 en pokkenbriefje."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 4"

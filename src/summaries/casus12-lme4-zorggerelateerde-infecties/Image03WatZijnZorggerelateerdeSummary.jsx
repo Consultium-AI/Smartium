@@ -1,10 +1,11 @@
 import { HelpCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03WatZijnZorggerelateerdeSummary = () => {
+const Image03WatZijnZorggerelateerdeSummary = ({ standalone = true }) => {
   const toc = [{ id: 'intro', title: 'Wat zijn zorggerelateerde infecties?', icon: HelpCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Wat zijn zorggerelateerde infecties?"
       description="Introductie op het begrip zorggerelateerde infecties en de context waarin ze voorkomen."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 3"

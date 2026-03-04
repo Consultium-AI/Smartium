@@ -1,10 +1,11 @@
 import { Flame } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08InflammagingSummary = () => {
+const Image08InflammagingSummary = ({ standalone = true }) => {
   const toc = [{ id: 'inflammaging', title: 'Inflammaging en accelerated aging', icon: Flame }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Inflammaging (1)"
       description="Systemische, chronische, steriele, laaggradige ontsteking bij ouderen."
       caseLabel="Week 6 Casus 11 LME 1: Afbeelding 8"

@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image35QuizFramVariatieSummary = () => {
+const Image35QuizFramVariatieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – FRAM en dagelijkse variaties', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – FRAM en dagelijkse variaties"
       description="FRAM sluit aan bij observatie van creatieve oplossingen in de praktijk."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 35"

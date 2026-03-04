@@ -1,10 +1,11 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13SurveillanceSummary = () => {
+const Image13SurveillanceSummary = ({ standalone = true }) => {
   const toc = [{ id: 'surveillance', title: 'Surveillance', icon: Activity }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Surveillance bij POWI"
       description="Belangrijke aspecten van actieve surveillance als kwaliteitsindicator."
       caseLabel="Week 6 Casus 12 LME 4: Afbeelding 13"

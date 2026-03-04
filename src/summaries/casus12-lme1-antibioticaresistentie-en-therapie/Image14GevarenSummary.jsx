@@ -1,10 +1,11 @@
 import { AlertOctagon } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14GevarenSummary = () => {
+const Image14GevarenSummary = ({ standalone = true }) => {
   const toc = [{ id: 'gevaren', title: 'Gevaren van resistente micro-organismen', icon: AlertOctagon }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Zijn resistente micro-organismen gevaarlijk?"
       description="Problemen die gepaard gaan met resistente micro-organismen."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 14"

@@ -1,10 +1,11 @@
 import { Users } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image22ContactmatrixSummary = () => {
+const Image22ContactmatrixSummary = ({ standalone = true }) => {
   const toc = [{ id: 'contactmatrix', title: 'Contactmatrix', icon: Users }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Contactmatrix – Leeftijdsgroepen"
       description="Parameter c wordt vaak beschreven door een matrix van contacten tussen leeftijdsgroepen."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 22"

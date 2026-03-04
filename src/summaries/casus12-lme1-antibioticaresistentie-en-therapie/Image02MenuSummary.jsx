@@ -1,10 +1,11 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02MenuSummary = () => {
+const Image02MenuSummary = ({ standalone = true }) => {
   const toc = [{ id: 'menu', title: 'Menu', icon: LayoutList }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Antibioticaresistentie en BRMO's"
       description="Overzicht van de module: intrinsieke en verworven resistentie, resistentiemechanismen en BRMO's."
       caseLabel="Week 6 Casus 12 LME 1: Afbeelding 2"

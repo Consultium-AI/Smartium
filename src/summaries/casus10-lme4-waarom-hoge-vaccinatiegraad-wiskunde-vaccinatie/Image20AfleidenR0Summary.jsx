@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image20AfleidenR0Summary = () => {
+const Image20AfleidenR0Summary = ({ standalone = true }) => {
   const toc = [{ id: 'afleiden', title: 'Afleiden van R₀', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Afleiden van R₀ uit het SIR-model"
       description="Voorwaarde voor uitbraak: dI/dt > 0, dus R₀ = β/γ = b × c × D."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 20"

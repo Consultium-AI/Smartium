@@ -1,10 +1,11 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02MenuSummary = () => {
+const Image02MenuSummary = ({ standalone = true }) => {
   const tableOfContents = [{ id: 'menu', title: 'Menu', icon: LayoutList }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Dwang en drang in historisch perspectief"
       description="Overzicht: rol van de overheid en vaccinatieweigering."
       caseLabel="Week 5 Casus 10 LME 1: Afbeelding 2"

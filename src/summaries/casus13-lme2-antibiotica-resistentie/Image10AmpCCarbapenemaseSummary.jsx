@@ -1,13 +1,14 @@
 import { Zap } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10AmpCCarbapenemaseSummary = () => {
+const Image10AmpCCarbapenemaseSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'ampc', title: 'AMP-C bètalactamase', icon: Zap },
     { id: 'carbapenemase', title: 'Carbapenemase', icon: Zap },
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="AMP-C en Carbapenemase"
       description="Breedspectrum bètalactamases: AMP-C en carbapenemase."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 10"

@@ -1,10 +1,11 @@
 import { ClipboardCheck } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image33QuizSecondVictimSummary = () => {
+const Image33QuizSecondVictimSummary = ({ standalone = true }) => {
   const toc = [{ id: 'quiz', title: 'Quiz – Second victim', icon: ClipboardCheck }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Quiz – Second victim"
       description="Peer support van getrainde collega&apos;s is essentieel voor herstel."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 33"

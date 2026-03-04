@@ -1,10 +1,11 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image16SwissCheeseSummary = () => {
+const Image16SwissCheeseSummary = ({ standalone = true }) => {
   const toc = [{ id: 'swiss', title: 'Proces- en systeemdenken', icon: Layers }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Proces- en systeemdenken"
       description="Swiss Cheese Model van James Reason."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 16"

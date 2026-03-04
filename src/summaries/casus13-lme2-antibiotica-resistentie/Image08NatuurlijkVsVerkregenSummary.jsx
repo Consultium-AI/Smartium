@@ -1,7 +1,7 @@
 import { GitCompare } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08NatuurlijkVsVerkregenSummary = () => {
+const Image08NatuurlijkVsVerkregenSummary = ({ standalone = true }) => {
   const toc = [
     { id: 'natuurlijk', title: 'Natuurlijke resistentie', icon: GitCompare },
     { id: 'verkregen', title: 'Verkregen resistentie', icon: GitCompare },
@@ -9,6 +9,7 @@ const Image08NatuurlijkVsVerkregenSummary = () => {
   ]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Natuurlijke vs verkregen resistentie"
       description="Het onderscheid tussen natuurlijke en verkregen resistentiemechanismen."
       caseLabel="Week 7 Casus 13 LME 2: Afbeelding 8"

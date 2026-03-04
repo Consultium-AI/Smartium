@@ -1,10 +1,11 @@
 import { CheckCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image30SlotSummary = () => {
+const Image30SlotSummary = ({ standalone = true }) => {
   const toc = [{ id: 'uitbraken', title: 'Waarom uitbraken ondanks groepsimmuniteit?', icon: CheckCircle }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Waarom uitbraken ondanks groepsimmuniteit?"
       description="Vaccin werkt niet 100%, afnemende effectiviteit, clustering van ongevaccineerden."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 30"

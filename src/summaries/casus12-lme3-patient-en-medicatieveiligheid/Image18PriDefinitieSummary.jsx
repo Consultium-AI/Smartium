@@ -1,10 +1,11 @@
 import { Forward } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image18PriDefinitieSummary = () => {
+const Image18PriDefinitieSummary = ({ standalone = true }) => {
   const toc = [{ id: 'pri', title: 'PRI – vooruitkijken', icon: Forward }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="PRI – vooruitkijken"
       description="Prospectieve aanpak om herhaling te voorkomen."
       caseLabel="Week 6 Casus 12 LME 3: Afbeelding 18"

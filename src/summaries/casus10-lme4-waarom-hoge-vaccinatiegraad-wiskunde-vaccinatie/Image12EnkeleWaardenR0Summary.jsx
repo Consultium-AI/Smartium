@@ -1,10 +1,11 @@
 import { BarChart3 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12EnkeleWaardenR0Summary = () => {
+const Image12EnkeleWaardenR0Summary = ({ standalone = true }) => {
   const toc = [{ id: 'waarden', title: 'Enkele R₀-waarden', icon: BarChart3 }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Enkele R₀-waarden voor bekende ziekten"
       description="Vergelijking van R₀ voor verschillende infectieziekten."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 12"

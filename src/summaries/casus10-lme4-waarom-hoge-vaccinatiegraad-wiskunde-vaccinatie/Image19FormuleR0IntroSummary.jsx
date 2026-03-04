@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image19FormuleR0IntroSummary = () => {
+const Image19FormuleR0IntroSummary = ({ standalone = true }) => {
   const toc = [{ id: 'formule', title: 'Formule voor R₀', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Een eenvoudige wiskundige formule voor R₀"
       description="Introductie van hoofdstuk 4: afleiden van R₀ uit het SIR-model."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 19"

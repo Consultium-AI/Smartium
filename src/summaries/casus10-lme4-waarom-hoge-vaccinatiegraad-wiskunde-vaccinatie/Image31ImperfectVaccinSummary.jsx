@@ -1,10 +1,11 @@
 import { Calculator } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image31ImperfectVaccinSummary = () => {
+const Image31ImperfectVaccinSummary = ({ standalone = true }) => {
   const toc = [{ id: 'imperfect', title: 'Imperfect vaccin', icon: Calculator }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Imperfect vaccin – Aangepaste formule"
       description="f = [1 − (1/R₀)]/P wanneer het vaccin niet 100% werkt."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 31"

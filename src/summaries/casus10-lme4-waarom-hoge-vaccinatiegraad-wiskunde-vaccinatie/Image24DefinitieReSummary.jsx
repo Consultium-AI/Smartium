@@ -1,10 +1,11 @@
 import { Hash } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image24DefinitieReSummary = () => {
+const Image24DefinitieReSummary = ({ standalone = true }) => {
   const toc = [{ id: 'definitiere', title: 'Definitie Re', icon: Hash }]
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Definitie van het effectief reproductiegetal Re"
       description="Re = gemiddeld aantal secundaire besmettingen in een niet meer volledig vatbare populatie."
       caseLabel="Week 5 Casus 10 LME 4: Afbeelding 24"
