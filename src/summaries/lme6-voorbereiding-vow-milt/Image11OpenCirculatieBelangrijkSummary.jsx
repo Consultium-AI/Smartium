@@ -1,13 +1,14 @@
 import { ArrowRight } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11OpenCirculatieBelangrijkSummary = () => {
+const Image11OpenCirculatieBelangrijkSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'open', title: 'Open circulatie belangrijkst', icon: ArrowRight },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Open circulatie – Meest belangrijk"
       description="Bij de mens is de open bloedcirculatie het meest belangrijk."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 11"

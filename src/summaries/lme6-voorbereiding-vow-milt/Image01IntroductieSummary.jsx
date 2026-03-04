@@ -1,13 +1,14 @@
 import { BookOpen } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image01IntroductieSummary = () => {
+const Image01IntroductieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie en leerdoelen', icon: BookOpen },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Introductie – Voorbereiding VOW Milt"
       description="Leerdoelen, doelgroep en inhoud van de module over de milt."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 1"

@@ -1,13 +1,14 @@
 import { XCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image13GeslotenCirculatieSummary = () => {
+const Image13GeslotenCirculatieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'gesloten', title: 'Gesloten circulatie', icon: XCircle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Gesloten circulatie"
       description="Bij gesloten circulatie komt het bloed NIET in het rode pulpa parenchym terecht."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 13"

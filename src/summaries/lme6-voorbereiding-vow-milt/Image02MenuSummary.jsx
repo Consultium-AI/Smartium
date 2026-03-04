@@ -1,13 +1,14 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02MenuSummary = () => {
+const Image02MenuSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie thema', icon: LayoutList },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Voorbereiding VOW Milt"
       description="Inleiding op de module: histologie van de milt en bloedcirculatie."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 2"

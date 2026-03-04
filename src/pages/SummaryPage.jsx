@@ -53,7 +53,7 @@ import {
 import TuberculoseBijMigrantenSummary from '../summaries/TuberculoseBijMigrantenSummary'
 import TuberculoseInleidingSummary from '../summaries/TuberculoseInleidingSummary'
 import Lme5SchimmelinfectiesSummary from '../summaries/lme5-schimmelinfecties/Lme5SchimmelinfectiesSummary'
-import * as LME6Summaries from '../summaries/lme6-voorbereiding-vow-milt'
+import Lme6VoorbereidingVowMiltSummary from '../summaries/lme6-voorbereiding-vow-milt/Lme6VoorbereidingVowMiltSummary'
 import * as LME1Summaries from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis'
 import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
 import * as LME3Summaries from '../summaries/lme3-welk-antibioticum-kies-ik'
@@ -199,7 +199,7 @@ const SummaryPage = () => {
               name: "Casus 7",
               lmes: [
                 { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", available: true },
-                { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", type: "image-based", baseId: "lme6-voorbereiding-vow-milt", imageCount: 14 }
+                { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", available: true }
               ]
             },
             {
@@ -771,31 +771,13 @@ const SummaryPage = () => {
     )
   }
 
-  // LME 6: Voorbereiding VOW Milt (Week 5 Casus 7)
-  const lme6ComponentMap = {
-    'lme6-voorbereiding-vow-milt-image01': 'Image01IntroductieSummary',
-    'lme6-voorbereiding-vow-milt-image02': 'Image02MenuSummary',
-    'lme6-voorbereiding-vow-milt-image03': 'Image03FunctiesDiagramSummary',
-    'lme6-voorbereiding-vow-milt-image04': 'Image04FunctiesVideoSummary',
-    'lme6-voorbereiding-vow-milt-image05': 'Image05StructurenMiltSummary',
-    'lme6-voorbereiding-vow-milt-image06': 'Image06RodeWittePulpaSummary',
-    'lme6-voorbereiding-vow-milt-image07': 'Image07RodePulpaStructurenSummary',
-    'lme6-voorbereiding-vow-milt-image08': 'Image08WittePulpaStructurenSummary',
-    'lme6-voorbereiding-vow-milt-image09': 'Image09PALSSummary',
-    'lme6-voorbereiding-vow-milt-image10': 'Image10OpenGeslotenCirculatieSummary',
-    'lme6-voorbereiding-vow-milt-image11': 'Image11OpenCirculatieBelangrijkSummary',
-    'lme6-voorbereiding-vow-milt-image12': 'Image12OpenCirculatieRouteSummary',
-    'lme6-voorbereiding-vow-milt-image13': 'Image13GeslotenCirculatieSummary',
-    'lme6-voorbereiding-vow-milt-image14': 'Image14AfsluitingSummary',
-  }
-  const LME6Component = lme6ComponentMap[lme] && LME6Summaries[lme6ComponentMap[lme]]
-  if (LME6Component) {
+  if (lme === 'lme6-voorbereiding-vow-milt') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <LME6Component />
+          <Lme6VoorbereidingVowMiltSummary />
         </main>
         <Footer />
       </div>

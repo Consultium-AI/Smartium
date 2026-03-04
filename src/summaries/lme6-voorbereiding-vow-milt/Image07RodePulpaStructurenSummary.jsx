@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07RodePulpaStructurenSummary = () => {
+const Image07RodePulpaStructurenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'rode-pulpa', title: 'Samenstelling rode pulpa', icon: Layers },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Rode pulpa – Samenstelling"
       description="De rode pulpa bestaat uit veneuze sinussen en rode pulpa parenchym (miltstrengen van Billroth)."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 7"

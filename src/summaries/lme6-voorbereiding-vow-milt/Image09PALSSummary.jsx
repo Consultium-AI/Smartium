@@ -1,13 +1,14 @@
 import { Target } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09PALSSummary = () => {
+const Image09PALSSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'pals', title: 'PALS', icon: Target },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="PALS – Periarteriolaire lymfocytenschede"
       description="Het T-celgebied rondom de centrale arteriolen wordt PALS genoemd."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 9"

@@ -1,13 +1,14 @@
 import { Activity } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03FunctiesDiagramSummary = () => {
+const Image03FunctiesDiagramSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'anatomie', title: 'Anatomie van de milt', icon: Activity },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Functies van de milt – Anatomisch overzicht"
       description="Globale opbouw van de milt: capsule, trabeculae, rode en witte pulpa, vasculatuur."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 3"

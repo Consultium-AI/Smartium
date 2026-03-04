@@ -1,13 +1,14 @@
 import { PlayCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04FunctiesVideoSummary = () => {
+const Image04FunctiesVideoSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'functies', title: 'Functies van de milt', icon: PlayCircle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Functies van de milt"
       description="De milt filtert bloed, verwijdert oude erytrocyten en initieert immuunrespons tegen antigenen."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 4"

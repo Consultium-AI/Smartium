@@ -1,13 +1,14 @@
 import { GitBranch } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image10OpenGeslotenCirculatieSummary = () => {
+const Image10OpenGeslotenCirculatieSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'circulatie', title: 'Open en gesloten circulatie', icon: GitBranch },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Open en gesloten circulatie"
       description="In de milt bestaat een open en gesloten bloedcirculatie."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 10"

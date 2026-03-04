@@ -1,13 +1,14 @@
 import { Circle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06RodeWittePulpaSummary = () => {
+const Image06RodeWittePulpaSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'pulpa', title: 'Rode en witte pulpa', icon: Circle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Rode en witte pulpa"
       description="Onderscheid tussen rode en witte pulpa in de milt."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 6"

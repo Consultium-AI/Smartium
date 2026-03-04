@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05StructurenMiltSummary = () => {
+const Image05StructurenMiltSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'structuren', title: 'Structuren in de milt', icon: Layers },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Structuren in de milt"
       description="Genummerde structuren in de milt: van miltarterie tot marginale zone."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 5"

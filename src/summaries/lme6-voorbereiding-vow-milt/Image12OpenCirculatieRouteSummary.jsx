@@ -1,13 +1,14 @@
 import { ListOrdered } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image12OpenCirculatieRouteSummary = () => {
+const Image12OpenCirculatieRouteSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'route', title: 'Route open circulatie', icon: ListOrdered },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Route open circulatie"
       description="De volgorde van structuren via welke het bloed door de open circulatie de milt passeert."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 12"

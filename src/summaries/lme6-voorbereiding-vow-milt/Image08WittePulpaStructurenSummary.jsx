@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08WittePulpaStructurenSummary = () => {
+const Image08WittePulpaStructurenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'witte-pulpa', title: 'Samenstelling witte pulpa', icon: Layers },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Witte pulpa – Samenstelling"
       description="De witte pulpa bestaat uit T-celgebied, follikel en marginale zone."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 8"

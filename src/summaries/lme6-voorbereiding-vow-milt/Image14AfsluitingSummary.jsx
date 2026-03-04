@@ -1,13 +1,14 @@
 import { CheckCircle2 } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image14AfsluitingSummary = () => {
+const Image14AfsluitingSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'afsluiting', title: 'Afsluiting', icon: CheckCircle2 },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Afsluiting – Voorbereiding VOW Milt"
       description="Zelfreflectie: opbouw milt, bloedcirculatie en samenstelling witte/rode pulpa."
       caseLabel="Week 5 Casus 7 LME 6: Afbeelding 14"
