@@ -8494,7 +8494,7 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 9",
             lmes: [
-              { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", type: "image-based", questionsMap: lme1QuestionsMap },
+              { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", type: "simple", questionsMap: lme1QuestionsMap },
               { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", questionsMap: lme2QuestionsMap },
               { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", type: "image-based", questionsMap: lme3QuestionsMap }
             ]
@@ -8674,6 +8674,7 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'lme5-schimmelinfecties') return Object.values(lme5QuestionsMap).flat()
     // LME 6: Voorbereiding VOW Milt (per LME, alle vragen gecombineerd)
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return Object.values(lme6QuestionsMap).flat()
+    if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return Object.values(lme1QuestionsMap).flat()
     if (lme5QuestionsMap[lmeParam]) return lme5QuestionsMap[lmeParam]
     if (lme6QuestionsMap[lmeParam]) return lme6QuestionsMap[lmeParam]
     // LME 1: Parasitaire verwekkers van gastro-enteritis
@@ -8791,6 +8792,7 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'tuberculose-inleiding') return 'Tuberculose – een inleiding'
     if (lmeParam === 'lme5-schimmelinfecties') return 'Schimmelinfecties van de huid, nagels en haren'
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return 'Voorbereiding VOW Milt'
+    if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return 'Parasitaire verwekkers van gastro-enteritis'
     if (lme5QuestionsMap[lmeParam]) return `Schimmelinfecties – Afbeelding ${lmeParam.replace('lme5-schimmelinfecties-image', '')}`
     if (lme6QuestionsMap[lmeParam]) return `Voorbereiding VOW Milt – Afbeelding ${lmeParam.replace('lme6-voorbereiding-vow-milt-image', '')}`
     if (lme1QuestionsMap[lmeParam]) return `Parasitaire verwekkers gastro-enteritis – Afbeelding ${lmeParam.replace('lme1-parasitaire-verwekkers-gastro-enteritis-image', '')}`
@@ -8852,6 +8854,7 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'tuberculose-inleiding') return 'Test je kennis met 18 meerkeuzevragen over tuberculose – een inleiding.'
     if (lmeParam === 'lme5-schimmelinfecties') return `Test je kennis met ${getQuestionCount(lme5QuestionsMap)} meerkeuzevragen over schimmelinfecties.`
     if (lmeParam === 'lme6-voorbereiding-vow-milt') return `Test je kennis met ${getQuestionCount(lme6QuestionsMap)} meerkeuzevragen over de milt.`
+    if (lmeParam === 'lme1-parasitaire-verwekkers-gastro-enteritis') return `Test je kennis met ${getQuestionCount(lme1QuestionsMap)} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`
     if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
     if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`
     if (lme1QuestionsMap[lmeParam]) return `Test je kennis met ${lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`

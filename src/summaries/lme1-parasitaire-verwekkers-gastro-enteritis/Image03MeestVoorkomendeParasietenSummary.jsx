@@ -1,13 +1,14 @@
 import { Bug } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image03MeestVoorkomendeParasietenSummary = () => {
+const Image03MeestVoorkomendeParasietenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'parasieten', title: 'Meest voorkomende darmparasieten', icon: Bug },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Meest voorkomende darmparasieten en klachten"
       description="Overzicht van de belangrijkste parasitaire verwekkers van gastro-enteritis en hun kenmerken."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 3"

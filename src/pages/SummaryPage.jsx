@@ -54,7 +54,7 @@ import TuberculoseBijMigrantenSummary from '../summaries/TuberculoseBijMigranten
 import TuberculoseInleidingSummary from '../summaries/TuberculoseInleidingSummary'
 import Lme5SchimmelinfectiesSummary from '../summaries/lme5-schimmelinfecties/Lme5SchimmelinfectiesSummary'
 import Lme6VoorbereidingVowMiltSummary from '../summaries/lme6-voorbereiding-vow-milt/Lme6VoorbereidingVowMiltSummary'
-import * as LME1Summaries from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis'
+import Lme1ParasitaireVerwekkersSummary from '../summaries/lme1-parasitaire-verwekkers-gastro-enteritis/Lme1ParasitaireVerwekkersSummary'
 import * as LME2Summaries from '../summaries/lme2-virale-verwekkers-gastro-enteritis'
 import * as LME3Summaries from '../summaries/lme3-welk-antibioticum-kies-ik'
 import * as Casus10LME1Summaries from '../summaries/casus10-lme1-dwang-en-drang-historisch-perspectief'
@@ -205,7 +205,7 @@ const SummaryPage = () => {
             {
               name: "Casus 9",
               lmes: [
-                { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", type: "image-based", baseId: "lme1-parasitaire-verwekkers-gastro-enteritis", imageCount: 11 },
+                { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", available: true },
                 { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", baseId: "lme2-virale-verwekkers-gastro-enteritis", imageCount: 24 },
                 { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", type: "image-based", baseId: "lme3-welk-antibioticum-kies-ik", imageCount: 14 }
               ]
@@ -784,28 +784,13 @@ const SummaryPage = () => {
     )
   }
 
-  // LME 1: Parasitaire verwekkers van gastro-enteritis (Week 5 Casus 9)
-  const lme1ComponentMap = {
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image01': 'Image01IntroductieSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image02': 'Image02MenuSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image03': 'Image03MeestVoorkomendeParasietenSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image04': 'Image04Kennisclip1Summary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image05': 'Image05ProtozoaKenmerkenSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image06': 'Image06EntamoebaLevenscyclusSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image07': 'Image07Kennisclip2Summary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image08': 'Image08VermenigvuldigingSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image09': 'Image09DiagnostiekVraagSummary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image10': 'Image10Kennisclip3Summary',
-    'lme1-parasitaire-verwekkers-gastro-enteritis-image11': 'Image11DiagnostiekTechniekenSummary',
-  }
-  const LME1Component = lme1ComponentMap[lme] && LME1Summaries[lme1ComponentMap[lme]]
-  if (LME1Component) {
+  if (lme === 'lme1-parasitaire-verwekkers-gastro-enteritis') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
-          <LME1Component />
+          <Lme1ParasitaireVerwekkersSummary />
         </main>
         <Footer />
       </div>

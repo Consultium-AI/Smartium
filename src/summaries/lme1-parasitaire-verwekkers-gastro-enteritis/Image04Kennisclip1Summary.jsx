@@ -1,7 +1,7 @@
 import { Video } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image04Kennisclip1Summary = () => {
+const Image04Kennisclip1Summary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'inleiding', title: 'Inleiding en classificatie', icon: Video },
     { id: 'kennisclip', title: 'Kennisclip 1', icon: Video },
@@ -9,6 +9,7 @@ const Image04Kennisclip1Summary = () => {
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kennisclip 1 – Parasitaire verwekkers van diarree"
       description="Classificatie van darmparasieten en introductie op de kennisclip over protozoa en helminthen."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 4"

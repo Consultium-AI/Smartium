@@ -1,13 +1,14 @@
 import { Layers } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image08VermenigvuldigingSummary = () => {
+const Image08VermenigvuldigingSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'vermenigvuldiging', title: 'Vermenigvuldiging van darmparasieten', icon: Layers },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Vermenigvuldiging van darmparasieten"
       description="Verschil tussen protozoa en wormen in vermenigvuldiging en transmissie."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 8"

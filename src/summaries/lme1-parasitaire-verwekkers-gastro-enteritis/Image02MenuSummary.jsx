@@ -1,13 +1,14 @@
 import { LayoutList } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image02MenuSummary = () => {
+const Image02MenuSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'intro', title: 'Introductie thema', icon: LayoutList },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Menu – Parasitaire verwekkers van gastro-enteritis"
       description="Inleiding op de module: parasitaire oorzaken van diarree en diagnostiek."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 2"

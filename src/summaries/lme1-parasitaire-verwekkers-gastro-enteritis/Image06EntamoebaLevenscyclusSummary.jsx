@@ -1,13 +1,14 @@
 import { RefreshCw } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image06EntamoebaLevenscyclusSummary = () => {
+const Image06EntamoebaLevenscyclusSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'cyclus', title: 'Levenscyclus Entamoeba histolytica', icon: RefreshCw },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Levenscyclus van Entamoeba histolytica"
       description="Ontwikkelingscyclus, transmissie en pathogenese van amoebendysenterie."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 6"

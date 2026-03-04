@@ -1,13 +1,14 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image05ProtozoaKenmerkenSummary = () => {
+const Image05ProtozoaKenmerkenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'protozoa', title: 'Kenmerken parasitaire protozoa', icon: Microscope },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kenmerken van parasitaire protozoa"
       description="Onderscheidende kenmerken van Giardia, Cryptosporidium en Entamoeba histolytica."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 5"

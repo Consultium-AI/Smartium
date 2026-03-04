@@ -1,13 +1,14 @@
 import { Microscope } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image11DiagnostiekTechniekenSummary = () => {
+const Image11DiagnostiekTechniekenSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'technieken', title: 'Diagnostische technieken', icon: Microscope },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Aanvullende diagnostiek naar darmparasieten"
       description="Technieken om darmparasieten aan te tonen en waarom kweek niet geschikt is."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 11"

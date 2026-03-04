@@ -1,13 +1,14 @@
 import { HelpCircle } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image09DiagnostiekVraagSummary = () => {
+const Image09DiagnostiekVraagSummary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'vraag', title: 'Diagnostiek en verschillen', icon: HelpCircle },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Hoe kunnen darmparasieten aangetoond worden?"
       description="Centrale vraag over diagnostiek en verschillen met virale en bacteriele verwekkers."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 9"

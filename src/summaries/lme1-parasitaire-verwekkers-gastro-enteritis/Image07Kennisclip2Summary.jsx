@@ -1,13 +1,14 @@
 import { Video } from 'lucide-react'
 import SummaryLayout from '../../components/SummaryLayout'
 
-const Image07Kennisclip2Summary = () => {
+const Image07Kennisclip2Summary = ({ standalone = true }) => {
   const tableOfContents = [
     { id: 'kennisclip', title: 'Kennisclip 2 – Gastro-intestinale wormen', icon: Video },
   ]
 
   return (
     <SummaryLayout
+      standalone={standalone}
       title="Kennisclip 2 – Gastro-intestinale wormen (helminthen)"
       description="Introductie op de kennisclip over parasitaire wormen en hun klachten."
       caseLabel="Week 5 Casus 9 LME 1: Afbeelding 7"
