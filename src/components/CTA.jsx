@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, FileText, ClipboardCheck } from 'lucide-react'
+import { ArrowRight, FileText, GraduationCap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const CTA = () => {
@@ -51,7 +51,7 @@ const CTA = () => {
                 transition={{ delay: 0.3 }}
                 className="text-lg text-white/80 max-w-xl mx-auto mb-10"
               >
-                Bekijk onze samenvattingen en test je kennis met de oefenvragen.
+                Bekijk onze samenvattingen en test je kennis met de oefententamens.
               </motion.p>
 
               {/* CTA buttons */}
@@ -72,14 +72,14 @@ const CTA = () => {
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
-                <Link to="/oefenvragen">
+                <Link to="/tentamen">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-8 py-4 border-2 border-white/40 text-white rounded-2xl font-semibold hover:bg-white/10 transition-colors flex items-center gap-3"
                   >
-                    <ClipboardCheck className="w-5 h-5" />
-                    Oefenvragen
+                    <GraduationCap className="w-5 h-5" />
+                    Oefententamens
                   </motion.button>
                 </Link>
               </motion.div>

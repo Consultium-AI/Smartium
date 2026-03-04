@@ -188,3 +188,28 @@ body {
     padding: 0 2rem;
   }
 }
+
+/* Lightweight float animation for logo - better performance than framer-motion */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Lightweight blob animations for ParticleBackground - reduces JS work */
+@keyframes blob-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(15px, 10px) scale(1.05); }
+}
+@keyframes blob-slow-delayed {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10px, 15px) scale(1.05); }
+}
+.animate-blob-slow {
+  animation: blob-slow 20s ease-in-out infinite;
+}
+.animate-blob-slow-delayed {
+  animation: blob-slow-delayed 25s ease-in-out infinite;
+}

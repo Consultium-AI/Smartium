@@ -19,8 +19,8 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Samenvattingen', href: '/summary', icon: FileText },
-    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
-    { name: 'Tentamens', href: '/tentamen', icon: GraduationCap },
+    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck }, // Gaat direct naar Blok 4 lijst
+    { name: 'Oefententamens', href: '/tentamen', icon: GraduationCap },
     { name: 'AI Chat', href: '/chat', icon: Bot },
   ]
 

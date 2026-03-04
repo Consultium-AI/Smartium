@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, ClipboardCheck, BookOpen, Lightbulb } from 'lucide-react'
+import { FileText, GraduationCap, BookOpen, Lightbulb } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Features = () => {
@@ -17,16 +17,16 @@ const Features = () => {
       link: '/summary',
     },
     {
-      icon: ClipboardCheck,
-      title: 'Oefenvragen',
-      description: 'Test je kennis met meerkeuzevragen. Directe feedback en uitleg bij elk antwoord.',
+      icon: GraduationCap,
+      title: 'Oefententamens',
+      description: 'Test je kennis met oefententamens. Ideaal voor examenvoorbereiding.',
       color: 'accent',
-      link: '/oefenvragen',
+      link: '/tentamen',
     },
   ]
 
   const benefits = [
-    { icon: BookOpen, text: 'Anatomie & Embryologie' },
+    { icon: BookOpen, text: 'NIEUW curriculum geneeskunde' },
     { icon: Lightbulb, text: 'Door studenten gemaakt' },
   ]
 

@@ -8559,7 +8559,7 @@ const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
-  const [expandedBlok, setExpandedBlok] = useState(null)
+  const [expandedBlok, setExpandedBlok] = useState('blok4') // Default: direct naar Blok 4 lijst
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
   const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
@@ -9215,12 +9215,14 @@ const PracticeQuestionsPage = () => {
           </div>
         </motion.div>
 
-        {/* Question Navigation Dots */}
+        {/* Question Navigation Dots - max 3 rijen, rest scrollbaar */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex flex-wrap justify-center gap-2 mb-8 max-w-3xl mx-auto"
+          className="mb-8 max-w-3xl mx-auto overflow-y-auto"
+          style={{ maxHeight: 'calc(3 * (2.25rem + 0.5rem))' }}
         >
+          <div className="flex flex-wrap justify-center gap-2">
           {questions.map((q, index) => {
             const isAnswered = selectedAnswers[q.id] !== undefined
             const isRevealed = revealedAnswers[q.id]
@@ -9247,6 +9249,7 @@ const PracticeQuestionsPage = () => {
               </button>
             )
           })}
+          </div>
         </motion.div>
 
         {/* Question Card */}

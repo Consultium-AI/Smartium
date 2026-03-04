@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, BookOpen, ClipboardCheck, FileText } from 'lucide-react'
+import { ArrowRight, BookOpen, FileText, GraduationCap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Hero = () => {
@@ -11,12 +11,12 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 border border-primary-200 mb-8"
           >
             <BookOpen className="w-4 h-4 text-primary-600" />
             <span className="text-sm font-medium text-primary-700">
-              Studieplatform voor Geneeskunde
+              NIEUW curriculum geneeskunde
             </span>
           </motion.div>
 
@@ -24,7 +24,7 @@ const Hero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
             className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
           >
             <span className="text-navy-900">Study </span>
@@ -35,18 +35,18 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
             className="text-xl text-navy-600 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Samenvattingen en oefenvragen voor anatomie en embryologie. 
+            Samenvattingen en oefententamens voor het nieuwe geneeskunde curriculum. 
             Gemaakt door studenten, voor studenten.
           </motion.p>
 
-          {/* CTA Cards */}
+          {/* CTA Cards - alleen Samenvattingen en Oefententamens */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.45 }}
             className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto"
           >
             <Link to="/summary">
@@ -63,14 +63,14 @@ const Hero = () => {
                     <h3 className="font-bold text-navy-800 group-hover:text-primary-600 transition-colors">
                       Samenvattingen
                     </h3>
-                    <p className="text-sm text-navy-500">Anatomie & Embryologie</p>
+                    <p className="text-sm text-navy-500">NIEUW curriculum geneeskunde</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-primary-500 ml-auto transition-colors" />
                 </div>
               </motion.div>
             </Link>
 
-            <Link to="/oefenvragen">
+            <Link to="/tentamen">
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
@@ -78,13 +78,13 @@ const Hero = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 rounded-xl bg-accent-100 text-accent-600 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                    <ClipboardCheck className="w-6 h-6" />
+                    <GraduationCap className="w-6 h-6" />
                   </div>
                   <div className="text-left">
                     <h3 className="font-bold text-navy-800 group-hover:text-accent-600 transition-colors">
-                      Oefenvragen
+                      Oefententamens
                     </h3>
-                    <p className="text-sm text-navy-500">15 meerkeuzevragen</p>
+                    <p className="text-sm text-navy-500">Examentraining</p>
                   </div>
                   <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-accent-500 ml-auto transition-colors" />
                 </div>
@@ -92,19 +92,17 @@ const Hero = () => {
             </Link>
           </motion.div>
 
-          {/* Logo Display */}
+          {/* Logo Display - CSS animation for better performance */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-16"
           >
-            <motion.img
+            <img
               src={`${import.meta.env.BASE_URL}smartium-logo.png`}
               alt="Smartium"
-              className="w-24 h-24 mx-auto object-contain opacity-80"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="w-24 h-24 mx-auto object-contain opacity-80 animate-float"
             />
           </motion.div>
         </div>
