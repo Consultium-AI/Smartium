@@ -9,7 +9,7 @@ export const examQuestions = [
     question: "Waarom zijn gramnegatieve bacteriën van nature resistent voor vancomycine?",
     options: [
       { letter: "A", text: "Vancomycine wordt door bètalactamase geïnactiveerd" },
-      { letter: "B", text: "Vancomycine is te groot voor de porines in de buitenmembraan" },
+      { letter: "B", text: "Vancomycine passeert de porines in de buitenmembraan niet" },
       { letter: "C", text: "Gramnegatieven hebben een te dikke peptidoglycaanlaag" },
       { letter: "D", text: "Vancomycine bindt niet aan het PBP-eiwit" },
     ],
@@ -32,8 +32,8 @@ export const examQuestions = [
     id: 3,
     question: "Wat is een belangrijk verschil tussen ESBL en AmpC?",
     options: [
-      { letter: "A", text: "ESBL is chromosomaal, AmpC is plasmide-gedragen" },
-      { letter: "B", text: "ESBL-genen staan vaak op plasmiden; AmpC is meestal chromosomaal" },
+      { letter: "A", text: "ESBL is chromosomaal; AmpC is plasmide-gedragen" },
+      { letter: "B", text: "ESBL-genen vaak op plasmiden; AmpC meestal chromosomaal" },
       { letter: "C", text: "AmpC inactiveren carbapenems; ESBL niet" },
       { letter: "D", text: "ESBL wordt geïnduceerd tijdens behandeling; AmpC niet" },
     ],
@@ -57,7 +57,7 @@ export const examQuestions = [
     question: "Welke uitspraak over de SOFA-score bij sepsis is correct?",
     options: [
       { letter: "A", text: "Hartslag ≥90 en koorts ≥38°C zijn onderdeel van de SOFA" },
-      { letter: "B", text: "De SOFA bevat bewustzijn, trombocyten, kreatinine en MAP" },
+      { letter: "B", text: "SOFA bevat bewustzijn, trombocyten, kreatinine en MAP" },
       { letter: "C", text: "De SOFA wordt alleen bij opname berekend" },
       { letter: "D", text: "Lactaat ≥2 mmol/L is een SOFA-parameter" },
     ],
@@ -68,8 +68,8 @@ export const examQuestions = [
     id: 6,
     question: "Wat is een belangrijk verschil tussen sepsis en septische shock?",
     options: [
-      { letter: "A", text: "Septische shock heeft altijd positieve bloedkweken" },
-      { letter: "B", text: "Septische shock heeft acuut circulatoir falen met therapieresistente hypotensie" },
+      { letter: "A", text: "Septische shock vereist altijd positieve bloedkweken" },
+      { letter: "B", text: "Septische shock: circulatoir falen met therapieresistente hypotensie" },
       { letter: "C", text: "Sepsis heeft alleen koorts; septische shock ook hypothermie" },
       { letter: "D", text: "Septische shock heeft altijd orgaanfalen; sepsis nooit" },
     ],
@@ -128,7 +128,7 @@ export const examQuestions = [
     id: 11,
     question: "Welk effect heeft methotrexaat als antimetaboliet?",
     options: [
-      { letter: "A", text: "Remt de aanmaak van T-cellen door foliumzuuranalogie" },
+      { letter: "A", text: "Remt T-celaanmaak door foliumzuuranalogie" },
       { letter: "B", text: "Blokkeert TNF-alfa direct" },
       { letter: "C", text: "Remt calcineurine" },
       { letter: "D", text: "Stimuleert B-celproliferatie" },
@@ -140,8 +140,8 @@ export const examQuestions = [
     id: 12,
     question: "Wat is een belangrijk verschil tussen actieve en passieve immunisatie?",
     options: [
-      { letter: "A", text: "Actieve immunisatie geeft directe bescherming; passieve langdurige" },
-      { letter: "B", text: "Passieve immunisatie geeft directe maar tijdelijke bescherming" },
+      { letter: "A", text: "Actief geeft directe bescherming; passief langdurige" },
+      { letter: "B", text: "Passief geeft directe maar tijdelijke bescherming" },
       { letter: "C", text: "Actieve immunisatie gebruikt immunoglobulinen" },
       { letter: "D", text: "Passieve immunisatie induceert immunologisch geheugen" },
     ],
@@ -165,7 +165,7 @@ export const examQuestions = [
     question: "Wanneer moet dexamethason worden gegeven bij pneumokokkenmeningitis?",
     options: [
       { letter: "A", text: "Na sterilisatie van de liquor" },
-      { letter: "B", text: "Vóór of gelijktijdig met de eerste dosis antibiotica" },
+      { letter: "B", text: "Vóór of gelijktijdig met eerste dosis antibiotica" },
       { letter: "C", text: "Alleen bij kinderen jonger dan 5 jaar" },
       { letter: "D", text: "Alleen bij resistente pneumokokken" },
     ],
@@ -237,7 +237,7 @@ export const examQuestions = [
     question: "Wat is de eerste keuze behandeling bij milde tot matige dehydratie door virale gastro-enteritis?",
     options: [
       { letter: "A", text: "Intraveneuze vloeistoftherapie" },
-      { letter: "B", text: "ORS (orale rehydratiemaatregelen)" },
+      { letter: "B", text: "ORS (orale rehydratie)" },
       { letter: "C", text: "Antibiotica" },
       { letter: "D", text: "Anti-emetica als eerste keuze" },
     ],
@@ -260,10 +260,10 @@ export const examQuestions = [
     id: 22,
     question: "Wat is een belangrijk verschil tussen Safety I en Safety II?",
     options: [
-      { letter: "A", text: "Safety I gaat over preventie; Safety II over behandeling" },
-      { letter: "B", text: "Safety I is foutgericht; Safety II is krachtgericht" },
-      { letter: "C", text: "Safety I is prospectief; Safety II retrospectief" },
-      { letter: "D", text: "Safety I gaat over medicatie; Safety II over chirurgie" },
+      { letter: "A", text: "Safety I: preventie; Safety II: behandeling" },
+      { letter: "B", text: "Safety I: foutgericht; Safety II: krachtgericht" },
+      { letter: "C", text: "Safety I: prospectief; Safety II: retrospectief" },
+      { letter: "D", text: "Safety I: medicatie; Safety II: chirurgie" },
     ],
     correctAnswer: "B",
     category: "Medicatieveiligheid",
@@ -298,7 +298,7 @@ export const examQuestions = [
     options: [
       { letter: "A", text: "Terbinafine werkt alleen tegen dermatofyten" },
       { letter: "B", text: "Gisten hebben een andere celwandstructuur" },
-      { letter: "C", text: "Terbinafine werkt alleen tegen dermatofyten" },
+      { letter: "C", text: "Terbinafine wordt door gisten geïnactiveerd" },
       { letter: "D", text: "Gisten produceren resistentie-enzymen" },
     ],
     correctAnswer: "A",
@@ -393,7 +393,7 @@ export const examQuestions = [
     question: "Welke vaccins induceren antilichamen tegen polysachariden van het bacteriële kapsel?",
     options: [
       { letter: "A", text: "Alleen levend verzwakte vaccins" },
-      { letter: "B", text: "Vaccins tegen gekapselde bacteriën (o.a. pneumokokken)" },
+      { letter: "B", text: "Vaccins tegen gekapselde bacteriën (pneumokokken)" },
       { letter: "C", text: "Alleen subunit-vaccins" },
       { letter: "D", text: "Alleen mRNA-vaccins" },
     ],
@@ -440,7 +440,7 @@ export const examQuestions = [
     id: 37,
     question: "Welke uitspraak over intrinsieke resistentie is correct?",
     options: [
-      { letter: "A", text: "De bacterie is altijd resistent door afwezige of ontoegankelijke doelmoleculen" },
+      { letter: "A", text: "Bacterie altijd resistent door ontoegankelijke doelmoleculen" },
       { letter: "B", text: "Intrinsieke resistentie ontstaat door mutatie" },
       { letter: "C", text: "Intrinsieke resistentie wordt via plasmiden overgedragen" },
       { letter: "D", text: "Intrinsieke resistentie is hetzelfde als verworven resistentie" },
@@ -453,7 +453,7 @@ export const examQuestions = [
     question: "Wat is een belangrijk verschil tussen ESBL en AmpC?",
     options: [
       { letter: "A", text: "ESBL kan worden geïnduceerd; AmpC niet" },
-      { letter: "B", text: "Bij AmpC kunnen penicillines en cefalosporines gevaarlijk zijn bij ernstige infecties" },
+      { letter: "B", text: "Bij AmpC zijn penicillines/cefalosporines gevaarlijk bij ernstige infecties" },
       { letter: "C", text: "ESBL inactiveren carbapenems; AmpC niet" },
       { letter: "D", text: "AmpC is altijd plasmide-gedragen" },
     ],
@@ -525,7 +525,7 @@ export const examQuestions = [
     question: "Welke klinische presentatie past bij tinea corporis?",
     options: [
       { letter: "A", text: "Vesiculae op erythemateuze ondergrond" },
-      { letter: "B", text: "Annulaire plek met verheven rand en opheldering in het midden" },
+      { letter: "B", text: "Annulaire plek met verheven rand, opheldering midden" },
       { letter: "C", text: "Geelverkleuring van de nagels" },
       { letter: "D", text: "Alopecia zonder schilfering" },
     ],
@@ -549,7 +549,7 @@ export const examQuestions = [
     question: "Welke uitspraak over TNF-alfa is correct?",
     options: [
       { letter: "A", text: "TNF-alfa heeft alleen effect op cytokinen" },
-      { letter: "B", text: "TNF-alfa heeft pleiotrope effecten (cytokinen, adhesiemoleculen, angiogenese)" },
+      { letter: "B", text: "TNF-alfa heeft pleiotrope effecten (cytokinen, adhesie, angiogenese)" },
       { letter: "C", text: "Anti-TNF-alfa wordt alleen bij reuma gebruikt" },
       { letter: "D", text: "TNF-alfa remt ontsteking" },
     ],
@@ -573,9 +573,9 @@ export const examQuestions = [
     question: "Wat is een belangrijk verschil tussen bacteriemie en sepsis?",
     options: [
       { letter: "A", text: "Bacteriemie heeft altijd orgaanfalen" },
-      { letter: "B", text: "Sepsis is levensbedreigend orgaanfalen door ontregelde gastheerrespons" },
-      { letter: "C", text: "Bacteriemie is altijd ernstiger" },
-      { letter: "D", text: "Sepsis heeft alleen positieve bloedkweken" },
+      { letter: "B", text: "Sepsis = orgaanfalen door ontregelde gastheerrespons" },
+      { letter: "C", text: "Bacteriemie is altijd ernstiger dan sepsis" },
+      { letter: "D", text: "Sepsis vereist altijd positieve bloedkweken" },
     ],
     correctAnswer: "B",
     category: "Sepsis",
@@ -585,8 +585,8 @@ export const examQuestions = [
     question: "Welke maatregel vermindert medicatiefouten bij organisatiefalen?",
     options: [
       { letter: "A", text: "Meer personeel per patiënt" },
-      { letter: "B", text: "Geneesmiddelen die op elkaar lijken niet naast elkaar leggen" },
-      { letter: "C", text: "Minder controle" },
+      { letter: "B", text: "Gelijkende geneesmiddelen niet naast elkaar leggen" },
+      { letter: "C", text: "Minder controle op verdeling" },
       { letter: "D", text: "Snellere verdeling" },
     ],
     correctAnswer: "B",
@@ -597,7 +597,7 @@ export const examQuestions = [
     question: "Wat is een belangrijk verschil tussen hospital-acquired en community-acquired infecties?",
     options: [
       { letter: "A", text: "Hospital-acquired zijn altijd milder" },
-      { letter: "B", text: "De verwekkers verschillen; empirisch beleid moet hierop worden aangepast" },
+      { letter: "B", text: "Verwekkers verschillen; empirisch beleid moet worden aangepast" },
       { letter: "C", text: "Community-acquired zijn altijd resistenter" },
       { letter: "D", text: "Er is geen verschil in behandeling" },
     ],
@@ -717,7 +717,7 @@ export const examQuestions = [
     question: "Wat is het doel van vaccins tegen gekapselde bacteriën?",
     options: [
       { letter: "A", text: "Doding van de bacterie direct" },
-      { letter: "B", text: "Inductie van antilichamen tegen kapselpolysachariden (opsonisatie)" },
+      { letter: "B", text: "Antilichamen tegen kapselpolysachariden (opsonisatie)" },
       { letter: "C", text: "Remming van toxineproductie" },
       { letter: "D", text: "Preventie van adhesie" },
     ],

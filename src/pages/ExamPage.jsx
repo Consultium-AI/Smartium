@@ -36,8 +36,8 @@ function processQuestion(q, rng) {
   return { ...q, options: reordered, correctAnswer: newCorrectLetter }
 }
 
-function buildExam() {
-  const rng = seededRandom(Date.now() % 100000)
+function buildExam(examNumber) {
+  const rng = seededRandom(examNumber * 7919 + 42)
   const shuffled = [...examQuestions]
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
@@ -45,6 +45,14 @@ function buildExam() {
   }
   return shuffled.map((q, i) => processQuestion({ ...q, id: i + 1 }, rng))
 }
+
+const EXAM_NAMES = [
+  'Oefententamen 1',
+  'Oefententamen 2',
+  'Oefententamen 3',
+  'Oefententamen 4',
+  'Oefententamen 5',
+]
 
 function calculateGrade(correct, total) {
   const pct = correct / total
@@ -60,33 +68,40 @@ const ExamSelection = () => (
     <main className="container-custom py-8 md:py-12">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
         <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">
-          <span className="text-primary-500">Oefententamen</span> Blok 4
+          <span className="text-primary-500">Oefententamens</span> Blok 4
         </h1>
-        <p className="text-navy-500">60 inhoudelijke vragen – gebaseerd op de stof uit alle samenvattingen</p>
+        <p className="text-navy-500">5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen</p>
       </motion.div>
 
-      <div className="max-w-2xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <Link
-            to="/tentamen?nr=1"
-            className="flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all group"
+      <div className="max-w-2xl mx-auto space-y-4">
+        {EXAM_NAMES.map((name, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08 }}
           >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg group-hover:bg-primary-200 transition-colors">
-                1
+            <Link
+              to={`/tentamen?nr=${i + 1}`}
+              className="flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg group-hover:bg-primary-200 transition-colors">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="font-bold text-slate-900">{name}</h3>
+                  <p className="text-sm text-slate-500">60 vragen · alle onderwerpen · ~45 min</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-slate-900">Oefententamen Blok 4</h3>
-                <p className="text-sm text-slate-500">60 vragen · alle onderwerpen · ~45 min</p>
-              </div>
-            </div>
-            <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 transition-colors" />
-          </Link>
-        </motion.div>
+              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 transition-colors" />
+            </Link>
+          </motion.div>
+        ))}
       </div>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500">
-        <p>60% correct = 5,5 · Inhoudelijke vragen uit antibiotica, sepsis, immunomodulatie, vaccinatie, infecties en meer</p>
+        <p>60% correct = 5,5 · Gelijkende antwoordlengtes · Alleen inhoudelijke vragen</p>
       </motion.div>
     </main>
   </div>
@@ -178,13 +193,13 @@ const GradeResult = ({ correct, total, onReset }) => {
             <RotateCcw className="w-4 h-4" />
             Opnieuw
           </button>
-          <Link
-            to="/tentamen"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Terug
-          </Link>
+            <Link
+              to="/tentamen"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Alle tentamens
+            </Link>
         </div>
       </motion.div>
     </motion.div>
@@ -192,9 +207,9 @@ const GradeResult = ({ correct, total, onReset }) => {
 }
 
 // ─── Exam Active Screen ──────────────────────────────────────────
-const ExamActive = () => {
+const ExamActive = ({ examNumber }) => {
   const [refreshKey, setRefreshKey] = useState(0)
-  const questions = useMemo(() => buildExam(), [refreshKey])
+  const questions = useMemo(() => buildExam(examNumber), [examNumber, refreshKey])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
@@ -410,7 +425,7 @@ const ExamPage = () => {
   const [searchParams] = useSearchParams()
   const examNr = parseInt(searchParams.get('nr'))
 
-  if (!examNr || examNr !== 1) return <ExamSelection />
+  if (!examNr || examNr < 1 || examNr > 5) return <ExamSelection />
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
@@ -429,12 +444,12 @@ const ExamPage = () => {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-navy-900 mb-1">
-            Oefententamen <span className="text-primary-500">Blok 4</span>
+            {EXAM_NAMES[examNr - 1]} <span className="text-primary-500">Blok 4</span>
           </h1>
           <p className="text-navy-500 text-sm">60 vragen · 60% is voldoende (5,5)</p>
         </motion.div>
 
-        <ExamActive />
+        <ExamActive examNumber={examNr} />
       </main>
 
       <footer className="py-6 text-center text-navy-400 text-sm border-t border-navy-100 mt-12">
