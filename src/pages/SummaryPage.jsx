@@ -266,7 +266,7 @@ const SummaryPage = () => {
   // Render specific LME content
   if (lme === 'embryogenese') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -279,7 +279,7 @@ const SummaryPage = () => {
 
   if (lme === 'beeldvorming') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -292,7 +292,7 @@ const SummaryPage = () => {
 
   if (lme === 'extraembryonaal') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -305,7 +305,7 @@ const SummaryPage = () => {
 
   if (lme === 'extremiteiten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -318,7 +318,7 @@ const SummaryPage = () => {
 
   if (lme === 'aangeboren-immuniteit-herkenning') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -331,7 +331,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-bacteriologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -344,7 +344,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-immunologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -357,7 +357,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-mycologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -370,7 +370,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-parasitologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -383,7 +383,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-virologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -396,7 +396,7 @@ const SummaryPage = () => {
 
   if (lme === 'voorbereiding-vow-microbiologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -409,7 +409,7 @@ const SummaryPage = () => {
 
   if (lme === 'aangeboren-immuniteit-respons') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -422,7 +422,7 @@ const SummaryPage = () => {
 
   if (lme === 'antibiotica-leerlijn') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -435,7 +435,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-antimicrobiele-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -448,7 +448,7 @@ const SummaryPage = () => {
 
   if (lme === 'urineweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -461,7 +461,7 @@ const SummaryPage = () => {
 
   if (lme === 'infectiepreventie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -474,7 +474,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -487,7 +487,7 @@ const SummaryPage = () => {
 
   if (lme === 'microscopische-anatomie-luchtwegen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -500,7 +500,7 @@ const SummaryPage = () => {
 
   if (lme === 'pathofysiologie-virale-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -513,7 +513,7 @@ const SummaryPage = () => {
 
   if (lme === 'vervolg-introductie-virologie-2') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -526,7 +526,7 @@ const SummaryPage = () => {
 
   if (lme === 'virale-diagnostiek') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -539,7 +539,7 @@ const SummaryPage = () => {
 
   if (lme === 'cytokinen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -552,7 +552,7 @@ const SummaryPage = () => {
 
   if (lme === 'infectieuze-oorzaken-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -565,7 +565,7 @@ const SummaryPage = () => {
 
   if (lme === 'niet-infectieuze-oorzaken-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -578,7 +578,7 @@ const SummaryPage = () => {
 
   if (lme === 'ontstekingsmediatoren') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -591,7 +591,7 @@ const SummaryPage = () => {
 
   if (lme === 'wat-is-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -604,7 +604,7 @@ const SummaryPage = () => {
 
   if (lme === 'specifieke-verwekkers-lagere-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -617,7 +617,7 @@ const SummaryPage = () => {
 
   if (lme === 'therapie-lagere-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -630,7 +630,7 @@ const SummaryPage = () => {
 
   if (lme === 'homing-migratie-recirculatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -643,7 +643,7 @@ const SummaryPage = () => {
 
   if (lme === 'infectieuze-lymfadenopathie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -656,7 +656,7 @@ const SummaryPage = () => {
 
   if (lme === 'introductie-verworven-immuniteit') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -669,7 +669,7 @@ const SummaryPage = () => {
 
   if (lme === 'secundaire-lymfoide-organen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -682,7 +682,7 @@ const SummaryPage = () => {
 
   if (lme === 'antivirale-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -695,7 +695,7 @@ const SummaryPage = () => {
 
   if (lme === 'de-grote-drie-malaria') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -708,7 +708,7 @@ const SummaryPage = () => {
 
   if (lme === 'duurzame-hiv-zorg') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -721,7 +721,7 @@ const SummaryPage = () => {
 
   if (lme === 'immunologische-consequenties-hiv') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -734,7 +734,7 @@ const SummaryPage = () => {
 
   if (lme === 'tuberculose-bij-migranten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -747,7 +747,7 @@ const SummaryPage = () => {
 
   if (lme === 'tuberculose-inleiding') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -760,7 +760,7 @@ const SummaryPage = () => {
 
   if (lme === 'lme5-schimmelinfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -773,7 +773,7 @@ const SummaryPage = () => {
 
   if (lme === 'lme6-voorbereiding-vow-milt') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -786,7 +786,7 @@ const SummaryPage = () => {
 
   if (lme === 'lme1-parasitaire-verwekkers-gastro-enteritis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -799,7 +799,7 @@ const SummaryPage = () => {
 
   if (lme === 'lme2-virale-verwekkers-gastro-enteritis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -812,7 +812,7 @@ const SummaryPage = () => {
 
   if (lme === 'lme3-welk-antibioticum-kies-ik') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -825,7 +825,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus10-lme1-dwang-en-drang-historisch-perspectief') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -838,7 +838,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus10-lme2-immunomodulatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -851,7 +851,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -864,7 +864,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -877,7 +877,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus11-lme1-leefstijl-en-immuunsysteem') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -890,7 +890,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus12-lme3-patient-en-medicatieveiligheid') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -903,7 +903,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus12-lme4-zorggerelateerde-infecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -916,7 +916,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus13-lme1-antibiotica-introductie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -929,7 +929,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus13-lme2-antibiotica-resistentie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -942,7 +942,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus12-lme2-sepsis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -955,7 +955,7 @@ const SummaryPage = () => {
 
   if (lme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
         <Header />
         <main className="container-custom py-8 md:py-12">
           <BackButton />
@@ -968,7 +968,7 @@ const SummaryPage = () => {
 
   // Default: show index/navigation
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
       <Header />
 
       <main className="container-custom py-8 md:py-12">
@@ -977,23 +977,23 @@ const SummaryPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-3xl font-bold text-slate-900 mb-2 text-center">Samenvattingen</h1>
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2 text-center">Samenvattingen</h1>
 
           <div className="space-y-3">
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
             <button
               onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors"
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
             >
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary-100 rounded-xl">
-                  <GraduationCap className="w-6 h-6 text-primary-600" />
+                <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
+                  <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok3.name}
                   </h2>
-                  <p className="text-sm text-slate-500">1 week · 2 casussen · 4 LME's</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
@@ -1082,20 +1082,20 @@ const SummaryPage = () => {
             </AnimatePresence>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
             <button
               onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors"
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
             >
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-indigo-100 rounded-xl">
-                  <Shield className="w-6 h-6 text-indigo-600" />
+                <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
+                  <Shield className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok4.name}
                   </h2>
-                  <p className="text-sm text-slate-500">7 weken · 13 casussen · 46 LME's</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 13 casussen · 46 LME's</p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />

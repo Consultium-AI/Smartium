@@ -8969,23 +8969,23 @@ const PracticeQuestionsPage = () => {
     
     if (isRevealed) {
       if (isCorrect) {
-        return "border-emerald-400 bg-emerald-50 text-emerald-800"
+        return "border-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200"
       }
       if (isSelected && !isCorrect) {
-        return "border-red-400 bg-red-50 text-red-800"
+        return "border-red-400 bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200"
       }
-      return "border-navy-200 bg-navy-50 text-navy-400"
+      return "border-navy-200 dark:border-slate-600 bg-navy-50 dark:bg-slate-800/50 text-navy-400 dark:text-slate-500"
     }
     
     if (isSelected) {
-      return "border-primary-400 bg-primary-50 text-primary-800"
+      return "border-primary-400 bg-primary-50 dark:bg-primary-500/20 text-primary-800 dark:text-primary-200"
     }
     
-    return "border-navy-200 bg-white text-navy-700 hover:border-primary-300 hover:bg-primary-50/50"
+    return "border-navy-200 dark:border-slate-600 bg-white dark:bg-slate-800/50 text-navy-700 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-500/50 hover:bg-primary-50/50 dark:hover:bg-primary-500/10"
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
+    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
       <Navbar />
       <div className="h-20" />
 
@@ -8999,7 +8999,7 @@ const PracticeQuestionsPage = () => {
           >
             <Link
               to={lmeParam === 'alle-random' ? '/oefenvragen' : `/summary?lme=${lmeParam}`}
-              className="inline-flex items-center gap-2 text-navy-600 hover:text-primary-600 transition-colors"
+              className="inline-flex items-center gap-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="font-medium">
@@ -9015,10 +9015,10 @@ const PracticeQuestionsPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">
-            {getTitle()} <span className="text-accent-500">Oefenvragen</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-navy-900 dark:text-slate-100 mb-2">
+            {getTitle()} <span className="text-accent-500 dark:text-accent-400">Oefenvragen</span>
           </h1>
-          <p className="text-navy-500">
+          <p className="text-navy-500 dark:text-slate-400">
             {getSubtitle()}
           </p>
           
@@ -9026,20 +9026,20 @@ const PracticeQuestionsPage = () => {
           {!lmeParam && (
             <div className="max-w-2xl mx-auto mt-8 space-y-4">
               {/* Blok 3 */}
-              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
                 <button
                   onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary-100 rounded-xl">
-                      <GraduationCap className="w-6 h-6 text-primary-600" />
+                    <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
+                      <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                     </div>
                     <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900">
+                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok3.name}
                       </h2>
-                      <p className="text-sm text-slate-500">1 week · 2 casussen · 4 LME's</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
@@ -9104,20 +9104,20 @@ const PracticeQuestionsPage = () => {
               </div>
 
               {/* Blok 4 */}
-              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
                 <button
                   onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-indigo-100 rounded-xl">
-                      <Shield className="w-6 h-6 text-indigo-600" />
+                    <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
+                      <Shield className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
                     <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900">
+                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok4.name}
                       </h2>
-                      <p className="text-sm text-slate-500">7 weken · 6 casussen · 46 LME's</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 6 casussen · 46 LME's</p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
@@ -9311,14 +9311,14 @@ const PracticeQuestionsPage = () => {
             transition={{ duration: 0.2 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="bg-white rounded-3xl shadow-soft-lg border border-navy-100 overflow-hidden">
+            <div className="bg-white dark:bg-slate-800/50 rounded-3xl shadow-soft-lg border border-navy-100 dark:border-slate-600 overflow-hidden">
               {/* Question Header */}
-              <div className="px-6 py-4 bg-gradient-to-r from-navy-50 to-primary-50 border-b border-navy-100">
+              <div className="px-6 py-4 bg-gradient-to-r from-navy-50 to-primary-50 dark:from-slate-800 dark:to-slate-700/50 border-b border-navy-100 dark:border-slate-600">
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-medium">
+                  <span className="px-3 py-1 bg-accent-100 dark:bg-accent-500/30 text-accent-700 dark:text-accent-300 rounded-full text-xs font-medium">
                     {currentQ.category}
                   </span>
-                  <span className="text-navy-500 text-sm font-medium">
+                  <span className="text-navy-500 dark:text-slate-400 text-sm font-medium">
                     Vraag {currentQuestion + 1} van {totalQuestions}
                   </span>
                 </div>
@@ -9326,7 +9326,7 @@ const PracticeQuestionsPage = () => {
 
               {/* Question */}
               <div className="p-6 md:p-8">
-                <h2 className="text-xl md:text-2xl font-bold text-navy-900 mb-6">
+                <h2 className="text-xl md:text-2xl font-bold text-navy-900 dark:text-slate-100 mb-6">
                   {currentQ.question}
                 </h2>
 
@@ -9348,7 +9348,7 @@ const PracticeQuestionsPage = () => {
                             ? "bg-red-500 text-white"
                             : selectedAnswers[currentQ.id] === option.letter
                               ? "bg-primary-500 text-white"
-                              : "bg-navy-100 text-navy-600"
+                              : "bg-navy-100 dark:bg-slate-700 text-navy-600 dark:text-slate-300"
                       }`}>
                         {option.letter}
                       </span>
@@ -9364,11 +9364,11 @@ const PracticeQuestionsPage = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100">
+                <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100 dark:border-slate-600">
                   <button
                     onClick={handlePrev}
                     disabled={currentQuestion === 0}
-                    className="flex items-center gap-2 px-4 py-2 text-navy-600 hover:text-primary-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                   >
                     <ChevronLeft className="w-5 h-5" />
                     Vorige
@@ -9401,7 +9401,7 @@ const PracticeQuestionsPage = () => {
                   <button
                     onClick={handleNext}
                     disabled={currentQuestion === totalQuestions - 1}
-                    className="flex items-center gap-2 px-4 py-2 text-navy-600 hover:text-primary-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                   >
                     Volgende
                     <ChevronRight className="w-5 h-5" />

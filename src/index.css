@@ -26,6 +26,12 @@ body {
   color: #2d3a49;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #e2e8f0;
 }
 
 /* Custom scrollbar */
@@ -37,13 +43,25 @@ body {
   background: #f5f0e8;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #00c3ff, #0088b8);
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #33cfff, #00a8e0);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
 }
 
 /* Gradient text */
@@ -84,9 +102,18 @@ body {
   box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
+.dark .card {
+  background: #1e293b;
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
 .card:hover {
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
+}
+
+.dark .card:hover {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
 }
 
 .card-accent {
@@ -94,9 +121,19 @@ body {
   border-color: rgba(251, 209, 193, 0.5);
 }
 
+.dark .card-accent {
+  background: linear-gradient(135deg, #431407 0%, rgba(68, 64, 60, 0.5) 100%);
+  border-color: rgba(251, 146, 60, 0.2);
+}
+
 .card-primary {
   background: linear-gradient(135deg, #e6f9ff 0%, rgba(204, 243, 255, 0.3) 100%);
   border-color: rgba(153, 231, 255, 0.5);
+}
+
+.dark .card-primary {
+  background: linear-gradient(135deg, #0c4a6e 0%, rgba(14, 165, 233, 0.15) 100%);
+  border-color: rgba(56, 189, 248, 0.2);
 }
 
 /* Button styles */

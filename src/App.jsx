@@ -39,7 +39,7 @@ const getBasename = () => {
 function App() {
   return (
     <Router basename={getBasename()}>
-      <div className="relative min-h-screen overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<PracticeQuestionsPage />} />

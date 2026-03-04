@@ -12,10 +12,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 border border-primary-200 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-500/20 border border-primary-200 dark:border-primary-500/30 mb-8"
           >
             <BookOpen className="w-4 h-4 text-primary-600" />
-            <span className="text-sm font-medium text-primary-700">
+            <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
               Leerjaar 1
             </span>
           </motion.div>
@@ -27,7 +27,7 @@ const Hero = () => {
             transition={{ duration: 0.4, delay: 0.25 }}
             className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            <span className="text-navy-900">Study </span>
+            <span className="text-navy-900 dark:text-slate-100">Study </span>
             <span className="gradient-text">Smarter</span>
           </motion.h1>
 
@@ -36,7 +36,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="text-xl text-navy-600 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-xl text-navy-600 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             Samenvattingen en oefententamens voor het nieuwe geneeskunde curriculum. 
             Gemaakt door studenten, voor studenten.
@@ -56,16 +56,16 @@ const Hero = () => {
                 className="p-6 bg-white rounded-2xl shadow-soft border border-navy-100 hover:border-primary-300 hover:shadow-glow transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-primary-100 text-primary-600 group-hover:bg-primary-500 group-hover:text-white transition-colors">
+                  <div className="p-3 rounded-xl bg-primary-100 dark:bg-primary-500/30 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                     <FileText className="w-6 h-6" />
                   </div>
                   <div className="text-left">
                     <h3 className="font-bold text-navy-800 group-hover:text-primary-600 transition-colors">
                       Samenvattingen
                     </h3>
-                    <p className="text-sm text-navy-500">Leerjaar 1</p>
+                    <p className="text-sm text-navy-500 dark:text-slate-400">Leerjaar 1</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-primary-500 ml-auto transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-navy-300 dark:text-slate-500 group-hover:text-primary-500 dark:group-hover:text-primary-400 ml-auto transition-colors" />
                 </div>
               </motion.div>
             </Link>
@@ -74,19 +74,19 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.02, y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                className="p-6 bg-white rounded-2xl shadow-soft border border-navy-100 hover:border-accent-300 hover:shadow-glow-accent transition-all cursor-pointer group"
+                className="p-6 bg-white dark:bg-slate-800/50 rounded-2xl shadow-soft dark:shadow-none border border-navy-100 dark:border-slate-600/50 hover:border-accent-300 dark:hover:border-accent-500/50 hover:shadow-glow-accent dark:hover:shadow-glow-accent transition-all cursor-pointer group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-accent-100 text-accent-600 group-hover:bg-accent-500 group-hover:text-white transition-colors">
+                  <div className="p-3 rounded-xl bg-accent-100 dark:bg-accent-500/30 text-accent-600 dark:text-accent-400 group-hover:bg-accent-500 group-hover:text-white transition-colors">
                     <GraduationCap className="w-6 h-6" />
                   </div>
                   <div className="text-left">
-                    <h3 className="font-bold text-navy-800 group-hover:text-accent-600 transition-colors">
+                    <h3 className="font-bold text-navy-800 dark:text-slate-200 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
                       Oefententamens
                     </h3>
-                    <p className="text-sm text-navy-500">Examentraining</p>
+                    <p className="text-sm text-navy-500 dark:text-slate-400">Examentraining</p>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-navy-300 group-hover:text-accent-500 ml-auto transition-colors" />
+                  <ArrowRight className="w-5 h-5 text-navy-300 dark:text-slate-500 group-hover:text-accent-500 dark:group-hover:text-accent-400 ml-auto transition-colors" />
                 </div>
               </motion.div>
             </Link>
@@ -102,7 +102,7 @@ const Hero = () => {
             <img
               src={`${import.meta.env.BASE_URL}smartium-logo.png`}
               alt="Smartium"
-              className="w-24 h-24 mx-auto object-contain opacity-80 animate-float"
+              className="w-24 h-24 mx-auto object-contain opacity-80 dark:opacity-70 animate-float"
             />
           </motion.div>
         </div>

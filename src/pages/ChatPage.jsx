@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
 
 const STORAGE_KEY = 'smartium-chat-chats'
+const SIDEBAR_HIDDEN = true // Sidebar verborgen voor nu
 const INITIAL_MESSAGE = { role: 'assistant', content: 'Hoi! Ik ben Smartium AI. Stel me een vraag over de leerstof en ik geef je een kort antwoord met verwijzing naar de relevante samenvatting.' }
 
 function loadChats() {
@@ -87,18 +88,18 @@ const MessageBubble = ({ message }) => {
       className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}
     >
       {!isUser && (
-        <div className="w-8 h-8 rounded-xl bg-primary-100 flex items-center justify-center shrink-0 mt-1">
-          <Bot className="w-4 h-4 text-primary-600" />
+        <div className="w-8 h-8 rounded-xl bg-primary-100 dark:bg-primary-500/30 flex items-center justify-center shrink-0 mt-1">
+          <Bot className="w-4 h-4 text-primary-600 dark:text-primary-400" />
         </div>
       )}
       <div className={`max-w-[80%] rounded-2xl px-4 py-3 ${
         isUser
           ? 'bg-primary-500 text-white rounded-br-md'
-          : 'bg-white border border-slate-200 text-slate-800 rounded-bl-md shadow-sm'
+          : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-200 rounded-bl-md shadow-sm'
       }`}>
         <div className="whitespace-pre-wrap">{displayText}</div>
         {!isUser && refs.length > 0 && (
-          <div className="mt-2 pt-2 border-t border-slate-100 flex flex-wrap gap-x-2 gap-y-0.5">
+          <div className="mt-2 pt-2 border-t border-slate-100 dark:border-slate-600 flex flex-wrap gap-x-2 gap-y-0.5">
             {refs.map((r, i) => {
               const lme = lmeMap[r.id]
               const label = lme ? `${lme.week} ${lme.casus} LME: ${lme.name}` : r.name
@@ -106,7 +107,7 @@ const MessageBubble = ({ message }) => {
                 <Link
                   key={i}
                   to={`/summary?lme=${r.id}`}
-                  className="text-[10px] text-slate-500 hover:text-primary-600 hover:underline"
+                  className="text-[10px] text-slate-500 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
                 >
                   {label}
                 </Link>
@@ -116,8 +117,8 @@ const MessageBubble = ({ message }) => {
         )}
       </div>
       {isUser && (
-        <div className="w-8 h-8 rounded-xl bg-accent-100 flex items-center justify-center shrink-0 mt-1">
-          <User className="w-4 h-4 text-accent-600" />
+        <div className="w-8 h-8 rounded-xl bg-accent-100 dark:bg-accent-500/30 flex items-center justify-center shrink-0 mt-1">
+          <User className="w-4 h-4 text-accent-600 dark:text-accent-400" />
         </div>
       )}
     </motion.div>
@@ -237,24 +238,26 @@ const ChatPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex flex-col transition-colors duration-300">
       <Navbar />
       <div className="h-20" />
 
       <div className="flex-1 flex min-h-0">
+        {!SIDEBAR_HIDDEN && (
+        <>
         {/* Sidebar - chat history */}
-        <aside className={`shrink-0 flex flex-col border-r border-slate-200 bg-white transition-all duration-200 overflow-hidden
+        <aside className={`shrink-0 flex flex-col border-r border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 transition-all duration-200 overflow-hidden
           ${sidebarOpen
             ? 'w-64 md:w-64 fixed md:relative inset-y-0 left-0 z-20 md:z-auto pt-20 md:pt-0 shadow-xl md:shadow-none'
             : 'w-0 md:w-0'
           }`}
           style={sidebarOpen ? { top: 0, bottom: 0 } : {}}
         >
-          <div className="p-3 border-b border-slate-100 flex items-center justify-between min-h-[52px]">
+          <div className="p-3 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between min-h-[52px]">
             <button
               onClick={clearChat}
               disabled={!currentChatId}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               title="Chat leegmaken"
             >
               <Trash2 className="w-4 h-4" />
@@ -262,7 +265,7 @@ const ChatPage = () => {
             </button>
             <button
               onClick={() => setSidebarOpen(false)}
-              className="p-2 rounded-lg hover:bg-slate-100 text-slate-500"
+              className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500"
               title="Sidebar sluiten"
             >
               <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
@@ -275,8 +278,8 @@ const ChatPage = () => {
                 onClick={() => selectChat(chat.id)}
                 className={`w-full text-left px-4 py-2.5 text-sm truncate transition-colors ${
                   chat.id === currentChatId
-                    ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-500'
-                    : 'text-slate-600 hover:bg-slate-50'
+                    ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 border-r-2 border-primary-500'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50'
                 }`}
               >
                 <MessageSquare className="w-4 h-4 inline-block mr-2 text-slate-400" />
@@ -296,11 +299,13 @@ const ChatPage = () => {
         {!sidebarOpen && (
           <button
             onClick={() => setSidebarOpen(true)}
-            className="fixed left-4 bottom-24 z-10 p-2 rounded-xl bg-white border border-slate-200 shadow-md hover:bg-slate-50"
+            className="fixed left-4 bottom-24 z-10 p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 shadow-md hover:bg-slate-50 dark:hover:bg-slate-700"
             title="Chatgeschiedenis"
           >
-            <Menu className="w-5 h-5 text-slate-600" />
+            <Menu className="w-5 h-5 text-slate-600 dark:text-slate-400" />
           </button>
+        )}
+        </>
         )}
 
       <main className="flex-1 flex flex-col max-w-3xl mx-auto w-full px-4 min-w-0">
@@ -309,16 +314,16 @@ const ChatPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center py-6 flex flex-col items-center gap-3"
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-navy-900">
-            Smartium <span className="text-primary-500">AI</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-navy-900 dark:text-slate-100">
+            Smartium <span className="text-primary-500 dark:text-primary-400">AI</span>
           </h1>
-          <p className="text-navy-500 text-sm mt-1">
+          <p className="text-navy-500 dark:text-slate-400 text-sm mt-1">
             Stel een vraag over de leerstof – antwoorden met directe verwijzingen
           </p>
           <button
             onClick={clearChat}
             disabled={!currentChatId}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-200 text-slate-700 text-sm font-medium hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-300 dark:hover:bg-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             title="Chat leegmaken"
           >
             <Trash2 className="w-4 h-4" />
@@ -339,10 +344,10 @@ const ChatPage = () => {
               animate={{ opacity: 1 }}
               className="flex gap-3"
             >
-              <div className="w-8 h-8 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-xl bg-primary-100 dark:bg-primary-500/30 flex items-center justify-center shrink-0">
                 <Bot className="w-4 h-4 text-primary-600" />
               </div>
-              <div className="bg-white border border-slate-200 rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
+              <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
                 <Loader2 className="w-5 h-5 text-primary-500 animate-spin" />
               </div>
             </motion.div>
@@ -351,8 +356,8 @@ const ChatPage = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-6">
-          <div className="flex items-end gap-2 bg-white rounded-2xl border border-slate-200 shadow-soft p-2">
+        <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent dark:from-slate-950 dark:via-slate-950 pt-4 pb-6">
+          <div className="flex items-end gap-2 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-soft p-2">
             <textarea
               ref={inputRef}
               value={input}
@@ -360,7 +365,7 @@ const ChatPage = () => {
               onKeyDown={handleKeyDown}
               placeholder="Stel een vraag over de leerstof..."
               rows={1}
-              className="flex-1 resize-none bg-transparent px-3 py-2 text-slate-800 placeholder:text-slate-400 focus:outline-none text-sm"
+              className="flex-1 resize-none bg-transparent px-3 py-2 text-slate-800 dark:text-slate-200 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none text-sm"
               style={{ maxHeight: '120px' }}
               onInput={(e) => {
                 e.target.style.height = 'auto'
@@ -371,7 +376,7 @@ const ChatPage = () => {
               <select
                 value={answerMode}
                 onChange={(e) => setAnswerMode(e.target.value)}
-                className="appearance-none pl-3 pr-8 py-2 text-xs text-slate-600 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 cursor-pointer min-w-[140px]"
+                className="appearance-none pl-3 pr-8 py-2 text-xs text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-500/50 cursor-pointer min-w-[140px]"
               >
                 <option value="short">Korte antwoorden</option>
                 <option value="extended">Uitgebreide antwoorden</option>

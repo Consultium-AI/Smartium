@@ -9,7 +9,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="pt-16 pb-8 bg-white border-t border-navy-100">
+    <footer className="pt-16 pb-8 bg-white dark:bg-slate-900/50 border-t border-navy-100 dark:border-slate-700/50">
       <div className="container-custom">
         <div className="flex flex-col items-center text-center mb-12">
           {/* Brand */}
@@ -23,7 +23,7 @@ const Footer = () => {
             <span className="text-2xl font-bold gradient-text">Smartium</span>
           </Link>
 
-          <p className="text-navy-500 mb-8 max-w-md">
+          <p className="text-navy-500 dark:text-slate-400 mb-8 max-w-md">
             Studiemateriaal voor geneeskundestudenten. Gemaakt door studenten, voor studenten.
           </p>
 
@@ -33,7 +33,7 @@ const Footer = () => {
               <Link key={link.name} to={link.href}>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-navy-50 text-navy-600 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-navy-50 dark:bg-slate-800/50 text-navy-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 >
                   <link.icon className="w-4 h-4" />
                   <span className="font-medium text-sm">{link.name}</span>
@@ -44,8 +44,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex items-center justify-center pt-6 border-t border-navy-100">
-          <p className="text-navy-400 text-sm">
+        <div className="flex items-center justify-center pt-6 border-t border-navy-100 dark:border-slate-700/50">
+          <p className="text-navy-400 dark:text-slate-500 text-sm">
             © {new Date().getFullYear()} Smartium
           </p>
         </div>

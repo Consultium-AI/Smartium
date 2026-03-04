@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, GraduationCap, BookOpen, Lightbulb } from 'lucide-react'
+import { FileText, GraduationCap, BookOpen, Lightbulb, Bot, ClipboardCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const Features = () => {
@@ -23,6 +23,20 @@ const Features = () => {
       color: 'accent',
       link: '/tentamen',
     },
+    {
+      icon: Bot,
+      title: 'AI Chat',
+      description: 'Stel vragen over de leerstof en krijg antwoorden met directe verwijzingen naar de samenvattingen.',
+      color: 'primary',
+      link: '/chat',
+    },
+    {
+      icon: ClipboardCheck,
+      title: 'Oefenvragen',
+      description: 'Oefen met meerkeuzevragen per onderwerp. Ideaal om je kennis te toetsen.',
+      color: 'accent',
+      link: '/oefenvragen',
+    },
   ]
 
   const benefits = [
@@ -40,16 +54,16 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-navy-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-navy-900 dark:text-slate-100">
             Wat bieden wij?
           </h2>
-          <p className="text-lg text-navy-500">
+          <p className="text-lg text-navy-500 dark:text-slate-400">
             Studiemateriaal dat je helpt om efficiënter te leren.
           </p>
         </motion.div>
 
         {/* Feature Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -62,8 +76,8 @@ const Features = () => {
                   whileHover={{ y: -6 }}
                   className={`group h-full p-8 rounded-3xl border-2 transition-all cursor-pointer ${
                     feature.color === 'accent'
-                      ? 'bg-gradient-to-br from-accent-50 to-white border-accent-200 hover:border-accent-400 hover:shadow-glow-accent'
-                      : 'bg-gradient-to-br from-primary-50 to-white border-primary-200 hover:border-primary-400 hover:shadow-glow'
+                      ? 'bg-gradient-to-br from-accent-50 to-white dark:from-accent-900/30 dark:to-slate-800/90 border-accent-200 dark:border-accent-500/30 hover:border-accent-400 dark:hover:border-accent-500/60 hover:shadow-glow-accent'
+                      : 'bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/30 dark:to-slate-800/90 border-primary-200 dark:border-primary-500/30 hover:border-primary-400 dark:hover:border-primary-500/60 hover:shadow-glow'
                   }`}
                 >
                   {/* Icon */}
@@ -104,10 +118,10 @@ const Features = () => {
           {benefits.map((benefit) => (
             <div
               key={benefit.text}
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white border border-navy-100 shadow-soft"
+              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white dark:bg-slate-800/50 border border-navy-100 dark:border-slate-600/50 shadow-soft dark:shadow-none"
             >
               <benefit.icon className="w-5 h-5 text-primary-500" />
-              <span className="text-navy-700 font-medium">{benefit.text}</span>
+              <span className="text-navy-700 dark:text-slate-300 font-medium">{benefit.text}</span>
             </div>
           ))}
         </motion.div>

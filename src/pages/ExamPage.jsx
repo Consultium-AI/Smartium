@@ -62,15 +62,15 @@ function calculateGrade(correct, total) {
 
 // ─── Exam Selection Screen ───────────────────────────────────────
 const ExamSelection = () => (
-  <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
+  <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
     <Navbar />
     <div className="h-20" />
     <main className="container-custom py-8 md:py-12">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-navy-900 mb-2">
-          <span className="text-primary-500">Oefententamens</span> Blok 4
+        <h1 className="text-3xl md:text-4xl font-bold text-navy-900 dark:text-slate-100 mb-2">
+          <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> Blok 4
         </h1>
-        <p className="text-navy-500">5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen</p>
+        <p className="text-navy-500 dark:text-slate-400">5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen</p>
       </motion.div>
 
       <div className="max-w-2xl mx-auto space-y-4">
@@ -83,24 +83,24 @@ const ExamSelection = () => (
           >
             <Link
               to={`/tentamen?nr=${i + 1}`}
-              className="flex items-center justify-between p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-primary-300 transition-all group"
+              className="flex items-center justify-between p-5 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm hover:shadow-md hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group"
             >
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-lg group-hover:bg-primary-200 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold text-lg group-hover:bg-primary-200 dark:group-hover:bg-primary-500/50 transition-colors">
                   {i + 1}
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900">{name}</h3>
-                  <p className="text-sm text-slate-500">60 vragen · alle onderwerpen · ~45 min</p>
+                  <h3 className="font-bold text-slate-900 dark:text-slate-100">{name}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">60 vragen · alle onderwerpen · ~45 min</p>
                 </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 transition-colors" />
+              <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors" />
             </Link>
           </motion.div>
         ))}
       </div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400">
         <p>60% correct = 5,5 · Gelijkende antwoordlengtes · Alleen inhoudelijke vragen</p>
       </motion.div>
     </main>

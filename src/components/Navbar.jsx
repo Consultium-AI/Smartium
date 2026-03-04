@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, FileText, ClipboardCheck, Home, Bot, GraduationCap } from 'lucide-react'
+import { Menu, X, FileText, ClipboardCheck, Home, Bot, GraduationCap, Sun, Moon } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
 
 const Navbar = () => {
+  const { isDark, toggleTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
@@ -31,7 +33,7 @@ const Navbar = () => {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-xl shadow-soft' 
+          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-soft dark:shadow-none dark:border-b dark:border-slate-700/50' 
           : 'bg-transparent'
       }`}
     >
@@ -59,6 +61,15 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleTheme}
+              className="p-2.5 rounded-xl text-navy-600 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 transition-colors"
+              title={isDark ? 'Licht thema' : 'Donker thema'}
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </motion.button>
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -70,8 +81,8 @@ const Navbar = () => {
                   to={item.href}
                   className={`relative px-5 py-2.5 transition-colors rounded-xl group flex items-center gap-2 font-medium ${
                     location.pathname === item.href
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-navy-600 hover:text-primary-600 hover:bg-primary-50'
+                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/20'
+                      : 'text-navy-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10'
                   }`}
                 >
                   <item.icon className="w-4 h-4" />
@@ -81,14 +92,23 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-navy-700 hover:bg-navy-100 rounded-xl transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </motion.button>
+          {/* Mobile Menu Buttons */}
+          <div className="md:hidden flex items-center gap-1">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleTheme}
+              className="p-2 text-navy-700 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 rounded-xl transition-colors"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </motion.button>
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-navy-700 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 rounded-xl transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </motion.button>
+          </div>
         </div>
       </div>
 
@@ -100,7 +120,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-navy-100"
+            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-navy-100 dark:border-slate-700"
           >
             <div className="container-custom py-4 space-y-1">
               {navItems.map((item, index) => (
@@ -115,8 +135,8 @@ const Navbar = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
                       location.pathname === item.href
-                        ? 'text-primary-600 bg-primary-50'
-                        : 'text-navy-700 hover:text-primary-600 hover:bg-primary-50'
+                        ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/20'
+                        : 'text-navy-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10'
                     }`}
                   >
                     <item.icon className="w-5 h-5 text-primary-500" />
