@@ -8487,8 +8487,8 @@ const practiceQuestionsCourseStructure = {
           {
             name: "Casus 7",
             lmes: [
-              { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", type: "image-based", questionsMap: lme5QuestionsMap },
-              { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", type: "image-based", questionsMap: lme6QuestionsMap }
+              { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", type: "simple", questionsMap: lme5QuestionsMap },
+              { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", type: "simple", questionsMap: lme6QuestionsMap }
             ]
           },
           {
@@ -8568,6 +8568,7 @@ const PracticeQuestionsPage = () => {
 
   const getLmeQuestionCount = (lmeItem) => {
     if (lmeItem.type === 'image-based' && lmeItem.questionsMap) return getQuestionCount(lmeItem.questionsMap)
+    if (lmeItem.type === 'simple' && lmeItem.questionsMap) return getQuestionCount(lmeItem.questionsMap)
     const lmeId = lmeItem.id
     const q = (() => {
       if (lmeId === 'embryogenese') return embryogeneseQuestions
@@ -8669,9 +8670,11 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'immunologische-consequenties-hiv') return immunologischeConsequentiesHivQuestions
     if (lmeParam === 'tuberculose-bij-migranten') return tuberculoseBijMigrantenQuestions
     if (lmeParam === 'tuberculose-inleiding') return tuberculoseInleidingQuestions
-    // LME 5: Schimmelinfecties van de huid, nagels en haren
+    // LME 5: Schimmelinfecties van de huid, nagels en haren (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'lme5-schimmelinfecties') return Object.values(lme5QuestionsMap).flat()
+    // LME 6: Voorbereiding VOW Milt (per LME, alle vragen gecombineerd)
+    if (lmeParam === 'lme6-voorbereiding-vow-milt') return Object.values(lme6QuestionsMap).flat()
     if (lme5QuestionsMap[lmeParam]) return lme5QuestionsMap[lmeParam]
-    // LME 6: Voorbereiding VOW Milt
     if (lme6QuestionsMap[lmeParam]) return lme6QuestionsMap[lmeParam]
     // LME 1: Parasitaire verwekkers van gastro-enteritis
     if (lme1QuestionsMap[lmeParam]) return lme1QuestionsMap[lmeParam]
@@ -8786,6 +8789,8 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'immunologische-consequenties-hiv') return 'Immunologische consequenties hiv'
     if (lmeParam === 'tuberculose-bij-migranten') return 'Tuberculose bij migranten'
     if (lmeParam === 'tuberculose-inleiding') return 'Tuberculose – een inleiding'
+    if (lmeParam === 'lme5-schimmelinfecties') return 'Schimmelinfecties van de huid, nagels en haren'
+    if (lmeParam === 'lme6-voorbereiding-vow-milt') return 'Voorbereiding VOW Milt'
     if (lme5QuestionsMap[lmeParam]) return `Schimmelinfecties – Afbeelding ${lmeParam.replace('lme5-schimmelinfecties-image', '')}`
     if (lme6QuestionsMap[lmeParam]) return `Voorbereiding VOW Milt – Afbeelding ${lmeParam.replace('lme6-voorbereiding-vow-milt-image', '')}`
     if (lme1QuestionsMap[lmeParam]) return `Parasitaire verwekkers gastro-enteritis – Afbeelding ${lmeParam.replace('lme1-parasitaire-verwekkers-gastro-enteritis-image', '')}`
@@ -8845,6 +8850,8 @@ const PracticeQuestionsPage = () => {
     if (lmeParam === 'immunologische-consequenties-hiv') return 'Test je kennis met 18 meerkeuzevragen over Immunologische consequenties van HIV.'
     if (lmeParam === 'tuberculose-bij-migranten') return 'Test je kennis met 18 meerkeuzevragen over tuberculose bij migranten.'
     if (lmeParam === 'tuberculose-inleiding') return 'Test je kennis met 18 meerkeuzevragen over tuberculose – een inleiding.'
+    if (lmeParam === 'lme5-schimmelinfecties') return `Test je kennis met ${getQuestionCount(lme5QuestionsMap)} meerkeuzevragen over schimmelinfecties.`
+    if (lmeParam === 'lme6-voorbereiding-vow-milt') return `Test je kennis met ${getQuestionCount(lme6QuestionsMap)} meerkeuzevragen over de milt.`
     if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
     if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`
     if (lme1QuestionsMap[lmeParam]) return `Test je kennis met ${lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`
