@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import ParticleBackground from './components/ParticleBackground'
 import PracticeQuestionsPage from './pages/PracticeQuestionsPage'
 import SummaryPage from './pages/SummaryPage'
+import ChatPage from './pages/ChatPage'
+import ExamPage from './pages/ExamPage'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -42,6 +44,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<PracticeQuestionsPage />} />
           <Route path="/summary" element={<SummaryPage />} />
+          <Route path="/chat" element={<ChatPage />} />
+          <Route path="/tentamen" element={<ExamPage />} />
         </Routes>
       </div>
     </Router>
