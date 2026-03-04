@@ -137,18 +137,6 @@ const ChatPage = () => {
   const currentChat = chats.find(c => c.id === currentChatId)
   const messages = currentChat?.messages ?? [INITIAL_MESSAGE]
 
-  const persistChat = useCallback((chatId, msgs) => {
-    if (!chatId) return
-    const title = getChatTitle(msgs)
-    setChats(prev => {
-      const updated = prev.some(c => c.id === chatId)
-        ? prev.map(c => c.id === chatId ? { ...c, messages: msgs, title, updatedAt: Date.now() } : c)
-        : [...prev, { id: chatId, title, messages: msgs, createdAt: Date.now(), updatedAt: Date.now() }]
-      saveChats(updated)
-      return updated
-    })
-  }, [])
-
   useEffect(() => {
     if (chats.length === 0) {
       const id = generateId()
@@ -162,9 +150,19 @@ const ChatPage = () => {
   }, [chats.length, currentChatId])
 
   const setMessages = useCallback((updater) => {
-    const next = typeof updater === 'function' ? updater(messages) : updater
-    if (currentChatId) persistChat(currentChatId, next)
-  }, [currentChatId, messages, persistChat])
+    if (!currentChatId) return
+    setChats(prev => {
+      const chat = prev.find(c => c.id === currentChatId)
+      const currentMsgs = chat?.messages ?? [INITIAL_MESSAGE]
+      const next = typeof updater === 'function' ? updater(currentMsgs) : updater
+      const title = getChatTitle(next)
+      const updated = prev.some(c => c.id === currentChatId)
+        ? prev.map(c => c.id === currentChatId ? { ...c, messages: next, title, updatedAt: Date.now() } : c)
+        : [...prev, { id: currentChatId, title, messages: next, createdAt: Date.now(), updatedAt: Date.now() }]
+      saveChats(updated)
+      return updated
+    })
+  }, [currentChatId])
 
   const startNewChat = (initialUserMessage = null) => {
     const id = generateId()
@@ -316,7 +314,7 @@ const ChatPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center py-6"
+          className="text-center py-6 flex flex-col items-center gap-3"
         >
           <h1 className="text-2xl md:text-3xl font-bold text-navy-900">
             Smartium <span className="text-primary-500">AI</span>
@@ -324,12 +322,19 @@ const ChatPage = () => {
           <p className="text-navy-500 text-sm mt-1">
             Stel een vraag over de leerstof – antwoorden met directe verwijzingen
           </p>
+          <button
+            onClick={startNewChat}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+          >
+            <Plus className="w-4 h-4" />
+            Nieuwe chat
+          </button>
         </motion.div>
 
         <div className="flex-1 overflow-y-auto space-y-4 pb-4 min-h-0">
           <AnimatePresence>
             {messages.map((msg, i) => (
-              <MessageBubble key={i} message={msg} />
+              <MessageBubble key={`${currentChatId}-${i}-${msg.role}-${String(msg.content).slice(0, 20)}`} message={msg} />
             ))}
           </AnimatePresence>
 
