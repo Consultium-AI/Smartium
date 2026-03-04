@@ -1,0 +1,12 @@
+// LME 1: Parasitaire verwekkers van gastro-enteritis (Week 5 Casus 9) - Image-based summaries
+export { default as Image01IntroductieSummary } from './Image01IntroductieSummary'
+export { default as Image02MenuSummary } from './Image02MenuSummary'
+export { default as Image03MeestVoorkomendeParasietenSummary } from './Image03MeestVoorkomendeParasietenSummary'
+export { default as Image04Kennisclip1Summary } from './Image04Kennisclip1Summary'
+export { default as Image05ProtozoaKenmerkenSummary } from './Image05ProtozoaKenmerkenSummary'
+export { default as Image06EntamoebaLevenscyclusSummary } from './Image06EntamoebaLevenscyclusSummary'
+export { default as Image07Kennisclip2Summary } from './Image07Kennisclip2Summary'
+export { default as Image08VermenigvuldigingSummary } from './Image08VermenigvuldigingSummary'
+export { default as Image09DiagnostiekVraagSummary } from './Image09DiagnostiekVraagSummary'
+export { default as Image10Kennisclip3Summary } from './Image10Kennisclip3Summary'
+export { default as Image11DiagnostiekTechniekenSummary } from './Image11DiagnostiekTechniekenSummary'
