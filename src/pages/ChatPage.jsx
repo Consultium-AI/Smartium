@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import ReactMarkdown from 'react-markdown'
 import { Send, Bot, User, Loader2, ChevronDown, Trash2, MessageSquare, Menu } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
@@ -97,7 +98,13 @@ const MessageBubble = ({ message }) => {
           ? 'bg-primary-500 text-white rounded-br-md'
           : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-800 dark:text-slate-200 rounded-bl-md shadow-sm'
       }`}>
-        <div className="whitespace-pre-wrap">{displayText}</div>
+        {isUser ? (
+          <div className="whitespace-pre-wrap">{displayText}</div>
+        ) : (
+          <div className="[&_p]:my-1 [&_ul]:my-2 [&_ol]:my-2 [&_li]:my-0.5 [&_li]:list-disc [&_li]:ml-4 [&_ol>li]:list-decimal [&_strong]:font-bold [&_em]:italic [&_code]:bg-slate-100 dark:[&_code]:bg-slate-700 [&_code]:px-1 [&_code]:rounded text-sm">
+            <ReactMarkdown>{displayText}</ReactMarkdown>
+          </div>
+        )}
         {!isUser && refs.length > 0 && (
           <div className="mt-2 pt-2 border-t border-slate-100 dark:border-slate-600 flex flex-wrap gap-x-2 gap-y-0.5">
             {refs.map((r, i) => {
@@ -131,9 +138,21 @@ const ChatPage = () => {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [answerMode, setAnswerMode] = useState('short')
+  const [answerModeOpen, setAnswerModeOpen] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
+  const answerModeRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (answerModeRef.current && !answerModeRef.current.contains(e.target)) {
+        setAnswerModeOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const currentChat = chats.find(c => c.id === currentChatId)
   const messages = currentChat?.messages ?? [INITIAL_MESSAGE]
@@ -372,17 +391,48 @@ const ChatPage = () => {
                 e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px'
               }}
             />
-            <div className="relative shrink-0">
-              <select
-                value={answerMode}
-                onChange={(e) => setAnswerMode(e.target.value)}
+            <div className="relative shrink-0" ref={answerModeRef}>
+              <button
+                type="button"
+                onClick={() => setAnswerModeOpen(o => !o)}
                 title={answerMode === 'short' ? 'Korte antwoorden' : 'Uitgebreide antwoorden'}
-                className="appearance-none w-10 h-10 p-0 text-transparent bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-500/50 cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-500/50 cursor-pointer"
               >
-                <option value="short">Korte antwoorden</option>
-                <option value="extended">Uitgebreide antwoorden</option>
-              </select>
-              <ChevronDown className="absolute inset-0 m-auto w-4 h-4 text-slate-500 dark:text-slate-400 pointer-events-none" />
+                <ChevronDown className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+              </button>
+              <AnimatePresence>
+                {answerModeOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    className="absolute bottom-full left-0 mb-1 py-1 min-w-[180px] bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-xl shadow-lg overflow-hidden z-50"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => { setAnswerMode('short'); setAnswerModeOpen(false) }}
+                      className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${
+                        answerMode === 'short'
+                          ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      Korte antwoorden
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setAnswerMode('extended'); setAnswerModeOpen(false) }}
+                      className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${
+                        answerMode === 'extended'
+                          ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700'
+                      }`}
+                    >
+                      Uitgebreide antwoorden
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
             <button
               onClick={sendMessage}
