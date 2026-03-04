@@ -1,47 +1,51 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Send, Bot, User, BookOpen, Loader2 } from 'lucide-react'
+import { Send, Bot, User, Loader2, ChevronDown } from 'lucide-react'
 import Navbar from '../components/Navbar'
-import lmeIndex from '../data/lmeIndex'
+import lmeIndex, { lmeMap } from '../data/lmeIndex'
 
-const SYSTEM_PROMPT = `Je bent Smartium AI, een slimme studieassistent voor geneeskundestudenten. Je hebt toegang tot de volgende samenvattingen (LME's) uit het curriculum:
+const LME_LIST = lmeIndex.map(l => `- ${l.name} (id: ${l.id}) [${l.blok}, ${l.week}, ${l.casus}] – Onderwerpen: ${l.topics}`).join('\n')
 
-${lmeIndex.map(l => `- ${l.name} (id: ${l.id}) [${l.blok}, ${l.week}, ${l.casus}] – Onderwerpen: ${l.topics}`).join('\n')}
+const getSystemPrompt = (answerMode) => {
+  const lengthRule = answerMode === 'short'
+    ? '1. Geef KORTE, directe antwoorden (max 3-4 zinnen per punt). Wees beknopt en to-the-point.'
+    : '1. Geef UITGEBREIDE antwoorden met meer uitleg, context en voorbeelden waar relevant.'
+  return `Je bent Smartium AI, een slimme studieassistent voor geneeskundestudenten. Je hebt toegang tot de volgende samenvattingen (LME's) uit het curriculum:
+
+${LME_LIST}
 
 REGELS:
-1. Geef KORTE, directe antwoorden (max 3-4 zinnen per punt).
+${lengthRule}
 2. Als het antwoord gebaseerd is op stof uit een LME, verwijs er ALTIJD naar met exact dit formaat: [[lme-id|LME Naam]]. Bijvoorbeeld: [[embryogenese|Embryogenese Bouwplan]]
 3. Gebruik meerdere referenties als het antwoord meerdere LME's betreft.
-4. Als de vraag NIET gerelateerd is aan de beschikbare samenvattingen, geef dan een kort antwoord zonder referentie.
+4. Als de vraag NIET gerelateerd is aan de beschikbare samenvattingen, geef dan een antwoord zonder referentie.
 5. Antwoord altijd in het Nederlands.
-6. Wees beknopt en to-the-point. Studenten willen snel de kern weten.
-7. Gebruik bullet points waar relevant.`
+6. Gebruik bullet points waar relevant.`
+}
 
 function parseReferences(text) {
-  const parts = []
+  const refs = []
+  let displayText = ''
   let lastIndex = 0
   const regex = /\[\[([^|]+)\|([^\]]+)\]\]/g
   let match
 
   while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push({ type: 'text', content: text.slice(lastIndex, match.index) })
-    }
-    parts.push({ type: 'ref', id: match[1], name: match[2] })
+    displayText += text.slice(lastIndex, match.index)
+    refs.push({ id: match[1], name: match[2] })
     lastIndex = regex.lastIndex
   }
+  displayText += text.slice(lastIndex)
 
-  if (lastIndex < text.length) {
-    parts.push({ type: 'text', content: text.slice(lastIndex) })
-  }
-
-  return parts
+  return { displayText: displayText.trim(), refs }
 }
 
 const MessageBubble = ({ message }) => {
   const isUser = message.role === 'user'
-  const parts = isUser ? [{ type: 'text', content: message.content }] : parseReferences(message.content)
+  const { displayText, refs } = isUser
+    ? { displayText: message.content, refs: [] }
+    : parseReferences(message.content)
 
   return (
     <motion.div
@@ -59,23 +63,23 @@ const MessageBubble = ({ message }) => {
           ? 'bg-primary-500 text-white rounded-br-md'
           : 'bg-white border border-slate-200 text-slate-800 rounded-bl-md shadow-sm'
       }`}>
-        {parts.map((part, i) =>
-          part.type === 'text' ? (
-            <span key={i} className="whitespace-pre-wrap">{part.content}</span>
-          ) : (
-            <Link
-              key={i}
-              to={`/summary?lme=${part.id}`}
-              className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-lg text-sm font-medium transition-colors mx-0.5 ${
-                isUser
-                  ? 'bg-white/20 text-white hover:bg-white/30'
-                  : 'bg-primary-50 text-primary-700 hover:bg-primary-100 border border-primary-200'
-              }`}
-            >
-              <BookOpen className="w-3 h-3" />
-              {part.name}
-            </Link>
-          )
+        <div className="whitespace-pre-wrap">{displayText}</div>
+        {!isUser && refs.length > 0 && (
+          <div className="mt-2 pt-2 border-t border-slate-100 flex flex-wrap gap-x-2 gap-y-0.5">
+            {refs.map((r, i) => {
+              const lme = lmeMap[r.id]
+              const label = lme ? `${lme.week} ${lme.casus} LME: ${lme.name}` : r.name
+              return (
+                <Link
+                  key={i}
+                  to={`/summary?lme=${r.id}`}
+                  className="text-[10px] text-slate-500 hover:text-primary-600 hover:underline"
+                >
+                  {label}
+                </Link>
+              )
+            })}
+          </div>
         )}
       </div>
       {isUser && (
@@ -93,6 +97,7 @@ const ChatPage = () => {
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [answerMode, setAnswerMode] = useState('short')
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -112,7 +117,7 @@ const ChatPage = () => {
 
     try {
       const apiMessages = [
-        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'system', content: getSystemPrompt(answerMode) },
         ...newMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content }))
       ]
 
@@ -126,7 +131,7 @@ const ChatPage = () => {
           model: 'gpt-4o',
           messages: apiMessages,
           temperature: 0.4,
-          max_tokens: 800,
+          max_tokens: answerMode === 'extended' ? 2000 : 800,
         }),
       })
 
@@ -198,7 +203,7 @@ const ChatPage = () => {
         </div>
 
         <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent pt-4 pb-6">
-          <div className="flex items-end gap-3 bg-white rounded-2xl border border-slate-200 shadow-soft p-2">
+          <div className="flex items-end gap-2 bg-white rounded-2xl border border-slate-200 shadow-soft p-2">
             <textarea
               ref={inputRef}
               value={input}
@@ -213,6 +218,17 @@ const ChatPage = () => {
                 e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px'
               }}
             />
+            <div className="relative shrink-0">
+              <select
+                value={answerMode}
+                onChange={(e) => setAnswerMode(e.target.value)}
+                className="appearance-none pl-3 pr-8 py-2 text-xs text-slate-600 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-200 cursor-pointer min-w-[140px]"
+              >
+                <option value="short">Korte antwoorden</option>
+                <option value="extended">Uitgebreide antwoorden</option>
+              </select>
+              <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
+            </div>
             <button
               onClick={sendMessage}
               disabled={!input.trim() || loading}
