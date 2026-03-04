@@ -5,9 +5,9 @@ export const image26EindeQuestions = [
     question: "Welke onderwerpen behandelde deze module?",
     options: [
       { letter: "A", text: "Immunosuppressiva en immunostimulantia" },
-      { letter: "B", text: "Chirurgie" },
-      { letter: "C", text: "Radiologie" },
-      { letter: "D", text: "Pathologie" },
+      { letter: "B", text: "Chirurgische technieken en operatieve behandeling" },
+      { letter: "C", text: "Radiologische beeldvorming en diagnostiek" },
+      { letter: "D", text: "Pathologische weefseldiagnostiek" },
     ],
     correctAnswer: "A",
     category: "Module",

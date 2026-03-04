@@ -70,7 +70,7 @@ function seededRandom(seed) {
   }
 }
 
-const OUTLIER_MARGIN = 12 // max verschil tussen langste en op-een-na langste
+const OUTLIER_MARGIN = 18 // max verschil tussen langste en op-een-na langste
 const LENGTH_EXTENSIONS = [
   ' – past bij een andere aandoening of categorie',
   ' – past bij een andere diagnose in de differentiaal',

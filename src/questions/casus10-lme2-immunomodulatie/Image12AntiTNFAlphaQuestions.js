@@ -5,9 +5,9 @@ export const image12AntiTNFAlphaQuestions = [
     question: "Bij welke aandoeningen wordt anti-TNF-alpha vaak gebruikt?",
     options: [
       { letter: "A", text: "Reumatoïde artritis, inflammatoire darmziekten, psoriasis" },
-      { letter: "B", text: "Diabetes, hypertensie" },
-      { letter: "C", text: "Astma, COPD" },
-      { letter: "D", text: "Geen van bovenstaande" },
+      { letter: "B", text: "Diabetes type 2 en essentiële hypertensie" },
+      { letter: "C", text: "Astma en COPD als chronische luchtwegziekten" },
+      { letter: "D", text: "Geen van bovenstaande aandoeningen" },
     ],
     correctAnswer: "A",
     category: "Toepassing",

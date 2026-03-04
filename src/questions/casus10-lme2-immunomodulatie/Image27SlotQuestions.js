@@ -5,9 +5,9 @@ export const image27SlotQuestions = [
     question: "Waarvoor is immunomodulatie essentieel?",
     options: [
       { letter: "A", text: "Behandeling van ziekten en preventie van infecties" },
-      { letter: "B", text: "Alleen chirurgie" },
-      { letter: "C", text: "Alleen diagnostiek" },
-      { letter: "D", text: "Geen van bovenstaande" },
+      { letter: "B", text: "Alleen chirurgische ingrepen en operaties" },
+      { letter: "C", text: "Alleen diagnostische beeldvorming en labbepalingen" },
+      { letter: "D", text: "Geen van bovenstaande toepassingen" },
     ],
     correctAnswer: "A",
     category: "Immunomodulatie",

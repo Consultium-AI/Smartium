@@ -17,9 +17,9 @@ export const image08HerkenningTineaPedisQuestions = [
     question: "Wat ontstaat er door onvoldoende afdrogen tussen de tenen?",
     options: [
       { letter: "A", text: "Maceraties (verweking) van de huid en wondjes – een goede voedingsbodem voor schimmels" },
-      { letter: "B", text: "Alleen droge huid" },
-      { letter: "C", text: "Geen gevolgen" },
-      { letter: "D", text: "Directe bacteriële infectie" },
+      { letter: "B", text: "Alleen droge huid zonder verdere consequenties" },
+      { letter: "C", text: "Geen gevolgen voor de huidintegriteit" },
+      { letter: "D", text: "Directe bacteriële infectie zonder voorafgaande maceratie" },
     ],
     correctAnswer: "A",
     category: "Pathogenese",

@@ -5,9 +5,9 @@ export const image05CorticosteroidenQuestions = [
     question: "Waarop lijken corticosteroïden?",
     options: [
       { letter: "A", text: "Het natuurlijke bijnierschorshormoon cortisol" },
-      { letter: "B", text: "Insuline" },
-      { letter: "C", text: "Thyroxine" },
-      { letter: "D", text: "Adrenaline" },
+      { letter: "B", text: "Insuline, het hormoon dat de bloedsuikerspiegel reguleert" },
+      { letter: "C", text: "Thyroxine, het schildklierhormoon voor de stofwisseling" },
+      { letter: "D", text: "Adrenaline, het catecholamine dat vrijkomt bij stress" },
     ],
     correctAnswer: "A",
     category: "Corticosteroïden",
