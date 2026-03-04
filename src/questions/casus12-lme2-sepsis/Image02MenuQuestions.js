@@ -14,14 +14,14 @@ export const image02MenuQuestions = [
   },
   {
     id: 2,
-    question: "Welk hoofdstuk hoort bij de sepsis-module?",
+    question: "Waarom is sepsis een belangrijke aandoening in de gezondheidszorg?",
     options: [
-      { letter: "A", text: "De maatschappelijke impact van sepsis" },
-      { letter: "B", text: "Antibioticaresistentie" },
-      { letter: "C", text: "Vaccinatie" },
-      { letter: "D", text: "Chirurgie" },
+      { letter: "A", text: "Het is een levensbedreigende aandoening met wereldwijd aanzienlijke impact" },
+      { letter: "B", text: "Het komt zelden voor" },
+      { letter: "C", text: "Het is eenvoudig te behandelen" },
+      { letter: "D", text: "Het treft alleen ouderen" },
     ],
     correctAnswer: "A",
-    category: "Inhoud",
+    category: "Sepsis",
   },
 ]

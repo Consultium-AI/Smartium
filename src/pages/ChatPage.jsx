@@ -54,7 +54,8 @@ ${lengthRule}
 3. Gebruik meerdere referenties als het antwoord meerdere LME's betreft.
 4. Als de vraag NIET gerelateerd is aan de beschikbare samenvattingen, geef dan een antwoord zonder referentie.
 5. Antwoord altijd in het Nederlands.
-6. Gebruik bullet points waar relevant.`
+6. Gebruik bullet points waar relevant.
+7. Stel NOOIT vragen aan de gebruiker zoals 'bij welk hoofdstuk hoort dit', 'uit hoeveel hoofdstukken bestaat de module' of andere meta-vragen over structuur. Beantwoord alleen de gestelde vragen.`
 }
 
 function parseReferences(text) {

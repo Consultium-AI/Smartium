@@ -14,15 +14,15 @@ export const image01IntroductieQuestions = [
   },
   {
     id: 2,
-    question: "Hoeveel hoofdstukken bevat deze module?",
+    question: "Op welk niveau richt het leerdoel van deze module zich?",
     options: [
-      { letter: "A", text: "4" },
-      { letter: "B", text: "5" },
-      { letter: "C", text: "6" },
-      { letter: "D", text: "7" },
+      { letter: "A", text: "Individueel niveau – onbedoelde schadelijke effecten van patiëntenzorg" },
+      { letter: "B", text: "Alleen op populatieniveau" },
+      { letter: "C", text: "Alleen op technische aspecten" },
+      { letter: "D", text: "Alleen op diagnostiek" },
     ],
-    correctAnswer: "C",
-    category: "Inhoud",
+    correctAnswer: "A",
+    category: "Leerdoelen",
   },
   {
     id: 3,

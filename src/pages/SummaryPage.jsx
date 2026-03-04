@@ -191,10 +191,77 @@ const SummaryPage = () => {
               ]
             }
           ]
+        },
+        {
+          name: "Week 5",
+          cases: [
+            {
+              name: "Casus 7",
+              lmes: [
+                { id: "lme5-schimmelinfecties", name: "Schimmelinfecties van de huid, nagels en haren", type: "image-based", baseId: "lme5-schimmelinfecties", imageCount: 25 },
+                { id: "lme6-voorbereiding-vow-milt", name: "Voorbereiding VOW Milt", type: "image-based", baseId: "lme6-voorbereiding-vow-milt", imageCount: 14 }
+              ]
+            },
+            {
+              name: "Casus 9",
+              lmes: [
+                { id: "lme1-parasitaire-verwekkers-gastro-enteritis", name: "Parasitaire verwekkers van gastro-enteritis", type: "image-based", baseId: "lme1-parasitaire-verwekkers-gastro-enteritis", imageCount: 11 },
+                { id: "lme2-virale-verwekkers-gastro-enteritis", name: "Virale verwekkers van gastro-enteritis", type: "image-based", baseId: "lme2-virale-verwekkers-gastro-enteritis", imageCount: 24 },
+                { id: "lme3-welk-antibioticum-kies-ik", name: "Welk antibioticum kies ik", type: "image-based", baseId: "lme3-welk-antibioticum-kies-ik", imageCount: 14 }
+              ]
+            },
+            {
+              name: "Casus 10: Vaccinatie",
+              lmes: [
+                { id: "casus10-lme1-dwang-en-drang-historisch-perspectief", name: "Dwang en drang in historisch perspectief", type: "image-based", baseId: "casus10-lme1-dwang-en-drang-historisch-perspectief", imageCount: 25 },
+                { id: "casus10-lme2-immunomodulatie", name: "Immunomodulatie", type: "image-based", baseId: "casus10-lme2-immunomodulatie", imageCount: 27 },
+                { id: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", name: "Rechtvaardiging dwang en drang - Morele dilemma's bij vaccineren", type: "image-based", baseId: "casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas", imageCount: 35 },
+                { id: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", name: "Waarom een hoge vaccinatiegraad? De wiskunde van vaccinatie", type: "image-based", baseId: "casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie", imageCount: 38 }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Week 6",
+          cases: [
+            {
+              name: "Casus 11: Primaire immuundeficiënties",
+              lmes: [
+                { id: "casus11-lme1-leefstijl-en-immuunsysteem", name: "Leefstijl en immuunsysteem", type: "image-based", baseId: "casus11-lme1-leefstijl-en-immuunsysteem", imageCount: 21 }
+              ]
+            },
+            {
+              name: "Casus 12: Lijninfecties & resistenties",
+              lmes: [
+                { id: "casus12-lme1-antibioticaresistentie-en-therapie", name: "Antibioticaresistentie en therapie", type: "image-based", baseId: "casus12-lme1-antibioticaresistentie-en-therapie", imageCount: 15 },
+                { id: "casus12-lme2-sepsis", name: "Sepsis", type: "image-based", baseId: "casus12-lme2-sepsis", imageCount: 32 },
+                { id: "casus12-lme3-patient-en-medicatieveiligheid", name: "Patient- en medicatieveiligheid", type: "image-based", baseId: "casus12-lme3-patient-en-medicatieveiligheid", imageCount: 35 },
+                { id: "casus12-lme4-zorggerelateerde-infecties", name: "Zorggerelateerde infecties", type: "image-based", baseId: "casus12-lme4-zorggerelateerde-infecties", imageCount: 36 }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Week 7",
+          cases: [
+            {
+              name: "Casus 13: Een piloot met koorts",
+              lmes: [
+                { id: "casus13-lme1-antibiotica-introductie", name: "Antibiotica Introductie", type: "image-based", baseId: "casus13-lme1-antibiotica-introductie", imageCount: 24 },
+                { id: "casus13-lme2-antibiotica-resistentie", name: "Antibiotica Resistentie", type: "image-based", baseId: "casus13-lme2-antibiotica-resistentie", imageCount: 18 }
+              ]
+            }
+          ]
         }
       ]
     }
   }
+
+  const getImageIdsForLme = (baseId, imageCount) =>
+    Array.from({ length: imageCount }, (_, i) => ({
+      id: `${baseId}-image${String(i + 1).padStart(2, '0')}`,
+      name: `Afbeelding ${i + 1}`
+    }))
 
   // Render specific LME content
   if (lme === 'embryogenese') {
@@ -1462,7 +1529,7 @@ const SummaryPage = () => {
                   <h2 className="text-lg font-bold text-slate-900">
                     {courseStructure.blok4.name}
                   </h2>
-                  <p className="text-sm text-slate-500">4 weken · 7 casussen · 26 LME's</p>
+                  <p className="text-sm text-slate-500">7 weken · 13 casussen · 46 LME's</p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
@@ -1499,29 +1566,49 @@ const SummaryPage = () => {
 
                             <div className="ml-9 space-y-2">
                               {casus.lmes.map((lmeItem, lmeIndex) => (
-                                <Link
-                                  key={lmeIndex}
-                                  to={`/summary?lme=${lmeItem.id}`}
-                                  className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
-                                >
-                                  <div className="flex items-center gap-3">
-                                    <div className="p-1.5 rounded-lg bg-emerald-200">
-                                      <BookOpen className="w-4 h-4 text-emerald-700" />
+                                lmeItem.type === 'image-based' ? (
+                                  <div key={lmeIndex} className="space-y-2">
+                                    <div className="flex items-center gap-2 text-sm font-medium text-slate-700 py-2">
+                                      <BookOpen className="w-4 h-4 text-emerald-600" />
+                                      {lmeItem.name} ({lmeItem.imageCount} afbeeldingen)
                                     </div>
-                                    <div>
-                                      <span className="font-medium text-emerald-800 text-sm">
-                                        LME: {lmeItem.name}
-                                      </span>
-                                      <div className="flex items-center gap-3 mt-0.5">
-                                        <span className="text-xs text-emerald-600 flex items-center gap-1">
-                                          <Clock className="w-3 h-3" />
-                                          ~15 min
-                                        </span>
-                                      </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                      {getImageIdsForLme(lmeItem.baseId, lmeItem.imageCount).map((img) => (
+                                        <Link
+                                          key={img.id}
+                                          to={`/summary?lme=${img.id}`}
+                                          className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 text-sm text-slate-700 hover:text-emerald-800 transition-colors"
+                                        >
+                                          {img.name}
+                                        </Link>
+                                      ))}
                                     </div>
                                   </div>
-                                  <ChevronRight className="w-4 h-4 text-emerald-500" />
-                                </Link>
+                                ) : (
+                                  <Link
+                                    key={lmeIndex}
+                                    to={`/summary?lme=${lmeItem.id}`}
+                                    className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
+                                  >
+                                    <div className="flex items-center gap-3">
+                                      <div className="p-1.5 rounded-lg bg-emerald-200">
+                                        <BookOpen className="w-4 h-4 text-emerald-700" />
+                                      </div>
+                                      <div>
+                                        <span className="font-medium text-emerald-800 text-sm">
+                                          LME: {lmeItem.name}
+                                        </span>
+                                        <div className="flex items-center gap-3 mt-0.5">
+                                          <span className="text-xs text-emerald-600 flex items-center gap-1">
+                                            <Clock className="w-3 h-3" />
+                                            ~15 min
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-emerald-500" />
+                                  </Link>
+                                )
                               ))}
                             </div>
                           </div>

@@ -14,14 +14,14 @@ export const image02MenuQuestions = [
   },
   {
     id: 2,
-    question: "Welk hoofdstuk bespreekt postoperatieve wondinfecties?",
+    question: "Wat is een POWI?",
     options: [
-      { letter: "A", text: "Hoofdstuk 1" },
-      { letter: "B", text: "Hoofdstuk 2" },
-      { letter: "C", text: "Hoofdstuk 3" },
-      { letter: "D", text: "Hoofdstuk 4" },
+      { letter: "A", text: "Een postoperatieve wondinfectie" },
+      { letter: "B", text: "Een preventieve maatregel" },
+      { letter: "C", text: "Een type antibioticum" },
+      { letter: "D", text: "Een diagnostische test" },
     ],
-    correctAnswer: "B",
-    category: "Inhoud",
+    correctAnswer: "A",
+    category: "Zorggerelateerde infecties",
   },
 ]
