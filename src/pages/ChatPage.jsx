@@ -199,32 +199,66 @@ const ChatPage = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
+  const appendAssistantMessage = useCallback((chatId, content) => {
+    setChats(prev => {
+      const next = prev.map(c => {
+        if (c.id !== chatId) return c
+        const msgs = [...c.messages, { role: 'assistant', content }]
+        return { ...c, messages: msgs, title: getChatTitle(msgs), updatedAt: Date.now() }
+      })
+      saveChats(next)
+      return next
+    })
+  }, [])
+
   const sendMessage = async () => {
     const trimmed = input.trim()
     if (!trimmed || loading) return
 
     const userMessage = { role: 'user', content: trimmed }
-    let chatId = currentChatId
-    const isNewChat = !chatId
-    if (isNewChat) chatId = startNewChat(userMessage)
+    let targetChatId = currentChatId
+    let newMessages
 
-    const newMessages = isNewChat ? [INITIAL_MESSAGE, userMessage] : [...messages, userMessage]
-    if (!isNewChat) setMessages(newMessages)
+    if (!targetChatId) {
+      targetChatId = generateId()
+      newMessages = [INITIAL_MESSAGE, userMessage]
+      setChats(prev => {
+        const next = [...prev, {
+          id: targetChatId,
+          title: getChatTitle(newMessages),
+          messages: newMessages,
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        }]
+        saveChats(next)
+        return next
+      })
+      setCurrentChatId(targetChatId)
+    } else {
+      newMessages = [...messages, userMessage]
+      setMessages(newMessages)
+    }
+
     setInput('')
     setLoading(true)
+
+    const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
+    if (!apiBase) {
+      appendAssistantMessage(targetChatId, 'API niet geconfigureerd. Zet VITE_API_BASE_URL in je build (GitHub Actions variable) naar je Cloudflare Worker-URL.')
+      setLoading(false)
+      inputRef.current?.focus()
+      return
+    }
 
     try {
       const apiMessages = [
         { role: 'system', content: getSystemPrompt(answerMode) },
-        ...newMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content }))
+        ...newMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
       ]
 
-      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      const res = await fetch(`${apiBase}/api/chat`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: 'gpt-4o',
           messages: apiMessages,
@@ -236,13 +270,13 @@ const ChatPage = () => {
       const data = await res.json()
 
       if (data.error) {
-        setMessages(prev => [...prev, { role: 'assistant', content: `Fout: ${data.error.message}` }])
+        appendAssistantMessage(targetChatId, `Fout: ${data.error.message}`)
       } else {
         const reply = data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
-        setMessages(prev => [...prev, { role: 'assistant', content: reply }])
+        appendAssistantMessage(targetChatId, reply)
       }
-    } catch (err) {
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Er ging iets mis met de verbinding. Probeer het opnieuw.' }])
+    } catch {
+      appendAssistantMessage(targetChatId, 'Er ging iets mis met de verbinding. Probeer het opnieuw.')
     } finally {
       setLoading(false)
       inputRef.current?.focus()

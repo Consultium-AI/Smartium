@@ -1,51 +1,57 @@
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FileText, ClipboardCheck } from 'lucide-react'
 
 const Footer = () => {
   const navLinks = [
-    { name: 'Samenvattingen', href: '/summary', icon: FileText },
-    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
+    { name: 'Home', href: '/' },
+    { name: 'Samenvattingen', href: '/summary' },
+    { name: 'Oefenvragen', href: '/oefenvragen' },
+    { name: 'Oefententamens', href: '/tentamen' },
+    { name: 'AI Chat', href: '/chat' },
   ]
 
   return (
-    <footer className="relative z-10 pt-16 pb-8 bg-white dark:bg-slate-900/50 border-t border-navy-100 dark:border-slate-700/50">
-      <div className="container-custom">
-        <div className="flex flex-col items-center text-center mb-12">
-          {/* Brand */}
-          <Link to="/" className="flex items-center gap-3 mb-4">
-            <motion.img
+    <footer className="relative z-10 border-t border-slate-200/90 dark:border-slate-700/40 footer-section-bg">
+      <div className="container-custom py-14 md:py-16">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+          <Link to="/" className="flex items-center gap-2.5 mb-5">
+            <img
               src={`${import.meta.env.BASE_URL}smartium-logo.png`}
               alt="Smartium"
-              className="w-12 h-12 object-contain"
-              whileHover={{ scale: 1.05 }}
+              className="w-10 h-10 object-contain"
             />
-            <span className="text-2xl font-bold gradient-text">Smartium</span>
+            <span className="font-display text-lg font-semibold tracking-tight text-navy-900 dark:text-slate-50">
+              Smartium
+            </span>
           </Link>
 
-          <p className="text-navy-500 dark:text-slate-400 mb-8 max-w-md">
+          <p className="text-sm md:text-base text-navy-500 dark:text-slate-300/90 leading-relaxed mb-10">
             Studiemateriaal voor geneeskundestudenten. Gemaakt door studenten, voor studenten.
           </p>
 
-          {/* Navigation */}
-          <div className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link key={link.name} to={link.href}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-navy-50 dark:bg-slate-800/50 text-navy-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-500/20 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          <nav
+            className="flex flex-wrap justify-center gap-x-1 gap-y-2 text-sm"
+            aria-label="Footer navigatie"
+          >
+            {navLinks.map((link, i) => (
+              <span key={link.href} className="inline-flex items-center">
+                {i > 0 && (
+                  <span className="mx-2 text-slate-300 dark:text-slate-600 select-none" aria-hidden>
+                    ·
+                  </span>
+                )}
+                <Link
+                  to={link.href}
+                  className="text-navy-600 dark:text-slate-400 hover:text-navy-900 dark:hover:text-white transition-colors px-1 py-0.5 rounded"
                 >
-                  <link.icon className="w-4 h-4" />
-                  <span className="font-medium text-sm">{link.name}</span>
-                </motion.div>
-              </Link>
+                  {link.name}
+                </Link>
+              </span>
             ))}
-          </div>
+          </nav>
         </div>
 
-        {/* Bottom bar */}
-        <div className="flex items-center justify-center pt-6 border-t border-navy-100 dark:border-slate-700/50">
-          <p className="text-navy-400 dark:text-slate-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-700/35">
+          <p className="text-center text-xs text-navy-400 dark:text-slate-500/90 tracking-wide">
             © {new Date().getFullYear()} Smartium
           </p>
         </div>

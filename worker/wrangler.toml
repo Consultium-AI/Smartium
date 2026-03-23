@@ -1,0 +1,12 @@
+name = "smartium-openai-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# Comma-separated list, no spaces. Add http://localhost:5173 for local Vite dev.
+[vars]
+ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl"
+
+# Secret (set once per account/environment):
+#   cd worker && npx wrangler secret put OPENAI_API_KEY
+#
+# Optional: override origins in the Cloudflare dashboard under Worker > Settings > Variables

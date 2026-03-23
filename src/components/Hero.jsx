@@ -1,110 +1,84 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, BookOpen, FileText, GraduationCap } from 'lucide-react'
+import { ArrowRight, FileText, GraduationCap } from 'lucide-react'
 import { Link } from 'react-router-dom'
+
+const ease = [0.25, 0.1, 0.25, 1]
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
       <div className="container-custom relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+        <div className="max-w-[42rem] mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-500/20 border border-primary-200 dark:border-primary-500/30 mb-8"
-          >
-            <BookOpen className="w-4 h-4 text-primary-600" />
-            <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
-              Nieuw curriculum
-            </span>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.25 }}
-            className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
-          >
-            <span className="text-navy-900 dark:text-slate-100">Study </span>
-            <span className="gradient-text">Smarter</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.35 }}
-            className="text-xl text-navy-600 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            Samenvattingen en oefententamens voor het nieuwe geneeskunde curriculum. 
-            Gemaakt door studenten, voor studenten.
-          </motion.p>
-
-          {/* CTA Cards - alleen Samenvattingen en Oefententamens */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.45 }}
-            className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto"
-          >
-            <Link to="/summary">
-              <motion.div
-                whileHover={{ scale: 1.02, y: -4 }}
-                whileTap={{ scale: 0.98 }}
-                className="p-6 bg-white dark:bg-slate-800/50 rounded-2xl shadow-soft dark:shadow-none border border-navy-100 dark:border-slate-600/50 hover:border-primary-300 dark:hover:border-primary-500/50 hover:shadow-glow dark:hover:shadow-glow transition-all cursor-pointer group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-primary-100 dark:bg-primary-500/30 text-primary-600 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-                    <FileText className="w-6 h-6" />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-bold text-navy-800 dark:text-slate-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                      Samenvattingen
-                    </h3>
-                    <p className="text-sm text-navy-500 dark:text-slate-400">Leerjaar 1</p>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-navy-300 dark:text-slate-500 group-hover:text-primary-500 dark:group-hover:text-primary-400 ml-auto transition-colors" />
-                </div>
-              </motion.div>
-            </Link>
-
-            <Link to="/tentamen">
-              <motion.div
-                whileHover={{ scale: 1.02, y: -4 }}
-                whileTap={{ scale: 0.98 }}
-                className="p-6 bg-white dark:bg-slate-800/50 rounded-2xl shadow-soft dark:shadow-none border border-navy-100 dark:border-slate-600/50 hover:border-accent-300 dark:hover:border-accent-500/50 hover:shadow-glow-accent dark:hover:shadow-glow-accent transition-all cursor-pointer group"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-accent-100 dark:bg-accent-500/30 text-accent-600 dark:text-accent-400 group-hover:bg-accent-500 group-hover:text-white transition-colors">
-                    <GraduationCap className="w-6 h-6" />
-                  </div>
-                  <div className="text-left">
-                    <h3 className="font-bold text-navy-800 dark:text-slate-200 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
-                      Oefententamens
-                    </h3>
-                    <p className="text-sm text-navy-500 dark:text-slate-400">Examentraining</p>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-navy-300 dark:text-slate-500 group-hover:text-accent-500 dark:group-hover:text-accent-400 ml-auto transition-colors" />
-                </div>
-              </motion.div>
-            </Link>
-          </motion.div>
-
-          {/* Logo Display - CSS animation for better performance */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16"
+            transition={{ duration: 0.5, ease }}
+            className="mb-10 md:mb-12"
           >
             <img
               src={`${import.meta.env.BASE_URL}smartium-logo.png`}
               alt="Smartium"
-              className="w-24 h-24 mx-auto object-contain opacity-80 dark:opacity-70 animate-float"
+              className="w-14 h-14 md:w-16 md:h-16 mx-auto object-contain opacity-90 dark:opacity-85"
             />
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05, ease }}
+            className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-6"
+          >
+            Geneeskunde · Nieuw curriculum
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1, ease }}
+            className="font-display text-[2.5rem] sm:text-5xl md:text-6xl font-semibold leading-[1.08] tracking-tight text-navy-900 dark:text-slate-50 mb-6"
+          >
+            Study <span className="gradient-text">Smarter</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.18, ease }}
+            className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed max-w-md mx-auto mb-12 md:mb-14"
+          >
+            Samenvattingen en oefententamens voor leerjaar 1 — door studenten, voor studenten.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.24, ease }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
+          >
+            <Link
+              to="/summary"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900 text-white text-sm font-semibold tracking-wide dark:bg-white dark:text-navy-950 hover:bg-navy-800 dark:hover:bg-slate-100 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-colors"
+            >
+              <FileText className="w-4 h-4 opacity-90" strokeWidth={2} />
+              Samenvattingen
+              <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
+            </Link>
+            <Link
+              to="/tentamen"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-navy-200/90 dark:border-slate-500/70 dark:bg-slate-900/30 text-navy-800 dark:text-slate-200 text-sm font-semibold tracking-wide hover:border-primary-400/60 hover:bg-primary-50/50 dark:hover:bg-slate-800/80 dark:hover:border-slate-400/60 transition-colors"
+            >
+              <GraduationCap className="w-4 h-4 opacity-80" strokeWidth={2} />
+              Oefententamens
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 md:mt-20 h-px w-12 mx-auto bg-gradient-to-r from-transparent via-navy-200 dark:via-slate-500/50 to-transparent"
+            aria-hidden
+          />
         </div>
       </div>
     </section>

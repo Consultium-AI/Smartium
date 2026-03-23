@@ -4,86 +4,49 @@ import { useRef } from 'react'
 import { ArrowRight, FileText, GraduationCap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+const ease = [0.25, 0.1, 0.25, 1]
+
 const CTA = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section className="py-24 relative" ref={ref}>
-      <div className="container-custom">
+    <section className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
+      <div className="absolute inset-0 cta-section-bg -z-10" aria-hidden />
+
+      <div className="container-custom py-16 md:py-24">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="relative"
+          transition={{ duration: 0.5, ease }}
+          className="max-w-xl mx-auto rounded-2xl border border-slate-200/90 dark:border-slate-600/45 bg-white/80 dark:bg-slate-900/70 dark:ring-1 dark:ring-white/[0.07] px-8 py-12 md:px-12 md:py-14 text-center shadow-[0_1px_0_0_rgba(15,23,42,0.04)] dark:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.45)]"
         >
-          {/* Main CTA card */}
-          <div className="relative rounded-4xl overflow-hidden">
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500" />
-            
-            {/* Decorative shapes */}
-            <motion.div
-              className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/10 blur-2xl"
-              animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
-              transition={{ duration: 8, repeat: Infinity }}
-            />
-            <motion.div
-              className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-accent-500/30 blur-2xl"
-              animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-              transition={{ duration: 10, repeat: Infinity }}
-            />
+          <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-5">
+            Aan de slag
+          </p>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-[2rem] font-semibold text-navy-900 dark:text-slate-50 tracking-tight leading-tight mb-4">
+            Begin met slimmer studeren
+          </h2>
+          <p className="text-base text-navy-500 dark:text-slate-300/90 leading-relaxed mb-10">
+            Samenvattingen doorlezen of je kennis testen met oefententamens — het past bij de rest van Smartium.
+          </p>
 
-            {/* Content */}
-            <div className="relative px-8 py-16 md:px-16 md:py-20 text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.2 }}
-                className="text-3xl md:text-4xl font-bold text-white mb-4"
-              >
-                Begin nu met studeren
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.3 }}
-                className="text-lg text-white/80 max-w-xl mx-auto mb-10"
-              >
-                Bekijk onze samenvattingen en test je kennis met de oefententamens.
-              </motion.p>
-
-              {/* CTA buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4"
-              >
-                <Link to="/summary">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 bg-white text-primary-600 rounded-2xl font-bold text-lg shadow-soft-lg flex items-center gap-3"
-                  >
-                    <FileText className="w-5 h-5" />
-                    Samenvattingen
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.button>
-                </Link>
-                <Link to="/tentamen">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-8 py-4 border-2 border-white/40 text-white rounded-2xl font-semibold hover:bg-white/10 transition-colors flex items-center gap-3"
-                  >
-                    <GraduationCap className="w-5 h-5" />
-                    Oefententamens
-                  </motion.button>
-                </Link>
-              </motion.div>
-            </div>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+            <Link
+              to="/summary"
+              className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900 text-white text-sm font-semibold tracking-wide dark:bg-white dark:text-navy-950 hover:bg-navy-800 dark:hover:bg-slate-100 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-colors"
+            >
+              <FileText className="w-4 h-4 opacity-90" strokeWidth={2} />
+              Samenvattingen
+              <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
+            </Link>
+            <Link
+              to="/tentamen"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-slate-200/90 dark:border-slate-500/70 dark:bg-slate-900/40 text-navy-800 dark:text-slate-200 text-sm font-semibold tracking-wide hover:border-primary-400/60 hover:bg-primary-50/50 dark:hover:bg-slate-800/85 dark:hover:border-slate-400/55 transition-colors"
+            >
+              <GraduationCap className="w-4 h-4 opacity-80" strokeWidth={2} />
+              Oefententamens
+            </Link>
           </div>
         </motion.div>
       </div>

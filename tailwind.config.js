@@ -60,6 +60,7 @@ export default {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Syne', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',
@@ -76,6 +77,9 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
         'bounce-soft': 'bounce-soft 2s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 8s ease infinite',
+        'shimmer': 'shimmer 2.5s ease-in-out infinite',
+        'fade-up': 'fade-up 0.8s ease-out forwards',
       },
       keyframes: {
         float: {
@@ -90,6 +94,21 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
         },
+        'gradient-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        shimmer: {
+          '0%, 100%': { opacity: 0.45 },
+          '50%': { opacity: 1 },
+        },
+        'fade-up': {
+          '0%': { opacity: 0, transform: 'translateY(24px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
+      backgroundSize: {
+        '300': '300% 300%',
       },
     },
   },

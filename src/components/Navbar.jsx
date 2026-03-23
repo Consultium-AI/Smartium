@@ -4,6 +4,14 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, FileText, ClipboardCheck, Home, Bot, GraduationCap, Sun, Moon } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
+const navItems = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Samenvattingen', href: '/summary', icon: FileText },
+  { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
+  { name: 'Oefententamens', href: '/tentamen', icon: GraduationCap },
+  { name: 'AI Chat', href: '/chat', icon: Bot },
+]
+
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -11,144 +19,151 @@ const Navbar = () => {
   const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'Samenvattingen', href: '/summary', icon: FileText },
-    { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck }, // Gaat direct naar Blok 4 lijst
-    { name: 'Oefententamens', href: '/tentamen', icon: GraduationCap },
-    { name: 'AI Chat', href: '/chat', icon: Bot },
-  ]
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
+  const desktopLinkClass = (href) => {
+    const active = location.pathname === href
+    return `relative whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0a0d12] ${
+      active
+        ? 'bg-white text-navy-900 shadow-sm dark:bg-slate-800 dark:text-white dark:shadow-none dark:ring-1 dark:ring-white/10'
+        : 'text-navy-600 hover:text-navy-900 dark:text-slate-400 dark:hover:text-white'
+    }`
+  }
+
+  const mobileLinkClass = (href) => {
+    const active = location.pathname === href
+    return `flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-inset ${
+      active
+        ? 'bg-slate-100 text-navy-900 dark:bg-slate-800 dark:text-white'
+        : 'text-navy-700 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/80'
+    }`
+  }
+
+  const barStyles = isScrolled
+    ? 'bg-white/92 dark:bg-[#0a0d12]/94 backdrop-blur-lg shadow-[0_1px_0_0_rgba(15,23,42,0.06)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)]'
+    : 'bg-white/75 dark:bg-[#0a0d12]/65 backdrop-blur-md dark:backdrop-blur-lg'
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-soft dark:shadow-none dark:border-b dark:border-slate-700/50' 
-          : 'bg-transparent'
-      }`}
+    <motion.header
+      initial={{ y: -16, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-[background,box-shadow,border-color] duration-300 ${barStyles} border-slate-200/80 dark:border-slate-700/45`}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+      <nav className="container-custom" aria-label="Hoofdnavigatie">
+        <div className="relative flex h-[3.75rem] items-center justify-between sm:h-16">
+          <Link
+            to="/"
+            aria-label="Smartium — home"
+            className="flex items-center gap-2.5 shrink-0 rounded-lg outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-primary-500/50 dark:ring-offset-[#0a0d12]"
           >
-            <Link
-              to="/"
-              className="flex items-center gap-3 group"
-            >
-              <motion.img
-                src={`${import.meta.env.BASE_URL}smartium-logo.png`}
-                alt="Smartium"
-                className="w-12 h-12 object-contain"
-                whileHover={{ rotate: [0, -5, 5, 0] }}
-                transition={{ duration: 0.5 }}
-              />
-              <span className="text-2xl font-bold gradient-text">Smartium</span>
-            </Link>
-          </motion.div>
+            <img
+              src={`${import.meta.env.BASE_URL}smartium-logo.png`}
+              alt=""
+              aria-hidden
+              className="h-9 w-9 object-contain sm:h-10 sm:w-10"
+              width={40}
+              height={40}
+            />
+            <span className="font-display text-[1.0625rem] font-semibold tracking-tight text-navy-900 dark:text-slate-50 sm:text-lg">
+              Smartium
+            </span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleTheme}
-              className="p-2.5 rounded-xl text-navy-600 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 transition-colors"
-              title={isDark ? 'Licht thema' : 'Donker thema'}
-            >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.2 }}
-              >
-                <Link
-                  to={item.href}
-                  className={`relative px-5 py-2.5 transition-colors rounded-xl group flex items-center gap-2 font-medium ${
-                    location.pathname === item.href
-                      ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/20'
-                      : 'text-navy-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10'
-                  }`}
-                >
-                  <item.icon className="w-4 h-4" />
+          {/* Desktop — gecentreerde pill-nav */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
+            <div className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-slate-200/90 bg-slate-100/90 p-1 shadow-inner dark:border-slate-600/50 dark:bg-slate-900/80 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+              {navItems.map((item) => (
+                <Link key={item.name} to={item.href} className={desktopLinkClass(item.href)}>
                   {item.name}
                 </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Mobile Menu Buttons */}
-          <div className="md:hidden flex items-center gap-1">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleTheme}
-              className="p-2 text-navy-700 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 rounded-xl transition-colors"
-            >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-navy-700 dark:text-slate-300 hover:bg-navy-100 dark:hover:bg-slate-700/50 rounded-xl transition-colors"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </motion.button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-navy-100 dark:border-slate-700"
-          >
-            <div className="container-custom py-4 space-y-1">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link
-                    to={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
-                      location.pathname === item.href
-                        ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-500/20'
-                        : 'text-navy-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-500/10'
-                    }`}
-                  >
-                    <item.icon className="w-5 h-5 text-primary-500" />
-                    <span className="font-medium">{item.name}</span>
-                  </Link>
-                </motion.div>
               ))}
             </div>
+          </div>
+
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-transparent text-navy-600 transition-colors hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
+              title={isDark ? 'Licht thema' : 'Donker thema'}
+              aria-label={isDark ? 'Schakel naar licht thema' : 'Schakel naar donker thema'}
+            >
+              {isDark ? <Sun className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} /> : <Moon className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} />}
+            </button>
+
+            <button
+              type="button"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-navy-800 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 lg:hidden"
+              onClick={() => setIsMobileMenuOpen((o) => !o)}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMobileMenuOpen ? 'Menu sluiten' : 'Menu openen'}
+            >
+              {isMobileMenuOpen ? <X className="h-5 w-5" strokeWidth={1.75} /> : <Menu className="h-5 w-5" strokeWidth={1.75} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <AnimatePresence initial={false}>
+        {isMobileMenuOpen && (
+          <motion.div
+            key="mobile-nav-layer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden fixed left-0 right-0 bottom-0 z-40 top-[3.75rem] sm:top-16 flex flex-col"
+          >
+            <motion.div
+              id="mobile-menu"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative z-10 shrink-0 border-b border-slate-200/90 bg-white shadow-xl dark:border-slate-700/50 dark:bg-[#0c1018] dark:shadow-2xl"
+            >
+              <div className="container-custom max-h-[min(70vh,28rem)] overflow-y-auto py-3">
+                <div className="flex flex-col gap-0.5 pb-2">
+                  {navItems.map((item) => (
+                    <Link key={item.name} to={item.href} className={mobileLinkClass(item.href)}>
+                      <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+            <button
+              type="button"
+              className="min-h-0 flex-1 bg-navy-950/40 backdrop-blur-[2px] dark:bg-black/50"
+              aria-label="Menu sluiten"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </motion.header>
   )
 }
 

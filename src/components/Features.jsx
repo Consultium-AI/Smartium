@@ -1,40 +1,39 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, GraduationCap, BookOpen, Lightbulb, Bot, ClipboardCheck } from 'lucide-react'
+import { FileText, GraduationCap, BookOpen, Lightbulb, Bot, ClipboardCheck, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+
+const ease = [0.25, 0.1, 0.25, 1]
 
 const Features = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   const features = [
     {
       icon: FileText,
-      title: 'Uitgebreide Samenvattingen',
-      description: 'Gestructureerde samenvattingen van complexe stof, voorzien van duidelijke tussenkopjes en visuele elementen.',
-      color: 'primary',
+      title: 'Uitgebreide samenvattingen',
+      description:
+        'Gestructureerde samenvatting met duidelijke tussenkopjes en visuele elementen.',
       link: '/summary',
     },
     {
       icon: GraduationCap,
       title: 'Oefententamens',
-      description: 'Test je kennis met oefententamens. Ideaal voor examenvoorbereiding.',
-      color: 'accent',
+      description: 'Tentamens die aansluiten bij het curriculum.',
       link: '/tentamen',
     },
     {
       icon: Bot,
-      title: 'AI Chat',
-      description: 'Stel vragen over de leerstof en krijg antwoorden met directe verwijzingen naar de samenvattingen.',
-      color: 'primary',
+      title: 'AI-chat',
+      description: 'Vragen over de stof met verwijzingen naar je samenvattingen.',
       link: '/chat',
     },
     {
       icon: ClipboardCheck,
       title: 'Oefenvragen',
-      description: 'Oefen met meerkeuzevragen per onderwerp. Ideaal om je kennis te toetsen.',
-      color: 'accent',
+      description: 'Meerkeuze per onderwerp — compact en gericht.',
       link: '/oefenvragen',
     },
   ]
@@ -45,84 +44,69 @@ const Features = () => {
   ]
 
   return (
-    <section id="features" className="py-24 relative" ref={ref}>
-      <div className="container-custom">
-        {/* Section Header */}
+    <section id="features" className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
+      <div className="absolute inset-0 platform-section-bg -z-20" aria-hidden />
+      <div className="absolute inset-0 platform-section-grid -z-10 pointer-events-none" aria-hidden />
+
+      <div className="container-custom relative py-20 md:py-28">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          transition={{ duration: 0.5, ease }}
+          className="text-center max-w-2xl mx-auto mb-14 md:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-navy-900 dark:text-slate-100">
-            Wat bieden wij?
+          <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-5">
+            Platform
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-navy-900 dark:text-slate-50 tracking-tight leading-tight mb-5">
+            Alles voor je studie, op één plek
           </h2>
-          <p className="text-lg text-navy-500 dark:text-slate-400">
-            Studiemateriaal dat je helpt om efficiënter te leren.
+          <p className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed">
+            Studiemateriaal om je focus te houden — minder zoeken, meer leren.
           </p>
         </motion.div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto mb-14 md:mb-16">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              transition={{ duration: 0.45, delay: index * 0.06, ease }}
             >
-              <Link to={feature.link}>
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  className={`group h-full p-8 rounded-3xl border-2 transition-all cursor-pointer ${
-                    feature.color === 'accent'
-                      ? 'bg-gradient-to-br from-accent-50 to-white dark:from-accent-900/30 dark:to-slate-800/90 border-accent-200 dark:border-accent-500/30 hover:border-accent-400 dark:hover:border-accent-500/60 hover:shadow-glow-accent'
-                      : 'bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/30 dark:to-slate-800/90 border-primary-200 dark:border-primary-500/30 hover:border-primary-400 dark:hover:border-primary-500/60 hover:shadow-glow'
-                  }`}
-                >
-                  {/* Icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`inline-flex p-4 rounded-2xl mb-6 ${
-                      feature.color === 'accent'
-                        ? 'bg-accent-500 text-white'
-                        : 'bg-primary-500 text-white'
-                    }`}
-                  >
-                    <feature.icon className="w-7 h-7" />
-                  </motion.div>
-
-                  <h3 className={`text-2xl font-bold mb-3 transition-colors ${
-                    feature.color === 'accent'
-                      ? 'text-navy-900 dark:text-slate-100 group-hover:text-accent-600 dark:group-hover:text-accent-400'
-                      : 'text-navy-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400'
-                  }`}>
+              <Link to={feature.link} className="group block h-full">
+                <div className="h-full flex flex-col p-6 md:p-7 rounded-2xl bg-white/90 dark:bg-slate-900/85 dark:ring-1 dark:ring-white/[0.06] border border-slate-200/90 dark:border-slate-600/50 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.04)] transition-all duration-200 hover:border-slate-300 dark:hover:border-slate-500 hover:shadow-md dark:hover:bg-slate-900 dark:hover:ring-white/10">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-navy-700 dark:text-slate-100 group-hover:bg-primary-500 group-hover:text-white transition-colors duration-200">
+                    <feature.icon className="w-5 h-5" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-navy-900 dark:text-slate-100 mb-2 tracking-tight group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-navy-500 dark:text-slate-300 leading-relaxed text-lg">
+                  <p className="text-sm text-navy-500 dark:text-slate-400/95 leading-relaxed flex-1 mb-4">
                     {feature.description}
                   </p>
-                </motion.div>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 opacity-90 group-hover:gap-2 transition-all">
+                    Bekijk
+                    <ArrowRight className="w-4 h-4" strokeWidth={2} />
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Benefits row */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-6"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.45, delay: 0.25, ease }}
+          className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-sm text-navy-500 dark:text-slate-400"
         >
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.text}
-              className="flex items-center gap-3 px-5 py-3 rounded-full bg-white dark:bg-slate-800/50 border border-navy-100 dark:border-slate-600/50 shadow-soft dark:shadow-none"
-            >
-              <benefit.icon className="w-5 h-5 text-primary-500" />
-              <span className="text-navy-700 dark:text-slate-300 font-medium">{benefit.text}</span>
-            </div>
+          {benefits.map((benefit, i) => (
+            <span key={benefit.text} className="inline-flex items-center gap-2">
+              {i > 0 && <span className="text-slate-300 dark:text-slate-600 select-none" aria-hidden>·</span>}
+              <benefit.icon className="w-4 h-4 text-navy-400 dark:text-slate-500/90 shrink-0" strokeWidth={1.75} />
+              <span>{benefit.text}</span>
+            </span>
           ))}
         </motion.div>
       </div>

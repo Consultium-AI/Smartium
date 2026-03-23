@@ -39,7 +39,7 @@ const getBasename = () => {
 function App() {
   return (
     <Router basename={getBasename()}>
-      <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary-100/60 via-cream-50 to-accent-100/60 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
+      <div className="relative min-h-screen overflow-hidden bg-[#f8f9fb] dark:bg-gradient-to-b dark:from-[#0c1018] dark:via-[#0a0d12] dark:to-[#080b10] transition-colors duration-300">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<PracticeQuestionsPage />} />
