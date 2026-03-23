@@ -1,12 +1,14 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import {
   ChevronLeft, ChevronRight, CheckCircle, XCircle,
   RotateCcw, Trophy, Target, ArrowLeft,
-  AlertTriangle
+  AlertTriangle, Loader2
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
+import { buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
 import { examQuestions } from '../questions/examQuestions'
 
 // Seeded pseudo-random voor deterministische shuffling
@@ -222,6 +224,7 @@ const ExamActive = ({ examNumber }) => {
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [explanations, setExplanations] = useState({})
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -241,10 +244,30 @@ const ExamActive = ({ examNumber }) => {
   const handleReset = () => {
     setSelectedAnswers({})
     setRevealedAnswers({})
+    setExplanations({})
     setCurrentQuestion(0)
     setSubmitted(false)
     setRefreshKey(k => k + 1)
   }
+
+  useEffect(() => {
+    if (!currentQ) return
+    const qId = currentQ.id
+    if (!revealedAnswers[qId]) return
+    if (selectedAnswers[qId] === currentQ.correctAnswer) return
+    if (explanations[qId]) return
+
+    setExplanations((prev) => ({ ...prev, [qId]: { loading: true } }))
+    const ctx = buildPracticeContext(currentQ, selectedAnswers[qId], null)
+    fetchPracticeExplanation(ctx)
+      .then((text) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, text } })))
+      .catch((err) =>
+        setExplanations((prev) => ({
+          ...prev,
+          [qId]: { loading: false, error: err?.message || 'Fout bij ophalen' },
+        }))
+      )
+  }, [currentQ, revealedAnswers, selectedAnswers, explanations])
 
   const getOptionStyle = (questionId, letter) => {
     const isSelected = selectedAnswers[questionId] === letter
@@ -382,6 +405,40 @@ const ExamActive = ({ examNumber }) => {
                   </motion.button>
                 ))}
               </div>
+
+              {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] !== currentQ.correctAnswer && (
+                <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">
+                  {explanations[currentQ.id]?.loading && (
+                    <>
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">
+                        De AI kiest de best passende samenvatting bij de verwijzing.
+                      </p>
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-2">
+                        <Loader2 className="w-4 h-4 animate-spin shrink-0" />
+                        Uitleg ophalen…
+                      </div>
+                    </>
+                  )}
+                  {explanations[currentQ.id]?.error && (
+                    <p className="text-sm text-red-600 dark:text-red-400">{explanations[currentQ.id].error}</p>
+                  )}
+                  {explanations[currentQ.id]?.text && (
+                    <>
+                      <p className="text-[10px] font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                        Uitleg
+                      </p>
+                      <InlineAiText text={explanations[currentQ.id].text} />
+                      <PracticeAiInlinePanel
+                        questionId={currentQ.id}
+                        practiceContext={buildPracticeContext(currentQ, selectedAnswers[currentQ.id], null)}
+                        initialExplanation={explanations[currentQ.id].text}
+                        explanationLoading={!!explanations[currentQ.id]?.loading}
+                        explanationError={explanations[currentQ.id]?.error}
+                      />
+                    </>
+                  )}
+                </div>
+              )}
 
               <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100 dark:border-slate-700/80">
                 <button

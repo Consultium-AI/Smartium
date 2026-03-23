@@ -1,15 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo, useEffect } from 'react'
-import ReactMarkdown from 'react-markdown'
-import { Link, useSearchParams, useNavigate } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { 
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen, Shuffle,
   CheckCircle, XCircle, ArrowLeft,
-  Calendar, Stethoscope, GraduationCap, Shield, Bot, Loader2
+  Calendar, Stethoscope, GraduationCap, Shield, Loader2
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
-import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation, parseReferences } from '../utils/practiceExamAi'
+import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
+import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -8560,7 +8560,6 @@ const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
 
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
-  const navigate = useNavigate()
   const lmeParam = searchParams.get('lme')
   const [expandedBlok, setExpandedBlok] = useState('blok4') // Default: direct naar Blok 4 lijst
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
@@ -8982,18 +8981,6 @@ const PracticeQuestionsPage = () => {
       .catch((err) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, error: err?.message || 'Fout bij ophalen' } })))
   }, [currentQ, revealedAnswers, selectedAnswers, lmeParam, explanations])
 
-  const openAiExplanation = () => {
-    if (!currentQ) return
-    const ctx = buildPracticeContext(currentQ, selectedAnswers[currentQ.id], lmeParam)
-    const expl = explanations[currentQ.id]
-    navigate('/chat', {
-      state: {
-        practiceContext: ctx,
-        initialExplanation: expl?.text,
-      },
-    })
-  }
-
   const getOptionStyle = (questionId, letter) => {
     const isSelected = selectedAnswers[questionId] === letter
     const isRevealed = revealedAnswers[questionId]
@@ -9411,50 +9398,35 @@ const PracticeQuestionsPage = () => {
                 </div>
 
                 {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] !== currentQ.correctAnswer && (
-                  <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-500/10 dark:to-accent-500/10 border border-primary-200/70 dark:border-primary-500/25">
+                  <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">
                     {lmeParam === 'alle-random' && (
-                      <p className="text-xs text-navy-500 dark:text-slate-400 mb-3">
-                        Je oefent in gemengde modus; de AI kiest de best passende samenvatting uit het overzicht.
+                      <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">
+                        Gemengde modus: de AI kiest de best passende samenvatting.
                       </p>
                     )}
                     {explanations[currentQ.id]?.loading && (
-                      <div className="flex items-center gap-2 text-navy-600 dark:text-slate-300 mb-3">
+                      <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-2">
                         <Loader2 className="w-4 h-4 animate-spin shrink-0" />
-                        <span className="text-sm">AI uitleg ophalen…</span>
+                        Uitleg ophalen…
                       </div>
                     )}
                     {explanations[currentQ.id]?.error && (
-                      <p className="text-sm text-red-600 dark:text-red-400 mb-3">{explanations[currentQ.id].error}</p>
+                      <p className="text-sm text-red-600 dark:text-red-400">{explanations[currentQ.id].error}</p>
                     )}
                     {explanations[currentQ.id]?.text && (
-                      <div className="mb-4">
-                        <div className="text-sm text-navy-800 dark:text-slate-200 [&_p]:my-1 [&_ul]:my-2 [&_li]:list-disc [&_li]:ml-4 [&_strong]:font-bold">
-                          <ReactMarkdown>{parseReferences(explanations[currentQ.id].text).displayText}</ReactMarkdown>
-                        </div>
-                        {parseReferences(explanations[currentQ.id].text).refs.length > 0 && (
-                          <div className="mt-2 pt-2 border-t border-primary-200/50 dark:border-primary-500/25 flex flex-wrap gap-x-2 gap-y-1">
-                            {parseReferences(explanations[currentQ.id].text).refs.map((r, i) => (
-                              <Link
-                                key={i}
-                                to={`/summary?lme=${r.id}`}
-                                className="text-xs text-primary-600 dark:text-primary-400 hover:underline"
-                              >
-                                {r.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                    {(explanations[currentQ.id]?.text || explanations[currentQ.id]?.error) && (
-                      <button
-                        type="button"
-                        onClick={openAiExplanation}
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600 transition-colors shadow-md"
-                      >
-                        <Bot className="w-4 h-4" />
-                        Verder praten met AI
-                      </button>
+                      <>
+                        <p className="text-[10px] font-medium text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2">
+                          Uitleg
+                        </p>
+                        <InlineAiText text={explanations[currentQ.id].text} />
+                        <PracticeAiInlinePanel
+                          questionId={currentQ.id}
+                          practiceContext={buildPracticeContext(currentQ, selectedAnswers[currentQ.id], lmeParam)}
+                          initialExplanation={explanations[currentQ.id].text}
+                          explanationLoading={!!explanations[currentQ.id]?.loading}
+                          explanationError={explanations[currentQ.id]?.error}
+                        />
+                      </>
                     )}
                   </div>
                 )}

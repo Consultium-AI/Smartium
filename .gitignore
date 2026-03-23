@@ -10,6 +10,13 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Local exports / tooling
+output/
+scripts/__pycache__/
+
+# Wrangler dev bundles (regenerated locally)
+worker/.wrangler/
 *.local
 .dev.vars
 .env.local

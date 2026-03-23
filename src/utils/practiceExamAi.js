@@ -46,7 +46,7 @@ ${LME_LIST}
 
 REGELS:
 1. Geef KORTE antwoorden (max 3-4 zinnen).
-2. Verwijs ALTIJD naar een LME met exact dit formaat: [[lme-id|LME Naam]].
+2. Sluit af met exact één verwijzing in dit formaat: [[lme-id|LME Naam]] (wordt als klikbare link onder je tekst getoond; schrijf geen "Zie" ervoor in de zin).
 3. Antwoord altijd in het Nederlands.
 
 === CONTEXT: MEERKEUZE-OEFENVRAAG ===
@@ -60,7 +60,98 @@ Gekozen door de leerling (fout): ${ctx.userLetter} — ${ctx.userText}
 ${ctx.category ? `Categorie: ${ctx.category}\n` : ''}${primaryHint}
 === EINDE OEFENCONTEXT ===
 
-Geef maximaal 2-3 zeer korte zinnen waarom het juiste antwoord klopt en wat er mis is met de gekozen optie. Sluit af met [[lme-id|Naam]].`
+Geef maximaal 2-3 zeer korte zinnen waarom het juiste antwoord klopt en wat er mis is met de gekozen optie. Eindig met alleen [[lme-id|LME Naam]] (zonder woord "Zie" ervoor).`
+}
+
+/**
+ * Zelfde systeemprompt als ChatPage voor doorvragen na oefenvraag.
+ */
+export function buildPracticeChatSystemPrompt(answerMode, practiceContext) {
+  const lengthRule =
+    answerMode === 'short'
+      ? '1. Geef KORTE, directe antwoorden (max 3-4 zinnen per punt). Wees beknopt en to-the-point.'
+      : '1. Geef UITGEBREIDE antwoorden met meer uitleg, context en voorbeelden waar relevant.'
+  let base = `Je bent Smartium AI, een studieassistent voor geneeskundestudenten. Beschikbare samenvattingen (LME's):
+
+${LME_LIST}
+
+REGELS:
+${lengthRule}
+2. Voeg waar passend één verwijzing toe in exact dit formaat: [[lme-id|LME Naam]] — die wordt als link onder je antwoord getoond. Schrijf het woord "Zie" niet voor de link in de lopende tekst.
+3. Antwoord in het Nederlands.
+4. Geef per bericht precies ÉÉN kort antwoord. Herhaal hetzelfde punt niet in een tweede alinea. Geen duplicaat of herformulering van dezelfde uitleg.`
+
+  if (practiceContext) {
+    const c = practiceContext
+    const optLines = (c.options || []).map((o) => `${o.letter}) ${o.text}`).join('\n')
+    const primaryHint = c.summaryLmeId
+      ? `De oefenset hoort bij: ${c.summaryLmeId} (${getSummaryNameForLmeId(c.summaryLmeId)}). Verwijs naar [[${c.summaryLmeId}|${getSummaryNameForLmeId(c.summaryLmeId)}]] als dat past.`
+      : 'Kies de best passende LME uit de lijst en gebruik [[lme-id|Naam]].'
+
+    base += `
+
+=== OEFENCONTEXT (gebruik dit bij alle berichten) ===
+Vraag: ${c.question}
+Opties:
+${optLines}
+Juiste antwoord: ${c.correctLetter} — ${c.correctText}
+Jouw (foute) keuze: ${c.userLetter} — ${c.userText}
+${c.category ? `Categorie: ${c.category}\n` : ''}${primaryHint}
+=== EINDE ===
+
+De leerling stelt vervolgvragen; één beknopt antwoord per keer, met LME-verwijzingen waar nuttig.`
+  }
+
+  return base
+}
+
+/**
+ * API-call voor doorvragen (eerste assistant-bericht = korte uitleg hierboven al getoond).
+ */
+export async function fetchPracticeChatCompletion(practiceContext, threadMessages, initialAssistantContent) {
+  const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
+  const messages = [
+    { role: 'system', content: buildPracticeChatSystemPrompt('short', practiceContext) },
+    { role: 'assistant', content: initialAssistantContent },
+    ...threadMessages,
+  ]
+  const res = await fetch(`${apiBase}/api/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'gpt-4o',
+      messages,
+      temperature: 0.35,
+      max_tokens: 450,
+    }),
+  })
+  const data = await res.json()
+  if (data.error) throw new Error(data.error?.message || 'API fout')
+  const raw = data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
+  return collapseDuplicateAssistantReply(raw)
+}
+
+/** Als het model twee vrijwel identieke blokken geeft, hou alleen het eerste. */
+function collapseDuplicateAssistantReply(text) {
+  if (!text || typeof text !== 'string') return text
+  const paras = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
+  if (paras.length < 2) return text
+  const [a, b] = paras
+  if (a.length < 25 || b.length < 25) return text
+  const n = Math.min(120, a.length, b.length)
+  if (a.slice(0, n) === b.slice(0, n)) return a
+  return text
+}
+
+/**
+ * Spaties rond Zie/[[ en na ]] (AI plakt soms tekst vast).
+ */
+export function normalizeAiDisplayText(text) {
+  if (!text || typeof text !== 'string') return text
+  let s = text
+  s = s.replace(/\]\](?=[A-Za-zÀ-ÿ])/g, ']] ')
+  s = s.replace(/ {2,}/g, ' ')
+  return s.trim()
 }
 
 /**
@@ -70,7 +161,7 @@ export async function fetchPracticeExplanation(context) {
   const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
   const messages = [
     { role: 'system', content: getPracticeSystemPrompt(context) },
-    { role: 'user', content: 'Leg kort uit waarom het juiste antwoord klopt en waarom mijn keuze fout is. Sluit af met [[lme-id|Naam]].' },
+    { role: 'user', content: 'Leg kort uit waarom het juiste antwoord klopt en waarom mijn keuze fout is. Sluit af met alleen [[lme-id|Naam]] (geen "Zie" ervoor).' },
   ]
   const res = await fetch(`${apiBase}/api/chat`, {
     method: 'POST',
