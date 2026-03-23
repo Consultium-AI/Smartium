@@ -242,13 +242,7 @@ const ChatPage = () => {
     setInput('')
     setLoading(true)
 
-    const apiBase = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
-    if (!apiBase) {
-      appendAssistantMessage(targetChatId, 'API niet geconfigureerd. Zet VITE_API_BASE_URL in je build (GitHub Actions variable) naar je Cloudflare Worker-URL.')
-      setLoading(false)
-      inputRef.current?.focus()
-      return
-    }
+    const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
 
     try {
       const apiMessages = [
