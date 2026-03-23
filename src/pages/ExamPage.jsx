@@ -62,15 +62,17 @@ function calculateGrade(correct, total) {
 
 // ─── Exam Selection Screen ───────────────────────────────────────
 const ExamSelection = () => (
-  <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+  <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
     <Navbar />
     <div className="h-20" />
     <main className="container-custom py-8 md:py-12">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold text-navy-900 dark:text-slate-100 mb-2">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10 max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
           <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> Blok 4
         </h1>
-        <p className="text-navy-500 dark:text-slate-400">5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen</p>
+        <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
+          5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen
+        </p>
       </motion.div>
 
       <div className="max-w-2xl mx-auto space-y-4">
@@ -83,24 +85,28 @@ const ExamSelection = () => (
           >
             <Link
               to={`/tentamen?nr=${i + 1}`}
-              className="flex items-center justify-between p-5 bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm hover:shadow-md hover:border-primary-300 dark:hover:border-primary-500/50 transition-all group"
+              className="group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
+                bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm
+                border-slate-200/90 dark:border-slate-700/90
+                shadow-sm dark:shadow-lg dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5
+                hover:border-primary-400/70 dark:hover:border-primary-500/45 hover:shadow-md dark:hover:shadow-primary-950/20"
             >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/30 flex items-center justify-center text-primary-600 dark:text-primary-400 font-bold text-lg group-hover:bg-primary-200 dark:group-hover:bg-primary-500/50 transition-colors">
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/20 dark:ring-1 dark:ring-primary-500/25 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold text-lg shrink-0 group-hover:bg-primary-200/90 dark:group-hover:bg-primary-500/30 transition-colors">
                   {i + 1}
                 </div>
-                <div>
+                <div className="min-w-0 text-left">
                   <h3 className="font-bold text-slate-900 dark:text-slate-100">{name}</h3>
                   <p className="text-sm text-slate-500 dark:text-slate-400">60 vragen · alle onderwerpen · ~45 min</p>
                 </div>
               </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors" />
+              <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
             </Link>
           </motion.div>
         ))}
       </div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
         <p>60% correct = 5,5 · Gelijkende antwoordlengtes · Alleen inhoudelijke vragen</p>
       </motion.div>
     </main>
@@ -125,14 +131,16 @@ const GradeResult = ({ correct, total, onReset }) => {
         animate={{ scale: 1 }}
         transition={{ delay: 0.3, type: 'spring', stiffness: 300 }}
         className={`w-40 h-40 rounded-full mx-auto mb-6 flex items-center justify-center border-8 ${
-          passed ? 'border-emerald-400 bg-emerald-50' : 'border-red-400 bg-red-50'
+          passed
+            ? 'border-emerald-400 dark:border-emerald-500/70 bg-emerald-50 dark:bg-emerald-500/15'
+            : 'border-red-400 dark:border-red-500/70 bg-red-50 dark:bg-red-500/15'
         }`}
       >
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className={`text-5xl font-black ${passed ? 'text-emerald-600' : 'text-red-600'}`}
+          className={`text-5xl font-black ${passed ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'}`}
         >
           {grade.toFixed(1)}
         </motion.span>
@@ -141,25 +149,25 @@ const GradeResult = ({ correct, total, onReset }) => {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
         {passed ? (
           <div className="space-y-3">
-            <div className="flex items-center justify-center gap-3">
-              <Trophy className="w-8 h-8 text-amber-500" />
-              <h2 className="text-3xl font-black text-emerald-700">Gehaald!</h2>
-              <Trophy className="w-8 h-8 text-amber-500" />
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <Trophy className="w-8 h-8 text-amber-500 dark:text-amber-400" />
+              <h2 className="text-3xl font-black text-emerald-700 dark:text-emerald-400">Gehaald!</h2>
+              <Trophy className="w-8 h-8 text-amber-500 dark:text-amber-400" />
             </div>
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ delay: 1, duration: 1 }}
-              className="h-1 bg-gradient-to-r from-emerald-400 via-amber-400 to-emerald-400 rounded-full mx-auto max-w-xs"
+              className="h-1 bg-gradient-to-r from-emerald-400 via-amber-400 to-emerald-400 dark:from-emerald-500/80 dark:via-amber-500/70 dark:to-emerald-500/80 rounded-full mx-auto max-w-xs"
             />
           </div>
         ) : (
           <div className="space-y-3">
             <div className="flex items-center justify-center gap-3">
-              <AlertTriangle className="w-8 h-8 text-red-500" />
-              <h2 className="text-3xl font-black text-red-700">Niet gehaald</h2>
+              <AlertTriangle className="w-8 h-8 text-red-500 dark:text-red-400" />
+              <h2 className="text-3xl font-black text-red-700 dark:text-red-400">Niet gehaald</h2>
             </div>
-            <p className="text-slate-600">Je hebt minimaal 36/60 correct nodig (60%)</p>
+            <p className="text-slate-600 dark:text-slate-400">Je hebt minimaal 36/60 correct nodig (60%)</p>
           </div>
         )}
       </motion.div>
@@ -170,36 +178,36 @@ const GradeResult = ({ correct, total, onReset }) => {
         transition={{ delay: 1.2 }}
         className="mt-8 space-y-3"
       >
-        <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto">
-          <div className="bg-white rounded-xl border border-slate-200 p-3">
-            <div className="text-2xl font-bold text-slate-900">{correct}</div>
-            <div className="text-xs text-slate-500">Correct</div>
+        <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-sm mx-auto">
+          <div className="bg-white/90 dark:bg-slate-800/70 rounded-xl border border-slate-200/90 dark:border-slate-600/90 p-3 ring-1 ring-slate-900/5 dark:ring-white/5">
+            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{correct}</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Correct</div>
           </div>
-          <div className="bg-white rounded-xl border border-slate-200 p-3">
-            <div className="text-2xl font-bold text-slate-900">{total - correct}</div>
-            <div className="text-xs text-slate-500">Fout</div>
+          <div className="bg-white/90 dark:bg-slate-800/70 rounded-xl border border-slate-200/90 dark:border-slate-600/90 p-3 ring-1 ring-slate-900/5 dark:ring-white/5">
+            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{total - correct}</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Fout</div>
           </div>
-          <div className="bg-white rounded-xl border border-slate-200 p-3">
-            <div className="text-2xl font-bold text-slate-900">{pct}%</div>
-            <div className="text-xs text-slate-500">Score</div>
+          <div className="bg-white/90 dark:bg-slate-800/70 rounded-xl border border-slate-200/90 dark:border-slate-600/90 p-3 ring-1 ring-slate-900/5 dark:ring-white/5">
+            <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">{pct}%</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Score</div>
           </div>
         </div>
 
-        <div className="flex justify-center gap-3 pt-4">
+        <div className="flex flex-wrap justify-center gap-3 pt-4">
           <button
             onClick={onReset}
-            className="inline-flex items-center gap-2 px-5 py-3 bg-primary-500 text-white rounded-xl font-bold hover:bg-primary-600 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-primary-500 dark:bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm"
           >
             <RotateCcw className="w-4 h-4" />
             Opnieuw
           </button>
-            <Link
-              to="/tentamen"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:bg-slate-50 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Alle tentamens
-            </Link>
+          <Link
+            to="/tentamen"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-white/90 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-700/80 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Alle tentamens
+          </Link>
         </div>
       </motion.div>
     </motion.div>
@@ -244,12 +252,12 @@ const ExamActive = ({ examNumber }) => {
     const isCorrect = questions.find(q => q.id === questionId)?.correctAnswer === letter
 
     if (isRevealed) {
-      if (isCorrect) return "border-emerald-400 bg-emerald-50 text-emerald-800"
-      if (isSelected && !isCorrect) return "border-red-400 bg-red-50 text-red-800"
-      return "border-navy-200 bg-navy-50 text-navy-400"
+      if (isCorrect) return "border-emerald-400 dark:border-emerald-500/60 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200"
+      if (isSelected && !isCorrect) return "border-red-400 dark:border-red-500/60 bg-red-50 dark:bg-red-900/25 text-red-800 dark:text-red-200"
+      return "border-navy-200 dark:border-slate-600 bg-navy-50 dark:bg-slate-800/50 text-navy-400 dark:text-slate-500"
     }
-    if (isSelected) return "border-primary-400 bg-primary-50 text-primary-800"
-    return "border-navy-200 bg-white text-navy-700 hover:border-primary-300 hover:bg-primary-50/50"
+    if (isSelected) return "border-primary-400 dark:border-primary-500/50 bg-primary-50 dark:bg-primary-500/15 text-primary-800 dark:text-primary-200"
+    return "border-navy-200 dark:border-slate-600 bg-white dark:bg-slate-800/50 text-navy-700 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-500/50 hover:bg-primary-50/50 dark:hover:bg-primary-500/10"
   }
 
   if (submitted) {
@@ -261,13 +269,13 @@ const ExamActive = ({ examNumber }) => {
       <div className="max-w-3xl mx-auto mb-6">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-4">
-            <span className="text-sm text-navy-600 flex items-center gap-1.5">
-              <Target className="w-4 h-4 text-primary-500" />
+            <span className="text-sm text-navy-600 dark:text-slate-400 flex items-center gap-1.5">
+              <Target className="w-4 h-4 text-primary-500 dark:text-primary-400" />
               {answeredCount}/{totalQuestions} beantwoord
             </span>
             {answeredCount > 0 && (
-              <span className="text-sm text-navy-600 flex items-center gap-1.5">
-                <Trophy className="w-4 h-4 text-accent-500" />
+              <span className="text-sm text-navy-600 dark:text-slate-400 flex items-center gap-1.5">
+                <Trophy className="w-4 h-4 text-accent-500 dark:text-accent-400" />
                 {correctCount} correct
               </span>
             )}
@@ -275,13 +283,13 @@ const ExamActive = ({ examNumber }) => {
           {answeredCount === totalQuestions && (
             <button
               onClick={handleSubmit}
-              className="px-4 py-2 bg-primary-500 text-white rounded-xl font-bold text-sm hover:bg-primary-600 transition-colors"
+              className="px-4 py-2 bg-primary-500 dark:bg-primary-600 text-white rounded-xl font-bold text-sm hover:bg-primary-600 dark:hover:bg-primary-500 transition-colors shadow-sm"
             >
               Bekijk cijfer
             </button>
           )}
         </div>
-        <div className="h-2 bg-navy-100 rounded-full overflow-hidden">
+        <div className="h-2 bg-navy-100 dark:bg-slate-700/80 rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-gradient-to-r from-primary-400 to-accent-400"
             animate={{ width: `${(answeredCount / totalQuestions) * 100}%` }}
@@ -303,14 +311,14 @@ const ExamActive = ({ examNumber }) => {
               onClick={() => setCurrentQuestion(index)}
               className={`w-8 h-8 rounded-lg font-medium text-xs transition-all ${
                 isCurrent
-                  ? "bg-primary-500 text-white shadow-md scale-110"
+                  ? "bg-primary-500 dark:bg-primary-600 text-white shadow-md scale-110 ring-2 ring-primary-400/40 dark:ring-primary-400/30"
                   : isRevealed
                     ? isCorrect
-                      ? "bg-emerald-100 text-emerald-700 border border-emerald-300"
-                      : "bg-red-100 text-red-700 border border-red-300"
+                      ? "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-600/60"
+                      : "bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border border-red-300 dark:border-red-600/60"
                     : isAnswered
-                      ? "bg-primary-100 text-primary-700 border border-primary-300"
-                      : "bg-navy-100 text-navy-500 hover:bg-navy-200"
+                      ? "bg-primary-100 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 border border-primary-300 dark:border-primary-600/50"
+                      : "bg-navy-100 dark:bg-slate-700/80 text-navy-500 dark:text-slate-400 border border-transparent hover:bg-navy-200 dark:hover:bg-slate-600"
               }`}
             >
               {index + 1}
@@ -328,20 +336,20 @@ const ExamActive = ({ examNumber }) => {
           transition={{ duration: 0.15 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-white rounded-3xl shadow-soft-lg border border-navy-100 overflow-hidden">
-            <div className="px-6 py-4 bg-gradient-to-r from-navy-50 to-primary-50 border-b border-navy-100">
-              <div className="flex items-center justify-between">
-                <span className="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-xs font-medium">
+          <div className="bg-white/90 dark:bg-slate-900/85 backdrop-blur-sm rounded-3xl shadow-soft-lg dark:shadow-lg dark:shadow-black/40 border border-navy-100 dark:border-slate-700/90 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+            <div className="px-6 py-4 bg-gradient-to-r from-navy-50 to-primary-50 dark:from-slate-800/90 dark:to-slate-800/70 border-b border-navy-100 dark:border-slate-700/80">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <span className="px-3 py-1 bg-accent-100 dark:bg-accent-500/15 dark:ring-1 dark:ring-accent-500/25 text-accent-700 dark:text-accent-300 rounded-full text-xs font-medium">
                   {currentQ.category}
                 </span>
-                <span className="text-navy-500 text-sm font-medium">
+                <span className="text-navy-500 dark:text-slate-400 text-sm font-medium">
                   Vraag {currentQuestion + 1} van {totalQuestions}
                 </span>
               </div>
             </div>
 
             <div className="p-6 md:p-8">
-              <h2 className="text-lg md:text-xl font-bold text-navy-900 mb-6">{currentQ.question}</h2>
+              <h2 className="text-lg md:text-xl font-bold text-navy-900 dark:text-slate-100 mb-6">{currentQ.question}</h2>
 
               <div className="space-y-3">
                 {currentQ.options.map((option) => (
@@ -360,7 +368,7 @@ const ExamActive = ({ examNumber }) => {
                           ? "bg-red-500 text-white"
                           : selectedAnswers[currentQ.id] === option.letter
                             ? "bg-primary-500 text-white"
-                            : "bg-navy-100 text-navy-600"
+                            : "bg-navy-100 dark:bg-slate-700 text-navy-600 dark:text-slate-300"
                     }`}>
                       {option.letter}
                     </span>
@@ -375,11 +383,11 @@ const ExamActive = ({ examNumber }) => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100">
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100 dark:border-slate-700/80">
                 <button
                   onClick={() => setCurrentQuestion(prev => Math.max(0, prev - 1))}
                   disabled={currentQuestion === 0}
-                  className="flex items-center gap-2 px-4 py-2 text-navy-600 hover:text-primary-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
                   Vorige
@@ -391,8 +399,8 @@ const ExamActive = ({ examNumber }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     className={`px-3 py-1.5 rounded-xl font-medium text-sm flex items-center gap-2 ${
                       selectedAnswers[currentQ.id] === currentQ.correctAnswer
-                        ? "bg-emerald-100 text-emerald-700"
-                        : "bg-red-100 text-red-700"
+                        ? "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300"
+                        : "bg-red-100 dark:bg-red-900/35 text-red-700 dark:text-red-300"
                     }`}
                   >
                     {selectedAnswers[currentQ.id] === currentQ.correctAnswer ? (
@@ -406,7 +414,7 @@ const ExamActive = ({ examNumber }) => {
                 <button
                   onClick={() => setCurrentQuestion(prev => Math.min(totalQuestions - 1, prev + 1))}
                   disabled={currentQuestion === totalQuestions - 1}
-                  className="flex items-center gap-2 px-4 py-2 text-navy-600 hover:text-primary-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
                   Volgende
                   <ChevronRight className="w-5 h-5" />
@@ -428,14 +436,14 @@ const ExamPage = () => {
   if (!examNr || examNr < 1 || examNr > 5) return <ExamSelection />
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50">
+    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
       <Navbar />
       <div className="h-20" />
       <main className="container-custom py-8 md:py-12">
         <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} className="mb-6 max-w-3xl mx-auto">
           <Link
             to="/tentamen"
-            className="inline-flex items-center gap-2 text-navy-600 hover:text-primary-600 transition-colors"
+            className="inline-flex items-center gap-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="font-medium">Terug naar overzicht</span>
@@ -443,16 +451,16 @@ const ExamPage = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-navy-900 mb-1">
-            {EXAM_NAMES[examNr - 1]} <span className="text-primary-500">Blok 4</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-navy-900 dark:text-slate-100 mb-1">
+            {EXAM_NAMES[examNr - 1]} <span className="text-primary-500 dark:text-primary-400">Blok 4</span>
           </h1>
-          <p className="text-navy-500 text-sm">60 vragen · 60% is voldoende (5,5)</p>
+          <p className="text-navy-500 dark:text-slate-400 text-sm">60 vragen · 60% is voldoende (5,5)</p>
         </motion.div>
 
         <ExamActive examNumber={examNr} />
       </main>
 
-      <footer className="py-6 text-center text-navy-400 text-sm border-t border-navy-100 mt-12">
+      <footer className="py-6 text-center text-navy-400 dark:text-slate-500 text-sm border-t border-navy-100 dark:border-slate-800 mt-12">
         <p>© {new Date().getFullYear()} Smartium</p>
       </footer>
     </div>

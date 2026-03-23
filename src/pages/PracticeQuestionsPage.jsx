@@ -9041,27 +9041,27 @@ const PracticeQuestionsPage = () => {
           </motion.div>
         )}
 
-        {/* Title */}
+        {/* Title + cursusoverzicht (zelfde dark-mode patroon als Samenvattingen-index) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
+          className={`text-center mb-8 ${!lmeParam ? 'max-w-3xl mx-auto' : ''}`}
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-navy-900 dark:text-slate-100 mb-2">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
             {getTitle()} <span className="text-accent-500 dark:text-accent-400">Oefenvragen</span>
           </h1>
-          <p className="text-navy-500 dark:text-slate-400">
+          <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
             {getSubtitle()}
           </p>
-          
-          {/* Course structure: Blok → Week → Casus → LME (net als samenvattingen) */}
+
           {!lmeParam && (
-            <div className="max-w-2xl mx-auto mt-8 space-y-4">
+            <div className="mt-8 space-y-4 text-left">
               {/* Blok 3 */}
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
+              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
                 <button
+                  type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
@@ -9074,7 +9074,7 @@ const PracticeQuestionsPage = () => {
                       <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {expandedBlok === 'blok3' && (
@@ -9083,45 +9083,51 @@ const PracticeQuestionsPage = () => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
+                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
-                      <div className="px-5 pb-5">
+                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
                         {practiceQuestionsCourseStructure.blok3.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 pl-5 ml-5">
+                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                             <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-primary-500 border-4 border-white shadow-sm" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600" />
-                                <span className="font-medium text-slate-700 text-sm">{week.name}</span>
+                              <div className="w-3 h-3 rounded-full bg-primary-500 dark:bg-primary-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-primary-500/20 dark:ring-primary-400/30" />
+                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
                               </div>
                             </div>
                             {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-4">
+                              <div key={casusIndex} className="mb-5 last:mb-0">
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-700" />
+                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
                                   </div>
-                                  <span className="font-medium text-slate-800 text-sm">{casus.name}</span>
+                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-9 space-y-2">
+                                <div className="ml-0 sm:ml-2 space-y-2">
                                   {casus.lmes.map((lmeItem, lmeIndex) => (
                                     <Link
                                       key={lmeIndex}
                                       to={`/oefenvragen?lme=${lmeItem.id}`}
-                                      className="flex items-center justify-between p-3 rounded-xl bg-accent-50 border border-accent-200 hover:border-accent-300 transition-colors"
+                                      className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                        bg-white dark:bg-slate-800/60
+                                        border-slate-200/90 dark:border-slate-600/90
+                                        hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                        hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
                                     >
-                                      <div className="flex items-center gap-3">
-                                        <div className="p-1.5 rounded-lg bg-accent-200">
-                                          <ClipboardCheck className="w-4 h-4 text-accent-700" />
+                                      <div className="flex items-center gap-3 min-w-0">
+                                        <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                          <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
                                         </div>
-                                        <span className="font-medium text-accent-800 text-sm">
-                                          {lmeItem.name}
-                                        </span>
-                                        <span className="text-xs text-accent-600">
-                                          ({getLmeQuestionCount(lmeItem)} vragen)
-                                        </span>
+                                        <div className="min-w-0">
+                                          <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                            {lmeItem.name}
+                                          </span>
+                                          <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                            {getLmeQuestionCount(lmeItem)} vragen
+                                          </span>
+                                        </div>
                                       </div>
-                                      <ChevronRight className="w-4 h-4 text-accent-500" />
+                                      <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                     </Link>
                                   ))}
                                 </div>
@@ -9136,10 +9142,11 @@ const PracticeQuestionsPage = () => {
               </div>
 
               {/* Blok 4 */}
-              <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
+              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
                 <button
+                  type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
                     <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
@@ -9152,7 +9159,7 @@ const PracticeQuestionsPage = () => {
                       <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 6 casussen · 46 LME's</p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {expandedBlok === 'blok4' && (
@@ -9161,59 +9168,71 @@ const PracticeQuestionsPage = () => {
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
+                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
-                      <div className="px-5 pb-5">
+                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
                         {practiceQuestionsCourseStructure.blok4.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 pl-5 ml-5">
+                          <div key={weekIndex} className="mb-8 last:mb-0 border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                             <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-indigo-500 border-4 border-white shadow-sm" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600" />
-                                <span className="font-medium text-slate-700 text-sm">{week.name}</span>
+                              <div className="w-3 h-3 rounded-full bg-indigo-500 dark:bg-indigo-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-indigo-500/20 dark:ring-indigo-400/30" />
+                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
                               </div>
                             </div>
                             {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-4">
+                              <div key={casusIndex} className="mb-5 last:mb-0">
                                 <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-700" />
+                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
                                   </div>
-                                  <span className="font-medium text-slate-800 text-sm">{casus.name}</span>
+                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-9 space-y-2">
+                                <div className="ml-0 sm:ml-2 space-y-2">
                                   {casus.lmes.map((lmeItem, lmeIndex) => (
                                     lmeItem.type === 'simple' ? (
                                       <Link
                                         key={lmeIndex}
                                         to={`/oefenvragen?lme=${lmeItem.id}`}
-                                        className="flex items-center justify-between p-3 rounded-xl bg-accent-50 border border-accent-200 hover:border-accent-300 transition-colors"
+                                        className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                          bg-white dark:bg-slate-800/60
+                                          border-slate-200/90 dark:border-slate-600/90
+                                          hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                          hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
                                       >
-                                        <div className="flex items-center gap-3">
-                                          <div className="p-1.5 rounded-lg bg-accent-200">
-                                            <ClipboardCheck className="w-4 h-4 text-accent-700" />
+                                        <div className="flex items-center gap-3 min-w-0">
+                                          <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                            <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
                                           </div>
-                                          <span className="font-medium text-accent-800 text-sm">
-                                            {lmeItem.name}
-                                          </span>
-                                          <span className="text-xs text-accent-600">
-                                            ({getLmeQuestionCount(lmeItem)} vragen)
-                                          </span>
+                                          <div className="min-w-0">
+                                            <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                              {lmeItem.name}
+                                            </span>
+                                            <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                              {getLmeQuestionCount(lmeItem)} vragen
+                                            </span>
+                                          </div>
                                         </div>
-                                        <ChevronRight className="w-4 h-4 text-accent-500" />
+                                        <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                       </Link>
                                     ) : (
-                                      <div key={lmeIndex} className="space-y-2">
-                                        <div className="flex items-center gap-2 text-sm font-medium text-slate-700 py-2">
-                                          <ClipboardCheck className="w-4 h-4 text-accent-600" />
-                                          {lmeItem.name} ({getLmeQuestionCount(lmeItem)} vragen)
+                                      <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
+                                        <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
+                                          <ClipboardCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                                          <span>{lmeItem.name} ({getLmeQuestionCount(lmeItem)} vragen)</span>
                                         </div>
-                                        <div className="ml-6 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                           {getImagesFromMap(lmeItem.questionsMap).map((img) => (
                                             <Link
                                               key={img.id}
                                               to={`/oefenvragen?lme=${img.id}`}
-                                              className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 hover:border-accent-300 hover:bg-accent-50 text-sm text-slate-700 hover:text-accent-800 transition-colors"
+                                              className="text-center px-3 py-2.5 rounded-lg border text-sm transition-all
+                                                bg-slate-50 dark:bg-slate-900/60
+                                                border-slate-200 dark:border-slate-600
+                                                text-slate-700 dark:text-slate-200
+                                                hover:border-emerald-400 dark:hover:border-emerald-500/50
+                                                hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10
+                                                hover:text-emerald-900 dark:hover:text-emerald-300"
                                             >
                                               {img.name}
                                             </Link>
@@ -9233,25 +9252,21 @@ const PracticeQuestionsPage = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Oefen alle vragen random */}
-              <Link
-                to="/oefenvragen?lme=alle-random"
-                className="block mt-6"
-              >
-                <div className="bg-gradient-to-r from-accent-50 to-primary-50 rounded-2xl border-2 border-accent-200 hover:border-accent-400 p-6 transition-all hover:shadow-md">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-accent-200 rounded-xl">
-                        <Shuffle className="w-6 h-6 text-accent-700" />
+              <Link to="/oefenvragen?lme=alle-random" className="block mt-2">
+                <div className="bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border-2 border-accent-200/90 dark:border-accent-500/25 hover:border-accent-400 dark:hover:border-accent-400/40 p-6 transition-all hover:shadow-md dark:hover:shadow-accent-950/20">
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-4 min-w-0">
+                      <div className="p-3 bg-accent-200/90 dark:bg-accent-500/20 rounded-xl shrink-0">
+                        <Shuffle className="w-6 h-6 text-accent-800 dark:text-accent-300" />
                       </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-slate-900">Oefen alle vragen random</h3>
-                        <p className="text-sm text-slate-600 mt-0.5">
+                      <div className="min-w-0">
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Oefen alle vragen random</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
                           Alle meerkeuzevragen in willekeurige volgorde – ideaal voor examentraining
                         </p>
                       </div>
                     </div>
-                    <ChevronRight className="w-6 h-6 text-accent-600" />
+                    <ChevronRight className="w-6 h-6 text-accent-600 dark:text-accent-400 shrink-0" />
                   </div>
                 </div>
               </Link>
