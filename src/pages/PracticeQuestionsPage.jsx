@@ -1,13 +1,15 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useMemo } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { useState, useMemo, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
+import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { 
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen, Shuffle,
   CheckCircle, XCircle, ArrowLeft,
-  Calendar, Stethoscope, GraduationCap, Shield
+  Calendar, Stethoscope, GraduationCap, Shield, Bot, Loader2
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation, parseReferences } from '../utils/practiceExamAi'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -8558,6 +8560,7 @@ const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
 
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
   const lmeParam = searchParams.get('lme')
   const [expandedBlok, setExpandedBlok] = useState('blok4') // Default: direct naar Blok 4 lijst
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
@@ -8929,6 +8932,7 @@ const PracticeQuestionsPage = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
+  const [explanations, setExplanations] = useState({})
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -8959,7 +8963,35 @@ const PracticeQuestionsPage = () => {
   const handleReset = () => {
     setSelectedAnswers({})
     setRevealedAnswers({})
+    setExplanations({})
     setCurrentQuestion(0)
+  }
+
+  // Auto-fetch uitleg zodra antwoord fout is onthuld
+  useEffect(() => {
+    if (!currentQ) return
+    const qId = currentQ.id
+    if (!revealedAnswers[qId]) return
+    if (selectedAnswers[qId] === currentQ.correctAnswer) return
+    if (explanations[qId]) return
+
+    setExplanations((prev) => ({ ...prev, [qId]: { loading: true } }))
+    const ctx = buildPracticeContext(currentQ, selectedAnswers[qId], lmeParam)
+    fetchPracticeExplanation(ctx)
+      .then((text) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, text } })))
+      .catch((err) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, error: err?.message || 'Fout bij ophalen' } })))
+  }, [currentQ, revealedAnswers, selectedAnswers, lmeParam, explanations])
+
+  const openAiExplanation = () => {
+    if (!currentQ) return
+    const ctx = buildPracticeContext(currentQ, selectedAnswers[currentQ.id], lmeParam)
+    const expl = explanations[currentQ.id]
+    navigate('/chat', {
+      state: {
+        practiceContext: ctx,
+        initialExplanation: expl?.text,
+      },
+    })
   }
 
   const getOptionStyle = (questionId, letter) => {
@@ -9362,6 +9394,55 @@ const PracticeQuestionsPage = () => {
                     </motion.button>
                   ))}
                 </div>
+
+                {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] !== currentQ.correctAnswer && (
+                  <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-500/10 dark:to-accent-500/10 border border-primary-200/70 dark:border-primary-500/25">
+                    {lmeParam === 'alle-random' && (
+                      <p className="text-xs text-navy-500 dark:text-slate-400 mb-3">
+                        Je oefent in gemengde modus; de AI kiest de best passende samenvatting uit het overzicht.
+                      </p>
+                    )}
+                    {explanations[currentQ.id]?.loading && (
+                      <div className="flex items-center gap-2 text-navy-600 dark:text-slate-300 mb-3">
+                        <Loader2 className="w-4 h-4 animate-spin shrink-0" />
+                        <span className="text-sm">AI uitleg ophalen…</span>
+                      </div>
+                    )}
+                    {explanations[currentQ.id]?.error && (
+                      <p className="text-sm text-red-600 dark:text-red-400 mb-3">{explanations[currentQ.id].error}</p>
+                    )}
+                    {explanations[currentQ.id]?.text && (
+                      <div className="mb-4">
+                        <div className="text-sm text-navy-800 dark:text-slate-200 [&_p]:my-1 [&_ul]:my-2 [&_li]:list-disc [&_li]:ml-4 [&_strong]:font-bold">
+                          <ReactMarkdown>{parseReferences(explanations[currentQ.id].text).displayText}</ReactMarkdown>
+                        </div>
+                        {parseReferences(explanations[currentQ.id].text).refs.length > 0 && (
+                          <div className="mt-2 pt-2 border-t border-primary-200/50 dark:border-primary-500/25 flex flex-wrap gap-x-2 gap-y-1">
+                            {parseReferences(explanations[currentQ.id].text).refs.map((r, i) => (
+                              <Link
+                                key={i}
+                                to={`/summary?lme=${r.id}`}
+                                className="text-xs text-primary-600 dark:text-primary-400 hover:underline"
+                              >
+                                {r.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {(explanations[currentQ.id]?.text || explanations[currentQ.id]?.error) && (
+                      <button
+                        type="button"
+                        onClick={openAiExplanation}
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600 transition-colors shadow-md"
+                      >
+                        <Bot className="w-4 h-4" />
+                        Verder praten met AI
+                      </button>
+                    )}
+                  </div>
+                )}
 
                 {/* Action Buttons */}
                 <div className="flex items-center justify-between mt-8 pt-6 border-t border-navy-100 dark:border-slate-600">

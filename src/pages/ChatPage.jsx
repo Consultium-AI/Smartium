@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
-import { Send, Bot, User, Loader2, ChevronDown, Trash2, MessageSquare, Menu } from 'lucide-react'
+import { Send, Bot, User, Loader2, ChevronDown, Trash2, MessageSquare, Menu, GraduationCap } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
+import { getSummaryNameForLmeId } from '../utils/practiceExamAi'
 
 const STORAGE_KEY = 'smartium-chat-chats'
 const SIDEBAR_HIDDEN = true // Sidebar verborgen voor nu
@@ -42,11 +43,11 @@ function getChatTitle(messages) {
 
 const LME_LIST = lmeIndex.map(l => `- ${l.name} (id: ${l.id}) [${l.blok}, ${l.week}, ${l.casus}] – Onderwerpen: ${l.topics}`).join('\n')
 
-const getSystemPrompt = (answerMode) => {
+const getSystemPrompt = (answerMode, practiceContext) => {
   const lengthRule = answerMode === 'short'
     ? '1. Geef KORTE, directe antwoorden (max 3-4 zinnen per punt). Wees beknopt en to-the-point.'
     : '1. Geef UITGEBREIDE antwoorden met meer uitleg, context en voorbeelden waar relevant.'
-  return `Je bent Smartium AI, een slimme studieassistent voor geneeskundestudenten. Je hebt toegang tot de volgende samenvattingen (LME's) uit het curriculum:
+  let base = `Je bent Smartium AI, een slimme studieassistent voor geneeskundestudenten. Je hebt toegang tot de volgende samenvattingen (LME's) uit het curriculum:
 
 ${LME_LIST}
 
@@ -57,6 +58,32 @@ ${lengthRule}
 4. Als de vraag NIET gerelateerd is aan de beschikbare samenvattingen, geef dan een antwoord zonder referentie.
 5. Antwoord altijd in het Nederlands.
 6. Gebruik bullet points waar relevant.`
+
+  if (practiceContext) {
+    const c = practiceContext
+    const optLines = (c.options || []).map((o) => `${o.letter}) ${o.text}`).join('\n')
+    const primaryHint = c.summaryLmeId
+      ? `De oefenset hoort bij de samenvatting: ${c.summaryLmeId} (${getSummaryNameForLmeId(c.summaryLmeId)}). Verwijs in je antwoord naar [[${c.summaryLmeId}|${getSummaryNameForLmeId(c.summaryLmeId)}]] tenzij een andere LME uit de lijst duidelijk beter past.`
+      : 'Kies uit bovenstaande LME-lijst de best passende samenvatting en gebruik [[lme-id|Naam]].'
+
+    base += `
+
+=== CONTEXT: MEERKEUZE-OEFENVRAAG (dit is de feitelijke vraag + antwoorden; gebruik dit bij alle berichten in dit gesprek) ===
+Vraag: ${c.question}
+
+Antwoordopties:
+${optLines}
+
+Juiste antwoord: ${c.correctLetter} — ${c.correctText}
+Gekozen door de leerling (fout): ${c.userLetter} — ${c.userText}
+${c.category ? `Categorie/topic: ${c.category}\n` : ''}${primaryHint}
+=== EINDE OEFENCONTEXT ===
+
+Speciaal voor het EERSTE antwoord na een foute keuze: geef maximaal 2–3 zeer korte zinnen waarom het juiste antwoord klopt en wat er mis is met de gekozen optie; sluit af met de verwijzing [[lme-id|Naam]].
+Daarna: de leerling kan doorvragen; beantwoord vervolgvragen kort, helder en vriendelijk, en blijf verwijzen naar LME's waar nuttig.`
+  }
+
+  return base
 }
 
 function parseReferences(text) {
@@ -133,6 +160,8 @@ const MessageBubble = ({ message }) => {
 }
 
 const ChatPage = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
   const [chats, setChats] = useState(() => loadChats())
   const [currentChatId, setCurrentChatId] = useState(null)
   const [input, setInput] = useState('')
@@ -143,6 +172,11 @@ const ChatPage = () => {
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
   const answerModeRef = useRef(null)
+  const lastPracticeBootstrapKey = useRef(null)
+
+  useEffect(() => {
+    if (location.pathname !== '/chat') lastPracticeBootstrapKey.current = null
+  }, [location.pathname])
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -158,16 +192,16 @@ const ChatPage = () => {
   const messages = currentChat?.messages ?? [INITIAL_MESSAGE]
 
   useEffect(() => {
-    if (chats.length === 0) {
+    if (chats.length === 0 && !location.state?.practiceContext) {
       const id = generateId()
       setChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
       setCurrentChatId(id)
       saveChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
-    } else if (!currentChatId) {
+    } else if (!currentChatId && chats.length > 0) {
       const sorted = [...chats].sort((a, b) => (b.updatedAt ?? b.createdAt) - (a.updatedAt ?? a.createdAt))
       setCurrentChatId(sorted[0].id)
     }
-  }, [chats.length, currentChatId])
+  }, [chats.length, currentChatId, location.state])
 
   const setMessages = useCallback((updater) => {
     if (!currentChatId) return
@@ -186,7 +220,15 @@ const ChatPage = () => {
 
   const clearChat = () => {
     if (!currentChatId) return
-    setMessages([INITIAL_MESSAGE])
+    setChats((prev) => {
+      const next = prev.map((c) =>
+        c.id === currentChatId
+          ? { ...c, messages: [INITIAL_MESSAGE], practiceContext: undefined, title: 'Nieuwe chat', updatedAt: Date.now() }
+          : c
+      )
+      saveChats(next)
+      return next
+    })
     setInput('')
   }
 
@@ -210,6 +252,88 @@ const ChatPage = () => {
       return next
     })
   }, [])
+
+  // Vanaf oefenvragen: als initialExplanation meegegeven → chat pre-filled; anders API-bootstrap
+  useEffect(() => {
+    const ctx = location.state?.practiceContext
+    if (!ctx) return
+    const initialExplanation = location.state?.initialExplanation
+    const key = JSON.stringify({ ctx, hasInitial: !!initialExplanation })
+    if (lastPracticeBootstrapKey.current === key) return
+    lastPracticeBootstrapKey.current = key
+
+    navigate('/chat', { replace: true, state: null })
+
+    const id = generateId()
+    const userMessage = {
+      role: 'user',
+      content:
+        'Ik had deze oefenvraag fout. Geef een zeer korte uitleg waarom het juiste antwoord klopt en waarom mijn gekozen antwoord niet (max. 3 zinnen). Sluit af met een verwijzing naar de juiste samenvatting in het formaat [[lme-id|Naam]]. Daarna kan ik verder vragen stellen als ik iets nog niet begrijp.',
+    }
+
+    const messages = initialExplanation
+      ? [userMessage, { role: 'assistant', content: initialExplanation }]
+      : [userMessage]
+
+    setChats((prev) => {
+      const next = [
+        ...prev,
+        {
+          id,
+          title: 'Oefenvraag — AI uitleg',
+          messages,
+          practiceContext: ctx,
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        },
+      ]
+      saveChats(next)
+      return next
+    })
+    setCurrentChatId(id)
+
+    if (initialExplanation) {
+      inputRef.current?.focus()
+      return
+    }
+
+    const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(
+      /\/$/,
+      ''
+    )
+
+    ;(async () => {
+      setLoading(true)
+      try {
+        const apiMessages = [
+          { role: 'system', content: getSystemPrompt(answerMode, ctx) },
+          { role: 'user', content: userMessage.content },
+        ]
+        const res = await fetch(`${apiBase}/api/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'gpt-4o',
+            messages: apiMessages,
+            temperature: 0.35,
+            max_tokens: 500,
+          }),
+        })
+        const data = await res.json()
+        if (data.error) {
+          appendAssistantMessage(id, `Fout: ${data.error.message}`)
+        } else {
+          const reply = data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
+          appendAssistantMessage(id, reply)
+        }
+      } catch {
+        appendAssistantMessage(id, 'Er ging iets mis met de verbinding. Probeer het opnieuw.')
+      } finally {
+        setLoading(false)
+        inputRef.current?.focus()
+      }
+    })()
+  }, [location.state, navigate, answerMode, appendAssistantMessage])
 
   const sendMessage = async () => {
     const trimmed = input.trim()
@@ -239,6 +363,8 @@ const ChatPage = () => {
       setMessages(newMessages)
     }
 
+    const practiceContext = chats.find(c => c.id === targetChatId)?.practiceContext
+
     setInput('')
     setLoading(true)
 
@@ -246,7 +372,7 @@ const ChatPage = () => {
 
     try {
       const apiMessages = [
-        { role: 'system', content: getSystemPrompt(answerMode) },
+        { role: 'system', content: getSystemPrompt(answerMode, practiceContext) },
         ...newMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
       ]
 
@@ -257,7 +383,9 @@ const ChatPage = () => {
           model: 'gpt-4o',
           messages: apiMessages,
           temperature: 0.4,
-          max_tokens: answerMode === 'extended' ? 2000 : 800,
+          max_tokens: practiceContext
+            ? (answerMode === 'extended' ? 2000 : 900)
+            : (answerMode === 'extended' ? 2000 : 800),
         }),
       })
 
@@ -364,9 +492,18 @@ const ChatPage = () => {
           <h1 className="text-2xl md:text-3xl font-bold text-navy-900 dark:text-slate-100">
             Smartium <span className="text-primary-500 dark:text-primary-400">AI</span>
           </h1>
-          <p className="text-navy-500 dark:text-slate-400 text-sm mt-1">
-            Stel een vraag over de leerstof – antwoorden met directe verwijzingen
-          </p>
+          {currentChat?.practiceContext ? (
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-2 px-3 py-2 rounded-xl bg-primary-50 dark:bg-primary-500/15 border border-primary-200/80 dark:border-primary-500/30 max-w-lg mx-auto">
+              <GraduationCap className="w-4 h-4 text-primary-600 dark:text-primary-400 shrink-0" />
+              <p className="text-xs text-primary-800 dark:text-primary-200 text-center leading-snug">
+                Dit gesprek gaat over een <strong>oefenvraag</strong> die je fout had. Je kunt hierna doorvragen tot je het snapt.
+              </p>
+            </div>
+          ) : (
+            <p className="text-navy-500 dark:text-slate-400 text-sm mt-1">
+              Stel een vraag over de leerstof – antwoorden met directe verwijzingen
+            </p>
+          )}
           <button
             onClick={clearChat}
             disabled={!currentChatId}

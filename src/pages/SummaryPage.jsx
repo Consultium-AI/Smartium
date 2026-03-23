@@ -977,13 +977,19 @@ const SummaryPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2 text-center">Samenvattingen</h1>
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 text-center tracking-tight">
+            Samenvattingen
+          </h1>
+          <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
+            Kies je blok en week — elke LME opent de volledige samenvatting.
+          </p>
 
-          <div className="space-y-3">
-          <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
+          <div className="space-y-4">
+          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
             <button
+              type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
@@ -996,7 +1002,7 @@ const SummaryPage = () => {
                   <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>
@@ -1006,72 +1012,80 @@ const SummaryPage = () => {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
-                  <div className="px-5 pb-5">
+                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
                     {courseStructure.blok3.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 pl-5 ml-5">
+                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                         <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-primary-500 border-4 border-white shadow-sm" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600" />
-                            <span className="font-medium text-slate-700 text-sm">{week.name}</span>
+                          <div className="w-3 h-3 rounded-full bg-primary-500 dark:bg-primary-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-primary-500/20 dark:ring-primary-400/30" />
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
                           </div>
                         </div>
 
                         {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-4">
+                          <div key={casusIndex} className="mb-5 last:mb-0">
                             <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-700" />
+                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
                               </div>
-                              <span className="font-medium text-slate-800 text-sm">{casus.name}</span>
+                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                             </div>
 
-                            <div className="ml-9 space-y-2">
+                            <div className="ml-0 sm:ml-2 space-y-2">
                               {casus.lmes.map((lmeItem, lmeIndex) => (
                                 <Link
                                   key={lmeIndex}
                                   to={`/summary?lme=${lmeItem.id}`}
-                                  className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
+                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    bg-white dark:bg-slate-800/60
+                                    border-slate-200/90 dark:border-slate-600/90
+                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
                                 >
-                                  <div className="flex items-center gap-3">
-                                    <div className="p-1.5 rounded-lg bg-emerald-200">
-                                      <BookOpen className="w-4 h-4 text-emerald-700" />
+                                  <div className="flex items-center gap-3 min-w-0">
+                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
                                     </div>
-                                    <div>
-                                      <span className="font-medium text-emerald-800 text-sm">
-                                        LME: {lmeItem.name}
+                                    <div className="min-w-0">
+                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                        {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-0.5">
-                                        <span className="text-xs text-emerald-600 flex items-center gap-1">
-                                          <Clock className="w-3 h-3" />
+                                      <div className="flex items-center gap-3 mt-1">
+                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
                                       </div>
                                     </div>
                                   </div>
-                                  <ChevronRight className="w-4 h-4 text-emerald-500" />
+                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
                               ))}
                             </div>
                           </div>
                         ))}
 
-                        <Link to="/oefenvragen" className="block ml-9">
-                          <div className="flex items-center justify-between p-3 rounded-xl bg-accent-50 border border-accent-200 hover:border-accent-300 transition-colors">
-                            <div className="flex items-center gap-3">
-                              <div className="p-1.5 rounded-lg bg-accent-200">
-                                <ClipboardCheck className="w-4 h-4 text-accent-700" />
+                        <Link to="/oefenvragen" className="block ml-0 sm:ml-2 mt-4">
+                          <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                            bg-accent-50 dark:bg-accent-500/10
+                            border-accent-200/90 dark:border-accent-500/25
+                            hover:border-accent-400 dark:hover:border-accent-400/40
+                            hover:shadow-md dark:hover:shadow-accent-950/20">
+                            <div className="flex items-center gap-3 min-w-0">
+                              <div className="p-2 rounded-lg bg-accent-200/90 dark:bg-accent-500/20 shrink-0">
+                                <ClipboardCheck className="w-4 h-4 text-accent-800 dark:text-accent-300" />
                               </div>
-                              <div>
-                                <span className="font-medium text-accent-800 text-sm">
+                              <div className="min-w-0">
+                                <span className="font-medium text-accent-900 dark:text-accent-200 text-sm">
                                   Alle oefenvragen
                                 </span>
-                                <p className="text-xs text-accent-600">67 meerkeuzevragen</p>
+                                <p className="text-xs text-accent-700 dark:text-accent-400/90">67 meerkeuzevragen</p>
                               </div>
                             </div>
-                            <ChevronRight className="w-4 h-4 text-accent-500" />
+                            <ChevronRight className="w-4 h-4 text-accent-600 dark:text-accent-400 shrink-0" />
                           </div>
                         </Link>
                       </div>
@@ -1082,10 +1096,11 @@ const SummaryPage = () => {
             </AnimatePresence>
           </div>
 
-          <div className="bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm overflow-hidden">
+          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
             <button
+              type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
@@ -1098,7 +1113,7 @@ const SummaryPage = () => {
                   <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 13 casussen · 46 LME's</p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
             </button>
 
             <AnimatePresence>
@@ -1108,42 +1123,48 @@ const SummaryPage = () => {
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                  className="overflow-hidden"
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
-                  <div className="px-5 pb-5">
+                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
                     {courseStructure.blok4.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 pl-5 ml-5">
+                      <div key={weekIndex} className="mb-8 last:mb-0 border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                         <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-indigo-500 border-4 border-white shadow-sm" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600" />
-                            <span className="font-medium text-slate-700 text-sm">{week.name}</span>
+                          <div className="w-3 h-3 rounded-full bg-indigo-500 dark:bg-indigo-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-indigo-500/20 dark:ring-indigo-400/30" />
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
                           </div>
                         </div>
 
                         {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-4">
+                          <div key={casusIndex} className="mb-5 last:mb-0">
                             <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-700" />
+                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
                               </div>
-                              <span className="font-medium text-slate-800 text-sm">{casus.name}</span>
+                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                             </div>
 
-                            <div className="ml-9 space-y-2">
+                            <div className="ml-0 sm:ml-2 space-y-2">
                               {casus.lmes.map((lmeItem, lmeIndex) => (
                                 lmeItem.type === 'image-based' ? (
-                                  <div key={lmeIndex} className="space-y-2">
-                                    <div className="flex items-center gap-2 text-sm font-medium text-slate-700 py-2">
-                                      <BookOpen className="w-4 h-4 text-emerald-600" />
-                                      {lmeItem.name} ({lmeItem.imageCount} afbeeldingen)
+                                  <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
+                                    <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
+                                      <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                                      <span>{lmeItem.name} ({lmeItem.imageCount} afbeeldingen)</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                       {getImageIdsForLme(lmeItem.baseId, lmeItem.imageCount).map((img) => (
                                         <Link
                                           key={img.id}
                                           to={`/summary?lme=${img.id}`}
-                                          className="px-3 py-2 rounded-lg bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 text-sm text-slate-700 hover:text-emerald-800 transition-colors"
+                                          className="text-center px-3 py-2.5 rounded-lg border text-sm transition-all
+                                            bg-slate-50 dark:bg-slate-900/60
+                                            border-slate-200 dark:border-slate-600
+                                            text-slate-700 dark:text-slate-200
+                                            hover:border-emerald-400 dark:hover:border-emerald-500/50
+                                            hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10
+                                            hover:text-emerald-900 dark:hover:text-emerald-300"
                                         >
                                           {img.name}
                                         </Link>
@@ -1154,25 +1175,29 @@ const SummaryPage = () => {
                                 <Link
                                   key={lmeIndex}
                                   to={`/summary?lme=${lmeItem.id}`}
-                                  className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 border border-emerald-200 hover:border-emerald-300 transition-colors"
+                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    bg-white dark:bg-slate-800/60
+                                    border-slate-200/90 dark:border-slate-600/90
+                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
                                 >
-                                  <div className="flex items-center gap-3">
-                                    <div className="p-1.5 rounded-lg bg-emerald-200">
-                                      <BookOpen className="w-4 h-4 text-emerald-700" />
+                                  <div className="flex items-center gap-3 min-w-0">
+                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
                                     </div>
-                                    <div>
-                                      <span className="font-medium text-emerald-800 text-sm">
-                                        LME: {lmeItem.name}
+                                    <div className="min-w-0">
+                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                        {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-0.5">
-                                        <span className="text-xs text-emerald-600 flex items-center gap-1">
-                                          <Clock className="w-3 h-3" />
+                                      <div className="flex items-center gap-3 mt-1">
+                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
                                       </div>
                                     </div>
                                   </div>
-                                  <ChevronRight className="w-4 h-4 text-emerald-500" />
+                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
                                 )
                               ))}
