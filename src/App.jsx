@@ -9,6 +9,7 @@ import PracticeQuestionsPage from './pages/PracticeQuestionsPage'
 import SummaryPage from './pages/SummaryPage'
 import ChatPage from './pages/ChatPage'
 import ExamPage from './pages/ExamPage'
+import LoginPage from './pages/LoginPage'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/summary" element={<SummaryPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/tentamen" element={<ExamPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>

@@ -1,8 +1,21 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, FileText, ClipboardCheck, Home, Bot, GraduationCap, Sun, Moon } from 'lucide-react'
+import {
+  Menu,
+  X,
+  FileText,
+  ClipboardCheck,
+  Home,
+  Bot,
+  GraduationCap,
+  Sun,
+  Moon,
+  LogIn,
+  LogOut,
+} from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import { useAuth } from '../context/AuthContext'
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
@@ -12,8 +25,22 @@ const navItems = [
   { name: 'AI Chat', href: '/chat', icon: Bot },
 ]
 
+function userDisplayLabel(user) {
+  const n = user?.displayName?.trim()
+  if (n) return n
+  return user?.email ?? ''
+}
+
+function userDisplayTitle(user) {
+  const n = user?.displayName?.trim()
+  const e = user?.email ?? ''
+  if (n && e) return `${n} · ${e}`
+  return e || n || ''
+}
+
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme()
+  const { user, loading: authLoading, signOut } = useAuth()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
@@ -101,6 +128,34 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
+            {!authLoading && user && (
+              <div className="hidden items-center gap-2 sm:flex">
+                <span
+                  className="max-w-[12rem] truncate text-xs font-semibold text-navy-800 dark:text-slate-200"
+                  title={userDisplayTitle(user)}
+                >
+                  {userDisplayLabel(user)}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => signOut()}
+                  className="flex h-9 items-center gap-1.5 rounded-full border border-slate-200/90 px-3 text-xs font-semibold text-navy-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+                  aria-label="Uitloggen"
+                >
+                  <LogOut className="h-3.5 w-3.5" strokeWidth={2} />
+                  Uitloggen
+                </button>
+              </div>
+            )}
+            {!authLoading && !user && (
+              <Link
+                to="/login"
+                className="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-full bg-navy-900 px-3.5 text-xs font-semibold text-white transition hover:bg-navy-800 dark:bg-primary-600 dark:hover:bg-primary-500"
+              >
+                <LogIn className="h-3.5 w-3.5" strokeWidth={2} />
+                Inloggen
+              </Link>
+            )}
             <button
               type="button"
               onClick={toggleTheme}
@@ -151,6 +206,35 @@ const Navbar = () => {
                       {item.name}
                     </Link>
                   ))}
+                  {!authLoading && !user && (
+                    <Link to="/login" className={mobileLinkClass('/login')}>
+                      <LogIn className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                      Inloggen
+                    </Link>
+                  )}
+                  {!authLoading && user && (
+                    <>
+                      <div className="px-4 py-2">
+                        <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">
+                          {userDisplayLabel(user)}
+                        </p>
+                        {user.email && user.displayName?.trim() && (
+                          <p className="truncate text-xs text-navy-500 dark:text-slate-500">{user.email}</p>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          signOut()
+                          setIsMobileMenuOpen(false)
+                        }}
+                        className="flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium text-rose-700 transition-colors hover:bg-rose-50 dark:text-rose-300 dark:hover:bg-rose-950/30"
+                      >
+                        <LogOut className="h-[1.125rem] w-[1.125rem] shrink-0" strokeWidth={1.75} />
+                        Uitloggen
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </motion.div>

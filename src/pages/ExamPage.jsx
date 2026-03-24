@@ -9,6 +9,14 @@ import {
 import Navbar from '../components/Navbar'
 import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
 import { buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
+import {
+  getProgressUserId,
+  loadExamProgress,
+  saveExamProgress,
+  clearExamProgress,
+  examHasInProgress,
+} from '../utils/accountProgressStorage'
+import { useAuth } from '../context/AuthContext'
 import { examQuestions } from '../questions/examQuestions'
 
 // Seeded pseudo-random voor deterministische shuffling
@@ -63,57 +71,78 @@ function calculateGrade(correct, total) {
 }
 
 // ─── Exam Selection Screen ───────────────────────────────────────
-const ExamSelection = () => (
-  <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
-    <Navbar />
-    <div className="h-20" />
-    <main className="container-custom py-8 md:py-12">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
-          <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> Blok 4
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
-          5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen
-        </p>
-      </motion.div>
+const ExamSelection = () => {
+  const { user, loading: authLoading } = useAuth()
+  const progressUserId = getProgressUserId(user, authLoading)
 
-      <div className="max-w-2xl mx-auto space-y-4">
-        {EXAM_NAMES.map((name, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
-          >
-            <Link
-              to={`/tentamen?nr=${i + 1}`}
-              className="group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
-                bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm
-                border-slate-200/90 dark:border-slate-700/90
-                shadow-sm dark:shadow-lg dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5
-                hover:border-primary-400/70 dark:hover:border-primary-500/45 hover:shadow-md dark:hover:shadow-primary-950/20"
-            >
-              <div className="flex items-center gap-4 min-w-0">
-                <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/20 dark:ring-1 dark:ring-primary-500/25 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold text-lg shrink-0 group-hover:bg-primary-200/90 dark:group-hover:bg-primary-500/30 transition-colors">
-                  {i + 1}
-                </div>
-                <div className="min-w-0 text-left">
-                  <h3 className="font-bold text-slate-900 dark:text-slate-100">{name}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">60 vragen · alle onderwerpen · ~45 min</p>
-                </div>
-              </div>
-              <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
+      <Navbar />
+      <div className="h-20" />
+      <main className="container-custom py-8 md:py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10 max-w-3xl mx-auto">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
+            <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> Blok 4
+          </h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
+            5 tentamens van 60 vragen – inhoudelijke vragen uit alle samenvattingen
+          </p>
+          {progressUserId && (
+            <p className="mt-3 text-xs text-slate-500 dark:text-slate-500">
+              Je voortgang wordt bewaard per account op dit apparaat.
+            </p>
+          )}
+        </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
-        <p>60% correct = 5,5 · Gelijkende antwoordlengtes · Alleen inhoudelijke vragen</p>
-      </motion.div>
-    </main>
-  </div>
-)
+        <div className="max-w-2xl mx-auto space-y-4">
+          {EXAM_NAMES.map((name, i) => {
+            const showResume =
+              progressUserId && examHasInProgress(progressUserId, i + 1)
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <Link
+                  to={`/tentamen?nr=${i + 1}`}
+                  className="group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
+                    bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm
+                    border-slate-200/90 dark:border-slate-700/90
+                    shadow-sm dark:shadow-lg dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5
+                    hover:border-primary-400/70 dark:hover:border-primary-500/45 hover:shadow-md dark:hover:shadow-primary-950/20"
+                >
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/20 dark:ring-1 dark:ring-primary-500/25 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold text-lg shrink-0 group-hover:bg-primary-200/90 dark:group-hover:bg-primary-500/30 transition-colors">
+                      {i + 1}
+                    </div>
+                    <div className="min-w-0 text-left">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-bold text-slate-900 dark:text-slate-100">{name}</h3>
+                        {showResume && (
+                          <span className="inline-flex items-center rounded-full bg-primary-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-700 dark:bg-primary-500/25 dark:text-primary-300">
+                            Ga verder
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">60 vragen · alle onderwerpen · ~45 min</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
+                </Link>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
+          <p>60% correct = 5,5 · Gelijkende antwoordlengtes · Alleen inhoudelijke vragen</p>
+        </motion.div>
+      </main>
+    </div>
+  )
+}
 
 // ─── Grade Result Screen ─────────────────────────────────────────
 const GradeResult = ({ correct, total, onReset }) => {
@@ -218,6 +247,9 @@ const GradeResult = ({ correct, total, onReset }) => {
 
 // ─── Exam Active Screen ──────────────────────────────────────────
 const ExamActive = ({ examNumber }) => {
+  const { user, loading: authLoading } = useAuth()
+  const progressUserId = getProgressUserId(user, authLoading)
+
   const [refreshKey, setRefreshKey] = useState(0)
   const questions = useMemo(() => buildExam(examNumber), [examNumber, refreshKey])
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -225,6 +257,69 @@ const ExamActive = ({ examNumber }) => {
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [explanations, setExplanations] = useState({})
+  const [progressHydrated, setProgressHydrated] = useState(false)
+
+  useEffect(() => {
+    if (progressUserId === null) {
+      setProgressHydrated(false)
+      return
+    }
+    setProgressHydrated(false)
+    const maxIdx = Math.max(0, questions.length - 1)
+    const saved = loadExamProgress(progressUserId, examNumber)
+    if (saved && typeof saved === 'object') {
+      setCurrentQuestion(
+        typeof saved.currentQuestion === 'number'
+          ? Math.min(Math.max(0, saved.currentQuestion), maxIdx)
+          : 0
+      )
+      setSelectedAnswers(
+        saved.selectedAnswers && typeof saved.selectedAnswers === 'object'
+          ? saved.selectedAnswers
+          : {}
+      )
+      setRevealedAnswers(
+        saved.revealedAnswers && typeof saved.revealedAnswers === 'object'
+          ? saved.revealedAnswers
+          : {}
+      )
+      setSubmitted(Boolean(saved.submitted))
+      setExplanations(
+        saved.explanations && typeof saved.explanations === 'object' ? saved.explanations : {}
+      )
+    } else {
+      setCurrentQuestion(0)
+      setSelectedAnswers({})
+      setRevealedAnswers({})
+      setSubmitted(false)
+      setExplanations({})
+    }
+    setProgressHydrated(true)
+  }, [progressUserId, examNumber, questions.length])
+
+  useEffect(() => {
+    if (!progressHydrated || progressUserId === null) return
+    const timer = setTimeout(() => {
+      saveExamProgress(progressUserId, examNumber, {
+        v: 1,
+        currentQuestion,
+        selectedAnswers,
+        revealedAnswers,
+        submitted,
+        explanations,
+      })
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [
+    progressHydrated,
+    progressUserId,
+    examNumber,
+    currentQuestion,
+    selectedAnswers,
+    revealedAnswers,
+    submitted,
+    explanations,
+  ])
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -247,6 +342,9 @@ const ExamActive = ({ examNumber }) => {
     setExplanations({})
     setCurrentQuestion(0)
     setSubmitted(false)
+    if (progressUserId) {
+      clearExamProgress(progressUserId, examNumber)
+    }
     setRefreshKey(k => k + 1)
   }
 

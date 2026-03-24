@@ -10,6 +10,13 @@ import {
 import Navbar from '../components/Navbar'
 import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
 import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
+import {
+  getProgressUserId,
+  loadPracticeProgress,
+  savePracticeProgress,
+  clearPracticeProgress,
+} from '../utils/accountProgressStorage'
+import { useAuth } from '../context/AuthContext'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -8561,6 +8568,8 @@ const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
+  const { user, loading: authLoading } = useAuth()
+  const progressUserId = getProgressUserId(user, authLoading)
   const [expandedBlok, setExpandedBlok] = useState('blok4') // Default: direct naar Blok 4 lijst
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
@@ -8932,6 +8941,71 @@ const PracticeQuestionsPage = () => {
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [explanations, setExplanations] = useState({})
+  const [progressHydrated, setProgressHydrated] = useState(false)
+
+  useEffect(() => {
+    if (progressUserId === null) {
+      setProgressHydrated(false)
+      return
+    }
+    if (!lmeParam || lmeParam === 'alle-random') {
+      setProgressHydrated(true)
+      return
+    }
+    setProgressHydrated(false)
+    const maxIdx = Math.max(0, questions.length - 1)
+    const saved = loadPracticeProgress(progressUserId, lmeParam)
+    if (saved && typeof saved === 'object') {
+      setCurrentQuestion(
+        typeof saved.currentQuestion === 'number'
+          ? Math.min(Math.max(0, saved.currentQuestion), maxIdx)
+          : 0
+      )
+      setSelectedAnswers(
+        saved.selectedAnswers && typeof saved.selectedAnswers === 'object'
+          ? saved.selectedAnswers
+          : {}
+      )
+      setRevealedAnswers(
+        saved.revealedAnswers && typeof saved.revealedAnswers === 'object'
+          ? saved.revealedAnswers
+          : {}
+      )
+      setExplanations(
+        saved.explanations && typeof saved.explanations === 'object' ? saved.explanations : {}
+      )
+    } else {
+      setCurrentQuestion(0)
+      setSelectedAnswers({})
+      setRevealedAnswers({})
+      setExplanations({})
+    }
+    setProgressHydrated(true)
+  }, [progressUserId, lmeParam, questions.length])
+
+  useEffect(() => {
+    if (!progressHydrated || progressUserId === null || !lmeParam || lmeParam === 'alle-random') {
+      return
+    }
+    const timer = setTimeout(() => {
+      savePracticeProgress(progressUserId, lmeParam, {
+        v: 1,
+        currentQuestion,
+        selectedAnswers,
+        revealedAnswers,
+        explanations,
+      })
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [
+    progressHydrated,
+    progressUserId,
+    lmeParam,
+    currentQuestion,
+    selectedAnswers,
+    revealedAnswers,
+    explanations,
+  ])
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -8964,6 +9038,9 @@ const PracticeQuestionsPage = () => {
     setRevealedAnswers({})
     setExplanations({})
     setCurrentQuestion(0)
+    if (progressUserId && lmeParam && lmeParam !== 'alle-random') {
+      clearPracticeProgress(progressUserId, lmeParam)
+    }
   }
 
   // Auto-fetch uitleg zodra antwoord fout is onthuld
@@ -9040,6 +9117,11 @@ const PracticeQuestionsPage = () => {
           <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
             {getSubtitle()}
           </p>
+          {lmeParam && lmeParam !== 'alle-random' && progressHydrated && progressUserId && (
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-500 max-w-lg mx-auto">
+              Voortgang wordt automatisch bewaard per account (lokaal op dit apparaat).
+            </p>
+          )}
 
           {!lmeParam && (
             <div className="mt-8 space-y-4 text-left">

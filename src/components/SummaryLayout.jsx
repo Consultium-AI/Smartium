@@ -3,7 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { BookOpen, ClipboardCheck, Clock, FileText, ChevronUp } from 'lucide-react'
 
-/** Dark-mode voor typografie en veelgebruikte callout-boxen in samenvattingen. */
+/**
+ * Dark-mode voor typografie en callouts. Let op: algemene [&_p]/[&_h4]-regels overschrijven
+ * gekleurde boxen — daarom eindigen we met strengere selectors voor .bg-*-50 callouts.
+ */
 const SUMMARY_BODY_DARK =
   'dark:[&_h2]:!text-slate-100 dark:[&_h3]:!text-slate-100 dark:[&_h4]:!text-slate-200 ' +
   'dark:[&_p]:!text-slate-300 dark:[&_strong]:!text-slate-100 dark:[&_li]:!text-slate-300 dark:[&_ul]:!text-slate-300 ' +
@@ -18,7 +21,52 @@ const SUMMARY_BODY_DARK =
   'dark:[&_.bg-purple-100]:!bg-purple-500/20 ' +
   'dark:[&_.text-primary-600]:!text-primary-400 dark:[&_.text-accent-600]:!text-accent-400 dark:[&_.text-purple-600]:!text-purple-400 ' +
   'dark:[&_.border-slate-200]:!border-slate-600 dark:[&_.border-primary-200]:!border-primary-500/30 dark:[&_.border-accent-200]:!border-accent-500/30 ' +
-  'dark:[&_.border-l-4]:!border-primary-500/50'
+  'dark:[&_.border-l-4.border-primary-400]:!border-primary-500/75 dark:[&_.border-l-4.border-rose-400]:!border-rose-500/85 ' +
+  'dark:[&_.border-l-4.border-amber-400]:!border-amber-500/85 dark:[&_.border-l-4.border-emerald-400]:!border-emerald-500/85 ' +
+  'dark:[&_.border-l-4.border-indigo-400]:!border-indigo-500/85 dark:[&_.border-l-4.border-accent-400]:!border-accent-500/85 ' +
+  'dark:[&_.border-l-4.border-cyan-400]:!border-cyan-500/85 ' +
+  // Gekleurde callouts: donkere achtergrond + tekst (wint van globale [&_p]/[&_h4] door hogere specificiteit)
+  'dark:[&_.bg-rose-50]:!bg-rose-950/70 dark:[&_.bg-rose-50]:!border-rose-600/35 ' +
+  'dark:[&_.bg-rose-50_p]:!text-rose-100 dark:[&_.bg-rose-50_h4]:!text-rose-200 dark:[&_.bg-rose-50_h3]:!text-rose-200 dark:[&_.bg-rose-50_strong]:!text-rose-50 ' +
+  'dark:[&_.bg-rose-50_.text-rose-700]:!text-rose-200 dark:[&_.bg-rose-50_.text-rose-800]:!text-rose-200 dark:[&_.bg-rose-50_li]:!text-rose-100 dark:[&_.bg-rose-50_ul]:!text-rose-100 ' +
+  'dark:[&_.bg-rose-100]:!bg-rose-900/50 dark:[&_.bg-rose-100_.text-rose-600]:!text-rose-300 ' +
+  'dark:[&_.border-rose-200]:!border-rose-600/40 dark:[&_.border-rose-400]:!border-rose-500/80 ' +
+  'dark:[&_.bg-amber-50]:!bg-amber-950/65 dark:[&_.bg-amber-50]:!border-amber-600/35 ' +
+  'dark:[&_.bg-amber-50_p]:!text-amber-100 dark:[&_.bg-amber-50_h4]:!text-amber-200 dark:[&_.bg-amber-50_h3]:!text-amber-200 dark:[&_.bg-amber-50_strong]:!text-amber-50 ' +
+  'dark:[&_.bg-amber-50_.text-amber-700]:!text-amber-200 dark:[&_.bg-amber-50_.text-amber-800]:!text-amber-200 dark:[&_.bg-amber-50_li]:!text-amber-100 ' +
+  'dark:[&_.bg-amber-100]:!bg-amber-900/45 dark:[&_.bg-amber-100_.text-amber-600]:!text-amber-300 ' +
+  'dark:[&_.border-amber-200]:!border-amber-600/40 ' +
+  'dark:[&_.bg-red-50]:!bg-red-950/65 dark:[&_.bg-red-50]:!border-red-600/35 ' +
+  'dark:[&_.bg-red-50_p]:!text-red-100 dark:[&_.bg-red-50_h4]:!text-red-200 dark:[&_.bg-red-50_strong]:!text-red-50 ' +
+  'dark:[&_.bg-red-50_.text-red-700]:!text-red-200 dark:[&_.bg-red-50_.text-red-800]:!text-red-200 ' +
+  'dark:[&_.border-red-200]:!border-red-600/40 ' +
+  'dark:[&_.bg-green-50]:!bg-green-950/60 dark:[&_.bg-green-50]:!border-green-600/35 ' +
+  'dark:[&_.bg-green-50_p]:!text-green-100 dark:[&_.bg-green-50_h4]:!text-green-200 dark:[&_.bg-green-50_strong]:!text-green-50 ' +
+  'dark:[&_.bg-green-50_.text-green-700]:!text-green-200 dark:[&_.bg-green-50_.text-green-800]:!text-green-200 ' +
+  'dark:[&_.border-green-200]:!border-green-600/40 ' +
+  'dark:[&_.bg-emerald-50]:!bg-emerald-950/65 dark:[&_.bg-emerald-50]:!border-emerald-600/35 ' +
+  'dark:[&_.bg-emerald-50_p]:!text-emerald-100 dark:[&_.bg-emerald-50_h4]:!text-emerald-200 dark:[&_.bg-emerald-50_strong]:!text-emerald-50 ' +
+  'dark:[&_.bg-emerald-50_.text-emerald-700]:!text-emerald-200 dark:[&_.bg-emerald-50_.text-emerald-800]:!text-emerald-200 ' +
+  'dark:[&_.border-emerald-200]:!border-emerald-600/40 dark:[&_.border-emerald-400]:!border-emerald-500/80 ' +
+  'dark:[&_.bg-emerald-100]:!bg-emerald-900/45 dark:[&_.bg-emerald-100_.text-emerald-600]:!text-emerald-300 ' +
+  'dark:[&_.bg-purple-50]:!bg-purple-950/65 dark:[&_.bg-purple-50]:!border-purple-600/35 ' +
+  'dark:[&_.bg-purple-50_p]:!text-purple-100 dark:[&_.bg-purple-50_h4]:!text-purple-200 dark:[&_.bg-purple-50_strong]:!text-purple-50 ' +
+  'dark:[&_.bg-purple-50_.text-purple-700]:!text-purple-200 dark:[&_.bg-purple-50_.text-purple-800]:!text-purple-200 ' +
+  'dark:[&_.border-purple-200]:!border-purple-600/40 ' +
+  'dark:[&_.bg-indigo-50]:!bg-indigo-950/65 dark:[&_.bg-indigo-50]:!border-indigo-600/35 ' +
+  'dark:[&_.bg-indigo-50_p]:!text-indigo-100 dark:[&_.bg-indigo-50_h4]:!text-indigo-200 ' +
+  'dark:[&_.bg-indigo-100]:!bg-indigo-950/50 dark:[&_.bg-indigo-100_.text-indigo-600]:!text-indigo-300 ' +
+  'dark:[&_.border-indigo-200]:!border-indigo-600/40 ' +
+  'dark:[&_.bg-teal-50]:!bg-teal-950/65 dark:[&_.bg-teal-50]:!border-teal-600/35 ' +
+  'dark:[&_.bg-teal-50_p]:!text-teal-100 dark:[&_.bg-teal-50_h4]:!text-teal-200 ' +
+  'dark:[&_.bg-teal-100]:!bg-teal-950/50 dark:[&_.bg-teal-100_.text-teal-600]:!text-teal-300 ' +
+  'dark:[&_.border-teal-200]:!border-teal-600/40 ' +
+  'dark:[&_.bg-sky-50]:!bg-sky-950/65 dark:[&_.bg-sky-50_p]:!text-sky-100 dark:[&_.bg-sky-50_h4]:!text-sky-200 ' +
+  'dark:[&_.border-sky-200]:!border-sky-600/40 ' +
+  'dark:[&_.bg-blue-50]:!bg-blue-950/65 dark:[&_.bg-blue-50_p]:!text-blue-100 dark:[&_.bg-blue-50_h4]:!text-blue-200 ' +
+  'dark:[&_.border-blue-200]:!border-blue-600/40 ' +
+  'dark:[&_.bg-cyan-50]:!bg-cyan-950/65 dark:[&_.bg-cyan-50_p]:!text-cyan-100 dark:[&_.bg-cyan-50_h4]:!text-cyan-200 ' +
+  'dark:[&_.border-cyan-200]:!border-cyan-600/40'
 
 const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practiceLink, children, standalone = true }) => {
   if (!standalone) return <>{children}</>
