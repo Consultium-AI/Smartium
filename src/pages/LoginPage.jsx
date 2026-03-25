@@ -3,9 +3,11 @@ import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from 'framer-m
 import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Lock, User, ArrowLeft, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
+import { googleOAuthClientId } from '../lib/firebase'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
+import GoogleSignInButton from '../components/GoogleSignInButton'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
@@ -631,25 +633,36 @@ const LoginPage = () => {
                   </div>
                 </motion.div>
 
-                <motion.button
-                  type="button"
-                  onClick={handleGoogle}
-                  disabled={submitting}
-                  initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
-                  whileHover={reduceMotion || submitting ? {} : { scale: 1.02, y: -2 }}
-                  whileTap={reduceMotion || submitting ? {} : { scale: 0.98 }}
-                  className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-navy-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-800"
-                >
-                  <motion.span
-                    animate={reduceMotion ? {} : { rotate: [0, -8, 8, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4 }}
+                {googleOAuthClientId ? (
+                  <motion.div
+                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
+                    className="w-full"
                   >
-                    <GoogleIcon className="h-5 w-5 shrink-0" />
-                  </motion.span>
-                  Verder met Google
-                </motion.button>
+                    <GoogleSignInButton disabled={submitting} />
+                  </motion.div>
+                ) : (
+                  <motion.button
+                    type="button"
+                    onClick={handleGoogle}
+                    disabled={submitting}
+                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
+                    whileHover={reduceMotion || submitting ? {} : { scale: 1.02, y: -2 }}
+                    whileTap={reduceMotion || submitting ? {} : { scale: 0.98 }}
+                    className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-navy-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-800"
+                  >
+                    <motion.span
+                      animate={reduceMotion ? {} : { rotate: [0, -8, 8, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4 }}
+                    >
+                      <GoogleIcon className="h-5 w-5 shrink-0" />
+                    </motion.span>
+                    Verder met Google
+                  </motion.button>
+                )}
               </>
             )}
           </motion.div>

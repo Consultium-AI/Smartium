@@ -8,22 +8,38 @@ import {
 } from 'react'
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithCredential,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut as firebaseSignOut,
   updateProfile,
 } from 'firebase/auth'
 import { auth, googleProvider, isFirebaseConfigured } from '../lib/firebase'
+import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
 
 const DEMO_USERS_KEY = 'smartium_demo_users'
+/** localStorage: blijft ingelogd na tab sluiten; uitloggen wist de sessie */
 const DEMO_SESSION_KEY = 'smartium_demo_session'
 
 const AuthContext = createContext(null)
 
 function readDemoSession() {
   try {
-    const raw = sessionStorage.getItem(DEMO_SESSION_KEY)
+    let raw = localStorage.getItem(DEMO_SESSION_KEY)
+    if (!raw) {
+      const legacy = sessionStorage.getItem(DEMO_SESSION_KEY)
+      if (legacy) {
+        try {
+          localStorage.setItem(DEMO_SESSION_KEY, legacy)
+        } catch {
+          /* ignore */
+        }
+        sessionStorage.removeItem(DEMO_SESSION_KEY)
+        raw = legacy
+      }
+    }
     if (!raw) return null
     return JSON.parse(raw)
   } catch {
@@ -32,7 +48,11 @@ function readDemoSession() {
 }
 
 function writeDemoSession(user) {
-  sessionStorage.setItem(DEMO_SESSION_KEY, JSON.stringify(user))
+  try {
+    localStorage.setItem(DEMO_SESSION_KEY, JSON.stringify(user))
+  } catch {
+    /* quota / private mode */
+  }
 }
 
 function readDemoUsers() {
@@ -106,10 +126,12 @@ export function AuthProvider({ children }) {
       }
       writeDemoSession(sessionUser)
       setUser(sessionUser)
+      migrateGuestDataToUser('guest', sessionUser.uid)
       return
     }
     try {
-      await signInWithEmailAndPassword(auth, email.trim(), password)
+      const cred = await signInWithEmailAndPassword(auth, email.trim(), password)
+      migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
@@ -144,11 +166,33 @@ export function AuthProvider({ children }) {
       }
       writeDemoSession(sessionUser)
       setUser(sessionUser)
+      migrateGuestDataToUser('guest', sessionUser.uid)
       return
     }
     try {
       const cred = await createUserWithEmailAndPassword(auth, email.trim(), password)
       await updateProfile(cred.user, { displayName: nameTrimmed })
+      migrateGuestDataToUser('guest', cred.user.uid)
+    } catch (err) {
+      setError(firebaseAuthMessage(err))
+      throw err
+    }
+  }, [])
+
+  /** JWT van Google Identity Services (knop / One Tap) → Firebase-sessie. */
+  const signInWithGoogleCredential = useCallback(async (idToken) => {
+    setError(null)
+    if (!isFirebaseConfigured || !auth) {
+      setError('Firebase is niet geconfigureerd. Vul .env in en herstart de dev-server.')
+      throw new Error('no firebase')
+    }
+    if (!idToken) {
+      setError('Geen Google-token ontvangen.')
+      throw new Error('no token')
+    }
+    try {
+      const cred = await signInWithCredential(auth, GoogleAuthProvider.credential(idToken))
+      if (cred.user?.uid) migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
@@ -164,7 +208,8 @@ export function AuthProvider({ children }) {
       throw new Error('no firebase')
     }
     try {
-      await signInWithPopup(auth, googleProvider)
+      const cred = await signInWithPopup(auth, googleProvider)
+      if (cred.user?.uid) migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
@@ -174,7 +219,11 @@ export function AuthProvider({ children }) {
   const signOut = useCallback(async () => {
     setError(null)
     if (!isFirebaseConfigured) {
-      sessionStorage.removeItem(DEMO_SESSION_KEY)
+      try {
+        localStorage.removeItem(DEMO_SESSION_KEY)
+      } catch {
+        /* ignore */
+      }
       setUser(null)
       return
     }
@@ -190,10 +239,11 @@ export function AuthProvider({ children }) {
       signIn,
       signUp,
       signInWithGoogle,
+      signInWithGoogleCredential,
       signOut,
       isFirebaseConfigured,
     }),
-    [user, loading, error, clearError, signIn, signUp, signInWithGoogle, signOut]
+    [user, loading, error, clearError, signIn, signUp, signInWithGoogle, signInWithGoogleCredential, signOut]
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

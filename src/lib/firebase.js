@@ -17,6 +17,9 @@ export const isFirebaseConfigured = Boolean(
   firebaseConfig.appId
 )
 
+/** Web client ID (Google Cloud) — publiek; gebruikt door Google Identity Services + Firebase Auth. */
+export const googleOAuthClientId = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID || ''
+
 let app = null
 /** @type {import('firebase/auth').Auth | null} */
 let auth = null

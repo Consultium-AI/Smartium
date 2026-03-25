@@ -6,14 +6,20 @@ import { Send, Bot, User, Loader2, ChevronDown, Trash2, MessageSquare, Menu, Gra
 import Navbar from '../components/Navbar'
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
 import { getSummaryNameForLmeId } from '../utils/practiceExamAi'
+import { useAuth } from '../context/AuthContext'
+import {
+  getProgressUserId,
+  getChatStorageKey,
+  migrateLegacyChatToScopedGuest,
+} from '../utils/accountProgressStorage'
 
-const STORAGE_KEY = 'smartium-chat-chats'
 const SIDEBAR_HIDDEN = true // Sidebar verborgen voor nu
 const INITIAL_MESSAGE = { role: 'assistant', content: 'Hoi! Ik ben Smartium AI. Stel me een vraag over de leerstof en ik geef je een kort antwoord met verwijzing naar de relevante samenvatting.' }
 
-function loadChats() {
+function loadChatsForKey(storageKey) {
+  if (!storageKey) return []
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
+    const raw = localStorage.getItem(storageKey)
     if (!raw) return []
     const parsed = JSON.parse(raw)
     return Array.isArray(parsed) ? parsed : []
@@ -22,9 +28,10 @@ function loadChats() {
   }
 }
 
-function saveChats(chats) {
+function saveChatsForKey(storageKey, chats) {
+  if (!storageKey) return
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(chats))
+    localStorage.setItem(storageKey, JSON.stringify(chats))
   } catch (e) {
     console.warn('Chat opslaan mislukt:', e)
   }
@@ -162,7 +169,11 @@ const MessageBubble = ({ message }) => {
 const ChatPage = () => {
   const location = useLocation()
   const navigate = useNavigate()
-  const [chats, setChats] = useState(() => loadChats())
+  const { user, loading: authLoading } = useAuth()
+  const progressUserId = getProgressUserId(user, authLoading)
+  const chatStorageKeyRef = useRef('')
+
+  const [chats, setChats] = useState([])
   const [currentChatId, setCurrentChatId] = useState(null)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -179,6 +190,41 @@ const ChatPage = () => {
   }, [location.pathname])
 
   useEffect(() => {
+    if (progressUserId == null) return
+    if (progressUserId === 'guest') migrateLegacyChatToScopedGuest()
+    const key = getChatStorageKey(progressUserId)
+    chatStorageKeyRef.current = key
+    let loaded = loadChatsForKey(key)
+    const skipEmpty = Boolean(location.state?.practiceContext)
+    if (loaded.length === 0 && !skipEmpty) {
+      const id = generateId()
+      loaded = [
+        {
+          id,
+          title: 'Nieuwe chat',
+          messages: [INITIAL_MESSAGE],
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        },
+      ]
+      saveChatsForKey(key, loaded)
+    }
+    setChats(loaded)
+    if (loaded.length > 0) {
+      const sorted = [...loaded].sort(
+        (a, b) => (b.updatedAt ?? b.createdAt) - (a.updatedAt ?? a.createdAt)
+      )
+      setCurrentChatId(sorted[0].id)
+    } else {
+      setCurrentChatId(null)
+    }
+  }, [progressUserId])
+
+  const saveChats = useCallback((next) => {
+    saveChatsForKey(chatStorageKeyRef.current, next)
+  }, [])
+
+  useEffect(() => {
     const handleClickOutside = (e) => {
       if (answerModeRef.current && !answerModeRef.current.contains(e.target)) {
         setAnswerModeOpen(false)
@@ -192,16 +238,11 @@ const ChatPage = () => {
   const messages = currentChat?.messages ?? [INITIAL_MESSAGE]
 
   useEffect(() => {
-    if (chats.length === 0 && !location.state?.practiceContext) {
-      const id = generateId()
-      setChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
-      setCurrentChatId(id)
-      saveChats([{ id, title: 'Nieuwe chat', messages: [INITIAL_MESSAGE], createdAt: Date.now(), updatedAt: Date.now() }])
-    } else if (!currentChatId && chats.length > 0) {
+    if (!currentChatId && chats.length > 0) {
       const sorted = [...chats].sort((a, b) => (b.updatedAt ?? b.createdAt) - (a.updatedAt ?? a.createdAt))
       setCurrentChatId(sorted[0].id)
     }
-  }, [chats.length, currentChatId, location.state])
+  }, [chats.length, currentChatId])
 
   const setMessages = useCallback((updater) => {
     if (!currentChatId) return
@@ -216,7 +257,7 @@ const ChatPage = () => {
       saveChats(updated)
       return updated
     })
-  }, [currentChatId])
+  }, [currentChatId, saveChats])
 
   const clearChat = () => {
     if (!currentChatId) return
@@ -251,12 +292,13 @@ const ChatPage = () => {
       saveChats(next)
       return next
     })
-  }, [])
+  }, [saveChats])
 
   // Vanaf oefenvragen: als initialExplanation meegegeven → chat pre-filled; anders API-bootstrap
   useEffect(() => {
     const ctx = location.state?.practiceContext
     if (!ctx) return
+    if (progressUserId == null) return
     const initialExplanation = location.state?.initialExplanation
     const key = JSON.stringify({ ctx, hasInitial: !!initialExplanation })
     if (lastPracticeBootstrapKey.current === key) return
@@ -333,7 +375,7 @@ const ChatPage = () => {
         inputRef.current?.focus()
       }
     })()
-  }, [location.state, navigate, answerMode, appendAssistantMessage])
+  }, [location.state, navigate, answerMode, appendAssistantMessage, progressUserId])
 
   const sendMessage = async () => {
     const trimmed = input.trim()
@@ -410,6 +452,19 @@ const ChatPage = () => {
       e.preventDefault()
       sendMessage()
     }
+  }
+
+  if (progressUserId == null) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 flex flex-col transition-colors duration-300">
+        <Navbar />
+        <div className="h-20" />
+        <div className="flex flex-1 flex-col items-center justify-center gap-3 pt-8">
+          <Loader2 className="h-10 w-10 animate-spin text-primary-500" strokeWidth={2} />
+          <p className="text-sm text-navy-600 dark:text-slate-400">Chat laden…</p>
+        </div>
+      </div>
+    )
   }
 
   return (
