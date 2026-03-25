@@ -3,11 +3,9 @@ import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from 'framer-m
 import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Lock, User, ArrowLeft, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
-import { googleOAuthClientId } from '../lib/firebase'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
-import GoogleSignInButton from '../components/GoogleSignInButton'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
@@ -605,66 +603,60 @@ const LoginPage = () => {
               </motion.div>
             </form>
 
-            {isFirebaseConfigured && (
-              <>
-                <motion.div
-                  className="relative my-8"
-                  initial={reduceMotion ? false : { opacity: 0, scaleX: 0.85 }}
-                  animate={{ opacity: 1, scaleX: 1 }}
-                  transition={{ delay: reduceMotion ? 0 : 0.35, duration: 0.4, ease }}
-                >
-                  <div className="absolute inset-0 flex items-center" aria-hidden>
-                    <motion.div
-                      className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent dark:via-slate-600"
-                      initial={reduceMotion ? false : { scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ delay: reduceMotion ? 0 : 0.4, duration: 0.5, ease }}
-                    />
-                  </div>
-                  <div className="relative flex justify-center text-xs font-medium uppercase tracking-wider">
-                    <motion.span
-                      className="bg-white px-3 text-navy-400 dark:bg-slate-900 dark:text-slate-500"
-                      initial={reduceMotion ? false : { opacity: 0, y: 4 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: reduceMotion ? 0 : 0.55 }}
-                    >
-                      Of ga verder met
-                    </motion.span>
-                  </div>
-                </motion.div>
-
-                {googleOAuthClientId ? (
+            <>
+              <motion.div
+                className="relative my-8"
+                initial={reduceMotion ? false : { opacity: 0, scaleX: 0.85 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ delay: reduceMotion ? 0 : 0.35, duration: 0.4, ease }}
+              >
+                <div className="absolute inset-0 flex items-center" aria-hidden>
                   <motion.div
-                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                    className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent dark:via-slate-600"
+                    initial={reduceMotion ? false : { scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: reduceMotion ? 0 : 0.4, duration: 0.5, ease }}
+                  />
+                </div>
+                <div className="relative flex justify-center text-xs font-medium uppercase tracking-wider">
+                  <motion.span
+                    className="bg-white px-3 text-navy-400 dark:bg-slate-900 dark:text-slate-500"
+                    initial={reduceMotion ? false : { opacity: 0, y: 4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
-                    className="w-full"
+                    transition={{ delay: reduceMotion ? 0 : 0.55 }}
                   >
-                    <GoogleSignInButton disabled={submitting} />
-                  </motion.div>
-                ) : (
-                  <motion.button
-                    type="button"
-                    onClick={handleGoogle}
-                    disabled={submitting}
-                    initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
-                    whileHover={reduceMotion || submitting ? {} : { scale: 1.02, y: -2 }}
-                    whileTap={reduceMotion || submitting ? {} : { scale: 0.98 }}
-                    className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-navy-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-800"
-                  >
-                    <motion.span
-                      animate={reduceMotion ? {} : { rotate: [0, -8, 8, 0] }}
-                      transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4 }}
-                    >
-                      <GoogleIcon className="h-5 w-5 shrink-0" />
-                    </motion.span>
-                    Verder met Google
-                  </motion.button>
-                )}
-              </>
-            )}
+                    Of ga verder met
+                  </motion.span>
+                </div>
+              </motion.div>
+
+              <motion.button
+                type="button"
+                onClick={handleGoogle}
+                disabled={submitting}
+                initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
+                whileHover={reduceMotion || submitting ? {} : { scale: 1.02, y: -2 }}
+                whileTap={reduceMotion || submitting ? {} : { scale: 0.98 }}
+                className="flex w-full min-h-[48px] items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-navy-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-800"
+                aria-label="Inloggen of registreren met Google"
+              >
+                <motion.span
+                  animate={reduceMotion ? {} : { rotate: [0, -8, 8, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4 }}
+                >
+                  <GoogleIcon className="h-5 w-5 shrink-0" />
+                </motion.span>
+                Google (Gmail)
+              </motion.button>
+              {!isFirebaseConfigured && (
+                <p className="mt-2 text-center text-xs text-amber-700 dark:text-amber-300/90">
+                  Google-inloggen vereist Firebase: vul <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">.env</code> met{' '}
+                  <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">VITE_FIREBASE_*</code> en herstart de dev-server.
+                </p>
+              )}
+            </>
           </motion.div>
         </motion.div>
       </main>
