@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -25,10 +26,13 @@ export const googleOAuthClientId =
 let app = null
 /** @type {import('firebase/auth').Auth | null} */
 let auth = null
+/** @type {import('firebase/firestore').Firestore | null} */
+let db = null
 
 if (isFirebaseConfigured) {
   app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig)
   auth = getAuth(app)
+  db = getFirestore(app)
 }
 
-export { auth }
+export { auth, db }

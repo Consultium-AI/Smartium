@@ -4,16 +4,20 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithCredential,
   signInWithEmailAndPassword,
   signOut as firebaseSignOut,
   updateProfile,
 } from 'firebase/auth'
 import { auth, isFirebaseConfigured } from '../lib/firebase'
+import { hydrateFromCloud, triggerCloudProgressSyncNow } from '../lib/cloudUserProgress'
 import { parseGoogleIdTokenPayload } from '../lib/googleOAuth'
 import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
 
@@ -97,6 +101,7 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const lastHydratedUid = useRef(null)
 
   useEffect(() => {
     if (!isFirebaseConfigured) {
@@ -105,10 +110,15 @@ export function AuthProvider({ children }) {
       return
     }
 
-    const unsub = onAuthStateChanged(auth, (u) => {
+    const unsub = onAuthStateChanged(auth, async (u) => {
       if (u) {
+        if (lastHydratedUid.current !== u.uid) {
+          lastHydratedUid.current = u.uid
+          await hydrateFromCloud(u.uid)
+        }
         setUser(u)
       } else {
+        lastHydratedUid.current = null
         setUser(readDemoSession())
       }
       setLoading(false)
@@ -192,13 +202,27 @@ export function AuthProvider({ children }) {
   }, [])
 
   /**
-   * Google Identity Services ID-token → lokale sessie (geen Firebase Auth voor Google).
+   * Google Identity Services ID-token.
+   * Met Firebase: signInWithCredential → zelfde uid op elk apparaat + Firestore-sync.
+   * Zonder Firebase: lokale sessie alleen op dit apparaat.
    */
   const signInWithGoogleOAuth = useCallback(async (idToken) => {
     setError(null)
     if (!idToken) {
       setError('Geen Google-token ontvangen.')
       throw new Error('no token')
+    }
+    if (isFirebaseConfigured && auth) {
+      clearLocalSession()
+      try {
+        await signInWithCredential(auth, GoogleAuthProvider.credential(idToken))
+        const uid = auth.currentUser?.uid
+        if (uid) migrateGuestDataToUser('guest', uid)
+      } catch (err) {
+        setError(firebaseAuthMessage(err))
+        throw err
+      }
+      return
     }
     const payload = parseGoogleIdTokenPayload(idToken)
     if (!payload?.sub) {
@@ -214,19 +238,15 @@ export function AuthProvider({ children }) {
       provider: 'google',
     }
     writeDemoSession(sessionUser)
-    if (isFirebaseConfigured && auth) {
-      try {
-        await firebaseSignOut(auth)
-      } catch {
-        /* geen actieve Firebase-sessie */
-      }
-    }
     setUser(sessionUser)
     migrateGuestDataToUser('guest', uid)
   }, [])
 
   const signOut = useCallback(async () => {
     setError(null)
+    if (isFirebaseConfigured && auth?.currentUser?.uid) {
+      await triggerCloudProgressSyncNow(auth.currentUser.uid)
+    }
     clearLocalSession()
     if (!isFirebaseConfigured) {
       setUser(null)

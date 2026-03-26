@@ -171,6 +171,7 @@ const ChatPage = () => {
   const navigate = useNavigate()
   const { user, loading: authLoading } = useAuth()
   const progressUserId = getProgressUserId(user, authLoading)
+  const progressUidForCloudRef = useRef('guest')
   const chatStorageKeyRef = useRef('')
 
   const [chats, setChats] = useState([])
@@ -188,6 +189,10 @@ const ChatPage = () => {
   useEffect(() => {
     if (location.pathname !== '/chat') lastPracticeBootstrapKey.current = null
   }, [location.pathname])
+
+  useEffect(() => {
+    if (progressUserId != null) progressUidForCloudRef.current = progressUserId
+  }, [progressUserId])
 
   useEffect(() => {
     if (progressUserId == null) return
@@ -222,6 +227,9 @@ const ChatPage = () => {
 
   const saveChats = useCallback((next) => {
     saveChatsForKey(chatStorageKeyRef.current, next)
+    import('../lib/cloudUserProgress')
+      .then((m) => m.scheduleCloudProgressSync(progressUidForCloudRef.current))
+      .catch(() => {})
   }, [])
 
   useEffect(() => {

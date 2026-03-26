@@ -36,6 +36,13 @@ export function loadPracticeProgress(userId, lmeParam) {
   return data
 }
 
+function scheduleCloudIfNeeded(userId) {
+  if (!userId || userId === 'guest') return
+  import('../lib/cloudUserProgress')
+    .then((m) => m.scheduleCloudProgressSync(userId))
+    .catch(() => {})
+}
+
 export function savePracticeProgress(userId, lmeParam, payload) {
   if (!userId || !lmeParam || lmeParam === 'alle-random') return
   try {
@@ -43,11 +50,13 @@ export function savePracticeProgress(userId, lmeParam, payload) {
   } catch {
     /* quota / private mode */
   }
+  scheduleCloudIfNeeded(userId)
 }
 
 export function clearPracticeProgress(userId, lmeParam) {
   if (!userId || !lmeParam) return
   localStorage.removeItem(storageKeyPractice(userId, lmeParam))
+  scheduleCloudIfNeeded(userId)
 }
 
 export function loadExamProgress(userId, examNumber) {
@@ -64,11 +73,13 @@ export function saveExamProgress(userId, examNumber, payload) {
   } catch {
     /* quota */
   }
+  scheduleCloudIfNeeded(userId)
 }
 
 export function clearExamProgress(userId, examNumber) {
   if (!userId || !examNumber) return
   localStorage.removeItem(storageKeyExam(userId, examNumber))
+  scheduleCloudIfNeeded(userId)
 }
 
 export function examHasInProgress(userId, examNumber) {
