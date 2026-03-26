@@ -8,19 +8,17 @@ import {
 } from 'react'
 import {
   createUserWithEmailAndPassword,
-  GoogleAuthProvider,
   onAuthStateChanged,
-  signInWithCredential,
   signInWithEmailAndPassword,
-  signInWithPopup,
   signOut as firebaseSignOut,
   updateProfile,
 } from 'firebase/auth'
-import { auth, googleProvider, isFirebaseConfigured } from '../lib/firebase'
+import { auth, isFirebaseConfigured } from '../lib/firebase'
+import { parseGoogleIdTokenPayload } from '../lib/googleOAuth'
 import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
 
 const DEMO_USERS_KEY = 'smartium_demo_users'
-/** localStorage: blijft ingelogd na tab sluiten; uitloggen wist de sessie */
+/** localStorage: demo + Google OAuth (zonder Firebase); uitloggen wist de sessie */
 const DEMO_SESSION_KEY = 'smartium_demo_session'
 
 const AuthContext = createContext(null)
@@ -52,6 +50,14 @@ function writeDemoSession(user) {
     localStorage.setItem(DEMO_SESSION_KEY, JSON.stringify(user))
   } catch {
     /* quota / private mode */
+  }
+}
+
+function clearLocalSession() {
+  try {
+    localStorage.removeItem(DEMO_SESSION_KEY)
+  } catch {
+    /* ignore */
   }
 }
 
@@ -100,7 +106,11 @@ export function AuthProvider({ children }) {
     }
 
     const unsub = onAuthStateChanged(auth, (u) => {
-      setUser(u)
+      if (u) {
+        setUser(u)
+      } else {
+        setUser(readDemoSession())
+      }
       setLoading(false)
     })
     return () => unsub()
@@ -131,6 +141,7 @@ export function AuthProvider({ children }) {
     }
     try {
       const cred = await signInWithEmailAndPassword(auth, email.trim(), password)
+      clearLocalSession()
       migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
@@ -172,6 +183,7 @@ export function AuthProvider({ children }) {
     try {
       const cred = await createUserWithEmailAndPassword(auth, email.trim(), password)
       await updateProfile(cred.user, { displayName: nameTrimmed })
+      clearLocalSession()
       migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
@@ -179,55 +191,49 @@ export function AuthProvider({ children }) {
     }
   }, [])
 
-  /** JWT van Google Identity Services (knop / One Tap) → Firebase-sessie. */
-  const signInWithGoogleCredential = useCallback(async (idToken) => {
+  /**
+   * Google Identity Services ID-token → lokale sessie (geen Firebase Auth voor Google).
+   */
+  const signInWithGoogleOAuth = useCallback(async (idToken) => {
     setError(null)
-    if (!isFirebaseConfigured || !auth) {
-      setError('Firebase is niet geconfigureerd. Vul .env in en herstart de dev-server.')
-      throw new Error('no firebase')
-    }
     if (!idToken) {
       setError('Geen Google-token ontvangen.')
       throw new Error('no token')
     }
-    try {
-      const cred = await signInWithCredential(auth, GoogleAuthProvider.credential(idToken))
-      if (cred.user?.uid) migrateGuestDataToUser('guest', cred.user.uid)
-    } catch (err) {
-      setError(firebaseAuthMessage(err))
-      throw err
+    const payload = parseGoogleIdTokenPayload(idToken)
+    if (!payload?.sub) {
+      setError('Ongeldig Google-token.')
+      throw new Error('invalid token')
     }
-  }, [])
-
-  const signInWithGoogle = useCallback(async () => {
-    setError(null)
-    if (!isFirebaseConfigured || !auth || !googleProvider) {
-      setError(
-        'Google-inloggen vereist Firebase. Vul de variabelen in .env.example in en herstart de dev-server.'
-      )
-      throw new Error('no firebase')
+    const uid = `google:${payload.sub}`
+    const sessionUser = {
+      uid,
+      email: payload.email ?? null,
+      displayName: payload.name ?? payload.email ?? null,
+      photoURL: payload.picture ?? null,
+      provider: 'google',
     }
-    try {
-      const cred = await signInWithPopup(auth, googleProvider)
-      if (cred.user?.uid) migrateGuestDataToUser('guest', cred.user.uid)
-    } catch (err) {
-      setError(firebaseAuthMessage(err))
-      throw err
+    writeDemoSession(sessionUser)
+    if (isFirebaseConfigured && auth) {
+      try {
+        await firebaseSignOut(auth)
+      } catch {
+        /* geen actieve Firebase-sessie */
+      }
     }
+    setUser(sessionUser)
+    migrateGuestDataToUser('guest', uid)
   }, [])
 
   const signOut = useCallback(async () => {
     setError(null)
+    clearLocalSession()
     if (!isFirebaseConfigured) {
-      try {
-        localStorage.removeItem(DEMO_SESSION_KEY)
-      } catch {
-        /* ignore */
-      }
       setUser(null)
       return
     }
     await firebaseSignOut(auth)
+    setUser(null)
   }, [])
 
   const value = useMemo(
@@ -238,12 +244,11 @@ export function AuthProvider({ children }) {
       clearError,
       signIn,
       signUp,
-      signInWithGoogle,
-      signInWithGoogleCredential,
+      signInWithGoogleOAuth,
       signOut,
       isFirebaseConfigured,
     }),
-    [user, loading, error, clearError, signIn, signUp, signInWithGoogle, signInWithGoogleCredential, signOut]
+    [user, loading, error, clearError, signIn, signUp, signInWithGoogleOAuth, signOut]
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

@@ -6,4 +6,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  /** Vaste poort = zelfde origin als in Google Cloud → OAuth-client → Authorized JavaScript origins */
+  server: {
+    port: 5174,
+    strictPort: true,
+  },
 })

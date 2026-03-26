@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Lock, User, ArrowLeft, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
+import { googleOAuthClientId } from '../lib/firebase'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
+import GoogleSignInButton from '../components/GoogleSignInButton'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
@@ -28,26 +30,64 @@ const loginInputClass =
 const loginFieldIconWrap =
   'pointer-events-none absolute inset-y-0 left-0 flex w-[3.25rem] shrink-0 items-center justify-center text-slate-500 dark:text-slate-400'
 
-function GoogleIcon({ className }) {
+/** Exacte origins voor Google Cloud → OAuth Web client (fix error 400 origin_mismatch). */
+function GoogleOAuthOriginHint() {
+  const [primary, setPrimary] = useState('')
+  const [alternate, setAlternate] = useState(null)
+
+  useEffect(() => {
+    const o = window.location.origin
+    setPrimary(o)
+    try {
+      const u = new URL(o)
+      if (u.hostname === 'localhost') {
+        setAlternate(o.replace('://localhost', '://127.0.0.1'))
+      } else if (u.hostname === '127.0.0.1') {
+        setAlternate(o.replace('://127.0.0.1', '://localhost'))
+      } else {
+        setAlternate(null)
+      }
+    } catch {
+      setAlternate(null)
+    }
+  }, [])
+
+  if (!primary) return null
+
   return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden>
-      <path
-        fill="#4285F4"
-        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-      />
-      <path
-        fill="#34A853"
-        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-      />
-      <path
-        fill="#EA4335"
-        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-      />
-    </svg>
+    <div className="mt-3 rounded-xl border border-amber-200/90 bg-amber-50/90 px-3 py-2.5 text-left text-[11px] leading-relaxed text-amber-950 dark:border-amber-500/35 dark:bg-amber-950/40 dark:text-amber-100/95">
+      <p className="font-semibold text-amber-900 dark:text-amber-50">
+        Google <code className="rounded bg-amber-100/80 px-1 dark:bg-amber-900/80">origin_mismatch</code>?
+      </p>
+      <p className="mt-1 text-amber-900/90 dark:text-amber-100/85">
+        In{' '}
+        <a
+          href="https://console.cloud.google.com/apis/credentials"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium underline decoration-amber-600/60 underline-offset-2 hover:text-amber-950 dark:hover:text-white"
+        >
+          Google Cloud → APIs &amp; Services → Credentials
+        </a>
+        : open je <strong>OAuth 2.0 Client ID</strong> (type <em>Web application</em>). Voeg <strong>exact</strong> toe onder{' '}
+        <strong>Authorized JavaScript origins</strong> (zelfde regels vaak onder <strong>Authorized redirect URIs</strong>):
+      </p>
+      <ul className="mt-1.5 list-inside list-disc space-y-0.5 font-mono text-[10px] text-amber-950 dark:text-amber-50/95">
+        <li>
+          <span className="select-all">{primary}</span>
+          <span className="ml-1 font-sans text-amber-800 dark:text-amber-200/80">(huidige tab)</span>
+        </li>
+        {alternate && (
+          <li>
+            <span className="select-all">{alternate}</span>
+            <span className="ml-1 font-sans text-amber-800 dark:text-amber-200/80">(andere hostnaam, zelfde machine)</span>
+          </li>
+        )}
+      </ul>
+      <p className="mt-1.5 text-amber-900/85 dark:text-amber-100/75">
+        Geen pad, geen <code className="rounded px-0.5">/</code> aan het eind. Opslaan → enkele minuten wachten → pagina verversen.
+      </p>
+    </div>
   )
 }
 
@@ -86,11 +126,9 @@ const LoginPage = () => {
     loading,
     signIn,
     signUp,
-    signInWithGoogle,
     signOut,
     error,
     clearError,
-    isFirebaseConfigured,
   } = useAuth()
 
   const [mode, setMode] = useState('login')
@@ -263,19 +301,6 @@ const LoginPage = () => {
       navigate('/summary', { replace: true })
     } catch {
       /* error state from context */
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
-  const handleGoogle = async () => {
-    clearError()
-    setSubmitting(true)
-    try {
-      await signInWithGoogle()
-      navigate('/summary', { replace: true })
-    } catch {
-      /* handled */
     } finally {
       setSubmitting(false)
     }
@@ -630,30 +655,20 @@ const LoginPage = () => {
                 </div>
               </motion.div>
 
-              <motion.button
-                type="button"
-                onClick={handleGoogle}
-                disabled={submitting}
-                initial={reduceMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
-                whileHover={reduceMotion || submitting ? {} : { scale: 1.02, y: -2 }}
-                whileTap={reduceMotion || submitting ? {} : { scale: 0.98 }}
-                className="flex w-full min-h-[48px] items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3.5 text-sm font-semibold text-navy-800 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800/50 dark:text-slate-100 dark:hover:bg-slate-800"
-                aria-label="Inloggen of registreren met Google"
-              >
-                <motion.span
-                  animate={reduceMotion ? {} : { rotate: [0, -8, 8, 0] }}
-                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4 }}
+              {googleOAuthClientId ? (
+                <motion.div
+                  initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
+                  className="w-full"
                 >
-                  <GoogleIcon className="h-5 w-5 shrink-0" />
-                </motion.span>
-                Google (Gmail)
-              </motion.button>
-              {!isFirebaseConfigured && (
-                <p className="mt-2 text-center text-xs text-amber-700 dark:text-amber-300/90">
-                  Google-inloggen vereist Firebase: vul <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">.env</code> met{' '}
-                  <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">VITE_FIREBASE_*</code> en herstart de dev-server.
+                  <GoogleSignInButton disabled={submitting} />
+                  {import.meta.env.DEV ? <GoogleOAuthOriginHint /> : null}
+                </motion.div>
+              ) : (
+                <p className="text-center text-sm text-amber-800 dark:text-amber-200/90">
+                  Zet <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">VITE_GOOGLE_OAUTH_CLIENT_ID</code> in{' '}
+                  <code className="rounded bg-slate-100 px-1 dark:bg-slate-800">.env</code>.
                 </p>
               )}
             </>

@@ -1,5 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app'
-import { getAuth, GoogleAuthProvider } from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -17,20 +17,18 @@ export const isFirebaseConfigured = Boolean(
   firebaseConfig.appId
 )
 
-/** Web client ID (Google Cloud) — publiek; gebruikt door Google Identity Services + Firebase Auth. */
-export const googleOAuthClientId = import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID || ''
+/** Web client ID (Google Cloud OAuth 2.0) — publiek; gebruikt door Google Identity Services (Gmail-login zonder Firebase). */
+export const googleOAuthClientId =
+  import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID ||
+  '835372229666-qie3rqo789150gbu3vqaicito6ddaltd.apps.googleusercontent.com'
 
 let app = null
 /** @type {import('firebase/auth').Auth | null} */
 let auth = null
-/** @type {GoogleAuthProvider | null} */
-let googleProvider = null
 
 if (isFirebaseConfigured) {
   app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig)
   auth = getAuth(app)
-  googleProvider = new GoogleAuthProvider()
-  googleProvider.setCustomParameters({ prompt: 'select_account' })
 }
 
-export { auth, googleProvider }
+export { auth }
