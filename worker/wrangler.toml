@@ -5,10 +5,8 @@ compatibility_date = "2024-12-01"
 # Comma-separated list, no spaces. Add http://localhost:5174 for local Vite dev.
 [vars]
 ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl,http://localhost:5174,http://127.0.0.1:5174"
-# Stripe prijs-ID's (Dashboard → Producten). Leeg tot je ze aanmaakt.
-STRIPE_PRICE_MONTHLY = ""
-STRIPE_PRICE_YEARLY = ""
 
+# Stripe price-ID's: zet in Cloudflare Dashboard → Worker → Variables (niet als lege strings hier — kan deploy storen).
 # Secrets (nooit in git):
 #   cd worker && npx wrangler secret put OPENAI_API_KEY
 #   cd worker && npx wrangler secret put STRIPE_SECRET_KEY
