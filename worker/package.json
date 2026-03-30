@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
-    "dev": "wrangler dev"
+    "dev": "wrangler dev",
+    "stripe:setup-prices": "node scripts/setup-stripe-prices.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250321.0",
