@@ -2,6 +2,9 @@
 # Repo secrets (Settings → Secrets and variables → Actions):
 #   CLOUDFLARE_API_TOKEN — API Token with Workers Scripts:Edit (and Account read)
 #   CLOUDFLARE_ACCOUNT_ID — Dashboard → rechtsonder "Account ID"
+#
+# Worker billing (Stripe): lokaal `wrangler secret put STRIPE_SECRET_KEY` en in Dashboard
+# Variables zetten: STRIPE_PRICE_MONTHLY, STRIPE_PRICE_YEARLY (price_…).
 name: Deploy Worker
 
 on:

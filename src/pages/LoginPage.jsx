@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, LayoutGroup, useReducedMotion } from 'framer-motion'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { Mail, Lock, User, ArrowLeft, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { googleOAuthClientId } from '../lib/firebase'
@@ -118,8 +118,16 @@ function AmbientOrbs({ reduced }) {
   )
 }
 
+function safeLoginRedirect(raw) {
+  if (!raw || typeof raw !== 'string') return '/summary'
+  if (!raw.startsWith('/') || raw.startsWith('//')) return '/summary'
+  return raw
+}
+
 const LoginPage = () => {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const postLoginPath = safeLoginRedirect(searchParams.get('redirect'))
   const reduceMotion = useReducedMotion()
   const {
     user,
@@ -296,10 +304,11 @@ const LoginPage = () => {
     try {
       if (mode === 'login') {
         await signIn(email, password)
+        navigate(postLoginPath, { replace: true })
       } else {
         await signUp(email, password, name)
+        navigate('/billing', { replace: true })
       }
-      navigate('/summary', { replace: true })
     } catch {
       /* error state from context */
     } finally {
