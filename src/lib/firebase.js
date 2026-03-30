@@ -18,10 +18,14 @@ export const isFirebaseConfigured = Boolean(
   firebaseConfig.appId
 )
 
-/** Web client ID (Google Cloud OAuth 2.0) — publiek; gebruikt door Google Identity Services (Gmail-login zonder Firebase). */
-export const googleOAuthClientId =
-  import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID ||
+const envGoogleClientId = (import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID || '').trim()
+/** Alleen voor GIS zonder Firebase. Met Firebase: gebruik `signInWithGoogleFirebasePopup` (geen client-ID in .env nodig). */
+const DEMO_GIS_CLIENT_ID =
   '835372229666-qie3rqo789150gbu3vqaicito6ddaltd.apps.googleusercontent.com'
+
+export const googleOAuthClientId = isFirebaseConfigured
+  ? envGoogleClientId
+  : envGoogleClientId || DEMO_GIS_CLIENT_ID
 
 let app = null
 /** @type {import('firebase/auth').Auth | null} */

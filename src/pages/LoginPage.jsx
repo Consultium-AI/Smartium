@@ -129,6 +129,7 @@ const LoginPage = () => {
     signOut,
     error,
     clearError,
+    isFirebaseConfigured,
   } = useAuth()
 
   const [mode, setMode] = useState('login')
@@ -655,7 +656,7 @@ const LoginPage = () => {
                 </div>
               </motion.div>
 
-              {googleOAuthClientId ? (
+              {googleOAuthClientId || isFirebaseConfigured ? (
                 <motion.div
                   initial={reduceMotion ? false : { opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -663,7 +664,7 @@ const LoginPage = () => {
                   className="w-full"
                 >
                   <GoogleSignInButton disabled={submitting} />
-                  {import.meta.env.DEV ? <GoogleOAuthOriginHint /> : null}
+                  {import.meta.env.DEV && !isFirebaseConfigured ? <GoogleOAuthOriginHint /> : null}
                 </motion.div>
               ) : (
                 <p className="text-center text-sm text-amber-800 dark:text-amber-200/90">

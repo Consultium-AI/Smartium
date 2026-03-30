@@ -13,6 +13,7 @@ import {
   onAuthStateChanged,
   signInWithCredential,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut as firebaseSignOut,
   updateProfile,
 } from 'firebase/auth'
@@ -80,9 +81,15 @@ function saveDemoUsers(users) {
   localStorage.setItem(DEMO_USERS_KEY, JSON.stringify(users))
 }
 
-/** @param {unknown} err */
-function firebaseAuthMessage(err) {
+/**
+ * @param {unknown} err
+ * @param {boolean} [googleFlow] — true voor Google/GIS: `auth/invalid-credential` is dan geen e-mail/wachtwoord-fout
+ */
+function firebaseAuthMessage(err, googleFlow = false) {
   const code = err && typeof err === 'object' && 'code' in err ? String(err.code) : ''
+  if (code === 'auth/invalid-credential' && googleFlow) {
+    return 'Google-inloggen mislukt. Controleer in Firebase: Authentication → Google ingeschakeld, en Authorized domains (smartium.nl, localhost). Of gebruik e-mail/wachtwoord.'
+  }
   const messages = {
     'auth/email-already-in-use': 'Er bestaat al een account met dit e-mailadres.',
     'auth/invalid-email': 'Ongeldig e-mailadres.',
@@ -217,7 +224,7 @@ export function AuthProvider({ children }) {
       try {
         await signInWithCredential(auth, GoogleAuthProvider.credential(idToken))
       } catch (err) {
-        setError(firebaseAuthMessage(err))
+        setError(firebaseAuthMessage(err, true))
         throw err
       }
       return
@@ -238,6 +245,24 @@ export function AuthProvider({ children }) {
     writeDemoSession(sessionUser)
     setUser(sessionUser)
     migrateGuestDataToUser('guest', uid)
+  }, [])
+
+  /** Google via Firebase-popup — gebruikt OAuth-client van je Firebase-project (geen VITE_GOOGLE_OAUTH_CLIENT_ID nodig). */
+  const signInWithGoogleFirebasePopup = useCallback(async () => {
+    setError(null)
+    if (!isFirebaseConfigured || !auth) {
+      setError('Firebase is niet geconfigureerd.')
+      throw new Error('no firebase')
+    }
+    clearLocalSession()
+    const provider = new GoogleAuthProvider()
+    provider.setCustomParameters({ prompt: 'select_account' })
+    try {
+      await signInWithPopup(auth, provider)
+    } catch (err) {
+      setError(firebaseAuthMessage(err, true))
+      throw err
+    }
   }, [])
 
   const signOut = useCallback(async () => {
@@ -263,10 +288,21 @@ export function AuthProvider({ children }) {
       signIn,
       signUp,
       signInWithGoogleOAuth,
+      signInWithGoogleFirebasePopup,
       signOut,
       isFirebaseConfigured,
     }),
-    [user, loading, error, clearError, signIn, signUp, signInWithGoogleOAuth, signOut]
+    [
+      user,
+      loading,
+      error,
+      clearError,
+      signIn,
+      signUp,
+      signInWithGoogleOAuth,
+      signInWithGoogleFirebasePopup,
+      signOut,
+    ]
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
