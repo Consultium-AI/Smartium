@@ -12,15 +12,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = join(__dirname, '..')
 const envPath = join(root, '.env')
 
-const SECRET_KEYS = [
+const FIREBASE_SECRET_KEYS = [
   'VITE_FIREBASE_API_KEY',
   'VITE_FIREBASE_AUTH_DOMAIN',
   'VITE_FIREBASE_PROJECT_ID',
   'VITE_FIREBASE_STORAGE_BUCKET',
   'VITE_FIREBASE_MESSAGING_SENDER_ID',
   'VITE_FIREBASE_APP_ID',
-  'VITE_GOOGLE_OAUTH_CLIENT_ID',
 ]
+
+const GOOGLE_OAUTH_KEY = 'VITE_GOOGLE_OAUTH_CLIENT_ID'
 
 function parseDotEnv(filePath) {
   const out = {}
@@ -71,16 +72,33 @@ if (!Object.keys(env).length) {
   process.exit(1)
 }
 
-const missing = SECRET_KEYS.filter((k) => !env[k] || !String(env[k]).trim())
+const missing = FIREBASE_SECRET_KEYS.filter((k) => !env[k] || !String(env[k]).trim())
 if (missing.length) {
   console.error('Ontbrekend of leeg in .env:', missing.join(', '))
   process.exit(1)
 }
 
-for (const key of SECRET_KEYS) {
+for (const key of FIREBASE_SECRET_KEYS) {
   const val = String(env[key]).trim()
   gh(['secret', 'set', key], val)
   console.log('OK secret:', key)
+}
+
+const googleId = String(env[GOOGLE_OAUTH_KEY] ?? '').trim()
+if (googleId) {
+  gh(['secret', 'set', GOOGLE_OAUTH_KEY], googleId)
+  console.log('OK secret:', GOOGLE_OAUTH_KEY)
+} else {
+  const rm = spawnSync('gh', ['secret', 'delete', GOOGLE_OAUTH_KEY], {
+    cwd: root,
+    encoding: 'utf8',
+    stdio: ['inherit', 'pipe', 'pipe'],
+  })
+  if (rm.status === 0) {
+    console.log('Verwijderd secret (fallback in code):', GOOGLE_OAUTH_KEY)
+  } else {
+    console.log('Geen', GOOGLE_OAUTH_KEY, 'in .env — build gebruikt fallback uit firebase.js (secret bestond al niet of kon niet verwijderd worden).')
+  }
 }
 
 const api = env.VITE_API_BASE_URL?.trim()
