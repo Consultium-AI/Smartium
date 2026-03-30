@@ -66,13 +66,30 @@ export default function BillingPage() {
   const status = searchParams.get('status')
 
   useEffect(() => {
-    if (!loading && !user) {
-      navigate(`/login?redirect=${encodeURIComponent('/billing')}`, { replace: true })
+    if (loading || !user) return
+    try {
+      const p = sessionStorage.getItem('smartium_billing_plan')
+      if (p === 'monthly' || p === 'yearly') {
+        setPlan(p)
+        setStep(2)
+        sessionStorage.removeItem('smartium_billing_plan')
+      }
+    } catch {
+      /* ignore */
     }
-  }, [loading, user, navigate])
+  }, [loading, user])
 
   const startCheckout = async () => {
     if (!plan) return
+    if (!user) {
+      try {
+        sessionStorage.setItem('smartium_billing_plan', plan)
+      } catch {
+        /* ignore */
+      }
+      navigate(`/login?redirect=${encodeURIComponent('/billing')}`)
+      return
+    }
     setCheckoutError(null)
     setCheckoutLoading(true)
     try {
@@ -87,7 +104,7 @@ export default function BillingPage() {
     }
   }
 
-  if (loading || !user) {
+  if (loading) {
     return (
       <>
         <ParticleBackground />
@@ -153,11 +170,11 @@ export default function BillingPage() {
           <AmbientOrbs reduced={reduceMotion} />
 
           <Link
-            to="/summary"
+            to={user ? '/summary' : '/'}
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-navy-600 transition hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
           >
             <ArrowLeft className="h-4 w-4" />
-            Overslaan — later betalen
+            {user ? 'Overslaan — later betalen' : 'Terug naar home'}
           </Link>
 
           {status === 'cancel' && (
@@ -292,6 +309,19 @@ export default function BillingPage() {
                           : `Maandelijks (${eur(MONTHLY)}/maand)`}
                       </strong>
                     </p>
+
+                    {!user && (
+                      <p className="rounded-lg border border-amber-200/90 bg-amber-50/90 px-3 py-2 text-sm text-amber-950 dark:border-amber-500/35 dark:bg-amber-950/35 dark:text-amber-100/95">
+                        Om af te rekenen moet je{' '}
+                        <Link
+                          to={`/login?redirect=${encodeURIComponent('/billing')}`}
+                          className="font-semibold underline decoration-amber-700/50 underline-offset-2 dark:decoration-amber-300/50"
+                        >
+                          inloggen of een account aanmaken
+                        </Link>
+                        . Je gekozen plan wordt bewaard.
+                      </p>
+                    )}
 
                     <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-600 dark:bg-slate-950/50">
                       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">

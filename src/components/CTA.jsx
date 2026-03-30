@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, FileText, GraduationCap } from 'lucide-react'
+import { ArrowRight, CreditCard, FileText, GraduationCap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const ease = [0.25, 0.1, 0.25, 1]
@@ -27,8 +27,17 @@ const CTA = () => {
           <h2 className="font-display text-2xl sm:text-3xl md:text-[2rem] font-semibold text-navy-900 dark:text-slate-50 tracking-tight leading-tight mb-4">
             Begin met slimmer studeren
           </h2>
-          <p className="text-base text-navy-500 dark:text-slate-300/90 leading-relaxed mb-10">
+          <p className="text-base text-navy-500 dark:text-slate-300/90 leading-relaxed mb-6">
             Samenvattingen doorlezen of je kennis testen met oefententamens — het past bij de rest van Smartium.
+          </p>
+          <p className="text-sm text-navy-600 dark:text-slate-400 leading-relaxed mb-10">
+            <Link
+              to="/billing"
+              className="font-semibold text-primary-600 underline decoration-primary-500/40 underline-offset-2 transition hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+            >
+              Abonnement
+            </Link>
+            : vanaf €9,99/maand of €8,89/maand bij jaarplan — betalen via Stripe (iDEAL, PayPal, kaart).
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
@@ -46,6 +55,13 @@ const CTA = () => {
             >
               <GraduationCap className="w-4 h-4 opacity-80" strokeWidth={2} />
               Oefententamens
+            </Link>
+            <Link
+              to="/billing"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-primary-200/90 bg-primary-50/80 text-primary-900 dark:border-primary-500/35 dark:bg-primary-950/40 dark:text-primary-100 text-sm font-semibold tracking-wide hover:bg-primary-100/90 dark:hover:bg-primary-950/70 transition-colors sm:w-auto w-full"
+            >
+              <CreditCard className="w-4 h-4 opacity-90" strokeWidth={2} />
+              Prijzen &amp; afrekenen
             </Link>
           </div>
         </motion.div>
