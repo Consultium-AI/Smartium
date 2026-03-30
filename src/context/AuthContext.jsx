@@ -114,6 +114,8 @@ export function AuthProvider({ children }) {
       if (u) {
         if (lastHydratedUid.current !== u.uid) {
           lastHydratedUid.current = u.uid
+          // Eerst guest → uid, daarna cloud: anders schrijft hydrate vóór migratie een lege bundel.
+          migrateGuestDataToUser('guest', u.uid)
           await hydrateFromCloud(u.uid)
         }
         setUser(u)
@@ -150,9 +152,8 @@ export function AuthProvider({ children }) {
       return
     }
     try {
-      const cred = await signInWithEmailAndPassword(auth, email.trim(), password)
+      await signInWithEmailAndPassword(auth, email.trim(), password)
       clearLocalSession()
-      migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
@@ -194,7 +195,6 @@ export function AuthProvider({ children }) {
       const cred = await createUserWithEmailAndPassword(auth, email.trim(), password)
       await updateProfile(cred.user, { displayName: nameTrimmed })
       clearLocalSession()
-      migrateGuestDataToUser('guest', cred.user.uid)
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
@@ -216,8 +216,6 @@ export function AuthProvider({ children }) {
       clearLocalSession()
       try {
         await signInWithCredential(auth, GoogleAuthProvider.credential(idToken))
-        const uid = auth.currentUser?.uid
-        if (uid) migrateGuestDataToUser('guest', uid)
       } catch (err) {
         setError(firebaseAuthMessage(err))
         throw err

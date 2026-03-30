@@ -13,15 +13,35 @@ const COLLECTION = 'userProgress'
 let debounceTimer = null
 let debounceUid = null
 
+/** Firestore accepteert geen `undefined` in nested objecten. */
+function stripForFirestore(obj) {
+  try {
+    return JSON.parse(JSON.stringify(obj))
+  } catch {
+    return {}
+  }
+}
+
+function logSyncSkipped(uid, reason) {
+  console.warn('[Smartium Firestore] Upload overgeslagen:', reason, {
+    uid,
+    firebaseConfigured: isFirebaseConfigured,
+    hasDb: !!db,
+    authUid: auth?.currentUser?.uid ?? null,
+  })
+}
+
 function canSyncUid(uid) {
-  return (
-    isFirebaseConfigured &&
-    db &&
-    uid &&
-    uid !== 'guest' &&
-    auth?.currentUser &&
-    auth.currentUser.uid === uid
-  )
+  if (!isFirebaseConfigured || !db) {
+    return false
+  }
+  if (!uid || uid === 'guest') {
+    return false
+  }
+  if (!auth?.currentUser || auth.currentUser.uid !== uid) {
+    return false
+  }
+  return true
 }
 
 function collectBundledProgress(userId) {
@@ -95,32 +115,65 @@ function mergeServerWithLocal(localBundle, serverData) {
   return { practice, exams, chatsJson }
 }
 
+async function pushProgressToCloudInternal(uid) {
+  if (!canSyncUid(uid)) {
+    if (!isFirebaseConfigured) {
+      logSyncSkipped(uid, 'Geen VITE_FIREBASE_* in de build (of leeg).')
+    } else if (!db) {
+      logSyncSkipped(uid, 'Firestore-db niet geïnitialiseerd.')
+    } else if (!auth?.currentUser) {
+      logSyncSkipped(uid, 'Geen Firebase Auth-sessie — log opnieuw in met Google (met Firebase) of e-mail.')
+    } else if (auth.currentUser.uid !== uid) {
+      logSyncSkipped(uid, `UID komt niet overeen met Firebase (${auth.currentUser.uid} ≠ ${uid}).`)
+    } else {
+      logSyncSkipped(uid, 'Onbekend (guest of ontbrekende uid).')
+    }
+    return
+  }
+
+  const bundle = collectBundledProgress(uid)
+  const ref = doc(db, COLLECTION, uid)
+  await setDoc(
+    ref,
+    {
+      v: 1,
+      practice: stripForFirestore(bundle.practice),
+      exams: stripForFirestore(bundle.exams),
+      chatsJson: bundle.chatsJson ?? null,
+      syncedFrom: 'smartium-web',
+      updatedAt: serverTimestamp(),
+    },
+    { merge: true }
+  )
+}
+
 export async function pushProgressToCloud(uid) {
-  if (!canSyncUid(uid)) return
   try {
-    const bundle = collectBundledProgress(uid)
-    const ref = doc(db, COLLECTION, uid)
-    await setDoc(
-      ref,
-      {
-        v: 1,
-        practice: bundle.practice,
-        exams: bundle.exams,
-        chatsJson: bundle.chatsJson,
-        updatedAt: serverTimestamp(),
-      },
-      { merge: true }
-    )
+    await pushProgressToCloudInternal(uid)
   } catch (e) {
-    console.warn('[Smartium] Firestore sync (upload) mislukt:', e)
+    const code = e && typeof e === 'object' && 'code' in e ? e.code : ''
+    console.error(
+      '[Smartium] Firestore WRITE mislukt.',
+      code || e?.message,
+      '→ Controleer Firestore Rules (moet userProgress/{uid} toestaan, niet overal `false`).',
+      e
+    )
   }
 }
 
 /**
- * Na Firebase-login: merge cloud → localStorage. Geen cloud-doc → eerste upload vanaf dit apparaat.
+ * Na Firebase-login: eerst guest → uid migratie (in AuthProvider), daarna merge cloud → localStorage.
+ * READ en WRITE apart: bij mislukte read proberen we alsnog te schrijven.
  */
 export async function hydrateFromCloud(uid) {
-  if (!canSyncUid(uid)) return
+  if (!canSyncUid(uid)) {
+    console.warn(
+      '[Smartium] Firestore hydrate overgeslagen — geen geldige Firebase-sessie voor uid:',
+      uid
+    )
+    return
+  }
+
   try {
     const ref = doc(db, COLLECTION, uid)
     const snap = await getDoc(ref)
@@ -134,10 +187,22 @@ export async function hydrateFromCloud(uid) {
       })
       applyBundledProgressToLocal(uid, merged)
     }
-    await pushProgressToCloud(uid)
-    window.dispatchEvent(new CustomEvent('smartium-cloud-synced', { detail: { uid } }))
   } catch (e) {
-    console.warn('[Smartium] Firestore sync (download) mislukt. Firestore aan in Firebase Console?', e)
+    const code = e && typeof e === 'object' && 'code' in e ? e.code : ''
+    console.error(
+      '[Smartium] Firestore READ mislukt.',
+      code || e?.message,
+      '→ Rules: mag je userProgress lezen? (Niet de standaard “alles false”-modus laten staan.)',
+      e
+    )
+  }
+
+  await pushProgressToCloud(uid)
+
+  try {
+    window.dispatchEvent(new CustomEvent('smartium-cloud-synced', { detail: { uid } }))
+  } catch {
+    /* ignore */
   }
 }
 
@@ -148,7 +213,7 @@ export function scheduleCloudProgressSync(uid) {
   debounceTimer = setTimeout(() => {
     debounceTimer = null
     void pushProgressToCloud(debounceUid)
-  }, 2500)
+  }, 1200)
 }
 
 export function triggerCloudProgressSyncNow(uid) {
