@@ -19,6 +19,7 @@ scripts/__pycache__/
 worker/.wrangler/
 *.local
 .dev.vars
+.env
 .env.local
 
 # Editor directories and files
