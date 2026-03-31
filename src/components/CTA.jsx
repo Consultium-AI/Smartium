@@ -37,7 +37,7 @@ const CTA = () => {
             >
               Abonnement
             </Link>
-            : vanaf €9,99/maand of €8,89/maand bij jaarplan — betalen via Stripe (kaart, PayPal; iDEAL mogelijk na SEPA-setup).
+            : vanaf €9,99/maand of €8,89/maand bij jaarplan — betalen via Stripe (kaart, PayPal, iDEAL).
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">

@@ -103,7 +103,7 @@ async function handleCreateCheckoutSession(
         .split(',')
         .map((s) => s.trim().toLowerCase())
         .filter(Boolean)
-    : ['card', 'paypal']
+    : ['card', 'paypal', 'ideal']
   for (const pm of methods) {
     params.append('payment_method_types[]', pm)
   }
