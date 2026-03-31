@@ -328,20 +328,15 @@ export default function BillingPage() {
                         Betaalmethodes (via Stripe)
                       </p>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                        Op de volgende pagina (Stripe Checkout) kun je — als je ze in Stripe hebt
-                        ingeschakeld — betalen met <strong>kaart</strong>, <strong>PayPal</strong> of{' '}
-                        <strong>iDEAL</strong>. Bij abonnementen vereist iDEAL meestal dat{' '}
-                        <strong>SEPA-incasso</strong> in je Stripe-account actief is.
+                        Je wordt doorgestuurd naar <strong>Stripe Checkout</strong>. Betaling verloopt via{' '}
+                        <strong>iDEAL | Wero</strong> (één flow in Stripe; EUR). Voor{' '}
+                        <strong>abonnementen</strong> gebruikt Stripe daarna <strong>SEPA-incasso</strong> voor
+                        verlengingen — die moet in je Stripe-account actief zijn.
                       </p>
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {['Kaart', 'PayPal', 'iDEAL'].map((label) => (
-                          <span
-                            key={label}
-                            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-navy-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200"
-                          >
-                            {label}
-                          </span>
-                        ))}
+                        <span className="rounded-lg border border-primary-200/80 bg-primary-50/90 px-3 py-1.5 text-xs font-semibold text-primary-900 dark:border-primary-500/40 dark:bg-primary-950/50 dark:text-primary-100">
+                          iDEAL | Wero
+                        </span>
                       </div>
                     </div>
 

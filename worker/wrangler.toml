@@ -8,9 +8,8 @@ ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl,http://localhost:
 # Stripe prijs-ID's: aanmaken met `npm run stripe:setup-prices` (zie hieronder), dan hier plakken of in Cloudflare Dashboard.
 STRIPE_PRICE_MONTHLY = "price_1TGp5N2NJGvegKCX3uGOU9jx"
 STRIPE_PRICE_YEARLY = "price_1TGp5N2NJGvegKCX2rkyePOz"
-# Moet overeenkomen met wat je in Checkout aanbiedt; anders zie je geen iDEAL op de betaalpagina.
-# Abonnement + iDEAL: SEPA-incasso in Stripe Dashboard moet actief zijn (anders geeft Stripe een fout).
-STRIPE_PAYMENT_METHOD_TYPES = "card,paypal,ideal"
+# Alleen iDEAL | Wero (Stripe: één type `ideal` in de API; SEPA voor abonnementsverlengingen).
+STRIPE_PAYMENT_METHOD_TYPES = "ideal"
 
 # Secrets (nooit in git):
 #   cd worker && npx wrangler secret put OPENAI_API_KEY

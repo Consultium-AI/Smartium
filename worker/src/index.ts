@@ -8,8 +8,8 @@ export interface Env {
   STRIPE_PRICE_MONTHLY?: string
   STRIPE_PRICE_YEARLY?: string
   /**
-   * Komma-gescheiden: card, paypal, ideal. Voor subscriptions vereist iDEAL SEPA-incasso in Stripe.
-   * Standaard (leeg): card,paypal — zodat checkout werkt zonder SEPA.
+   * Komma-gescheiden. Voor abonnementen: alleen `ideal` (Stripe “iDEAL | Wero”; SEPA voor verlengingen).
+   * Los type `wero` ondersteunt geen subscription mode — niet combineren tenzij je op payment-mode migreert.
    */
   STRIPE_PAYMENT_METHOD_TYPES?: string
 }
@@ -103,7 +103,7 @@ async function handleCreateCheckoutSession(
         .split(',')
         .map((s) => s.trim().toLowerCase())
         .filter(Boolean)
-    : ['card', 'paypal', 'ideal']
+    : ['ideal']
   for (const pm of methods) {
     params.append('payment_method_types[]', pm)
   }
