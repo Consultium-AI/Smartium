@@ -8,6 +8,8 @@ ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl,http://localhost:
 # Stripe prijs-ID's: aanmaken met `npm run stripe:setup-prices` (zie hieronder), dan hier plakken of in Cloudflare Dashboard.
 STRIPE_PRICE_MONTHLY = "price_1TGp5N2NJGvegKCX3uGOU9jx"
 STRIPE_PRICE_YEARLY = "price_1TGp5N2NJGvegKCX2rkyePOz"
+# Standaard: card,paypal (abonnement + iDEAL vereist SEPA in Stripe). Na SEPA: card,paypal,ideal
+# STRIPE_PAYMENT_METHOD_TYPES = "card,paypal,ideal"
 
 # Secrets (nooit in git):
 #   cd worker && npx wrangler secret put OPENAI_API_KEY

@@ -7,6 +7,11 @@ export interface Env {
   /** Stripe Dashboard → Producten → prijs-ID (recurring) */
   STRIPE_PRICE_MONTHLY?: string
   STRIPE_PRICE_YEARLY?: string
+  /**
+   * Komma-gescheiden: card, paypal, ideal. Voor subscriptions vereist iDEAL SEPA-incasso in Stripe.
+   * Standaard (leeg): card,paypal — zodat checkout werkt zonder SEPA.
+   */
+  STRIPE_PAYMENT_METHOD_TYPES?: string
 }
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
@@ -91,7 +96,15 @@ async function handleCreateCheckoutSession(
   params.set('cancel_url', cancelUrl)
   params.set('line_items[0][price]', priceId)
   params.set('line_items[0][quantity]', '1')
-  for (const pm of ['card', 'ideal', 'paypal']) {
+
+  const rawPm = env.STRIPE_PAYMENT_METHOD_TYPES?.trim()
+  const methods = rawPm
+    ? rawPm
+        .split(',')
+        .map((s) => s.trim().toLowerCase())
+        .filter(Boolean)
+    : ['card', 'paypal']
+  for (const pm of methods) {
     params.append('payment_method_types[]', pm)
   }
   const email = body.customerEmail?.trim()

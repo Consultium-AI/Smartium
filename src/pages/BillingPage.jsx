@@ -328,13 +328,15 @@ export default function BillingPage() {
                         Betaalmethodes (via Stripe)
                       </p>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                        Op de volgende pagina kun je veilig betalen met{' '}
-                        <strong>iDEAL</strong>, <strong>PayPal</strong> of{' '}
-                        <strong>kaart</strong> — afhankelijk van wat Stripe voor jouw regio
-                        aanbiedt.
+                        Op de volgende pagina kun je betalen met <strong>kaart</strong> en{' '}
+                        <strong>PayPal</strong> (als ingeschakeld in Stripe).{' '}
+                        <strong>iDEAL</strong> voor abonnementen vereist dat je in Stripe{' '}
+                        <strong>SEPA-incasso</strong> activeert; daarna kan de site ook{' '}
+                        <code className="rounded bg-slate-200/80 px-1 text-xs dark:bg-slate-800">ideal</code>{' '}
+                        toevoegen.
                       </p>
                       <div className="mt-4 flex flex-wrap gap-2">
-                        {['iDEAL', 'PayPal', 'Kaart'].map((label) => (
+                        {['Kaart', 'PayPal', 'iDEAL*'].map((label) => (
                           <span
                             key={label}
                             className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-navy-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200"
@@ -343,6 +345,9 @@ export default function BillingPage() {
                           </span>
                         ))}
                       </div>
+                      <p className="mt-2 text-[11px] text-slate-500 dark:text-slate-500">
+                        * iDEAL = optioneel, na SEPA-incasso in Stripe Dashboard
+                      </p>
                     </div>
 
                     {checkoutError && (
