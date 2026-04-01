@@ -38,3 +38,39 @@ export async function createCheckoutSession(plan, opts = {}) {
   }
   return { url: data.url }
 }
+
+/**
+ * Ingesloten Stripe Embedded Checkout (client_secret); zie https://docs.stripe.com/payments/checkout/embedded
+ *
+ * @param {'monthly' | 'yearly'} plan
+ * @param {{ email?: string | null }} [opts]
+ * @returns {Promise<{ clientSecret: string } | { error: string }>}
+ */
+export async function createEmbeddedCheckoutSession(plan, opts = {}) {
+  const baseHref = new URL(import.meta.env.BASE_URL || '/', window.location.origin).href
+  const returnUrl = new URL('billing?session_id={CHECKOUT_SESSION_ID}', baseHref).href
+  const body = {
+    plan,
+    embedded: true,
+    returnUrl,
+    customerEmail: opts.email || undefined,
+  }
+
+  const res = await fetch(`${apiBase()}/api/create-checkout-session`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) {
+    return { error: data.error || data.message || `Serverfout (${res.status})` }
+  }
+  if (!data.clientSecret) {
+    return {
+      error:
+        'Geen client_secret ontvangen. Controleer Stripe-config op de Worker (embedded ui_mode).',
+    }
+  }
+  return { clientSecret: data.clientSecret }
+}

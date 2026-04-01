@@ -8399,7 +8399,7 @@ const practiceQuestionsCourseStructure = {
     ]
   },
   blok4: {
-    name: "Blok 4: Microbiologie en Immunologie",
+    name: "Blok 4: Afweer en Aanpak van Infecties",
     weeks: [
       {
         name: "Week 1",

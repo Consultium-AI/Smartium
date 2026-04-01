@@ -10,10 +10,15 @@ import {
   Building2,
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
-import { createCheckoutSession } from '../lib/billingApi'
+import {
+  createCheckoutSession,
+  createEmbeddedCheckoutSession,
+} from '../lib/billingApi'
+import { hasStripePublishableKey } from '../lib/stripeClient'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
+import StripeEmbeddedFrame from '../components/StripeEmbeddedFrame'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
@@ -62,8 +67,11 @@ export default function BillingPage() {
   const [plan, setPlan] = useState(null)
   const [checkoutLoading, setCheckoutLoading] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
+  const [embedClientSecret, setEmbedClientSecret] = useState(null)
 
   const status = searchParams.get('status')
+  const sessionId = searchParams.get('session_id')
+  const embedAvailable = hasStripePublishableKey()
 
   useEffect(() => {
     if (loading || !user) return
@@ -93,6 +101,18 @@ export default function BillingPage() {
     setCheckoutError(null)
     setCheckoutLoading(true)
     try {
+      if (embedAvailable) {
+        const result = await createEmbeddedCheckoutSession(plan, {
+          email: user?.email,
+        })
+        if (result.error) {
+          setCheckoutError(result.error)
+          return
+        }
+        setEmbedClientSecret(result.clientSecret)
+        setStep(3)
+        return
+      }
       const result = await createCheckoutSession(plan, { email: user?.email })
       if (result.error) {
         setCheckoutError(result.error)
@@ -117,7 +137,7 @@ export default function BillingPage() {
     )
   }
 
-  if (status === 'success') {
+  if (status === 'success' || sessionId) {
     return (
       <>
         <ParticleBackground />
@@ -165,7 +185,7 @@ export default function BillingPage() {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease }}
-          className="relative w-full max-w-lg"
+          className={`relative w-full ${step === 3 ? 'max-w-2xl' : 'max-w-lg'}`}
         >
           <AmbientOrbs reduced={reduceMotion} />
 
@@ -203,10 +223,12 @@ export default function BillingPage() {
                 </div>
                 <div>
                   <h1 className="font-display text-xl font-bold tracking-tight text-navy-900 dark:text-white sm:text-2xl">
-                    Kies je abonnement
+                    {step === 3 ? 'Afronden' : 'Kies je abonnement'}
                   </h1>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    Volledige toegang tot Smartium
+                    {step === 3
+                      ? 'Veilige betaling via Stripe'
+                      : 'Volledige toegang tot Smartium'}
                   </p>
                 </div>
               </div>
@@ -295,6 +317,7 @@ export default function BillingPage() {
                       onClick={() => {
                         setStep(1)
                         setCheckoutError(null)
+                        setEmbedClientSecret(null)
                       }}
                       className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:underline dark:text-primary-400"
                     >
@@ -328,10 +351,26 @@ export default function BillingPage() {
                         Betaalmethodes (via Stripe)
                       </p>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                        Je wordt doorgestuurd naar <strong>Stripe Checkout</strong>. Betaling verloopt via{' '}
-                        <strong>iDEAL | Wero</strong> (één flow in Stripe; EUR). Voor{' '}
-                        <strong>abonnementen</strong> gebruikt Stripe daarna <strong>SEPA-incasso</strong> voor
-                        verlengingen — die moet in je Stripe-account actief zijn.
+                        {embedAvailable ? (
+                          <>
+                            Je betaalt hieronder in een <strong>ingebouwde Stripe-checkout</strong> (Embedded
+                            Checkout). Betaling verloopt via <strong>iDEAL | Wero</strong> (EUR). Voor{' '}
+                            <strong>abonnementen</strong> gebruikt Stripe daarna{' '}
+                            <strong>SEPA-incasso</strong> voor verlengingen — die moet in je Stripe-account actief
+                            zijn.
+                          </>
+                        ) : (
+                          <>
+                            Zonder <code className="rounded bg-slate-200/80 px-1 py-0.5 text-[11px] dark:bg-slate-800">
+                              VITE_STRIPE_PUBLISHABLE_KEY
+                            </code>{' '}
+                            word je doorgestuurd naar <strong>Stripe Checkout</strong> op stripe.com. Met
+                            publishable key (<code className="rounded bg-slate-200/80 px-1 py-0.5 text-[11px] dark:bg-slate-800">
+                              pk_…
+                            </code>
+                            ) blijft checkout op deze pagina. iDEAL | Wero (EUR); SEPA voor verlengingen.
+                          </>
+                        )}
                       </p>
                       <div className="mt-4 flex flex-wrap gap-2">
                         <span className="rounded-lg border border-primary-200/80 bg-primary-50/90 px-3 py-1.5 text-xs font-semibold text-primary-900 dark:border-primary-500/40 dark:bg-primary-950/50 dark:text-primary-100">
@@ -362,10 +401,48 @@ export default function BillingPage() {
                       ) : (
                         <>
                           <CreditCard className="h-5 w-5" />
-                          Doorgaan naar betaling
+                          {embedAvailable ? 'Open betaalmodule' : 'Doorgaan naar betaling'}
                         </>
                       )}
                     </motion.button>
+                  </motion.div>
+                )}
+
+                {step === 3 && embedClientSecret && (
+                  <motion.div
+                    key="embed"
+                    initial={reduceMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={reduceMotion ? false : { opacity: 0, y: 10 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                    className="space-y-4"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEmbedClientSecret(null)
+                        setCheckoutError(null)
+                        setStep(2)
+                      }}
+                      className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:underline dark:text-primary-400"
+                    >
+                      <ArrowLeft className="h-3 w-3" /> Terug naar samenvatting
+                    </button>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                      Plan:{' '}
+                      <strong className="text-navy-900 dark:text-white">
+                        {plan === 'yearly'
+                          ? `Jaarlijks (${eur(YEARLY_TOTAL)}/jaar)`
+                          : `Maandelijks (${eur(MONTHLY)}/maand)`}
+                      </strong>
+                    </p>
+                    <motion.div
+                      initial={reduceMotion ? false : { opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: reduceMotion ? 0 : 0.08, duration: 0.35 }}
+                    >
+                      <StripeEmbeddedFrame clientSecret={embedClientSecret} />
+                    </motion.div>
                   </motion.div>
                 )}
               </AnimatePresence>

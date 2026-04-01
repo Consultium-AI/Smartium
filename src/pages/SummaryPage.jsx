@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useSearchParams } from 'react-router-dom'
 import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
-  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield
+  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers
 } from 'lucide-react'
 import { useState } from 'react'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
@@ -68,6 +68,118 @@ import Casus12Lme3PatientMedicatieveiligheidSummary from '../summaries/casus12-l
 import Casus12Lme4ZorggerelateerdeInfectiesSummary from '../summaries/casus12-lme4-zorggerelateerde-infecties/Casus12Lme4ZorggerelateerdeInfectiesSummary'
 import Casus13Lme1AntibioticaIntroductieSummary from '../summaries/casus13-lme1-antibiotica-introductie/Casus13Lme1AntibioticaIntroductieSummary'
 import Casus13Lme2AntibioticaResistentieSummary from '../summaries/casus13-lme2-antibiotica-resistentie/Casus13Lme2AntibioticaResistentieSummary'
+import Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-1-de-huidbarriere-van-jong-tot-oud/Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary'
+import Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-2-externe-verstorende-factoren-op-de-huidbarriere/Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary'
+import Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-3-hoe-werkt-een-geneesmiddel-via-de-huid/Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary'
+import Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-4-huidtypen-met-invloed-van-uva-en-uvb/Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary'
+import Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-5-microbioom-en-immunologie-van-de-huid/Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary'
+import Blok5Week1Casus2VoedingEnInhalatieallergieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-6-voeding-en-inhalatieallergie/Blok5Week1Casus2VoedingEnInhalatieallergieSummary'
+import Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-7-nadelige-reacties-van-medicatie/Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary'
+import Blok5Week2Casus3AangeborenStollingsstoornissenSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-10-aangeboren-stollingsstoornissen/Blok5Week2Casus3AangeborenStollingsstoornissenSummary'
+import Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-11-begripsbepaling-dermatologische-uitingen/Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary'
+import Blok5Week2Casus3HemostaseBasisSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-12-hemostase-basis/Blok5Week2Casus3HemostaseBasisSummary'
+import Blok5Week2Casus3VasculitisKleinMiddelGrootSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-13-vasculitis-klein-middel-groot/Blok5Week2Casus3VasculitisKleinMiddelGrootSummary'
+import Blok5Week2Casus4ChronischeOntstekingSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-14-chronische-ontsteking/Blok5Week2Casus4ChronischeOntstekingSummary'
+import Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-15-goedaardige-en-kwaadaardige-huidafwijkingen/Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary'
+import Blok5Week2Casus4ImmuuntherapieVanKankerSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-16-immuuntherapie-van-kanker/Blok5Week2Casus4ImmuuntherapieVanKankerSummary'
+import Blok5Week2Casus4MelanoomGelokaliseerdSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-17-melanoom-gelokaliseerd/Blok5Week2Casus4MelanoomGelokaliseerdSummary'
+import Blok5Week2Casus4MriEnPetScanBenignemaligneSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-18-mri-en-pet-scan-benignemaligne/Blok5Week2Casus4MriEnPetScanBenignemaligneSummary'
+import Blok5Week2Casus4SentinelNodeSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-19-sentinel-node/Blok5Week2Casus4SentinelNodeSummary'
+import Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-20-systemische-therapie-van-melanoom/Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary'
+import Blok5Week1Casus2ProvokeSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-8-provoke/Blok5Week1Casus2ProvokeSummary'
+import Blok5Week1Casus2PsoriasisSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-9-psoriasis/Blok5Week1Casus2PsoriasisSummary'
+import Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-21-huidtumoren-basaalcel-en-plaveiselcelcarcinoom/Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary'
+import Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-22-huidtumoren-benigne-en-premaligne/Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary'
+import Blok5Week3Casus5LeefstijlEnKankerSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-23-leefstijl-en-kanker/Blok5Week3Casus5LeefstijlEnKankerSummary'
+import Blok5Week3Casus5MilieuEnGezondheidSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-24-milieu-en-gezondheid/Blok5Week3Casus5MilieuEnGezondheidSummary'
+import Blok5Week3Casus6BehandelingVanMammacarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-25-behandeling-van-mammacarcinoom/Blok5Week3Casus6BehandelingVanMammacarcinoomSummary'
+import Blok5Week3Casus6FamiliairMammacarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-26-familiair-mammacarcinoom/Blok5Week3Casus6FamiliairMammacarcinoomSummary'
+import Blok5Week3Casus6HetSlechtnieuwsgesprekSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-27-het-slechtnieuwsgesprek/Blok5Week3Casus6HetSlechtnieuwsgesprekSummary'
+import Blok5Week3Casus6MammapathologieSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-28-mammapathologie/Blok5Week3Casus6MammapathologieSummary'
+import Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-29-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom/Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomSummary'
+import Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-6-knobbel-in-de-borst/lme-30-radiologische-diagnostiek-mammacarcinoom/Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary'
+import Blok5Week4Casus7FlebologischeAandoeningenSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-31-flebologische-aandoeningen/Blok5Week4Casus7FlebologischeAandoeningenSummary'
+import Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-47-alarmsymptomen-op-de-kinderleeftijd/Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary'
+import Blok5Week5Casus11IntroductieKinderoncologieSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-48-introductie-kinderoncologie/Blok5Week5Casus11IntroductieKinderoncologieSummary'
+import Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-49-kinderoncologie-begrijp-de-hallmarks/Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary'
+import Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-50-over-leven-na-kanker-op-kinderleeftijd/Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary'
+import Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-51-typen-kinderoncologie-bij-kinderen/Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary'
+import Blok5Week6Casus12GaswisselingHbO2Co2CoSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-52-gaswisseling-hb-o2-co2-co/Blok5Week6Casus12GaswisselingHbO2Co2CoSummary'
+import Blok5Week6Casus12NvicAcuteVergiftigingSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-53-nvic-acute-vergiftiging/Blok5Week6Casus12NvicAcuteVergiftigingSummary'
+import Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-54-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties/Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary'
+import Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-55-botopbouw-botafbraak-en-pathologische-breuken/Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary'
+import Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-56-celtherapie-als-behandeling-voor-maligniteiten/Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary'
+import Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-57-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie/Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSummary'
+import Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-58-m-proteine-diagnostiek-eiwit-als-tumormarker/Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary'
+import Blok5Week6Casus13TransplantatiegeneeskundeSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-59-transplantatiegeneeskunde/Blok5Week6Casus13TransplantatiegeneeskundeSummary'
+import Blok5Week7Casus14DermatoloogInJeBroekzakSummary from '../summaries/samenvattingen-blok5/week-7/casus-14-ai-in-de-zorg/lme-60-dermatoloog-in-je-broekzak/Blok5Week7Casus14DermatoloogInJeBroekzakSummary'
+import Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-61-remmen-versus-stimuleren-van-het-afweersysteem/Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary'
+import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-62-risico-op-iatrogene-schade-na-orgaantransplantatie/Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary'
+import Blok5Week8Casus15ScyllaEnCharybdisSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-63-scylla-en-charybdis/Blok5Week8Casus15ScyllaEnCharybdisSummary'
+import Blok5Week4Casus7LymfadenopathieSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-32-lymfadenopathie/Blok5Week4Casus7LymfadenopathieSummary'
+import Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-33-trombose-verhoogde-stollingsneiging/Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary'
+import Blok5Week4Casus8ErysipelasEnCellulitisSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-34-erysipelas-en-cellulitis/Blok5Week4Casus8ErysipelasEnCellulitisSummary'
+import Blok5Week4Casus8HydradenitisSuppurativaSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-35-hydradenitis-suppurativa/Blok5Week4Casus8HydradenitisSuppurativaSummary'
+import Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-36-introductiemodule-planetary-health/Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary'
+import Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-37-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24/Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary'
+import Blok5Week4Casus8LymfeklierdissectieSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-38-lymfeklierdissectie/Blok5Week4Casus8LymfeklierdissectieSummary'
+import Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-39-necrotiserende-wekedeleninfectie/Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary'
+import Blok5Week4Casus8RadiotherapieInDePraktijkSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-40-radiotherapie-in-de-praktijk/Blok5Week4Casus8RadiotherapieInDePraktijkSummary'
+import Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-41-volksgezondheidsindicatoren-dalys/Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary'
+import Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-42-bouw-en-functie-van-de-thymus/Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary'
+import Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-43-endocriene-auto-immuunziekten/Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary'
+import Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-44-pathogenese-auto-immuunziekten/Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary'
+import Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary from '../summaries/samenvattingen-blok5/week-5/casus-10-patient-met-auto-inflammatoire-ziekte/lme-45-principes-en-klinische-aspecten-van-auto-inflammatie/Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary'
+import Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary from '../summaries/samenvattingen-blok5/week-5/casus-10-patient-met-auto-inflammatoire-ziekte/lme-46-spectrum-auto-inflammatie-en-auto-immuniteit/Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary'
+import Blok9Week1Casus1AcuteNierschadeSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-1-acute-nierschade/Blok9Week1Casus1AcuteNierschadeSummary'
+import Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-2-tubulaire-en-erfelijke-nierziekten/Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary'
+import Blok9Week1Casus1GlomerulaireNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-3-glomerulaire-nierziekten/Blok9Week1Casus1GlomerulaireNierziektenSummary'
+import Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-4-glomerulaire-en-tubulaire-nierziekten/Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary'
+import Blok9Week1Casus1AcuteNierschadeVerdiepingSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-5-acute-nierschade-verdieping/Blok9Week1Casus1AcuteNierschadeVerdiepingSummary'
+import Blok9Week1Casus2ChronischeNierschadeSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-6-chronische-nierschade/Blok9Week1Casus2ChronischeNierschadeSummary'
+import Blok9Week1Casus2NiertransplantatieSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-7-niertransplantatie/Blok9Week1Casus2NiertransplantatieSummary'
+import Blok9Week1Casus2DialyseSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-8-dialyse/Blok9Week1Casus2DialyseSummary'
+import Blok9Week1Casus2VerdiepingChronischeNierschadeSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-9-verdieping-chronische-nierschade/Blok9Week1Casus2VerdiepingChronischeNierschadeSummary'
+import Blok9Week1Casus2NierfunctievervangendeTherapieSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-10-nierfunctievervangende-therapie/Blok9Week1Casus2NierfunctievervangendeTherapieSummary'
+import Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary from '../summaries/samenvattingen-b9/week-1/casus-2-patient-met-chronische-nierschade/lme-11-ethiek-van-orgaantransplantatie/Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary'
+import Blok9Week2Casus3KlinischeStoornissenWaterEnVolumeBalansSummary from '../summaries/samenvattingen-b9/week-2/casus-3-patient-met-ernstig-verstoorde-elektrolyten/lme-12-klinische-stoornissen-water-en-volume-balans/Blok9Week2Casus3KlinischeStoornissenWaterEnVolumeBalansSummary'
+import Blok9Week2Casus3KlinischeStoornissenKaliumbalansSummary from '../summaries/samenvattingen-b9/week-2/casus-3-patient-met-ernstig-verstoorde-elektrolyten/lme-13-klinische-stoornissen-kaliumbalans/Blok9Week2Casus3KlinischeStoornissenKaliumbalansSummary'
+import Blok9Week2Casus3KlinischeStoornissenZuurBasebalansSummary from '../summaries/samenvattingen-b9/week-2/casus-3-patient-met-ernstig-verstoorde-elektrolyten/lme-14-klinische-stoornissen-zuur-basebalans/Blok9Week2Casus3KlinischeStoornissenZuurBasebalansSummary'
+import Blok9Week2Casus3VerdiepingStoornissenKaliumEnZuurBaseEvenwichtSummary from '../summaries/samenvattingen-b9/week-2/casus-3-patient-met-ernstig-verstoorde-elektrolyten/lme-15-verdieping-stoornissen-kalium-en-zuur-base-evenwicht/Blok9Week2Casus3VerdiepingStoornissenKaliumEnZuurBaseEvenwichtSummary'
+import Blok9Week2Casus3VerdiepingStoornissenWaterEnVolumebalansSummary from '../summaries/samenvattingen-b9/week-2/casus-3-patient-met-ernstig-verstoorde-elektrolyten/lme-16-verdieping-stoornissen-water-en-volumebalans/Blok9Week2Casus3VerdiepingStoornissenWaterEnVolumebalansSummary'
+import Blok9Week2Casus4PerifeerArterieelVaatlijdenSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-17-perifeer-arterieel-vaatlijden/Blok9Week2Casus4PerifeerArterieelVaatlijdenSummary'
+import Blok9Week2Casus4DiabetischeVoetSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-18-diabetische-voet/Blok9Week2Casus4DiabetischeVoetSummary'
+import Blok9Week2Casus4DilaterendVaatlijdenSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-19-dilaterend-vaatlijden/Blok9Week2Casus4DilaterendVaatlijdenSummary'
+import Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-20-mdr-juridische-aspecten-rond-medische-tools/Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary'
+import Blok9Week2Casus4PreoperatieveScreeningSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-21-preoperatieve-screening/Blok9Week2Casus4PreoperatieveScreeningSummary'
+import Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary from '../summaries/samenvattingen-b9/week-2/casus-4-de-vrouw-die-maar-20-meter-kan-lopen/lme-22-ct-scans-beoordelen-vow-toegepaste-anatomie/Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary'
+import Blok9Week3Casus5HypertensieSummary from '../summaries/samenvattingen-b9/week-3/casus-5-patient-met-hypertensie/lme-23-hypertensie/Blok9Week3Casus5HypertensieSummary'
+import Blok9Week3Casus5SecundaireHypertensieSummary from '../summaries/samenvattingen-b9/week-3/casus-5-patient-met-hypertensie/lme-24-secundaire-hypertensie/Blok9Week3Casus5SecundaireHypertensieSummary'
+import Blok9Week3Casus5HypertensiefSpoedgevalSummary from '../summaries/samenvattingen-b9/week-3/casus-5-patient-met-hypertensie/lme-25-hypertensief-spoedgeval/Blok9Week3Casus5HypertensiefSpoedgevalSummary'
+import Blok9Week3Casus5FarmacogeneticaSummary from '../summaries/samenvattingen-b9/week-3/casus-5-patient-met-hypertensie/lme-26-farmacogenetica/Blok9Week3Casus5FarmacogeneticaSummary'
+import Blok9Week3Casus5AiActSummary from '../summaries/samenvattingen-b9/week-3/casus-5-patient-met-hypertensie/lme-27-ai-act/Blok9Week3Casus5AiActSummary'
+import Blok9Week3Casus6CvrmSummary from '../summaries/samenvattingen-b9/week-3/casus-6-volwassene-met-pijn-op-de-borst/lme-28-cvrm/Blok9Week3Casus6CvrmSummary'
+import Blok9Week4Casus7PneumonieEpidemiologieSummary from '../summaries/samenvattingen-b9/week-4/casus-7-patient-met-een-pneumonie/lme-29-epidemiologie-verschillende-verwekkers-en-behandeling-van-de-pneumonie/Blok9Week4Casus7PneumonieEpidemiologieSummary'
+import Blok9Week4Casus7PathofysiologieKliniekDiagnostiekPneumonieSummary from '../summaries/samenvattingen-b9/week-4/casus-7-patient-met-een-pneumonie/lme-30-pathofysiologie-kliniek-en-diagnostiek-van-de-pneumonie/Blok9Week4Casus7PathofysiologieKliniekDiagnostiekPneumonieSummary'
+import Blok9Week4Casus7KlinischRedenerenRespiratoireInsufficiëntieSummary from '../summaries/samenvattingen-b9/week-4/casus-7-patient-met-een-pneumonie/lme-31-klinisch-redeneren-bij-respiratoire-insufficiëntie/Blok9Week4Casus7KlinischRedenerenRespiratoireInsufficiëntieSummary'
+import Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary from '../summaries/samenvattingen-b9/week-4/casus-7-patient-met-een-pneumonie/lme-32-symptomatische-behandeling-van-respiratoire-insufficientie/Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary'
+import Blok9Week4Casus8ToxidromenSummary from '../summaries/samenvattingen-b9/week-4/casus-8-een-leuk-feestje/lme-33-toxidromen/Blok9Week4Casus8ToxidromenSummary'
+import Blok9Week4Casus8ShockSummary from '../summaries/samenvattingen-b9/week-4/casus-8-een-leuk-feestje/lme-34-shock/Blok9Week4Casus8ShockSummary'
+import Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenSummary from '../summaries/samenvattingen-b9/week-4/casus-8-een-leuk-feestje/lme-35-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen/Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenSummary'
+import Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary from '../summaries/samenvattingen-b9/week-4/casus-8-een-leuk-feestje/lme-36-passende-zorg-op-de-intensive-care/Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary'
+import Blok9Week4Casus8LineareRegressielijnSummary from '../summaries/samenvattingen-b9/week-4/casus-8-een-leuk-feestje/lme-37-lineare-regressielijn/Blok9Week4Casus8LineareRegressielijnSummary'
+import Blok9Week5Casus9LongkankerSummary from '../summaries/samenvattingen-b9/week-5/casus-9-longkanker-wat-nu/lme-38-longkanker/Blok9Week5Casus9LongkankerSummary'
+import Blok9Week5Casus9PleuravochtSummary from '../summaries/samenvattingen-b9/week-5/casus-9-longkanker-wat-nu/lme-39-pleuravocht/Blok9Week5Casus9PleuravochtSummary'
+import Blok9Week5Casus9VoorbereidingCtEnPetCtSummary from '../summaries/samenvattingen-b9/week-5/casus-9-longkanker-wat-nu/lme-40-voorbereiding-ct-en-pet-ct/Blok9Week5Casus9VoorbereidingCtEnPetCtSummary'
+import Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary from '../summaries/samenvattingen-b9/week-5/casus-9-longkanker-wat-nu/lme-41-voorbereiding-pathologie-longkanker/Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary'
+import Blok9Week5Casus10BasisAnalyseEcgSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-42-basis-analyse-ecg/Blok9Week5Casus10BasisAnalyseEcgSummary'
+import Blok9Week5Casus10AtriumfibrillerenSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-43-atriumfibrilleren/Blok9Week5Casus10AtriumfibrillerenSummary'
+import Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-44-brady-aritmie-en-implanteerbare-cardiale-devices/Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary'
+import Blok9Week5Casus10TachyaritmieSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-45-tachyaritmie/Blok9Week5Casus10TachyaritmieSummary'
+import Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-46-leefstijl-als-therapie-voor-atriumfibrilleren/Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary'
+import Blok9Week5Casus10SyncopeSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-47-syncope/Blok9Week5Casus10SyncopeSummary'
+import Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-48-elektrofysiologisch-onderzoek-en-ablaties/Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary'
+import Blok9Week5Casus10RitmestoornissenBijKinderenSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-49-ritmestoornissen-bij-kinderen/Blok9Week5Casus10RitmestoornissenBijKinderenSummary'
 
 // Main Summary Page Component
 const SummaryPage = () => {
@@ -101,7 +213,7 @@ const SummaryPage = () => {
       ]
     },
     blok4: {
-      name: "Blok 4: Microbiologie en Immunologie",
+      name: "Blok 4: Afweer en Aanpak van Infecties",
       weeks: [
         {
           name: "Week 1",
@@ -254,7 +366,617 @@ const SummaryPage = () => {
           ]
         }
       ]
-    }
+    },
+    blok5: {
+      name: "Blok 5: Bedreigingen van Binnen & Buiten",
+      weeks: [
+        {
+          name: "Week 1",
+          cases: [
+            {
+              name: "Casus 1: De huid als succesvolle barrière",
+              lmes: [
+                {
+                  id: "blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud",
+                  name: "De huidbarrière van jong tot oud",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere",
+                  name: "Externe verstorende factoren op de huidbarrière",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid",
+                  name: "Hoe werkt een geneesmiddel via de huid",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb",
+                  name: "Huidtypen met invloed van UVA en UVB",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus1-microbioom-en-immunologie-van-de-huid",
+                  name: "Microbioom en immunologie van de huid",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 2: De veranderde barrière",
+              lmes: [
+                {
+                  id: "blok5-week1-casus2-voeding-en-inhalatieallergie",
+                  name: "Voeding en inhalatieallergie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus2-nadelige-reacties-van-medicatie",
+                  name: "Nadelige reacties van medicatie (Adverse Drug Reactions)",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus2-provoke",
+                  name: "PROVOKE",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus2-psoriasis",
+                  name: "Psoriasis",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 2",
+          cases: [
+            {
+              name: "Casus 3: Paarse vlek",
+              lmes: [
+                {
+                  id: "blok5-week2-casus3-aangeboren-stollingsstoornissen",
+                  name: "Aangeboren stollingsstoornissen",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus3-begripsbepaling-dermatologische-uitingen",
+                  name: "Begripsbepaling dermatologische uitingen",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus3-hemostase-basis",
+                  name: "Hemostase basis",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus3-vasculitis-klein-middel-groot",
+                  name: "Vasculitis - klein, middel, groot",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 4: Donkere vlek",
+              lmes: [
+                {
+                  id: "blok5-week2-casus4-chronische-ontsteking",
+                  name: "Chronische ontsteking",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen",
+                  name: "Goedaardige en kwaadaardige huidafwijkingen",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-immuuntherapie-van-kanker",
+                  name: "Immuuntherapie van kanker",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-melanoom-gelokaliseerd",
+                  name: "Melanoom gelokaliseerd",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-mri-en-pet-scan-benignemaligne",
+                  name: "MRI en PET-scan benignemaligne",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-sentinel-node",
+                  name: "Sentinel node",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-systemische-therapie-van-melanoom",
+                  name: "Systemische therapie van melanoom",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 3",
+          cases: [
+            {
+              name: "Casus 5: De verdachte huid",
+              lmes: [
+                {
+                  id: "blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom",
+                  name: "Huidtumoren basaalcel- en plaveiselcelcarcinoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus5-huidtumoren-benigne-en-premaligne",
+                  name: "Huidtumoren benigne en premaligne",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus5-leefstijl-en-kanker",
+                  name: "Leefstijl en kanker",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus5-milieu-en-gezondheid",
+                  name: "Milieu en gezondheid",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 6: Knobbel in de borst",
+              lmes: [
+                {
+                  id: "blok5-week3-casus6-behandeling-van-mammacarcinoom",
+                  name: "Behandeling van mammacarcinoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-familiair-mammacarcinoom",
+                  name: "Familiair mammacarcinoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-het-slechtnieuwsgesprek",
+                  name: "Het slechtnieuwsgesprek",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-mammapathologie",
+                  name: "Mammapathologie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom",
+                  name: "Overdiagnose bij bevolkingsonderzoek mammacarcinoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom",
+                  name: "Radiologische diagnostiek mammacarcinoom",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 4",
+          cases: [
+            {
+              name: "Casus 7: Zwelling van de lies en of een dik been",
+              lmes: [
+                {
+                  id: "blok5-week4-casus7-flebologische-aandoeningen",
+                  name: "Flebologische aandoeningen",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus7-lymfadenopathie",
+                  name: "Lymfadenopathie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus7-trombose-verhoogde-stollingsneiging",
+                  name: "Trombose verhoogde stollingsneiging",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 8: Zwelling in de oksel",
+              lmes: [
+                {
+                  id: "blok5-week4-casus8-erysipelas-en-cellulitis",
+                  name: "Erysipelas en cellulitis",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-hydradenitis-suppurativa",
+                  name: "Hidradenitis suppurativa",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-introductiemodule-planetary-health",
+                  name: "Introductiemodule Planetary health",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24",
+                  name: "Lichamelijk onderzoek Knie (voorbereiding KLV 1.24)",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-lymfeklierdissectie",
+                  name: "Lymfeklierdissectie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-necrotiserende-wekedeleninfectie",
+                  name: "Necrotiserende wekedeleninfectie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-radiotherapie-in-de-praktijk",
+                  name: "Radiotherapie in de praktijk",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-volksgezondheidsindicatoren-dalys",
+                  name: "Volksgezondheidsindicatoren DALY’s",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 5",
+          cases: [
+            {
+              name: "Casus 9: Patiënt met auto-immuunziekte",
+              lmes: [
+                {
+                  id: "blok5-week5-casus9-bouw-en-functie-van-de-thymus",
+                  name: "Bouw en functie van de thymus",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus9-endocriene-auto-immuunziekten",
+                  name: "Endocriene auto-immuunziekten",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus9-pathogenese-auto-immuunziekten",
+                  name: "Pathogenese auto-immuunziekten",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 10: Patiënt met auto-inflammatoire ziekte",
+              lmes: [
+                {
+                  id: "blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie",
+                  name: "Principes en klinische aspecten van auto-inflammatie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit",
+                  name: "Spectrum auto-inflammatie en auto-immuniteit",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 11: Kind met algehele malaise, koorts en zwelling in de buik",
+              lmes: [
+                {
+                  id: "blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd",
+                  name: "Alarmsymptomen op de kinderleeftijd",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus11-introductie-kinderoncologie",
+                  name: "Introductie kinderoncologie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks",
+                  name: "Kinderoncologie - begrijp de hallmarks",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd",
+                  name: "Over leven na kanker op kinderleeftijd",
+                  available: true,
+                },
+                {
+                  id: "blok5-week5-casus11-typen-kinderoncologie-bij-kinderen",
+                  name: "Typen kinderoncologie bij kinderen",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 6",
+          cases: [
+            {
+              name: "Casus 12: Verwarde patiënt met griepachtige klachten",
+              lmes: [
+                {
+                  id: "blok5-week6-casus12-gaswisseling-hb-o2-co2-co",
+                  name: "Gaswisseling Hb, O2, CO2, CO",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus12-nvic-acute-vergiftiging",
+                  name: "NVIC acute vergiftiging",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties",
+                  name: "Slechte woningen lucht & luchtverontreiniging  bovenste luchtweginfecties",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 13: Multipel myeloom",
+              lmes: [
+                {
+                  id: "blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken",
+                  name: "Botopbouw, botafbraak en pathologische breuken",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten",
+                  name: "Celtherapie als behandeling voor maligniteiten",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie",
+                  name: "Het MM als voorbeeld voor targeted therapy in de hemato-oncologie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker",
+                  name: "M-proteine diagnostiek, eiwit als tumormarker",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-transplantatiegeneeskunde",
+                  name: "Transplantatiegeneeskunde",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 7",
+          cases: [
+            {
+              name: "Casus 14: AI in de zorg",
+              lmes: [
+                {
+                  id: "blok5-week7-casus14-dermatoloog-in-je-broekzak",
+                  name: "Dermatoloog in je broekzak",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 8",
+          cases: [
+            {
+              name: "Casus 15: Kiezen tussen twee kwaden",
+              lmes: [
+                {
+                  id: "blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem",
+                  name: "Remmen versus stimuleren van het afweersysteem",
+                  available: true,
+                },
+                {
+                  id: "blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie",
+                  name: "Risico op iatrogene schade na orgaantransplantatie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week8-casus15-scylla-en-charybdis",
+                  name: "Scylla en Charybdis",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    blok9: {
+      name: "Blok 9: Homeostase II",
+      weeks: [
+        {
+          name: "Week 1",
+          cases: [
+            {
+              name: "Casus 1: Patiënt met acute nierschade",
+              lmes: [
+                { id: "blok9-week1-casus1-acute-nierschade", name: "Acute nierschade", available: true },
+                { id: "blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten", name: "Tubulaire en erfelijke nierziekten", available: true },
+                { id: "blok9-week1-casus1-glomerulaire-nierziekten", name: "Glomerulaire nierziekten", available: true },
+                { id: "blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten", name: "Glomerulaire en tubulaire nierziekten", available: true },
+                { id: "blok9-week1-casus1-acute-nierschade-verdieping", name: "Acute nierschade - verdieping", available: true },
+              ],
+            },
+            {
+              name: "Casus 2: Patiënt met chronische nierschade",
+              lmes: [
+                { id: "blok9-week1-casus2-chronische-nierschade", name: "Chronische nierschade", available: true },
+                { id: "blok9-week1-casus2-niertransplantatie", name: "Niertransplantatie", available: true },
+                { id: "blok9-week1-casus2-dialyse", name: "Dialyse", available: true },
+                { id: "blok9-week1-casus2-chronische-nierschade-verdieping", name: "Chronische nierschade - verdieping", available: true },
+                { id: "blok9-week1-casus2-nierfunctievervangende-therapie", name: "Nierfunctievervangende therapie", available: true },
+                { id: "blok9-week1-casus2-ethiek-van-orgaantransplantatie", name: "Ethiek van orgaantransplantatie", available: true },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 2",
+          cases: [
+            {
+              name: "Casus 3: Patiënt met ernstig verstoorde elektrolyten",
+              lmes: [
+                { id: "blok9-week2-casus3-klinische-stoornissen-water-en-volume-balans", name: "Klinische stoornissen van de water- en volume balans", available: true },
+                { id: "blok9-week2-casus3-klinische-stoornissen-kaliumbalans", name: "Klinische stoornissen van de kaliumbalans", available: true },
+                { id: "blok9-week2-casus3-klinische-stoornissen-zuur-basebalans", name: "Klinische stoornissen van de zuur-basebalans", available: true },
+                { id: "blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping", name: "Stoornissen kalium en zuur-base evenwicht - verdieping", available: true },
+                { id: "blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping", name: "Stoornissen van de water- en volumebalans - verdieping", available: true },
+              ],
+            },
+            {
+              name: "Casus 4: De vrouw die maar 20 meter kan lopen",
+              lmes: [
+                { id: "blok9-week2-casus4-perifeer-arterieel-vaatlijden", name: "Perifeer arterieel vaatlijden", available: true },
+                { id: "blok9-week2-casus4-diabetische-voet", name: "Diabetische voet", available: true },
+                { id: "blok9-week2-casus4-dilaterend-vaatlijden", name: "Dilaterend vaatlijden", available: true },
+                { id: "blok9-week2-casus4-mdr-juridische-aspecten-medische-tools", name: "MDR juridische aspecten rond medische tools", available: true },
+                { id: "blok9-week2-casus4-preoperatieve-screening", name: "Preoperatieve screening", available: true },
+                { id: "blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie", name: "CT-scans beoordelen VOW Toegepaste Anatomie", available: true },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 3",
+          cases: [
+            {
+              name: "Casus 5: Patiënt met hypertensie",
+              lmes: [
+                { id: "blok9-week3-casus5-hypertensie", name: "Hypertensie", available: true },
+                { id: "blok9-week3-casus5-secundaire-hypertensie", name: "Secundaire hypertensie", available: true },
+                { id: "blok9-week3-casus5-hypertensief-spoedgeval", name: "Hypertensief spoedgeval", available: true },
+                { id: "blok9-week3-casus5-farmacogenetica", name: "Farmacogenetica", available: true },
+                { id: "blok9-week3-casus5-ai-act", name: "AI Act", available: true },
+              ],
+            },
+            {
+              name: "Casus 6: Volwassene met pijn op de borst",
+              lmes: [{ id: "blok9-week3-casus6-cvrm", name: "CVRM", available: true }],
+            },
+          ],
+        },
+        {
+          name: "Week 4",
+          cases: [
+            {
+              name: "Casus 7: Patiënt met een pneumonie",
+              lmes: [
+                {
+                  id: "blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling",
+                  name: "Epidemiologie, verschillende verwekkers en behandeling van de pneumonie",
+                  available: true,
+                },
+                {
+                  id: "blok9-week4-casus7-pathofysiologie-kliniek-diagnostiek-pneumonie",
+                  name: "Pathofysiologie, kliniek, en diagnostiek van de pneumonie",
+                  available: true,
+                },
+                {
+                  id: "blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie",
+                  name: "Klinisch redeneren bij respiratoire insufficiëntie",
+                  available: true,
+                },
+                {
+                  id: "blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie",
+                  name: "Symptomatische behandeling van respiratoire insufficientie",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 8: Een leuk feestje",
+              lmes: [
+                { id: "blok9-week4-casus8-toxidromen", name: "Toxidromen", available: true },
+                { id: "blok9-week4-casus8-shock", name: "Shock", available: true },
+                {
+                  id: "blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen",
+                  name: "Herkennen gedecompenseerde circulatie en alarmsymptomen",
+                  available: true,
+                },
+                {
+                  id: "blok9-week4-casus8-passende-zorg-op-de-intensive-care",
+                  name: "Passende zorg op de intensive care",
+                  available: true,
+                },
+                { id: "blok9-week4-casus8-lineare-regressielijn", name: "Lineare regressielijn", available: true },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Week 5",
+          cases: [
+            {
+              name: "Casus 9: Longkanker, wat nu",
+              lmes: [
+                { id: "blok9-week5-casus9-longkanker", name: "Longkanker", available: true },
+                { id: "blok9-week5-casus9-pleuravocht", name: "Pleuravocht", available: true },
+                {
+                  id: "blok9-week5-casus9-voorbereiding-ct-en-pet-ct",
+                  name: "Voorbereiding CT en PET-CT",
+                  available: true,
+                },
+                {
+                  id: "blok9-week5-casus9-voorbereiding-pathologie-longkanker",
+                  name: "Voorbereiding pathologie longkanker",
+                  available: true,
+                },
+              ],
+            },
+            {
+              name: "Casus 10: Atriumfibrilleren",
+              lmes: [
+                { id: "blok9-week5-casus10-basis-analyse-ecg", name: "Basis analyse ECG", available: true },
+                { id: "blok9-week5-casus10-atriumfibrilleren", name: "Atriumfibrilleren", available: true },
+                {
+                  id: "blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices",
+                  name: "Brady aritmie en implanteerbare cardiale devices",
+                  available: true,
+                },
+                { id: "blok9-week5-casus10-tachyaritmie", name: "Tachyaritmie", available: true },
+                {
+                  id: "blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren",
+                  name: "Leefstijl als therapie voor atriumfibrilleren",
+                  available: true,
+                },
+                { id: "blok9-week5-casus10-syncope", name: "Syncope", available: true },
+                {
+                  id: "blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties",
+                  name: "Elektrofysiologisch onderzoek en ablaties",
+                  available: true,
+                },
+                {
+                  id: "blok9-week5-casus10-ritmestoornissen-bij-kinderen",
+                  name: "Ritmestoornissen bij kinderen",
+                  available: true,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   }
 
   const getImageIdsForLme = (baseId, imageCount) =>
@@ -940,6 +1662,1462 @@ const SummaryPage = () => {
     )
   }
 
+  if (lme === 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus1-microbioom-en-immunologie-van-de-huid') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-voeding-en-inhalatieallergie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2VoedingEnInhalatieallergieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-nadelige-reacties-van-medicatie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-provoke') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2ProvokeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-psoriasis') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2PsoriasisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus3AangeborenStollingsstoornissenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus3-hemostase-basis') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus3HemostaseBasisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus3VasculitisKleinMiddelGrootSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-chronische-ontsteking') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4ChronischeOntstekingSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-immuuntherapie-van-kanker') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4ImmuuntherapieVanKankerSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-melanoom-gelokaliseerd') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4MelanoomGelokaliseerdSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4MriEnPetScanBenignemaligneSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-sentinel-node') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4SentinelNodeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus4-systemische-therapie-van-melanoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-leefstijl-en-kanker') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5LeefstijlEnKankerSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-milieu-en-gezondheid') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5MilieuEnGezondheidSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-behandeling-van-mammacarcinoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6BehandelingVanMammacarcinoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-familiair-mammacarcinoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6FamiliairMammacarcinoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-het-slechtnieuwsgesprek') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6HetSlechtnieuwsgesprekSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-mammapathologie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6MammapathologieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus7-flebologische-aandoeningen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus7FlebologischeAandoeningenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8ErysipelasEnCellulitisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-hydradenitis-suppurativa') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8HydradenitisSuppurativaSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-introductiemodule-planetary-health') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-lymfeklierdissectie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8LymfeklierdissectieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-necrotiserende-wekedeleninfectie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-radiotherapie-in-de-praktijk') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8RadiotherapieInDePraktijkSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus7-lymfadenopathie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus7LymfadenopathieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus9-bouw-en-functie-van-de-thymus') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus9-pathogenese-auto-immuunziekten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus11-introductie-kinderoncologie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus11IntroductieKinderoncologieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus12GaswisselingHbO2Co2CoSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus12-nvic-acute-vergiftiging') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus12NvicAcuteVergiftigingSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week6-casus13-transplantatiegeneeskunde') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week6Casus13TransplantatiegeneeskundeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week7Casus14DermatoloogInJeBroekzakSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week8-casus15-scylla-en-charybdis') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week8Casus15ScyllaEnCharybdisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus1-acute-nierschade') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus1AcuteNierschadeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus1-glomerulaire-nierziekten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus1GlomerulaireNierziektenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus1-acute-nierschade-verdieping') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus1AcuteNierschadeVerdiepingSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-chronische-nierschade') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2ChronischeNierschadeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-niertransplantatie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2NiertransplantatieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-dialyse') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2DialyseSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-chronische-nierschade-verdieping') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2VerdiepingChronischeNierschadeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-nierfunctievervangende-therapie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2NierfunctievervangendeTherapieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week1-casus2-ethiek-van-orgaantransplantatie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus3-klinische-stoornissen-water-en-volume-balans') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus3KlinischeStoornissenWaterEnVolumeBalansSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus3-klinische-stoornissen-kaliumbalans') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus3KlinischeStoornissenKaliumbalansSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus3KlinischeStoornissenZuurBasebalansSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus3VerdiepingStoornissenKaliumEnZuurBaseEvenwichtSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus3VerdiepingStoornissenWaterEnVolumebalansSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-perifeer-arterieel-vaatlijden') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4PerifeerArterieelVaatlijdenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-diabetische-voet') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4DiabetischeVoetSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-dilaterend-vaatlijden') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4DilaterendVaatlijdenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-preoperatieve-screening') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4PreoperatieveScreeningSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus5-hypertensie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus5HypertensieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus5-secundaire-hypertensie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus5SecundaireHypertensieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus5-hypertensief-spoedgeval') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus5HypertensiefSpoedgevalSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus5-farmacogenetica') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus5FarmacogeneticaSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus5-ai-act') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus5AiActSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week3-casus6-cvrm') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week3Casus6CvrmSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus7PneumonieEpidemiologieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus7-pathofysiologie-kliniek-diagnostiek-pneumonie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus7PathofysiologieKliniekDiagnostiekPneumonieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus7KlinischRedenerenRespiratoireInsufficiëntieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus8-toxidromen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus8ToxidromenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus8-shock') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus8ShockSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus8-passende-zorg-op-de-intensive-care') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week4-casus8-lineare-regressielijn') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week4Casus8LineareRegressielijnSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus9-longkanker') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus9LongkankerSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus9-pleuravocht') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus9PleuravochtSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus9-voorbereiding-ct-en-pet-ct') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus9VoorbereidingCtEnPetCtSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus9-voorbereiding-pathologie-longkanker') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-basis-analyse-ecg') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10BasisAnalyseEcgSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-atriumfibrilleren') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10AtriumfibrillerenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-tachyaritmie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10TachyaritmieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-syncope') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10SyncopeSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok9Week5Casus10RitmestoornissenBijKinderenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
   if (lme === 'casus12-lme2-sepsis') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
@@ -981,10 +3159,20 @@ const SummaryPage = () => {
             Samenvattingen
           </h1>
           <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-            Kies je blok en week — elke LME opent de volledige samenvatting.
+            Kies je bachelorjaar, blok en week — elke LME opent de volledige samenvatting.
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-10">
+            <section aria-labelledby="bachelor-year-1-heading">
+              <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                <h2 id="bachelor-year-1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                  Bachelorjaar 1
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Blokken 3, 4 en 5 — curriculum geneeskunde (Erasmus MC)
+                </p>
+              </div>
+              <div className="space-y-4">
           <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
             <button
               type="button"
@@ -1211,6 +3399,201 @@ const SummaryPage = () => {
               )}
             </AnimatePresence>
           </div>
+
+          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+            <button
+              type="button"
+              onClick={() => setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')}
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
+            >
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-rose-100 dark:bg-rose-500/30 rounded-xl">
+                  <Layers className="w-6 h-6 text-rose-600 dark:text-rose-400" />
+                </div>
+                <div className="text-left">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {courseStructure.blok5.name}
+                  </h2>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 40 samenvattingen</p>
+                </div>
+              </div>
+              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {expandedBlok === 'blok5' && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
+                >
+                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                    {courseStructure.blok5.weeks.map((week, weekIndex) => (
+                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
+                        <div className="flex items-center gap-3 mb-4 -ml-7">
+                          <div className="w-3 h-3 rounded-full bg-rose-500 dark:bg-rose-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-rose-500/20 dark:ring-rose-400/30" />
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
+                          </div>
+                        </div>
+
+                        {week.cases.map((casus, casusIndex) => (
+                          <div key={casusIndex} className="mb-5 last:mb-0">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
+                              </div>
+                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
+                            </div>
+
+                            <div className="ml-0 sm:ml-2 space-y-2">
+                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                                <Link
+                                  key={lmeIndex}
+                                  to={`/summary?lme=${lmeItem.id}`}
+                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    bg-white dark:bg-slate-800/60
+                                    border-slate-200/90 dark:border-slate-600/90
+                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                >
+                                  <div className="flex items-center gap-3 min-w-0">
+                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+                                    </div>
+                                    <div className="min-w-0">
+                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                        {lmeItem.name}
+                                      </span>
+                                      <div className="flex items-center gap-3 mt-1">
+                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
+                                          ~15 min
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="bachelor-year-2-heading">
+              <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                <h2 id="bachelor-year-2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                  Bachelorjaar 2
+                </h2>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  Blok 9 — Homeostase II
+                </p>
+              </div>
+              <div className="space-y-4">
+
+          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+            <button
+              type="button"
+              onClick={() => setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')}
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
+            >
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-cyan-100 dark:bg-cyan-500/30 rounded-xl">
+                  <Droplets className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+                </div>
+                <div className="text-left">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {courseStructure.blok9.name}
+                  </h2>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 46 samenvattingen</p>
+                </div>
+              </div>
+              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {expandedBlok === 'blok9' && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
+                >
+                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                    {courseStructure.blok9.weeks.map((week, weekIndex) => (
+                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
+                        <div className="flex items-center gap-3 mb-4 -ml-7">
+                          <div className="w-3 h-3 rounded-full bg-cyan-500 dark:bg-cyan-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-cyan-500/20 dark:ring-cyan-400/30" />
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
+                          </div>
+                        </div>
+
+                        {week.cases.map((casus, casusIndex) => (
+                          <div key={casusIndex} className="mb-5 last:mb-0">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
+                              </div>
+                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
+                            </div>
+
+                            <div className="ml-0 sm:ml-2 space-y-2">
+                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                                <Link
+                                  key={lmeIndex}
+                                  to={`/summary?lme=${lmeItem.id}`}
+                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    bg-white dark:bg-slate-800/60
+                                    border-slate-200/90 dark:border-slate-600/90
+                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
+                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                >
+                                  <div className="flex items-center gap-3 min-w-0">
+                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
+                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
+                                    </div>
+                                    <div className="min-w-0">
+                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
+                                        {lmeItem.name}
+                                      </span>
+                                      <div className="flex items-center gap-3 mt-1">
+                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
+                                          ~15 min
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+              </div>
+            </section>
           </div>
         </motion.div>
       </main>

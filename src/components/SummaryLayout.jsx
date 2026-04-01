@@ -68,7 +68,16 @@ const SUMMARY_BODY_DARK =
   'dark:[&_.bg-cyan-50]:!bg-cyan-950/65 dark:[&_.bg-cyan-50_p]:!text-cyan-100 dark:[&_.bg-cyan-50_h4]:!text-cyan-200 ' +
   'dark:[&_.border-cyan-200]:!border-cyan-600/40'
 
-const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practiceLink, children, standalone = true }) => {
+const SummaryLayout = ({
+  title,
+  description,
+  caseLabel,
+  tableOfContents,
+  practiceLink,
+  blokLabel = 'Blok 4',
+  children,
+  standalone = true,
+}) => {
   if (!standalone) return <>{children}</>
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [activeSection, setActiveSection] = useState('')
@@ -128,15 +137,17 @@ const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practic
               ))}
             </nav>
 
-            <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700/80">
-              <Link
-                to={practiceLink}
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-medium hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm shadow-sm"
-              >
-                <ClipboardCheck className="w-4 h-4" />
-                Oefenvragen
-              </Link>
-            </div>
+            {practiceLink ? (
+              <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700/80">
+                <Link
+                  to={practiceLink}
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-medium hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm shadow-sm"
+                >
+                  <ClipboardCheck className="w-4 h-4" />
+                  Oefenvragen
+                </Link>
+              </div>
+            ) : null}
           </div>
         </motion.aside>
 
@@ -151,7 +162,7 @@ const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practic
           <div className="px-6 py-8 md:px-8 md:py-10 border-b border-slate-100 dark:border-slate-800/80">
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 text-slate-600 dark:text-slate-300 rounded-full text-xs font-medium">
-                Blok 4
+                {blokLabel}
               </span>
               <span className="px-3 py-1 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 text-amber-800 dark:text-amber-300 rounded-full text-xs font-medium">
                 {caseLabel}
@@ -179,22 +190,23 @@ const SummaryLayout = ({ title, description, caseLabel, tableOfContents, practic
           <div className={`px-6 py-8 md:px-8 md:py-10 ${SUMMARY_BODY_DARK}`}>
             {children}
 
-            {/* CTA */}
-            <div className="mt-12 p-6 bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border border-accent-200/90 dark:border-accent-500/25">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div>
-                  <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-1">Klaar om te oefenen?</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">Test je kennis met meerkeuzevragen.</p>
+            {practiceLink ? (
+              <div className="mt-12 p-6 bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border border-accent-200/90 dark:border-accent-500/25">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-1">Klaar om te oefenen?</h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm">Test je kennis met meerkeuzevragen.</p>
+                  </div>
+                  <Link
+                    to={practiceLink}
+                    className="flex items-center gap-2 px-6 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-bold hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors shrink-0 shadow-sm"
+                  >
+                    <ClipboardCheck className="w-5 h-5" />
+                    Oefenvragen
+                  </Link>
                 </div>
-                <Link
-                  to={practiceLink}
-                  className="flex items-center gap-2 px-6 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-bold hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors shrink-0 shadow-sm"
-                >
-                  <ClipboardCheck className="w-5 h-5" />
-                  Oefenvragen
-                </Link>
               </div>
-            </div>
+            ) : null}
           </div>
         </motion.article>
       </div>

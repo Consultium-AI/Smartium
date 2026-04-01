@@ -62,6 +62,9 @@ async function handleCreateCheckoutSession(
     successUrl?: string
     cancelUrl?: string
     customerEmail?: string
+    /** Ingesloten Checkout (EmbeddedCheckout); vereist returnUrl met {CHECKOUT_SESSION_ID} */
+    embedded?: boolean
+    returnUrl?: string
   }
   try {
     body = await request.json()
@@ -84,16 +87,33 @@ async function handleCreateCheckoutSession(
     )
   }
 
-  const successUrl = typeof body.successUrl === 'string' ? body.successUrl : ''
-  const cancelUrl = typeof body.cancelUrl === 'string' ? body.cancelUrl : ''
-  if (!successUrl || !cancelUrl) {
-    return json(origin, { error: 'successUrl en cancelUrl zijn verplicht.' }, 400)
-  }
-
+  const embedded = body.embedded === true
   const params = new URLSearchParams()
   params.set('mode', 'subscription')
-  params.set('success_url', successUrl)
-  params.set('cancel_url', cancelUrl)
+
+  if (embedded) {
+    const returnUrl = typeof body.returnUrl === 'string' ? body.returnUrl.trim() : ''
+    if (!returnUrl || !returnUrl.includes('{CHECKOUT_SESSION_ID}')) {
+      return json(
+        origin,
+        {
+          error:
+            'returnUrl is verplicht voor embedded checkout en moet het plaatshouder {CHECKOUT_SESSION_ID} bevatten.',
+        },
+        400
+      )
+    }
+    params.set('ui_mode', 'embedded')
+    params.set('return_url', returnUrl)
+  } else {
+    const successUrl = typeof body.successUrl === 'string' ? body.successUrl : ''
+    const cancelUrl = typeof body.cancelUrl === 'string' ? body.cancelUrl : ''
+    if (!successUrl || !cancelUrl) {
+      return json(origin, { error: 'successUrl en cancelUrl zijn verplicht.' }, 400)
+    }
+    params.set('success_url', successUrl)
+    params.set('cancel_url', cancelUrl)
+  }
   params.set('line_items[0][price]', priceId)
   params.set('line_items[0][quantity]', '1')
 
@@ -121,6 +141,7 @@ async function handleCreateCheckoutSession(
 
   const stripeData = (await stripeRes.json()) as {
     url?: string
+    client_secret?: string
     error?: { message?: string }
   }
 
@@ -130,6 +151,18 @@ async function handleCreateCheckoutSession(
       { error: stripeData.error?.message || 'Stripe Checkout mislukt.' },
       502
     )
+  }
+
+  if (embedded) {
+    const clientSecret = stripeData.client_secret?.trim()
+    if (!clientSecret) {
+      return json(
+        origin,
+        { error: 'Geen client_secret van Stripe voor embedded checkout.' },
+        502
+      )
+    }
+    return json(origin, { clientSecret })
   }
 
   if (!stripeData.url) {

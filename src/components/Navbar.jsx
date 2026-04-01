@@ -13,7 +13,6 @@ import {
   Moon,
   LogIn,
   LogOut,
-  CreditCard,
 } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
@@ -24,7 +23,6 @@ const navItems = [
   { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
   { name: 'Oefententamens', href: '/tentamen', icon: GraduationCap },
   { name: 'AI Chat', href: '/chat', icon: Bot },
-  { name: 'Prijzen', href: '/billing', icon: CreditCard },
 ]
 
 function userDisplayLabel(user) {

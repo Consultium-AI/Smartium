@@ -22,6 +22,7 @@ const FIREBASE_SECRET_KEYS = [
 ]
 
 const GOOGLE_OAUTH_KEY = 'VITE_GOOGLE_OAUTH_CLIENT_ID'
+const STRIPE_PUBLISHABLE_KEY = 'VITE_STRIPE_PUBLISHABLE_KEY'
 
 function parseDotEnv(filePath) {
   const out = {}
@@ -98,6 +99,27 @@ if (googleId) {
     console.log('Verwijderd secret (fallback in code):', GOOGLE_OAUTH_KEY)
   } else {
     console.log('Geen', GOOGLE_OAUTH_KEY, 'in .env — build gebruikt fallback uit firebase.js (secret bestond al niet of kon niet verwijderd worden).')
+  }
+}
+
+const stripePk = String(env[STRIPE_PUBLISHABLE_KEY] ?? '').trim()
+if (stripePk) {
+  gh(['secret', 'set', STRIPE_PUBLISHABLE_KEY], stripePk)
+  console.log('OK secret:', STRIPE_PUBLISHABLE_KEY)
+} else {
+  const rmStripe = spawnSync('gh', ['secret', 'delete', STRIPE_PUBLISHABLE_KEY], {
+    cwd: root,
+    encoding: 'utf8',
+    stdio: ['inherit', 'pipe', 'pipe'],
+  })
+  if (rmStripe.status === 0) {
+    console.log('Verwijderd secret (billing gebruikt redirect-checkout):', STRIPE_PUBLISHABLE_KEY)
+  } else {
+    console.log(
+      'Geen',
+      STRIPE_PUBLISHABLE_KEY,
+      'in .env — embedded checkout op Pages uit; zet pk_… voor ingebouwde betaalmodule.'
+    )
   }
 }
 
