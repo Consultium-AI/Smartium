@@ -66,6 +66,7 @@ const Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary = () => {
       description="Binnen dit onderwerp staat vooral de overproductie van pro-inflammatoire cytokinen centraal. Dat zijn signaalstoffen die ontsteking aanjagen. Belangrijke cytokinen die hierbij steeds terugkomen zijn onder andere IL-1β, IL-18, IL-6, TNF-α en verschillende interferonen."
       caseLabel="Week 5 · Casus 10: Patiënt met auto-inflammatoire ziekte"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -49,6 +49,7 @@ const Blok9Week2Casus4DilaterendVaatlijdenSummary = () => {
       caseLabel="Week 2 · Casus 4: De vrouw die maar 20 meter kan lopen"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week2-casus4-dilaterend-vaatlijden"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsEenAneurysma /></section>

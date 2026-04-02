@@ -53,6 +53,7 @@ const Blok5Week1Casus2ProvokeSummary = () => {
       description="Bij dermatologisch onderzoek is het belangrijk om eerst objectief te kijken en pas daarna te gaan interpreteren. Je beschrijft dus wat je ziet, zonder meteen een diagnose te noemen. Dat is precies waarom PROVOKE zo handig is: het dwingt je om geen kenmerken over het hoofd te zien."
       caseLabel="Week 1 · Casus 2: De veranderde barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus2-provoke"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

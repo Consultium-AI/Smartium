@@ -63,6 +63,7 @@ const Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary = () =>
       description="De knie is een van de grootste en meest complexe gewrichten van het menselijk lichaam. Het is een synoviaal scharniergewricht: dat betekent dat het vooral flexie en extensie mogelijk maakt, dus buigen en strekken."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -49,6 +49,7 @@ const Blok9Week2Casus3KlinischeStoornissenKaliumbalansSummary = () => {
       caseLabel="Week 2 · Casus 3: Patiënt met ernstig verstoorde elektrolyten"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week2-casus3-klinische-stoornissen-kaliumbalans"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02KaliumbalansBasis /></section>

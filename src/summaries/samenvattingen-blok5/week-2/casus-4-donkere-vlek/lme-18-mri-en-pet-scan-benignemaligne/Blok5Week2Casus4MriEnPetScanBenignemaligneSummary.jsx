@@ -61,6 +61,7 @@ const Blok5Week2Casus4MriEnPetScanBenignemaligneSummary = () => {
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-mri-en-pet-scan-benignemaligne"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

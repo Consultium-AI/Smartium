@@ -43,6 +43,7 @@ const Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary = () => {
       description="Om de gezondheidstoestand van een bevolking te beschrijven, worden verschillende maten gebruikt. Die zijn niet helemaal los van elkaar, maar ze leggen wel andere accenten. Het is handig om ze in vier groepen te verdelen."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-volksgezondheidsindicatoren-dalys"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

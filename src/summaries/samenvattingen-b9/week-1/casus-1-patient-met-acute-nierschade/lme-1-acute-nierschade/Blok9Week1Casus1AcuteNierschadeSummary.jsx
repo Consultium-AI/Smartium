@@ -36,6 +36,7 @@ const Blok9Week1Casus1AcuteNierschadeSummary = () => {
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week1-casus1-acute-nierschade"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <SectLeerdoelenEnWatIs />

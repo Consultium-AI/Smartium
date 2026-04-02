@@ -19,6 +19,7 @@ import {
   Zap,
 } from 'lucide-react'
 import SummaryLayout from '../../../../../components/SummaryLayout'
+import Blok5Week6Casus13MmTargetedTherapyOefenvragenCallout from './Blok5Week6Casus13MmTargetedTherapyOefenvragenCallout'
 import Sect01Leerdoelen from './Sect01Leerdoelen'
 import Sect02WatIsMultipelMyeloom from './Sect02WatIsMultipelMyeloom'
 import Sect03FunctieVanPlasmacellen from './Sect03FunctieVanPlasmacellen'
@@ -73,6 +74,8 @@ const Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSu
       caseLabel="Week 6 · Casus 13: Multipel myeloom"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink={PRACTICE_LME_PATH}
+      practiceFooter={<Blok5Week6Casus13MmTargetedTherapyOefenvragenCallout to={PRACTICE_LME_PATH} />}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

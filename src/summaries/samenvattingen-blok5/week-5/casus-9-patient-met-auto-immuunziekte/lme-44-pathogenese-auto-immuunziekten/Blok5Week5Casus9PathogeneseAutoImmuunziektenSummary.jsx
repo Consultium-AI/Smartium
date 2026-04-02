@@ -59,6 +59,7 @@ const Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary = () => {
       description="Auto-immuniteit en auto-immuunziekten horen bij elkaar, maar zijn niet hetzelfde. Auto-immuniteit betekent dat het immuunsysteem reageert op lichaamseigen antigenen. Dat hoeft nog niet meteen tot ziekte te leiden. Pas wanneer deze reactie schade veroorzaakt aan cellen, weefsels of organen, spreken we van een auto-immuunziekte."
       caseLabel="Week 5 · Casus 9: Patiënt met auto-immuunziekte"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus9-pathogenese-auto-immuunziekten"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

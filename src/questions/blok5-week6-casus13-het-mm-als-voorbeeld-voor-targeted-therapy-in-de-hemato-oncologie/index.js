@@ -1,0 +1,9 @@
+import { blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart01 } from './Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart01'
+import { blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart02 } from './Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart02'
+
+export const blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsMap = {
+  'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie': [
+    ...blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart01,
+    ...blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsPart02,
+  ],
+}

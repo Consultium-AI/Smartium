@@ -48,6 +48,7 @@ const Blok5Week2Casus4ImmuuntherapieVanKankerSummary = () => {
       description="Kanker ontstaat niet los van de omgeving. Tumoren vormen samen met hun directe omgeving, en vooral met immuuncellen, een soort ecosysteem. Juist die wisselwerking is belangrijk voor het ontstaan en het voortbestaan van maligniteiten."
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-immuuntherapie-van-kanker"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

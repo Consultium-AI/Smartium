@@ -42,6 +42,7 @@ const Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary = () => {
       description="In de zorg worden heel veel medische hulpmiddelen gebruikt, van eenvoudige hulpmiddelen zoals krukken tot ingewikkelde apparatuur zoals een MRI. Juist omdat deze middelen zo vaak worden ingezet, is het belangrijk dat ze veilig zijn en veilig gebruikt kunnen worden. Daarvoor is Europese regelgeving nodig."
       caseLabel="Week 2 · Casus 4: De vrouw die maar 20 meter kan lopen"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week2-casus4-mdr-juridische-aspecten-medische-tools"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

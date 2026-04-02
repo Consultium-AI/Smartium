@@ -56,6 +56,7 @@ const Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary = () => {
       description="Iedereen heeft huidplekken of huidafwijkingen. Dat is op zichzelf meestal niet verontrustend. Toch is het voor een arts belangrijk om te weten welke afwijkingen onschuldig zijn en welke juist aandacht vragen."
       caseLabel="Week 3 · Casus 5: De verdachte huid"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus5-huidtumoren-benigne-en-premaligne"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -54,6 +54,7 @@ const Blok5Week6Casus12GaswisselingHbO2Co2CoSummary = () => {
     <SummaryLayout
       title="Gaswisseling Hb, O2, CO2, CO"
       description="Zuurstof wordt vanuit de longen via het bloed vervoerd naar de perifere weefsels, zoals spieren, hersenen en lever."
+      practiceLink="/oefenvragen?lme=blok5-week6-casus12-gaswisseling-hb-o2-co2-co"
       caseLabel="Week 6 · Casus 12: Verwarde patiënt met griepachtige klachten"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}

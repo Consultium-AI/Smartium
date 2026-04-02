@@ -53,6 +53,7 @@ const Blok5Week1Casus2PsoriasisSummary = () => {
       description="Psoriasis is een chronische, auto-immuun huidaandoening. Het is, naast eczeem, één van de meest voorkomende chronische huidziekten. Wereldwijd komt het naar schatting voor bij 2-3% van de bevolking; in Nederland gaat het om ongeveer 600.000 mensen. De aandoening treedt vaak op tussen het 20e en 40e levensjaar, maar kan op elke leeftijd voorkomen. Mannen en vrouwen hebben er ongeveer even vaak last van. Bij mensen met een lichtere huid wordt psoriasis vaker gezien dan bij mensen met een donkere huid."
       caseLabel="Week 1 · Casus 2: De veranderde barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus2-psoriasis"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -49,6 +49,7 @@ const Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary = () => {
       description="Vasculitis is beschadiging van de vaatwand door een ontstekingsproces. Het kan voorkomen in de huid, maar eigenlijk in principe overal in het lichaam en in elk orgaan. Als de huid is aangedaan, spreek je van cutane vasculitis. Dat kan ook een huidcomponent zijn van een systemische vasculitis."
       caseLabel="Week 2 · Casus 3: Paarse vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus3-begripsbepaling-dermatologische-uitingen"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

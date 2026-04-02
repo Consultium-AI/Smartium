@@ -64,6 +64,7 @@ const Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary = () => {
       description="De huid is niet alleen een buitenlaag, maar heeft meerdere belangrijke functies. De huid beschermt het lichaam, regelt de temperatuur, helpt bij het waarnemen van prikkels, draagt bij aan de vorming van vitamine D3 en heeft ook een sociale functie."
       caseLabel="Week 1 · Casus 1: De huid als succesvolle barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

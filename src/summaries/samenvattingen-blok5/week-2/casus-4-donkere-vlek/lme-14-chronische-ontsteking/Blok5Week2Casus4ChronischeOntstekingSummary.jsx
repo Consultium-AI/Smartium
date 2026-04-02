@@ -36,6 +36,7 @@ const Blok5Week2Casus4ChronischeOntstekingSummary = () => {
       description="Chronische ontsteking is een langdurige ontstekingsreactie waarbij mononucleaire cellen — vooral macrofagen, lymfocyten en plasmacellen — centraal staan, vaak gepaard met weefselverandering en reparatie zoals fibrose."
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-chronische-ontsteking"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

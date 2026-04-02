@@ -48,6 +48,7 @@ const Blok5Week7Casus14DermatoloogInJeBroekzakSummary = () => {
       description="Huidkanker komt veel voor en de incidentie neemt toe. Juist daarom is vroege herkenning belangrijk, vooral bij melanoom."
       caseLabel="Week 7 · Casus 14: AI in de zorg"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week7-casus14-dermatoloog-in-je-broekzak"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

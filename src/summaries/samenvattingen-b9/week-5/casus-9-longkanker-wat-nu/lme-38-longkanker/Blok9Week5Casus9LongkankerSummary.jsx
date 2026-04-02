@@ -70,6 +70,7 @@ const Blok9Week5Casus9LongkankerSummary = () => {
       description="Longkanker is wereldwijd al tientallen jaren een van de meest voorkomende en dodelijkste vormen van kanker."
       caseLabel="Week 5 · Casus 9: Longkanker, wat nu"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus9-longkanker"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -57,6 +57,7 @@ const Blok9Week5Casus10RitmestoornissenBijKinderenSummary = () => {
       description="Bij kinderen is het belangrijk om de hartfrequentie altijd op het ECG te bepalen. Dat is niet zomaar een detail: de cardiac output van een kind hangt voor een groot deel af van de hartfrequentie, omdat het slagvolume kleiner is dan bij volwassenen."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-ritmestoornissen-bij-kinderen"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

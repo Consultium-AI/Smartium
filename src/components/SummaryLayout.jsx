@@ -74,6 +74,7 @@ const SummaryLayout = ({
   caseLabel,
   tableOfContents,
   practiceLink,
+  practiceFooter,
   blokLabel = 'Blok 4',
   children,
   standalone = true,
@@ -191,21 +192,23 @@ const SummaryLayout = ({
             {children}
 
             {practiceLink ? (
-              <div className="mt-12 p-6 bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border border-accent-200/90 dark:border-accent-500/25">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-1">Klaar om te oefenen?</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm">Test je kennis met meerkeuzevragen.</p>
+              practiceFooter ?? (
+                <div className="mt-12 p-6 bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border border-accent-200/90 dark:border-accent-500/25">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                      <h3 className="font-bold text-slate-900 dark:text-slate-100 mb-1">Klaar om te oefenen?</h3>
+                      <p className="text-slate-600 dark:text-slate-400 text-sm">Test je kennis met meerkeuzevragen.</p>
+                    </div>
+                    <Link
+                      to={practiceLink}
+                      className="flex items-center gap-2 px-6 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-bold hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors shrink-0 shadow-sm"
+                    >
+                      <ClipboardCheck className="w-5 h-5" />
+                      Oefenvragen
+                    </Link>
                   </div>
-                  <Link
-                    to={practiceLink}
-                    className="flex items-center gap-2 px-6 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-bold hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors shrink-0 shadow-sm"
-                  >
-                    <ClipboardCheck className="w-5 h-5" />
-                    Oefenvragen
-                  </Link>
                 </div>
-              </div>
+              )
             ) : null}
           </div>
         </motion.article>

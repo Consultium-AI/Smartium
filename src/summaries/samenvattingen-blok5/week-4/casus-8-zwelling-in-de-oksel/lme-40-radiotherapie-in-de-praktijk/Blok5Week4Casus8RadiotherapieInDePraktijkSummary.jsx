@@ -60,6 +60,7 @@ const Blok5Week4Casus8RadiotherapieInDePraktijkSummary = () => {
       description="Radiotherapie is een medische behandeling met röntgenstraling: dat is ioniserende straling. In de meeste gevallen wordt deze behandeling ingezet tegen kanker. Het doel is om tumorcellen zo veel mogelijk te beschadigen en te laten sterven, terwijl het omliggende normale weefsel zo veel mogelijk gespaard blijft."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-radiotherapie-in-de-praktijk"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

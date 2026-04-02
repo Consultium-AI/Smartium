@@ -58,6 +58,7 @@ const Blok9Week4Casus8LineareRegressielijnSummary = () => {
       caseLabel="Week 4 · Casus 8: Een leuk feestje"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week4-casus8-lineare-regressielijn"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsLineaireRegressie /></section>

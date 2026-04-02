@@ -50,6 +50,7 @@ const Blok5Week5Casus11IntroductieKinderoncologieSummary = () => {
       description="Kinderoncologie gaat over kanker bij kinderen. Daarbij worden alle kinderen met kwaadaardige aandoeningen behandeld binnen de kinderoncologie. Het is belangrijk om meteen te onthouden dat kinderkanker niet hetzelfde is als volwassen kanker."
       caseLabel="Week 5 · Casus 11: Kind met algehele malaise, koorts en zwelling in de buik"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus11-introductie-kinderoncologie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

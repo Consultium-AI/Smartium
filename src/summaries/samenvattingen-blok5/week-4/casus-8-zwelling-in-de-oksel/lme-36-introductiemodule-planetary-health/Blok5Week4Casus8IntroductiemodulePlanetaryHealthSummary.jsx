@@ -45,6 +45,7 @@ const Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary = () => {
       description="Planetary health gaat over meer dan alleen klimaatverandering."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-introductiemodule-planetary-health"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

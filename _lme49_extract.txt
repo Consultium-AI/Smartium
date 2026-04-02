@@ -1,0 +1,110 @@
+LME 49 – Kinderoncologie - begrijp de hallmarks
+Leerdoelen
+Na het doornemen van deze samenvatting kun je:
+de verschillende hallmarks of cancer benoemen en uitleggen;
+de gedachte achter het model van Hanahan en Weinberg beschrijven;
+uitleggen hoe kankercellen zich gedragen ten opzichte van normale cellen;
+de betekenis van de hallmarks voor patiënten en behandeling herkennen;
+voorbeelden noemen van therapieën die op verschillende hallmarks aangrijpen.
+Inleiding: wat zijn hallmarks of cancer?
+De term *hallmarks of cancer* verwijst naar de typische eigenschappen van kankercellen. Het is een manier om kanker te begrijpen als een ziekte waarbij cellen stap voor stap kenmerken verwerven die hen helpen om te groeien, te overleven en zich te verspreiden.
+Het oorspronkelijke model werd in 2000 beschreven en bevatte zes hoofdkenmerken. In 2011 werd dit uitgebreid met vier extra kenmerken. Daardoor zijn er nu tien hallmarks. Samen vormen ze een soort raamwerk om het gedrag van kankercellen te ordenen.
+Een belangrijk idee is dat kanker zich in meerdere stappen ontwikkelt. Kankercellen krijgen daarbij steeds meer eigenschappen die hen anders maken dan normale cellen.
+> Aandachtsvraag: Waarom is dit model handig?  > Mini-antwoord: Omdat het helpt om kanker te begrijpen als een combinatie van verschillende celgedragingen in plaats van één enkel probleem.
+De basisgedachte van het model
+Normale cellen groeien alleen wanneer ze daarvoor een signaal krijgen. Ook stoppen ze met delen wanneer dat nodig is. Kankercellen doen dat niet meer goed. Zij kunnen groeisignalen blijven volgen, remmende signalen negeren, ontsnappen aan afweer en zich door het lichaam verspreiden.
+Het model van de hallmarks of cancer laat zien welke eigenschappen kankercellen nodig hebben om een tumor te laten ontstaan en verder te laten groeien. Het is dus niet alleen een beschrijving van wat kankercellen doen, maar ook een overzicht van aangrijpingspunten voor behandeling.
+Overzicht van de tien hallmarks
+Tabel 1. De tien hallmarks of cancer
+Hallmark
+Korte uitleg
+1. Aanhoudende groeisignalen
+Kankercellen geven zichzelf signalen om te blijven groeien en delen.
+2. Groeiremmende signalen ontwijken
+Kankercellen negeren signalen die normaal celdeling afremmen.
+3. Vernietiging door immuunsysteem ontwijken
+Kankercellen ontsnappen aan herkenning en vernietiging door afweercellen.
+4. Oneindig kunnen delen
+Kankercellen kunnen hun delingsvermogen blijven behouden.
+5. Tumor stimulerende ontsteking
+Ontsteking in de omgeving van de tumor helpt de tumor groeien.
+6. Weefsels binnendringen en uitzaaiing
+Kankercellen kunnen invasief worden en metastasen vormen.
+7. Energiehuishouding herprogrammeren
+Kankercellen gebruiken energie op een andere manier dan normale cellen.
+8. Celdood weerstaan
+Kankercellen vermijden apoptose, dus geprogrammeerde celdood.
+9. Genoominstabiliteit en mutatie
+Kankercellen hebben een instabiel DNA en stapelen mutaties op.
+10. Energiehuishouding herprogrammeren / ontstekingsactiviteit als extra invloed
+De tumoromgeving speelt mee in het gedrag van de kanker.
+De zes oorspronkelijke kenmerken
+1. Aanhoudende groeisignalen
+Kankercellen kunnen zichzelf voorzien van groeifactoren. Groeifactoren zijn kleine eiwitten die cellen aanzetten tot delen. Normale cellen delen alleen wanneer ze van buitenaf een signaal krijgen. Kankercellen kunnen dit deels zelf sturen.
+Dat doen ze op twee manieren. Ten eerste kunnen ze veel eigen groeifactoren produceren. Ten tweede kunnen ze extra groeifactorreceptoren op hun celoppervlak maken, waardoor ze gevoeliger worden voor groeisignalen.
+Zo zorgen kankercellen ervoor dat het delingsproces voortdurend actief blijft.
+2. Groeiremmende signalen ontwijken
+Normale cellen reageren op remmende signalen van naburige cellen. Wanneer cellen te dicht op elkaar zitten, wordt deling afgeremd. Dit heet contactinhibitie. Kankercellen zijn daar ongevoelig voor.
+Ook verliezen kankercellen vaak tumorsuppressor-eiwitten, zoals p53 en RB. Deze eiwitten zorgen normaal juist voor remming van groei of deling wanneer er iets misgaat. Wanneer ze niet meer goed werken, verdwijnt een belangrijke bescherming tegen ongecontroleerde celdeling.
+> Aandachtsvraag: Wat gebeurt er als p53 uitvalt?  > Mini-antwoord: Dan kan de cel minder goed stoppen of afbreken bij DNA-schade, waardoor kankercellen makkelijker blijven overleven.
+3. Weefsels binnendringen en uitzaaiing
+Dit kenmerk draait om invasiviteit. De meeste cellen blijven netjes op hun plek in het eigen weefsel. Kankercellen kunnen juist eigenschappen krijgen waardoor ze zich verplaatsen en door weefsels heen dringen.
+Daarbij speelt de *epitheliale naar mesenchymale overgang* mee, vaak afgekort als EMT. Dat betekent dat cellen mobiele eigenschappen krijgen. Ze worden beweeglijker en kunnen als het ware door weefsels kruipen.
+Als kankercellen zich daarna ergens anders in het lichaam vestigen, heet dat metastasering of uitzaaiing. Dit is een belangrijk onderdeel van het ziekteproces.
+4. Oneindig kunnen delen
+Normale cellen hebben een beperkte hoeveelheid delingen. Dat heeft te maken met telomeren, stukjes DNA aan het einde van de chromosomen. Bij elke celdeling worden telomeren korter. Wanneer ze te kort worden, moet de cel stoppen met delen.
+Kankercellen omzeilen dit door een enzym te maken dat telomerase heet. Telomerase verlengt de telomeren, waardoor de cel zijn delingsvermogen behoudt. Zo kunnen kankercellen in principe steeds opnieuw delen.
+5. Angiogenese stimuleren
+Voor groei heeft een tumor bloedtoevoer nodig. Zodra een tumor groter wordt dan ongeveer een suikerklontje, is extra bloedvoorziening nodig. Kankercellen zorgen daarom dat er nieuwe bloedvaten ontstaan.
+Dit proces heet *angiogenese*. Daarbij spelen groeifactoren zoals VEGF een rol. VEGF staat voor *vasculaire endotheliale groeifactor*. Deze stof zorgt ervoor dat bloedvaten ontkiemen en verder groeien.
+Zonder angiogenese kan een tumor niet goed verder uitgroeien, omdat de cellen dan te weinig zuurstof en voedingsstoffen krijgen.
+6. Celdood weerstaan
+Normale cellen kunnen zichzelf laten afsterven wanneer dat nodig is. Dit geprogrammeerde proces heet apoptose. Het is een belangrijk beschermingsmechanisme, bijvoorbeeld bij DNA-schade.
+Kankercellen kunnen apoptose vermijden. Ze doen dat onder andere door hoge spiegels van beschermende eiwitten te maken. Ook missen ze vaak dood-veroorzakende eiwitten die normaal apoptose op gang brengen.
+P53 speelt hierin een grote rol. Dit eiwit helpt namelijk om cellen met schade te laten stoppen of af te breken. Als p53 ontbreekt of niet goed werkt, kunnen kankercellen minder goed reageren op DNA-schade en worden ze resistenter tegen behandelingen.
+De vier extra kenmerken uit de latere uitbreiding
+7. Energiehuishouding herprogrammeren
+Normale cellen maken energie op een efficiënte manier, waarbij veel zuurstof nodig is. Kankercellen schakelen vaak over op een andere manier van energieproductie, namelijk *aerobe glycolyse*. Daarbij is meer suiker nodig, maar kan de cel ook leven met minder zuurstof.
+Dit past bij de veranderde energiebehoefte van de tumorcel. De energiehuishouding van de cel wordt dus als het ware opnieuw ingesteld.
+8. Het immuunsysteem ontwijken
+Het immuunsysteem beschermt het lichaam tegen afwijkende cellen. Witte bloedcellen kunnen defecte cellen herkennen en vernietigen. Kankercellen zorgen er echter voor dat ze minder goed worden opgemerkt of aangepakt.
+Ze kunnen eiwitten van hun oppervlak verwijderen of verbergen. Daardoor worden ze minder goed herkend door het immuunsysteem. Ook kunnen ze witte bloedcellen afremmen die hen proberen te vernietigen.
+9. Instabiliteit van het DNA van de kankercel
+Kankercellen zijn genetisch instabiel. Ze stapelen steeds meer mutaties op doordat ze snel delen en slordiger met hun DNA omgaan. Normale cellen controleren en repareren hun DNA veel beter.
+Bij kankercellen ontstaan daardoor steeds meer fouten in het erfelijk materiaal. Dat maakt verdere tumorgroei en verandering mogelijk.
+10. Tumorstimulerende ontsteking
+Ontsteking in de omgeving van de tumor helpt de tumor groeien. Deze ontsteking is niet alleen een gevolg van de tumor, maar draagt ook actief bij aan het ziekteproces.
+Daarom kreeg dit kenmerk een plaats in het overzicht van de hallmarks. Het laat zien dat niet alleen de kankercel zelf belangrijk is, maar ook de omgeving waarin de tumor groeit.
+Waarom zijn de hallmarks belangrijk voor patiënten?
+De hallmarks of cancer hebben directe betekenis voor de behandeling. Als je weet welk kenmerk in een tumor belangrijk is, kun je daar therapie op richten. Zo ontstaan verschillende behandelmogelijkheden, afhankelijk van welke groeiroutes of overlevingsstrategieën de tumor gebruikt.
+Tabel 2. Voorbeelden van therapieën die op hallmarks aangrijpen
+Doelwit
+Voorbeeld van behandeling
+Aanhoudende groeisignalen
+EGFR-remmers
+Groeiremmende signalen ontwijken
+Cyclin-dependent kinase inhibitors
+Celdood weerstaan
+Pro-apoptotische BH3-mimetica
+Angiogenese stimuleren
+Remmers van VEGF-signaal
+Weefsels binnendringen en uitzaaiing
+Remmers van HGF/c-Met
+Tumor stimulerende ontsteking
+Selectieve anti-inflammatoire middelen
+Energiehuishouding herprogrammeren
+Remmers van aerobe glycolyse
+Immuunsysteem ontwijken
+Immune activating anti-CTLA4 mAb
+Oneindig kunnen delen
+Telomerase-remmers
+Genoominstabiliteit en mutatie
+PARP-remmers
+Deze voorbeelden zijn bedoeld als illustratie van hoe de hallmarks gebruikt kunnen worden als aangrijpingspunt voor therapie. Er bestaan dus behandelingen die proberen een bepaald kenmerk van de tumor te blokkeren.
+Klinische betekenis: waarom dit kennis oplevert
+Voor de kliniek is het vooral belangrijk om te begrijpen dat verschillende tumoren verschillende kenmerken nadrukkelijk kunnen gebruiken. Daardoor kunnen ook verschillende behandelingen nodig zijn. Soms grijpt een therapie aan op een groeisignaal, soms op angiogenese, soms op afweerontwijking of op DNA-herstel.
+Zo helpt het hallmarks-model niet alleen om kanker te begrijpen, maar ook om na te denken over behandeling en over waarom een tumor zich op een bepaalde manier gedraagt.
+> Aandachtsvraag: Waarom is dit model zo bruikbaar in de oncologie?  > Mini-antwoord: Omdat het laat zien op welke biologische eigenschappen van de tumor behandeling kan worden gericht.
+Samenvatting
+De hallmarks of cancer zijn de typische eigenschappen die kankercellen tijdens hun ontwikkeling verwerven. Het oorspronkelijke model bevatte zes kenmerken, later aangevuld met vier extra kenmerken. Kankercellen kunnen groeisignalen blijven geven, remming van groei ontwijken, uitzaaien, oneindig blijven delen, bloedvatvorming stimuleren, apoptose vermijden, hun energiehuishouding veranderen, het immuunsysteem ontwijken, genetisch instabiel worden en profiteren van tumorstimulerende ontsteking.
+Voor patiënten en behandeling is dit belangrijk, omdat elk kenmerk een mogelijk aangrijpingspunt voor therapie kan zijn. Hierdoor helpt het model om kanker beter te begrijpen én om gerichter over behandeling na te denken.

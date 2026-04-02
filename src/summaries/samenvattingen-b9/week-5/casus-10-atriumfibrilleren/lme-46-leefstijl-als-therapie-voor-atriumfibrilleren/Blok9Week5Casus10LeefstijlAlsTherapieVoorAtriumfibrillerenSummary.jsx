@@ -48,6 +48,7 @@ const Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary = () => 
       description="Atriumfibrilleren is een hartritmestoornis waarbij het hart onregelmatig en vaak te snel klopt. De klachten kunnen verschillen, maar passen vaak bij hartkloppingen, vermoeidheid en duizeligheid. Soms voelt een patiënt zich vooral “niet goed”, zonder dat de klachten meteen specifiek lijken."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

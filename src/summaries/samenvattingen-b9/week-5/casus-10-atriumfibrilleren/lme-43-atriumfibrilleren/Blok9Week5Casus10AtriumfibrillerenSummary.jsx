@@ -57,6 +57,7 @@ const Blok9Week5Casus10AtriumfibrillerenSummary = () => {
       description="Bij atriumfibrilleren is die georganiseerde geleiding verdwenen. Het hartritme wordt dan niet meer bepaald door één enkele impuls uit de sinusknoop, maar door meerdere, rondcirkelende elektrische golfjes: multiple meandering re-entry wavelets."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-atriumfibrilleren"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

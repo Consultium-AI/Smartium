@@ -40,6 +40,7 @@ const Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary = () => {
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01LeerdoelenPresentatie />

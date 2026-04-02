@@ -1,0 +1,244 @@
+LME 28 – CVRM
+Leerdoelen
+Na het doornemen van deze stof kun je:
+uitleggen hoe je het risico op atherosclerotische hart- en vaatziekten inschat;
+benoemen welke patiënten in aanmerking komen voor behandeling of preventie;
+de belangrijkste risicofactoren voor hart- en vaatziekten noemen;
+de leefstijladviezen noemen die altijd aan bod moeten komen;
+uitleggen wanneer medicamenteuze behandeling wordt gekozen.
+Cardiovasculair risicomanagement: de basis
+Cardiovasculair risicomanagement, kortweg CVRM, draait om het voorkomen van hart- en vaatziekten. Voor hart- en vaatziekten geldt net als voor veel andere aandoeningen: voorkomen is beter dan genezen. Het gaat hierbij vooral om aandoeningen waarbij atherosclerose een centrale rol speelt. Atherosclerose is vaatvernauwing door vetafzetting en ontsteking in de vaatwand. Daardoor kunnen onder andere een myocardinfarct, angina pectoris, TIA/herseninfarct, perifeer arterieel vaatlijden en aneurysma van de aorta optreden.
+Binnen CVRM wordt niet alleen gekeken of iemand al een hart- of vaatziekte heeft gehad, maar vooral naar het totale risico op een gebeurtenis in de komende 10 jaar. Op basis daarvan wordt iemand ingedeeld in een risicocategorie. Dat bepaalt vervolgens of alleen leefstijladvies voldoende is, of dat ook medicatie nodig is.
+Primaire en secundaire preventie
+Binnen de CVRM wordt onderscheid gemaakt tussen:
+Primaire preventie: voorkomen van hart- en vaatziekten bij iemand die die aandoening nog niet heeft doorgemaakt.
+Secundaire preventie: voorkomen van een nieuwe hart- en vaatziekte na een eerdere cardiovasculaire gebeurtenis.
+De term tertiaire preventie wordt in de praktijk bij hart- en vaatziekten eigenlijk niet gebruikt.
+> Aandachtsvraag: Wanneer gebruik je vooral het risicoprofiel en wanneer kijk je direct naar een zeer hoog risico?  > Mini-antwoord: Bij mensen zonder doorgemaakte hart- en vaatziekte gebruik je het risicoprofiel; bij patiënten met een eerdere cardiovasculaire gebeurtenis of andere hoog-risicodiagnosen is het risico direct zeer hoog.
+Risicofactoren: wat moet je altijd uitvragen?
+Bij het opstellen van een cardiovasculair risicoprofiel vraag je een aantal gegevens standaard uit. De belangrijkste risicofactoren zijn:
+leeftijd;
+geslacht;
+roken;
+bloeddruk;
+cholesterol;
+diabetes mellitus;
+overgewicht en obesitas, vooral centrale adipositas;
+positieve familie-anamnese;
+lage sociaal-economische status;
+chronische nierinsufficiëntie;
+inflammatoire aandoeningen zoals reumatoïde artritis;
+obstructief slaapapneusyndroom;
+eerdere pre-eclampsie of HELLP tijdens de zwangerschap;
+regio van de wereld waar iemand woont.
+Sommige factoren kun je natuurlijk niet beïnvloeden, zoals leeftijd, geslacht en familie-anamnese. Andere factoren juist wel, zoals roken, voeding, beweging en bloeddruk.
+Cardiovasculaire risicoprofiel-anamnese
+Voor het opstellen van een risicoprofiel zijn in elk geval de volgende anamnesegegevens nodig:
+leeftijd;
+geslacht;
+roken, uitgedrukt in pack-years;
+alcohol- en drugsgebruik;
+familie-anamnese;
+voeding;
+lichamelijke activiteit in uren per week.
+Lichamelijk onderzoek en aanvullend onderzoek
+Bij het lichamelijk onderzoek richt je je in elk geval op:
+lengte en gewicht, om de BMI te berekenen;
+middelomtrek;
+bloeddruk;
+tekenen van erfelijke dyslipidemie, zoals peesxanthomen, arcus lipoides en xanthelasmata;
+algemeen lichamelijk onderzoek wanneer daar aanleiding toe is, bijvoorbeeld bij hypothyreoïdie, Cushing of cardiale souffles.
+Aanvullend onderzoek is belangrijk om het risico beter in te schatten.
+Tabel 1. Minimaal onderzoek bij CVRM
+Onderdeel
+Wat je minimaal nodig hebt
+Anamnese
+Leeftijd, geslacht, roken, alcohol/drugs, familie-anamnese, voeding, lichamelijke activiteit
+Lichamelijk onderzoek
+BMI, middelomtrek, bloeddruk, tekenen van erfelijke dyslipidemie
+Labonderzoek
+Nierfunctie (eGFR) en eiwit in urine, glucose en HbA1c bij diabetes mellitus, lipidenprofiel
+Extra onderzoek
+Alleen op indicatie, bijvoorbeeld ASAT, ALAT, TSH
+ECG
+Niet standaard nodig, alleen bij twijfel over de voorgeschiedenis, bijvoorbeeld een eerder myocardinfarct
+Een ECG hoort dus niet standaard bij iedere risicobepaling. Het wordt alleen gedaan als er een goede reden voor is.
+Risico inschatten: hoe doe je dat?
+Na anamnese, lichamelijk onderzoek en aanvullend onderzoek wordt het risico op hart- en vaatziekten bepaald. Daarbij wordt gebruikgemaakt van de CVRM-risicotabel en van SCORE2.
+Tabel 2. Risicocategorieën en globale aanpak
+Risicogroep
+Voorbeelden
+Beleid
+Zeer hoog risico
+Eerder doorgemaakte hart- en vaatziekte, diabetes met ernstige eindorgaanschade, ernstige chronische nierschade, bewezen familiaire hypercholesterolemie met sterk verhoogd risico
+Medicamenteuze behandeling is geïndiceerd
+Hoog risico
+Diabetes mellitus zonder ernstige eindorgaanschade maar met extra risicofactoren, matige chronische nierschade, sterk verhoogde bloeddruk, familiaire hypercholesterolemie, hoog SCORE2-risico
+Leefstijl + vaak medicatie
+Matig verhoogd risico
+Bijvoorbeeld diabetes zonder extra risicofactoren of een matig verhoogd SCORE2-risico
+Leefstijl, medicatie afwegen
+Laag risico
+Lage SCORE2-uitslag
+Leefstijladvies
+Bij mensen zonder de eerder genoemde hoog-risicodiagnosen wordt het risico geschat met SCORE2. Daarbij kijk je naar vijf factoren:
+leeftijd;
+geslacht;
+roken;
+onbehandelde bloeddruk;
+onbehandeld cholesterol.
+De risicotabel is leeftijdsafhankelijk. Grofweg geldt:
+onder 50 jaar: laag <2,5%, matig verhoogd 2,5–<7,5%, hoog >7,5%;
+50–69 jaar: laag <5%, matig verhoogd 5–<10%, hoog >10%;
+70 jaar en ouder: laag niet van toepassing, matig verhoogd <15%, hoog ≥15%.
+> Aandachtsvraag: Waarom is een 10-jaarsrisico zo belangrijk?  > Mini-antwoord: Omdat het helpt bepalen of leefstijl alleen genoeg is of dat medicamenteuze preventie nodig is.
+Wanneer is de risicotabel niet van toepassing?
+De tabel gebruik je niet voor alle patiënten. Uitzonderingen zijn onder andere:
+mensen ouder dan 80 jaar;
+mensen jonger dan 40 jaar;
+mensen met een extreem hoge bloeddruk;
+mensen met extreem hoog cholesterol;
+mensen met extreme obesitas.
+Bij deze groepen moet je dus extra klinisch nadenken en de situatie individueel beoordelen.
+Wat doe je bij een verhoogd risico?
+Behandeling van verhoogde cardiovasculaire risicofactoren kan het risico op een toekomstig event verlagen. Voor bloeddruk en cholesterol geldt dat verlaging van de risicofactor ook het risico op hart- en vaatziekten verlaagt. Of meteen medicamenteuze behandeling nodig is, hangt af van de hoogte van het risico en van het verwachte effect van de behandeling.
+Daarbij zijn twee begrippen belangrijk:
+Number needed to treat (NNT): hoeveel mensen je moet behandelen om één nadelige gebeurtenis te voorkomen.
+Number needed to harm (NNH): hoeveel mensen je moet behandelen voordat één extra ongewenst effect optreedt.
+Die balans is belangrijk, want medicijnen kunnen niet alleen helpen, maar ook bijwerkingen geven.
+Leefstijl: altijd het startpunt
+Leefstijladviezen vormen de basis van de behandeling van CVRM. Dat geldt voor vrijwel iedereen, met of zonder medicatie. De belangrijkste leefstijlmaatregelen zijn:
+voldoende bewegen;
+niet te veel calorieën;
+niet te veel verzadigde vetten;
+niet roken;
+matig met alcohol;
+niet te veel stress;
+voldoende voedingsvezels;
+koffie is een punt waarover de meningen nog verdeeld zijn.
+Gewichtsverlies bij overgewicht, bijvoorbeeld 5–10% van het lichaamsgewicht, kan de bloeddruk duidelijk verlagen. Minder zout eten, meer groente en fruit en een voedingspatroon zoals het DASH-dieet helpen ook. Regelmatige beweging is essentieel: minimaal 150 minuten per week matig intensief, zoals stevig wandelen of fietsen.
+Tabel 3. Wie kan helpen bij leefstijlverandering?
+Zorgverlener
+Voorbeelden van begeleiding
+Huisarts
+Stressreductie, stoppen met roken
+Leefstijlcoach
+Algemene voedingsadviezen
+Diëtist
+Zoutinname, verdeling van calorieën, verdeling van vetinname
+Fysiotherapeut
+Specifieke adviezen rondom beweging
+Leefstijlmaatregelen hebben doorgaans een beperkt effect op het LDL-cholesterol, ongeveer 5–15% reductie, maar ze zijn wel belangrijk voor het totale cardiovasculaire risico.
+Hypertensie
+Hypertensie is een belangrijke risicofactor voor hart- en vaatziekten en is sterker geassocieerd met beroerte dan met coronaire hartziekte. Het komt veel voor in de bevolking en wordt meestal door de huisarts, vaak samen met de praktijkondersteuner, behandeld.
+Meer dan 90% van de gevallen betreft primaire, ook wel essentiële hypertensie. Daarbij is geen duidelijke onderliggende oorzaak aan te wijzen. Leeftijd speelt een rol en leefstijl is belangrijk. Kenmerkende leefstijlfactoren zijn:
+hoge zout- en calorie-inname;
+beperkte kaliuminname;
+veel bewerkt voedsel;
+weinig beweging;
+overgewicht;
+stress;
+regelmatig alcoholgebruik.
+Behandeldoelen
+Over het algemeen wordt gestreefd naar een bloeddruk lager dan 140/90 mmHg. Bij mensen met een verhoogd cardiovasculair risico, bijvoorbeeld door bestaande hart- en vaatziekten, diabetes mellitus of chronische nierschade, wordt vaak een lagere streefwaarde nagestreefd, meestal rond 130/80 mmHg, als dit goed wordt verdragen.
+Medicamenteuze behandeling
+Gangbare bloeddrukverlagers zijn:
+ACE-remmers
+angiotensine-II-receptorblokkers (ARB’s)
+calciumantagonisten
+diuretica
+Deze middelen verlagen de bloeddruk vergelijkbaar. In de praktijk worden vaak combinaties gebruikt, omdat therapietrouw beter is als het aantal pillen en innamemomenten kleiner is.
+Tabel 4. Voorbeelden van bloeddrukverlagers
+Groep
+Voorbeelden
+Diuretica
+Hydrochloorthiazide, indapamide
+Angiotensine-II-receptorblokkers
+Losartan, valsartan
+Calciumantagonisten
+Amlodipine, nifedipine
+ACE-remmers
+Perindopril, enalapril
+Bijwerkingen
+Belangrijke bijwerkingen zijn:
+bij amlodipine: enkeloedeem;
+bij ACE-remmers: angio-oedeem.
+ACE-remmers kunnen dus angio-oedeem geven, terwijl angiotensine-II-receptorblokkers deze bijwerking niet hebben.
+> Aandachtsvraag: Welke bijwerking hoort klassiek bij amlodipine?  > Mini-antwoord: Enkeloedeem.
+Wanneer verwijs je naar de internist?
+Redenen voor verwijzing zijn onder andere:
+therapieresistente hypertensie;
+verdenking op secundaire hypertensie;
+verdenking op een hypertensief spoedgeval;
+aanhoudende hypertensie na pre-eclampsie.
+Een jonge leeftijd alleen is op zichzelf geen reden voor verwijzing.
+Therapieresistente hypertensie
+Therapieresistente hypertensie komt regelmatig voor, bij ongeveer 10–15% van de patiënten met hypertensie. De definitie is:
+systolische bloeddruk >140 en/of diastolische bloeddruk >90 mmHg,
+ondanks een medicatieregime van ten minste drie antihypertensiva,
+waaronder een diureticum.
+Belangrijk is dat je eerst de therapietrouw nagaat voordat je duurder of invasiever onderzoek inzet. Dat kan bijvoorbeeld door apotheekgegevens op te vragen, medicatie-inname te controleren of medicatiespiegelbepaling te overwegen.
+Oorzaken van therapieresistente hypertensie
+De meest voorkomende oorzaken zijn:
+Obstructief slaapapneusyndroom (OSAS)
+Primair hyperaldosteronisme
+Nierarteriestenose, bijvoorbeeld door fibromusculaire dysplasie of atherosclerose
+OSAS komt het vaakst voor. Behandeling met een CPAP-masker leidt niet altijd tot normalisatie van de bloeddruk. Nierarteriestenose door atherosclerose wordt vooral bij oudere patiënten gezien, terwijl fibromusculaire dysplasie vaker op jongere leeftijd voorkomt.
+Dyslipidemie
+Dyslipidemie is een belangrijke risicofactor voor atherosclerotische hart- en vaatziekten. Het lipidenmetabolisme draait vooral om cholesterol en triglyceriden.
+Cholesterol en triglyceriden
+Cholesterol is belangrijk voor:
+celmembraansynthese en de vloeibaarheid van het celmembraan;
+de synthese van stoffen die betrokken zijn bij celhomeostase;
+de vorming van galzouten, vitamine D en steroïdhormonen.
+Triglyceriden zijn vooral een energiebron en worden opgeslagen als lichaamsvet.
+Endogene en exogene pathway
+Cholesterol kan:
+door het lichaam zelf worden gemaakt: endogene pathway;
+via voeding worden opgenomen: exogene pathway.
+Via de vorming van galzouten wordt cholesterol uiteindelijk uitgescheiden.
+Lipoproteïnen
+Cholesterol en triglyceriden zijn niet oplosbaar in water en worden daarom vervoerd met lipoproteïnen.
+Tabel 5. Belangrijke lipoproteïnen
+Lipoproteïne
+Apoproteïne
+Chylomicronen
+apoB-48
+VLDL
+apoB-100
+IDL
+apoB-100
+LDL
+apoB-100
+HDL
+apoA
+Chylomicronen zijn het grootst en HDL-deeltjes het kleinst. HDL heeft de grootste dichtheid. De verhouding tussen cholesterol en triglyceriden verschilt per deeltje en daardoor verschilt ook de dichtheid.
+LDL en HDL
+Met name het LDL-cholesterolgehalte is geassocieerd met hart- en vaatziekten. Een hoog HDL-cholesterolgehalte beschermt juist tegen hart- en vaatziekten. Het behandeldoel is daarom het verlagen van LDL, of van de totale cholesterol/non-HDL-ratio die in de praktijk wordt gebruikt als vergelijkbare maat.
+LDL zorgt voor cholesterolafzetting in de vaatwand en draagt bij aan atherosclerose. HDL kan cholesterol deels weer “opruimen” via reverse cholesterol transport.
+Oorzaken van dyslipidemie
+Dyslipidemie kan beïnvloed worden door:
+obesitas;
+diabetes mellitus;
+hypothyreoïdie;
+nefrotisch syndroom;
+alcohol;
+steroïden;
+antipsychotica.
+Er zijn ook erfelijke vormen. De meest voorkomende is familiaire hypercholesterolemie (FH), een autosomaal dominant overervende aandoening. Die geeft vaak al op jonge leeftijd atherosclerose.
+Behandeling van dyslipidemie
+Ook bij dyslipidemie is leefstijl altijd de eerste stap. Belangrijke leefstijladviezen zijn:
+voldoende beweging;
+niet te veel calorieën;
+niet te veel verzadigde vetten;
+niet roken;
+matig met alcohol;
+niet te veel stress;
+voldoende voedingsvezels.
+Leefstijl is essentieel, maar als medicamenteuze behandeling nodig is, zijn statines de eerste keus voor het verlagen van LDL-cholesterol. Voorbeelden zijn atorvastatine, rosuvastatine, simvastatine, pravastatine en fluvastatine.
+Klinische relevantie
+In de praktijk zie je dat risicomanagement echt beslissingen stuurt. Een man van middelbare leeftijd met verhoogde bloeddruk, overgewicht en een ongunstig lipidenprofiel kan bijvoorbeeld in een matig verhoogde risicogroep vallen, waarbij eerst leefstijl wordt geadviseerd. Pas als dat onvoldoende effect heeft, komt medicatie in beeld.
+Een patiënt met sterk lipemisch bloed en zeer hoge triglyceriden past eerder bij ernstige hypertriglyceridemie. Dat kan samenhangen met pancreatitis. Een acute buikpijnpresentatie met dit beeld doet daarom vooral aan pancreatitis denken.
+Bij een patiënt met bloeddrukwaarden boven de streefwaarde ondanks drie middelen, waaronder een diureticum, moet je denken aan therapieresistente hypertensie. Dan begin je met het nagaan van therapietrouw en daarna pas met verder onderzoek.
+Samenvatting
+CVRM draait om het inschatten van het cardiovasculaire risico en het kiezen van de juiste combinatie van leefstijl en medicatie. Eerst verzamel je anamnese, lichamelijk onderzoek en aanvullend onderzoek. Daarna bepaal je het risico met de risicotabel of met SCORE2. Leefstijl is altijd de basis. Hypertensie en dyslipidemie zijn belangrijke risicofactoren, waarbij bloeddrukverlagers en statines veel gebruikt worden. Bij therapieresistente hypertensie moet je altijd eerst aan therapietrouw denken en vervolgens aan secundaire oorzaken zoals OSAS, primair hyperaldosteronisme en nierarteriestenose.

@@ -1,0 +1,9 @@
+import { blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart01 } from './Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart01'
+import { blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart02 } from './Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart02'
+
+export const blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsMap = {
+  'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie': [
+    ...blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart01,
+    ...blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieQuestionsPart02,
+  ],
+}

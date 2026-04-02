@@ -53,6 +53,7 @@ const Blok9Week5Casus10TachyaritmieSummary = () => {
       description="Bij tachycardie is het eerste uitgangspunt altijd: behandel de patiënt, niet het monitorbeeld. De eerste stap is dus niet meteen de ritmestoornis benoemen, maar de patiënt beoordelen."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-tachyaritmie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

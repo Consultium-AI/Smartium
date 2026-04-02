@@ -59,6 +59,7 @@ const Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary = (
       description="Autoinflammatie betekent dat er een defect is in antigeen-onafhankelijke immunologische mechanismen. Daardoor worden pro-inflammatoire effectormoleculen geactiveerd of worden anti-inflammatoire effectormoleculen juist geremd. Het gevolg is dat het immuunsysteem aan blijft staan."
       caseLabel="Week 5 · Casus 10: Patiënt met auto-inflammatoire ziekte"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -54,6 +54,7 @@ const Blok5Week3Casus6FamiliairMammacarcinoomSummary = () => {
       description="Borstkanker is de meest voorkomende kankersoort bij vrouwen. Ongeveer 26% van alle kankerdiagnoses bij vrouwen is borstkanker. In Nederland bestaat ook bevolkingsonderzoek: vrouwen worden dan eens in de twee jaar opgeroepen voor een mammografie."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-familiair-mammacarcinoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

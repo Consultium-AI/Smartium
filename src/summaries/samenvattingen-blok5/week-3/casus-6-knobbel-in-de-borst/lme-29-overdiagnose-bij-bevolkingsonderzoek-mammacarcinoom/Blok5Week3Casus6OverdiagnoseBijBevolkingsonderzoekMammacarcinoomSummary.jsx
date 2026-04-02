@@ -49,6 +49,7 @@ const Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomSummary = 
       description="Borstkankerscreening is bedoeld om borstkanker eerder op te sporen, zodat behandeling eerder kan starten en de prognose beter wordt. In het besproken artikel gaat het over het bevolkingsonderzoek zoals dat in het Verenigd Koninkrijk wordt aangeboden: vrouwen van 50 tot 70 jaar worden daar elke 3 jaar uitgenodigd voor mammografie."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

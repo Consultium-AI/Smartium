@@ -56,6 +56,7 @@ const Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary = () => {
       description="Mammografie is een röntgentechniek, maar de borst vraagt om een andere aanpak dan bijvoorbeeld een thoraxfoto. Op een gewone röntgenfoto zijn de verschillen tussen weefsels soms groot, terwijl de borst juist vooral uit weke delen bestaat. Daardoor zijn de contrastverschillen klein en moet je subtiele verschillen tussen vetweefsel, klierweefsel en kleine calcificaties goed zichtbaar maken."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

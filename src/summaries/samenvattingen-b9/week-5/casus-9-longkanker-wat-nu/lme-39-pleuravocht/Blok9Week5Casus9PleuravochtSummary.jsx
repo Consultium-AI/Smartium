@@ -39,6 +39,7 @@ const Blok9Week5Casus9PleuravochtSummary = () => {
       description="De pleura is een dun vlies rond de longen. Het bestaat uit twee bladen: de viscerale pleura ligt direct op het longoppervlak; de pariëtale pleura bekleedt de binnenkant van de thoraxwand, de thoracale zijde van het mediastinum en het diafragma."
       caseLabel="Week 5 · Casus 9: Longkanker, wat nu"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus9-pleuravocht"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

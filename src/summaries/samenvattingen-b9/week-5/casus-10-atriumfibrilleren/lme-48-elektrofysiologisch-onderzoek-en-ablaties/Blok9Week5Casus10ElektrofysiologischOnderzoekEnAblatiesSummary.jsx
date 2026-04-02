@@ -68,6 +68,7 @@ const Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary = () => {
       description="Een elektrofysiologisch onderzoek (EFO) en ablatie vinden plaats in het hartkatheterisatielaboratorium, de zogeheten cathlab-setting. Het is een minimaal invasieve ingreep. De patiënt is wakker, soms met sedatie, of onder algehele narcose, afhankelijk van de complexiteit."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

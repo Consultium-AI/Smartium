@@ -42,6 +42,7 @@ const Blok9Week5Casus9VoorbereidingCtEnPetCtSummary = () => {
       description="Bij longkanker wordt de uitgebreidheid van de ziekte ingedeeld met de TNM-classificatie. Dit is een internationale standaard voor tumorclassificatie."
       caseLabel="Week 5 · Casus 9: Longkanker, wat nu"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus9-voorbereiding-ct-en-pet-ct"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

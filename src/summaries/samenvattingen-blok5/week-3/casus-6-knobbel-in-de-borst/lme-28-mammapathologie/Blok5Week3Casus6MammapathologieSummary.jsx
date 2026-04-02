@@ -56,6 +56,7 @@ const Blok5Week3Casus6MammapathologieSummary = () => {
       description="De mamma bestaat uit kliereweefsel, bindweefsel en vetweefsel. Daarnaast horen ook bloedvaten, lymfvaten en huid bij de bouw van de borst."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-mammapathologie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

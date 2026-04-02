@@ -69,6 +69,7 @@ const Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary = () => {
       caseLabel="Week 4 · Casus 7: Zwelling van de lies en of een dik been"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok5-week4-casus7-trombose-verhoogde-stollingsneiging"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Brondocumentkop />

@@ -48,6 +48,7 @@ const Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary = () => {
       description="Ruim 50 jaar geleden werd begonnen met het behandelen van kinderen met kanker volgens vaste protocollen. Die behandeling kon bestaan uit intensieve chemotherapie, radiotherapie en chirurgie. Door die intensievere behandeling is de overleving van kinderen met kanker enorm verbeterd."
       caseLabel="Week 5 · Casus 11: Kind met algehele malaise, koorts en zwelling in de buik"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -54,6 +54,7 @@ const Blok5Week2Casus3HemostaseBasisSummary = () => {
       description="Hemostase betekent bloedstolling: het is het proces waarmee het lichaam een bloeding stopt zodra er schade aan een bloedvat ontstaat. Het woord is goed te onthouden als hemo = bloed en stase = stilstand. De functie van hemostase is dus heel eenvoudig: zorgen dat bloedverlies beperkt blijft en dat een wond niet blijft bloeden."
       caseLabel="Week 2 · Casus 3: Paarse vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus3-hemostase-basis"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

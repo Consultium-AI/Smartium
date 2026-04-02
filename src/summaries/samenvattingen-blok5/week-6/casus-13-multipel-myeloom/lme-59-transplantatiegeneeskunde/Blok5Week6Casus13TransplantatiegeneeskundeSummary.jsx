@@ -15,6 +15,7 @@ import {
   Bug,
 } from 'lucide-react'
 import SummaryLayout from '../../../../../components/SummaryLayout'
+import Blok5Week6Casus13TransplantatiegeneeskundeOefenvragenCallout from './Blok5Week6Casus13TransplantatiegeneeskundeOefenvragenCallout'
 import Sect01Leerdoelen from './Sect01Leerdoelen'
 import Sect02InleidingTotTransplantatiegeneeskunde from './Sect02InleidingTotTransplantatiegeneeskunde'
 import Sect03IndicatiesVoorOrgaantransplantatie from './Sect03IndicatiesVoorOrgaantransplantatie'
@@ -30,6 +31,8 @@ import Sect12InfectiesNaTransplantatie from './Sect12InfectiesNaTransplantatie'
 import Sect13PreventieVanInfecties from './Sect13PreventieVanInfecties'
 import Sect14KankerNaOrgaantransplantatie from './Sect14KankerNaOrgaantransplantatie'
 import Sect15Samenvatting from './Sect15Samenvatting'
+
+const PRACTICE_LME_PATH = '/oefenvragen?lme=blok5-week6-casus13-transplantatiegeneeskunde'
 
 const Blok5Week6Casus13TransplantatiegeneeskundeSummary = () => {
   const tableOfContents = [
@@ -57,6 +60,10 @@ const Blok5Week6Casus13TransplantatiegeneeskundeSummary = () => {
       caseLabel="Week 6 · Casus 13: Multipel myeloom"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink={PRACTICE_LME_PATH}
+      practiceFooter={
+        <Blok5Week6Casus13TransplantatiegeneeskundeOefenvragenCallout to={PRACTICE_LME_PATH} />
+      }
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

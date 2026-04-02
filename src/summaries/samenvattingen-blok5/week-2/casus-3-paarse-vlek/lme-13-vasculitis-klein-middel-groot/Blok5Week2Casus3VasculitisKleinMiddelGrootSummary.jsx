@@ -53,6 +53,7 @@ const Blok5Week2Casus3VasculitisKleinMiddelGrootSummary = () => {
       description="Vasculitis betekent ontsteking van de bloedvatwand. Dat kan verschillende soorten vaten treffen, en juist de grootte van het aangedane vat is heel belangrijk voor het type vasculitis, de klachten en de behandeling. Bij een ontstekingsreactie tegen de bloedvatwand spreken we per definitie van een systemische auto-immuunziekte."
       caseLabel="Week 2 · Casus 3: Paarse vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus3-vasculitis-klein-middel-groot"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

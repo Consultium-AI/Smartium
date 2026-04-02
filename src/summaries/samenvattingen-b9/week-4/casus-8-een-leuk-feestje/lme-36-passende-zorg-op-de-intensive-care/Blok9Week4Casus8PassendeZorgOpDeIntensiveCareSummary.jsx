@@ -46,6 +46,7 @@ const Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary = () => {
       caseLabel="Week 4 · Casus 8: Een leuk feestje"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week4-casus8-passende-zorg-op-de-intensive-care"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

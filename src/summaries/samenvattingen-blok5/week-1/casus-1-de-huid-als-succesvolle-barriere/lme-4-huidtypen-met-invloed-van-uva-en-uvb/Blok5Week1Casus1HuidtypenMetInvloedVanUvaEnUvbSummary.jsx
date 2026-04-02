@@ -47,6 +47,7 @@ const Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary = () => {
       description="De huid verschilt wereldwijd in kleur en in gevoeligheid voor zonlicht. Binnen de dermatologie wordt vaak gewerkt met de Fitzpatrick-schaal."
       caseLabel="Week 1 · Casus 1: De huid als succesvolle barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

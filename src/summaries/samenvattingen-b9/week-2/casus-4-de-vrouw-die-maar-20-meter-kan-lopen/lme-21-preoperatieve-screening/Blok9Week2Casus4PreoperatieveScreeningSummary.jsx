@@ -45,6 +45,7 @@ const Blok9Week2Casus4PreoperatieveScreeningSummary = () => {
       description="Wereldwijd vinden er elk jaar ongeveer 230 miljoen operaties plaats. In de huidige richtlijn wordt onder een operatie verstaan: elke ingreep in een ziekenhuisoperatiekamer waarbij sprake is van incisie, excisie, manipulatie of hechting van weefsel, en die meestal regionale of algehele anesthesie of diepe sedatie nodig heeft om pijn te controleren."
       caseLabel="Week 2 · Casus 4: De vrouw die maar 20 meter kan lopen"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week2-casus4-preoperatieve-screening"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

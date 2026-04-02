@@ -61,6 +61,7 @@ const Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary
       caseLabel="Week 4 · Casus 7: Patiënt met een pneumonie"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02ZuurstofopnameTransportAfgifte /></section>

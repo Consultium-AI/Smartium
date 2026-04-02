@@ -58,6 +58,7 @@ const Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary = () => {
       description="Een necrotiserende wekedeleninfectie is een ernstige, snel progressieve infectie van de weke delen. De infectie kan voorkomen in de cutis, subcutis, oppervlakkige fascie zoals de fascie van Scarpa, de diepe fascie en de spier."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-necrotiserende-wekedeleninfectie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

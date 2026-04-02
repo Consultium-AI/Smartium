@@ -51,6 +51,7 @@ const Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary = () => {
       description="Orgaandonatie is ethisch een bijzonder terrein binnen de geneeskunde, omdat er bijna altijd een derde betrokkene is: de donor. Zonder donor is transplantatie niet mogelijk. Daardoor ontstaan direct specifieke morele vragen."
       caseLabel="Week 1 · Casus 2: Patiënt met chronische nierschade"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week1-casus2-ethiek-van-orgaantransplantatie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

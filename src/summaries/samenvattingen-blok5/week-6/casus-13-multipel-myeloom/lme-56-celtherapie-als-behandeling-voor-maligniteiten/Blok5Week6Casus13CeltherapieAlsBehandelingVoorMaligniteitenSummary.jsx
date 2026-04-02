@@ -11,6 +11,7 @@ import {
   Zap,
 } from 'lucide-react'
 import SummaryLayout from '../../../../../components/SummaryLayout'
+import Blok5Week6Casus13CeltherapieOefenvragenCallout from './Blok5Week6Casus13CeltherapieOefenvragenCallout'
 import Sect01Leerdoelen from './Sect01Leerdoelen'
 import Sect02HematopoietischeStamceltransplantatieInHetKort from './Sect02HematopoietischeStamceltransplantatieInHetKort'
 import Sect03AutologeStamceltransplantatie from './Sect03AutologeStamceltransplantatie'
@@ -43,6 +44,8 @@ const Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary = () =>
       caseLabel="Week 6 · Casus 13: Multipel myeloom"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink={PRACTICE_LME_PATH}
+      practiceFooter={<Blok5Week6Casus13CeltherapieOefenvragenCallout to={PRACTICE_LME_PATH} />}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

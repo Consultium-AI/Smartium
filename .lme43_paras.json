@@ -1,0 +1,906 @@
+[
+  {
+    "style": "Heading1",
+    "line": "LME 43 – Atriumfibrilleren"
+  },
+  {
+    "style": "Heading4",
+    "line": "Leerdoelen"
+  },
+  {
+    "style": "",
+    "line": "Na het bestuderen van deze stof kun je:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de pathofysiologie van atriumfibrilleren (AF) uitleggen, inclusief het mechanisme van re-entry en focale triggers uit de longvenen;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de hemodynamische gevolgen van AF beschrijven, vooral het verlies van de atriale contractie en het effect op hartminuutvolume;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "AF herkennen op het ECG aan het ontbreken van P-toppen en een volledig onregelmatig ritme;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de drie pijlers van de behandeling benoemen en toepassen: rate control, rhythm control en antistolling ter preventie van een CVA."
+  },
+  {
+    "style": "Heading4",
+    "line": "Normale geleiding en het ontstaan van atriumfibrilleren"
+  },
+  {
+    "style": "",
+    "line": "In een gezond hart ontstaat de elektrische prikkel in de sinusknoop. Deze ligt in het rechter atrium en fungeert als de natuurlijke pacemaker. De prikkel verspreidt zich vervolgens rustig over de atria, waardoor deze gecoördineerd samentrekken. Daarna bereikt het signaal de AV-knoop, die de impuls kort vertraagt. Dat is belangrijk, omdat de ventrikels daardoor tijd krijgen om zich te vullen. Via de bundel van His en de Purkinjevezels gaat het signaal daarna snel naar de ventrikels, zodat die krachtig kunnen contraheren."
+  },
+  {
+    "style": "",
+    "line": "Aandachtspunt: waarom is de AV-knoop zo belangrijk?  Kort antwoord: hij werkt als een filter en vertrager, zodat de ventrikels eerst goed kunnen vullen."
+  },
+  {
+    "style": "",
+    "line": "Bij atriumfibrilleren is die georganiseerde geleiding verdwenen. Het hartritme wordt dan niet meer bepaald door één enkele impuls uit de sinusknoop, maar door meerdere, rondcirkelende elektrische golfjes: multiple meandering re-entry wavelets. Daarnaast kunnen snelle, focale triggers AF op gang brengen, vaak afkomstig uit de longvenen. De atria worden dan extreem snel geactiveerd, met frequenties van ongeveer 300 tot 600 slagen per minuut. Daardoor ontstaat geen gecoördineerde contractie meer: de atria “fibrilleren”, oftewel trillen chaotisch."
+  },
+  {
+    "style": "",
+    "line": "Een handige visuele vergelijking is die van een rustig meer met één enkele druppel versus een regenstorm. Bij normaal ritme is er één duidelijke golf die zich netjes verspreidt. Bij AF is het oppervlak chaotisch in beweging, zonder duidelijk start- of eindpunt."
+  },
+  {
+    "style": "Heading4",
+    "line": "Mechanismen: triggers en substraat"
+  },
+  {
+    "style": "",
+    "line": "Er zijn twee hoofdmechanismen die samen AF mogelijk maken: triggers en substraat."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Triggers zijn de vonken die het ritme ontregelen. Dit zijn vaak snelle, automatische foci, meestal in de longvenen."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Substraat is de brandstof of bodem waarop AF kan blijven bestaan. Daarbij spelen structurele veranderingen in het atriale weefsel een rol, zoals fibrose, dilatatie en inflammatie."
+  },
+  {
+    "style": "",
+    "line": "Fibrose maakt de geleiding trager. Daardoor kunnen elektrische impulsen blijven rondcirkelen en ontstaat re-entry. Als de “ring” van weefsel groot genoeg is en de geleiding traag genoeg, haalt de staart van de impuls de kop niet in en blijft de cirkelbeweging bestaan."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 1. Mechanismen van AF"
+  },
+  {
+    "style": "",
+    "line": "Begrip"
+  },
+  {
+    "style": "",
+    "line": "Uitleg"
+  },
+  {
+    "style": "",
+    "line": "Trigger"
+  },
+  {
+    "style": "",
+    "line": "Snelle prikkel die AF op gang brengt, vaak uit de longvenen"
+  },
+  {
+    "style": "",
+    "line": "Substraat"
+  },
+  {
+    "style": "",
+    "line": "Veranderd atriaal weefsel waarin AF kan blijven bestaan"
+  },
+  {
+    "style": "",
+    "line": "Re-entry"
+  },
+  {
+    "style": "",
+    "line": "Impuls blijft in een kring rondlopen zonder uit te doven"
+  },
+  {
+    "style": "",
+    "line": "Remodeling"
+  },
+  {
+    "style": "",
+    "line": "Structurele verandering van het atrium, bijvoorbeeld fibrose en dilatatie"
+  },
+  {
+    "style": "Heading4",
+    "line": "Oorzaken van AF"
+  },
+  {
+    "style": "",
+    "line": "AF is meestal geen ziekte op zichzelf, maar vaak een gevolg van een onderliggend probleem. Een handig ezelsbruggetje hiervoor is PIRATES:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "P – Pulmonary: longziekten zoals COPD, longembolie en pneumonie; hypoxie en drukverhoging belasten het rechter atrium."
+  },
+  {
+    "style": "ListBullet",
+    "line": "I – Ischemia: ischemische hartziekte, zoals infarct of angina; zuurstoftekort beschadigt atriaal weefsel."
+  },
+  {
+    "style": "ListBullet",
+    "line": "R – Rheumatic / Regurgitation: kleplijden, vooral mitralisstenose of -insufficiëntie; dit geeft forse atriale dilatatie."
+  },
+  {
+    "style": "ListBullet",
+    "line": "A – Alcohol / Anemia: “holiday heart” na alcoholbinge of bloedarmoede met tachycardie."
+  },
+  {
+    "style": "ListBullet",
+    "line": "T – Thyrotoxicosis: hyperthyreoïdie jaagt het hart op. Daarom is TSH belangrijk."
+  },
+  {
+    "style": "ListBullet",
+    "line": "E – Elevated blood pressure: hypertensie is een zeer voorkomende oorzaak van atriale remodeling."
+  },
+  {
+    "style": "ListBullet",
+    "line": "S – Sepsis / Sleep apnea: ernstige infecties of obstructief slaapapneusyndroom."
+  },
+  {
+    "style": "",
+    "line": "Aandachtspunt: waarom moet je bij nieuw ontdekt AF altijd aan de schildklier denken?  Kort antwoord: omdat hyperthyreoïdie AF kan veroorzaken en een behandelbare oorzaak is."
+  },
+  {
+    "style": "Heading4",
+    "line": "Hemodynamische gevolgen: atriale kick en slagvolume"
+  },
+  {
+    "style": "",
+    "line": "Om te begrijpen waarom AF klachten geeft, moet je eerst naar de normale vulling van de linker ventrikel kijken. Die verloopt in twee fasen:"
+  },
+  {
+    "style": "ListNumber",
+    "line": "Vroege diastole: passieve vulling via de open AV-kleppen. Dit levert het grootste deel van de vulling."
+  },
+  {
+    "style": "ListNumber",
+    "line": "Late diastole: de atria trekken samen. Deze contractie heet de atriale kick en perst nog extra bloed de ventrikel in."
+  },
+  {
+    "style": "",
+    "line": "Normaal draagt die atriale kick ongeveer 20–30% bij aan het einddiastolisch volume. Bij AF valt deze contractie weg. De ventrikels zijn dan alleen afhankelijk van passieve vulling, waardoor het EDV daalt. Minder vulling betekent minder rek van de ventrikelwand en dus een minder krachtige contractie volgens het Frank-Starling-mechanisme. Het gevolg is een lager slagvolume."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 2. Gevolgen van verlies van de atriale kick"
+  },
+  {
+    "style": "",
+    "line": "Stap"
+  },
+  {
+    "style": "",
+    "line": "Gevolg"
+  },
+  {
+    "style": "",
+    "line": "Verlies van atriale contractie"
+  },
+  {
+    "style": "",
+    "line": "Minder actieve vulling"
+  },
+  {
+    "style": "",
+    "line": "Lagere preload / EDV"
+  },
+  {
+    "style": "",
+    "line": "Minder rek van de ventrikelwand"
+  },
+  {
+    "style": "",
+    "line": "Minder rek"
+  },
+  {
+    "style": "",
+    "line": "Minder krachtige contractie"
+  },
+  {
+    "style": "",
+    "line": "Lager slagvolume"
+  },
+  {
+    "style": "",
+    "line": "Dalend cardiac output"
+  },
+  {
+    "style": "",
+    "line": "Daar komt nog iets bij: in AF is de ventrikelfrequentie vaak hoog. De totale hartcyclus wordt dan korter, maar vooral ten koste van de diastole. Juist in de diastole vindt vulling en doorbloeding van de hartspier plaats. Als de diastole te kort wordt, neemt de passieve vulling verder af en daalt het slagvolume nog meer."
+  },
+  {
+    "style": "",
+    "line": "Het netto-effect van een hoge hartfrequentie is dus niet automatisch meer cardiac output. Omdat het slagvolume sterk daalt, kan het hartminuutvolume juist afnemen. Dat kan leiden tot hypotensie, dyspneu en zelfs hartfalen."
+  },
+  {
+    "style": "Heading4",
+    "line": "Stase en trombogeniteit"
+  },
+  {
+    "style": "",
+    "line": "Door het wegvallen van de atriale contractie stroomt het bloed slechter door, vooral in het linker hartoor (left atrial appendage). Daar ontstaat stase, oftewel bloedstilstand. Volgens de triade van Virchow is stase een belangrijke factor voor trombusvorming. De andere twee factoren zijn endotheelbeschadiging en hypercoagulabiliteit."
+  },
+  {
+    "style": "",
+    "line": "In AF kunnen lokaal stollingsfactoren geactiveerd raken, waardoor fibrine-rijke trombi ontstaan. Als zo’n trombus losschiet, kan die via de linker ventrikel en de aorta naar de hersenen emboliseren. Dat veroorzaakt vaak een ischemisch CVA. AF verhoogt het risico op een beroerte sterk."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 3. Triade van Virchow bij AF"
+  },
+  {
+    "style": "",
+    "line": "Component"
+  },
+  {
+    "style": "",
+    "line": "Betekenis bij AF"
+  },
+  {
+    "style": "",
+    "line": "Stase"
+  },
+  {
+    "style": "",
+    "line": "Slechte doorstroming in vooral het linker hartoor"
+  },
+  {
+    "style": "",
+    "line": "Endotheelbeschadiging"
+  },
+  {
+    "style": "",
+    "line": "Wandbeschadiging door atriale dilatatie en rek"
+  },
+  {
+    "style": "",
+    "line": "Hypercoagulabiliteit"
+  },
+  {
+    "style": "",
+    "line": "Verhoogde stollingsneiging, vaak bij inflammatoire toestand"
+  },
+  {
+    "style": "Heading4",
+    "line": "Klinische presentatie en lichamelijk onderzoek"
+  },
+  {
+    "style": "",
+    "line": "AF kan heel verschillend verlopen. Ongeveer 30% van de patiënten heeft geen klachten en krijgt de diagnose toevallig: dit heet silent AF. Veelvoorkomende klachten zijn:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "palpitaties: een onregelmatig, “race-gevoel” of bonzen;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "dyspneu: kortademigheid, vooral bij inspanning;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "angina pectoris: pijn op de borst, vooral bij patiënten met onderliggend coronair lijden;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "vermoeidheid / lethargie: door het lagere cardiac output;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "duizeligheid of verminderd inspanningsvermogen."
+  },
+  {
+    "style": "",
+    "line": "Bij lichamelijk onderzoek kun je letten op:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "een irregulaire, irregulaire pols;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "een polsdeficit: aan het hart hoor je meer slagen dan je aan de pols voelt;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "crepitaties over de longen, passend bij longoedeem;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "verhoogde centrale veneuze druk met gestuwde jugularis;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "eventueel enkeloedeem."
+  },
+  {
+    "style": "",
+    "line": "Aandachtspunt: waarom is een onregelmatige pols niet genoeg?  Kort antwoord: een ECG is nodig om AF te bevestigen en andere ritmestoornissen uit te sluiten."
+  },
+  {
+    "style": "Heading4",
+    "line": "ECG en diagnostiek"
+  },
+  {
+    "style": "",
+    "line": "Een onregelmatige pols is een aanwijzing, maar de diagnose stel je met een 12-afleidingen ECG. De klassieke kenmerken van AF zijn:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "geen P-toppen zichtbaar;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "een chaotische basislijn met fijne, snelle oscillaties (f-waves);"
+  },
+  {
+    "style": "ListBullet",
+    "line": "een volledig onregelmatig ritme: de RR-intervallen variëren willekeurig;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "meestal een smal QRS-complex (<120 ms), tenzij er al een bundeltakblok of aberrante geleiding bestaat."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 4. Belangrijkste ECG-verschillen"
+  },
+  {
+    "style": "",
+    "line": "Ritme"
+  },
+  {
+    "style": "",
+    "line": "Kenmerken"
+  },
+  {
+    "style": "",
+    "line": "Sinusritme"
+  },
+  {
+    "style": "",
+    "line": "Duidelijke P-top vóór elk QRS, regelmatig ritme"
+  },
+  {
+    "style": "",
+    "line": "Atriumfibrilleren"
+  },
+  {
+    "style": "",
+    "line": "Geen P-toppen, rommelige basislijn, irregulair irregulair"
+  },
+  {
+    "style": "",
+    "line": "Atriumflutter"
+  },
+  {
+    "style": "",
+    "line": "Regelmatige zaagtandgolven, vaak regelmatige ventriculaire respons"
+  },
+  {
+    "style": "",
+    "line": "Ventriculaire tachycardie"
+  },
+  {
+    "style": "",
+    "line": "Brede QRS-complexen, snel en regelmatig, geen P-toppen zichtbaar"
+  },
+  {
+    "style": "Heading4",
+    "line": "Aanvullend onderzoek"
+  },
+  {
+    "style": "",
+    "line": "Na de diagnose op het ECG moet je zoeken naar een onderliggende oorzaak, omdat AF vaak een symptoom is van een ander probleem."
+  },
+  {
+    "style": "Heading5",
+    "line": "Bloedonderzoek"
+  },
+  {
+    "style": "",
+    "line": "Belangrijk zijn:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "TSH: hyperthyreoïdie is een behandelbare oorzaak;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "K+ en Mg2+: elektrolytstoornissen kunnen ritmestoornissen uitlokken;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "nierfunctie en bloedbeeld: belangrijk voor medicatieveiligheid, vooral bij antistolling."
+  },
+  {
+    "style": "Heading5",
+    "line": "Echocardiografie (TTE)"
+  },
+  {
+    "style": "",
+    "line": "Met een transthoracale echo zoek je naar structurele hartziekten en beoordeel je:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de grootte van het linker atrium;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "kleplijden zoals mitralisstenose of insufficiëntie;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de LVEF en de linkerventrikelfunctie."
+  },
+  {
+    "style": "Heading5",
+    "line": "Monitoring"
+  },
+  {
+    "style": "",
+    "line": "Als een patiënt klachten heeft, maar het standaard ECG toont op dat moment sinusritme, dan zijn langere registraties nuttig:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "Holtermonitor: registratie gedurende 24–48 uur of langer;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "event recorders / loop recorders: voor minder frequente klachten;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "smartwatches: kunnen onregelmatigheden detecteren via PPG of een 1-kanaals ECG."
+  },
+  {
+    "style": "Heading5",
+    "line": "Ischemiedetectie"
+  },
+  {
+    "style": "",
+    "line": "Bij verdenking op ischemische hartziekte kan een fietstest of loopbandtest worden gedaan. Dan let je op:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "ST-depressie op het ECG;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de hartslagrespons;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "de bloeddrukrespons."
+  },
+  {
+    "style": "",
+    "line": "Als fietsen niet lukt, kan een stress-echo of nucleaire scan worden ingezet."
+  },
+  {
+    "style": "Heading5",
+    "line": "Transoesofageale echo (TOE)"
+  },
+  {
+    "style": "",
+    "line": "Een TOE is vooral belangrijk vóór een geplande cardioversie wanneer de patiënt geen adequate antistolling heeft gehad. Je onderzoekt dan of er een trombus zit in het linker hartoor. Een gewone TTE laat dat gebied vaak niet goed zien. Als er een stolsel aanwezig is, mag je niet cardioverseren vanwege het risico op een beroerte."
+  },
+  {
+    "style": "Heading5",
+    "line": "X-thorax"
+  },
+  {
+    "style": "",
+    "line": "Een thoraxfoto is zinvol bij verdenking op hartfalen of longpathologie. Je kunt zoeken naar:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "cardiomegalie;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "longoedeem;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "longaandoeningen zoals COPD of pneumonie."
+  },
+  {
+    "style": "Heading4",
+    "line": "Classificatie van AF"
+  },
+  {
+    "style": "",
+    "line": "De duur en het beloop van AF zijn belangrijk, omdat dit helpt bij het kiezen van de behandeling."
+  },
+  {
+    "style": "",
+    "line": "Classificatie"
+  },
+  {
+    "style": "",
+    "line": "Beschrijving"
+  },
+  {
+    "style": "",
+    "line": "Paroxysmaal AF"
+  },
+  {
+    "style": "",
+    "line": "Stopt spontaan binnen 7 dagen, meestal binnen 48 uur"
+  },
+  {
+    "style": "",
+    "line": "Persisterend AF"
+  },
+  {
+    "style": "",
+    "line": "Houdt langer aan dan 7 dagen of vereist cardioversie om te stoppen"
+  },
+  {
+    "style": "",
+    "line": "Langdurig persisterend"
+  },
+  {
+    "style": "",
+    "line": "Aanwezig gedurende meer dan 1 jaar"
+  },
+  {
+    "style": "",
+    "line": "Permanent AF"
+  },
+  {
+    "style": "",
+    "line": "Continue aanwezigheid waarbij besloten is geen cardioversie meer te doen"
+  },
+  {
+    "style": "",
+    "line": "Paroxysmaal AF wordt vaak uitgelokt door triggers uit de longvenen. Bij persisterende vormen is het atriale weefsel vaak al veranderd door remodeling. Bij permanent AF wordt het ritme geaccepteerd en ligt de focus op frequentiecontrole."
+  },
+  {
+    "style": "Heading4",
+    "line": "Risicostratificatie: waarom en hoe?"
+  },
+  {
+    "style": "",
+    "line": "Niet elke patiënt met AF heeft hetzelfde risico op een beroerte, en antistolling geeft altijd ook bloedingsrisico. Daarom moet je een balans zoeken."
+  },
+  {
+    "style": "",
+    "line": "Het risico op trombo-embolie wordt ingeschat met de CHA2DS2-VASc-score. Dit is de gouden standaard in de richtlijnen."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 5. CHA2DS2-VASc-score"
+  },
+  {
+    "style": "",
+    "line": "Onderdeel"
+  },
+  {
+    "style": "",
+    "line": "Punten"
+  },
+  {
+    "style": "",
+    "line": "Congestive heart failure / linkerventrikeldysfunctie"
+  },
+  {
+    "style": "",
+    "line": "1"
+  },
+  {
+    "style": "",
+    "line": "Hypertension"
+  },
+  {
+    "style": "",
+    "line": "1"
+  },
+  {
+    "style": "",
+    "line": "Age ≥ 75 jaar"
+  },
+  {
+    "style": "",
+    "line": "2"
+  },
+  {
+    "style": "",
+    "line": "Diabetes mellitus"
+  },
+  {
+    "style": "",
+    "line": "1"
+  },
+  {
+    "style": "",
+    "line": "Stroke/TIA/thrombo-embolie in voorgeschiedenis"
+  },
+  {
+    "style": "",
+    "line": "2"
+  },
+  {
+    "style": "",
+    "line": "Vascular disease"
+  },
+  {
+    "style": "",
+    "line": "1"
+  },
+  {
+    "style": "",
+    "line": "Age 65–74 jaar"
+  },
+  {
+    "style": "",
+    "line": "1"
+  },
+  {
+    "style": "",
+    "line": "Sex category vrouw"
+  },
+  {
+    "style": "",
+    "line": "1, maar minder prominent meegewogen"
+  },
+  {
+    "style": "",
+    "line": "Belangrijk is dat het vrouwelijk geslacht vooral het risico versterkt als er ook andere risicofactoren zijn. De behandelgrens verschuift dus met de totale score. In de praktijk geldt:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "score 0: zeer laag risico, geen antistolling;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "score 1: overweeg orale antistolling;"
+  },
+  {
+    "style": "ListBullet",
+    "line": "score > 2: antistolling is geïndiceerd."
+  },
+  {
+    "style": "",
+    "line": "Voor het bloedingsrisico gebruik je de HAS-BLED-score. Een hoge score van ≥3 betekent niet dat je geen behandeling geeft, maar wel dat je voorzichtig moet zijn en reversibele factoren moet corrigeren."
+  },
+  {
+    "style": "Heading5",
+    "line": "Tabel 6. HAS-BLED: aandachtspunten"
+  },
+  {
+    "style": "",
+    "line": "Factor"
+  },
+  {
+    "style": "",
+    "line": "Betekenis"
+  },
+  {
+    "style": "",
+    "line": "Hypertension"
+  },
+  {
+    "style": "",
+    "line": "Vooral ongecontroleerde bloeddruk >160 mmHg"
+  },
+  {
+    "style": "",
+    "line": "Abnormal renal/liver function"
+  },
+  {
+    "style": "",
+    "line": "Nier- of leverfunctiestoornis"
+  },
+  {
+    "style": "",
+    "line": "Stroke history"
+  },
+  {
+    "style": "",
+    "line": "Eerdere beroerte"
+  },
+  {
+    "style": "",
+    "line": "Bleeding history"
+  },
+  {
+    "style": "",
+    "line": "Eerdere bloedingsproblemen"
+  },
+  {
+    "style": "",
+    "line": "Labile INR"
+  },
+  {
+    "style": "",
+    "line": "Instabiele INR bij vitamine-K-antagonisten"
+  },
+  {
+    "style": "",
+    "line": "Elderly"
+  },
+  {
+    "style": "",
+    "line": "Leeftijd >65 jaar"
+  },
+  {
+    "style": "",
+    "line": "Drugs/alcohol"
+  },
+  {
+    "style": "",
+    "line": "NSAID’s of overmatig alcoholgebruik"
+  },
+  {
+    "style": "",
+    "line": "Modificeerbare factoren zijn vooral: bloeddruk goed instellen, alcohol beperken/stoppen, en voorzichtig zijn met NSAID’s."
+  },
+  {
+    "style": "Heading4",
+    "line": "Behandeling: de grote strategische keuze"
+  },
+  {
+    "style": "",
+    "line": "Er zijn twee hoofdrichtingen: rate control en rhythm control."
+  },
+  {
+    "style": "Heading5",
+    "line": "Rate control"
+  },
+  {
+    "style": "",
+    "line": "Het doel is de ventrikelfrequentie vertragen, meestal tot <110/min, terwijl het atrium blijft fibrilleren. Deze strategie past vooral bij:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "ouderen (>65 jaar),"
+  },
+  {
+    "style": "ListBullet",
+    "line": "patiënten met weinig klachten,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "inactieve patiënten."
+  },
+  {
+    "style": "",
+    "line": "Voordeel: minder medicatiebijwerkingen. Grote studies lieten bij oudere patiënten geen duidelijk verschil in overleving zien tussen rate control en rhythm control."
+  },
+  {
+    "style": "Heading5",
+    "line": "Rhythm control"
+  },
+  {
+    "style": "",
+    "line": "Het doel is het sinusritme herstellen en behouden. Deze strategie past vooral bij:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "jongere patiënten,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "veel klachten,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "fysiek actieve patiënten,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "patiënten bij wie rate control onvoldoende werkt."
+  },
+  {
+    "style": "",
+    "line": "Voordeel: betere inspanningstolerantie, omdat de atriale kick terugkomt. Nadeel: anti-aritmica hebben vaak bijwerkingen en de recidiefkans is hoog."
+  },
+  {
+    "style": "Heading5",
+    "line": "Medicatie voor rate control"
+  },
+  {
+    "style": "ListBullet",
+    "line": "Bètablokkers: blokkeren de sympathische invloed op de AV-knoop; eerste keus bij de meeste patiënten."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Calciumantagonisten: vertragen de geleiding via de AV-knoop, maar niet gebruiken bij hartfalen met verminderde ejectiefractie."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Digoxine: verhoogt de vagale tonus; werkt vooral in rust en minder goed bij inspanning. Vooral geschikt bij inactieve ouderen of als toevoeging bij hartfalen."
+  },
+  {
+    "style": "Heading5",
+    "line": "Medicatie voor rhythm control"
+  },
+  {
+    "style": "ListBullet",
+    "line": "Flecaïnide: klasse Ic, natriumkanaalblokker. Alleen bij een structureel gezond hart; niet gebruiken bij ischemische hartziekte of hartfalen, want het kan pro-aritmisch zijn."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Amiodaron: klasse III. Geschikt bij hartfalen of structurele hartziekte. Het is relatief veilig voor het hart, maar heeft veel bijwerkingen op lange termijn, zoals schildklier-, long- en huidproblemen."
+  },
+  {
+    "style": "Heading5",
+    "line": "Cardioversie"
+  },
+  {
+    "style": "ListBullet",
+    "line": "Elektrische cardioversie (DCC): synchrone stroomstoot onder sedatie, met een effectiviteit van meer dan 90%."
+  },
+  {
+    "style": "ListBullet",
+    "line": "Medicamenteuze cardioversie: infuus met een anti-aritmicum, zoals flecaïnide of vernakalant. Werkt trager en er is geen narcose nodig."
+  },
+  {
+    "style": "Heading4",
+    "line": "Interventie: pulmonale vene-isolatie"
+  },
+  {
+    "style": "",
+    "line": "Als medicatie faalt of niet gewenst is, kan een katheterablatie worden uitgevoerd. Omdat triggers vaak uit de pulmonale venen komen, worden deze venen elektrisch geïsoleerd van het atrium. Dat gebeurt door rondom de vene-openingen littekens te maken met radiofrequentie of door te vriezen (cryo). Zo worden de “vonken” losgekoppeld van het atrium."
+  },
+  {
+    "style": "Heading4",
+    "line": "Instabiele patiënt: de rode vlag"
+  },
+  {
+    "style": "",
+    "line": "Soms is AF een medisch spoedgeval. Als de ventrikelfrequentie hoog is en de atriale kick wegvalt, kan het cardiac output zo ver dalen dat de patiënt instabiel wordt. Denk aan shock, longoedeem of myocardischemie."
+  },
+  {
+    "style": "",
+    "line": "Bij een patiënt met:"
+  },
+  {
+    "style": "ListBullet",
+    "line": "AF met een hoge frequentie,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "grauwe of klamme indruk,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "ernstige dyspneu,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "hypotensie,"
+  },
+  {
+    "style": "ListBullet",
+    "line": "pijn op de borst,"
+  },
+  {
+    "style": "",
+    "line": "is de eerstvolgende stap directe elektrische cardioversie."
+  },
+  {
+    "style": "",
+    "line": "Aandachtspunt: wanneer kies je direct voor cardioversie?  Kort antwoord: bij hemodynamische instabiliteit, zoals shock, longoedeem of ischemie."
+  },
+  {
+    "style": "Heading4",
+    "line": "Samenvatting"
+  },
+  {
+    "style": "",
+    "line": "Atriumfibrilleren is een chaotische hartritmestoornis door meerdere re-entry wavelets en vaak triggers uit de longvenen. Daardoor verdwijnen de P-toppen, wordt het ritme volledig onregelmatig en valt de atriale kick weg. Dat geeft minder vulling, lager slagvolume, daling van het cardiac output en een verhoogd risico op stase en trombusvorming in het linker hartoor. De diagnose stel je met ECG, maar aanvullend onderzoek is nodig om de oorzaak te zoeken en de juiste behandeling te kiezen. De drie kernpijlers zijn frequentiecontrole, ritmecontrole en antistolling, met bij een instabiele patiënt directe cardioversie."
+  }
+]

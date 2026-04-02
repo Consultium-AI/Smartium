@@ -39,6 +39,7 @@ const Blok9Week1Casus1AcuteNierschadeVerdiepingSummary = () => {
   return (
     <SummaryLayout
       title="Acute nierschade - verdieping"
+      practiceLink="/oefenvragen?lme=blok9-week1-casus1-acute-nierschade-verdieping"
       description="Acute nierschade betekent dat de nierfunctie in korte tijd achteruitgaat. Juist daarom is een rustige, systematische aanpak zo belangrijk. Met een goede anamnese, lichamelijk onderzoek en een beperkt aantal aanvullende onderzoeken kun je al heel ver komen. De kern is steeds hetzelfde: je wilt snel richting krijgen in de oorzaak én tegelijk inschatten of er nog functionerend nierweefsel aanwezig is."
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"

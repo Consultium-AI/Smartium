@@ -1,0 +1,9 @@
+import { blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart01 } from './Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart01'
+import { blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart02 } from './Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart02'
+
+export const blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsMap = {
+  'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen': [
+    ...blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart01,
+    ...blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenQuestionsPart02,
+  ],
+}

@@ -70,6 +70,7 @@ const Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary = () => {
       description="Om longkanker goed te begrijpen, is het belangrijk eerst te weten hoe een normale long eruitziet. De long bestaat uit meerdere onderdelen, van grotere luchtwegen zoals de trachea en bronchi tot de kleine luchtwegen en de alveoli."
       caseLabel="Week 5 · Casus 9: Longkanker, wat nu"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus9-voorbereiding-pathologie-longkanker"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

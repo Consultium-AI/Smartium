@@ -62,6 +62,7 @@ const Blok9Week5Casus10SyncopeSummary = () => {
       description="Syncope is een veelvoorkomend klinisch symptoom dat vaak wordt omschreven als flauwvallen of een wegraking. De formele definitie is: een tijdelijk verlies van bewustzijn door onvoldoende bloedtoevoer naar de hersenen."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-syncope"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

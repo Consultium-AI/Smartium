@@ -45,6 +45,7 @@ const Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary = () => {
       description="De term hallmarks of cancer verwijst naar de typische eigenschappen van kankercellen. Het is een manier om kanker te begrijpen als een ziekte waarbij cellen stap voor stap kenmerken verwerven die hen helpen om te groeien, te overleven en zich te verspreiden."
       caseLabel="Week 5 · Casus 11: Kind met algehele malaise, koorts en zwelling in de buik"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

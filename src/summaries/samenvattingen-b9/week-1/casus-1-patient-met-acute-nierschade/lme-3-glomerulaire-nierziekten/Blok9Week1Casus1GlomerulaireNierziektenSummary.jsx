@@ -42,6 +42,7 @@ const Blok9Week1Casus1GlomerulaireNierziektenSummary = () => {
   return (
     <SummaryLayout
       title="Glomerulaire nierziekten"
+      practiceLink="/oefenvragen?lme=blok9-week1-casus1-glomerulaire-nierziekten"
       description="Glomerulaire nierziekten zijn aandoeningen van het nierfilter, de glomerulus. Je kunt ze zien als de tegenhanger van tubulaire nierziekten."
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"

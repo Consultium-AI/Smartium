@@ -53,6 +53,7 @@ const Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary = () =
       description="Het hart heeft een eigen elektrisch geleidingssysteem dat ervoor zorgt dat de boezems en kamers in de juiste volgorde samenknijpen. De belangrijkste onderdelen zijn de sinusknoop, de AV-knoop, de bundel van His en de bundeltakken met Purkinjevezels."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -39,6 +39,7 @@ const Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary = () => {
       description="Deze module is een praktische kennismaking met het beoordelen van CT-scans binnen de toegepaste anatomie. Het uitgangspunt is dat je niet alleen naar een tweedimensionaal beeld kijkt, maar leert om die doorsneden om te zetten naar een bruikbaar ruimtelijk beeld van het lichaam."
       caseLabel="Week 2 · Casus 4: De vrouw die maar 20 meter kan lopen"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

@@ -61,6 +61,7 @@ const Blok5Week2Casus3AangeborenStollingsstoornissenSummary = () => {
       description="Aangeboren stollingsstoornissen kunnen leiden tot een verhoogde bloedingsneiging. Ze kunnen op verschillende plekken in de stollingscascade ontstaan en zijn dan aanwezig in de primaire hemostase of de secundaire hemostase."
       caseLabel="Week 2 · Casus 3: Paarse vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus3-aangeboren-stollingsstoornissen"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

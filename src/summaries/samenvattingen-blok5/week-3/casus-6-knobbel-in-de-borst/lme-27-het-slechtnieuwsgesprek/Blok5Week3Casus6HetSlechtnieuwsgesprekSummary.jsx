@@ -59,6 +59,7 @@ const Blok5Week3Casus6HetSlechtnieuwsgesprekSummary = () => {
       description="Een slechtnieuwsgesprek hoort bij de medische praktijk en is voor artsen vaak een van de lastigste onderdelen van het werk. Slecht nieuws is voor patiënten meestal niet iets om naar uit te kijken."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-het-slechtnieuwsgesprek"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

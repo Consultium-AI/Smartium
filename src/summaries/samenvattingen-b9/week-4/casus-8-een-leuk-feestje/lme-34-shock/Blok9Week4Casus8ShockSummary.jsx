@@ -55,6 +55,7 @@ const Blok9Week4Casus8ShockSummary = () => {
       caseLabel="Week 4 · Casus 8: Een leuk feestje"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week4-casus8-shock"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsShock /></section>

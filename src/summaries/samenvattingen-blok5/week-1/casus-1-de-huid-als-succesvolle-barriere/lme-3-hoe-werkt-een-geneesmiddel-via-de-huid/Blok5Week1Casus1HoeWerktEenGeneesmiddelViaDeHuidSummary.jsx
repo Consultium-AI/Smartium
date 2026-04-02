@@ -55,6 +55,7 @@ const Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary = () => {
       description="Farmacokinetiek beschrijft wat het lichaam doet met een geneesmiddel nadat het is toegediend. Het gaat dus om hoe een medicijn wordt opgenomen, verdeeld, gemetaboliseerd en uitgescheiden."
       caseLabel="Week 1 · Casus 1: De huid als succesvolle barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

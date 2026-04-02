@@ -53,6 +53,7 @@ const Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary = ()
       description="Iatrogene schade betekent schade die ontstaat door behandeling."
       caseLabel="Week 8 · Casus 15: Kiezen tussen twee kwaden"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

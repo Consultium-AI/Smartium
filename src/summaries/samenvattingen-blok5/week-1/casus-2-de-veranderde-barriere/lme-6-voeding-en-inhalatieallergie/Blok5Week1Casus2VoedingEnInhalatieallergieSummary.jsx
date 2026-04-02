@@ -54,6 +54,7 @@ const Blok5Week1Casus2VoedingEnInhalatieallergieSummary = () => {
       description="Bij een voedselallergie reageert het afweersysteem op voeding. De meest voorkomende vorm is een IgE-gemedieerde voedselallergie. Dat betekent dat het lichaam IgE-antistoffen maakt tegen een bepaald voedingsmiddel. Er bestaan ook reacties op voeding die niet door het immuunsysteem worden veroorzaakt, zoals lactose-intolerantie. In deze samenvatting gaat het steeds om de IgE-gemedieerde voedselallergie."
       caseLabel="Week 1 · Casus 2: De veranderde barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus2-voeding-en-inhalatieallergie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

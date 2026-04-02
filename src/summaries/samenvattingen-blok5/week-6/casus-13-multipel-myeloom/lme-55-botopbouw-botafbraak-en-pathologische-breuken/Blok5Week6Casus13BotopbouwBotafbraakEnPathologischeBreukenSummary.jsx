@@ -9,6 +9,7 @@ import {
   Table2,
 } from 'lucide-react'
 import SummaryLayout from '../../../../../components/SummaryLayout'
+import Blok5Week6Casus13BotopbouwOefenvragenCallout from './Blok5Week6Casus13BotopbouwOefenvragenCallout'
 import Sect01Leerdoelen from './Sect01Leerdoelen'
 import Sect02NormaleOpbouwVanBot from './Sect02NormaleOpbouwVanBot'
 import Sect03DeBotcellen from './Sect03DeBotcellen'
@@ -19,6 +20,9 @@ import Sect07PathologischeFracturen from './Sect07PathologischeFracturen'
 import Sect08OsteolyseEnOsteoscleroseBijMetastasen from './Sect08OsteolyseEnOsteoscleroseBijMetastasen'
 import Sect09KlinischeRelevantie from './Sect09KlinischeRelevantie'
 import Sect10Samenvatting from './Sect10Samenvatting'
+
+const PRACTICE_LME_PATH =
+  '/oefenvragen?lme=blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken'
 
 const Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary = () => {
   const tableOfContents = [
@@ -41,6 +45,8 @@ const Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary = () => 
       caseLabel="Week 6 · Casus 13: Multipel myeloom"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink={PRACTICE_LME_PATH}
+      practiceFooter={<Blok5Week6Casus13BotopbouwOefenvragenCallout to={PRACTICE_LME_PATH} />}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -1,0 +1,9 @@
+import { blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart01 } from './Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart01'
+import { blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart02 } from './Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart02'
+
+export const blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsMap = {
+  'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom': [
+    ...blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart01,
+    ...blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsPart02,
+  ],
+}

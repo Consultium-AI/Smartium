@@ -50,6 +50,7 @@ const Blok5Week3Casus6BehandelingVanMammacarcinoomSummary = () => {
       description="Bij mammacarcinoom is het belangrijk om eerst te bepalen of er sprake is van gelokaliseerde ziekte of van uitzaaiingen op afstand. Dat verschil bepaalt namelijk of de behandeling nog curatief kan zijn of vooral palliatief is."
       caseLabel="Week 3 · Casus 6: Knobbel in de borst"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus6-behandeling-van-mammacarcinoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

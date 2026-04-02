@@ -42,6 +42,7 @@ const Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary = () => {
       description="De thymus is het orgaan waar T-lymfocyten rijpen. Dat is belangrijk, omdat T-cellen daar leren wat lichaamseigen is en wat lichaamsvreemd is. De voorlopercellen van T-lymfocyten, de prothymocyten, ontstaan net als B-lymfocyten in het beenmerg en migreren daarna via het bloed naar de thymus."
       caseLabel="Week 5 · Casus 9: Patiënt met auto-immuunziekte"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus9-bouw-en-functie-van-de-thymus"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

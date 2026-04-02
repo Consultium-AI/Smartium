@@ -42,6 +42,7 @@ const Blok5Week4Casus8HydradenitisSuppurativaSummary = () => {
       description="Hidradenitis suppurativa, vaak afgekort als HS, is een chronische huidziekte die wordt gekenmerkt door recidiverende, pijnlijke ontstekingen vanuit de haarzakjes."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-hydradenitis-suppurativa"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

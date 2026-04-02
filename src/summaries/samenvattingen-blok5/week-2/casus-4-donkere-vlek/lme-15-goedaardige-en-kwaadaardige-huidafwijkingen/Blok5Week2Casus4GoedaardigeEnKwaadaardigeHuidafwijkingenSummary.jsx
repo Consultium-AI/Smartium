@@ -53,6 +53,7 @@ const Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary = () => {
       description="De huid bestaat uit meerdere lagen en structuren die samen zorgen voor bescherming, stevigheid en herkenbare huidafwijkingen. In de dermatologie is het belangrijk om niet alleen naar de buitenkant te kijken, maar ook te begrijpen uit welke laag een afwijking afkomstig kan zijn."
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

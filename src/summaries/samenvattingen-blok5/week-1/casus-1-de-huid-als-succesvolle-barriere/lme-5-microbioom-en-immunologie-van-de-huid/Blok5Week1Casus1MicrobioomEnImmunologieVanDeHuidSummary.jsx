@@ -54,6 +54,7 @@ const Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary = () => {
       description="De huid is niet alleen een fysieke barrière, maar ook een belangrijk immunologisch orgaan. Dat betekent dat de huid actief meedoet aan afweer, herkenning van micro-organismen en het bewaren van een evenwicht met de normale huidflora, oftewel het huidmicrobioom."
       caseLabel="Week 1 · Casus 1: De huid als succesvolle barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus1-microbioom-en-immunologie-van-de-huid"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

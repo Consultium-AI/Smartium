@@ -54,6 +54,7 @@ const Blok9Week5Casus10BasisAnalyseEcgSummary = () => {
       description="Een ECG lees je het beste stap voor stap. Het idee is dat je niet zomaar naar losse pieken kijkt, maar steeds eerst bedenkt wat je bekijkt, vanuit welke richting en wat dat betekent voor de elektrische stroom in het hart."
       caseLabel="Week 5 · Casus 10: Atriumfibrilleren"
       blokLabel="Blok 9"
+      practiceLink="/oefenvragen?lme=blok9-week5-casus10-basis-analyse-ecg"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>

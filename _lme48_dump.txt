@@ -1,0 +1,128 @@
+P: LME 48 – Elektrofysiologisch onderzoek en ablaties
+P: Leerdoelen
+P: Na het doornemen van deze stof kun je:
+P: het onderscheid maken tussen een diagnostisch EFO (“mapping”) en een therapeutische ablatie;
+P: de werkingsmechanismen en verschillen tussen radiofrequentie-ablatie met warmte en cryo-ablatie met kou uitleggen;
+P: de anatomische “targets” noemen voor de behandeling van AVNRT, AVRT/WPW, typische boezemflutter en boezemfibrilleren;
+P: de belangrijkste risico’s en complicaties van deze invasieve procedures benoemen.
+P: De setting: waarom doen we een EFO en ablatie?
+P: Een elektrofysiologisch onderzoek (EFO) en ablatie vinden plaats in het hartkatheterisatielaboratorium, de zogeheten cathlab-setting. Het is een minimaal invasieve ingreep. De patiënt is wakker, soms met sedatie, of onder algehele narcose, afhankelijk van de complexiteit.
+P: Het idee is eigenlijk heel logisch: als medicatie onvoldoende werkt, bijwerkingen geeft, of als iemand een definitieve behandeling wil, dan gaan we niet alleen kijken wat er misgaat in het hartritme, maar ook proberen de bron uit te schakelen. Eerst moet je dus begrijpen waar de stoornis zit en welk mechanisme de ritmestoornis onderhoudt. Pas daarna kun je gericht ableren.
+P: Aandachtspunt:  Waarom is dat mechanisme zo belangrijk?  Kort antwoord: omdat je een ritmestoornis alleen definitief kunt behandelen als je weet of je een cirkel moet doorbreken of juist een focale bron moet uitschakelen.
+P: Percutane toegang via de lies
+P: De toegang tot het hart verloopt meestal via de lies. De arts prikt onder lokale verdoving de vaten in de rechterlies aan; soms wordt ook de linkerlies gebruikt. Er zijn twee hoofdwegen om het hart te bereiken: via de vena femoralis en via de arteria femoralis.
+P: Vena femoralis: de meest gebruikte route
+P: Dit is de standaardroute. Omdat het hartritmesysteem en de meeste doelstructuren via de rechterkant van het hart of via het septum bereikbaar zijn, gaan de katheters meestal via de aders. De route is dan:
+P: Lies → vena cava inferior → rechter atrium → rechter ventrikel
+P: Deze weg wordt bijvoorbeeld gebruikt bij ritmestoornissen aan de rechterkant van het hart en bij procedures waarvoor je later nog een doorgang naar de linkerboezem nodig hebt.
+P: Arteria femoralis: voor de arteriële route
+P: Soms is toegang tot het arteriële systeem nodig, bijvoorbeeld om ablatie uit te voeren in het linkerventrikel. De katheter gaat dan retrograde, dus tegen de stroom in:
+P: Lies → aorta → door de aortaklep → linkerventrikel
+P: Deze route wordt gebruikt wanneer je in de linker kamer moet zijn zonder via het septum te gaan.
+P: Transseptale punctie: de binnendoorweg naar het linker atrium
+P: Veel complexe ritmestoornissen, zoals boezemfibrilleren, ontstaan in het linker atrium, rond de longvenen. Als je via de vena femoralis binnenkomt, kom je eerst in het rechter atrium. Dan is de arteriële route via de aorta niet handig voor de linkerboezem. Daarom wordt een transseptale punctie gebruikt.
+P: De arts brengt eerst een sheath naar het rechter atrium en prikt vervolgens met een speciale naald door het interatriale septum, meestal ter hoogte van de fossa ovalis. Zo kan een katheter van het rechter naar het linker atrium oversteken.
+P: Aandachtspunt:  Waarom kies je bij boezemfibrilleren voor een transseptale punctie?  Kort antwoord: omdat de belangrijkste bron vaak in het linker atrium ligt, en je daar via het rechter atrium binnendoor naartoe moet.
+P: Belangrijke structuren tijdens toegang
+P: Een nerveuze structuur die je moet ontzien is de nervus femoralis. Dat is geen bloedvat maar een zenuw; aanprikken of verdoven hiervan kan complicaties geven.
+P: De diagnostiek: meten en uitlokken
+P: Zodra de katheters goed liggen, begint het eigenlijke EFO. Dat bestaat uit twee hoofdonderdelen:
+P: Meten van geleidingstijden
+P: Programmed Electrical Stimulation (pacing)
+P: 1. Geleidingstijden meten
+P: De arts meet in milliseconden hoe snel een elektrische impuls door het hart reist. Daarmee krijg je informatie over de geleiding in verschillende delen van het systeem.
+P: AH-interval: van de AV-knoop-ingang naar de Bundel van His. Dit zegt iets over de geleidingssnelheid van de AV-knoop.
+P: HV-interval: van de Bundel van His naar het begin van de ventrikelcontractie. Dit meet de geleiding door het His-Purkinje-systeem.
+P: Een lang AH-interval betekent dat de AV-knoop traag geleidt. Een verlengd HV-interval past bij vertraagde geleiding richting de ventrikels en kan wijzen op een naderend totaal AV-blok.
+P: 2. Pacing: de ritmestoornis uitlokken
+P: Bij pacing geeft de arts extra stroomstootjes via de katheters. Het doel is om de ritmestoornis uit te lokken of te induceren. Waarom? Omdat het mechanisme van een ritmestoornis vaak zichtbaar wordt als je het hart “op gang brengt” op een gecontroleerde manier. Dan kun je zien of het om een re-entry gaat of om een focale bron.
+P: Van ECG naar intracardiaal EGM
+P: Tijdens een EFO zie je niet alleen het gewone ECG, maar ook intracardiale elektrogrammen (EGM’s): signalen die rechtstreeks door de katheters in het hart worden gemeten.
+P: Tabel 1. Belangrijke katheters en hun functie
+---TABLE---
+Katheter | Ligging | Wat meet of doet deze?
+HRA (High Right Atrium) | Hoog in de rechterboezem, vlak bij de sinusknoop | Activatie van de sinusknoop en het rechter atrium
+HIS (Bundel van His) | Op de grens tussen boezem en kamer, boven de tricuspidalisklep | Belangrijke meetkatheter; hier zie je drie pieken: A, H en V
+CS (Coronary Sinus) | In de coronairsinus, langs de achterkant van het hart | Activatie van linker atrium en linkerventrikel
+RVa (Rechter Ventrikel apex) | Punt van de rechterkamer | Activatie van de rechterkamer en pacing/backup-mogelijkheid
+---ENDTABLE---
+P: De His-katheter is extra belangrijk. Je ziet daar:
+P: A: lokale atriale activatie;
+P: H: het His-bundelpotentiaal;
+P: V: lokale ventriculaire activatie.
+P: De coronary sinus meet de activatie van links naar rechts. De katheter ligt dus heel bruikbaar om de linkerharthelft indirect te volgen.
+P: Van anatomie naar röntgenbeeld
+P: Op de fluoroscopie zie je de katheters als draden door het hart lopen. Het is belangrijk om te begrijpen hoe de anatomische ligging eruitziet op het röntgenbeeld. De HRA-katheter ligt hoog in het rechter atrium, de His-katheter op de overgang van boezem naar kamer, de CS-katheter loopt achterlangs, en de RV-katheter ligt in de rechterkamer.
+P: Kleurcodes in 3D: activatiekaart en voltagekaart
+P: Bij 3D-mapping wordt vaak een kleurensysteem gebruikt.
+P: Activatiekaart
+P: Deze kaart laat zien wanneer een elektrische prikkel op een plek aankomt.
+P: Rood / wit: de allereerste activatie, dus de bron of startplek.
+P: Daarna veranderen de kleuren geleidelijk naar geel → groen → blauw → paars: dit laat de voortgeleiding over het hartspierweefsel zien.
+P: Hiermee zie je of de prikkel in een rond circuit blijft rondgaan of juist vanuit één focus uitwaaiert.
+P: Voltagekaart
+P: Deze kaart laat zien hoe goed het hartweefsel is door de sterkte van het signaal.
+P: Paars: gezond, krachtig hartspierweefsel.
+P: Rood / grijs / meerkleurig: slecht of ziek weefsel, vaak littekenweefsel of zones met weinig tot geen signaal.
+P: Bij ventrikeltachycardieën zoekt de arts vaak naar zulke grijze of rode littekens, omdat de ritmestoornis vaak rondom de rand van zo’n litteken cirkelt.
+P: Cirkels of haarden? De twee hoofdmechanismen
+P: Om een ritmestoornis definitief te kunnen behandelen, moet de elektrofysioloog weten welk mechanisme erachter zit. Er zijn twee hoofdmechanismen:
+P: 1. Re-entry circuits: cirkelbeweging
+P: Hier draait de elektrische prikkel in een vast circuit rond, bijvoorbeeld rond een klep of een litteken.
+P: Behandeling: je probeert het circuit op een strategische plek te onderbreken, een lineair block. Net als een draadje doorknippen: de cirkel wordt onderbroken en de ritmestoornis stopt.
+P: Voorbeelden: boezemflutter, AVNRT en AVRT.
+P: 2. Focale triggers / automatisme
+P: Hier gaat het niet om een cirkel, maar om één groepje cellen dat spontaan vuurt en het normale ritme verstoort.
+P: Behandeling: je zoekt de bron (“focus”) op en vernietigt of isoleert die.
+P: Voorbeeld: atriumfibrilleren, waarbij triggers vaak uit de longvenen komen. Ook focale atriale tachycardie past hierbij.
+P: Waar branden we bij re-entry?
+P: De plek van ablatie hangt af van de ritmestoornis.
+P: AVNRT
+P: Bij AVNRT zit er een micro-circuit in of direct naast de AV-knoop, gebruikmakend van een snel en een traag pad.
+P: Doel van de ablatie: slow pathway ablatie.  De arts zoekt het trage pad op, tussen de sinus coronarius en de tricuspidalisklep, en schakelt dit uit.
+P: Het succes is hoog, meer dan 95%.
+P: Waarom is hier een risico op AV-blok? Omdat het doelwit anatomisch dicht tegen de compacte AV-knoop aan ligt. Als je daar te dicht bij brandt, kan de AV-knoop beschadigd raken en kan een totaal AV-blok ontstaan.
+P: Typische boezemflutter
+P: Bij typische flutter draait een grote elektrische cirkel door de hele rechterboezem, rond de tricuspidalisklep.
+P: Doel van de ablatie: cavotricuspid isthmus (CTI) blokkade.  De arts maakt een ononderbroken brandlijn in de nauwe doorgang onderin de rechterboezem, tussen de vena cava inferior en de tricuspidalisklep. Zo wordt de “racebaan” onderbroken.
+P: Succes: 90–95%.
+P: AVRT / WPW
+P: Bij AVRT of WPW is er een aangeboren extra verbinding, een accessoire bundel, langs de klepring. Die kan liggen langs de mitralisklep of de tricuspidalisklep.
+P: Doel van de ablatie: de bundel opzoeken en direct wegbranden.  Dit heet bundelablatie.
+P: Focale atriale tachycardie
+P: Bij atriële tachycardie is er geen cirkel, maar één groepje cellen in de boezemwand dat “op hol” slaat: focale automatie.
+P: Deze foci zitten niet willekeurig. Ze hebben voorkeursplekken, zoals:
+P: langs de crista terminalis,
+P: bij de hartoren,
+P: rondom de klepringen.
+P: Behandeling: focale ablatie.  Met 3D-mapping zoekt de arts de plek met de vroegste activatie, dus de rode zone op de kaart. Als die plek gevonden is, wordt de katheter exact daarop gezet en wordt de focus weggebrand.
+P: Boezemfibrilleren en pulmonale vene isolatie
+P: Boezemfibrilleren is anders. Hier is sprake van chaos in de boezems, aangedreven door meerdere golven. De triggers die deze chaos starten, zitten meestal in de spierkraagjes rond de pulmonale venen in het linker atrium.
+P: Behandeling: pulmonale vene isolatie (PVI).  In plaats van de triggers één voor één te zoeken, sluit je de longvenen elektrisch af van de rest van het hart.
+P: Dat gebeurt door een cirkel van littekenweefsel rond de openingen van de longvenen te maken:
+P: met cryo: in één keer bevriezen;
+P: met radiofrequentie: puntje voor puntje branden.
+P: Het doel is elektrische isolatie. De triggers kunnen in de venen nog wel vuren, maar de prikkel kan niet meer naar de boezem ontsnappen: een exit block.
+P: Behandeling in de ventrikels
+P: Hoewel de meeste ablatie in de boezems plaatsvindt, kun je ook ventrikeltachycardie behandelen. Dit gebeurt bijvoorbeeld bij patiënten met littekenweefsel na een oud hartinfarct, waar de VT omheen draait.
+P: De katheter wordt dan via de liesslagader retrograde, of via het tussenschot, naar de linkerkamer gebracht om het zieke weefsel uit te schakelen.
+P: Veiligheid en risico’s
+P: Ablatie is vaak veilig en effectief, maar het blijft een invasieve ingreep. De complicaties zijn te verdelen in problemen bij de toegang en problemen in het hart zelf.
+P: Tabel 2. Belangrijkste risico’s van ablatie
+---TABLE---
+Categorie | Complicatie | Kern van het probleem
+Toegang via de lies | Liesbloeding of hematoom | Door aanprikken van vaten ontstaat nabloeding
+Toegang via de lies | Pseudo-aneurysma | Lek uit de slagader vormt een holte in het omliggende weefsel
+In het hart | Harttamponnade | Perforatie van de hartwand geeft bloeding in het hartzakje; dit drukt het hart dicht
+Specifiek bij AVNRT | AV-blok | Beschadiging van de AV-knoop door nabijgelegen ablatie
+Linkszijdige ablatie | Herseninfarct / stroke | Trombus op katheter of wond kan losschieten naar de hersenen
+PVI | Longvenenstenose | Te diep branden in de longvene kan vernauwing geven
+PVI | Atrio-oesofageale fistel | Zeldzame, zeer gevaarlijke verbinding tussen hart en slokdarm door hitte
+---ENDTABLE---
+P: Bij linkszijdige procedures kan een bloedstolsel ontstaan op de katheter of op de ablatiewond. Als dat losschiet, gaat het vaak via de aorta richting de hersenen. Daarom krijgen patiënten tijdens de procedure veel bloedverdunners, zoals heparine.
+P: Een harttamponnade is een spoedprobleem: als de katheter door de hartwand prikt, komt er bloed in het pericard. Omdat het hartzakje stug is, drukt dat het hart dicht. Dan is drainage nodig via een pericardiocentese.
+P: Aandachtspunt:  Waarom is een atrio-oesofageale fistel zo ernstig?  Kort antwoord: omdat de slokdarm direct achter het linker atrium ligt en hitte daar een gevaarlijke verbinding kan veroorzaken.
+P: Samenvatting
+P: Bij een elektrofysiologisch onderzoek en ablatie gaat het om veel meer dan alleen “brandplekjes zetten”. De arts gebruikt de lies als toegang, soms met een transseptale punctie, om elk deel van het hart te bereiken. Met katheters in onder andere HRA, His, CS en RVa worden geleidingstijden gemeten en ritmestoornissen uitgelokt. Daarna bepaalt 3D-mapping of er sprake is van een re-entry circuit of van een focale bron.
+P: Re-entry behandel je door de cirkel te onderbreken, bijvoorbeeld bij AVNRT, typische boezemflutter en AVRT/WPW. Focale ritmestoornissen behandel je door de bron te zoeken en uit te schakelen, zoals bij focale atriale tachycardie of boezemfibrilleren met pulmonale vene isolatie. Ook ventrikeltachycardie kan worden behandeld, vooral wanneer littekenweefsel de basis vormt.
+P: De arts combineert dus ECG-kennis, anatomisch inzicht en 3D-technologie om patiënten definitief van hun klachten te helpen.

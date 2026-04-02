@@ -1,0 +1,248 @@
+LME 17 – Perifeer arterieel vaatlijden
+Leerdoelen
+Na het doornemen van deze stof moet je:
+perifeer arterieel vaatlijden (PAV) kunnen herkennen en diagnosticeren;
+de risicofactoren voor PAV kunnen identificeren en behandelen;
+de verschillende typen behandeling kunnen uitleggen.
+Perifeer arterieel vaatlijden: wat gebeurt er?
+Perifeer arterieel vaatlijden is een uitgebreid ziektebeeld dat vooral wordt veroorzaakt door atherosclerose. Dat betekent dat er in de wand van de slagader vet- en ontstekingsafzettingen ontstaan. In het begin is er vaak nog weinig aan de hand, maar de afwijking kan geleidelijk toenemen.
+De ontwikkeling van atherosclerose verloopt grofweg van:
+een normale vaatwand;
+naar een fatty streak;
+naar intima/media-hyperplasie;
+en uiteindelijk naar calcificatie en trombose.
+Bij ischem ie is er een mismatch tussen zuurstofaanbod en zuurstofvraag. Daardoor ontstaat hypoxie, is er onvoldoende ATP-productie en schakelt het weefsel over op anaerobe glycolyse. Dat geeft klachten, vooral pijn.
+Aandacht-vragetje: waarom krijgt iemand met PAV vooral pijn bij inspanning?  Mini-antwoord: omdat de zuurstofvraag dan stijgt, terwijl de doorbloeding door de vernauwing niet genoeg kan toenemen.
+Klinische presentatie en ernst
+PAV kan zich op verschillende manieren uiten. Een belangrijk punt is dat veel patiënten in het begin nauwelijks klachten hebben. De klachten variëren van geen klachten tot kritieke ischemie.
+Tabel 1. Fontaine-classificatie van PAV
+Stadium
+Klachten
+I
+Geen klachten
+IIa
+Claudicatioklachten, niet invaliderend
+IIb
+Claudicatioklachten, wel invaliderend
+III
+Rustpijn
+IV
+Gangreen, wonden of weefselverlies
+Daarnaast geldt dat de presentatie heel uiteenlopend kan zijn:
+ongeveer de helft van de patiënten is asymptomatisch;
+een deel heeft klassieke claudicatio intermittens;
+een deel heeft atypische pijn;
+en een klein deel presenteert zich met kritieke ischemie.
+Functionele beperkingen bij PAV zijn onder meer:
+een verminderde loopafstand en loopsnelheid;
+minder uithoudingsvermogen;
+en extra beperking door comorbiditeit, bijvoorbeeld hartfalen, COPD, artrose of neurogene claudicatio.
+Aandacht-vragetje: kan de enkel-armindex in rust normaal zijn terwijl iemand toch PAV heeft?  Mini-antwoord: ja, dat kan. Vooral bij inspanning kan de afwijking duidelijker worden.
+Prognose van claudicatio en kritieke ischemie
+De prognose verschilt duidelijk tussen claudicatio en kritieke ischemie. Bij claudicatio blijft het beeld vaak stabiel, maar een deel van de patiënten verslechtert. Kritieke ischemie heeft een veel slechtere prognose.
+Tabel 2. Prognose bij PAV
+Situatie
+Verloop
+Claudicatio
+75% stabiel, 20% progressieve claudicatio, 5% kritieke ischemie
+Kritieke ischemie
+25% amputatie, 50% levend met 2 benen, 25% cardiovasculaire sterfte
+De 5-jaarssterfte is:
+20% bij claudicatio;
+50% bij kritieke ischemie.
+Ook is PAV klinisch belangrijk omdat patiënten, vergeleken met leeftijdsgenoten, een verhoogd risico hebben op:
+ischemische hartziekte;
+beroerte;
+en overlijden.
+Risicofactoren en preventie
+Bij PAV horen duidelijke risicofactoren. De belangrijkste zijn:
+roken;
+diabetes mellitus;
+hypertensie;
+hypercholesterolemie;
+hyperhomocysteïnemie;
+familiaire belasting;
+leeftijd.
+In de behandeling van risicofactoren ligt de nadruk op:
+stoppen met roken;
+tensieregulatie;
+starten van een statine;
+glucose-regulatie;
+en algemeen secundair preventief beleid, onder andere met clopidogrel en leefstijladvies.
+Soorten preventie
+Tabel 3. Primaire, secundaire en tertiaire preventie
+Type preventie
+Betekenis
+Primair
+Voorkomen dat gezonde mensen een ziekte krijgen
+Secundair
+Vroege opsporing en behandeling bij mensen met verhoogd risico of een beginnende ziekte
+Tertiair
+Complicaties en verergering voorkomen en zelfredzaamheid bevorderen
+Anamnese en lichamelijk onderzoek
+De anamnese bij PAV richt zich op de klachten en hun relatie met inspanning. Belangrijke vragen zijn:
+waar zit de pijn?
+wat voor soort pijn is het?
+wanneer treedt de pijn op?
+is de pijn inspanningsgerelateerd?
+hoe ver kan de patiënt lopen voordat de pijn begint?
+wat is de maximale pijnvrije loopafstand?
+zijn er wonden?
+welke voorgeschiedenis en medicatie zijn er?
+Bij het lichamelijk onderzoek let je op:
+bloeddruk in beide armen;
+BMI;
+inspectie van benen en voeten;
+temperatuur van benen en voeten;
+pulsaties;
+sensibele en motorische afwijkingen.
+De pulsaties die je beoordeelt zijn onder andere:
+arteria femoralis communis;
+arteria poplitea;
+arteria tibialis posterior;
+arteria dorsalis pedis.
+Aanvullend onderzoek en diagnostiek
+Aanvullend onderzoek helpt om de doorbloeding beter in beeld te brengen. Belangrijke onderzoeken zijn:
+Doppleronderzoek
+Enkel-armindex (EAI)
+Teendrukmeting
+Duplexonderzoek
+MRA
+CTA
+Angiografie
+Tabel 4. Diagnostiek bij PAV
+Onderzoek
+Wat je ermee beoordeelt
+Doppler
+Snelheid en richting van de bloedstroom met geluidsgolven
+Enkel-armindex
+Vergelijking van bloeddruk in enkel en arm
+Teendruk
+Druk en doorbloeding van de tenen, vaak extra nuttig bij diabetes
+Duplex
+Combinatie van Doppler en echografie; laat lumen, stroomsnelheid en signaal zien
+MRA
+Niet-invasieve beeldvorming met magnetisch veld en radiogolven
+CTA
+CT-onderzoek met jodiumhoudend contrast; geeft gedetailleerde beelden
+Angiografie
+Invasief vaatonderzoek met straling en jodiumhoudend contrast
+De Doppler is een pijnloos en veilig onderzoek. De techniek gebruikt geluidsgolven om snelheid en richting van de bloedstroom in slagaders en aders te meten.
+De EAI vergelijkt de bloeddruk in de armen met die in de enkels. Dat zegt iets over de doorbloeding van de benen.
+Belangrijke interpretatie van de EAI:
+EAI 0,9–1,2: geen klachten;
+EAI 0,90–0,35: claudicatio intermittens;
+EAI 0,60–0,25: rustpijn;
+EAI 0,35–0,05: weefselverlies.
+Een EAI:
+lager dan 0,9 geeft verdenking op PAV;
+kan in rust normaal zijn;
+een daling van meer dan 20% bij een looptest is afwijkend;
+en een EAI boven 1,3 kan wijzen op niet-comprimeerbare vaten, bijvoorbeeld bij diabetes mellitus.
+De teendrukmeting wordt vaak aanvullend gedaan na een EAI, vooral bij diabetes. Omdat de EAI bij deze patiënten vals verhoogd kan zijn door mediacalcificatie, is teendruk soms sensitiever.
+Bij duplexonderzoek worden Doppler en echografie gecombineerd. Zo krijg je zowel informatie over de bloedstroom als over de vaatwand en de vernauwing.
+Bij MRA is er geen röntgenstraling. Wel zijn er beperkingen, zoals artefacten door een stent, claustrofobie en contra-indicaties bij metaal.  Bij CTA en angiografie is er wel straling en jodiumhoudend contrast.
+Differentiaaldiagnose en acute ischemie
+Niet alle loopklachten zijn PAV. De differentiaaldiagnose bestaat onder andere uit:
+neurogene claudicatio;
+polyneuropathie;
+artrose van heup of knie;
+chronisch compartimentsyndroom;
+popliteal entrapment syndrome;
+chronische veneuze ziekte;
+restless legs.
+Aandacht-vragetje: waarom is het belangrijk om de differentiaaldiagnose van claudicatio te kennen?  Mini-antwoord: omdat dezelfde klacht door verschillende oorzaken kan worden veroorzaakt, en de behandeling dan anders is.
+Acute ischemie
+Een bijzondere en ernstige vorm is acute ischemie. Hierbij moet direct worden gehandeld, omdat de voet of het been anders geen bloedtoevoer meer krijgt. “Time is tissue” is hier heel belangrijk.
+Er zijn twee hoofdgroepen:
+een patiënt met al bestaande vaatlijden, bij wie op een atherosclerotische plaque een stolsel ontstaat; dit heet acute on chronic;
+een patiënt met een relatief blanco vaatgeschiedenis, waarbij bijvoorbeeld een embolus vanuit het hart, bij maligniteit of bij een stollingsstoornis een vat acuut afsluit.
+Vaak zit zo’n afsluiting op een splitsing van vaten, bijvoorbeeld bij de iliacale of femorale bifurcatie.
+Acute ischemie kenmerkt zich met de 6 P’s:
+Pain
+Pallor
+Pulselessness
+Paralysis
+Paraesthesias
+Perishing cold
+De behandeling bestaat vaak uit trombolyse of trombectomie.
+Behandeling van PAV
+De behandeling hangt af van de ernst van de klachten en de classificatie.
+Grofweg geldt:
+Fontaine 1 en 2: conservatieve behandeling;
+Fontaine 2b, 3 en 4: invasieve behandeling.
+Conservatieve behandeling
+Conservatieve behandeling bestaat uit:
+stoppen met roken;
+medicamenteuze behandeling;
+gesuperviseerde looptraining;
+leefstijladvies.
+Bij medicamenteuze behandeling horen onder andere:
+clopidogrel;
+statine;
+tensieregulatie;
+glucose-regulatie.
+Gesuperviseerde looptraining
+Gesuperviseerde looptraining is een belangrijk onderdeel van de behandeling van claudicatio intermittens. Dit houdt in:
+oefensessies van 30 minuten;
+3 keer per week;
+lopen tot aan de pijngrens;
+minimaal 6 maanden volhouden.
+Deze training werkt vaak goed: bij 50–70% van de patiënten neemt de loopafstand toe. De verbetering kan groot zijn. De verklaring ligt onder andere in:
+stimulatie van collateraalvorming;
+efficiënter spiermetabolisme;
+en een hogere pijngrens.
+Invasieve behandeling
+Bij invasieve behandeling zijn er twee grote categorieën:
+endovasculair
+operatief
+Endovasculaire behandeling is minimaal invasief. Operatieve behandeling gebeurt klassiek, met een grotere incisie.
+Endovasculaire behandeling
+De belangrijkste endovasculaire ingreep is Percutane Transluminale Angioplastiek (PTA), ook wel dotteren genoemd. Daarbij wordt via een katheter met een ballonnetje een vernauwing opgerekt, zodat de doorbloeding herstelt. Soms wordt hierbij een stent geplaatst.
+Mogelijke complicaties zijn:
+nabloeding;
+wondinfectie;
+iatrogeen letsel;
+trash;
+re-interventie;
+verlies van been.
+Endarteriëctomie / desobstructie
+Bij een endarteriëctomie wordt het vat open gemaakt en wordt de kalkplaqu e verwijderd. Vaak wordt daarna een patch geplaatst om het vat weer te verbreden. Die patch kan van veneus materiaal of van kunststof zijn.
+Bypasschirurgie
+Een bypass is letterlijk een omweg. Er wordt een nieuw traject gemaakt om de stenose of occlusie heen.
+Je kunt een bypass maken:
+centraal, bijvoorbeeld aorto-iliacaal;
+of perifeer, bijvoorbeeld femoro-distaal.
+Daarbij gaat het om:
+verbetering van de inflow centraal;
+of verbetering van de outflow perifeer.
+Veelgebruikte materialen zijn:
+PTFE;
+Dacron.
+Amputatie
+Soms is amputatie de enige of beste optie. De redenen voor amputatie zijn grofweg:
+vaatlijden of acute ischemie;
+trauma;
+maligniteit.
+Bij vaatgerelateerde amputatie gaat het vaak om:
+geen revascularisatie-opties;
+soms in combinatie met diabetes mellitus;
+en niet zelden na infectie of ernstig weefselverlies.
+De hoogte van de amputatie wordt gekozen op basis van:
+de algemene toestand van de patiënt;
+de mogelijkheid tot revalidatie;
+en de mate van vascularisatie.
+Mogelijke niveaus zijn:
+voetamputatie;
+transtibiale amputatie;
+transfemorale amputatie;
+knie-disarticulatie;
+heupdisarticulatie.
+Voor de operatie wordt gekeken naar:
+aanvullend onderzoek;
+of revascularisatie mogelijk is;
+het klinisch beeld, zoals sepsis;
+en of de patiënt revalideerbaar is.
+De prognose na amputatie hangt sterk af van de onderliggende aandoening en het niveau van de amputatie. De mortaliteit is vooral hoog bij grotere amputaties en bij ernstige vaatlijden.
+Samenvatting
+PAV wordt vooral veroorzaakt door atherosclerose en kan variëren van geen klachten tot kritieke ischemie met wondverlies of gangreen. De belangrijkste klachten zijn claudicatio, rustpijn en weefselverlies. Voor de diagnostiek zijn anamnese, lichamelijk onderzoek, EAI en aanvullend vaatonderzoek belangrijk. Behandeling begint waar mogelijk conservatief, met rookstop, medicatie en vooral gesuperviseerde looptraining. Bij ernstiger ziekte zijn endovasculaire of operatieve ingrepen nodig, en in sommige gevallen amputatie.

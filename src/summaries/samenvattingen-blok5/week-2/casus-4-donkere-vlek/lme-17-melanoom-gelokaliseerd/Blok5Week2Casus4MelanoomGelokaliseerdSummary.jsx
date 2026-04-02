@@ -52,6 +52,7 @@ const Blok5Week2Casus4MelanoomGelokaliseerdSummary = () => {
       description="De incidentie van huidkanker en melanoom is de afgelopen 40 jaar voortdurend gestegen. Dat betekent dat deze aandoeningen steeds vaker worden gezien. De incidentie verschilt ook sterk per land: wereldwijd lopen de cijfers uiteen, met bijvoorbeeld Australië hoog en Saudi-Arabië laag."
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-melanoom-gelokaliseerd"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

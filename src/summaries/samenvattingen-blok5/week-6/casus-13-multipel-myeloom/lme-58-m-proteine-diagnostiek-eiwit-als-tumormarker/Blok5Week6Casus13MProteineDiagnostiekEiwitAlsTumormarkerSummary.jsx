@@ -11,6 +11,7 @@ import {
   TestTube2,
 } from 'lucide-react'
 import SummaryLayout from '../../../../../components/SummaryLayout'
+import Blok5Week6Casus13MProteineDiagnostiekOefenvragenCallout from './Blok5Week6Casus13MProteineDiagnostiekOefenvragenCallout'
 import Sect01Leerdoelen from './Sect01Leerdoelen'
 import Sect02WatIsEenMProteine from './Sect02WatIsEenMProteine'
 import Sect03Plasmaceldyscrasieen from './Sect03Plasmaceldyscrasieen'
@@ -21,6 +22,9 @@ import Sect07DiagnoseVersusFollowUp from './Sect07DiagnoseVersusFollowUp'
 import Sect08ResponsbeoordelingBijMyeloom from './Sect08ResponsbeoordelingBijMyeloom'
 import Sect09Casus from './Sect09Casus'
 import Sect10SamenvattingVanDeKern from './Sect10SamenvattingVanDeKern'
+
+const PRACTICE_LME_PATH =
+  '/oefenvragen?lme=blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker'
 
 const Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary = () => {
   const tableOfContents = [
@@ -43,6 +47,8 @@ const Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary = () => {
       caseLabel="Week 6 · Casus 13: Multipel myeloom"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+      practiceLink={PRACTICE_LME_PATH}
+      practiceFooter={<Blok5Week6Casus13MProteineDiagnostiekOefenvragenCallout to={PRACTICE_LME_PATH} />}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

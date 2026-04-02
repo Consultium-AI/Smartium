@@ -52,6 +52,7 @@ const Blok9Week3Casus6CvrmSummary = () => {
       caseLabel="Week 3 · Casus 6: Volwassene met pijn op de borst"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week3-casus6-cvrm"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02CvrmBasisEnPreventie /></section>

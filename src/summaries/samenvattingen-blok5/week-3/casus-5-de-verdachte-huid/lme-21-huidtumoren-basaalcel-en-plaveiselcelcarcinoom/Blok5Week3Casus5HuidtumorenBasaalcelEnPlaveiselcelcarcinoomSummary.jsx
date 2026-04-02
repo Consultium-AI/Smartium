@@ -52,6 +52,7 @@ const Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary = () =>
       description="Huidkanker hoort bij de meest voorkomende vormen van kanker. De incidentie zal de komende jaren naar verwachting blijven stijgen. De belangrijkste vormen zijn het basaalcelcarcinoom, het cutaan plaveiselcelcarcinoom en het melanoom."
       caseLabel="Week 3 · Casus 5: De verdachte huid"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

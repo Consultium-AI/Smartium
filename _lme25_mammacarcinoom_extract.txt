@@ -1,0 +1,157 @@
+LME 25 – Behandeling van mammacarcinoom
+Leerdoelen
+De student kan de verschillende aspecten van de behandeling(en) van gelokaliseerd mammacarcinoom benoemen en uitleggen.
+De student kan de essentie van de volgordelijkheid van deze behandelingen benoemen en uitleggen.
+De student kan de principes van chemotherapie, antihormonale therapie en doelgerichte therapie bij de behandeling van mammacarcinoom begrijpen en toepassen.
+De student kan de rol van lumpectomie en ablatieve chirurgie benoemen en uitleggen.
+De student kan de rol van adjuvante radiotherapie na lumpectomie benoemen en uitleggen.
+De student kan globaal de bijwerkingen van systemtherapie, chirurgie en radiotherapie benoemen en uitleggen, en bijwerkingen op korte termijn en lange termijn onderscheiden.
+De student kan het verschil aangeven tussen primaire radiotherapie, adjuvante radiotherapie, chemoradiotherapie en postoperatieve radiotherapie.
+De student kan de begrippen doelvolume, electief gebied en behandelingsvolume uitleggen.
+De student weet welke stappen worden doorlopen ter voorbereiding op de bestraling.
+De student kan de radiotherapeutische behandeling van het mammacarcinoom na een mammaspaarende operatie toelichten.
+Gelokaliseerd en gemetastaseerd mammacarcinoom
+Bij mammacarcinoom is het belangrijk om eerst te bepalen of er sprake is van gelokaliseerde ziekte of van uitzaaiingen op afstand. Dat verschil bepaalt namelijk of de behandeling nog curatief kan zijn of vooral palliatief is. Een primaire tumor is niet op afstand uitgezaaid en wordt behandeld met het doel om te genezen. Zodra er metastasen op afstand zijn, is de behandeling niet meer curatief.
+Een lokale metastase is een uitzaaiing in de regio van de tumor, bijvoorbeeld in de okselklieren aan de zijde van de tumor. Dat hoort nog bij het primaire mammacarcinoom. Metastasen op afstand zijn uitzaaiingen elders in het lichaam, zoals levermetastasen.
+Tabel 1. Verschil tussen lokale metastasen en metastasen op afstand
+Begrip
+Betekenis
+Voorbeeld
+Gevolg voor behandeling
+Lokale metastase
+Uitzaaiing in de directe regio van de tumor
+Okselklieren aan de zijde van de tumor
+Nog onderdeel van primaire ziekte
+Metastasen op afstand
+Uitzaaiing elders in het lichaam
+Levermetastasen
+Behandeling niet meer curatief
+Aandachtsvraag: waarom is dit onderscheid zo belangrijk?  Mini-antwoord: omdat gelokaliseerde ziekte nog met een curatieve behandeling kan worden aangepakt, terwijl gemetastaseerde ziekte niet meer curatief is.
+TNM-classificatie en stadiëring
+Voor de stadiëring wordt de TNM-classificatie gebruikt. Daarmee wordt gekeken naar de primaire tumor, de lymfeklieren en metastasen op afstand. Bij de primaire tumor wordt onderscheid gemaakt tussen C- en P-classificatie. Een C-classificatie wordt beoordeeld aan de hand van beeldvorming en/of klinische beoordeling. Een P-classificatie wordt beoordeeld op basis van een resectiepreparaat met voldoende vrije marge.
+In de casus is sprake van een cT2N0 graad 2 tumor. Dat betekent dat de tumor klinisch is ingedeeld als T2, zonder aanwijzingen voor betrokken lymfeklieren, en graad 2 heeft.
+Aandachtsvraag: wat is het verschil tussen CTV en PTV later in de radiotherapie?  Mini-antwoord: CTV is het klinische doelvolume met marge voor microscopische uitbreiding; PTV is CTV plus extra marge voor bewegings- en instellingsonzekerheden.
+Volgorde en soort behandeling
+Bij mammacarcinoom worden verschillende begrippen gebruikt om de volgorde of combinatie van behandelingen aan te geven. Die volgorde is belangrijk om goed te begrijpen wat wanneer gebeurt.
+Tabel 2. Belangrijke behandelbegrippen
+Begrip
+Betekenis
+Primaire behandeling
+De behandeling die bedoeld is om de patiënt te genezen; ook wel curatieve therapie
+Adjuvante behandeling
+Aanvullende behandeling ná de primaire behandeling
+Neo-adjuvante behandeling
+Aanvullende behandeling vóór de primaire behandeling
+Chemo-radiotherapie
+Combinatie van chemotherapie en radiotherapie
+Sequentieel
+De behandelingen volgen elkaar op
+Concurrerend
+De behandelingen worden tegelijkertijd gegeven
+Postoperatieve bestraling
+Bestraling na een operatie
+Bij chemo-radiotherapie wordt dus zowel chemotherapie als radiotherapie gegeven. Dat kan sequentieel zijn, dus na elkaar, of concurrerend, dus tegelijk. Postoperatieve bestraling betekent bestraling nadat de operatie al heeft plaatsgevonden.
+Bij primaire mammacarcinoombehandeling is het doel curatief. Bij gemetastaseerd mammacarcinoom is dat anders: de behandeling is dan palliatief van opzet en levensverlengend. De behandeling wordt dan meestal geleid door de oncoloog, soms door de radiotherapeut en zelden door de chirurg.
+Systemische behandeling van mammacarcinoom
+Systemische behandeling bestaat uit behandeling die het hele lichaam beïnvloedt. In deze stof gaat het om drie hoofdvormen: chemotherapie, antihormonale therapie en doelgerichte therapie tegen HER2.
+Bij de beschreven patiënt is sprake van een graad 2 invasief ductaal mammacarcinoom, ER-negatief, PR-negatief en HER2 sterk positief (3+). Op basis hiervan wordt neoadjuvante systemische behandeling geadviseerd. Dat betekent dat de behandeling voorafgaat aan de operatie.
+Chemotherapie hoort hierbij, net als doelgerichte behandeling tegen HER2. Antihormonale therapie heeft hier geen plaats, omdat de hormoonreceptor negatief is.
+Waarom is HER2 belangrijk?  HER2 is een prognostisch ongunstige factor. Dat betekent dat de tumor daardoor een slechter karakter heeft en onbehandeld een agressief beloop kan hebben. Tegelijk is HER2 een predictieve gunstige factor, omdat de tumor waarschijnlijk goed reageert op doelgerichte behandeling gericht tegen HER2.
+Dus:
+prognostisch ongunstig: slechtere natuurlijke afloop;
+predictief gunstig: betere kans op effect van een bepaalde behandeling.
+Bij deze patiënt is daarom combinatiebehandeling met chemotherapie en HER2-gerichte therapie logisch.
+Chirurgische behandeling van het mammacarcinoom
+Bij chirurgische behandeling van het primaire mammacarcinoom zijn twee hoofdvormen mogelijk:
+Ablatie: volledige verwijdering van borst- en spierweefsel.
+Lumpectomie: een ingreep waarbij een deel van de mamma gespaard blijft.
+Lumpectomie hoort bij een mammaspaarende behandeling. Daarbij blijft dus een deel van de borst behouden. Na een mammaspaarende operatie wordt standaard adjuvant bestraald. Die combinatie van mammaspaarend opereren en bestraling heet mammaspaarende therapie.
+Niet in alle gevallen is mammaspaarende therapie mogelijk. Dat is bijvoorbeeld zo:
+als er een grote tumor zit in een kleine borst;
+als de patiënt in het verleden al is bestraald op borst of borstkas;
+als er in meerdere kwadranten van de borst tumor of DCIS aanwezig is.
+Bij de afweging tussen direct opereren en eerst neoadjuvante behandeling spelen voor- en nadelen mee.
+Voordelen van direct opereren
+snelle behandeling;
+adjuvante therapie kan hopelijk snel beginnen;
+de tumor is dan weg.
+Nadelen van eerst neoadjuvante behandeling
+er is geen direct inzicht in de gevoeligheid van de tumor als eerst neoadjuvant wordt gestart;
+als de tumor relatief groot is ten opzichte van de borst, kan niet mammaspaarend worden geopereerd;
+postoperatieve wondproblemen kunnen de start van adjuvante behandeling vertragen.
+In de casus is uiteindelijk een directe operatie mogelijk, maar gezien de kenmerken van de tumor en de leeftijd van de vrouw is er zeker een indicatie voor adjuvante systemische behandeling.
+Sentinel node procedure
+Bij een borstoperatie kan ook een sentinel node procedure worden toegepast. Dat gebeurt als er geen klinisch afwijkende lymfeklieren zijn gezien, bijvoorbeeld bij lichamelijk onderzoek en/of beeldvorming.
+De sentinel node, of schildwachtklier, is de eerste lymfeklier waar tumorcellen naartoe kunnen uitzaaien. Met de procedure kan de oksel worden gestadieerd. Dat is van belang, omdat een positieve sentinel node grote prognostische betekenis heeft. Bovendien kan een positieve sentinel node leiden tot aanpassingen in het adjuvante behandeltraject en kan dit nog een indicatie zijn voor een operatie in de oksel.
+Radiotherapie: wat is het en waarom wordt het gegeven?
+Radiotherapie is een medische behandeling met röntgenstraling, dus met ioniserende straling, die in de meeste gevallen tegen kanker is gericht. De bestraling kan uitwendig of inwendig worden gegeven.
+Uitwendige radiotherapie wordt gegeven met een lineaire versneller. Een lineaire versneller is een machine waarin deeltjes, zoals fotonen of elektronen, worden opgewekt.
+Inwendige radiotherapie heet ook wel brachytherapie. Daarbij worden radioactieve bronnen gebruikt die van binnenuit worden geplaatst, bijvoorbeeld via katheters.
+Na een mammaspaarende operatie wordt radiotherapie standaard adjuvant gegeven. Het doel daarvan is het verkleinen van de kans dat de tumor terugkomt in het resterende borstweefsel.
+Radiotherapie en behandelingsvolgorde
+Radiotherapie kan verschillende rollen hebben:
+primaire radiotherapie: radiotherapie als hoofdbehandeling;
+adjuvante radiotherapie: radiotherapie na de primaire behandeling;
+neo-adjuvante radiotherapie: radiotherapie vóór de primaire behandeling;
+postoperatieve radiotherapie: bestraling na een operatie;
+chemoradiotherapie: combinatie van chemotherapie en radiotherapie.
+Doelvolume, CTV en PTV
+Bij radiotherapie moet heel precies worden bepaald welk gebied bestraald moet worden. Daarbij wordt gewerkt met marges, zodat zeker is dat alle tumor in het bestralingsveld zit.
+Tabel 3. Begrippen rond het bestralingsgebied
+Begrip
+Betekenis
+GTV (Gross Tumor Volume)
+Palpabele of zichtbare tumor
+CTV (Clinical Target Volume)
+GTV + marge voor microscopische uitbreiding
+PTV (Planning Target Volume)
+CTV + extra marge om goed te kunnen bestralen
+Het CTV bevat dus de marge voor microscopische uitbreiding van de tumor. Daarnaast kan in het CTV een electief gebied worden meegenomen. Electief betekent hier “uit voorzorg”. Dat gebeurt omdat van sommige kankers bekend is dat ze kunnen metastaseren, ook als er nog geen zichtbare tumor is in dat gebied.
+Het PTV is het CTV plus een extra marge. Die marge is nodig vanwege:
+beweging van organen, afhankelijk van de locatie in het lichaam;
+reproduceerbaarheid van de ligging;
+hoe nauwkeurig de patiënt wordt ingesteld.
+Bij de bepaling van het PTV wordt dus rekening gehouden met onzekerheden in houding en in de uitvoering van de bestraling.
+Radiotherapie bij mammacarcinoom in de praktijk
+Bij mammacarcinoom wordt radiotherapie ingezet om de kans op een lokaal of locoregionaal recidief te verminderen. Na een mammaspaarende operatie is standaard adjuvante bestraling nodig. Afhankelijk van het risico kan gekozen worden voor:
+bestraling van een gedeeltelijke borst;
+bestraling van de hele borst;
+bestraling van de hele borst met een boost op het tumorbed.
+Na een ablatieve operatie is bestraling van de thoraxwand alleen in specifieke gevallen nodig, bijvoorbeeld na een irresecabele operatie, bij T4-tumoren of als er een indicatie is om ook de regionale kliergebieden te bestralen.
+Bestraling van de regionale kliergebieden is geïndiceerd bij lymfogene metastasering. Daarbij speelt mee of er na neo-adjuvante chemotherapie nog lymfekliermetastasen zijn en hoeveel lymfeklieren er vóór die chemotherapie waren aangedaan.
+Voorbeelden van doelgebieden
+Partiële borst: laag risico.
+Hele mamma: intermediair risico.
+Hele mamma + boost op het tumorbed: hoog risico.
+Thoraxwand: in specifieke situaties na ablatie.
+Mamma en locoregionaal: wanneer ook regionale kliergebieden moeten worden meegenomen.
+Dosisplanning en fractionering
+De bestraling wordt gegeven met fotonen, dus röntgenstraling met hoge energie. Bij mammacarcinoom zijn verschillende fractioneringsschema’s mogelijk. Fractionering betekent dat de totale dosis in kleinere porties wordt opgesplitst.
+De meest gebruikte schema’s zijn:
+15 fracties van 2,67 Gy, 1x per dag, 5x per week;
+5 fracties van 5,2 Gy, 1x per dag, 5x per week.
+Gy staat voor Gray en is de eenheid van bestraling.
+Het maken van een bestralingsplan heet dosisplanning. Daarbij wordt gekeken of:
+de dosis in het doelgebied goed is;
+de dosis in kritieke organen zo laag mogelijk blijft.
+Belangrijke kritieke organen zijn:
+het hart;
+de long;
+de contralaterale mamma.
+Aandachtsvraag: wat is het doel van dosisplanning?  Mini-antwoord: zorgen dat het doelgebied voldoende dosis krijgt en dat omliggende gezonde organen zo weinig mogelijk schade oplopen.
+Voorbereiding op radiotherapie
+Voor de start van de bestraling worden meerdere stappen doorlopen. De volgorde is belangrijk en verloopt als volgt:
+poli-bezoek bij de arts
+looddraadjes plakken rondom de mammae
+plannings-CT-scan
+intekenen van de doelvolumina
+maken van het bestralingsplan
+beoordelen en goedkeuren van het bestralingsplan
+instellen op het bestralingstoestel
+start van de bestraling
+Deze voorbereiding zorgt ervoor dat de bestraling nauwkeurig kan worden uitgevoerd.
+Samenvatting
+Bij gelokaliseerd mammacarcinoom staat een curatieve behandeling centraal. De behandeling bestaat vaak uit een combinatie van chirurgie, systemische behandeling en radiotherapie. De volgorde van die behandelingen is belangrijk: primair, adjuvant, neo-adjuvant, sequentieel of concurrerend.
+Bij de besproken casus is sprake van een cT2N0 graad 2 invasief ductaal mammacarcinoom, ER- en PR-negatief en HER2 3+. Daardoor is antihormonale therapie niet geïndiceerd, maar wel chemotherapie en HER2-gerichte doeltherapie.
+Chirurgisch kan gekozen worden voor ablatieve chirurgie of lumpectomie. Na lumpectomie is adjuvante radiotherapie standaard. De sentinel node procedure helpt om de oksel te stadiëren.
+Radiotherapie vermindert de kans op lokaal of locoregionaal recidief. Daarbij worden GTV, CTV en PTV gebruikt om het bestralingsgebied nauwkeurig vast te leggen. Ook de planning, fractionering en voorbereiding zijn gericht op een zo effectief mogelijke behandeling met zo weinig mogelijk schade aan gezond weefsel.

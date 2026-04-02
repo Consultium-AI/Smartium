@@ -56,6 +56,7 @@ const Blok5Week3Casus5LeefstijlEnKankerSummary = () => {
       description="Leefstijl speelt een belangrijke rol bij kanker, zowel bij het ontstaan als bij het verloop van de ziekte en de behandeling. Onder leefstijlfactoren vallen onder andere voeding, beweging, slaap, stressmanagement, rookgedrag, alcoholgebruik en zonblootstelling."
       caseLabel="Week 3 · Casus 5: De verdachte huid"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus5-leefstijl-en-kanker"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

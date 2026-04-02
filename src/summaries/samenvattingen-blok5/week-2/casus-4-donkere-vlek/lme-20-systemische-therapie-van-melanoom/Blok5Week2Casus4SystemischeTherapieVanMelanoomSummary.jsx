@@ -54,6 +54,7 @@ const Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary = () => {
       description="Systemische therapie betekent dat het geneesmiddel het hele lichaam kan bereiken. Dat gebeurt bijvoorbeeld via de bloedbaan, zoals bij een infuus, of via orale inname. Het idee is dus dat de behandeling niet alleen op één plek werkt, maar door het hele lichaam verspreid wordt. Dat is belangrijk bij kanker, omdat tumorcellen zich vaak al kunnen hebben verspreid, ook als dat nog niet zichtbaar is."
       caseLabel="Week 2 · Casus 4: Donkere vlek"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week2-casus4-systemische-therapie-van-melanoom"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

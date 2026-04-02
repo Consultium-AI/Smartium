@@ -48,6 +48,7 @@ const Blok5Week6Casus12NvicAcuteVergiftigingSummary = () => {
     <SummaryLayout
       title="NVIC acute vergiftiging"
       description="Het Nationaal Vergiftigingen Informatie Centrum, meestal het NVIC genoemd, geeft medisch advies aan zorgprofessionals die in een spoedsituatie te maken hebben met een intoxicatie."
+      practiceLink="/oefenvragen?lme=blok5-week6-casus12-nvic-acute-vergiftiging"
       caseLabel="Week 6 · Casus 12: Verwarde patiënt met griepachtige klachten"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}

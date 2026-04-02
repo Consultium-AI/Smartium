@@ -43,6 +43,7 @@ const Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary = () => {
       description='Bij kinderen kunnen oncologische aandoeningen zich onverwacht presenteren met acute of snel progressieve klachten. Het gaat dan niet altijd om klassieke "kankersymptomen", maar juist om een combinatie van klachten die passen bij druk op organen, zenuwen of de hersenen.'
       caseLabel="Week 5 · Casus 11: Kind met algehele malaise, koorts en zwelling in de buik"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

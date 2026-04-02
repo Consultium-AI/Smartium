@@ -33,6 +33,7 @@ const Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary = () => {
   return (
     <SummaryLayout
       title="Glomerulaire en tubulaire nierziekten"
+      practiceLink="/oefenvragen?lme=blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten"
       description="Een nierbiopt is een belangrijk onderdeel van de aanvullende diagnostiek bij het zoeken naar de oorzaak van een nierziekte. Het gaat hier niet om een biopt uit een macroscopisch afwijkende nier, vaak een tumoreuze afwijking, maar om onderzoek van nierweefsel zelf."
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"

@@ -52,6 +52,7 @@ const Blok9Week1Casus2VerdiepingChronischeNierschadeSummary = () => {
       caseLabel="Week 1 · Casus 2: Patiënt met chronische nierschade"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      practiceLink="/oefenvragen?lme=blok9-week1-casus2-chronische-nierschade-verdieping"
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02BehandelingKern /></section>

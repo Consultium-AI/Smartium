@@ -65,6 +65,7 @@ const Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary = () => {
       description="Bij gebruik van medicijnen kan een patiënt nadelig reageren. Belangrijk is dat een reactie tijdens medicatiegebruik niet automatisch betekent dat het medicijn ook echt de oorzaak is. Soms valt een reactie toevallig samen met een andere aandoening, of verergert een bestaande aandoening juist op dat moment."
       caseLabel="Week 1 · Casus 2: De veranderde barrière"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week1-casus2-nadelige-reacties-van-medicatie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

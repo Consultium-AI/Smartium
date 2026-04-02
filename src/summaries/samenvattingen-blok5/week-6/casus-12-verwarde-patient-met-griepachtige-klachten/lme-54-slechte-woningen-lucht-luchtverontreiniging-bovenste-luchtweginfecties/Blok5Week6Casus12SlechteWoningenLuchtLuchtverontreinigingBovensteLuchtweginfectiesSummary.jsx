@@ -57,6 +57,7 @@ const Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtwegi
     <SummaryLayout
       title={TITLE}
       description="In deze stof staat de relatie tussen wonen, lucht en gezondheid centraal."
+      practiceLink="/oefenvragen?lme=blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties"
       caseLabel="Week 6 · Casus 12: Verwarde patiënt met griepachtige klachten"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}

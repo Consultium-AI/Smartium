@@ -61,6 +61,7 @@ const Blok5Week3Casus5MilieuEnGezondheidSummary = () => {
       description="De zorgsector draagt in Nederland voor ongeveer 7% bij aan de nationale CO₂-uitstoot. Dat is een groot aandeel en vergelijkbaar met de uitstoot van 19 miljoen huishoudens. Tegelijk is juist de zorg er om gezondheid te beschermen."
       caseLabel="Week 3 · Casus 5: De verdachte huid"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week3-casus5-milieu-en-gezondheid"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -49,6 +49,7 @@ const Blok5Week4Casus8LymfeklierdissectieSummary = () => {
       description="Een lymfeklierdissectie is een chirurgische ingreep waarbij één of meer lymfeklieren worden verwijderd uit een bepaald anatomisch gebied. Dat gebeurt meestal omdat er sprake is van een verdenking op of aanwezigheid van lymfekliermetastasen."
       caseLabel="Week 4 · Casus 8: Zwelling in de oksel"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week4-casus8-lymfeklierdissectie"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

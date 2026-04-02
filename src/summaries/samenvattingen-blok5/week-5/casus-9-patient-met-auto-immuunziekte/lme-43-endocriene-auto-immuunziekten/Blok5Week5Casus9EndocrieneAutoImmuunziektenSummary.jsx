@@ -51,6 +51,7 @@ const Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary = () => {
       description="Endocriene organen maken hormonen: regulerende stoffen die via het bloed naar andere delen van het lichaam worden vervoerd. Veel organen bevatten wel endocriene cellen, maar sommige organen zijn duidelijk gespecialiseerd als endocrien orgaan. In deze stof gaat het vooral om de pancreas en de schildklier, omdat juist deze organen vaak doelwit zijn van auto-immuniteit."
       caseLabel="Week 5 · Casus 9: Patiënt met auto-immuunziekte"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus9-endocriene-auto-immuunziekten"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

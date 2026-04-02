@@ -53,6 +53,7 @@ const Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary = () => {
       description="Kanker bij kinderen kan grofweg worden ingedeeld in drie grote groepen: hemato-oncologie, hersentumoren en solide tumoren. Binnen de hemato-oncologie vallen vooral leukemieën en lymfomen."
       caseLabel="Week 5 · Casus 11: Kind met algehele malaise, koorts en zwelling in de buik"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week5-casus11-typen-kinderoncologie-bij-kinderen"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

@@ -66,6 +66,7 @@ const Blok5Week8Casus15ScyllaEnCharybdisSummary = () => {
       description="De titel Scylla en Charybdis verwijst naar een bekende mythe uit de Griekse oudheid."
       caseLabel="Week 8 · Casus 15: Kiezen tussen twee kwaden"
       blokLabel="Blok 5"
+      practiceLink="/oefenvragen?lme=blok5-week8-casus15-scylla-en-charybdis"
       tableOfContents={tableOfContents}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">

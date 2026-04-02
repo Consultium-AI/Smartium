@@ -1,0 +1,120 @@
+LME 31 – Klinisch redeneren bij respiratoire insufficiëntie
+Leerdoelen
+Na het bestuderen van deze stof kun je:
+bij respiratoire insufficiëntie beredeneren of er sprake is van dode ruimte, shunt of een diffusiestoornis;
+een differentiaaldiagnose opstellen op basis van het probleem in de long;
+een passend behandelvoorstel doen voor respiratoire insufficiëntie in een casus.
+Basis van gaswisseling
+De long heeft twee hoofdrollen: zuurstof opnemen en koolstofdioxide afgeven. Dat is van levensbelang, want als één van deze functies faalt, kan iemand snel achteruitgaan.
+De lucht komt via mond, neus, keelholte, trachea en bronchi in de alveoli. In de alveoli vindt de gaswisseling plaats met de omringende capillairen. Tussen alveoli en capillairen ligt het alveolair-capillair membraan: een heel dun membraan waar stoffen doorheen kunnen diffunderen. Het membraan laat stoffen tot ongeveer 0,5 micrometer door. Ter vergelijking: een erytrocyt is ongeveer 8 micrometer groot en blijft dus in de capillairen. Zuurstof (O₂) en koolstofdioxide (CO₂) zijn veel kleiner dan 0,5 micrometer en diffunderen daarom gemakkelijk over dit membraan.
+Hoe wordt de ademhaling geregeld?
+Ademhalen gaat grotendeels vanzelf. Het ademhalingscentrum zit in de medulla van de hersenstam. Daar komen allerlei prikkels samen die de ademhaling sneller, dieper of juist even minder sterk kunnen maken. Belangrijke prikkels zijn onder andere:
+chemische prikkels in de hersenstam bij verhoogde pCO₂ of verlaagde pH;
+chemoreceptoren in de halslagader bij een lage pO₂;
+receptoren in de long;
+prikkels uit de larynx;
+adrenaline;
+koorts.
+Zo wordt in normale omstandigheden voldoende lucht in de alveoli gebracht voor een goede gaswisseling.
+Aandachtsvraag: waarom is een stijging van CO₂ zo belangrijk?  Mini-antwoord: omdat een hogere CO₂ in het bloed leidt tot een lagere pH in de liquor, en dat prikkelt het ademhalingscentrum om sneller en dieper te ademen.
+V/Q-matching: ventilatie en perfusie
+Voor een goede gaswisseling moeten twee dingen op elkaar afgestemd zijn:
+ventilatie (V): lucht in de alveoli;
+perfusie (Q): bloed in de capillairen.
+In een ideale situatie is elke alveolus perfect voorzien van lucht én stroomt er genoeg bloed langs. Dan is de V/Q-verhouding 1:1. In het lichaam is dat echter niet overal zo. In een gezonde situatie is de V/Q-matching ongeveer 80% of 0,8.
+De invloed van zwaartekracht
+Bij iemand die staat of rechtop zit, speelt de zwaartekracht een grote rol. De long hangt als het ware in de thorax, waardoor:
+de alveoli in de longtop wat meer zijn opgerekt en daardoor minder kunnen veranderen in volume tijdens de ademhaling;
+de alveoli in de longbasis groter worden in rust en juist een grotere volumeverandering laten zien tijdens de ademhaling.
+De zwaartekracht beïnvloedt ook de perfusie. De bloeddruk in de arteria pulmonalis daalt richting de longtop. Daardoor is er in de longbasis meer perfusie dan in de top. Dit effect is sterker op perfusie dan op ventilatie.
+De drie West-zones
+Door dit verschil in ventilatie en perfusie kun je de long indelen in drie zones:
+Tabel 1. V/Q-verhouding in de longzones
+**Zone 1**: longtop
+te veel ventilatie ten opzichte van perfusie → **V/Q > 1**
+**Zone 2**: ongeveer ter hoogte van de 3e rib
+ideale matching → **V/Q = 1**
+**Zone 3**: longbasis
+te veel perfusie ten opzichte van ventilatie → **V/Q < 1**
+Dus: de longtop heeft relatief meer ventilatie dan perfusie, terwijl de longbasis relatief meer perfusie heeft dan ventilatie.
+Aandachtsvraag: wat betekent een V/Q > 1?  Mini-antwoord: er is relatief meer lucht dan bloed aanwezig; dat past bij een situatie richting dode ruimte.
+Dode ruimte: wel lucht, geen bloed
+Dode ruimte is elke plek waar wel lucht komt, maar waar geen bloed langs stroomt. Iedereen heeft een fysiologische dode ruimte, bijvoorbeeld in mond, keelholte en trachea. Bij een gezond persoon is de dode ruimte per ademteug ongeveer 150 ml.
+Ook plekken in de long waar de V/Q-verhouding > 1 heet je dode ruimte. Dit is bijvoorbeeld bovenin de long. Als dit in ziekte groter wordt, spreek je van pathologische dode ruimte.
+Bij pathologische dode ruimte is er een gebied in de long dat slecht geperfundeerd is ten opzichte van een gezonde situatie. Daardoor is er weinig of geen bloed in de capillairen, en kan lucht in de alveoli niet leiden tot gaswisseling.
+Gevolgen van dode ruimte
+Bij dode ruimte komt wel lucht in de long, maar geen of nauwelijks bloed. Daardoor is er geen effectieve gaswisseling op die plek. Het lichaam reageert hierop meestal met snellere ademhaling. Dat is nodig om het CO₂-gehalte in het bloed op peil te houden en de pH normaal te houden.
+Belangrijk is dat dode ruimte op zichzelf niet direct leidt tot een lage saturatie, omdat het bloed dat wél in contact komt met goed geventileerde alveoli gewoon geoxygeneerd kan worden.
+Voorbeelden van dode ruimte
+Een klassiek voorbeeld is een longembolie. Daarbij sluiten veneuze trombi vast in de pulmonale circulatie. Er is dan wel lucht in de alveoli, maar geen bloed in de capillairen. Dat geeft dode ruimte ventilatie. Mensen zijn dan vaak kortademig en proberen hun ademminuutvolume te verhogen om de pH in het bloed constant te houden.
+Bij een grote centrale longembolie kan dit samengaan met een obstructieve shock.
+Aandachtsvraag: waarom kan een longembolie leiden tot dode ruimte?  Mini-antwoord: omdat er nog wel ventilatie is, maar door de afsluiting van de pulmonale circulatie geen perfusie meer is.
+Shunt: wel bloed, geen lucht
+Een shunt betekent dat bloed langs een alveolus stroomt waar geen gaswisseling plaatsvindt, omdat die alveolus onvoldoende of niet geventileerd is. Er komt dus wel bloed langs, maar niet de juiste lucht.
+Een shunt geeft desaturatie, omdat zuurstofarm bloed na die passage mengt met zuurstofrijk bloed. Daardoor daalt de arteriële zuurstofsaturatie.
+Oorzaken van shunt
+Een shunt kan ontstaan door:
+collaps van de alveolus;
+slijm of pus in de alveoli;
+oedeem in de alveoli;
+hypoventilatie.
+Bij een shunt is de V/Q-verhouding < 1. West zone 3 is een relatieve, fysiologische shunt.
+Hypoxische pulmonale vasoconstrictie
+Het lichaam heeft een oplossing als er een shunt bestaat: zodra een capillair door een zuurstofarme alveolus loopt, treedt hypoxische pulmonale vasoconstrictie op. Daardoor stroomt er minder bloed naar plekken waar geen zuurstof kan worden opgenomen en meer bloed naar plekken waar dat wel kan.
+Dit mechanisme werkt echter niet volledig en kan ook minder goed functioneren, bijvoorbeeld bij gebruik van narcosemiddelen en bij ziekte.
+Extra zuurstof bij shunt
+Bij een shunt werkt extra zuurstof geven vaak maar beperkt. Waarom? Omdat het zuurstofarme bloed gewoon zuurstofarm blijft zolang het langs een niet-geventileerde alveolus stroomt. Alleen het deel van de long dat nog wél goed open en gezond is, kan dat bloed oxgyeneren.
+Voorbeelden van shunt
+Pneumonie: ontsteking in de alveolaire ruimte, met oedeem, neutrofielen, pus en sputum; hierdoor is er geen ruimte meer voor gaswisseling.
+Pneumothorax: de long valt samen, waardoor aan die kant geen ventilatie meer plaatsvindt, terwijl perfusie nog wel kan bestaan. Het gedeoxygeneerde bloed mengt vervolgens met zuurstofrijk bloed en de saturatie daalt fors.
+Decompensatio cordis: door systolisch falen van de linker kamer ontstaat verhoogde druk in de vena pulmonalis met longoedeem. Dat kan leiden tot lokale collaps of vulling van alveoli met vocht, waardoor shunting ontstaat.
+Sedatie met propofol: een teveel aan sedatie kan de ademdrive dempen, waardoor alveolaire hypoventilatie ontstaat en shunting optreedt.
+Diffusiestoornissen: probleem in het membraan
+Bij een diffusiestoornis ligt het probleem in de alveolocapillaire membraan zelf. Dat zie je vooral bij chronische longaandoeningen. Door chronische ontsteking raakt het membraan beschadigd en tijdens het genezingsproces kan fibrose ontstaan. Fibrotisch weefsel laat gasuitwisseling veel slechter toe.
+Een diffusiestoornis geeft kortademigheid doordat de gaswisseling beperkt is. Het geven van zuurstof helpt hierbij vaak wel, omdat een hogere FiO₂ het diffusiegradiënt vergroot. Daardoor kan zuurstof makkelijker het bloed in diffunderen.
+Voorbeelden van diffuse problemen zijn:
+longfibrose;
+silicose;
+asbestose;
+COPD.
+Bij CO₂-uitademing treedt dit probleem vaak later op dan bij zuurstofopname. Bij CO₂-stijging wordt het ademhalingscentrum geprikkeld, wat leidt tot een grotere ademminuutvolume.
+Klinische redeneerstappen: het patroon herkennen
+In de praktijk is het belangrijk om het mechanisme achter respiratoire insufficiëntie te herkennen. Dezelfde klacht, zoals dyspneu of lage saturatie, kan namelijk door verschillende problemen komen. Hieronder staan de belangrijkste patronen op een rij.
+Tabel 2. Kernverschillen tussen de belangrijkste mechanismen
+Mechanisme
+Kernprobleem
+Typische gevolgen
+Voorbeeld
+**Dode ruimte**
+wel ventilatie, geen perfusie
+vooral snelle ademhaling om CO₂ en pH te compenseren
+longembolie
+**Shunt**
+wel perfusie, geen ventilatie
+desaturatie, zuurstof geeft beperkt effect
+pneumonie, pneumothorax, longoedeem
+**Diffusiestoornis**
+membraanprobleem
+slechtere gaswisseling, zuurstof helpt vaak wel
+fibrose, COPD, silicose, asbestose
+**Hypoventilatie**
+te weinig lucht in alveoli
+CO₂-stijging en mogelijke shunting
+spierziekte, propofol
+Enkele typische casussen
+Longembolie: past bij dode ruimte ventilatie.
+Pneumonie: past bij shunting.
+Spierziekte: past bij shunting door hypoventilatie; het probleem is te weinig lucht in de alveoli door een spierkrachtsprobleem.
+COPD: past bij shunting door hypoventilatie; door vernauwde bronchioli is er moeilijk luchtuitwisseling, met een relatieve alveolaire hypoventilatie en CO₂-problematiek.
+Shock door sepsis: past bij dode ruimte ventilatie; de perfusie over de long is gecompromitteerd door vasodilatatie en capillary leak.
+Decompensatio cordis: past bij shunting.
+Pneumothorax: past bij shunting.
+Sedatie: past bij shunting door hypoventilatie.
+Klinische kern om te onthouden
+Als een patiënt benauwd is en een lage saturatie heeft, denk dan altijd na over de vraag: is het probleem vooral lucht, bloed, of het membraan?
+Geen bloed, wel lucht → dode ruimte.
+Wel bloed, geen lucht → shunt.
+Membraanprobleem → diffusiestoornis.
+Bij twijfel helpt het om de situatie van de long te analyseren: hoe is de ventilatie, hoe is de perfusie, en wat doet de gaswisseling?
+Samenvatting
+Respiratoire insufficiëntie kun je beter begrijpen door te kijken naar V/Q-matching. Normaal moet ventilatie en perfusie goed op elkaar afgestemd zijn. Als er wel lucht maar geen bloed is, spreek je van dode ruimte. Als er wel bloed maar geen lucht is, spreek je van shunt. Zit het probleem in het alveolocapillaire membraan, dan is er sprake van een diffusiestoornis. In de kliniek helpen deze mechanieken om klachten, saturatie en oorzaken van dyspneu logisch te verklaren en een passend behandelvoorstel te doen.
