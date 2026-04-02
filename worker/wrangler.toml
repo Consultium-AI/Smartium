@@ -9,14 +9,16 @@ STRIPE_PRICE_MONTHLY = "price_1TGp5N2NJGvegKCX3uGOU9jx"
 STRIPE_PRICE_YEARLY = "price_1TGp5N2NJGvegKCX2rkyePOz"
 STRIPE_PAYMENT_METHOD_TYPES = "ideal"
 
+# Mode: payment (one-time iDEAL). Frontend toont maandelijks/jaarlijks;
+# user betaalt handmatig opnieuw na 30/365 dagen.
+# Zodra SEPA is goedgekeurd: switch naar recurring prices + mode=subscription in index.ts.
+#
 # Secrets (nooit in git):
 #   cd worker && npx wrangler secret put OPENAI_API_KEY
 #   cd worker && npx wrangler secret put STRIPE_SECRET_KEY
 #
 # Prijzen genereren (eenmalig, lokaal):
-#   1) Zet STRIPE_SECRET_KEY=sk_... in worker/.dev.vars (zelfde bestand mag OPENAI_API_KEY bevatten)
+#   1) Zet STRIPE_SECRET_KEY=sk_... in worker/.dev.vars
 #   2) cd worker && npm run stripe:setup-prices
-#   3) Kopieer de twee price_... regels naar [vars] hierboven óf naar Worker → Variables in Cloudflare
+#   3) Kopieer de twee price_... regels naar [vars] hierboven
 #   4) npx wrangler deploy
-#
-# Optioneel: ook in Cloudflare dashboard onder Worker → Settings → Variables

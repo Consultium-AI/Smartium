@@ -65,7 +65,7 @@ async function handleCreateCheckoutSession(
 
   const embedded = body.embedded === true
   const params = new URLSearchParams()
-  params.set('mode', 'subscription')
+  params.set('mode', 'payment')
 
   if (embedded) {
     const returnUrl = typeof body.returnUrl === 'string' ? body.returnUrl.trim() : ''

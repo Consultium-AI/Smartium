@@ -1,9 +1,10 @@
 /**
- * Maakt in Stripe een product + 2 subscription-prijzen (EUR):
- *   - Maandelijks: EUR 9,99/maand
- *   - Jaarlijks: EUR 106,68/jaar (EUR 8,89/maand equivalent)
+ * Creates a Stripe product + 2 one-time prices (EUR) for manual-renewal flow:
+ *   - Monthly access: EUR 9,99 (one-time, user re-pays after 30 days)
+ *   - Yearly access:  EUR 106,68 (one-time, user re-pays after 365 days)
  *
- * Vereist STRIPE_SECRET_KEY in worker/.dev.vars of als env var.
+ * Uses mode=payment with iDEAL. No SEPA approval needed.
+ * Once SEPA is approved, switch to recurring prices and mode=subscription.
  */
 import { readFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -63,16 +64,14 @@ try {
     product: product.id,
     currency: 'eur',
     unit_amount: '999',
-    'recurring[interval]': 'month',
-    nickname: 'Maandelijks',
+    nickname: 'Maandelijks (30 dagen toegang)',
   })
 
   const yearly = await stripeForm('/prices', secret, {
     product: product.id,
     currency: 'eur',
     unit_amount: '10668',
-    'recurring[interval]': 'year',
-    nickname: 'Jaarlijks',
+    nickname: 'Jaarlijks (365 dagen toegang)',
   })
 
   console.log('\n--- Zet dit in Cloudflare Worker Variables of wrangler.toml ---\n')
