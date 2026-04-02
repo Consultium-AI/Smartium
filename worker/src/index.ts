@@ -1,16 +1,9 @@
 export interface Env {
   OPENAI_API_KEY: string
-  /** Comma-separated origins */
   ALLOWED_ORIGINS: string
-  /** wrangler secret put STRIPE_SECRET_KEY — nooit in git */
   STRIPE_SECRET_KEY?: string
-  /** Stripe Dashboard → Producten → prijs-ID (recurring) */
-  STRIPE_PRICE_MONTHLY?: string
-  STRIPE_PRICE_YEARLY?: string
-  /**
-   * Komma-gescheiden. Voor abonnementen: alleen `ideal` (Stripe “iDEAL | Wero”; SEPA voor verlengingen).
-   * Los type `wero` ondersteunt geen subscription mode — niet combineren tenzij je op payment-mode migreert.
-   */
+  /** Eenmalige betaling prijs-ID (one-time payment) */
+  STRIPE_PRICE_ONETIME?: string
   STRIPE_PAYMENT_METHOD_TYPES?: string
 }
 
@@ -46,8 +39,7 @@ async function handleCreateCheckoutSession(
   origin: string
 ): Promise<Response> {
   const secret = env.STRIPE_SECRET_KEY?.trim()
-  const priceMonthly = env.STRIPE_PRICE_MONTHLY?.trim()
-  const priceYearly = env.STRIPE_PRICE_YEARLY?.trim()
+  const priceId = env.STRIPE_PRICE_ONETIME?.trim()
 
   if (!secret) {
     return json(
@@ -57,12 +49,18 @@ async function handleCreateCheckoutSession(
     )
   }
 
+  if (!priceId) {
+    return json(
+      origin,
+      { error: 'STRIPE_PRICE_ONETIME ontbreekt op de Worker.' },
+      503
+    )
+  }
+
   let body: {
-    plan?: string
     successUrl?: string
     cancelUrl?: string
     customerEmail?: string
-    /** Ingesloten Checkout (EmbeddedCheckout); vereist returnUrl met {CHECKOUT_SESSION_ID} */
     embedded?: boolean
     returnUrl?: string
   }
@@ -72,24 +70,9 @@ async function handleCreateCheckoutSession(
     return json(origin, { error: 'Invalid JSON' }, 400)
   }
 
-  const plan = body.plan === 'yearly' ? 'yearly' : 'monthly'
-  const priceId = plan === 'yearly' ? priceYearly : priceMonthly
-  if (!priceId) {
-    return json(
-      origin,
-      {
-        error:
-          plan === 'yearly'
-            ? 'STRIPE_PRICE_YEARLY ontbreekt op de Worker.'
-            : 'STRIPE_PRICE_MONTHLY ontbreekt op de Worker.',
-      },
-      503
-    )
-  }
-
   const embedded = body.embedded === true
   const params = new URLSearchParams()
-  params.set('mode', 'subscription')
+  params.set('mode', 'payment')
 
   if (embedded) {
     const returnUrl = typeof body.returnUrl === 'string' ? body.returnUrl.trim() : ''
@@ -139,57 +122,41 @@ async function handleCreateCheckoutSession(
     body: params.toString(),
   })
 
-  const stripeData = (await stripeRes.json()) as {
-    url?: string
-    client_secret?: string
-    error?: { message?: string }
+  const text = await stripeRes.text()
+  let stripeJson: Record<string, unknown>
+  try {
+    stripeJson = JSON.parse(text)
+  } catch {
+    return json(origin, { error: 'Stripe gaf een ongeldig antwoord.' }, 502)
   }
 
   if (!stripeRes.ok) {
-    return json(
-      origin,
-      { error: stripeData.error?.message || 'Stripe Checkout mislukt.' },
-      502
-    )
+    const msg =
+      typeof stripeJson.error === 'object' && stripeJson.error !== null
+        ? (stripeJson.error as { message?: string }).message || 'Stripe fout'
+        : 'Stripe fout'
+    return json(origin, { error: msg }, stripeRes.status)
   }
 
   if (embedded) {
-    const clientSecret = stripeData.client_secret?.trim()
-    if (!clientSecret) {
-      return json(
-        origin,
-        { error: 'Geen client_secret van Stripe voor embedded checkout.' },
-        502
-      )
-    }
-    return json(origin, { clientSecret })
+    return json(origin, { clientSecret: stripeJson.client_secret })
   }
-
-  if (!stripeData.url) {
-    return json(origin, { error: 'Geen Checkout-URL van Stripe.' }, 502)
-  }
-
-  return json(origin, { url: stripeData.url })
+  return json(origin, { url: stripeJson.url })
 }
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
-    const origin = request.headers.get('Origin')
-    const allowed = parseAllowedOrigins(env.ALLOWED_ORIGINS)
+    const origin = request.headers.get('Origin') ?? '*'
+    const allowed = parseAllowedOrigins(env.ALLOWED_ORIGINS || '')
+    const isAllowed = allowed.length === 0 || allowed.includes(origin)
 
-    if (request.method === 'OPTIONS') {
-      if (!origin || !allowed.includes(origin)) {
-        return new Response(null, { status: 403 })
-      }
-      return new Response(null, {
-        status: 204,
-        headers: corsHeaders(origin),
-      })
+    if (!isAllowed) {
+      return new Response('CORS: origin not allowed', { status: 403 })
     }
 
-    if (!origin || !allowed.includes(origin)) {
-      return new Response('Forbidden', { status: 403 })
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { status: 204, headers: corsHeaders(origin) })
     }
 
     if (url.pathname === '/api/create-checkout-session' && request.method === 'POST') {

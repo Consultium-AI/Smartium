@@ -31,13 +31,14 @@ const CTA = () => {
             Samenvattingen doorlezen of je kennis testen met oefententamens — het past bij de rest van Smartium.
           </p>
           <p className="text-sm text-navy-600 dark:text-slate-400 leading-relaxed mb-10">
+            Volledige toegang voor{' '}
             <Link
               to="/billing"
               className="font-semibold text-primary-600 underline decoration-primary-500/40 underline-offset-2 transition hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
-              Abonnement
+              €14,99
             </Link>
-            : vanaf €9,99/maand of €8,89/maand bij jaarplan — betalen met iDEAL | Wero (Stripe Checkout).
+            {' '}— eenmalige betaling via iDEAL.
           </p>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">

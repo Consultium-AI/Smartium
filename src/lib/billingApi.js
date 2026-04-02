@@ -1,5 +1,5 @@
 /**
- * Stripe Checkout wordt op de server (Cloudflare Worker) gestart — geen geheime sleutel in de browser.
+ * Stripe Checkout — eenmalige betaling via de Cloudflare Worker.
  */
 function apiBase() {
   const raw = import.meta.env.VITE_API_BASE_URL || ''
@@ -8,16 +8,14 @@ function apiBase() {
 }
 
 /**
- * @param {'monthly' | 'yearly'} plan
  * @param {{ email?: string | null }} [opts]
  * @returns {Promise<{ url: string } | { error: string }>}
  */
-export async function createCheckoutSession(plan, opts = {}) {
+export async function createCheckoutSession(opts = {}) {
   const baseHref = new URL(import.meta.env.BASE_URL || '/', window.location.origin).href
   const successUrl = new URL('billing?status=success', baseHref).href
   const cancelUrl = new URL('billing?status=cancel', baseHref).href
   const body = {
-    plan,
     successUrl,
     cancelUrl,
     customerEmail: opts.email || undefined,
@@ -40,17 +38,14 @@ export async function createCheckoutSession(plan, opts = {}) {
 }
 
 /**
- * Ingesloten Stripe Embedded Checkout (client_secret); zie https://docs.stripe.com/payments/checkout/embedded
- *
- * @param {'monthly' | 'yearly'} plan
+ * Embedded Stripe Checkout (client_secret) — eenmalige betaling.
  * @param {{ email?: string | null }} [opts]
  * @returns {Promise<{ clientSecret: string } | { error: string }>}
  */
-export async function createEmbeddedCheckoutSession(plan, opts = {}) {
+export async function createEmbeddedCheckoutSession(opts = {}) {
   const baseHref = new URL(import.meta.env.BASE_URL || '/', window.location.origin).href
   const returnUrl = new URL('billing?session_id={CHECKOUT_SESSION_ID}', baseHref).href
   const body = {
-    plan,
     embedded: true,
     returnUrl,
     customerEmail: opts.email || undefined,

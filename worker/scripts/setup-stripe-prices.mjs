@@ -1,6 +1,5 @@
 /**
- * Maakt in Stripe een product + 2 subscription-prijzen (EUR), passend bij BillingPage:
- *   €9,99/maand en €106,68/jaar
+ * Maakt in Stripe een product + eenmalige prijs (EUR €14,99).
  *
  * Vereist STRIPE_SECRET_KEY (sk_test_... of sk_live_...):
  *   - Zet in worker/.dev.vars: STRIPE_SECRET_KEY=sk_...
@@ -65,35 +64,24 @@ if (!secret || !secret.startsWith('sk_')) {
   process.exit(1)
 }
 
-const MONTHLY_CENTS = 999 // €9,99
-const YEARLY_CENTS = 10668 // €106,68
+const ONETIME_CENTS = 1499 // €14,99
 
 try {
   const product = await stripeForm('/products', secret, {
-    name: 'Smartium',
-    description: 'Smartium abonnement',
+    name: 'Smartium Pro',
+    description: 'Volledige toegang tot Smartium — eenmalige betaling',
   })
   console.log('Product:', product.id)
 
-  const monthly = await stripeForm('/prices', secret, {
+  const price = await stripeForm('/prices', secret, {
     product: product.id,
     currency: 'eur',
-    unit_amount: String(MONTHLY_CENTS),
-    'recurring[interval]': 'month',
-    nickname: 'Maandelijks',
-  })
-
-  const yearly = await stripeForm('/prices', secret, {
-    product: product.id,
-    currency: 'eur',
-    unit_amount: String(YEARLY_CENTS),
-    'recurring[interval]': 'year',
-    nickname: 'Jaarlijks',
+    unit_amount: String(ONETIME_CENTS),
+    nickname: 'Smartium Pro (eenmalig)',
   })
 
   console.log('\n--- Zet dit in Cloudflare (Worker → Variables) of in worker/wrangler.toml [vars] ---\n')
-  console.log(`STRIPE_PRICE_MONTHLY = "${monthly.id}"`)
-  console.log(`STRIPE_PRICE_YEARLY = "${yearly.id}"`)
+  console.log(`STRIPE_PRICE_ONETIME = "${price.id}"`)
   console.log('\nDaarna: cd worker && npx wrangler deploy\n')
 } catch (e) {
   console.error('Stripe fout:', e.message || e)

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   ArrowLeft,
@@ -7,7 +7,9 @@ import {
   CreditCard,
   Loader2,
   Sparkles,
-  Building2,
+  BookOpen,
+  GraduationCap,
+  MessageSquare,
 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import {
@@ -21,15 +23,16 @@ import ParticleBackground from '../components/ParticleBackground'
 import StripeEmbeddedFrame from '../components/StripeEmbeddedFrame'
 
 const ease = [0.25, 0.1, 0.25, 1]
-
-const MONTHLY = 9.99
-const YEARLY_MONTHLY_EQ = 8.89
-const YEARLY_TOTAL = 106.68 // 12 × €8,89 — jaarlijks gefactureerd
-const YEARLY_VS_MONTHLY = MONTHLY * 12
-const DISCOUNT_PCT = Math.round((1 - YEARLY_TOTAL / YEARLY_VS_MONTHLY) * 100)
+const PRICE = 14.99
 
 const eur = (n) =>
   new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(n)
+
+const FEATURES = [
+  { icon: BookOpen, text: 'Alle samenvattingen' },
+  { icon: GraduationCap, text: 'Alle oefententamens' },
+  { icon: MessageSquare, text: 'Smartium Chat' },
+]
 
 function AmbientOrbs({ reduced }) {
   if (reduced) return null
@@ -48,11 +51,6 @@ function AmbientOrbs({ reduced }) {
         animate={{ x: [0, -20, 0], y: [0, 22, 0], scale: [1, 1.12, 1] }}
         transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
       />
-      <motion.div
-        className="absolute left-1/2 top-1/3 h-32 w-32 -translate-x-1/2 rounded-full bg-cyan-400/15 blur-2xl dark:bg-cyan-500/10"
-        animate={{ opacity: [0.4, 0.85, 0.4], scale: [0.9, 1.15, 0.9] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      />
     </div>
   )
 }
@@ -63,38 +61,17 @@ export default function BillingPage() {
   const reduceMotion = useReducedMotion()
   const { user, loading } = useAuth()
 
-  const [step, setStep] = useState(1)
-  const [plan, setPlan] = useState(null)
   const [checkoutLoading, setCheckoutLoading] = useState(false)
   const [checkoutError, setCheckoutError] = useState(null)
   const [embedClientSecret, setEmbedClientSecret] = useState(null)
+  const [showEmbed, setShowEmbed] = useState(false)
 
   const status = searchParams.get('status')
   const sessionId = searchParams.get('session_id')
   const embedAvailable = hasStripePublishableKey()
 
-  useEffect(() => {
-    if (loading || !user) return
-    try {
-      const p = sessionStorage.getItem('smartium_billing_plan')
-      if (p === 'monthly' || p === 'yearly') {
-        setPlan(p)
-        setStep(2)
-        sessionStorage.removeItem('smartium_billing_plan')
-      }
-    } catch {
-      /* ignore */
-    }
-  }, [loading, user])
-
   const startCheckout = async () => {
-    if (!plan) return
     if (!user) {
-      try {
-        sessionStorage.setItem('smartium_billing_plan', plan)
-      } catch {
-        /* ignore */
-      }
       navigate(`/login?redirect=${encodeURIComponent('/billing')}`)
       return
     }
@@ -102,18 +79,16 @@ export default function BillingPage() {
     setCheckoutLoading(true)
     try {
       if (embedAvailable) {
-        const result = await createEmbeddedCheckoutSession(plan, {
-          email: user?.email,
-        })
+        const result = await createEmbeddedCheckoutSession({ email: user?.email })
         if (result.error) {
           setCheckoutError(result.error)
           return
         }
         setEmbedClientSecret(result.clientSecret)
-        setStep(3)
+        setShowEmbed(true)
         return
       }
-      const result = await createCheckoutSession(plan, { email: user?.email })
+      const result = await createCheckoutSession({ email: user?.email })
       if (result.error) {
         setCheckoutError(result.error)
         return
@@ -161,7 +136,7 @@ export default function BillingPage() {
               Bedankt!
             </h1>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Je betaling is ontvangen. Je abonnement wordt zo actief (controleer ook je e-mail).
+              Je betaling is ontvangen. Je hebt nu volledige toegang tot Smartium.
             </p>
             <Link
               to="/summary"
@@ -185,7 +160,7 @@ export default function BillingPage() {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease }}
-          className={`relative w-full ${step === 3 ? 'max-w-2xl' : 'max-w-lg'}`}
+          className={`relative w-full ${showEmbed ? 'max-w-2xl' : 'max-w-lg'}`}
         >
           <AmbientOrbs reduced={reduceMotion} />
 
@@ -194,7 +169,7 @@ export default function BillingPage() {
             className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-navy-600 transition hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
           >
             <ArrowLeft className="h-4 w-4" />
-            {user ? 'Overslaan — later betalen' : 'Terug naar home'}
+            Terug
           </Link>
 
           {status === 'cancel' && (
@@ -203,7 +178,7 @@ export default function BillingPage() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950 dark:border-amber-500/35 dark:bg-amber-950/40 dark:text-amber-100"
             >
-              Betaling geannuleerd. Je kunt hieronder opnieuw een plan kiezen.
+              Betaling geannuleerd. Je kunt hieronder opnieuw afrekenen.
             </motion.p>
           )}
 
@@ -217,225 +192,104 @@ export default function BillingPage() {
               aria-hidden
             />
             <div className="relative">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-md">
-                  <Sparkles className="h-5 w-5" strokeWidth={2} />
-                </div>
-                <div>
-                  <h1 className="font-display text-xl font-bold tracking-tight text-navy-900 dark:text-white sm:text-2xl">
-                    {step === 3 ? 'Afronden' : 'Kies je abonnement'}
-                  </h1>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
-                    {step === 3
-                      ? 'Veilige betaling via Stripe'
-                      : 'Volledige toegang tot Smartium'}
-                  </p>
-                </div>
-              </div>
-
-              <AnimatePresence mode="wait">
-                {step === 1 && (
-                  <motion.div
-                    key="plans"
-                    initial={reduceMotion ? false : { opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={reduceMotion ? false : { opacity: 0, x: -16 }}
-                    transition={{ duration: 0.35, ease }}
-                    className="space-y-4"
-                  >
-                    <motion.button
-                      type="button"
-                      onClick={() => {
-                        setPlan('monthly')
-                        setStep(2)
-                      }}
-                      whileHover={reduceMotion ? {} : { scale: 1.01 }}
-                      whileTap={reduceMotion ? {} : { scale: 0.99 }}
-                      className="group relative w-full rounded-2xl border-2 border-slate-200 bg-white p-5 text-left transition hover:border-primary-400 hover:shadow-md dark:border-slate-600 dark:bg-slate-950/40 dark:hover:border-primary-500"
-                    >
-                      <div className="flex items-start justify-between gap-3">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                            Maandelijks
-                          </p>
-                          <p className="mt-1 font-display text-3xl font-bold text-navy-900 dark:text-white">
-                            {eur(MONTHLY)}
-                            <span className="text-base font-semibold text-slate-500">/maand</span>
-                          </p>
-                          <p className="mt-2 text-xs text-slate-500">Opzeggen wanneer je wilt.</p>
-                        </div>
-                        <CreditCard className="h-8 w-8 shrink-0 text-slate-300 transition group-hover:text-primary-500 dark:text-slate-600" />
-                      </div>
-                    </motion.button>
-
-                    <motion.button
-                      type="button"
-                      onClick={() => {
-                        setPlan('yearly')
-                        setStep(2)
-                      }}
-                      whileHover={reduceMotion ? {} : { scale: 1.01 }}
-                      whileTap={reduceMotion ? {} : { scale: 0.99 }}
-                      className="group relative w-full overflow-hidden rounded-2xl border-2 border-primary-400/80 bg-gradient-to-br from-primary-50/90 to-white p-5 text-left shadow-md transition hover:shadow-lg dark:border-primary-500/50 dark:from-primary-950/50 dark:to-slate-950/60"
-                    >
-                      <span className="absolute right-4 top-4 rounded-full bg-primary-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                        {DISCOUNT_PCT}% korting
-                      </span>
-                      <div className="flex items-start justify-between gap-3 pr-16">
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-wider text-primary-700 dark:text-primary-300">
-                            Jaarlijks
-                          </p>
-                          <p className="mt-1 font-display text-3xl font-bold text-navy-900 dark:text-white">
-                            {eur(YEARLY_MONTHLY_EQ)}
-                            <span className="text-base font-semibold text-slate-500">/maand</span>
-                          </p>
-                          <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">
-                            {eur(YEARLY_TOTAL)} per jaar gefactureerd
-                          </p>
-                          <p className="mt-2 text-xs text-slate-500 line-through dark:text-slate-500">
-                            Was {eur(YEARLY_VS_MONTHLY)}/jaar bij maandprijs
-                          </p>
-                        </div>
-                        <Building2 className="h-8 w-8 shrink-0 text-primary-400" />
-                      </div>
-                    </motion.button>
-                  </motion.div>
-                )}
-
-                {step === 2 && (
-                  <motion.div
-                    key="pay"
-                    initial={reduceMotion ? false : { opacity: 0, x: 16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={reduceMotion ? false : { opacity: 0, x: 16 }}
-                    transition={{ duration: 0.35, ease }}
-                    className="space-y-5"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setStep(1)
-                        setCheckoutError(null)
-                        setEmbedClientSecret(null)
-                      }}
-                      className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:underline dark:text-primary-400"
-                    >
-                      <ArrowLeft className="h-3 w-3" /> Ander plan
-                    </button>
-
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
-                      Je gekozen plan:{' '}
-                      <strong className="text-navy-900 dark:text-white">
-                        {plan === 'yearly'
-                          ? `Jaarlijks (${eur(YEARLY_TOTAL)}/jaar)`
-                          : `Maandelijks (${eur(MONTHLY)}/maand)`}
-                      </strong>
-                    </p>
-
-                    {!user && (
-                      <p className="rounded-lg border border-amber-200/90 bg-amber-50/90 px-3 py-2 text-sm text-amber-950 dark:border-amber-500/35 dark:bg-amber-950/35 dark:text-amber-100/95">
-                        Om af te rekenen moet je{' '}
-                        <Link
-                          to={`/login?redirect=${encodeURIComponent('/billing')}`}
-                          className="font-semibold underline decoration-amber-700/50 underline-offset-2 dark:decoration-amber-300/50"
-                        >
-                          inloggen of een account aanmaken
-                        </Link>
-                        . Je gekozen plan wordt bewaard.
-                      </p>
-                    )}
-
-                    <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-600 dark:bg-slate-950/50">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                        Betaalmethodes (via Stripe)
-                      </p>
-                      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                        {embedAvailable ? (
-                          <>
-                            Je betaalt hieronder in een <strong>ingebouwde Stripe-checkout</strong> (Embedded
-                            Checkout). Betaling verloopt via <strong>iDEAL | Wero</strong> (EUR). Voor{' '}
-                            <strong>abonnementen</strong> gebruikt Stripe daarna{' '}
-                            <strong>SEPA-incasso</strong> voor verlengingen — die moet in je Stripe-account actief
-                            zijn.
-                          </>
-                        ) : (
-                          <>
-                            Zonder <code className="rounded bg-slate-200/80 px-1 py-0.5 text-[11px] dark:bg-slate-800">
-                              VITE_STRIPE_PUBLISHABLE_KEY
-                            </code>{' '}
-                            word je doorgestuurd naar <strong>Stripe Checkout</strong> op stripe.com. Met
-                            publishable key (<code className="rounded bg-slate-200/80 px-1 py-0.5 text-[11px] dark:bg-slate-800">
-                              pk_…
-                            </code>
-                            ) blijft checkout op deze pagina. iDEAL | Wero (EUR); SEPA voor verlengingen.
-                          </>
-                        )}
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <span className="rounded-lg border border-primary-200/80 bg-primary-50/90 px-3 py-1.5 text-xs font-semibold text-primary-900 dark:border-primary-500/40 dark:bg-primary-950/50 dark:text-primary-100">
-                          iDEAL | Wero
-                        </span>
-                      </div>
+              {!showEmbed ? (
+                <>
+                  <div className="mb-6 flex items-center gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-md">
+                      <Sparkles className="h-5 w-5" strokeWidth={2} />
                     </div>
-
-                    {checkoutError && (
-                      <p className="rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:border-rose-500/40 dark:bg-rose-950/40 dark:text-rose-200">
-                        {checkoutError}
+                    <div>
+                      <h1 className="font-display text-xl font-bold tracking-tight text-navy-900 dark:text-white sm:text-2xl">
+                        Smartium Pro
+                      </h1>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Volledige toegang — eenmalige betaling
                       </p>
-                    )}
+                    </div>
+                  </div>
 
-                    <motion.button
-                      type="button"
-                      disabled={checkoutLoading}
-                      onClick={() => void startCheckout()}
-                      whileHover={reduceMotion || checkoutLoading ? {} : { scale: 1.02 }}
-                      whileTap={reduceMotion || checkoutLoading ? {} : { scale: 0.98 }}
-                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition hover:from-primary-600 hover:to-primary-700 disabled:opacity-60"
-                    >
-                      {checkoutLoading ? (
-                        <>
-                          <Loader2 className="h-5 w-5 animate-spin" />
-                          Bezig…
-                        </>
-                      ) : (
-                        <>
-                          <CreditCard className="h-5 w-5" />
-                          {embedAvailable ? 'Open betaalmodule' : 'Doorgaan naar betaling'}
-                        </>
-                      )}
-                    </motion.button>
-                  </motion.div>
-                )}
-
-                {step === 3 && embedClientSecret && (
-                  <motion.div
-                    key="embed"
-                    initial={reduceMotion ? false : { opacity: 0, y: 14, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={reduceMotion ? false : { opacity: 0, y: 10 }}
-                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                    className="space-y-4"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setEmbedClientSecret(null)
-                        setCheckoutError(null)
-                        setStep(2)
-                      }}
-                      className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:underline dark:text-primary-400"
-                    >
-                      <ArrowLeft className="h-3 w-3" /> Terug naar samenvatting
-                    </button>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
-                      Plan:{' '}
-                      <strong className="text-navy-900 dark:text-white">
-                        {plan === 'yearly'
-                          ? `Jaarlijks (${eur(YEARLY_TOTAL)}/jaar)`
-                          : `Maandelijks (${eur(MONTHLY)}/maand)`}
-                      </strong>
+                  <div className="mb-6 text-center">
+                    <p className="font-display text-4xl font-bold text-navy-900 dark:text-white">
+                      {eur(PRICE)}
                     </p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      Eenmalig · geen abonnement
+                    </p>
+                  </div>
+
+                  <ul className="mb-8 space-y-3">
+                    {FEATURES.map((f) => (
+                      <li key={f.text} className="flex items-center gap-3">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-500/15">
+                          <f.icon className="h-4 w-4 text-primary-600 dark:text-primary-400" strokeWidth={2} />
+                        </div>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{f.text}</span>
+                        <Check className="ml-auto h-4 w-4 text-emerald-500" strokeWidth={2.5} />
+                      </li>
+                    ))}
+                  </ul>
+
+                  {!user && (
+                    <p className="mb-4 rounded-lg border border-amber-200/90 bg-amber-50/90 px-3 py-2 text-sm text-amber-950 dark:border-amber-500/35 dark:bg-amber-950/35 dark:text-amber-100/95">
+                      Om af te rekenen moet je{' '}
+                      <Link
+                        to={`/login?redirect=${encodeURIComponent('/billing')}`}
+                        className="font-semibold underline decoration-amber-700/50 underline-offset-2 dark:decoration-amber-300/50"
+                      >
+                        inloggen of een account aanmaken
+                      </Link>
+                      .
+                    </p>
+                  )}
+
+                  {checkoutError && (
+                    <p className="mb-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-800 dark:border-rose-500/40 dark:bg-rose-950/40 dark:text-rose-200">
+                      {checkoutError}
+                    </p>
+                  )}
+
+                  <motion.button
+                    type="button"
+                    disabled={checkoutLoading}
+                    onClick={() => void startCheckout()}
+                    whileHover={reduceMotion || checkoutLoading ? {} : { scale: 1.02 }}
+                    whileTap={reduceMotion || checkoutLoading ? {} : { scale: 0.98 }}
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary-500/25 transition hover:from-primary-600 hover:to-primary-700 disabled:opacity-60"
+                  >
+                    {checkoutLoading ? (
+                      <>
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                        Bezig…
+                      </>
+                    ) : (
+                      <>
+                        <CreditCard className="h-5 w-5" />
+                        Afrekenen — {eur(PRICE)}
+                      </>
+                    )}
+                  </motion.button>
+
+                  <p className="mt-4 text-center text-xs text-slate-400 dark:text-slate-500">
+                    Veilige betaling via Stripe · iDEAL
+                  </p>
+                </>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmbedClientSecret(null)
+                      setCheckoutError(null)
+                      setShowEmbed(false)
+                    }}
+                    className="mb-4 inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:underline dark:text-primary-400"
+                  >
+                    <ArrowLeft className="h-3 w-3" /> Terug
+                  </button>
+                  <p className="mb-4 text-sm text-slate-600 dark:text-slate-400">
+                    Smartium Pro — <strong className="text-navy-900 dark:text-white">{eur(PRICE)}</strong> (eenmalig)
+                  </p>
+                  {embedClientSecret && (
                     <motion.div
                       initial={reduceMotion ? false : { opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -443,9 +297,9 @@ export default function BillingPage() {
                     >
                       <StripeEmbeddedFrame clientSecret={embedClientSecret} />
                     </motion.div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  )}
+                </>
+              )}
             </div>
           </motion.div>
         </motion.div>
