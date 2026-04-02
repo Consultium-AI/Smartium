@@ -95,6 +95,60 @@ const ExamSelection = () => {
         </motion.div>
 
         <div className="max-w-2xl mx-auto space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <Link
+              to="/tentamen-blok5"
+              className="group flex items-center justify-between gap-4 p-5 rounded-2xl border-2 border-primary-300/60 dark:border-primary-500/40 transition-all
+                bg-gradient-to-r from-primary-50/90 to-white dark:from-primary-950/40 dark:to-slate-900/80
+                shadow-md dark:shadow-black/30
+                hover:border-primary-500 hover:shadow-lg"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-12 h-12 rounded-xl bg-primary-500 text-white flex items-center justify-center font-bold shrink-0">
+                  B5
+                </div>
+                <div className="min-w-0 text-left">
+                  <h3 className="font-bold text-slate-900 dark:text-slate-100">Oefententamen Blok 5</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Bedreigingen van binnenuit en buitenaf · casussen · open vragen met AI-nakijking
+                  </p>
+                </div>
+              </div>
+              <ChevronRight className="w-5 h-5 text-primary-500 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25, delay: 0.04 }}
+          >
+            <Link
+              to="/tentamen-blok9"
+              className="group flex items-center justify-between gap-4 p-5 rounded-2xl border-2 border-sky-300/60 dark:border-sky-500/40 transition-all
+                bg-gradient-to-r from-sky-50/90 to-white dark:from-sky-950/35 dark:to-slate-900/80
+                shadow-md dark:shadow-black/30
+                hover:border-sky-500 hover:shadow-lg"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center font-bold shrink-0">
+                  B9
+                </div>
+                <div className="min-w-0 text-left">
+                  <h3 className="font-bold text-slate-900 dark:text-slate-100">Oefententamen Blok 9</h3>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    Bachelor Ba2 · 10 casussen · 141 punten · AI-nakijking open vragen
+                  </p>
+                </div>
+              </div>
+              <ChevronRight className="w-5 h-5 text-sky-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </motion.div>
+
           {EXAM_NAMES.map((name, i) => {
             const showResume =
               progressUserId && examHasInProgress(progressUserId, i + 1)

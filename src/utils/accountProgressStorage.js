@@ -5,6 +5,8 @@
 
 const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
+/** Blok-tentamens (Blok 5, 9, …) met casusgebaseerde vragen */
+const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
 /** Oude globale chatsleutel (vóór per-account) */
 export const LEGACY_CHAT_STORAGE_KEY = 'smartium-chat-chats'
 
@@ -27,6 +29,40 @@ function storageKeyPractice(userId, lmeParam) {
 
 function storageKeyExam(userId, examNumber) {
   return `${PREFIX_EXAM}:${userId}:${examNumber}`
+}
+
+function storageKeyExamBlok(userId, blok, examNr) {
+  return `${PREFIX_EXAM_BLOK}:${userId}:${blok}:${examNr}`
+}
+
+export function loadExamBlokProgress(userId, blok, examNr) {
+  if (!userId || blok == null || !examNr) return null
+  const data = safeParse(localStorage.getItem(storageKeyExamBlok(userId, blok, examNr)))
+  if (!data || typeof data !== 'object') return null
+  return data
+}
+
+export function saveExamBlokProgress(userId, blok, examNr, payload) {
+  if (!userId || blok == null || !examNr) return
+  try {
+    localStorage.setItem(storageKeyExamBlok(userId, blok, examNr), JSON.stringify(payload))
+  } catch {
+    /* quota */
+  }
+  scheduleCloudIfNeeded(userId)
+}
+
+export function clearExamBlokProgress(userId, blok, examNr) {
+  if (!userId || blok == null || !examNr) return
+  localStorage.removeItem(storageKeyExamBlok(userId, blok, examNr))
+  scheduleCloudIfNeeded(userId)
+}
+
+export function examBlokHasInProgress(userId, blok, examNr) {
+  const p = loadExamBlokProgress(userId, blok, examNr)
+  if (!p) return false
+  const n = Object.keys(p.answers || {}).length
+  return n > 0 && !p.submitted
 }
 
 export function loadPracticeProgress(userId, lmeParam) {
@@ -117,9 +153,10 @@ function clearGuestScopedData(guestId) {
   }
   const pPref = `${PREFIX_PRACTICE}:${guestId}:`
   const ePref = `${PREFIX_EXAM}:${guestId}:`
+  const ebPref = `${PREFIX_EXAM_BLOK}:${guestId}:`
   const chatKey = getChatStorageKey(guestId)
   for (const key of keys) {
-    if (key.startsWith(pPref) || key.startsWith(ePref) || key === chatKey) {
+    if (key.startsWith(pPref) || key.startsWith(ePref) || key.startsWith(ebPref) || key === chatKey) {
       try {
         localStorage.removeItem(key)
       } catch {
@@ -143,6 +180,7 @@ export function migrateGuestDataToUser(guestId, newUserId) {
     }
     const prefixP = `${PREFIX_PRACTICE}:${guestId}:`
     const prefixE = `${PREFIX_EXAM}:${guestId}:`
+    const prefixEb = `${PREFIX_EXAM_BLOK}:${guestId}:`
     for (const key of allKeys) {
       if (key.startsWith(prefixP)) {
         const suffix = key.slice(prefixP.length)
@@ -153,6 +191,12 @@ export function migrateGuestDataToUser(guestId, newUserId) {
       } else if (key.startsWith(prefixE)) {
         const suffix = key.slice(prefixE.length)
         const dest = `${PREFIX_EXAM}:${newUserId}:${suffix}`
+        if (!localStorage.getItem(dest)) {
+          localStorage.setItem(dest, localStorage.getItem(key))
+        }
+      } else if (key.startsWith(prefixEb)) {
+        const suffix = key.slice(prefixEb.length)
+        const dest = `${PREFIX_EXAM_BLOK}:${newUserId}:${suffix}`
         if (!localStorage.getItem(dest)) {
           localStorage.setItem(dest, localStorage.getItem(key))
         }

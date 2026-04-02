@@ -9,6 +9,7 @@ import {
   Home,
   Bot,
   GraduationCap,
+  ChevronDown,
   Sun,
   Moon,
   LogIn,
@@ -21,9 +22,22 @@ const navItems = [
   { name: 'Home', href: '/', icon: Home },
   { name: 'Samenvattingen', href: '/summary', icon: FileText },
   { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
-  { name: 'Oefententamens', href: '/tentamen', icon: GraduationCap },
+  {
+    name: 'Oefententamens',
+    icon: GraduationCap,
+    examSubLinks: [
+      { name: 'Blok 4', href: '/tentamen' },
+      { name: 'Blok 5', href: '/tentamen-blok5' },
+      { name: 'Blok 9', href: '/tentamen-blok9' },
+    ],
+  },
   { name: 'AI Chat', href: '/chat', icon: Bot },
 ]
+
+function pathnameInExamRoutes(pathname) {
+  if (pathname === '/tentamen') return true
+  return pathname.startsWith('/tentamen-blok')
+}
 
 function userDisplayLabel(user) {
   const n = user?.displayName?.trim()
@@ -119,11 +133,50 @@ const Navbar = () => {
           {/* Desktop — gecentreerde pill-nav */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
             <div className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-slate-200/90 bg-slate-100/90 p-1 shadow-inner dark:border-slate-600/50 dark:bg-slate-900/80 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-              {navItems.map((item) => (
-                <Link key={item.name} to={item.href} className={desktopLinkClass(item.href)}>
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) =>
+                item.examSubLinks ? (
+                  <div key={item.name} className="relative group">
+                    <button
+                      type="button"
+                      className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0a0d12] ${
+                        pathnameInExamRoutes(location.pathname)
+                          ? 'bg-white text-navy-900 shadow-sm dark:bg-slate-800 dark:text-white dark:shadow-none dark:ring-1 dark:ring-white/10'
+                          : 'text-navy-600 hover:text-navy-900 dark:text-slate-400 dark:hover:text-white'
+                      }`}
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                    >
+                      {item.name}
+                      <ChevronDown className="h-3.5 w-3.5 opacity-70" strokeWidth={2} />
+                    </button>
+                    <div
+                      role="menu"
+                      className="pointer-events-none invisible absolute left-0 top-full z-50 pt-1 opacity-0 transition-all group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
+                    >
+                      <div className="min-w-[11.5rem] rounded-xl border border-slate-200/90 bg-white py-1 shadow-lg dark:border-slate-600 dark:bg-slate-800 dark:shadow-black/40">
+                        {item.examSubLinks.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            role="menuitem"
+                            to={sub.href}
+                            className={`block px-3.5 py-2 text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/80 ${
+                              location.pathname === sub.href.split('?')[0]
+                                ? 'text-primary-600 dark:text-primary-400'
+                                : 'text-navy-700 dark:text-slate-200'
+                            }`}
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link key={item.name} to={item.href} className={desktopLinkClass(item.href)}>
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           </div>
 
@@ -200,12 +253,29 @@ const Navbar = () => {
             >
               <div className="container-custom max-h-[min(70vh,28rem)] overflow-y-auto py-3">
                 <div className="flex flex-col gap-0.5 pb-2">
-                  {navItems.map((item) => (
-                    <Link key={item.name} to={item.href} className={mobileLinkClass(item.href)}>
-                      <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
-                      {item.name}
-                    </Link>
-                  ))}
+                  {navItems.map((item) =>
+                    item.examSubLinks ? (
+                      <div key={item.name} className="py-1">
+                        <div className="flex items-center gap-3 px-4 py-2 text-[13px] font-semibold uppercase tracking-wide text-navy-500 dark:text-slate-500">
+                          <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                          {item.name}
+                        </div>
+                        <div className="mt-0.5 flex flex-col gap-0.5 border-l-2 border-slate-200/90 ml-4 dark:border-slate-600/70 pl-2">
+                          {item.examSubLinks.map((sub) => (
+                            <Link key={sub.href} to={sub.href} className={mobileLinkClass(sub.href)}>
+                              <GraduationCap className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                              {sub.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link key={item.name} to={item.href} className={mobileLinkClass(item.href)}>
+                        <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                        {item.name}
+                      </Link>
+                    )
+                  )}
                   {!authLoading && !user && (
                     <Link to="/login" className={mobileLinkClass('/login')}>
                       <LogIn className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
