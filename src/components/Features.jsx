@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { FileText, GraduationCap, BookOpen, Lightbulb, Bot, ClipboardCheck, ArrowRight } from 'lucide-react'
+import { FileText, GraduationCap, Bot, ClipboardCheck, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const ease = [0.25, 0.1, 0.25, 1]
@@ -13,34 +13,28 @@ const Features = () => {
   const features = [
     {
       icon: FileText,
-      title: 'Uitgebreide samenvattingen',
-      description:
-        'Gestructureerde samenvatting met duidelijke tussenkopjes en visuele elementen.',
+      title: 'Samenvattingen',
+      description: 'Kernstof per casus, overzichtelijk opgebouwd met tabellen en klinische toepassingen.',
       link: '/summary',
     },
     {
       icon: GraduationCap,
       title: 'Oefententamens',
-      description: 'Tentamens die aansluiten bij het curriculum.',
+      description: 'Casusgerichte tentamens met directe feedback en puntentelling per vraag.',
       link: '/tentamen',
     },
     {
       icon: Bot,
-      title: 'AI-chat',
-      description: 'Vragen over de stof met verwijzingen naar je samenvattingen.',
+      title: 'AI Chat',
+      description: 'Stel vragen over de stof en krijg antwoorden op basis van jouw samenvattingen.',
       link: '/chat',
     },
     {
       icon: ClipboardCheck,
       title: 'Oefenvragen',
-      description: 'Meerkeuze per onderwerp — compact en gericht.',
+      description: 'Meerkeuze per onderwerp — test je kennis gericht en zie direct wat je mist.',
       link: '/oefenvragen',
     },
-  ]
-
-  const benefits = [
-    { icon: BookOpen, text: 'Nieuw curriculum geneeskunde' },
-    { icon: Lightbulb, text: 'Door studenten gemaakt' },
   ]
 
   return (
@@ -59,14 +53,14 @@ const Features = () => {
             Platform
           </p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-navy-900 dark:text-slate-50 tracking-tight leading-tight mb-5">
-            Alles voor je studie, op één plek
+            Alles voor je blok, op één plek
           </h2>
           <p className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed">
-            Studiemateriaal om je focus te houden — minder zoeken, meer leren.
+            Vier onderdelen die samen je voorbereiding compleet maken.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto mb-14 md:mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -94,21 +88,6 @@ const Features = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.45, delay: 0.25, ease }}
-          className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-sm text-navy-500 dark:text-slate-400"
-        >
-          {benefits.map((benefit, i) => (
-            <span key={benefit.text} className="inline-flex items-center gap-2">
-              {i > 0 && <span className="text-slate-300 dark:text-slate-600 select-none" aria-hidden>·</span>}
-              <benefit.icon className="w-4 h-4 text-navy-400 dark:text-slate-500/90 shrink-0" strokeWidth={1.75} />
-              <span>{benefit.text}</span>
-            </span>
-          ))}
-        </motion.div>
       </div>
     </section>
   )

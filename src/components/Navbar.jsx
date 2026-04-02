@@ -20,23 +20,36 @@ import { useAuth } from '../context/AuthContext'
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
-  { name: 'Samenvattingen', href: '/summary', icon: FileText },
-  { name: 'Oefenvragen', href: '/oefenvragen', icon: ClipboardCheck },
   {
-    name: 'Oefententamens',
+    name: 'Samenvattingen',
+    icon: FileText,
+    subGroups: [
+      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/summary' }] },
+      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/summary?blok=blok5' }, { name: 'Blok 9', href: '/summary?blok=blok9' }] },
+    ],
+  },
+  {
+    name: 'Oefenvragen',
+    icon: ClipboardCheck,
+    subGroups: [
+      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/oefenvragen' }] },
+      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/oefenvragen?blok=blok5' }, { name: 'Blok 9', href: '/oefenvragen?blok=blok9' }] },
+    ],
+  },
+  {
+    name: 'Tentamens',
     icon: GraduationCap,
-    examSubLinks: [
-      { name: 'Blok 4', href: '/tentamen' },
-      { name: 'Blok 5', href: '/tentamen-blok5' },
-      { name: 'Blok 9', href: '/tentamen-blok9' },
+    subGroups: [
+      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/tentamen' }] },
+      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/tentamen-blok5' }, { name: 'Blok 9', href: '/tentamen-blok9' }] },
     ],
   },
   { name: 'AI Chat', href: '/chat', icon: Bot },
 ]
 
-function pathnameInExamRoutes(pathname) {
-  if (pathname === '/tentamen') return true
-  return pathname.startsWith('/tentamen-blok')
+function isActiveDropdown(item, pathname) {
+  if (!item.subGroups) return false
+  return item.subGroups.some((g) => g.links.some((l) => pathname === l.href || pathname.startsWith(l.href.split('?')[0])))
 }
 
 function userDisplayLabel(user) {
@@ -57,6 +70,7 @@ const Navbar = () => {
   const { user, loading: authLoading, signOut } = useAuth()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -68,20 +82,15 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
-  }, [location.pathname])
+    setMobileExpanded(null)
+  }, [location.pathname, location.search])
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [isMobileMenuOpen])
 
-  const desktopLinkClass = (href) => {
+  const pillClass = (href) => {
     const active = location.pathname === href
     return `relative whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0a0d12] ${
       active
@@ -91,8 +100,8 @@ const Navbar = () => {
   }
 
   const mobileLinkClass = (href) => {
-    const active = location.pathname === href
-    return `flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-inset ${
+    const active = location.pathname + location.search === href || location.pathname === href.split('?')[0]
+    return `flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
       active
         ? 'bg-slate-100 text-navy-900 dark:bg-slate-800 dark:text-white'
         : 'text-navy-700 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/80'
@@ -130,49 +139,55 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop — gecentreerde pill-nav */}
+          {/* Desktop nav */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
             <div className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-slate-200/90 bg-slate-100/90 p-1 shadow-inner dark:border-slate-600/50 dark:bg-slate-900/80 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
               {navItems.map((item) =>
-                item.examSubLinks ? (
+                item.subGroups ? (
                   <div key={item.name} className="relative group">
                     <button
                       type="button"
-                      className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0a0d12] ${
-                        pathnameInExamRoutes(location.pathname)
+                      className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                        isActiveDropdown(item, location.pathname)
                           ? 'bg-white text-navy-900 shadow-sm dark:bg-slate-800 dark:text-white dark:shadow-none dark:ring-1 dark:ring-white/10'
                           : 'text-navy-600 hover:text-navy-900 dark:text-slate-400 dark:hover:text-white'
                       }`}
                       aria-haspopup="menu"
-                      aria-expanded="false"
                     >
                       {item.name}
-                      <ChevronDown className="h-3.5 w-3.5 opacity-70" strokeWidth={2} />
+                      <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" strokeWidth={2} />
                     </button>
                     <div
                       role="menu"
-                      className="pointer-events-none invisible absolute left-0 top-full z-50 pt-1 opacity-0 transition-all group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
+                      className="pointer-events-none invisible absolute left-0 top-full z-50 pt-1.5 opacity-0 transition-all group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
                     >
-                      <div className="min-w-[11.5rem] rounded-xl border border-slate-200/90 bg-white py-1 shadow-lg dark:border-slate-600 dark:bg-slate-800 dark:shadow-black/40">
-                        {item.examSubLinks.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            role="menuitem"
-                            to={sub.href}
-                            className={`block px-3.5 py-2 text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/80 ${
-                              location.pathname === sub.href.split('?')[0]
-                                ? 'text-primary-600 dark:text-primary-400'
-                                : 'text-navy-700 dark:text-slate-200'
-                            }`}
-                          >
-                            {sub.name}
-                          </Link>
+                      <div className="min-w-[13rem] rounded-xl border border-slate-200/90 bg-white p-2 shadow-lg dark:border-slate-600 dark:bg-slate-800 dark:shadow-black/40">
+                        {item.subGroups.map((group) => (
+                          <div key={group.label} className="mb-1 last:mb-0">
+                            <p className="px-2.5 pt-1.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+                              {group.label}
+                            </p>
+                            {group.links.map((link) => (
+                              <Link
+                                key={link.href}
+                                role="menuitem"
+                                to={link.href}
+                                className={`block rounded-lg px-2.5 py-1.5 text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/80 ${
+                                  (location.pathname + location.search) === link.href || location.pathname === link.href.split('?')[0]
+                                    ? 'text-primary-600 dark:text-primary-400'
+                                    : 'text-navy-700 dark:text-slate-200'
+                                }`}
+                              >
+                                {link.name}
+                              </Link>
+                            ))}
+                          </div>
                         ))}
                       </div>
                     </div>
                   </div>
                 ) : (
-                  <Link key={item.name} to={item.href} className={desktopLinkClass(item.href)}>
+                  <Link key={item.name} to={item.href} className={pillClass(item.href)}>
                     {item.name}
                   </Link>
                 )
@@ -180,20 +195,17 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Right side */}
           <div className="flex items-center gap-1.5 sm:gap-2">
             {!authLoading && user && (
               <div className="hidden items-center gap-2 sm:flex">
-                <span
-                  className="max-w-[12rem] truncate text-xs font-semibold text-navy-800 dark:text-slate-200"
-                  title={userDisplayTitle(user)}
-                >
+                <span className="max-w-[12rem] truncate text-xs font-semibold text-navy-800 dark:text-slate-200" title={userDisplayTitle(user)}>
                   {userDisplayLabel(user)}
                 </span>
                 <button
                   type="button"
                   onClick={() => signOut()}
                   className="flex h-9 items-center gap-1.5 rounded-full border border-slate-200/90 px-3 text-xs font-semibold text-navy-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
-                  aria-label="Uitloggen"
                 >
                   <LogOut className="h-3.5 w-3.5" strokeWidth={2} />
                   Uitloggen
@@ -218,7 +230,6 @@ const Navbar = () => {
             >
               {isDark ? <Sun className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} /> : <Moon className="h-[1.125rem] w-[1.125rem]" strokeWidth={1.75} />}
             </button>
-
             <button
               type="button"
               className="flex h-10 w-10 items-center justify-center rounded-full text-navy-800 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 lg:hidden"
@@ -233,6 +244,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Mobile menu */}
       <AnimatePresence initial={false}>
         {isMobileMenuOpen && (
           <motion.div
@@ -251,23 +263,48 @@ const Navbar = () => {
               transition={{ duration: 0.22, ease: [0.25, 0.1, 0.25, 1] }}
               className="relative z-10 shrink-0 border-b border-slate-200/90 bg-white shadow-xl dark:border-slate-700/50 dark:bg-[#0c1018] dark:shadow-2xl"
             >
-              <div className="container-custom max-h-[min(70vh,28rem)] overflow-y-auto py-3">
+              <div className="container-custom max-h-[min(70vh,32rem)] overflow-y-auto py-3">
                 <div className="flex flex-col gap-0.5 pb-2">
                   {navItems.map((item) =>
-                    item.examSubLinks ? (
-                      <div key={item.name} className="py-1">
-                        <div className="flex items-center gap-3 px-4 py-2 text-[13px] font-semibold uppercase tracking-wide text-navy-500 dark:text-slate-500">
-                          <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
-                          {item.name}
-                        </div>
-                        <div className="mt-0.5 flex flex-col gap-0.5 border-l-2 border-slate-200/90 ml-4 dark:border-slate-600/70 pl-2">
-                          {item.examSubLinks.map((sub) => (
-                            <Link key={sub.href} to={sub.href} className={mobileLinkClass(sub.href)}>
-                              <GraduationCap className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
-                              {sub.name}
-                            </Link>
-                          ))}
-                        </div>
+                    item.subGroups ? (
+                      <div key={item.name} className="py-0.5">
+                        <button
+                          type="button"
+                          onClick={() => setMobileExpanded((p) => (p === item.name ? null : item.name))}
+                          className="flex w-full items-center justify-between gap-3 rounded-xl px-4 py-3 text-[15px] font-medium text-navy-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors"
+                        >
+                          <span className="flex items-center gap-3">
+                            <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                            {item.name}
+                          </span>
+                          <ChevronDown className={`h-4 w-4 opacity-50 transition-transform ${mobileExpanded === item.name ? 'rotate-180' : ''}`} strokeWidth={2} />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {mobileExpanded === item.name && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="ml-4 border-l-2 border-slate-200/90 dark:border-slate-600/70 pl-2 pb-1">
+                                {item.subGroups.map((group) => (
+                                  <div key={group.label} className="mt-1">
+                                    <p className="px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+                                      {group.label}
+                                    </p>
+                                    {group.links.map((link) => (
+                                      <Link key={link.href} to={link.href} className={mobileLinkClass(link.href)}>
+                                        {link.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     ) : (
                       <Link key={item.name} to={item.href} className={mobileLinkClass(item.href)}>
@@ -285,19 +322,14 @@ const Navbar = () => {
                   {!authLoading && user && (
                     <>
                       <div className="px-4 py-2">
-                        <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">
-                          {userDisplayLabel(user)}
-                        </p>
+                        <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">{userDisplayLabel(user)}</p>
                         {user.email && user.displayName?.trim() && (
                           <p className="truncate text-xs text-navy-500 dark:text-slate-500">{user.email}</p>
                         )}
                       </div>
                       <button
                         type="button"
-                        onClick={() => {
-                          signOut()
-                          setIsMobileMenuOpen(false)
-                        }}
+                        onClick={() => { signOut(); setIsMobileMenuOpen(false) }}
                         className="flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-[15px] font-medium text-rose-700 transition-colors hover:bg-rose-50 dark:text-rose-300 dark:hover:bg-rose-950/30"
                       >
                         <LogOut className="h-[1.125rem] w-[1.125rem] shrink-0" strokeWidth={1.75} />

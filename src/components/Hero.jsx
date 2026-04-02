@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, FileText, GraduationCap } from 'lucide-react'
+import { ArrowRight, ArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const ease = [0.25, 0.1, 0.25, 1]
@@ -46,7 +46,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.18, ease }}
             className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed max-w-md mx-auto mb-12 md:mb-14"
           >
-            Samenvattingen en oefententamens voor leerjaar 1 — door studenten, voor studenten.
+            Samenvattingen, oefenvragen en tentamens die aansluiten op jouw blok. Alles op
+            één plek, zodat jij je kunt focussen op leren.
           </motion.p>
 
           <motion.div
@@ -56,20 +57,19 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
           >
             <Link
-              to="/summary"
+              to="/billing"
               className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900 text-white text-sm font-semibold tracking-wide dark:bg-white dark:text-navy-950 hover:bg-navy-800 dark:hover:bg-slate-100 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-colors"
             >
-              <FileText className="w-4 h-4 opacity-90" strokeWidth={2} />
-              Samenvattingen
+              Aan de slag
               <ArrowRight className="w-4 h-4 opacity-70 group-hover:translate-x-0.5 transition-transform" strokeWidth={2} />
             </Link>
-            <Link
-              to="/tentamen"
+            <a
+              href="#features"
               className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-navy-200/90 dark:border-slate-500/70 dark:bg-slate-900/30 text-navy-800 dark:text-slate-200 text-sm font-semibold tracking-wide hover:border-primary-400/60 hover:bg-primary-50/50 dark:hover:bg-slate-800/80 dark:hover:border-slate-400/60 transition-colors"
             >
-              <GraduationCap className="w-4 h-4 opacity-80" strokeWidth={2} />
-              Oefententamens
-            </Link>
+              <ArrowDown className="w-4 h-4 opacity-80" strokeWidth={2} />
+              Bekijk platform
+            </a>
           </motion.div>
 
           <motion.div

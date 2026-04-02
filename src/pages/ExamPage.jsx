@@ -114,7 +114,7 @@ const ExamSelection = () => {
                 <div className="min-w-0 text-left">
                   <h3 className="font-bold text-slate-900 dark:text-slate-100">Oefententamen Blok 5</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Bedreigingen van binnenuit en buitenaf · casussen · open vragen met AI-nakijking
+                    Bedreigingen van binnenuit en buitenaf · casusgerichte tentamens
                   </p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ const ExamSelection = () => {
                 <div className="min-w-0 text-left">
                   <h3 className="font-bold text-slate-900 dark:text-slate-100">Oefententamen Blok 9</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Bachelor Ba2 · 10 casussen · 141 punten · AI-nakijking open vragen
+                    Homeostase Ba2 · casusgerichte tentamens
                   </p>
                 </div>
               </div>
@@ -563,7 +563,7 @@ const ExamActive = ({ examNumber }) => {
                   {explanations[currentQ.id]?.loading && (
                     <>
                       <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">
-                        De AI kiest de best passende samenvatting bij de verwijzing.
+                        Uitleg wordt opgehaald…
                       </p>
                       <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 text-sm mb-2">
                         <Loader2 className="w-4 h-4 animate-spin shrink-0" />

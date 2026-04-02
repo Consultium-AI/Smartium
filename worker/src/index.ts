@@ -2,8 +2,8 @@ export interface Env {
   OPENAI_API_KEY: string
   ALLOWED_ORIGINS: string
   STRIPE_SECRET_KEY?: string
-  /** Eenmalige betaling prijs-ID (one-time payment) */
-  STRIPE_PRICE_ONETIME?: string
+  STRIPE_PRICE_MONTHLY?: string
+  STRIPE_PRICE_YEARLY?: string
   STRIPE_PAYMENT_METHOD_TYPES?: string
 }
 
@@ -11,10 +11,7 @@ const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
 const STRIPE_API = 'https://api.stripe.com/v1/checkout/sessions'
 
 function parseAllowedOrigins(raw: string): string[] {
-  return raw
-    .split(',')
-    .map((s) => s.trim())
-    .filter(Boolean)
+  return raw.split(',').map((s) => s.trim()).filter(Boolean)
 }
 
 function corsHeaders(origin: string): Record<string, string> {
@@ -39,25 +36,15 @@ async function handleCreateCheckoutSession(
   origin: string
 ): Promise<Response> {
   const secret = env.STRIPE_SECRET_KEY?.trim()
-  const priceId = env.STRIPE_PRICE_ONETIME?.trim()
+  const priceMonthly = env.STRIPE_PRICE_MONTHLY?.trim()
+  const priceYearly = env.STRIPE_PRICE_YEARLY?.trim()
 
   if (!secret) {
-    return json(
-      origin,
-      { error: 'Stripe is niet geconfigureerd (STRIPE_SECRET_KEY ontbreekt op de Worker).' },
-      503
-    )
-  }
-
-  if (!priceId) {
-    return json(
-      origin,
-      { error: 'STRIPE_PRICE_ONETIME ontbreekt op de Worker.' },
-      503
-    )
+    return json(origin, { error: 'Stripe is niet geconfigureerd.' }, 503)
   }
 
   let body: {
+    plan?: string
     successUrl?: string
     cancelUrl?: string
     customerEmail?: string
@@ -70,21 +57,20 @@ async function handleCreateCheckoutSession(
     return json(origin, { error: 'Invalid JSON' }, 400)
   }
 
+  const plan = body.plan === 'yearly' ? 'yearly' : 'monthly'
+  const priceId = plan === 'yearly' ? priceYearly : priceMonthly
+  if (!priceId) {
+    return json(origin, { error: `Stripe prijs voor ${plan} ontbreekt.` }, 503)
+  }
+
   const embedded = body.embedded === true
   const params = new URLSearchParams()
-  params.set('mode', 'payment')
+  params.set('mode', 'subscription')
 
   if (embedded) {
     const returnUrl = typeof body.returnUrl === 'string' ? body.returnUrl.trim() : ''
     if (!returnUrl || !returnUrl.includes('{CHECKOUT_SESSION_ID}')) {
-      return json(
-        origin,
-        {
-          error:
-            'returnUrl is verplicht voor embedded checkout en moet het plaatshouder {CHECKOUT_SESSION_ID} bevatten.',
-        },
-        400
-      )
+      return json(origin, { error: 'returnUrl met {CHECKOUT_SESSION_ID} is verplicht voor embedded checkout.' }, 400)
     }
     params.set('ui_mode', 'embedded')
     params.set('return_url', returnUrl)
@@ -97,19 +83,16 @@ async function handleCreateCheckoutSession(
     params.set('success_url', successUrl)
     params.set('cancel_url', cancelUrl)
   }
+
   params.set('line_items[0][price]', priceId)
   params.set('line_items[0][quantity]', '1')
 
   const rawPm = env.STRIPE_PAYMENT_METHOD_TYPES?.trim()
-  const methods = rawPm
-    ? rawPm
-        .split(',')
-        .map((s) => s.trim().toLowerCase())
-        .filter(Boolean)
-    : ['ideal']
+  const methods = rawPm ? rawPm.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean) : ['ideal']
   for (const pm of methods) {
     params.append('payment_method_types[]', pm)
   }
+
   const email = body.customerEmail?.trim()
   if (email) params.set('customer_email', email)
 
@@ -207,10 +190,7 @@ export default {
 
     return new Response(await r.text(), {
       status: r.status,
-      headers: {
-        'Content-Type': 'application/json',
-        ...corsHeaders(origin),
-      },
+      headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
     })
   },
 }

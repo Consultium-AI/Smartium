@@ -945,7 +945,7 @@ const PracticeQuestionsPage = () => {
                   <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">
                     {lmeParam === 'alle-random' && (
                       <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">
-                        Gemengde modus: de AI kiest de best passende samenvatting.
+                        Gemengde modus: de uitleg verwijst naar de best passende samenvatting.
                       </p>
                     )}
                     {explanations[currentQ.id]?.loading && (
