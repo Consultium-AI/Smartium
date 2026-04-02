@@ -76,6 +76,10 @@ const PracticeQuestionsPage = () => {
   useEffect(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
       setExpandedBlok(blokParam)
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`section-${blokParam}`)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
     } else if (lmeParam?.startsWith('blok5-week')) {
       setExpandedBlok('blok5')
     } else if (lmeParam?.startsWith('blok9-week')) {
@@ -373,7 +377,7 @@ const PracticeQuestionsPage = () => {
           {!lmeParam && (
             <div className="mt-8 space-y-4 text-left">
               {/* Blok 3 */}
-              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+              <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
@@ -460,7 +464,7 @@ const PracticeQuestionsPage = () => {
               </div>
 
               {/* Blok 4 */}
-              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+              <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
@@ -573,7 +577,7 @@ const PracticeQuestionsPage = () => {
               </div>
 
               {/* Blok 5 */}
-              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+              <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')}
@@ -660,7 +664,7 @@ const PracticeQuestionsPage = () => {
               </div>
 
               {/* Blok 9 */}
-              <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+              <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
                   onClick={() => setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')}

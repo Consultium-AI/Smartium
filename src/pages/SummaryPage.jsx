@@ -195,6 +195,10 @@ const SummaryPage = () => {
   useEffect(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
       setExpandedBlok(blokParam)
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`section-${blokParam}`)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
     }
   }, [blokParam])
 
@@ -3184,7 +3188,7 @@ const SummaryPage = () => {
                 </p>
               </div>
               <div className="space-y-4">
-          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+          <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
@@ -3297,7 +3301,7 @@ const SummaryPage = () => {
             </AnimatePresence>
           </div>
 
-          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+          <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
@@ -3415,7 +3419,7 @@ const SummaryPage = () => {
             </AnimatePresence>
           </div>
 
-          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+          <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')}
@@ -3520,7 +3524,7 @@ const SummaryPage = () => {
               </div>
               <div className="space-y-4">
 
-          <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+          <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
               onClick={() => setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')}
