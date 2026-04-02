@@ -55,14 +55,14 @@ const Pricing = () => {
           >
             <Link
               to="/billing?plan=monthly"
-              className="group block h-full rounded-2xl border border-slate-200/90 bg-white/90 p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] transition-all hover:border-slate-300 hover:shadow-md dark:border-slate-600/50 dark:bg-slate-900/85 dark:ring-1 dark:ring-white/[0.06] dark:hover:border-slate-500 dark:hover:ring-white/10"
+              className="group block h-full rounded-2xl border border-slate-200/90 bg-white/90 p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] transition-all hover:border-slate-300 hover:shadow-md dark:border-slate-600/60 dark:bg-[#141a24] dark:ring-1 dark:ring-white/[0.08] dark:hover:border-slate-500 dark:hover:ring-white/[0.12]"
             >
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
                 Maandelijks
               </p>
               <p className="font-display text-3xl font-bold text-navy-900 dark:text-white mb-1">
                 {eur(MONTHLY)}
-                <span className="text-base font-semibold text-slate-500">/maand</span>
+                <span className="text-base font-semibold text-slate-500 dark:text-slate-400">/maand</span>
               </p>
               <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Maandelijks opzegbaar</p>
 
@@ -90,7 +90,7 @@ const Pricing = () => {
           >
             <Link
               to="/billing?plan=yearly"
-              className="group relative block h-full rounded-2xl border-2 border-primary-400/70 bg-gradient-to-br from-primary-50/80 to-white p-7 shadow-md transition-all hover:shadow-lg dark:border-primary-500/40 dark:from-primary-950/40 dark:to-slate-900/90"
+              className="group relative block h-full rounded-2xl border-2 border-primary-400/70 bg-gradient-to-br from-primary-50/80 to-white p-7 shadow-md transition-all hover:shadow-lg dark:border-primary-500/50 dark:from-[#111827] dark:to-[#141a24]"
             >
               <span className="absolute right-4 top-4 rounded-full bg-primary-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
                 {DISCOUNT}% korting
@@ -100,12 +100,12 @@ const Pricing = () => {
               </p>
               <p className="font-display text-3xl font-bold text-navy-900 dark:text-white mb-1">
                 {eur(YEARLY_PER_MONTH)}
-                <span className="text-base font-semibold text-slate-500">/maand</span>
+                <span className="text-base font-semibold text-slate-500 dark:text-slate-400">/maand</span>
               </p>
               <p className="text-sm text-slate-600 dark:text-slate-300 mb-1">
                 {eur(YEARLY_TOTAL)} per jaar
               </p>
-              <p className="text-xs text-slate-400 line-through mb-6">
+              <p className="text-xs text-slate-400 dark:text-slate-500 line-through mb-6">
                 Was {eur(MONTHLY * 12)}/jaar
               </p>
 
