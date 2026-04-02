@@ -24,24 +24,41 @@ const navItems = [
     name: 'Samenvattingen',
     icon: FileText,
     subGroups: [
-      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/summary' }] },
-      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/summary?blok=blok5' }, { name: 'Blok 9', href: '/summary?blok=blok9' }] },
+      { label: 'Ba1', links: [
+        { name: 'Blok 3', href: '/summary?blok=blok3' },
+        { name: 'Blok 4', href: '/summary?blok=blok4' },
+        { name: 'Blok 5', href: '/summary?blok=blok5' },
+      ]},
+      { label: 'Ba2', links: [
+        { name: 'Blok 9', href: '/summary?blok=blok9' },
+      ]},
     ],
   },
   {
     name: 'Oefenvragen',
     icon: ClipboardCheck,
     subGroups: [
-      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/oefenvragen' }] },
-      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/oefenvragen?blok=blok5' }, { name: 'Blok 9', href: '/oefenvragen?blok=blok9' }] },
+      { label: 'Ba1', links: [
+        { name: 'Blok 3', href: '/oefenvragen?blok=blok3' },
+        { name: 'Blok 4', href: '/oefenvragen?blok=blok4' },
+        { name: 'Blok 5', href: '/oefenvragen?blok=blok5' },
+      ]},
+      { label: 'Ba2', links: [
+        { name: 'Blok 9', href: '/oefenvragen?blok=blok9' },
+      ]},
     ],
   },
   {
     name: 'Tentamens',
     icon: GraduationCap,
     subGroups: [
-      { label: 'Ba1', links: [{ name: 'Blok 4', href: '/tentamen' }] },
-      { label: 'Ba2', links: [{ name: 'Blok 5', href: '/tentamen-blok5' }, { name: 'Blok 9', href: '/tentamen-blok9' }] },
+      { label: 'Ba1', links: [
+        { name: 'Blok 4', href: '/tentamen' },
+        { name: 'Blok 5', href: '/tentamen-blok5' },
+      ]},
+      { label: 'Ba2', links: [
+        { name: 'Blok 9', href: '/tentamen-blok9' },
+      ]},
     ],
   },
   { name: 'AI Chat', href: '/chat', icon: Bot },

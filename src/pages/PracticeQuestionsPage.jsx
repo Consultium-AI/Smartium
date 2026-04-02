@@ -62,7 +62,11 @@ const PracticeQuestionsPage = () => {
   const lmeParam = searchParams.get('lme')
   const { user, loading: authLoading } = useAuth()
   const progressUserId = getProgressUserId(user, authLoading)
-  const [expandedBlok, setExpandedBlok] = useState('blok4') // Default: direct naar Blok 4 lijst
+  const blokParam = searchParams.get('blok')
+  const [expandedBlok, setExpandedBlok] = useState(() => {
+    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
+    return 'blok4'
+  })
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
   const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
@@ -70,9 +74,14 @@ const PracticeQuestionsPage = () => {
     : null
 
   useEffect(() => {
-    if (lmeParam?.startsWith('blok5-week')) setExpandedBlok('blok5')
-    if (lmeParam?.startsWith('blok9-week')) setExpandedBlok('blok9')
-  }, [lmeParam])
+    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
+      setExpandedBlok(blokParam)
+    } else if (lmeParam?.startsWith('blok5-week')) {
+      setExpandedBlok('blok5')
+    } else if (lmeParam?.startsWith('blok9-week')) {
+      setExpandedBlok('blok9')
+    }
+  }, [lmeParam, blokParam])
 
 
   const questions = useMemo(() => {

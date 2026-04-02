@@ -4,7 +4,7 @@ import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
   GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
@@ -186,7 +186,17 @@ import Blok9Week5Casus10RitmestoornissenBijKinderenSummary from '../summaries/sa
 const SummaryPage = () => {
   const [searchParams] = useSearchParams()
   const lme = searchParams.get('lme') || 'index'
-  const [expandedBlok, setExpandedBlok] = useState(null)
+  const blokParam = searchParams.get('blok')
+  const [expandedBlok, setExpandedBlok] = useState(() => {
+    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
+    return null
+  })
+
+  useEffect(() => {
+    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
+      setExpandedBlok(blokParam)
+    }
+  }, [blokParam])
 
   const courseStructure = {
     blok3: {
