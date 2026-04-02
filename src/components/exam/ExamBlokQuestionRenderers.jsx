@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { CheckCircle, XCircle, Loader2, Send } from 'lucide-react'
 import { InlineAiText } from '../PracticeAiInlinePanel'
+import { ExamRichText } from './ExamScenarioContent'
 import {
   buildOpenExamGradingPrompt,
   fetchExamOpenGrading,
@@ -193,7 +194,7 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal }) {
         </span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
       <div className="space-y-2">
         {opts.map((option) => (
           <motion.button
@@ -311,7 +312,7 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal }) {
             ? `Kies precies ${maxSel} optie${maxSel === 1 ? '' : 'n'}.`
             : '0, 1 of meerdere opties kunnen juist zijn.'}
       </p>
-      <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
       <div className="space-y-2">
         {question.options.map((option) => {
           const isSel = selected.has(option.letter)
@@ -413,7 +414,7 @@ export function KoppelvraagBlock({ question, answer, onReveal }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Koppelvraag</span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
       <table className="w-full min-w-[280px] border-collapse text-sm">
         <thead>
           <tr className="border-b border-slate-200 dark:border-slate-700">
@@ -518,7 +519,7 @@ export function JuistOnjuistBlock({ question, answer, onReveal }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Juist / onjuist</span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
       <ul className="space-y-4">
         {question.statements.map((s, idx) => {
           const ok = revealed && choices[idx] === s.correct
@@ -651,7 +652,7 @@ export function OpenVraagBlock({ question, answer, onReveal }) {
           <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Open vraag</span>
           {badgePoints(question.points)}
         </div>
-        <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+        <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
         {question.wordLimit ? (
           <p className={`mb-1 text-xs ${overLimit ? 'font-semibold text-red-600' : 'text-slate-500'}`}>
             Woorden: {wc} / max. {question.wordLimit}
@@ -684,7 +685,7 @@ export function OpenVraagBlock({ question, answer, onReveal }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Open vraag</span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-2 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-2 font-medium text-navy-900 dark:text-slate-100" />
       <p className="mb-3 whitespace-pre-wrap rounded-lg bg-slate-50 p-3 text-sm dark:bg-slate-800/80">{answer.answer}</p>
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
@@ -753,7 +754,7 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Volgorde</span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-4 text-sm font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 text-sm font-medium text-navy-900 dark:text-slate-100" />
       <p className="mb-2 text-xs text-slate-500">
         {question.orderIntro ?? 'Van oppervlakkig (1) naar diep (4):'}
       </p>
@@ -827,7 +828,7 @@ export function RekenvraagBlock({ question, answer, onReveal }) {
         <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">Reken- / interpretatievraag</span>
         {badgePoints(question.points)}
       </div>
-      <p className="mb-4 font-medium text-navy-900 dark:text-slate-100">{question.question}</p>
+      <ExamRichText text={question.question} className="mb-4 font-medium text-navy-900 dark:text-slate-100" />
       <div className="flex flex-wrap items-center gap-2">
         <input
           type="number"

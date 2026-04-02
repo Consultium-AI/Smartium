@@ -1,0 +1,687 @@
+Oefententamen bachelor geneeskunde Ba2
+Studentversie
+Beantwoord alle vragen.
+ Gebruik bij open vragen maximaal het aangegeven aantal woorden.
+ Bij vragen met meerdere juiste antwoorden geldt: kies alleen de opties die juist zijn.
+Casus 1 – Patiënt met acute nierschade
+Een 74-jarige man meldt zich op de SEH vanwege 4 dagen diarree, misselijkheid en weinig intake. Hij gebruikt lisinopril, hydrochloorthiazide en sinds 5 dagen ibuprofen wegens rugpijn. Hij plast duidelijk minder dan normaal. Bij onderzoek is hij suf maar wekbaar, met droge slijmvliezen en orthostase. De bladderscan laat 70 mL residu zien.
+Laboratorium
+Een oude uitslag van 2 maanden geleden toont een creatinine van 91 µmol/L.
+1a. (2p)
+Wat is op basis van deze gegevens de meest waarschijnlijke hoofdcategorie van de acute nierschade?
+A. Prerenaal
+ B. Intrinsiek renaal door glomerulonefritis
+ C. Postrenaal
+ D. Chronische nierschade zonder acute component
+1b. (3p)
+Noem 3 bevindingen uit anamnese, medicatie of lichamelijk onderzoek die jouw antwoord bij 1a ondersteunen.
+ Maximaal 50 woorden.
+1c. (2p)
+Welke extra bevinding zou het sterkst pleiten vóór een postrenale oorzaak?
+A. Een ureum/creatinine-ratio die relatief hoog is
+ B. Bilaterale hydronefrose op echografie
+ C. Gebruik van NSAID’s
+ D. Orthostatische hypotensie
+1d. (4p)
+Formuleer de 3 belangrijkste eerste behandelstappen, in logische volgorde.
+ Maximaal 100 woorden.
+1e. (2p)
+Welke van de onderstaande situaties is een directe acute indicatie om nierfunctievervangende therapie te overwegen?
+A. Creatinine 310 µmol/L zonder klachten
+ B. Kalium 5,4 mmol/L zonder ECG-afwijkingen
+ C. Ernstige overvulling met dyspneu ondanks behandeling
+ D. eGFR 19 mL/min/1,73m² bij stabiele hemodynamiek
+Casus 2 – Patiënt met chronische nierschade
+Een 61-jarige vrouw met diabetes mellitus type 2 en hypertensie komt op de polikliniek. Zij gebruikt metformine, amlodipine en losartan. Zij rookt niet, maar heeft obesitas. Bij herhaald onderzoek over meer dan 3 maanden blijkt aanhoudende albuminurie. Er is geen macroscopische hematurie.
+Laboratorium
+2a. (2p)
+Welke classificatie past het best bij deze patiënt?
+A. G2A1
+ B. G3aA2
+ C. G3bA3
+ D. G4A1
+2b. (3p)
+Waarom kun je op basis van één afwijkende creatininewaarde nog niet direct spreken van chronische nierschade?
+ Maximaal 50 woorden.
+2c. (3p)
+Welke maatregel is het meest direct gericht op het verminderen van proteïnurie/albuminurie?
+A. Starten met een lisdiureticum
+ B. Intensiveren van RAAS-remming, mits verdraagbaar
+ C. Albumine-infuus geven
+ D. Direct starten met dialyse
+2d. (3p)
+Welke combinatie van factoren maakt progressie van chronische nierschade het meest waarschijnlijk?
+A. Lage UACR, goed gereguleerde bloeddruk, niet-roker
+ B. Persisterende albuminurie, onvoldoende bloeddrukcontrole, diabetes
+ C. Normale UACR, lage LDL, goede glykemische controle
+ D. Eenmalig verhoogd creatinine na dehydratie
+2e. (4p)
+Formuleer een passend poliklinisch beleid met aandacht voor leefstijl, medicatie en follow-up.
+ Maximaal 100 woorden.
+Casus 3 – Patiënt met ernstig verstoorde elektrolyten
+Een 68-jarige vrouw met recent gediagnosticeerd kleincellig longcarcinoom komt naar de SEH met misselijkheid, hoofdpijn en verwardheid. Zij heeft geen perifere oedemen, geen duidelijke dehydratie en geen ascites.
+Laboratorium
+3a. (2p)
+Welke diagnose past het best?
+A. Hypotone hyponatriëmie bij SIADH
+ B. Hypertonische hyponatriëmie door hyperglykemie
+ C. Pseudohyponatriëmie bij hyperlipidemie
+ D. Hypovolemische hyponatriëmie door extrarenaal zoutverlies
+3b. (3p)
+Welke bevindingen ondersteunen het meest een SIADH?
+ Meerdere antwoorden mogelijk.
+A. Lage serumosmolaliteit
+ B. Hoge urine-osmolaliteit
+ C. Urine natrium > 30 mmol/L
+ D. Ernstige hyperglykemie
+ E. Klinisch euvolemisch beeld
+3c. (2p)
+Wat is in deze situatie de meest passende eerste behandeling?
+A. Grote hoeveelheid 0,45% NaCl
+ B. Voorzichtige correctie met hypertoon zout, met strakke controle
+ C. Alleen orale kaliumsuppletie
+ D. Geen behandeling; eerst herhalen over 24 uur
+3d. (4p)
+Leg uit waarom te snelle correctie van het natrium gevaarlijk is en welk behandelprincipe daarom belangrijk is.
+ Maximaal 100 woorden.
+3e. (3p)
+Welke aanvullende klinische informatie is het belangrijkst om direct actief uit te vragen of te beoordelen bij deze patiënt?
+A. Alleen de familieanamnese voor hypertensie
+ B. Alleen het rookverleden in pack years
+ C. Ernst en aard van neurologische symptomen
+ D. Alleen de LDL-waarde van de laatste controle
+Casus 4 – De vrouw die maar 20 meter kan lopen
+Een 59-jarige vrouw rookt sinds haar 16e en heeft hypertensie en diabetes mellitus. Zij klaagt over pijn in beide kuiten, rechts erger dan links. De klachten ontstaan na korte loopafstanden en nemen af in rust. Er zijn geen ulcera. De voeten voelen koud aan. Er is geen duidelijke rustpijn in bed.
+Aanvullend onderzoek
+4a. (2p)
+Welke klinische beschrijving past het best?
+A. Asymptomatisch perifeer arterieel vaatlijden
+ B. Claudicatio intermittens
+ C. Kritieke ischemie
+ D. Acute arteriële afsluiting
+4b. (3p)
+Wat is de meest passende eerste niet-invasieve test bij verdenking op perifeer arterieel vaatlijden?
+ Maximaal 40 woorden.
+4c. (4p)
+Koppel elke bevinding aan de best passende klinische categorie. Gebruik elke categorie maximaal één keer.
+Categorieën
+Claudicatio intermittens
+Kritieke ischemie
+Acute ischemie
+Diabetische voet met ischemische component
+Bevindingen
+ a. Pijn bij lopen na 50 meter, afname in rust
+ b. Plotseling pijnlijk, bleek en koud been met uitval
+ c. Ulcus met infectie, teendruk 10 mmHg
+ d. Rustpijn/nachtpijn en niet-genezende wond
+4d. (2p)
+Wat is de belangrijkste pijler van conservatieve behandeling bij symptomatisch PAV?
+A. Bedrust
+ B. Gesuperviseerde looptraining en risicofactorbehandeling
+ C. Meteen een amputatie
+ D. Uitsluitend pijnstilling
+4e. (4p)
+Noem 4 onderdelen van secundaire preventie/behandeling die je bij deze patiënt actief zou inzetten.
+ Maximaal 100 woorden.
+Casus 5 – Patiënt met hypertensie
+Een 37-jarige vrouw wordt verwezen vanwege moeilijk instelbare hypertensie. Zij gebruikt amlodipine en hydrochloorthiazide. Haar bloeddruk is herhaaldelijk rond 176/108 mmHg. Zij heeft spierkrampen en af en toe hoofdpijn. In de familie komt nauwelijks hypertensie voor.
+Laboratorium
+5a. (2p)
+Welke bevinding maakt een secundaire oorzaak het meest waarschijnlijk?
+A. Leeftijd 37 jaar met resistente hypertensie
+ B. Alleen een systolische bloeddruk boven 140 mmHg
+ C. Normale creatininewaarde
+ D. Afwezigheid van diabetes mellitus
+5b. (3p)
+Welke bevindingen passen het best bij primair hyperaldosteronisme?
+ Meerdere antwoorden mogelijk.
+A. Hypokaliëmie
+ B. Hoge aldosteron-renine-ratio
+ C. Metabole alkalose
+ D. Sterk verhoogd TSH
+ E. Jonge patiënt met hypertensie
+5c. (2p)
+Wat is de meest passende volgende stap in de diagnostiek?
+A. Alleen een X-thorax
+ B. Screening met aldosteron-renine-ratio
+ C. Urine-antigeentest voor pneumokokken
+ D. Direct starten met dialyse
+5d. (3p)
+Waarom is hydrochloorthiazide in deze casus geen logische voorkeurskeuze voor voortzetting zonder herbeoordeling?
+ Maximaal 50 woorden.
+5e. (2p)
+Welke situatie past het best bij een hypertensief spoedgeval?
+A. Bloeddruk 186/112 mmHg zonder klachten
+ B. Bloeddruk 178/104 mmHg met lichte spanningshoofdpijn
+ C. Bloeddruk 224/132 mmHg met acuut visusverlies en neurologische symptomen
+ D. Bloeddruk 168/96 mmHg bij gezonde 24-jarige sporter
+Casus 6 – Volwassene met pijn op de borst
+Een 58-jarige man komt op het spreekuur vanwege drukkende pijn op de borst bij traplopen. De klachten verdwijnen binnen enkele minuten in rust. Hij rookt, heeft diabetes mellitus type 2 en zijn vader kreeg op 54-jarige leeftijd een myocardinfarct. Hij heeft geen koorts en geen pleuritische pijn. In rust is hij klachtenvrij.
+Overige gegevens
+6a. (2p)
+Wat is op basis van deze casus de meest waarschijnlijke werkdiagnose?
+A. Stabiele angina pectoris op basis van atherosclerose
+ B. Longembolie
+ C. Pneumothorax
+ D. Acute pericarditis
+6b. (3p)
+Noem 4 cardiovasculaire risicofactoren die in deze casus aanwezig zijn.
+ Maximaal 50 woorden.
+6c. (2p)
+Welke uitspraak over CVRM is het meest juist?
+A. Alleen de LDL-waarde bepaalt het beleid
+ B. Alleen bestaande ziekte telt; risicoschatting is verder niet relevant
+ C. Het totale cardiovasculaire risico bepaalt mede of leefstijl alleen voldoende is of dat medicatie nodig is
+ D. CVRM is niet relevant zolang iemand nog geen infarct heeft gehad
+6d. (2p)
+Wat is de meest passende vervolgstap bij verdenking op stabiel coronair lijden in deze setting?
+A. Geen aanvullend onderzoek, want het rust-ECG is normaal
+ B. Passende niet-invasieve coronairdiagnostiek overwegen
+ C. Meteen trombolyse
+ D. Uitsluitend antibiotica starten
+6e. (4p)
+Formuleer een eerste behandelplan met aandacht voor leefstijl én medicamenteuze preventie.
+ Maximaal 100 woorden.
+Casus 7 – Patiënt met een pneumonie
+Een 72-jarige man met COPD presenteert zich met koorts, productieve hoest en dyspneu sinds 2 dagen. Hij is niet recent opgenomen geweest in het ziekenhuis. Bij onderzoek: temperatuur 39,1°C, ademfrequentie 31/min, bloeddruk 102/64 mmHg, saturatie 89% aan kamerlucht. Hij is niet verward.
+Laboratorium
+X-thorax: consolidatie rechter onderkwab.
+7a. (2p)
+Wat is de CURB-65-score?
+A. 1
+ B. 2
+ C. 3
+ D. 4
+7b. (3p)
+Waarom is opname bij deze patiënt goed verdedigbaar?
+ Maximaal 50 woorden.
+7c. (2p)
+Welke empirische behandeling past het best bij deze ernst?
+A. Geen antibiotica, alleen afwachten
+ B. Alleen lokale zalfbehandeling
+ C. Behandeling passend bij matig tot ernstig CAP, niet meer puur ambulant beleid
+ D. Uitsluitend oseltamivir
+7d. (3p)
+Welke complicaties moet je overwegen als de patiënt onvoldoende opknapt?
+ Meerdere antwoorden mogelijk.
+A. Longabces
+ B. Pleurale infectie/empyem
+ C. Aortadissectie als standaardcomplicatie van pneumonie
+ D. Persisterende hypoxemie door complicatie
+ E. Osteoporose als acute complicatie
+7e. (4p)
+Noem 2 microbiologische onderzoeken die hier relevant kunnen zijn en vermeld kort wanneer ze vooral nuttig zijn.
+ Maximaal 100 woorden.
+Casus 8 – Een leuk feestje
+Een 22-jarige man wordt na een feest binnengebracht. Hij is ernstig geagiteerd, transpireert, heeft wijde pupillen en is tachycard. Hij heeft een temperatuur van 40,1°C. Er zijn geen urticaria of piepende ademhaling. Vrienden denken aan “iets van pillen”.
+Vitale parameters
+Bloedgas/lab
+8a. (2p)
+Welke beschrijving past het best?
+A. Allergische reactie
+ B. Intoxicatie
+ C. Onschuldige bijwerking bij therapeutische spiegel
+ D. Bacteriële sepsis als enige plausibele verklaring
+8b. (2p)
+Welk toxidroom is het meest waarschijnlijk?
+A. Sympathicomimetisch/serotonerg beeld
+ B. Opioïd toxidroom
+ C. Zuiver cholinerg toxidroom
+ D. Isolerend hypothyreoïdiebeeld
+8c. (4p)
+Noem de belangrijkste eerste ABCDE-prioriteiten in deze casus.
+ Maximaal 100 woorden.
+8d. (3p)
+Zet de onderstaande vroege interventies in de meest logische volgorde van prioriteit.
+Actief koelen
+ABCDE-beoordeling en vitale stabilisatie
+Toediening van specifieke symptomatische behandeling/ondersteuning
+Gericht aanvullend onderzoek en intoxicatie-anamnese
+8e. (3p)
+Hoe beschrijf je de zuur-basestoornis het best?
+A. Geïsoleerde respiratoire acidose
+ B. Hoog-anion-gap metabole acidose met respiratoire compensatie
+ C. Metabole alkalose
+ D. Normale zuur-basebalans
+Casus 9 – Longkanker, wat nu
+Een 68-jarige man met 50 pack years komt op de poli met gewichtsverlies, verminderde eetlust, aanhoudend hoesten en sinds kort hemoptoë. Bij onderzoek is er een palpabele linker supraclaviculaire zwelling. Op de X-thorax is een suspecte afwijking in de long te zien. CT-thorax/bovenbuik toont een pulmonale massa, mediastinale lymfeklieren en pleuravocht. Er is ook een verdachte laesie in de contralaterale long.
+Laboratorium
+Pleuravochtanalyse
+9a. (2p)
+Wat is de meest waarschijnlijke overkoepelende diagnose?
+A. Longcarcinoom
+ B. Ongecompliceerde virale pneumonie
+ C. Sarcoïdose zonder maligniteitsverdenking
+ D. Pleuritis door overbelasting
+9b. (3p)
+Noem 2 argumenten waarom hier sprake kan zijn van gevorderde ziekte.
+ Maximaal 50 woorden.
+9c. (3p)
+Hoe classificeer je het pleuravocht op basis van de Light-criteria?
+A. Transsudaat
+ B. Exsudaat
+ C. Niet te classificeren
+ D. Pseudotranssudaat
+9d. (4p)
+Vul voor onderstaande elementen de meest passende vereenvoudigde TNM-component in.
+Primaire tumor met lokale pulmonale massa: T __
+Supraclaviculaire/contralaterale klierbetrokkenheid: N __
+Contralaterale longafwijking en/of maligne pleurale betrokkenheid: M __
+9e. (3p)
+Welke verschijnselen kunnen passen bij paraneoplastische syndromen bij longkanker?
+ Meerdere antwoorden mogelijk.
+A. SIADH met hyponatriëmie
+ B. Hypercalciëmie
+ C. Lambert-Eaton myasthenisch syndroom
+ D. Acute appendicitis
+ E. Pulmonale osteo-artropathie
+9f. (4p)
+Beschrijf in hoofdlijnen de verdere diagnostische route en noem ten minste 1 discipline die hierbij een belangrijke rol speelt.
+ Maximaal 100 woorden.
+Casus 10 – Atriumfibrilleren
+Een 67-jarige man meldt zich met hartkloppingen en vermoeidheid. Hij gebruikt geen anti-aritmica. Pols is onregelmatig en snel. Bloeddruk 118/72 mmHg. Geen pijn op de borst. ECG-beschrijving: geen duidelijke P-toppen, onregelmatig-irregulaire RR-intervallen, smalle QRS-complexen, ventriculaire frequentie 138/min.
+10a. (2p)
+Wat is de meest waarschijnlijke ritmestoornis?
+A. Sinusbradycardie
+ B. Atriumfibrilleren
+ C. Ventrikeltachycardie
+ D. 3e-graads AV-blok
+10b. (3p)
+Noem 2 ECG-kenmerken die jouw diagnose ondersteunen.
+ Maximaal 40 woorden.
+10c. (2p)
+Dezelfde patiënt wordt tijdens observatie hypotensief, klam en suf. Wat is dan de meest passende onmiddellijke behandeling?
+A. Afwachten en over 24 uur herhalen
+ B. Synchroniseerde elektrische cardioversie
+ C. Alleen leefstijladvies meegeven
+ D. Uitsluitend een statine starten
+10d. (2p)
+Welke uitspraak over de lange-termijnbenadering van atriumfibrilleren is het meest juist?
+A. Alleen het ECG telt; leefstijl heeft nauwelijks invloed
+ B. Alcohol, obesitas, hypertensie en OSAS kunnen atriumfibrilleren onderhouden of verergeren
+ C. Ablatie is altijd de eerste stap, ongeacht context
+ D. Risicofactoren aanpakken is alleen relevant bij ventrikelfibrilleren
+10e. (4p)
+Noem 4 niet-ritmespecifieke factoren of onderdelen van beleid die je in de langetermijnbehandeling van deze patiënt zou meenemen.
+ Maximaal 100 woorden.
+Hier is het antwoordmodel bij de studentversie, gebaseerd op de geüploade weeksamenvattingen over acute en chronische nierschade, elektrolyten, PAV, hypertensie, CVRM/pijn op de borst, pneumonie, acute intoxicatie/shock, longkanker/pleuravocht en atriumfibrilleren.
+Bij open vragen geldt: inhoudelijk gelijkwaardige formuleringen ook goed rekenen.
+Oefententamen bachelor geneeskunde Ba2
+Antwoordmodel
+Casus 1 – Patiënt met acute nierschade
+1a. (2p)
+Antwoord: A. Prerenaal
+Korte toelichting: diarree, dehydratie, orthostase, oligurie en combinatie ACE-remmer + diureticum + NSAID passen het best bij prerenale acute nierschade.
+1b. (3p)
+Puntenverdeling: 1 punt per juist argument, max 3
+Goede antwoorden:
+4 dagen diarree / weinig intake
+droge slijmvliezen
+orthostase
+oligurie
+recente NSAID-inname
+diureticagebruik
+ACE-remmergebruik
+laag residu op bladderscan, dus postrenaal minder waarschijnlijk
+Concreet antwoordmodel:
+“Diarree en slechte intake passen bij volumedepletie. Orthostase en droge slijmvliezen ondersteunen dehydratie. Daarnaast verlagen lisinopril, hydrochloorthiazide en ibuprofen samen de effectieve nierperfusie.”
+1c. (2p)
+Antwoord: B. Bilaterale hydronefrose op echografie
+1d. (4p)
+Puntenverdeling:
+1p stoppen/pauseren schadelijke medicatie
+1p volumestatus herstellen met passende vochttoediening
+1p monitoren complicaties/urineproductie/elektrolyten
+1p gericht aanvullend beleid, zoals urine/echo/oorzaak behandelen
+Concreet antwoordmodel:
+“Staak tijdelijk ibuprofen, lisinopril en hydrochloorthiazide. Start isotone vochtresuscitatie op geleide van kliniek. Controleer urineproductie, kalium, zuur-base en creatinine. Verricht aanvullend onderzoek naar oorzaak en sluit obstructie zo nodig met echo uit.”
+1e. (2p)
+Antwoord: C. Ernstige overvulling met dyspneu ondanks behandeling
+Casus 2 – Patiënt met chronische nierschade
+2a. (2p)
+Antwoord: C. G3bA3
+Korte toelichting: eGFR 38 past bij G3b, UACR 46 mg/mmol past bij A3.
+2b. (3p)
+Puntenverdeling:
+1p noemen dat chroniciteit moet blijken over tijd
+1p noemen dat persisterende afwijking >3 maanden relevant is
+1p noemen dat een eenmalige stijging ook acuut/reversibel kan zijn
+Concreet antwoordmodel:
+“Chronische nierschade veronderstelt persisterende afwijkingen. Eén losse creatininewaarde kan ook passen bij een acute of reversibele verslechtering. Je wilt daarom aantonen dat functiestoornis of albuminurie langer dan 3 maanden aanwezig is.”
+2c. (3p)
+Antwoord: B. Intensiveren van RAAS-remming, mits verdraagbaar
+2d. (3p)
+Antwoord: B. Persisterende albuminurie, onvoldoende bloeddrukcontrole, diabetes
+2e. (4p)
+Puntenverdeling:
+1p leefstijl
+1p bloeddruk/RAAS
+1p diabetes/CVRM
+1p follow-up nierfunctie/albuminurie/kalium
+Concreet antwoordmodel:
+“Optimaliseer bloeddruk, bij voorkeur met RAAS-remming zolang kalium en nierfunctie dit toelaten. Adviseer gewichtsreductie, zoutbeperking en beweging. Optimaliseer diabetes- en lipidenbehandeling. Controleer eGFR, albuminurie en kalium periodiek en screen op progressie/complicaties van CKD.”
+Casus 3 – Patiënt met ernstig verstoorde elektrolyten
+3a. (2p)
+Antwoord: A. Hypotone hyponatriëmie bij SIADH
+Korte toelichting: laag natrium, lage serumosmolaliteit, geconcentreerde urine, hoog urine-natrium, euvolemisch beeld en SCLC passen bij SIADH.
+3b. (3p)
+Antwoord: A, B, C en E
+Puntenverdeling: 0,75 punt per juiste keuze, max 3
+Fout antwoord aankruisen: 0 punten voor de vraag
+3c. (2p)
+Antwoord: B. Voorzichtige correctie met hypertoon zout, met strakke controle
+3d. (4p)
+Puntenverdeling:
+2p gevaar osmotische demyelinisatie benoemen
+1p belang van langzame/gecontroleerde correctie
+1p frequente controles benoemen
+Concreet antwoordmodel:
+“Te snelle correctie van ernstige hyponatriëmie kan osmotische demyelinisatie veroorzaken. Daarom moet het natrium gecontroleerd en niet te snel stijgen. Behandel op indicatie met hypertoon zout en controleer serum-natrium frequent tijdens de eerste uren.”
+3e. (3p)
+Antwoord: C. Ernst en aard van neurologische symptomen
+Casus 4 – De vrouw die maar 20 meter kan lopen
+4a. (2p)
+Antwoord: B. Claudicatio intermittens
+4b. (3p)
+Concreet antwoordmodel:
+“De enkel-armindex is de meest passende eerste niet-invasieve test bij verdenking op perifeer arterieel vaatlijden.”
+Puntenverdeling:
+2p EAI/ABI noemen
+1p benoemen dat dit eerste niet-invasieve diagnostiek is
+4c. (4p)
+Antwoord:
+a → 1
+b → 3
+c → 4
+d → 2
+Puntenverdeling: 1 punt per juiste koppeling
+4d. (2p)
+Antwoord: B. Gesuperviseerde looptraining en risicofactorbehandeling
+4e. (4p)
+Puntenverdeling: 1 punt per goed onderdeel, max 4
+Goede antwoorden:
+stoppen met roken
+looptraining
+statine
+trombocytenaggregatieremming passend in context
+diabetesoptimalisatie
+bloeddrukbehandeling
+leefstijlinterventie/gewichtsreductie
+voetzorg bij diabetes
+Concreet antwoordmodel:
+“Stoppen met roken, gesuperviseerde looptraining, intensieve cardiovasculaire risicoreductie met statine en bloeddrukbehandeling, en optimaliseren van diabetesregulatie. Daarnaast aandacht voor antitrombotisch beleid en goede voetcontrole.”
+Casus 5 – Patiënt met hypertensie
+5a. (2p)
+Antwoord: A. Leeftijd 37 jaar met resistente hypertensie
+5b. (3p)
+Antwoord: A, B, C en E
+Puntenverdeling: 0,75 punt per juiste keuze, max 3
+Fout antwoord aankruisen: 0 punten voor de vraag
+5c. (2p)
+Antwoord: B. Screening met aldosteron-renine-ratio
+5d. (3p)
+Concreet antwoordmodel:
+“Hydrochloorthiazide kan hypokaliëmie verergeren. Bij verdenking op primair hyperaldosteronisme is dat ongunstig, omdat er al renaal kaliumverlies en vaak metabole alkalose bestaan.”
+Puntenverdeling:
+1p thiazide verergert hypokaliëmie
+1p koppeling aan hyperaldosteronisme
+1p koppeling aan alkalose/renaal kaliumverlies
+5e. (2p)
+Antwoord: C. Bloeddruk 224/132 mmHg met acuut visusverlies en neurologische symptomen
+Casus 6 – Volwassene met pijn op de borst
+6a. (2p)
+Antwoord: A. Stabiele angina pectoris op basis van atherosclerose
+6b. (3p)
+Puntenverdeling: 0,75 punt per juiste risicofactor, max 3
+Goede antwoorden:
+roken
+diabetes mellitus
+positieve familieanamnese voor vroege HVZ
+hypertensie / verhoogde bloeddruk
+obesitas
+verhoogd LDL
+Concreet antwoordmodel:
+“Roken, diabetes mellitus type 2, positieve familieanamnese voor vroege HVZ en obesitas. Ook de verhoogde bloeddruk en verhoogde LDL-waarde verhogen het cardiovasculaire risico.”
+6c. (2p)
+Antwoord: C. Het totale cardiovasculaire risico bepaalt mede of leefstijl alleen voldoende is of dat medicatie nodig is
+6d. (2p)
+Antwoord: B. Passende niet-invasieve coronairdiagnostiek overwegen
+6e. (4p)
+Puntenverdeling:
+1p leefstijl
+1p LDL/statine
+1p bloeddruk/diabetesoptimalisatie
+1p verdere diagnostiek/follow-up
+Concreet antwoordmodel:
+“Adviseer stoppen met roken, gewichtsreductie, meer bewegen en dieetverbetering. Start of intensiveer statinetherapie. Optimaliseer bloeddruk- en diabetesbehandeling. Zet passende niet-invasieve coronairdiagnostiek in en koppel vervolgbeleid aan de uitkomst en het totale CVRM-profiel.”
+Casus 7 – Patiënt met een pneumonie
+7a. (2p)
+Antwoord: C. 3
+Korte toelichting:
+Ureum > 7 = 1
+Ademfrequentie ≥ 30 = 1
+Leeftijd ≥ 65 = 1
+Geen verwardheid = 0
+Bloeddruk niet <90 systolisch en niet ≤60 diastolisch = 0
+Totaal = 3.
+7b. (3p)
+Concreet antwoordmodel:
+“Hij heeft een hoge CURB-65-score, hypoxemie en duidelijke systemische ontstekingsactiviteit. Daarnaast heeft hij COPD als comorbiditeit en klinisch een ernstiger pneumoniebeeld, wat opname en intramurale behandeling goed verdedigbaar maakt.”
+Puntenverdeling:
+1p ernst/CURB-65
+1p hypoxemie of vitale ontregeling
+1p comorbiditeit/ziek indruk
+7c. (2p)
+Antwoord: C. Behandeling passend bij matig tot ernstig CAP, niet meer puur ambulant beleid
+7d. (3p)
+Antwoord: A, B en D
+Puntenverdeling: 1 punt per juiste keuze
+Fout antwoord aankruisen: 0 punten voor de vraag
+7e. (4p)
+Puntenverdeling:
+1p sputumkweek
+1p bloedkweken
+1p urine-antigeen pneumokokken of legionella
+1p wanneer/waarom benoemen
+Concreet antwoordmodel:
+“Sputumkweek is zinvol om een bacteriële verwekker te identificeren, vooral bij opname. Bloedkweken zijn relevant bij ernstiger ziekte. Daarnaast kun je een urine-pneumokokkenantigeentest of urine-legionella-antigeentest doen, vooral bij ernstige CAP of specifieke verdenking zoals legionellarisico.”
+Casus 8 – Een leuk feestje
+8a. (2p)
+Antwoord: B. Intoxicatie
+8b. (2p)
+Antwoord: A. Sympathicomimetisch/serotonerg beeld
+8c. (4p)
+Puntenverdeling:
+1p ABCDE/airway-breathing-circulation noemen
+1p agitatie/sedatie/veiligheid
+1p actief koelen
+1p monitoring en gericht aanvullend onderzoek
+Concreet antwoordmodel:
+“Voer direct een ABCDE-beoordeling uit en stabiliseer vitale functies. Zorg voor veilige omgeving en behandel ernstige agitatie symptomatisch. Start actief koelen vanwege hyperthermie. Sluit complicaties zoals rabdomyolyse, acidose en ritmestoornissen uit met monitoring en aanvullend onderzoek.”
+8d. (3p)
+Antwoord: 2 → 1 → 3 → 4
+Puntenverdeling: alleen volledig juiste volgorde = 3p
+8e. (3p)
+Antwoord: B. Hoog-anion-gap metabole acidose met respiratoire compensatie
+Korte toelichting: lage pH, laag HCO3 en laag pCO2 met hoog lactaat passen hierbij.
+Casus 9 – Longkanker, wat nu
+9a. (2p)
+Antwoord: A. Longcarcinoom
+9b. (3p)
+Puntenverdeling: 1,5 punt per goed argument, max 3
+Goede antwoorden:
+supraclaviculaire klierbetrokkenheid
+pleuravocht
+contralaterale longafwijking
+systemische symptomen zoals gewichtsverlies
+mogelijke metastatische/gevorderde ziekte op CT
+Concreet antwoordmodel:
+“De supraclaviculaire klierbetrokkenheid past bij uitgebreidere lymfeklierziekte. Daarnaast wijzen pleuravocht en een contralaterale longafwijking op gevorderde ziekte, mogelijk met metastatische verspreiding.”
+9c. (3p)
+Antwoord: B. Exsudaat
+Korte toelichting:
+eiwitratio 38/60 = 0,63 > 0,5
+LDH-ratio 420/250 = 1,68 > 0,6
+pleuravocht-LDH > 2/3 bovengrens normaal serum-LDH
+Dus exsudaat.
+9d. (4p)
+Antwoordmodel:
+T: minimaal T2/TX passend bij pulmonale massa; in deze vereenvoudigde vraag vooral T-component aanwezig
+N: N3
+M: M1
+Omdat de casus geen exacte tumorgrootte geeft, moet vooral N3 en M1 goed zijn.
+Voor T goed rekenen:
+“T onbekend/niet exact te bepalen zonder tumorgrootte en invasie”
+of
+“T-component aanwezig, maar exacte subcategorie niet te classificeren uit gegeven info”
+Puntenverdeling:
+1p voor correct hanteren dat T niet exact uit casus volgt
+1,5p voor N3
+1,5p voor M1
+9e. (3p)
+Antwoord: A, B, C en E
+Puntenverdeling: 0,75 punt per juiste keuze, max 3
+Fout antwoord aankruisen: 0 punten voor de vraag
+9f. (4p)
+Puntenverdeling:
+1p aanvullende beeldvorming/stadiëring
+1p weefseldiagnostiek
+1p pathologie/moleculaire typering of pleuravochtcytologie
+1p discipline noemen
+Concreet antwoordmodel:
+“Vervolg met volledige stadiëring, vaak CT/PET-CT en zo nodig aanvullende beeldvorming. Bevestig de diagnose met weefseldiagnostiek via bronchoscopie, EBUS of punctie, en beoordeel histologie/moleculaire kenmerken. Betrokken disciplines zijn onder andere longarts, radioloog, patholoog en internist-oncoloog.”
+Casus 10 – Atriumfibrilleren
+10a. (2p)
+Antwoord: B. Atriumfibrilleren
+10b. (3p)
+Puntenverdeling:
+1,5p geen duidelijke P-toppen
+1,5p onregelmatig-irregulaire RR-intervallen
+Concreet antwoordmodel:
+“Er zijn geen duidelijke P-toppen zichtbaar en de RR-intervallen zijn onregelmatig-irregulair. Dat past bij atriumfibrilleren.”
+10c. (2p)
+Antwoord: B. Synchroniseerde elektrische cardioversie
+10d. (2p)
+Antwoord: B. Alcohol, obesitas, hypertensie en OSAS kunnen atriumfibrilleren onderhouden of verergeren
+10e. (4p)
+Puntenverdeling: 1 punt per goed onderdeel, max 4
+Goede antwoorden:
+evaluatie trombo-embolisch risico / antistolling
+frequentie- of ritmecontrole in langetermijnbeleid
+behandelen hypertensie
+gewichtsreductie
+alcoholreductie
+screenen/behandelen van OSAS
+behandelen van hartfalen of ischemie indien aanwezig
+leefstijl en follow-up
+Concreet antwoordmodel:
+“Beoordeel trombo-embolisch risico en indicatie voor antistolling. Maak een keuze tussen frequentie- en ritmecontrole. Behandel uitlokkende factoren zoals hypertensie, obesitas en alcoholgebruik. Denk ook aan OSAS-screening en structurele follow-up met aandacht voor symptomen en recidief.”
+Samenvatting puntensleutel
+Totaal aantal punten:
+Casus 1: 13
+Casus 2: 14
+Casus 3: 14
+Casus 4: 15
+Casus 5: 12
+Casus 6: 13
+Casus 7: 14
+Casus 8: 14
+Casus 9: 19
+Casus 10: 13
+Totaal: 141 punten
+Als je wilt, zet ik dit hierna ook om in een nakijkvriendelijke tabelversie per vraag met:
+juiste antwoord
+punten
+foutieve afleiders kort uitgelegd.
+Parameter | Uitslag | Referentie
+Hb | 10,6 mmol/L | 8,5–11,0
+Leukocyten | 11,8 x10^9/L | 4,0–10,0
+Trombocyten | 310 x10^9/L | 150–400
+Natrium | 146 mmol/L | 135–145
+Kalium | 5,4 mmol/L | 3,5–5,0
+Chloride | 111 mmol/L | 98–107
+Bicarbonaat | 18 mmol/L | 22–29
+Ureum | 24,8 mmol/L | 3,0–8,0
+Creatinine | 286 µmol/L | 60–110
+eGFR (CKD-EPI) | 19 mL/min/1,73m² | >60
+Glucose | 6,2 mmol/L | 4,0–7,8
+CRP | 14 mg/L | <5
+Parameter | Uitslag | Referentie
+Creatinine | 146 µmol/L | 50–90
+eGFR | 38 mL/min/1,73m² | >60
+UACR | 46 mg/mmol | <3
+Hb | 7,4 mmol/L | 7,5–10,0
+Natrium | 139 mmol/L | 135–145
+Kalium | 4,8 mmol/L | 3,5–5,0
+Bicarbonaat | 21 mmol/L | 22–29
+Albumine | 36 g/L | 35–50
+LDL-cholesterol | 3,4 mmol/L | <2,6
+HbA1c | 63 mmol/mol | <53
+Parameter | Uitslag | Referentie
+Natrium | 118 mmol/L | 135–145
+Kalium | 4,2 mmol/L | 3,5–5,0
+Chloride | 87 mmol/L | 98–107
+Bicarbonaat | 24 mmol/L | 22–29
+Ureum | 4,2 mmol/L | 3,0–8,0
+Creatinine | 71 µmol/L | 50–90
+Glucose | 5,4 mmol/L | 4,0–7,8
+Serumosmolaliteit | 255 mosmol/kg | 275–295
+Urine-osmolaliteit | 540 mosmol/kg | variabel
+Urine natrium | 58 mmol/L | variabel
+TSH | Normaal | —
+Parameter | Uitslag
+EAI rechts | 0,54
+EAI links | 0,71
+Teendruk rechts | 58 mmHg
+Teendruk links | 76 mmHg
+Parameter | Uitslag | Referentie
+Natrium | 145 mmol/L | 135–145
+Kalium | 2,8 mmol/L | 3,5–5,0
+Chloride | 97 mmol/L | 98–107
+Bicarbonaat | 31 mmol/L | 22–29
+Creatinine | 74 µmol/L | 50–90
+Glucose | 5,1 mmol/L | 4,0–7,8
+Parameter | Uitslag
+Bloeddruk | 148/86 mmHg
+LDL | 3,8 mmol/L
+HbA1c | 61 mmol/mol
+BMI | 31 kg/m²
+Rust-ECG | geen acute ischemische afwijkingen
+Parameter | Uitslag | Referentie
+Leukocyten | 16,9 x10^9/L | 4,0–10,0
+CRP | 198 mg/L | <5
+Ureum | 9,1 mmol/L | 3,0–8,0
+Creatinine | 102 µmol/L | 60–110
+Natrium | 133 mmol/L | 135–145
+Kalium | 4,1 mmol/L | 3,5–5,0
+Glucose | 7,8 mmol/L | 4,0–7,8
+Parameter | Uitslag
+EMV | 13
+Pols | 148/min
+Bloeddruk | 168/94 mmHg
+Ademfrequentie | 30/min
+Saturatie | 97% RA
+Temperatuur | 40,1°C
+Parameter | Uitslag | Referentie
+pH | 7,28 | 7,35–7,45
+pCO2 | 3,8 kPa | 4,7–6,0
+HCO3- | 14 mmol/L | 22–29
+Lactaat | 8,1 mmol/L | <2,0
+CK | 1850 U/L | <170
+Glucose | 7,0 mmol/L | 4,0–7,8
+Parameter | Uitslag | Referentie
+Hb | 6,7 mmol/L | 8,5–11,0
+Leukocyten | 12,2 x10^9/L | 4,0–10,0
+Trombocyten | 430 x10^9/L | 150–400
+Natrium | 128 mmol/L | 135–145
+Kalium | 4,3 mmol/L | 3,5–5,0
+Calcium | 2,86 mmol/L | 2,20–2,55
+AF | 186 U/L | <120
+ALAT | 31 U/L | <45
+CRP | 64 mg/L | <5
+Parameter | Uitslag
+Pleuravocht-eiwit | 38 g/L
+Serum-eiwit | 60 g/L
+Pleuravocht-LDH | 420 U/L
+Serum-LDH | 250 U/L
+Bovengrens serum-LDH normaal | 240 U/L

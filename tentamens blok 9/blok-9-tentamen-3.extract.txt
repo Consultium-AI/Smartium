@@ -1,0 +1,670 @@
+Oefententamen Ba2 Geneeskunde
+Studentversie
+Algemene instructies
+Beantwoord alle vragen.
+Bij open vragen geldt een maximumaantal woorden. Antwoorden boven de limiet worden niet meegenomen voor de beoordeling.
+Bij meerkeuzevragen met meerdere juiste antwoorden staat dit expliciet vermeld.
+Gebruik waar nodig de gegevens uit de casus, ook als er waarden in de tabel staan die niet relevant blijken.
+Referentiewaarden zijn gegeven waar passend.
+Casus 1 – Acute nierschade op de SEH
+Een 76-jarige man komt op de SEH wegens sufheid en verminderde intake sinds 4 dagen. Sinds 3 dagen heeft hij diarree. Voorgeschiedenis: hypertensie, artrose, benigne prostaathyperplasie. Medicatie: lisinopril, ibuprofen zo nodig, tamsulosine. Bij onderzoek: droge slijmvliezen, bloeddruk 94/58 mmHg, pols 108/min, geen koorts. De verpleegkundige meldt dat de urineproductie sinds opname laag is.
+Laboratorium
+Urineonderzoek
+1a. Enkelvoudige meerkeuzevraag (2p)
+Welke categorie acute nierschade is op basis van deze gegevens het meest waarschijnlijk?
+A. Prerenaal
+B. Renaal, passend bij acute tubulusnecrose
+C. Postrenaal
+D. Renaal, passend bij glomerulonefritis
+1b. Open vraag (3p, max. 40 woorden)
+Noem de twee belangrijkste argumenten uit de casus die jouw keuze bij 1a het sterkst ondersteunen.
+1c. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak over de gerapporteerde eGFR is het meest correct?
+A. De eGFR is betrouwbaar omdat CKD-EPI juist bedoeld is voor acute nierschade
+B. De eGFR is onbetrouwbaar omdat de formule uitgaat van een stabiele creatininewaarde
+C. De eGFR is onbetrouwbaar omdat ureum verhoogd is
+D. De eGFR is alleen onbetrouwbaar bij patiënten met hematurie
+1d. Enkelvoudige meerkeuzevraag (2p)
+Wat is in deze fase de meest logische eerste stap in het beleid?
+A. Starten met methylprednisolon i.v.
+B. CT-angiografie van de nierarteriën
+C. Vochtsuppletie en stoppen van uitlokkende medicatie
+D. Direct starten met chronische dialyseplanning
+1e. Koppelvraag (4p)
+Koppel de onderstaande bevinding het best aan de categorie prerenaal, renaal of postrenaal.
+Acute urineretentie bij afgeknikte blaaskatheter
+Acute hoge tacrolimusspiegel met afferente vasoconstrictie
+Erytrocytencilinders in het urinesediment
+Retroperitoneale fibrose met uretercompressie
+Antwoordopties:
+A. Prerenaal
+B. Renaal
+C. Postrenaal
+Casus 2 – Leukocyturie, huidafwijkingen en nierfunctieverslechtering
+Een 28-jarige man meldt zich bij de huisarts wegens malaise en jeukende huidafwijkingen op romp en armen. Drie weken geleden startte hij amoxicilline/clavulaanzuur wegens sinusitis. Hij heeft geen dysurie, geen pollakisurie en geen flankpijn. Temperatuur 37,6°C.
+Laboratorium
+Urineonderzoek
+2a. Enkelvoudige meerkeuzevraag (2p)
+Welke diagnose is het meest waarschijnlijk?
+A. Urineweginfectie
+B. Tubulo-interstitiële nefritis
+C. Acute glomerulonefritis
+D. Nefrotisch syndroom
+2b. Open vraag (3p, max. 50 woorden)
+Noem drie bevindingen uit de casus die deze diagnose waarschijnlijker maken dan een urineweginfectie.
+2c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke aanvullende stappen passen het best bij deze verdenking?
+A. Urinekweek
+B. Actief nagaan welke medicatie recent is gestart
+C. Starten met langdurige ciprofloxacine zonder verdere diagnostiek
+D. Beoordelen of de oorzaak weggenomen kan worden
+E. Direct concluderen dat leukocyturie altijd een infectie betekent
+2d. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak over tubulaire nierschade is het meest correct?
+A. Tubulaire nierschade geeft altijd forse hematurie en erytrocytencilinders
+B. Tubulaire nierschade kan bestaan met weinig opvallende urineafwijkingen
+C. Tubulaire nierschade en elektrolytstoornissen gaan niet samen
+D. Tubulaire nierschade veroorzaakt per definitie ernstige hypertensie
+2e. Matrixvraag (4p)
+Koppel elk ziektebeeld aan de best passende hoofdcategorie.
+Bartter-syndroom
+Gitelman-syndroom
+Liddle-syndroom
+ADPKD
+Antwoordopties:
+A. Erfelijke stoornis van natriumtransport met lage bloeddruk
+B. Erfelijke stoornis van natriumtransport met hypertensie
+C. Cysteuze nierziekte
+Casus 3 – Hematurie en snel dalende nierfunctie
+Een 24-jarige vrouw presenteert zich met sinds 5 dagen cola-kleurige urine, malaise en lichte dyspneu. Zij hoest sinds gisteren ook wat bloed op. Bij onderzoek: bloeddruk 162/96 mmHg, perifeer geen oedeem.
+Laboratorium
+Urinesediment
+3a. Enkelvoudige meerkeuzevraag (2p)
+Welk syndroom past het best bij deze presentatie?
+A. Nefrotisch syndroom
+B. Nefritisch syndroom
+C. Geïsoleerde tubulaire stoornis
+D. Prerenaal nierfalen
+3b. Open vraag (4p, max. 100 woorden)
+Leg uit waarom erytrocytencilinders in deze casus zo belangrijk zijn.
+3c. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak is het meest correct?
+A. Erytrocytencilinders bewijzen glomerulaire hematurie
+B. Erytrocytencilinders passen vooral bij cystitis
+C. Erytrocytencilinders wijzen op postrenale obstructie
+D. Erytrocytencilinders maken glomerulaire oorzaak juist onwaarschijnlijk
+3d. Enkelvoudige meerkeuzevraag (2p)
+Wat is bij ernstig gestoorde nierfunctie en sterke verdenking op een inflammatoire glomerulaire aandoening vaak de eerste behandelingsstap?
+A. Alleen zoutbeperking
+B. Hoge dosis methylprednisolon i.v.
+C. Alleen lisdiuretica
+D. Chronische ACE-remming starten en afwachten
+3e. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke aanvullende bloedtesten zijn in deze setting het meest passend?
+A. ANCA
+B. Anti-GBM
+C. ANA en anti-dsDNA
+D. C3/C4
+E. D-dimeer als hoofdtest voor glomerulonefritis
+Casus 4 – Ernstige hypernatriëmie bij een verpleeghuisbewoner
+Een 83-jarige vrouw uit een verpleeghuis wordt ingestuurd wegens sufheid. Zij heeft gevorderde dementie en drinkt zelfstandig nauwelijks. Sinds twee dagen heeft zij koorts en diarree. Gewicht: 60 kg.
+Laboratorium
+4a. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak is het meest correct?
+A. Hypernatriëmie betekent meestal een primaire natriumovermaat
+B. Hypernatriëmie betekent in de kern meestal een watertekort
+C. Hypernatriëmie past alleen bij nierfalen
+D. Hypernatriëmie is meestal een laboratoriumfout
+4b. Rekenvraag, open (4p)
+Bereken het geschatte watertekort van deze patiënte. Gebruik voor totaal lichaamswater de standaardbenadering passend bij deze patiënt. Rond af op één decimaal.
+4c. Open vraag (3p, max. 50 woorden)
+Waarom is de uitkomst van 4b slechts een schatting en niet een exact behandelvoorschrift?
+4d. Enkelvoudige meerkeuzevraag (2p)
+Welke infuusvloeistof is in het algemeen hypotoon?
+A. 0,9% NaCl
+B. Ringer-lactaat
+C. Plasma-Lyte
+D. 5% glucose
+4e. Enkelvoudige meerkeuzevraag (2p)
+Waarom telt ureum minder zwaar mee voor de effectieve osmolaliteit dan natrium?
+A. Omdat ureum te groot is om het celmembraan te passeren
+B. Omdat ureum snel door het celmembraan kan bewegen
+C. Omdat ureum altijd door de lever wordt afgebroken
+D. Omdat ureum geen opgeloste stof is
+Casus 5 – Braken, spierzwakte en een afwijkend bloedgas
+Een 52-jarige vrouw komt op de afdeling Interne Geneeskunde met spierzwakte en hartkloppingen. Zij braakt al 4 dagen door een maaguitgangsprobleem. Medicatie: hydrochloorthiazide.
+Laboratorium
+Veneus bloedgas
+5a. Enkelvoudige meerkeuzevraag (2p)
+Welke zuur-baseafwijking is het meest waarschijnlijk?
+A. Metabole acidose
+B. Metabole alkalose
+C. Respiratoire acidose
+D. Respiratoire alkalose
+5b. Open vraag (4p, max. 100 woorden)
+Leg uit waarom een patiënt met langdurig braken hypokaliëmie kan ontwikkelen, ook al bevat braaksel zelf relatief weinig kalium.
+5c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke factoren dragen in deze casus het meest bij aan de hypokaliëmie?
+A. Chlorideverlies
+B. RAAS-activatie
+C. Verhoogde renale kaliumuitscheiding
+D. Uitsluitend direct verlies van grote hoeveelheden kalium uit het braaksel
+E. Thiazidegebruik
+5d. Enkelvoudige meerkeuzevraag (2p)
+Welke aanvullende waarde verdient in deze casus extra aandacht, mede voor de correctie van het kalium?
+A. Calcium
+B. Albumine
+C. Magnesium
+D. Hb
+5e. Enkelvoudige meerkeuzevraag (2p)
+Wat is bij ernstige hyperkaliëmie met ECG-afwijkingen het eerste doel van calciumgluconaat?
+A. Het kalium direct uit het lichaam verwijderen
+B. Het myocard stabiliseren
+C. Het renine-angiotensine-systeem remmen
+D. De urineproductie verhogen
+Casus 6 – Onverwacht hoge bloeddruk op de poli
+Een 59-jarige man komt op de polikliniek voor controle. Hij voelt zich goed. Bloeddruk bij herhaalde meting in de spreekkamer: 156/96 mmHg. Hij rookt niet meer, heeft overgewicht en beweegt weinig. Geen bekende cardiovasculaire voorgeschiedenis.
+6a. Enkelvoudige meerkeuzevraag (2p)
+In welke categorie valt deze bloeddruk volgens de klassieke WHO-indeling het best?
+A. Hoognormaal
+B. Graad 1 hypertensie
+C. Graad 2 hypertensie
+D. Geïsoleerde systolische hypertensie
+6b. Open vraag (3p, max. 40 woorden)
+Waarom is een 24-uursbloeddrukmeting vaak informatiever dan één spreekkamermeting?
+6c. Sorteervraag (4p)
+Sorteer de volgende vormen van schade in de meest passende categorie.
+Te ordenen items:
+nefropathie
+erectiestoornissen
+herseninfarct
+perifeer vaatlijden
+Categorieën:
+A. Vooral microvasculair
+B. Vooral macrovasculair
+6d. Enkelvoudige meerkeuzevraag (2p)
+Welk leefstijladvies past het best in de eerste lijn bij hypertensie?
+A. Meer zout gebruiken om volumedepletie te voorkomen
+B. Kalium beperken bij alle patiënten
+C. Zoutinname beperken en bewegen stimuleren
+D. Alleen medicatie helpt, leefstijl nauwelijks
+6e. Enkelvoudige meerkeuzevraag (2p)
+Waarom is monotherapie bij hypertensie vaak onvoldoende?
+A. Omdat alle antihypertensiva zwak zijn
+B. Omdat hypertensie meestal door meerdere mechanismen tegelijk ontstaat
+C. Omdat combinatietherapie minder bijwerkingen geeft dan placebo
+D. Omdat bloeddruk alleen door RAAS wordt bepaald
+Casus 7 – Secundaire hypertensie of hypertensief spoedgeval?
+Een 34-jarige vrouw meldt zich op de SEH met wazig zien en drukkende hoofdpijn. Zij gebruikt al 3 antihypertensiva. Bloeddruk 224/132 mmHg. Fundoscopie toont retinale afwijkingen passend bij acute hypertensieve schade. In de voorgeschiedenis staan recidiverende spierkrampen. Laboratorium toont kalium 2.8 mmol/L.
+7a. Enkelvoudige meerkeuzevraag (2p)
+Wat is de beste typering van deze situatie?
+A. Ernstige hypertensie zonder acute orgaanschade
+B. Hypertensief spoedgeval
+C. Wittejassenhypertensie
+D. Alleen secundaire hypertensie, geen spoed
+7b. Open vraag (3p, max. 50 woorden)
+Noem twee kenmerken uit deze casus die ook aan een secundaire oorzaak van hypertensie doen denken.
+7c. Enkelvoudige meerkeuzevraag (2p)
+Welke secundaire oorzaak past het best bij therapieresistente hypertensie in combinatie met hypokaliëmie?
+A. OSAS
+B. Primair hyperaldosteronisme
+C. Coarctatio aortae
+D. Essentiale hypertensie
+7d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke clues maken secundaire hypertensie waarschijnlijker?
+A. Jonge leeftijd
+B. Plotseling ontstaan of plotseling verergeren
+C. Therapieresistentie
+D. Negatieve familie-anamnese
+E. Afwezigheid van klachten sluit secundaire hypertensie uit
+7e. Enkelvoudige meerkeuzevraag (2p)
+Waarom worden renine- en aldosteronwaarden in de acute setting van een hypertensief spoedgeval vaak niet meteen betrouwbaar geïnterpreteerd?
+A. Omdat ze alleen bij ouderen zinvol zijn
+B. Omdat sympathische activatie en RAAS-stimulatie de waarden acuut kunnen vertekenen
+C. Omdat renine alleen in urine bepaald mag worden
+D. Omdat aldosteron nooit stijgt bij hypertensie
+Casus 8 – Pneumonie en respiratoire insufficiëntie
+Een 71-jarige man presenteert zich met koorts, productieve hoest en toenemende dyspneu sinds 3 dagen. Voorgeschiedenis: COPD en diabetes mellitus. Bij onderzoek: T 38,8°C, bloeddruk 102/62 mmHg, pols 112/min, ademfrequentie 32/min, verward, saturatie 88% bij kamerlucht.
+Laboratorium
+X-thorax
+Rechts onderkwabair infiltraat met pleurale reactie.
+8a. Reken-/scorevraag (4p)
+Bereken de CURB-65-score van deze patiënt.
+8b. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak is het meest correct op basis van deze score en casus?
+A. Past het meest bij milde CAP, ambulante behandeling is waarschijnlijk voldoende
+B. Past het meest bij matig-ernstige CAP
+C. Past het meest bij ernstige CAP
+D. CAP kan niet worden ingeschat met klinische gegevens
+8c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke verwekkers of groepen zijn bij CAP relatief waarschijnlijk en relevant in de differentiaaldiagnose?
+A. Streptococcus pneumoniae
+B. Haemophilus influenzae
+C. Legionella pneumophila
+D. Altijd alleen virale verwekker
+E. Atypische verwekkers kunnen ook passen
+8d. Open vraag (3p, max. 50 woorden)
+Leg uit welk mechanisme van respiratoire insufficiëntie het best past bij een pneumonie en waarom extra zuurstof daarbij soms maar beperkt effect heeft.
+8e. Enkelvoudige meerkeuzevraag (2p)
+Wanneer is een urine-legionella-antigeentest in het bijzonder zinvol?
+A. Bij iedere banale verkoudheid
+B. Alleen bij gezonde kinderen
+C. Bij ernstige CAP of bij specifieke risicofactoren zoals reisgeschiedenis of therapiefalen onder bèta-lactam
+D. Nooit, want legionella is gemakkelijk te kweken
+Casus 9 – Pleuravocht op de longafdeling
+Een 67-jarige vrouw met dyspneu en drukkend gevoel rechts thoracaal wordt opgenomen. X-thorax toont een rechtszijdig pleuravocht. Bij onderzoek: verminderd ademgeruis rechts basaal en gedempte percussie.
+Pleuravochtanalyse
+9a. Enkelvoudige meerkeuzevraag (2p)
+Welk lichamelijk onderzoeksbeeld past het best bij pleuravocht?
+A. Versterkt ademgeruis en hypersonore percussie
+B. Verminderd ademgeruis en gedempte percussie
+C. Stridor en inspiratoire piepen
+D. Normaal ademgeruis en tympanie
+9b. Enkelvoudige meerkeuzevraag (2p)
+Is hier op basis van de Light-criteria het meest waarschijnlijk sprake van een transsudaat of exsudaat?
+A. Transsudaat
+B. Exsudaat
+C. Niet te beoordelen
+D. Pseudopleuravocht
+9c. Open vraag (4p, max. 100 woorden)
+Laat met de Light-criteria zien hoe je tot je antwoord bij 9b komt.
+9d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke aandoeningen passen relatief vaak bij een exsudatief pleuravocht?
+A. Maligniteit
+B. Infectie
+C. Hartfalen
+D. Reumatoïde artritis
+E. Hypoalbuminemie zonder pleurale ontsteking
+9e. Enkelvoudige meerkeuzevraag (2p)
+Wat is een belangrijk aandachtspunt bij een eenmalige drainage van pleuravocht?
+A. Er mag altijd onbeperkt vocht worden afgezogen
+B. Meer dan ongeveer 1,5 liter ineens verhoogt het risico op re-expansie-oedeem
+C. Pleuravocht mag alleen chirurgisch worden verwijderd
+D. Drainage heeft nooit diagnostische waarde
+Casus 10 – Longkanker: verdenking, stadiëring en beleid
+Een 66-jarige man, 45 pack years, presenteert zich met hoesten, 7 kg gewichtsverlies, hemoptoë en sinds enkele weken heesheid. Op de X-thorax is een verdachte afwijking links boven te zien.
+Figuur 1 – beschreven beeldvraag
+CT-thorax toont een spiculaire solide massa van 4,6 cm in de linker bovenkwab, met pleurale intrekking. Er zijn vergrote ipsilaterale mediastinale en subcarinale lymfeklieren. PET-CT toont sterke FDG-opname in de tumor en in deze klieren. Er is één FDG-avide leverlaesie passend bij metastase. Geen hersenbeeldvorming verricht.
+10a. Enkelvoudige meerkeuzevraag (2p)
+Welke combinatie van symptomen uit de casus past goed bij een primaire longtumor?
+A. Hoesten, gewichtsverlies en hemoptoë
+B. Alleen polyurie en polydipsie
+C. Alleen icterus en melena
+D. Alleen diarree zonder respiratoire klachten
+10b. Open vraag (4p, max. 100 woorden)
+Bepaal op basis van de beschreven beeldvorming het meest waarschijnlijke globale TNM-stadium en licht je redenering kort toe.
+10c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke kenmerken maken een laesie op CT verdachter voor maligniteit?
+A. Spiculae
+B. Cavitatie/centrale necrose
+C. Pleurale intrekking
+D. Botdestructie bij perifere tumor
+E. Volledig gladde, altijd benigne begrenzing bewijst maligniteit
+10d. Enkelvoudige meerkeuzevraag (2p)
+Welke weefseldiagnostische techniek is vooral geschikt om verdachte mediastinale klieren rond trachea en bronchiën te beoordelen en aan te prikken?
+A. EBUS/EUS
+B. Urinekweek
+C. Colonoscopie
+D. Duplex van de nierarteriën
+10e. Enkelvoudige meerkeuzevraag (2p)
+Welke uitspraak over PET-CT is het meest correct?
+A. Positieve FDG-opname bewijst altijd maligniteit
+B. PET-CT is volledig ongeschikt voor stadiëring
+C. PET-CT voegt metabole informatie toe, maar kent ook fout-positieven en fout-negatieven
+D. PET-CT vervangt altijd weefseldiagnostiek
+10f. Enkelvoudige meerkeuzevraag (2p)
+Welk paraneoplastisch syndroom is klassiek geassocieerd met kleincellig longcarcinoom?
+A. SIADH
+B. Graves
+C. Addison
+D. Diabetes insipidus
+Einde studentversie
+Hieronder staat het antwoordmodel met korte toelichting, puntenverdeling en beoordelingssleutel voor de open vragen. De inhoud sluit aan op de geüploade stof over acute nierschade, water- en elektrolytstoornissen, hypertensie, pneumonie, pleuravocht en longkanker.
+Totaal
+133 punten
+Casus 1 – Acute nierschade op de SEH
+Totaal: 13 punten
+1a. A. Prerenaal
+2p
+Korte toelichting: volumeverlies/hypoperfusie staat op de voorgrond.
+1b. Open vraag
+3p
+Volledige score bij twee sterke argumenten, bijvoorbeeld:
+diarree/verminderde intake/dehydratie
+droge slijmvliezen
+hypotensie/tachycardie
+geconcentreerde urine met weinig actief sediment
+NSAID + ACE-remmer als perfusieverstorende factoren
+Puntverdeling
+1,5p per goed onderbouwd argument
+max 3p
+Modelantwoord
+“De patiënt heeft duidelijke volumedepletie met diarree, droge slijmvliezen en hypotensie. Daarnaast past de geconcentreerde urine zonder actief sediment beter bij prerenale hypoperfusie dan bij intrinsieke nierschade.”
+1c. B. De eGFR is onbetrouwbaar omdat de formule uitgaat van een stabiele creatininewaarde
+2p
+Korte toelichting: CKD-EPI is bij acute nierschade beperkt bruikbaar.
+1d. C. Vochtsuppletie en stoppen van uitlokkende medicatie
+2p
+Korte toelichting: eerst reversibele prerenale factoren aanpakken.
+1e. Koppelvraag
+4p
+1 → C
+2 → A
+3 → B
+4 → C
+Puntverdeling
+1p per juiste koppeling
+Casus 2 – Leukocyturie, huidafwijkingen en nierfunctieverslechtering
+Totaal: 14 punten
+2a. B. Tubulo-interstitiële nefritis
+2p
+2b. Open vraag
+3p
+Te noemen elementen:
+recent gestart antibioticum
+huidafwijkingen
+eosinofilie
+geen typische UWI-klachten
+nitriet negatief
+lichte nierfunctiestoornis
+Puntverdeling
+1p per goed argument
+max 3p
+Modelantwoord
+“Recent gestart antibioticum, jeukende huidafwijkingen en eosinofilie passen bij TIN. Daarnaast ontbreken typische UWI-klachten zoals dysurie of pollakisurie.”
+2c. Juiste antwoorden: A, B, D
+3p
+A goed
+B goed
+D goed
+C fout
+E fout
+Puntverdeling
+1p per juist gekozen optie
+geen negatieve punten
+2d. B. Tubulaire nierschade kan bestaan met weinig opvallende urineafwijkingen
+2p
+2e. Matrixvraag
+4p
+1 → A
+2 → A
+3 → B
+4 → C
+Puntverdeling
+1p per juiste koppeling
+Casus 3 – Hematurie en snel dalende nierfunctie
+Totaal: 13 punten
+3a. B. Nefritisch syndroom
+2p
+Korte toelichting: hematurie, erytrocytencilinders, snelle nierfunctiedaling.
+3b. Open vraag
+4p
+Modelantwoord
+“Erytrocytencilinders zijn bewijzend voor glomerulaire hematurie. Ze tonen dat erytrocyten vanuit de glomerulus in het tubulussysteem terechtkomen. Daarmee ondersteunen ze sterk een nefritisch syndroom of glomerulonefritis in plaats van een postrenale of lagere urinewegoorzaak.”
+Puntverdeling
+2p: noemt dat het bewijzend is voor glomerulaire hematurie
+1p: noemt dat erytrocyten uit de glomerulus/filter lekken
+1p: noemt dat dit past bij nefritisch/glomerulair beeld
+3c. A. Erytrocytencilinders bewijzen glomerulaire hematurie
+2p
+3d. B. Hoge dosis methylprednisolon i.v.
+2p
+Korte toelichting: bij ernstig nefritisch beeld snel ontsteking remmen.
+3e. Juiste antwoorden: A, B, C, D
+3p
+Puntverdeling
+0,75p per juiste optie
+geen negatieve punten
+Casus 4 – Ernstige hypernatriëmie bij een verpleeghuisbewoner
+Totaal: 13 punten
+4a. B. Hypernatriëmie betekent in de kern meestal een watertekort
+2p
+4b. Rekenvraag
+4p
+Berekening:
+totaal lichaamswater oude vrouw = 0,45 × 60 = 27 L
+watertekort = 27 × ((160/140) - 1)
+= 27 × 0,142857
+= 3,9 liter afgerond
+Modelantwoord
+“Geschat watertekort: 3,9 liter.”
+Puntverdeling
+1p: juiste factor 0,45
+1p: TBW = 27 L
+1p: juiste formule
+1p: eindantwoord 3,8–3,9 L acceptabel
+4c. Open vraag
+3p
+Modelantwoord
+“De berekening is een schatting, omdat voortdurende verliezen zoals diarree en koorts niet volledig in de formule zitten. Ook klinische omstandigheden en de snelheid van correctie beïnvloeden het uiteindelijke behandelplan.”
+Puntverdeling
+1p: noemt voortdurende verliezen
+1p: noemt klinische context/omstandigheden
+1p: noemt dat formule alleen orde van grootte geeft
+4d. D. 5% glucose
+2p
+4e. B. Omdat ureum snel door het celmembraan kan bewegen
+2p
+Casus 5 – Braken, spierzwakte en een afwijkend bloedgas
+Totaal: 13 punten
+5a. B. Metabole alkalose
+2p
+5b. Open vraag
+4p
+Modelantwoord
+“Bij braken gaat vooral HCl en chloride verloren, waardoor metabole alkalose en volumedepletie ontstaan. Daardoor wordt het RAAS geactiveerd en stijgt aldosteron. De nier gaat vervolgens meer kalium uitscheiden, zodat de hypokaliëmie vooral renaal ontstaat en niet door direct verlies in het braaksel.”
+Puntverdeling
+1p: verlies van HCl/chloride
+1p: metabole alkalose/volumeverlies
+1p: RAAS/aldosteron
+1p: renaal kaliumverlies belangrijker dan direct verlies
+5c. Juiste antwoorden: A, B, C, E
+3p
+Puntverdeling
+0,75p per juiste optie
+D fout
+5d. C. Magnesium
+2p
+5e. B. Het myocard stabiliseren
+2p
+Korte toelichting: calciumgluconaat beschermt het hart, het verlaagt het kalium niet direct. Dit sluit aan op de acute behandellogica bij ernstige hyperkaliëmie in de stof.
+Casus 6 – Onverwacht hoge bloeddruk op de poli
+Totaal: 13 punten
+6a. B. Graad 1 hypertensie
+2p
+6b. Open vraag
+3p
+Modelantwoord
+“Een 24-uursmeting geeft een realistischer beeld van de werkelijke bloeddruk dan één spreekkamermeting. Je ziet ook dag-nachtverschillen en pieken, en vermindert het effect van een eenmalig meetmoment.”
+Puntverdeling
+1p: realistischer beeld dan spreekkamer
+1p: dag-nacht/pieken
+1p: verminderde invloed van eenmalige meting
+6c. Sorteervraag
+4p
+nefropathie → A
+erectiestoornissen → A
+herseninfarct → B
+perifeer vaatlijden → B
+Puntverdeling
+1p per juist item
+6d. C. Zoutinname beperken en bewegen stimuleren
+2p
+6e. B. Omdat hypertensie meestal door meerdere mechanismen tegelijk ontstaat
+2p
+Casus 7 – Secundaire hypertensie of hypertensief spoedgeval?
+Totaal: 12 punten
+7a. B. Hypertensief spoedgeval
+2p
+Korte toelichting: zeer hoge bloeddruk mét acute eindorgaanschade aan retina/visus.
+7b. Open vraag
+3p
+Acceptabele clues:
+jonge leeftijd
+therapieresistentie
+hypokaliëmie
+spierkrampen
+zeer ernstige hypertensie
+Puntverdeling
+1,5p per goed genoemd kenmerk
+max 3p
+Modelantwoord
+“De jonge leeftijd en therapieresistente hypertensie maken een secundaire oorzaak waarschijnlijker. Ook hypokaliëmie met spierkrampen past goed bij primair hyperaldosteronisme.”
+7c. B. Primair hyperaldosteronisme
+2p
+7d. Juiste antwoorden: A, B, C, D
+3p
+Puntverdeling
+0,75p per juiste optie
+7e. B. Omdat sympathische activatie en RAAS-stimulatie de waarden acuut kunnen vertekenen
+2p
+Casus 8 – Pneumonie en respiratoire insufficiëntie
+Totaal: 14 punten
+8a. CURB-65 = 4
+4p
+Onderbouwing:
+C: verward = 1
+U: ureum > 7 = 1
+R: RR 32 = 1
+B: nee, BD voldoet net niet = 0
+65: leeftijd ≥ 65 = 1
+Puntverdeling
+1p per correct onderdeel / correcte totaalscore
+8b. C. Past het meest bij ernstige CAP
+2p
+8c. Juiste antwoorden: A, B, C, E
+3p
+Puntverdeling
+0,75p per juiste optie
+8d. Open vraag
+3p
+Modelantwoord
+“Bij pneumonie past vooral een V/Q-mismatch met vaak ook een shuntcomponent. Ontstoken of met exsudaat gevulde alveoli ventileren slecht, terwijl er nog wel perfusie is. Daarom is de zuurstofopname verminderd en corrigeert extra zuurstof soms maar beperkt.”
+Puntverdeling
+1p: V/Q-mismatch of shunt genoemd
+1p: slechte ventilatie bij behouden perfusie
+1p: verklaart beperkte respons op zuurstof
+8e. C. Bij ernstige CAP of bij specifieke risicofactoren zoals reisgeschiedenis of therapiefalen onder bèta-lactam
+2p
+Casus 9 – Pleuravocht op de longafdeling
+Totaal: 13 punten
+9a. B. Verminderd ademgeruis en gedempte percussie
+2p
+9b. B. Exsudaat
+2p
+9c. Open vraag
+4p
+Berekening:
+eiwitratio = 38 / 62 = 0,61 → positief
+LDH-ratio = 310 / 420 = 0,74 → positief
+2/3 van 250 = 167; pleuravocht-LDH 310 > 167 → positief
+Dus aan meerdere Light-criteria voldaan → exsudaat.
+Puntverdeling
+1p: correcte eiwitratio
+1p: correcte LDH-ratio
+1p: correcte beoordeling van LDH-afkapwaarde
+1p: juiste conclusie exsudaat
+9d. Juiste antwoorden: A, B, D
+3p
+Puntverdeling
+1p per juiste optie
+C en E fout
+9e. B. Meer dan ongeveer 1,5 liter ineens verhoogt het risico op re-expansie-oedeem
+2p
+Casus 10 – Longkanker: verdenking, stadiëring en beleid
+Totaal: 15 punten
+10a. A. Hoesten, gewichtsverlies en hemoptoë
+2p
+10b. Open vraag
+4p
+Modelantwoord
+“Meest waarschijnlijk: T2bN2M1b, dus globaal stadium IV.
+T2b omdat de tumor 4,6 cm is.
+N2 door ipsilaterale mediastinale en subcarinale lymfeklieren.
+M1b door één metastase op afstand in de lever.”
+Puntverdeling
+1p: T2b correct
+1p: N2 correct
+1p: M1b correct
+1p: globale stadium IV-conclusie
+10c. Juiste antwoorden: A, B, C, D
+3p
+Puntverdeling
+0,75p per juiste optie
+10d. A. EBUS/EUS
+2p
+10e. C. PET-CT voegt metabole informatie toe, maar kent ook fout-positieven en fout-negatieven
+2p
+10f. A. SIADH
+2p
+Korte toelichting: klassiek paraneoplastisch bij kleincellig longcarcinoom.
+Parameter | Uitslag | Referentie
+Hb | 8.7 mmol/L | 8.5–11.0
+Leukocyten | 10.8 x10^9/L | 4.0–10.0
+CRP | 18 mg/L | <5
+Natrium | 138 mmol/L | 135–145
+Kalium | 5.2 mmol/L | 3.5–5.0
+Ureum | 19.1 mmol/L | 3.0–8.0
+Creatinine | 268 µmol/L | 60–110
+eGFR (CKD-EPI) | 20 mL/min/1.73m² | >60
+Bicarbonaat | 21 mmol/L | 22–29
+Parameter | Uitslag
+Soortelijk gewicht | hoog
+Erytrocyten | negatief
+Eiwit | spoor
+Leukocyten | negatief
+Nitriet | negatief
+Parameter | Uitslag | Referentie
+Creatinine | 154 µmol/L | 60–110
+Ureum | 10.8 mmol/L | 3.0–8.0
+Natrium | 139 mmol/L | 135–145
+Kalium | 4.5 mmol/L | 3.5–5.0
+Eosinofielen | 0.8 x10^9/L | 0.0–0.5
+CRP | 24 mg/L | <5
+Parameter | Uitslag
+Erytrocyten | negatief
+Eiwit | spoor
+Leukocyten | positief
+Nitriet | negatief
+Parameter | Uitslag | Referentie
+Creatinine | 312 µmol/L | 50–100
+Ureum | 18.4 mmol/L | 3.0–8.0
+Albumine | 34 g/L | 35–50
+CRP | 38 mg/L | <5
+C3 | verlaagd | normaal
+C4 | verlaagd | normaal
+Parameter | Uitslag
+Erytrocyten | veel
+Dysmorfe erytrocyten | aanwezig
+Erytrocytencilinders | aanwezig
+Eiwit | ++
+Parameter | Uitslag | Referentie
+Natrium | 160 mmol/L | 135–145
+Kalium | 4.2 mmol/L | 3.5–5.0
+Ureum | 17.0 mmol/L | 3.0–8.0
+Creatinine | 112 µmol/L | 50–100
+Glucose | 6.0 mmol/L | 4.0–7.8
+Gemeten osmolaliteit | 324 mosmol/kg | 275–295
+Parameter | Uitslag | Referentie
+Natrium | 134 mmol/L | 135–145
+Kalium | 2.4 mmol/L | 3.5–5.0
+Chloride | 86 mmol/L | 98–107
+Magnesium | 0.56 mmol/L | 0.70–1.00
+Creatinine | 92 µmol/L | 50–100
+Parameter | Uitslag | Referentie
+pH | 7.52 | 7.35–7.45
+pCO₂ | 6.1 kPa | 4.7–6.0
+HCO₃⁻ | 35 mmol/L | 22–29
+Parameter | Uitslag | Referentie
+Hb | 8.5 mmol/L | 8.5–11.0
+Leukocyten | 16.2 x10^9/L | 4.0–10.0
+CRP | 248 mg/L | <5
+Ureum | 11.4 mmol/L | 3.0–8.0
+Creatinine | 118 µmol/L | 60–110
+Natrium | 133 mmol/L | 135–145
+Glucose | 11.8 mmol/L | 4.0–7.8
+Parameter | Pleuravocht | Serum | Referentie
+Eiwit | 38 g/L | 62 g/L | —
+LDH | 310 U/L | 420 U/L | bovengrens serum-LDH 250 U/L
+Glucose | 5.0 mmol/L | 6.2 mmol/L | —
+Cytologie | nog niet bekend | — | —

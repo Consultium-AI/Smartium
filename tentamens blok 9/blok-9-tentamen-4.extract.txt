@@ -1,0 +1,533 @@
+Oefententamen Ba2 Geneeskunde
+Algemene instructies
+Beantwoord alle vragen.
+Bij open vragen geldt een maximumaantal woorden.
+Bij meerkeuzevragen met meerdere juiste antwoorden staat dit expliciet vermeld.
+Gebruik alle gegevens uit de tabellen; niet alle waarden zijn per se relevant.
+Deze versie bevat minimaal één expliciete rekenvraag.
+Casus 1 – Dyspneu op de spoed: welk mechanisme?
+Een 63-jarige man presenteert zich met acuut ontstane dyspneu en pijn rechts thoracaal sinds enkele uren. Hij heeft 10 dagen geleden een knieprothese gekregen. Bij onderzoek: ademfrequentie 30/min, pols 118/min, saturatie 89% bij kamerlucht, temperatuur 37,2°C. Auscultatie: geen duidelijke crepitaties. X-thorax toont geen infiltraten of pleuravocht.
+1a. Enkelvoudige meerkeuzevraag (2p)
+Welk mechanisme van respiratoire insufficiëntie past op basis van deze casus het best?
+A. Shunt
+B. Dode ruimte
+C. Diffusiestoornis
+D. Hyperventilatie zonder gaswisselingsprobleem
+1b. Open vraag (3p, max. 50 woorden)
+Leg uit waarom jouw antwoord bij 1a het best past bij deze casus.
+1c. Enkelvoudige meerkeuzevraag (2p)
+Welk voorbeeld hoort klassiek bij een shuntmechanisme?
+A. Longembolie
+B. Pneumonie
+C. Asbestose
+D. Silicose
+1d. Matrixvraag (4p)
+Koppel het mechanisme aan het best passende voorbeeld.
+Diffusiestoornis
+Dode ruimte
+Shunt
+Hypoventilatie
+Antwoordopties:
+A. Pneumonie
+B. Longembolie
+C. Propofol/sedatie
+D. Longfibrose
+1e. Enkelvoudige meerkeuzevraag (2p)
+Bij welk mechanisme helpt extra zuurstof vaak relatief goed?
+A. Diffusiestoornis
+B. Volledige shunt
+C. Dode ruimte nooit
+D. Geen van bovenstaande
+Casus 2 – Hyperkaliëmie bij chronische nierschade
+Een 74-jarige man met chronische nierschade en hartfalen wordt op de spoedeisende hulp gezien na controlelab. Medicatie: lisinopril, spironolacton, furosemide, metoprolol. Hij voelt zich wat slap, maar heeft geen thoracale pijn.
+Laboratorium
+ECG-beschrijving: spitse T-toppen.
+2a. Enkelvoudige meerkeuzevraag (2p)
+Wat is in deze situatie de belangrijkste acute bedreiging?
+A. Nefrotisch syndroom
+B. Hartritmestoornissen
+C. Pleurale infectie
+D. Hypertensieve encefalopathie
+2b. Enkelvoudige meerkeuzevraag (2p)
+Wat is de meest logische eerste acute medicamenteuze stap?
+A. Natriumbicarbonaat als enige therapie
+B. Calciumgluconaat
+C. Direct ACE-remmer ophogen
+D. Alleen dieetadvies
+2c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke stappen passen goed in de acute behandeling van ernstige hyperkaliëmie?
+A. Hartritmebewaking
+B. Insuline met glucose
+C. Overweeg dialyse bij onvoldoende diurese of ernstige nierfunctiestoornis
+D. Altijd direct alle RAAS-remming definitief staken
+E. Eerst zoeken naar de oorzaak, maar het myocard niet acuut beschermen
+2d. Open vraag (3p, max. 50 woorden)
+Waarom is “direct de RAAS-remmer stoppen” volgens de stof niet altijd de beste langetermijnreactie bij hyperkaliëmie?
+2e. Enkelvoudige meerkeuzevraag (2p)
+Welke valkuil moet je bij een verhoogde kaliumwaarde altijd overwegen?
+A. Pseudohyperkaliëmie
+B. Pseudohyponatriëmie
+C. Pseudoproteïnurie
+D. Pseudonefrotisch syndroom
+Casus 3 – Longkanker: stadiëring via beeldvorming
+Een 68-jarige man met forse rookanamnese ondergaat CT en PET/CT wegens een verdachte longafwijking.
+Beschreven beeldvraag
+CT-thorax toont een spiculaire massa van 7,4 cm in de rechter bovenkwab met doorgroei richting mediastinum. Er zijn FDG-avide ipsilaterale mediastinale en subcarinale klieren. Daarnaast is er een FDG-avide afwijking in de contralaterale long. Er zijn geen lever- of bijnierafwijkingen beschreven.
+3a. Enkelvoudige meerkeuzevraag (2p)
+Welk maligne beeldkenmerk wordt in de casus expliciet genoemd?
+A. Afgeplatte costofrenische hoek
+B. Spiculae
+C. Lucht-vloeistofspiegel
+D. Ground glass zonder solide component
+3b. Open vraag (4p, max. 100 woorden)
+Bepaal de meest waarschijnlijke globale TNM-classificatie op basis van de beschreven beeldvorming en licht kort toe.
+3c. Enkelvoudige meerkeuzevraag (2p)
+Wat is de grootste meerwaarde van PET/CT ten opzichte van alleen CT?
+A. PET/CT vervangt altijd weefseldiagnostiek
+B. PET/CT laat metabole activiteit zien naast anatomie
+C. PET/CT toont geen fout-positieven
+D. PET/CT is beter dan MRI voor hersenmetastasen
+3d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke uitspraken over PET/CT zijn correct?
+A. PET/CT kan fout-positief zijn bij infectie of ontsteking
+B. Kleine metastasen kunnen fout-negatief zijn
+C. Hersenmetastasen zijn op PET altijd goed zichtbaar
+D. Bij twijfel over klieren kan EBUS nuttig zijn
+E. CT geeft geen informatie over grootte of invasie
+3e. Enkelvoudige meerkeuzevraag (2p)
+Welke techniek is vooral geschikt voor het beoordelen en aanprikken van mediastinale klieren rond trachea en bronchiën?
+A. EBUS/EUS
+B. Urinecytologie
+C. Duplex nierarteriën
+D. Rectoscopie
+Casus 4 – Oedeem, schuimende urine en laag albumine
+Een 36-jarige vrouw presenteert zich met progressief enkeloedeem en schuimende urine. Geen koorts. Bloeddruk 148/92 mmHg.
+Laboratorium
+4a. Enkelvoudige meerkeuzevraag (2p)
+Welk syndroom past het best bij deze presentatie?
+A. Nefritisch syndroom
+B. Nefrotisch syndroom
+C. Tubulo-interstitiële nefritis
+D. Prerenale nierschade
+4b. Open vraag (3p, max. 50 woorden)
+Waarom helpt een albumine-infuus volgens de stof meestal niet goed tegen het oedeem bij nefrotisch syndroom?
+4c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke symptomatische behandelingen passen bij nefrotisch syndroom?
+A. Zoutbeperking
+B. Diuretica
+C. ACE-remmer of ARB om proteïnurie te remmen
+D. Sterke eiwitbeperking als standaard
+E. Statine overwegen bij dyslipidemie
+4d. Enkelvoudige meerkeuzevraag (2p)
+Bij welk subtype of welke situatie wordt profylactische antistolling volgens de stof relatief snel overwogen?
+A. Elke vorm van microhematurie
+B. Membraneuze nefropathie met zeer laag serumalbumine
+C. Prerenale dehydratie
+D. Isolerende cystitis
+4e. Enkelvoudige meerkeuzevraag (2p)
+Welk mechanisme ligt primair ten grondslag aan de proteïnurie van het nefrotisch syndroom?
+A. Podocytschade
+B. Urethra-obstructie
+C. Alleen hemolyse
+D. Longembolie
+Casus 5 – Jonge patiënt met ernstige hypertensie
+Een 29-jarige vrouw wordt verwezen wegens moeilijk instelbare hypertensie. Zij gebruikt al twee middelen. Ze heeft geregeld spierkrampen en voelt zich soms slap. Familieanamnese is negatief voor hypertensie. Lichamelijk onderzoek: bloeddruk 178/106 mmHg.
+Laboratorium
+5a. Enkelvoudige meerkeuzevraag (2p)
+Welke secundaire oorzaak is het meest waarschijnlijk?
+A. Primair hyperaldosteronisme
+B. Primaire hypertensie
+C. Viral bronchitis
+D. Pleurale infectie
+5b. Open vraag (3p, max. 50 woorden)
+Noem drie clues uit deze casus die een secundaire oorzaak van hypertensie waarschijnlijk maken.
+5c. Enkelvoudige meerkeuzevraag (2p)
+Welk patroon past klassiek bij primair hyperaldosteronisme?
+A. Hoog renine, laag aldosteron
+B. Hoog aldosteron, laag renine
+C. Hoog calcium, laag glucose
+D. Hoog CRP, laag Hb
+5d. Matrixvraag (4p)
+Koppel de oorzaak van secundaire hypertensie aan het best passende aanvullende onderzoek.
+Feochromocytoom
+Coarctatio aortae
+Renovasculaire hypertensie
+Cushing
+Antwoordopties:
+A. (Nor)metanefrines / CT-bijnier
+B. Bloeddrukverschil en echo doppler
+C. Duplex doppler / CT-angiografie
+D. 24-uurs urinecortisol
+5e. Enkelvoudige meerkeuzevraag (2p)
+Welk middel is bij bilaterale hyperplasie een logische behandeling volgens de stof?
+A. Spironolacton
+B. Hydrochloorthiazide als eerste keuze om hypokaliëmie te verbeteren
+C. Alleen nitrofurantoïne
+D. Calciumgluconaat als onderhoudstherapie
+Casus 6 – Pneumonie met pleuravocht: geïnfecteerd of niet?
+Een 67-jarige man ligt opgenomen met een bacteriële pneumonie. Ondanks antibiotica blijft hij koortsig en dyspnoïsch. Beeldvorming toont links basaal pleuravocht. Er wordt een pleurapunctie verricht.
+Pleuravochtanalyse
+6a. Enkelvoudige meerkeuzevraag (2p)
+Wat is op basis van deze gegevens het meest waarschijnlijk?
+A. Onschuldig transsudaat zonder verdere actie
+B. Pleurale infectie
+C. Enkel cardiogeen pleuravocht
+D. Pseudopleuravocht
+6b. Open vraag (3p, max. 50 woorden)
+Waarom is beeldvorming alleen niet genoeg om in deze situatie een pleurale infectie te bewijzen?
+6c. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke bevindingen zijn volgens de stof aanwijzingen voor een pleurale infectie?
+A. Lage pH, vooral < 7,2
+B. Laag glucose
+C. Positieve kweek van pleuravocht
+D. Alleen dyspneu zonder punctiegegevens
+E. Alleen een afgeplatte sinus op X-thorax
+6d. Enkelvoudige meerkeuzevraag (2p)
+Wat is een belangrijke behandelpijler bij pleurale infectie?
+A. Zoveel mogelijk geïnfecteerd vocht verwijderen, vaak met thoraxdrain
+B. Alleen zoutbeperking
+C. Alleen 1 gift amoxicilline
+D. Geen antibiotica nodig
+6e. Enkelvoudige meerkeuzevraag (2p)
+Welke algemene procedure wordt gebruikt om recidiverend pleuravocht tegen te gaan door de pleurale ruimte op te heffen?
+A. Pleurodese
+B. Lobectomie
+C. Dialyse
+D. Tracheostomie
+Casus 7 – Verhoogd creatinine na sport en supplementen
+Een 26-jarige krachtsporter laat via de huisarts bloed prikken “voor de zekerheid”. Hij voelt zich goed. Hij gebruikt creatine-monohydraat en eet vrijwel dagelijks grote porties lang gestoofd vlees. Geen klachten van oligurie, dyspneu of oedeem.
+Laboratorium
+7a. Enkelvoudige meerkeuzevraag (2p)
+Welke interpretatie is het meest passend?
+A. Verhoogd creatinine betekent altijd acute nierschade
+B. Er zijn hier ook niet-renale verklaringen voor het verhoogde creatinine mogelijk
+C. De afwezigheid van proteïnurie bewijst glomerulonefritis
+D. Dit past automatisch bij postrenale obstructie
+7b. Open vraag (3p, max. 50 woorden)
+Noem twee niet-renale oorzaken uit de stof die in deze casus het creatinine kunnen verhogen.
+7c. Enkelvoudige meerkeuzevraag (2p)
+Waarom is een eGFR op basis van CKD-EPI bij acute veranderingen beperkt bruikbaar?
+A. Omdat CKD-EPI alleen voor kinderen bedoeld is
+B. Omdat de formule een stabiele creatininewaarde veronderstelt
+C. Omdat ureum er niet in voorkomt
+D. Omdat de formule alleen geldt bij hematurie
+7d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke omstandigheden uit de stof kunnen serumcreatinine verhogen zonder dat er per se echte acute nierschade is?
+A. Creatine-inname
+B. Lang gekookt vlees
+C. Trimethoprim of cimetidine
+D. Urinelekkage in weefsel
+E. Elk verhoogd creatinine is altijd renaal
+7e. Enkelvoudige meerkeuzevraag (2p)
+Welk alternatief kan volgens de stof nuttig zijn als je denkt dat de nierfunctie intact is maar creatinine misleidend is?
+A. eGFR op basis van cystatine C
+B. Alleen CRP
+C. Alleen HbA1c
+D. Troponine
+Casus 8 – Zuur-baseanalyse op de SEH
+Een 58-jarige man presenteert zich met buikpijn, sufheid en snelle diepe ademhaling. Er is verdenking op metabole ontregeling.
+Laboratorium
+Bloedgas
+8a. Rekenvraag (4p)
+Bereken het anion gap.
+8b. Enkelvoudige meerkeuzevraag (2p)
+Welke primaire zuur-baseafwijking is het meest waarschijnlijk?
+A. Metabole acidose
+B. Metabole alkalose
+C. Respiratoire acidose
+D. Respiratoire alkalose
+8c. Open vraag (3p, max. 50 woorden)
+Leg uit wat een hoog anion gap in de kern betekent.
+8d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke oorzaken noemt de stof als passend bij een hoog anion gap metabole acidose?
+A. Lactaatacidose
+B. Keto-acidose
+C. Methanol
+D. Ernstige diarree als standaardvoorbeeld
+E. Nierinsufficiëntie
+8e. Enkelvoudige meerkeuzevraag (2p)
+Wanneer is bicarbonaatsuppletie volgens de stof vooral te overwegen?
+A. Altijd bij elke metabole acidose
+B. Nooit
+C. Bij zeer lage pH, ongeveer < 7–7,1
+D. Alleen bij hypertensie
+Casus 9 – Nierfunctiedaling met leukocyturie na medicatiewissel
+Een 47-jarige vrouw meldt zich met lichte koorts, moeheid en jeukende huidafwijkingen. Twee weken geleden is gestart met een protonpompremmer en NSAID’s. Zij heeft geen duidelijke mictieklachten.
+Laboratorium
+Urine
+9a. Enkelvoudige meerkeuzevraag (2p)
+Welke diagnose is het meest waarschijnlijk?
+A. Tubulo-interstitiële nefritis
+B. Simpele cystitis als enige verklaring
+C. Nefrotisch syndroom
+D. Longembolie
+9b. Open vraag (3p, max. 50 woorden)
+Waarom past in deze casus TIN beter dan een urineweginfectie?
+9c. Enkelvoudige meerkeuzevraag (2p)
+Welk mechanisme past het best bij TIN?
+A. Primaire immuunreactie tegen tubulus/interstitium
+B. Alleen postrenale obstructie
+C. Alleen glomerulaire basaalmembraanschade
+D. Louter verhoogde hydrostatische druk
+9d. Meerkeuzevraag, meerdere antwoorden mogelijk (3p)
+Welke middelen noemt de stof als bekende uitlokkende factoren voor TIN?
+A. Penicillines
+B. NSAID’s
+C. Protonpompremmers
+D. Immuun-checkpointremmers
+E. Alleen statines
+9e. Enkelvoudige meerkeuzevraag (2p)
+Wat is volgens de stof het belangrijkste verschil tussen ATN en TIN?
+A. ATN is vooral ischemisch/toxisch, TIN vooral immuun-gemedieerd
+B. TIN geeft nooit leukocyturie
+C. ATN geeft altijd nefrotisch syndroom
+D. Er is geen relevant verschil
+Hieronder staat het antwoordmodel met korte toelichting, puntenverdeling en een beoordelingssleutel voor de open vragen. De inhoud volgt de geüploade stof over respiratoire insufficiëntie, kalium- en zuur-basestoornissen, creatinine/acute nierschade, nefrotisch syndroom, secundaire hypertensie, pleuravocht en longkanker.
+Totaal
+113 punten
+Casus 1 – Dyspneu op de spoed: welk mechanisme?
+Totaal: 13 punten
+1a. B. Dode ruimte
+2p
+Korte toelichting: bij longembolie is er ventilatie zonder adequate perfusie, dus dode ruimte.
+1b. Open vraag
+3p
+Modelantwoord:
+“De casus past bij longembolie: acute dyspneu, thoracale pijn en recente operatie. Daarbij is er ventilatie van alveoli terwijl de perfusie lokaal wegvalt. Dat geeft een doderuimteprobleem.”
+Puntverdeling:
+1p: noemt acute context passend bij longembolie
+1p: noemt ventilatie zonder perfusie
+1p: koppelt dit expliciet aan dode ruimte
+1c. B. Pneumonie
+2p
+Korte toelichting: pneumonie past klassiek bij shunt/VQ-mismatch.
+1d. Matrixvraag
+4p
+1 → D
+2 → B
+3 → A
+4 → C
+Puntverdeling: 1p per juiste koppeling.
+1e. A. Diffusiestoornis
+2p
+Korte toelichting: bij diffusiestoornis helpt extra zuurstof vaak relatief goed; bij volledige shunt veel minder.
+Casus 2 – Hyperkaliëmie bij chronische nierschade
+Totaal: 12 punten
+2a. B. Hartritmestoornissen
+2p
+Korte toelichting: het grootste acute gevaar van ernstige hyperkaliëmie zijn ritmestoornissen.
+2b. B. Calciumgluconaat
+2p
+Korte toelichting: dit stabiliseert het myocard snel.
+2c. Juiste antwoorden: A, B, C
+3p
+Puntverdeling: 1p per juiste optie, geen negatieve punten.
+Korte toelichting: ritmebewaking, insuline-glucose en zo nodig dialyse passen bij ernstige hyperkaliëmie.
+2d. Open vraag
+3p
+Modelantwoord:
+“De stof benadrukt dat RAAS-remming niet reflexmatig direct moet worden gestopt. Eerst kijk je naar andere medicatie, dieet en aanvullende maatregelen zoals diuretica of kaliumbinders. Anders raken patiënten met een sterke indicatie onderbehandeld.”
+Puntverdeling:
+1p: noemt dat niet direct stoppen de voorkeur heeft
+1p: noemt eerst andere oorzaken/maatregelen aanpakken
+1p: noemt nadeel van onderbehandeling bij sterke indicatie
+2e. A. Pseudohyperkaliëmie
+2p
+Korte toelichting: altijd overwegen bij een verhoogde kaliumwaarde.
+Casus 3 – Longkanker: stadiëring via beeldvorming
+Totaal: 13 punten
+3a. B. Spiculae
+2p
+Korte toelichting: expliciet maligne beeldkenmerk.
+3b. Open vraag
+4p
+Modelantwoord:
+“Meest waarschijnlijk: T4N2M1a. T4 omdat de tumor >7 cm is en doorgroei richting mediastinum heeft. N2 door ipsilaterale mediastinale en subcarinale klieren. M1a omdat er een afwijking in de contralaterale long is.”
+Puntverdeling:
+1p: T4 correct
+1p: N2 correct
+1p: M1a correct
+1p: korte juiste toelichting
+3c. B. PET/CT laat metabole activiteit zien naast anatomie
+2p
+3d. Juiste antwoorden: A, B, D
+3p
+Puntverdeling: 1p per juiste optie.
+Korte toelichting: PET kent fout-positieven en fout-negatieven; EBUS kan nuttig zijn.
+3e. A. EBUS/EUS
+2p
+Casus 4 – Oedeem, schuimende urine en laag albumine
+Totaal: 12 punten
+4a. B. Nefrotisch syndroom
+2p
+Korte toelichting: oedeem, forse proteïnurie, hypoalbuminemie en hypercholesterolemie passen hierbij.
+4b. Open vraag
+3p
+Modelantwoord:
+“Volgens de stof is het kernprobleem niet vooral het lage albumine, maar sterke natrium- en waterretentie via eNaC. Daarom corrigeert een albumine-infuus het oedeem meestal niet goed.”
+Puntverdeling:
+1p: noemt dat laag albumine niet het hoofdprobleem is
+1p: noemt natrium- en waterretentie
+1p: noemt eNaC of equivalent mechanisme
+4c. Juiste antwoorden: A, B, C, E
+3p
+Puntverdeling: 0,75p per juiste optie.
+Korte toelichting: geen sterke eiwitbeperking als standaard.
+4d. B. Membraneuze nefropathie met zeer laag serumalbumine
+2p
+4e. A. Podocytschade
+2p
+Casus 5 – Jonge patiënt met ernstige hypertensie
+Totaal: 13 punten
+5a. A. Primair hyperaldosteronisme
+2p
+5b. Open vraag
+3p
+Modelantwoord:
+“Clues zijn de jonge leeftijd, moeilijk instelbare hypertensie, hypokaliëmie, spierkrampen en negatieve familie-anamnese. Dat maakt een secundaire oorzaak waarschijnlijker.”
+Puntverdeling:
+1p per goed genoemde clue
+max 3p
+5c. B. Hoog aldosteron, laag renine
+2p
+5d. Matrixvraag
+4p
+1 → A
+2 → B
+3 → C
+4 → D
+Puntverdeling: 1p per juiste koppeling.
+5e. A. Spironolacton
+2p
+Korte toelichting: bij bilaterale hyperplasie medicamenteus behandelen; thiaziden kunnen hypokaliëmie verergeren.
+Casus 6 – Pneumonie met pleuravocht: geïnfecteerd of niet?
+Totaal: 12 punten
+6a. B. Pleurale infectie
+2p
+Korte toelichting: lage pH, laag glucose en positieve kweek passen hierbij.
+6b. Open vraag
+3p
+Modelantwoord:
+“Beeldvorming toont alleen dat er pleuravocht aanwezig is. Je kunt op de foto niet zien of het vocht geïnfecteerd is. Daarvoor zijn punctiegegevens zoals pH, glucose en kweek nodig.”
+Puntverdeling:
+1p: beeldvorming toont wel vocht
+1p: beeldvorming bewijst geen infectie
+1p: noemt punctieanalyse/kweek/pH/glucose
+6c. Juiste antwoorden: A, B, C
+3p
+Puntverdeling: 1p per juiste optie.
+6d. A. Zoveel mogelijk geïnfecteerd vocht verwijderen, vaak met thoraxdrain
+2p
+6e. A. Pleurodese
+2p
+Casus 7 – Verhoogd creatinine na sport en supplementen
+Totaal: 12 punten
+7a. B. Er zijn hier ook niet-renale verklaringen voor het verhoogde creatinine mogelijk
+2p
+7b. Open vraag
+3p
+Modelantwoord:
+“Twee niet-renale oorzaken zijn creatine-inname en lang gekookt vlees. Beide kunnen het serumcreatinine verhogen zonder dat er per se echte acute nierschade is.”
+Puntverdeling:
+1,5p per juiste oorzaak
+max 3p
+7c. B. Omdat de formule een stabiele creatininewaarde veronderstelt
+2p
+7d. Juiste antwoorden: A, B, C, D
+3p
+Puntverdeling: 0,75p per juiste optie.
+7e. A. eGFR op basis van cystatine C
+2p
+Casus 8 – Zuur-baseanalyse op de SEH
+Totaal: 14 punten
+8a. Anion gap = 30
+Berekening: 140 - (100 + 10) = 30
+4p
+Puntverdeling:
+1p: juiste formule
+1p: juiste invulling
+2p: juiste uitkomst
+8b. A. Metabole acidose
+2p
+Korte toelichting: laag HCO₃⁻ en lage pH.
+8c. Open vraag
+3p
+Modelantwoord:
+“Een hoog anion gap betekent in de kern dat er extra zuur aanwezig is dat bicarbonaat heeft verbruikt. Het wijst dus meestal op ophoping van niet-gemeten zuren.”
+Puntverdeling:
+1p: extra zuur aanwezig
+1p: verbruik van bicarbonaat
+1p: niet-gemeten anionen/zuren
+8d. Juiste antwoorden: A, B, C, E
+3p
+Puntverdeling: 0,75p per juiste optie.
+Korte toelichting: diarree past juist typisch bij een normaal anion gap acidose.
+8e. C. Bij zeer lage pH, ongeveer < 7–7,1
+2p
+Casus 9 – Nierfunctiedaling met leukocyturie na medicatiewissel
+Totaal: 12 punten
+9a. A. Tubulo-interstitiële nefritis
+2p
+Korte toelichting: medicatie, huidafwijkingen, eosinofilie en leukocyturie zonder duidelijke UWI-klachten passen hierbij. Dit sluit aan op de week 1-stof over TIN als immuun-gemedieerde tubulo-interstitiële schade, vaak uitgelokt door geneesmiddelen zoals NSAID’s en protonpompremmers.
+9b. Open vraag
+3p
+Modelantwoord:
+“De combinatie van recent gestarte medicatie, huidafwijkingen, eosinofilie en het ontbreken van duidelijke mictieklachten past beter bij TIN dan bij een urineweginfectie.”
+Puntverdeling:
+1p: medicatie als trigger
+1p: huidafwijkingen/eosinofilie
+1p: ontbreken typische UWI-klachten
+9c. A. Primaire immuunreactie tegen tubulus/interstitium
+2p
+Korte toelichting: TIN is volgens de stof immuun-gemedieerd, in tegenstelling tot ATN dat vooral ischemisch of toxisch is.
+9d. Juiste antwoorden: A, B, C, D
+3p
+Puntverdeling: 0,75p per juiste optie.
+Korte toelichting: de stof noemt penicillines, NSAID’s, PPI’s en immuun-checkpointremmers als bekende oorzaken van TIN.
+9e. A. ATN is vooral ischemisch/toxisch, TIN vooral immuun-gemedieerd
+2p
+Parameter | Uitslag | Referentie
+Natrium | 137 mmol/L | 135–145
+Kalium | 6.8 mmol/L | 3.5–5.0
+Creatinine | 242 µmol/L | 60–110
+Ureum | 19.4 mmol/L | 3.0–8.0
+Bicarbonaat | 20 mmol/L | 22–29
+Glucose | 6.2 mmol/L | 4.0–7.8
+Parameter | Uitslag | Referentie
+Albumine | 18 g/L | 35–50
+Totaal cholesterol | verhoogd | normaal
+Creatinine | 102 µmol/L | 50–100
+Urine-eiwit | fors verhoogd | negatief/spoor
+Parameter | Uitslag | Referentie
+Kalium | 3.0 mmol/L | 3.5–5.0
+Natrium | 142 mmol/L | 135–145
+Creatinine | 81 µmol/L | 50–100
+Parameter | Uitslag
+pH | 7.08
+Glucose | laag
+Kweek | positief
+Parameter | Uitslag | Referentie
+Creatinine | 146 µmol/L | 60–110
+Ureum | 6.1 mmol/L | 3.0–8.0
+Kalium | 4.4 mmol/L | 3.5–5.0
+Natrium | 140 mmol/L | 135–145
+Urinestrip | geen bloed, geen eiwit | —
+Parameter | Uitslag | Referentie
+Natrium | 140 mmol/L | 135–145
+Chloride | 100 mmol/L | 98–107
+HCO₃⁻ | 10 mmol/L | 22–29
+Glucose | 24 mmol/L | 4.0–7.8
+Lactaat | licht verhoogd | normaal
+Ketonen | positief | negatief
+Parameter | Uitslag | Referentie
+pH | 7.18 | 7.35–7.45
+pCO₂ | verlaagd | normaal
+Parameter | Uitslag | Referentie
+Creatinine | 186 µmol/L | 50–100
+Eosinofielen | verhoogd | normaal
+CRP | licht verhoogd | <5
+Parameter | Uitslag
+Leukocyten | positief
+Nitriet | negatief
+Eiwit | spoor
+Erytrocyten | negatief
