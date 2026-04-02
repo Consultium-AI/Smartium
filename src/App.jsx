@@ -11,6 +11,7 @@ import ChatPage from './pages/ChatPage'
 import ExamPage from './pages/ExamPage'
 import LoginPage from './pages/LoginPage'
 import BillingPage from './pages/BillingPage'
+import ContentProtectionWrapper from './components/ContentProtectionWrapper'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -44,10 +45,10 @@ function App() {
       <div className="relative min-h-screen overflow-hidden bg-[#f8f9fb] dark:bg-gradient-to-b dark:from-[#0c1018] dark:via-[#0a0d12] dark:to-[#080b10] transition-colors duration-300">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/oefenvragen" element={<PracticeQuestionsPage />} />
-          <Route path="/summary" element={<SummaryPage />} />
+          <Route path="/oefenvragen" element={<ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper>} />
+          <Route path="/summary" element={<ContentProtectionWrapper><SummaryPage /></ContentProtectionWrapper>} />
           <Route path="/chat" element={<ChatPage />} />
-          <Route path="/tentamen" element={<ExamPage />} />
+          <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/billing" element={<BillingPage />} />
         </Routes>

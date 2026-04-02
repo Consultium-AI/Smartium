@@ -46,9 +46,11 @@ import {
   clearPracticeProgress,
 } from '../utils/accountProgressStorage'
 import { useAuth } from '../context/AuthContext'
+import { formatPracticeBlokSubtitle } from '../utils/blokRollupStats'
 import {
   PRACTICE_QUESTION_ORDER,
   practiceQuestionsCourseStructure,
+  getImagesFromMap,
   getLmeQuestionCount,
   getPracticeQuestionsForLme,
   getPracticeTitleForLme,
@@ -376,7 +378,9 @@ const PracticeQuestionsPage = () => {
                       <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok3.name}
                       </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok3)}
+                      </p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
@@ -461,7 +465,9 @@ const PracticeQuestionsPage = () => {
                       <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok4.name}
                       </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 6 casussen · 46 LME's</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok4)}
+                      </p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
@@ -572,7 +578,9 @@ const PracticeQuestionsPage = () => {
                       <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok5.name}
                       </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 47 LME&apos;s</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok5)}
+                      </p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
@@ -657,7 +665,9 @@ const PracticeQuestionsPage = () => {
                       <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                         {practiceQuestionsCourseStructure.blok9.name}
                       </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 47 LME&apos;s</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok9)}
+                      </p>
                     </div>
                   </div>
                   <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />

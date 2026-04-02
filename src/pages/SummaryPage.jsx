@@ -5,6 +5,7 @@ import {
   GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers
 } from 'lucide-react'
 import { useState } from 'react'
+import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
 import { FoetaleBeeldvormingSummary } from './summary/SummaryFoetaleBeeldvorming'
@@ -3187,7 +3188,9 @@ const SummaryPage = () => {
                   <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok3.name}
                   </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">1 week · 2 casussen · 4 LME's</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {formatSummaryBlokSubtitle(courseStructure.blok3)}
+                  </p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
@@ -3298,7 +3301,9 @@ const SummaryPage = () => {
                   <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok4.name}
                   </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">7 weken · 13 casussen · 46 LME's</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {formatSummaryBlokSubtitle(courseStructure.blok4)}
+                  </p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
@@ -3414,7 +3419,9 @@ const SummaryPage = () => {
                   <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok5.name}
                   </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 40 samenvattingen</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {formatSummaryBlokSubtitle(courseStructure.blok5)}
+                  </p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
@@ -3517,7 +3524,9 @@ const SummaryPage = () => {
                   <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                     {courseStructure.blok9.name}
                   </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">5 weken · 10 casussen · 46 samenvattingen</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {formatSummaryBlokSubtitle(courseStructure.blok9)}
+                  </p>
                 </div>
               </div>
               <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />

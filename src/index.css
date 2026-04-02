@@ -303,6 +303,43 @@ body {
   mix-blend-mode: soft-light;
 }
 
+/* Protected content — copy/print/screenshot guard */
+.protected-content {
+  position: relative;
+}
+
+.protected-content.blurred > *:not(.protection-overlay) {
+  filter: blur(30px) brightness(0.3);
+  pointer-events: none;
+  transition: filter 0.05s ease;
+}
+
+.protection-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #000;
+}
+
+.protected-content.blurred .protection-overlay {
+  display: block;
+}
+
+@media print {
+  .protected-content {
+    display: none !important;
+  }
+  body::after {
+    content: 'Printen is niet toegestaan.';
+    display: block;
+    text-align: center;
+    padding: 4rem;
+    font-size: 1.25rem;
+    color: #64748b;
+  }
+}
+
 @keyframes gradient-shift-hero {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
