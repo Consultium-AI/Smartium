@@ -303,29 +303,7 @@ body {
   mix-blend-mode: soft-light;
 }
 
-/* Protected content — copy/print/screenshot guard */
-.protected-content {
-  position: relative;
-}
-
-.protected-content.blurred > *:not(.protection-overlay) {
-  filter: blur(30px) brightness(0.3);
-  pointer-events: none;
-  transition: filter 0.05s ease;
-}
-
-.protection-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  background: #000;
-}
-
-.protected-content.blurred .protection-overlay {
-  display: block;
-}
-
+/* Protected content — copy/print guard */
 @media print {
   .protected-content {
     display: none !important;
