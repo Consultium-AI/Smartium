@@ -135,6 +135,7 @@ const LoginPage = () => {
     signIn,
     signUp,
     signOut,
+    requestPasswordReset,
     error,
     clearError,
     isFirebaseConfigured,
@@ -142,9 +143,11 @@ const LoginPage = () => {
 
   const [mode, setMode] = useState('login')
   const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [resetInfo, setResetInfo] = useState('')
 
   const fadeUp = reduceMotion
     ? { initial: false, animate: {} }
@@ -306,7 +309,7 @@ const LoginPage = () => {
         await signIn(email, password)
         navigate(postLoginPath, { replace: true })
       } else {
-        await signUp(email, password, name)
+        await signUp(email, password, name, username)
         navigate('/billing', { replace: true })
       }
     } catch {
@@ -319,6 +322,18 @@ const LoginPage = () => {
   const switchMode = (next) => {
     setMode(next)
     clearError()
+    setResetInfo('')
+  }
+
+  const handleForgotPassword = async () => {
+    clearError()
+    setResetInfo('')
+    try {
+      await requestPasswordReset(email)
+      setResetInfo('Als dit e-mailadres bestaat, is er een reset-link verstuurd.')
+    } catch {
+      /* error state from context */
+    }
   }
 
   const fieldVariants = {
@@ -530,34 +545,71 @@ const LoginPage = () => {
                 )}
               </AnimatePresence>
 
+              <AnimatePresence initial={false}>
+                {mode === 'register' && (
+                  <motion.label
+                    key="username-field"
+                    layout
+                    initial={reduceMotion ? false : { opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={reduceMotion ? undefined : { opacity: 0, height: 0 }}
+                    transition={{ duration: 0.28, ease }}
+                    className="block overflow-hidden"
+                  >
+                    <span className="mb-1.5 block text-xs font-medium text-navy-600 dark:text-slate-400">
+                      Gebruikersnaam <span className="text-rose-600 dark:text-rose-400">*</span>
+                    </span>
+                    <div className="relative">
+                      <span className={loginFieldIconWrap} aria-hidden>
+                        <User className="h-4 w-4" strokeWidth={2} />
+                      </span>
+                      <input
+                        type="text"
+                        required
+                        minLength={3}
+                        maxLength={24}
+                        autoComplete="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        className={loginInputClass}
+                        placeholder="bijv. smartiumsupport"
+                      />
+                    </div>
+                    <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                      3-24 tekens, letters/cijfers en . _ -
+                    </p>
+                  </motion.label>
+                )}
+              </AnimatePresence>
+
               <motion.label
-                custom={mode === 'register' ? 1 : 0}
+                custom={mode === 'register' ? 2 : 0}
                 variants={fieldVariants}
                 initial="hidden"
                 animate="show"
                 className="block"
               >
                 <span className="mb-1.5 block text-xs font-medium text-navy-600 dark:text-slate-400">
-                  E-mailadres
+                  {mode === 'login' ? 'E-mail of gebruikersnaam' : 'E-mailadres'}
                 </span>
                 <div className="relative">
                   <span className={loginFieldIconWrap} aria-hidden>
                     <Mail className="h-4 w-4" strokeWidth={2} />
                   </span>
                   <input
-                    type="email"
+                    type={mode === 'login' ? 'text' : 'email'}
                     required
-                    autoComplete="email"
+                    autoComplete={mode === 'login' ? 'username' : 'email'}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={loginInputClass}
-                    placeholder="naam@student.ru.nl"
+                    placeholder={mode === 'login' ? 'naam@student.ru.nl of gebruikersnaam' : 'naam@student.ru.nl'}
                   />
                 </div>
               </motion.label>
 
               <motion.label
-                custom={mode === 'register' ? 2 : 1}
+                custom={mode === 'register' ? 3 : 1}
                 variants={fieldVariants}
                 initial="hidden"
                 animate="show"
@@ -583,6 +635,18 @@ const LoginPage = () => {
                 </div>
               </motion.label>
 
+              {mode === 'login' && (
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={handleForgotPassword}
+                    className="text-xs font-semibold text-primary-600 transition hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  >
+                    Wachtwoord vergeten?
+                  </button>
+                </div>
+              )}
+
               <AnimatePresence>
                 {error && (
                   <motion.p
@@ -605,9 +669,23 @@ const LoginPage = () => {
                   </motion.p>
                 )}
               </AnimatePresence>
+              <AnimatePresence>
+                {resetInfo && !error && (
+                  <motion.p
+                    key={resetInfo}
+                    role="status"
+                    initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
+                    className="rounded-xl bg-emerald-50 px-3 py-2 text-sm text-emerald-800 dark:bg-emerald-950/30 dark:text-emerald-300"
+                  >
+                    {resetInfo}
+                  </motion.p>
+                )}
+              </AnimatePresence>
 
               <motion.div
-                custom={mode === 'register' ? 3 : 2}
+                custom={mode === 'register' ? 4 : 2}
                 variants={fieldVariants}
                 initial="hidden"
                 animate="show"

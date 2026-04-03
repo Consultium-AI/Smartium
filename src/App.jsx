@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import WaaromSmartium from './components/WaaromSmartium'
 import Features from './components/Features'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
@@ -12,6 +13,7 @@ import ExamPage from './pages/ExamPage'
 import ExamBlokPage from './pages/ExamBlokPage'
 import LoginPage from './pages/LoginPage'
 import BillingPage from './pages/BillingPage'
+import ProfileSettingsPage from './pages/ProfileSettingsPage'
 import ContentProtectionWrapper from './components/ContentProtectionWrapper'
 import PaidRoute from './components/PaidRoute'
 
@@ -22,6 +24,7 @@ const HomePage = () => (
     <Navbar />
     <main className="relative z-10">
       <Hero />
+      <WaaromSmartium />
       <Features />
       <CTA />
     </main>
@@ -55,6 +58,7 @@ function App() {
           <Route path="/tentamen-blok9" element={<PaidRoute><ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper></PaidRoute>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/billing" element={<BillingPage />} />
+          <Route path="/settings/profile" element={<ProfileSettingsPage />} />
         </Routes>
       </div>
     </Router>

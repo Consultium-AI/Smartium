@@ -92,6 +92,9 @@ async function handleCreateCheckoutSession(
 
   params.set('line_items[0][price]', priceId)
   params.set('line_items[0][quantity]', '1')
+  // Forceer factuur/paid-receipt flow voor betaalmethodes zoals iDEAL.
+  params.set('invoice_creation[enabled]', 'true')
+  params.set('invoice_creation[invoice_data][description]', `Smartium ${plan} toegang`)
 
   params.set('metadata[plan]', plan)
   if (body.customerUid) {
@@ -105,7 +108,11 @@ async function handleCreateCheckoutSession(
   }
 
   const email = body.customerEmail?.trim()
-  if (email) params.set('customer_email', email)
+  if (email) {
+    params.set('customer_email', email)
+    // Laat Stripe een betalingsbevestiging/receipt mailen naar de klant.
+    params.set('payment_intent_data[receipt_email]', email)
+  }
 
   const stripeRes = await fetch(STRIPE_API, {
     method: 'POST',
@@ -172,19 +179,39 @@ async function writeAccessToFirestore(
   uid: string,
   plan: string,
   sessionId: string,
-  email: string | null
-): Promise<void> {
+  email: string | null,
+  opts?: { mode?: 'extend' | 'sync'; paidUntilMs?: number }
+): Promise<number | null> {
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
   if (!projectId) {
     console.log('FIREBASE_PROJECT_ID not set, skipping Firestore write. Falling back to client-side access grant.')
-    return
+    return null
   }
 
+  const token = await getFirebaseAccessToken(env)
+  const docUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/users/${uid}`
   const now = Date.now()
-  const daysToAdd = plan === 'yearly' ? 365 : 30
-  const paidUntil = now + daysToAdd * 24 * 60 * 60 * 1000
+  const durationMs = (plan === 'yearly' ? 365 : 30) * 24 * 60 * 60 * 1000
+  const mode = opts?.mode || 'extend'
 
-  const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/users/${uid}?updateMask.fieldPaths=paidUntil&updateMask.fieldPaths=plan&updateMask.fieldPaths=lastPayment&updateMask.fieldPaths=email`
+  const existing = await fetchFirestoreUserDoc(docUrl, token)
+  const existingPaidUntil = readIntegerField(existing?.fields?.paidUntil)
+  const existingLastSessionId = readNestedStringField(existing?.fields, ['lastPayment', 'sessionId'])
+
+  let paidUntil: number
+  if (mode === 'sync') {
+    const target = Number(opts?.paidUntilMs) || 0
+    paidUntil = Math.max(existingPaidUntil, target)
+  } else {
+    // Idempotency for Stripe webhook retries or repeated grant-access calls.
+    if (sessionId && existingLastSessionId && existingLastSessionId === sessionId) {
+      return existingPaidUntil || null
+    }
+    const base = Math.max(now, existingPaidUntil)
+    paidUntil = base + durationMs
+  }
+
+  const url = `${docUrl}?updateMask.fieldPaths=paidUntil&updateMask.fieldPaths=plan&updateMask.fieldPaths=lastPayment&updateMask.fieldPaths=email&updateMask.fieldPaths=subscriptionStopped&updateMask.fieldPaths=billingReminderOptOut&updateMask.fieldPaths=subscriptionStoppedAt`
 
   const docData = {
     fields: {
@@ -200,19 +227,68 @@ async function writeAccessToFirestore(
         },
       },
       ...(email ? { email: { stringValue: email } } : {}),
+      subscriptionStopped: { booleanValue: false },
+      billingReminderOptOut: { booleanValue: false },
+      subscriptionStoppedAt: { nullValue: null },
     },
   }
 
   const firestoreRes = await fetch(url, {
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await getFirebaseAccessToken(env)}` },
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(docData),
   })
 
   if (!firestoreRes.ok) {
     const errText = await firestoreRes.text()
     console.error('Firestore write failed:', firestoreRes.status, errText)
+    return null
   }
+  return paidUntil
+}
+
+function readIntegerField(field: unknown): number {
+  if (!field || typeof field !== 'object') return 0
+  const v = (field as { integerValue?: string }).integerValue
+  const n = Number(v)
+  return Number.isFinite(n) ? n : 0
+}
+
+function readNestedStringField(
+  fields: Record<string, unknown> | undefined,
+  path: string[]
+): string {
+  if (!fields) return ''
+  let cursor: unknown = fields
+  for (let i = 0; i < path.length; i++) {
+    const key = path[i]
+    if (!cursor || typeof cursor !== 'object') return ''
+    const typed = cursor as Record<string, unknown>
+    if (i === 0) {
+      cursor = typed[key]
+      continue
+    }
+    cursor = (typed.mapValue as { fields?: Record<string, unknown> } | undefined)?.fields?.[key]
+  }
+  if (!cursor || typeof cursor !== 'object') return ''
+  return ((cursor as { stringValue?: string }).stringValue || '').trim()
+}
+
+async function fetchFirestoreUserDoc(
+  docUrl: string,
+  token: string
+): Promise<{ fields?: Record<string, unknown> } | null> {
+  const res = await fetch(docUrl, {
+    headers: { Authorization: `Bearer ${token}` },
+  })
+  if (res.status === 404) return null
+  if (!res.ok) {
+    const errText = await res.text()
+    console.error('Firestore read failed:', res.status, errText)
+    return null
+  }
+  const doc = (await res.json()) as { fields?: Record<string, unknown> }
+  return doc
 }
 
 async function getFirebaseAccessToken(env: Env): Promise<string> {
@@ -329,19 +405,19 @@ async function handleGrantAccess(request: Request, env: Env, origin: string): Pr
   const plan = metadata.plan || 'monthly'
   const now = Date.now()
   const daysToAdd = plan === 'yearly' ? 365 : 30
-  const paidUntil = now + daysToAdd * 24 * 60 * 60 * 1000
+  const paidUntilFallback = now + daysToAdd * 24 * 60 * 60 * 1000
 
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
   if (projectId) {
     try {
-      await writeAccessToFirestore(env, uid, plan, sid, (session.customer_email as string) || null)
-      return json(origin, { granted: true, paidUntil, plan })
+      const paidUntilStored = await writeAccessToFirestore(env, uid, plan, sid, (session.customer_email as string) || null)
+      return json(origin, { granted: true, paidUntil: paidUntilStored || paidUntilFallback, plan })
     } catch (e) {
       console.error('Firestore write in grant-access failed:', e)
     }
   }
 
-  return json(origin, { granted: true, paidUntil, plan })
+  return json(origin, { granted: true, paidUntil: paidUntilFallback, plan })
 }
 
 function escapeStripeSearchValue(value: string): string {
@@ -405,15 +481,20 @@ async function handleRecoverAccess(request: Request, env: Env, origin: string): 
   const sessionId = String(session.id || '')
   const customerEmail = String(session.customer_email || email || '')
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  let finalPaidUntil = paidUntil
   if (projectId) {
     try {
-      await writeAccessToFirestore(env, uid, plan, sessionId, customerEmail)
+      const synced = await writeAccessToFirestore(env, uid, plan, sessionId, customerEmail, {
+        mode: 'sync',
+        paidUntilMs: paidUntil,
+      })
+      if (synced && synced > finalPaidUntil) finalPaidUntil = synced
     } catch (e) {
       console.error('Firestore write in recover-access failed:', e)
     }
   }
 
-  return json(origin, { granted: true, paidUntil, plan, recovered: true })
+  return json(origin, { granted: true, paidUntil: finalPaidUntil, plan, recovered: true })
 }
 
 export default {

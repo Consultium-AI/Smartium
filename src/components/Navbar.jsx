@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import {
@@ -14,6 +14,7 @@ import {
   Moon,
   LogIn,
   LogOut,
+  Settings,
 } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
@@ -81,12 +82,44 @@ function userDisplayTitle(user) {
   return e || n || ''
 }
 
+function userInitials(user) {
+  const fromName = user?.displayName?.trim()
+  if (fromName) {
+    const parts = fromName.split(/\s+/).filter(Boolean)
+    return parts.slice(0, 2).map((p) => p[0]?.toUpperCase() || '').join('') || 'S'
+  }
+  const fromEmail = user?.email?.trim()
+  if (fromEmail) return fromEmail.charAt(0).toUpperCase()
+  return 'S'
+}
+
+function UserAvatar({ user, className = '' }) {
+  const photo = user?.photoURL?.trim()
+  if (photo) {
+    return (
+      <img
+        src={photo}
+        alt=""
+        aria-hidden
+        className={`rounded-full object-cover ${className}`}
+      />
+    )
+  }
+  return (
+    <span className={`inline-flex items-center justify-center rounded-full bg-slate-200 text-[11px] font-bold text-slate-700 dark:bg-slate-700 dark:text-slate-100 ${className}`}>
+      {userInitials(user)}
+    </span>
+  )
+}
+
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme()
   const { user, loading: authLoading, signOut } = useAuth()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState(null)
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
+  const profileMenuRef = useRef(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -99,12 +132,32 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false)
     setMobileExpanded(null)
+    setIsProfileMenuOpen(false)
   }, [location.pathname, location.search])
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [isMobileMenuOpen])
+
+  useEffect(() => {
+    if (!isProfileMenuOpen) return
+
+    const onPointerDown = (event) => {
+      if (!profileMenuRef.current?.contains(event.target)) {
+        setIsProfileMenuOpen(false)
+      }
+    }
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setIsProfileMenuOpen(false)
+    }
+    window.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isProfileMenuOpen])
 
   const pillClass = (href) => {
     const active = location.pathname === href
@@ -214,18 +267,56 @@ const Navbar = () => {
           {/* Right side */}
           <div className="flex items-center gap-1.5 sm:gap-2">
             {!authLoading && user && (
-              <div className="hidden items-center gap-2 sm:flex">
-                <span className="max-w-[12rem] truncate text-xs font-semibold text-navy-800 dark:text-slate-200" title={userDisplayTitle(user)}>
-                  {userDisplayLabel(user)}
-                </span>
+              <div ref={profileMenuRef} className="relative hidden sm:block">
                 <button
                   type="button"
-                  onClick={() => signOut()}
-                  className="flex h-9 items-center gap-1.5 rounded-full border border-slate-200/90 px-3 text-xs font-semibold text-navy-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+                  onClick={() => setIsProfileMenuOpen((o) => !o)}
+                  className="flex h-10 items-center gap-2 rounded-full border border-slate-200/90 bg-white/90 px-1.5 pr-2.5 text-xs font-semibold text-navy-700 shadow-sm transition hover:bg-white dark:border-slate-600 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-900"
+                  aria-expanded={isProfileMenuOpen}
+                  aria-haspopup="menu"
                 >
-                  <LogOut className="h-3.5 w-3.5" strokeWidth={2} />
-                  Uitloggen
+                  <UserAvatar user={user} className="h-7 w-7" />
+                  <span className="hidden max-w-[9rem] truncate md:block" title={userDisplayTitle(user)}>
+                    {userDisplayLabel(user)}
+                  </span>
+                  <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${isProfileMenuOpen ? 'rotate-180' : ''}`} strokeWidth={2} />
                 </button>
+
+                <AnimatePresence>
+                  {isProfileMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.16 }}
+                      role="menu"
+                      className="absolute right-0 top-full z-50 mt-2 w-60 rounded-xl border border-slate-200/90 bg-white p-1.5 shadow-lg dark:border-slate-600 dark:bg-slate-800"
+                    >
+                      <div className="px-2.5 pb-2 pt-1.5">
+                        <p className="truncate text-sm font-semibold text-navy-900 dark:text-white">{userDisplayLabel(user)}</p>
+                        <p className="truncate text-xs text-slate-500 dark:text-slate-400">{user.email || ''}</p>
+                      </div>
+                      <Link
+                        to="/settings/profile"
+                        role="menuitem"
+                        className="flex items-center gap-2 rounded-lg px-2.5 py-2 text-sm font-medium text-navy-700 transition hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700/80"
+                        onClick={() => setIsProfileMenuOpen(false)}
+                      >
+                        <Settings className="h-4 w-4" strokeWidth={2} />
+                        Profile settings
+                      </Link>
+                      <button
+                        type="button"
+                        role="menuitem"
+                        onClick={() => { setIsProfileMenuOpen(false); signOut() }}
+                        className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-sm font-medium text-rose-700 transition hover:bg-rose-50 dark:text-rose-300 dark:hover:bg-rose-950/30"
+                      >
+                        <LogOut className="h-4 w-4" strokeWidth={2} />
+                        Uitloggen
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
             {!authLoading && !user && (
@@ -337,12 +428,19 @@ const Navbar = () => {
                   )}
                   {!authLoading && user && (
                     <>
-                      <div className="px-4 py-2">
-                        <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">{userDisplayLabel(user)}</p>
-                        {user.email && user.displayName?.trim() && (
-                          <p className="truncate text-xs text-navy-500 dark:text-slate-500">{user.email}</p>
-                        )}
+                      <div className="flex items-center gap-3 px-4 py-2">
+                        <UserAvatar user={user} className="h-9 w-9 shrink-0" />
+                        <div className="min-w-0">
+                          <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">{userDisplayLabel(user)}</p>
+                          {user.email && (
+                            <p className="truncate text-xs text-navy-500 dark:text-slate-500">{user.email}</p>
+                          )}
+                        </div>
                       </div>
+                      <Link to="/settings/profile" className={mobileLinkClass('/settings/profile')}>
+                        <Settings className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
+                        Profile settings
+                      </Link>
                       <button
                         type="button"
                         onClick={() => { signOut(); setIsMobileMenuOpen(false) }}

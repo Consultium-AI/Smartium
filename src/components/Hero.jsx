@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
 const Hero = () => {
+  const { user } = useAuth()
+
   return (
     <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
       <div className="container-custom relative z-10">
@@ -57,7 +60,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4"
           >
             <Link
-              to="/billing"
+              to={user ? '/summary' : '/login'}
               className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-navy-900 text-white text-sm font-semibold tracking-wide dark:bg-white dark:text-navy-950 hover:bg-navy-800 dark:hover:bg-slate-100 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-colors"
             >
               Aan de slag

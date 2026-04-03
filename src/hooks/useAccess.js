@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import { recoverAccessForUser } from '../lib/billingApi'
 
 const LOCAL_KEY = 'smartium_access'
+const ADMIN_EMAILS = new Set(['smartiumsupport@gmail.com'])
 
 function readLocalAccess(uid) {
   try {
@@ -25,7 +26,12 @@ export function writeLocalAccess(uid, data) {
  * After successful payment, write paidUntil to both localStorage and Firestore.
  */
 export async function grantAccess(uid, paidUntil, plan) {
-  writeLocalAccess(uid, { paidUntil, plan })
+  writeLocalAccess(uid, {
+    paidUntil,
+    plan,
+    subscriptionStopped: false,
+    billingReminderOptOut: false,
+  })
 
   try {
     const { db, isFirebaseConfigured } = await import('../lib/firebase')
@@ -37,6 +43,8 @@ export async function grantAccess(uid, paidUntil, plan) {
       {
         paidUntil,
         plan,
+        subscriptionStopped: false,
+        billingReminderOptOut: false,
         updatedAt: serverTimestamp(),
       },
       { merge: true }
@@ -49,26 +57,91 @@ export async function grantAccess(uid, paidUntil, plan) {
 function resolveFromLocal(uid) {
   const local = readLocalAccess(uid)
   if (local?.paidUntil && local.paidUntil > Date.now()) {
-    return { hasAccess: true, loading: false, paidUntil: local.paidUntil, plan: local.plan }
+    return {
+      hasAccess: true,
+      loading: false,
+      paidUntil: local.paidUntil,
+      plan: local.plan,
+      subscriptionStopped: Boolean(local.subscriptionStopped || local.billingReminderOptOut),
+    }
   }
-  return { hasAccess: false, loading: false, paidUntil: null, plan: null }
+  return {
+    hasAccess: false,
+    loading: false,
+    paidUntil: null,
+    plan: local?.plan || null,
+    subscriptionStopped: Boolean(local?.subscriptionStopped || local?.billingReminderOptOut),
+  }
+}
+
+function isAdminEmail(email) {
+  return ADMIN_EMAILS.has((email || '').trim().toLowerCase())
+}
+
+function resolveAdminAccess() {
+  return { hasAccess: true, loading: false, paidUntil: null, plan: 'admin', subscriptionStopped: false }
+}
+
+export async function setSubscriptionStopped(uid, stopped, plan) {
+  const local = readLocalAccess(uid) || {}
+  writeLocalAccess(uid, {
+    ...local,
+    plan: local.plan || plan || null,
+    subscriptionStopped: Boolean(stopped),
+    billingReminderOptOut: Boolean(stopped),
+  })
+
+  try {
+    const { db, isFirebaseConfigured } = await import('../lib/firebase')
+    if (!isFirebaseConfigured || !db) return
+
+    const { doc, setDoc, serverTimestamp } = await import('firebase/firestore')
+    await setDoc(
+      doc(db, 'users', uid),
+      {
+        plan: local.plan || plan || null,
+        subscriptionStopped: Boolean(stopped),
+        billingReminderOptOut: Boolean(stopped),
+        subscriptionStoppedAt: stopped ? Date.now() : null,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    )
+  } catch (e) {
+    console.warn('[Smartium] Failed to persist subscription-stop status to Firestore:', e?.message)
+  }
 }
 
 export function useAccess() {
   const { user, loading: authLoading } = useAuth()
-  const [access, setAccess] = useState({ hasAccess: false, loading: true, paidUntil: null, plan: null })
+  const [access, setAccess] = useState({
+    hasAccess: false,
+    loading: true,
+    paidUntil: null,
+    plan: null,
+    subscriptionStopped: false,
+  })
 
   const refresh = useCallback(() => {
+    if (isAdminEmail(user?.email)) {
+      setAccess(resolveAdminAccess())
+      return
+    }
     if (user?.uid) {
       setAccess(resolveFromLocal(user.uid))
     }
-  }, [user?.uid])
+  }, [user?.uid, user?.email])
 
   useEffect(() => {
     if (authLoading) return
 
     if (!user?.uid) {
-      setAccess({ hasAccess: false, loading: false, paidUntil: null, plan: null })
+      setAccess({ hasAccess: false, loading: false, paidUntil: null, plan: null, subscriptionStopped: false })
+      return
+    }
+
+    if (isAdminEmail(user.email)) {
+      setAccess(resolveAdminAccess())
       return
     }
 
@@ -103,10 +176,11 @@ export function useAccess() {
           const data = snap.data()
           const paidUntil = Number(data.paidUntil) || 0
           const plan = data.plan || null
+          const subscriptionStopped = Boolean(data.subscriptionStopped || data.billingReminderOptOut)
           const hasAccess = paidUntil > Date.now()
-          if (hasAccess) {
-            writeLocalAccess(uid, { paidUntil, plan })
-            setAccess({ hasAccess: true, loading: false, paidUntil, plan })
+          writeLocalAccess(uid, { paidUntil, plan, subscriptionStopped, billingReminderOptOut: subscriptionStopped })
+          if (hasAccess || subscriptionStopped) {
+            setAccess({ hasAccess, loading: false, paidUntil: paidUntil || null, plan, subscriptionStopped })
             return
           }
         }
@@ -124,6 +198,7 @@ export function useAccess() {
               loading: false,
               paidUntil: Number(recovered.paidUntil) || null,
               plan: recovered.plan || null,
+              subscriptionStopped: false,
             })
           }
           return
@@ -153,9 +228,10 @@ export function useAccess() {
               const data = snap.data()
               const paidUntil = Number(data.paidUntil) || 0
               const plan = data.plan || null
+              const subscriptionStopped = Boolean(data.subscriptionStopped || data.billingReminderOptOut)
               const hasAccess = paidUntil > Date.now()
-              writeLocalAccess(uid, { paidUntil, plan })
-              setAccess({ hasAccess, loading: false, paidUntil, plan })
+              writeLocalAccess(uid, { paidUntil, plan, subscriptionStopped, billingReminderOptOut: subscriptionStopped })
+              setAccess({ hasAccess, loading: false, paidUntil, plan, subscriptionStopped })
             }
           },
           () => {}
@@ -173,5 +249,11 @@ export function useAccess() {
     }
   }, [user?.uid, user?.email, authLoading])
 
-  return { ...access, refresh }
+  const stopSubscription = useCallback(async () => {
+    if (!user?.uid) return
+    await setSubscriptionStopped(user.uid, true, access.plan)
+    setAccess((prev) => ({ ...prev, subscriptionStopped: true }))
+  }, [user?.uid, access.plan])
+
+  return { ...access, refresh, stopSubscription }
 }

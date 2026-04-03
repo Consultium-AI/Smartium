@@ -83,11 +83,16 @@ const Footer = () => {
             </p>
             <address className="not-italic text-sm text-navy-600 dark:text-slate-400 space-y-1.5 leading-relaxed">
               <p>
-                <a href="mailto:Smartium@gmail.com" className="hover:text-navy-900 dark:hover:text-white transition-colors">
-                  Smartium@gmail.com
+                <a href="mailto:SmartiumSupport@gmail.com" className="hover:text-navy-900 dark:hover:text-white transition-colors">
+                  SmartiumSupport@gmail.com
                 </a>
               </p>
               <p>Westerstraat 10</p>
+              <p>
+                <a href="tel:01036031123" className="hover:text-navy-900 dark:hover:text-white transition-colors">
+                  010 360 31123
+                </a>
+              </p>
               <p>3016DH Rotterdam</p>
               <p>Nederland</p>
             </address>

@@ -9,15 +9,17 @@ import {
 } from 'react'
 import {
   createUserWithEmailAndPassword,
+  fetchSignInMethodsForEmail,
   GoogleAuthProvider,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithCredential,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut as firebaseSignOut,
   updateProfile,
 } from 'firebase/auth'
-import { auth, isFirebaseConfigured } from '../lib/firebase'
+import { auth, db, isFirebaseConfigured } from '../lib/firebase'
 import { hydrateFromCloud, triggerCloudProgressSyncNow } from '../lib/cloudUserProgress'
 import { parseGoogleIdTokenPayload } from '../lib/googleOAuth'
 import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
@@ -81,6 +83,25 @@ function saveDemoUsers(users) {
   localStorage.setItem(DEMO_USERS_KEY, JSON.stringify(users))
 }
 
+function normalizeUsername(value) {
+  return (value || '').trim().toLowerCase()
+}
+
+function updateDemoUserProfile(currentUser, nextDisplayName, nextPhotoURL) {
+  const email = currentUser?.email?.toLowerCase()
+  if (!email) return
+  const users = readDemoUsers()
+  const updated = users.map((u) => {
+    if (u.email?.toLowerCase() !== email) return u
+    return {
+      ...u,
+      displayName: nextDisplayName ?? u.displayName ?? null,
+      photoURL: nextPhotoURL ?? u.photoURL ?? null,
+    }
+  })
+  saveDemoUsers(updated)
+}
+
 /**
  * @param {unknown} err
  * @param {boolean} [googleFlow] — true voor Google/GIS: `auth/invalid-credential` is dan geen e-mail/wachtwoord-fout
@@ -137,13 +158,38 @@ export function AuthProvider({ children }) {
 
   const clearError = useCallback(() => setError(null), [])
 
-  const signIn = useCallback(async (email, password) => {
+  const resolveEmailFromUsername = useCallback(async (usernameInput) => {
+    const usernameNormalized = normalizeUsername(usernameInput)
+    if (!usernameNormalized || !isFirebaseConfigured || !db) return null
+    try {
+      const { collection, getDocs, limit, query, where } = await import('firebase/firestore')
+      const q = query(
+        collection(db, 'users'),
+        where('usernameNormalized', '==', usernameNormalized),
+        limit(1)
+      )
+      const snap = await getDocs(q)
+      if (snap.empty) return null
+      const data = snap.docs[0].data() || {}
+      return typeof data.email === 'string' ? data.email.trim() : null
+    } catch {
+      return null
+    }
+  }, [])
+
+  const signIn = useCallback(async (identifier, password) => {
     setError(null)
+    const loginId = identifier?.trim() || ''
+
     if (!isFirebaseConfigured) {
       const users = readDemoUsers()
-      const found = users.find((u) => u.email.toLowerCase() === email.trim().toLowerCase())
+      const loginIdLower = loginId.toLowerCase()
+      const found = users.find((u) =>
+        u.email.toLowerCase() === loginIdLower ||
+        (u.username && normalizeUsername(u.username) === loginIdLower)
+      )
       if (!found || found.password !== password) {
-        setError('Onjuist e-mailadres of wachtwoord.')
+        setError('Onjuiste gebruikersnaam/e-mail of wachtwoord.')
         throw new Error('auth failed')
       }
       const sessionUser = {
@@ -151,6 +197,7 @@ export function AuthProvider({ children }) {
         email: found.email,
         displayName: found.displayName || null,
         photoURL: null,
+        username: found.username || null,
         isDemo: true,
       }
       writeDemoSession(sessionUser)
@@ -158,32 +205,60 @@ export function AuthProvider({ children }) {
       migrateGuestDataToUser('guest', sessionUser.uid)
       return
     }
+
     try {
-      await signInWithEmailAndPassword(auth, email.trim(), password)
+      const emailForAuth = loginId.includes('@')
+        ? loginId
+        : (await resolveEmailFromUsername(loginId))
+
+      if (!emailForAuth) {
+        setError('Onjuiste gebruikersnaam/e-mail of wachtwoord.')
+        throw new Error('unknown username')
+      }
+
+      await signInWithEmailAndPassword(auth, emailForAuth, password)
       clearLocalSession()
     } catch (err) {
       setError(firebaseAuthMessage(err))
       throw err
     }
-  }, [])
+  }, [resolveEmailFromUsername])
 
-  const signUp = useCallback(async (email, password, displayName) => {
+  const signUp = useCallback(async (email, password, displayName, username) => {
     setError(null)
+    const emailTrimmed = email.trim()
     const nameTrimmed = displayName?.trim() ?? ''
+    const usernameTrimmed = username?.trim() ?? ''
+    const usernameNormalized = normalizeUsername(usernameTrimmed)
+
     if (!nameTrimmed) {
       setError('Vul je naam in.')
       throw new Error('name required')
     }
+    if (!usernameTrimmed) {
+      setError('Vul een gebruikersnaam in.')
+      throw new Error('username required')
+    }
+    if (!/^[a-zA-Z0-9._-]{3,24}$/.test(usernameTrimmed)) {
+      setError('Gebruikersnaam: 3-24 tekens, alleen letters/cijfers en . _ -')
+      throw new Error('invalid username')
+    }
+
     if (!isFirebaseConfigured) {
       const users = readDemoUsers()
-      if (users.some((u) => u.email.toLowerCase() === email.trim().toLowerCase())) {
+      if (users.some((u) => u.email.toLowerCase() === emailTrimmed.toLowerCase())) {
         setError('Er bestaat al een account met dit e-mailadres.')
         throw new Error('exists')
       }
+      if (users.some((u) => normalizeUsername(u.username) === usernameNormalized)) {
+        setError('Deze gebruikersnaam is al in gebruik.')
+        throw new Error('username exists')
+      }
       const entry = {
-        email: email.trim(),
+        email: emailTrimmed,
         password,
         displayName: nameTrimmed,
+        username: usernameTrimmed,
       }
       saveDemoUsers([...users, entry])
       const sessionUser = {
@@ -191,6 +266,7 @@ export function AuthProvider({ children }) {
         email: entry.email,
         displayName: nameTrimmed,
         photoURL: null,
+        username: usernameTrimmed,
         isDemo: true,
       }
       writeDemoSession(sessionUser)
@@ -198,9 +274,44 @@ export function AuthProvider({ children }) {
       migrateGuestDataToUser('guest', sessionUser.uid)
       return
     }
+
     try {
-      const cred = await createUserWithEmailAndPassword(auth, email.trim(), password)
+      if (db) {
+        const { collection, getDocs, limit, query, where } = await import('firebase/firestore')
+        const q = query(
+          collection(db, 'users'),
+          where('usernameNormalized', '==', usernameNormalized),
+          limit(1)
+        )
+        const exists = await getDocs(q)
+        if (!exists.empty) {
+          setError('Deze gebruikersnaam is al in gebruik.')
+          throw new Error('username exists')
+        }
+      }
+
+      const methods = await fetchSignInMethodsForEmail(auth, emailTrimmed)
+      if (methods.length > 0) {
+        setError('Er bestaat al een account met dit e-mailadres.')
+        throw new Error('email exists')
+      }
+
+      const cred = await createUserWithEmailAndPassword(auth, emailTrimmed, password)
       await updateProfile(cred.user, { displayName: nameTrimmed })
+      if (db) {
+        const { doc, serverTimestamp, setDoc } = await import('firebase/firestore')
+        await setDoc(
+          doc(db, 'users', cred.user.uid),
+          {
+            email: emailTrimmed,
+            username: usernameTrimmed,
+            usernameNormalized,
+            displayName: nameTrimmed,
+            updatedAt: serverTimestamp(),
+          },
+          { merge: true }
+        )
+      }
       clearLocalSession()
     } catch (err) {
       setError(firebaseAuthMessage(err))
@@ -279,6 +390,63 @@ export function AuthProvider({ children }) {
     setUser(null)
   }, [])
 
+  const requestPasswordReset = useCallback(async (email) => {
+    setError(null)
+    const emailTrimmed = email?.trim() || ''
+    if (!emailTrimmed) {
+      setError('Vul eerst je e-mailadres in.')
+      throw new Error('email required')
+    }
+    if (!emailTrimmed.includes('@')) {
+      setError('Voor wachtwoord resetten heb je je e-mailadres nodig.')
+      throw new Error('email required for reset')
+    }
+    if (!isFirebaseConfigured || !auth) {
+      setError('Wachtwoord resetten is alleen beschikbaar met Firebase Authentication.')
+      throw new Error('no firebase')
+    }
+    try {
+      await sendPasswordResetEmail(auth, emailTrimmed)
+    } catch (err) {
+      setError(firebaseAuthMessage(err))
+      throw err
+    }
+  }, [])
+
+  const updateUserProfile = useCallback(async ({ displayName, photoURL }) => {
+    const nameTrimmed = displayName?.trim() || null
+    const photoTrimmed = photoURL?.trim() || null
+
+    if (!user) throw new Error('Niet ingelogd.')
+
+    if (!isFirebaseConfigured || user.isDemo) {
+      const merged = {
+        ...user,
+        displayName: nameTrimmed,
+        photoURL: photoTrimmed,
+      }
+      writeDemoSession(merged)
+      updateDemoUserProfile(user, nameTrimmed, photoTrimmed)
+      setUser(merged)
+      return merged
+    }
+
+    if (!auth?.currentUser) throw new Error('Geen actieve Firebase sessie.')
+
+    await updateProfile(auth.currentUser, {
+      displayName: nameTrimmed,
+      photoURL: photoTrimmed,
+    })
+
+    const merged = {
+      ...user,
+      displayName: nameTrimmed,
+      photoURL: photoTrimmed,
+    }
+    setUser(merged)
+    return merged
+  }, [user])
+
   const value = useMemo(
     () => ({
       user,
@@ -290,6 +458,8 @@ export function AuthProvider({ children }) {
       signInWithGoogleOAuth,
       signInWithGoogleFirebasePopup,
       signOut,
+      requestPasswordReset,
+      updateUserProfile,
       isFirebaseConfigured,
     }),
     [
@@ -302,6 +472,8 @@ export function AuthProvider({ children }) {
       signInWithGoogleOAuth,
       signInWithGoogleFirebasePopup,
       signOut,
+      requestPasswordReset,
+      updateUserProfile,
     ]
   )
 
