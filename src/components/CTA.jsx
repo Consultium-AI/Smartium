@@ -20,6 +20,13 @@ const INCLUDED = [
   'Smartium AI Chat',
 ]
 
+const FREE_INCLUDED = [
+  'Beperkte toegang tot samenvattingen',
+  'Beperkte toegang tot oefenvragen',
+  'Beperkte toegang tot tentamens',
+  'Beperkt aantal tokens voor Smartium AI Chat',
+]
+
 const Pricing = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
@@ -46,12 +53,47 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-10">
+          {/* Gratis */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.45, delay: 0.03, ease }}
+          >
+            <Link
+              to="/login"
+              className="group block h-full rounded-2xl border border-slate-200/90 bg-white/90 p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] transition-all hover:border-slate-300 hover:shadow-md dark:border-slate-600/60 dark:bg-[#141a24] dark:ring-1 dark:ring-white/[0.08] dark:hover:border-slate-500 dark:hover:ring-white/[0.12]"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Gratis
+              </p>
+              <p className="font-display text-3xl font-bold text-navy-900 dark:text-white mb-1">
+                {eur(0)}
+                <span className="text-base font-semibold text-slate-500 dark:text-slate-400">/maand</span>
+              </p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Start direct, zonder betaling</p>
+
+              <ul className="space-y-2.5 mb-6">
+                {FREE_INCLUDED.map((f) => (
+                  <li key={f} className="flex items-center gap-2.5 text-sm text-navy-700 dark:text-slate-300">
+                    <Check className="h-4 w-4 shrink-0 text-emerald-500" strokeWidth={2.5} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 dark:text-primary-400 group-hover:gap-3 transition-all">
+                Gratis starten
+                <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              </span>
+            </Link>
+          </motion.div>
+
           {/* Maandelijks */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, delay: 0.06, ease }}
+            transition={{ duration: 0.45, delay: 0.09, ease }}
           >
             <Link
               to="/billing?plan=monthly"
@@ -86,7 +128,7 @@ const Pricing = () => {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, delay: 0.12, ease }}
+            transition={{ duration: 0.45, delay: 0.15, ease }}
           >
             <Link
               to="/billing?plan=yearly"
