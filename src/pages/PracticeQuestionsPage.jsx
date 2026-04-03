@@ -837,8 +837,8 @@ const PracticeQuestionsPage = () => {
           </motion.div>
         )}
 
-        {/* Progress Bar + vragen (verborgen bij specifieke LME zonder vragen) */}
-        {(!lmeParam || lmeParam === 'alle-random' || totalQuestions > 0) && (
+        {/* Progress Bar + vragen (alleen tonen bij gekozen LME of alle-random) */}
+        {(lmeParam && (lmeParam === 'alle-random' || totalQuestions > 0)) && (
         <>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

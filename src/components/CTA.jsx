@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const ease = [0.25, 0.1, 0.25, 1]
 
@@ -30,6 +31,7 @@ const FREE_INCLUDED = [
 const Pricing = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
+  const { user } = useAuth()
 
   return (
     <section id="pricing" className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
@@ -96,7 +98,7 @@ const Pricing = () => {
             transition={{ duration: 0.45, delay: 0.09, ease }}
           >
             <Link
-              to="/billing?plan=monthly"
+              to={user ? '/summary' : '/login'}
               className="group block h-full rounded-2xl border border-slate-200/90 bg-white/90 p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] transition-all hover:border-slate-300 hover:shadow-md dark:border-slate-600/60 dark:bg-[#141a24] dark:ring-1 dark:ring-white/[0.08] dark:hover:border-slate-500 dark:hover:ring-white/[0.12]"
             >
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
@@ -131,7 +133,7 @@ const Pricing = () => {
             transition={{ duration: 0.45, delay: 0.15, ease }}
           >
             <Link
-              to="/billing?plan=yearly"
+              to={user ? '/summary' : '/login'}
               className="group relative block h-full rounded-2xl border-2 border-primary-400/70 bg-gradient-to-br from-primary-50/80 to-white p-7 shadow-md transition-all hover:shadow-lg dark:border-primary-500/50 dark:from-[#111827] dark:to-[#141a24]"
             >
               <span className="absolute right-4 top-4 rounded-full bg-primary-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
