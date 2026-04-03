@@ -1,11 +1,13 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 import { Loader2 } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { canFreePlanAccessRoute } from '../utils/freePlanAccess'
 
 export default function PaidRoute({ children }) {
+  const location = useLocation()
   const { user, loading: authLoading } = useAuth()
-  const { hasAccess, loading: accessLoading } = useAccess()
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
 
   if (authLoading || accessLoading) {
     return (
@@ -19,7 +21,10 @@ export default function PaidRoute({ children }) {
     return <Navigate to={`/login?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`} replace />
   }
 
-  if (!hasAccess) {
+  const hasPaidAccess = hasAccess && plan !== 'free'
+  const canUseFreePlanForRoute = canFreePlanAccessRoute(location.pathname, location.search)
+
+  if (!hasPaidAccess && !canUseFreePlanForRoute) {
     return <Navigate to="/billing" replace />
   }
 
