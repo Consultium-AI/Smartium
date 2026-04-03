@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { doc, onSnapshot } from 'firebase/firestore'
-import { db, isFirebaseConfigured } from '../lib/firebase'
 import { useAuth } from '../context/AuthContext'
 
 const LOCAL_KEY = 'smartium_access'
@@ -21,10 +19,14 @@ export function writeLocalAccess(uid, data) {
   } catch { /* quota */ }
 }
 
-/**
- * Returns { hasAccess, loading, paidUntil, plan }
- * Reads from Firestore `users/{uid}` doc. Falls back to localStorage.
- */
+function resolveFromLocal(uid) {
+  const local = readLocalAccess(uid)
+  if (local?.paidUntil && local.paidUntil > Date.now()) {
+    return { hasAccess: true, loading: false, paidUntil: local.paidUntil, plan: local.plan }
+  }
+  return { hasAccess: false, loading: false, paidUntil: null, plan: null }
+}
+
 export function useAccess() {
   const { user, loading: authLoading } = useAuth()
   const [access, setAccess] = useState({ hasAccess: false, loading: true, paidUntil: null, plan: null })
@@ -38,51 +40,52 @@ export function useAccess() {
     }
 
     const uid = user.uid
-    const local = readLocalAccess(uid)
-    if (local?.paidUntil && local.paidUntil > Date.now()) {
-      setAccess({ hasAccess: true, loading: false, paidUntil: local.paidUntil, plan: local.plan })
-    }
+    setAccess((prev) => ({ ...prev, ...resolveFromLocal(uid) }))
 
-    if (!isFirebaseConfigured || !db) {
-      if (local?.paidUntil && local.paidUntil > Date.now()) {
-        setAccess({ hasAccess: true, loading: false, paidUntil: local.paidUntil, plan: local.plan })
-      } else {
-        setAccess({ hasAccess: false, loading: false, paidUntil: null, plan: null })
-      }
-      return
-    }
+    let unsub = null
+    let cancelled = false
 
-    const ref = doc(db, 'users', uid)
-    const unsub = onSnapshot(
-      ref,
-      (snap) => {
-        if (snap.exists()) {
-          const data = snap.data()
-          const paidUntil = Number(data.paidUntil) || 0
-          const plan = data.plan || null
-          const hasAccess = paidUntil > Date.now()
-          writeLocalAccess(uid, { paidUntil, plan })
-          setAccess({ hasAccess, loading: false, paidUntil, plan })
-        } else {
-          const local2 = readLocalAccess(uid)
-          if (local2?.paidUntil && local2.paidUntil > Date.now()) {
-            setAccess({ hasAccess: true, loading: false, paidUntil: local2.paidUntil, plan: local2.plan })
-          } else {
-            setAccess({ hasAccess: false, loading: false, paidUntil: null, plan: null })
+    async function listenFirestore() {
+      try {
+        const { db, isFirebaseConfigured } = await import('../lib/firebase')
+        if (!isFirebaseConfigured || !db || cancelled) {
+          if (!cancelled) setAccess(resolveFromLocal(uid))
+          return
+        }
+
+        const { doc, onSnapshot } = await import('firebase/firestore')
+        const ref = doc(db, 'users', uid)
+
+        unsub = onSnapshot(
+          ref,
+          (snap) => {
+            if (cancelled) return
+            if (snap.exists()) {
+              const data = snap.data()
+              const paidUntil = Number(data.paidUntil) || 0
+              const plan = data.plan || null
+              const hasAccess = paidUntil > Date.now()
+              writeLocalAccess(uid, { paidUntil, plan })
+              setAccess({ hasAccess, loading: false, paidUntil, plan })
+            } else {
+              if (!cancelled) setAccess(resolveFromLocal(uid))
+            }
+          },
+          () => {
+            if (!cancelled) setAccess(resolveFromLocal(uid))
           }
-        }
-      },
-      () => {
-        const local2 = readLocalAccess(uid)
-        if (local2?.paidUntil && local2.paidUntil > Date.now()) {
-          setAccess({ hasAccess: true, loading: false, paidUntil: local2.paidUntil, plan: local2.plan })
-        } else {
-          setAccess({ hasAccess: false, loading: false, paidUntil: null, plan: null })
-        }
+        )
+      } catch {
+        if (!cancelled) setAccess(resolveFromLocal(uid))
       }
-    )
+    }
 
-    return () => unsub()
+    listenFirestore()
+
+    return () => {
+      cancelled = true
+      if (unsub) unsub()
+    }
   }, [user?.uid, authLoading])
 
   return access
