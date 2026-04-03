@@ -7,7 +7,9 @@ export default function Sect09LevenNaDeDood() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Hoe kan iemand na zijn of haar dood nog een belang hebben?  Mini-antwoord: Door critical interests: fundamentele waarden en wensen kunnen doorwerken na overlijden.
+          Aandachtsvraag: Hoe kan iemand na zijn of haar dood nog een belang hebben?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Door critical interests: fundamentele waarden en wensen kunnen doorwerken na overlijden.
         </p>
       </div>
     </div>

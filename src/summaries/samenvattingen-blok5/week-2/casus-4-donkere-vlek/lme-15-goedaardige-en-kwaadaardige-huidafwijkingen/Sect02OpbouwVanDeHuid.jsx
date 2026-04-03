@@ -18,7 +18,9 @@ export default function Sect02OpbouwVanDeHuid() {
         subcutis bestaat vooral uit vetweefsel.
       </p>
       <p>
-        <strong>Aandachtsvraag:</strong> Wat is de belangrijkste functie van de opperhuid? Mini-antwoord: Bescherming van
+        <strong>Aandachtsvraag:</strong> Wat is de belangrijkste functie van de opperhuid?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Bescherming van
         de huid, onder andere tegen uitdroging.
       </p>
     </div>

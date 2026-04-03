@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { 
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
-  RotateCcw, Trophy, Target, BookOpen, Shuffle,
+  RotateCcw, Trophy, Target, BookOpen,
   CheckCircle, XCircle, ArrowLeft,
   Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles
 } from 'lucide-react'
@@ -248,13 +248,13 @@ const PracticeQuestionsPage = () => {
       <Navbar />
       <div className="h-20" />
 
-      <main className="container-custom py-8 md:py-12">
+      <main className={`container-custom ${lmeParam ? 'py-10 md:py-16' : 'py-8 md:py-12'}`}>
         {/* Back to Summary / Overzicht */}
         {lmeParam && (
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-6 max-w-3xl mx-auto"
+            className="mb-8 md:mb-10 max-w-3xl mx-auto"
           >
             <Link
               to={lmeParam === 'alle-random' ? '/oefenvragen' : `/summary?lme=${lmeParam}`}
@@ -272,12 +272,12 @@ const PracticeQuestionsPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-center mb-8 ${!lmeParam ? 'max-w-3xl mx-auto' : ''}`}
+          className={`text-center ${lmeParam ? 'mb-10 md:mb-14 max-w-3xl mx-auto space-y-4' : 'mb-8 max-w-3xl mx-auto'}`}
         >
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
+          <h1 className={`text-3xl font-bold text-slate-900 dark:text-slate-50 tracking-tight ${lmeParam ? 'mb-3' : 'mb-1'}`}>
             {getPracticeTitleForLme(lmeParam)} <span className="text-accent-500 dark:text-accent-400">Oefenvragen</span>
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
+          <p className={`text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto ${lmeParam ? 'leading-relaxed' : ''}`}>
             {getPracticeSubtitleForLme(lmeParam)}
           </p>
           {lmeParam === 'blok5-week2-casus4-systemische-therapie-van-melanoom' && (
@@ -368,12 +368,6 @@ const PracticeQuestionsPage = () => {
           {lmeParam === 'blok5-week8-casus15-scylla-en-charybdis' && (
             <Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro />
           )}
-          {lmeParam && lmeParam !== 'alle-random' && progressHydrated && progressUserId && (
-            <p className="mt-2 text-xs text-slate-500 dark:text-slate-500 max-w-lg mx-auto">
-              Voortgang wordt automatisch bewaard per account (lokaal op dit apparaat).
-            </p>
-          )}
-
           {!lmeParam && (
             <div className="mt-8 space-y-4 text-left">
               {/* Blok 3 */}
@@ -775,32 +769,12 @@ const PracticeQuestionsPage = () => {
                   )}
                 </AnimatePresence>
               </div>
-
-              <Link to="/oefenvragen?lme=alle-random" className="block mt-2">
-                <div className="bg-gradient-to-r from-accent-50 to-primary-50 dark:from-accent-500/10 dark:to-primary-500/10 rounded-2xl border-2 border-accent-200/90 dark:border-accent-500/25 hover:border-accent-400 dark:hover:border-accent-400/40 p-6 transition-all hover:shadow-md dark:hover:shadow-accent-950/20">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-4 min-w-0">
-                      <div className="p-3 bg-accent-200/90 dark:bg-accent-500/20 rounded-xl shrink-0">
-                        <Shuffle className="w-6 h-6 text-accent-800 dark:text-accent-300" />
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Oefen alle vragen random</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">
-                          Alle meerkeuzevragen in willekeurige volgorde – ideaal voor examentraining
-                        </p>
-                      </div>
-                    </div>
-                    <ChevronRight className="w-6 h-6 text-accent-600 dark:text-accent-400 shrink-0" />
-                  </div>
-                </div>
-              </Link>
             </div>
           )}
         </motion.div>
 
         {lmeParam &&
           lmeParam !== 'alle-random' &&
-          lmeParam !== 'blok5-week4-casus7-flebologische-aandoeningen' &&
           totalQuestions === 0 && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -822,7 +796,7 @@ const PracticeQuestionsPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl mx-auto mb-8"
+          className={`max-w-3xl mx-auto ${lmeParam ? 'mb-10' : 'mb-8'}`}
         >
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-4">
@@ -859,7 +833,7 @@ const PracticeQuestionsPage = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="mb-8 max-w-3xl mx-auto overflow-y-auto"
+          className={`max-w-3xl mx-auto overflow-y-auto ${lmeParam ? 'mb-10' : 'mb-8'}`}
           style={{ maxHeight: 'calc(3 * (2.25rem + 0.5rem))' }}
         >
           <div className="flex flex-wrap justify-center gap-2">

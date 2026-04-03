@@ -29,8 +29,11 @@ export default function Sect06NietGenetischeFactoren() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Waarom kan
-          ziekteactiviteit na de bevalling toenemen?{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Omdat de hoge
+          ziekteactiviteit na de bevalling toenemen?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Omdat de hoge
           hormonale bescherming wegvalt en autoreactieve B- en T-cellen weer actiever kunnen worden.
         </p>
       </div>

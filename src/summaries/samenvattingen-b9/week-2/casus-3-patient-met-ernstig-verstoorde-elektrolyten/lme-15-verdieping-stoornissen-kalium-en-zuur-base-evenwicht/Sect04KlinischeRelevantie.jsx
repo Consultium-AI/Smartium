@@ -11,7 +11,9 @@ export default function Sect04KlinischeRelevantie() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Bij welke patiënten zie je deze hypokaliëmie minder vaak?  Mini-antwoord: Bij patiënten met slecht of niet-functionerende nieren en bij patiënten die protonpompremmers gebruiken.
+          Aandachtsvraag: Bij welke patiënten zie je deze hypokaliëmie minder vaak?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Bij patiënten met slecht of niet-functionerende nieren en bij patiënten die protonpompremmers gebruiken.
         </p>
       </div>
     </div>

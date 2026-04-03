@@ -53,7 +53,6 @@ const navItems = [
     icon: GraduationCap,
     subGroups: [
       { label: 'Ba1', links: [
-        { name: 'Blok 4', href: '/tentamen' },
         { name: 'Blok 5', href: '/tentamen-blok5' },
       ]},
       { label: 'Ba2', links: [

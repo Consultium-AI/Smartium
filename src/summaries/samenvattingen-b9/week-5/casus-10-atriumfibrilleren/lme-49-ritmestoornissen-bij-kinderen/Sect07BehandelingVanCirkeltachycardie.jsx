@@ -19,7 +19,9 @@ export default function Sect07BehandelingVanCirkeltachycardie() {
         Bij een kind in shock is de eerste behandeling geen adenosine maar elektrische cardioversie. Dat geldt ook als adenosine niet direct beschikbaar is.
       </p>
       <p>
-        <span className="font-semibold">Aandachtvraag:</span> waarom moet adenosine snel en in een groot vat worden gegeven?{`  `}*Mini-antwoord: omdat het een zeer korte halfwaardetijd heeft en anders al uitgewerkt is voordat het het hart bereikt.*
+        <span className="font-semibold">Aandachtvraag:</span> waarom moet adenosine snel en in een groot vat worden gegeven?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}<em>omdat het een zeer korte halfwaardetijd heeft en anders al uitgewerkt is voordat het het hart bereikt.</em>
       </p>
     </div>
   )

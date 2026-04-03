@@ -168,7 +168,7 @@ function ExamBlokSelection({ blok }) {
         >
           Cijfer op basis van gehaalde punten ({Math.round(0.55 * 100)}% = 5,5) ·{' '}
           <Link to="/tentamen" className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
-            Oefententamens Blok 4
+            Overzicht oefententamens
           </Link>
         </motion.p>
       </main>

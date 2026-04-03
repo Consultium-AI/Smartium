@@ -25,8 +25,11 @@ export default function Sect05ZesOorspronkelijkHallmark1en2() {
       </p>
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
-          <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Wat gebeurt er als p53 uitvalt?{' '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Dan kan de cel minder goed stoppen of
+          <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Wat gebeurt er als p53 uitvalt?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Dan kan de cel minder goed stoppen of
           afbreken bij DNA-schade, waardoor kankercellen makkelijker blijven overleven.
         </p>
       </div>

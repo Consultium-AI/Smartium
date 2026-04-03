@@ -60,7 +60,9 @@ export default function Sect05PSIEnRisicoklassen() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Waarom gebruiken we deze scores?  Mini-antwoord: Om de ernst en overlijdenskans in te schatten, zodat behandeling en opnamemaatregelen beter gekozen kunnen worden.
+          Aandacht-vraagje: Waarom gebruiken we deze scores?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Om de ernst en overlijdenskans in te schatten, zodat behandeling en opnamemaatregelen beter gekozen kunnen worden.
         </p>
       </div>
     </div>

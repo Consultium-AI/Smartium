@@ -78,7 +78,9 @@ export default function Sect11KeuzeMethodeTabel2() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is peritoneale dialyse niet voor iedereen geschikt?  Kort antwoord: Omdat eerdere buikoperaties, een zwakke buikwand, ernstige longziekte, ernstig overgewicht of inflammatoire darmziekte een probleem kunnen zijn.
+          Aandachtsvraag: Waarom is peritoneale dialyse niet voor iedereen geschikt?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Omdat eerdere buikoperaties, een zwakke buikwand, ernstige longziekte, ernstig overgewicht of inflammatoire darmziekte een probleem kunnen zijn.
         </p>
       </div>
     </div>

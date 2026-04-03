@@ -78,7 +78,9 @@ export default function Sect08AanvullendOnderzoek() {
         een CT-scan wel waardevolle informatie geven.
       </p>
       <p>
-        Aandacht-vraagje: Waarom is beeldvorming vaak niet de eerste stap?{`  `}Mini-antwoord: Omdat het tijd kost en de
+        Aandacht-vraagje: Waarom is beeldvorming vaak niet de eerste stap?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat het tijd kost en de
         behandeling bij sterke verdenking meteen moet beginnen.
       </p>
     </div>

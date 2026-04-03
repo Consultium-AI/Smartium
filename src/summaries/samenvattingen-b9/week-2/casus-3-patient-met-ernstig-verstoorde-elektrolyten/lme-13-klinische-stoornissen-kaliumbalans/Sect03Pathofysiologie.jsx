@@ -17,7 +17,9 @@ export default function Sect03Pathofysiologie() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtvraag: Wat is een belangrijke valkuil bij een verhoogde kaliumwaarde?  Mini-antwoord: Denk aan pseudohyperkaliëmie, bijvoorbeeld door problemen met de bloedafname of het monster.
+          Aandachtvraag: Wat is een belangrijke valkuil bij een verhoogde kaliumwaarde?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Denk aan pseudohyperkaliëmie, bijvoorbeeld door problemen met de bloedafname of het monster.
         </p>
       </div>
     </div>

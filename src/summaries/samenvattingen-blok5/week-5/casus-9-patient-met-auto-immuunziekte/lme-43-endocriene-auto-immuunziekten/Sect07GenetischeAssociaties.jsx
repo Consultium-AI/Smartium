@@ -12,8 +12,9 @@ export default function Sect07GenetischeAssociaties() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtspunt:</strong> Waarom is de thymus
-          hier belangrijk?{'  '}
-          *Kort antwoord:* omdat daar de negatieve selectie van autoreactieve T-cellen plaatsvindt; minder
+          hier belangrijk?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}omdat daar de negatieve selectie van autoreactieve T-cellen plaatsvindt; minder
           insuline-expressie in de thymus kan deze selectie verstoren.
         </p>
       </div>

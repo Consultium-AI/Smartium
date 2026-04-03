@@ -44,7 +44,9 @@ export default function Sect03TweeKlassiekeBenaderingen() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Wat is het eenvoudigste verschil tussen deontologisch en teleologisch denken?  Mini-antwoord: Deontologie kijkt naar plicht en norm; teleologie kijkt naar het gevolg en de uitkomst.
+          Aandachtsvraag: Wat is het eenvoudigste verschil tussen deontologisch en teleologisch denken?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Deontologie kijkt naar plicht en norm; teleologie kijkt naar het gevolg en de uitkomst.
         </p>
       </div>
     </div>

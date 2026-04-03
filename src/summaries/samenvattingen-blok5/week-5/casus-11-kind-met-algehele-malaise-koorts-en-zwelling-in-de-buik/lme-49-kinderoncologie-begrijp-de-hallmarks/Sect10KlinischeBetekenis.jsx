@@ -14,8 +14,11 @@ export default function Sect10KlinischeBetekenis() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Waarom is dit model zo bruikbaar in de
-          oncologie?{' '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Omdat het laat zien op welke
+          oncologie?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Omdat het laat zien op welke
           biologische eigenschappen van de tumor behandeling kan worden gericht.
         </p>
       </div>

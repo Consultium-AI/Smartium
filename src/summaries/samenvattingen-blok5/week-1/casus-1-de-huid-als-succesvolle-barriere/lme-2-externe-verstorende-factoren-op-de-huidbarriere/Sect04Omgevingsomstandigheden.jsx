@@ -54,8 +54,9 @@ export default function Sect04Omgevingsomstandigheden() {
         van collageen.
       </p>
       <p>
-        <span className="font-semibold">Aandacht:</span> waarom is een lage luchtvochtigheid ongunstig voor de huid?{`  `}
-        Mini-antwoord: doordat de huid meer water verliest en droger en gevoeliger wordt.
+        <span className="font-semibold">Aandacht:</span> waarom is een lage luchtvochtigheid ongunstig voor de huid?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}doordat de huid meer water verliest en droger en gevoeliger wordt.
       </p>
     </div>
   )

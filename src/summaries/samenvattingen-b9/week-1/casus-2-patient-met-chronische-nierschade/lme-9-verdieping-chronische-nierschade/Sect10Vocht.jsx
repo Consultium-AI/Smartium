@@ -13,7 +13,9 @@ export default function Sect10Vocht() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          <em>Is “meer drinken” dus altijd goed bij chronische nierschade?</em>  Kort antwoord: nee. Voldoende drinken is meestal prima, maar het is geen bewezen behandeling om de nierfunctie te beschermen, en soms is juist vochtbeperking nodig.
+          <em>Is “meer drinken” dus altijd goed bij chronische nierschade?</em></p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}nee. Voldoende drinken is meestal prima, maar het is geen bewezen behandeling om de nierfunctie te beschermen, en soms is juist vochtbeperking nodig.
         </p>
       </div>
     </div>

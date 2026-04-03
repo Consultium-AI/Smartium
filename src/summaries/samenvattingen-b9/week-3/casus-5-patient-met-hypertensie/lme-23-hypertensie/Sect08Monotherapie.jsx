@@ -7,7 +7,9 @@ export default function Sect08Monotherapie() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Waarom zijn combinaties van middelen vaak nodig?  Mini-antwoord: Omdat hypertensie door meerdere mechanismen tegelijk ontstaat, en één middel meestal maar op één mechanisme aangrijpt.
+          Aandacht-vraagje: Waarom zijn combinaties van middelen vaak nodig?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat hypertensie door meerdere mechanismen tegelijk ontstaat, en één middel meestal maar op één mechanisme aangrijpt.
         </p>
       </div>
     </div>

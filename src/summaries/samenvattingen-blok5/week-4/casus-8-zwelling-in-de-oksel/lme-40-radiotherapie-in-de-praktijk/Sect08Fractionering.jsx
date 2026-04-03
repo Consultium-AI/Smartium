@@ -9,7 +9,9 @@ export default function Sect08Fractionering() {
         heten. Meestal zijn dit doses van rond de 2 Gy.
       </p>
       <p>
-        Aandachtsvraag: Waarom wordt bestraling in fracties gegeven?{`  `}Antwoord: Omdat gezonde cellen tussen de
+        Aandachtsvraag: Waarom wordt bestraling in fracties gegeven?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Antwoord:</span>{' '}Omdat gezonde cellen tussen de
         fracties de kans krijgen om te herstellen, terwijl tumorcellen juist minder goed kunnen herstellen.
       </p>
     </div>

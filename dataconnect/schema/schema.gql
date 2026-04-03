@@ -1,0 +1,58 @@
+type User @table {
+  authId: String!
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  photoUrl: String
+  studyYear: Int
+  specializationInterest: String
+}
+
+type Course @table {
+  name: String!
+  courseCode: String!
+  createdAt: Timestamp!
+  description: String
+  department: String
+}
+
+type StudyMaterial @table {
+  user: User!
+  course: Course
+  title: String!
+  type: String!
+  visibility: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  content: String
+  url: String
+  tags: [String]
+}
+
+type StudyScheduleEntry @table {
+  user: User!
+  course: Course
+  title: String!
+  startTime: Timestamp!
+  endTime: Timestamp!
+  type: String!
+  createdAt: Timestamp!
+  description: String
+  location: String
+  isReminderSet: Boolean
+}
+
+type StudyGroup @table {
+  creator: User!
+  name: String!
+  createdAt: Timestamp!
+  description: String
+  course: Course
+}
+
+type GroupMembership @table(key: ["user", "studyGroup"]) {
+  user: User!
+  studyGroup: StudyGroup!
+  role: String!
+  joinedAt: Timestamp!
+}

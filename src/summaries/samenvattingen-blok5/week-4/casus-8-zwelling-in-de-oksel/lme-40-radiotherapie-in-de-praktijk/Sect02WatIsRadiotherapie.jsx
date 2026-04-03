@@ -12,7 +12,9 @@ export default function Sect02WatIsRadiotherapie() {
         Kwaadaardige cellen zijn daarbij gevoeliger voor schade door ioniserende straling dan gezonde cellen.
       </p>
       <p>
-        Aandachtsvraag: Wat is de eenheid van radiotherapie?{`  `}Antwoord: De dosis wordt uitgedrukt in Gray (Gy); dat
+        Aandachtsvraag: Wat is de eenheid van radiotherapie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Antwoord:</span>{' '}De dosis wordt uitgedrukt in Gray (Gy); dat
         is de geabsorbeerde energie.
       </p>
     </div>

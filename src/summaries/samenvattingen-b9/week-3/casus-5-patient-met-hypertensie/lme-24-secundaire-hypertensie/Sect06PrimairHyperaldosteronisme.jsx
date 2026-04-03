@@ -17,7 +17,9 @@ export default function Sect06PrimairHyperaldosteronisme() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtspunt: waarom geeft te veel aldosteron hypokaliëmie?  Kort antwoord: omdat aldosteron in de nier zorgt voor meer natriumterugresorptie, maar tegelijk meer kalium- en waterstofuitscheiding.
+          Aandachtspunt: waarom geeft te veel aldosteron hypokaliëmie?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}omdat aldosteron in de nier zorgt voor meer natriumterugresorptie, maar tegelijk meer kalium- en waterstofuitscheiding.
         </p>
       </div>
       <p>Bij primair hyperaldosteronisme denk je aan:</p>

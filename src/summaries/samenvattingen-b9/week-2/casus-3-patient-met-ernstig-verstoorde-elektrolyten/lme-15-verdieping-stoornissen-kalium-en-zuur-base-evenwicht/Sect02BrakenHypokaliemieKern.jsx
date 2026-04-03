@@ -11,7 +11,9 @@ export default function Sect02BrakenHypokaliemieKern() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Verliest een patiënt met braken vooral kalium via het braaksel?  Mini-antwoord: Nee, het grootste probleem is de reactie van de nieren; direct kaliumverlies uit maagsap is klein.
+          Aandachtsvraag: Verliest een patiënt met braken vooral kalium via het braaksel?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Nee, het grootste probleem is de reactie van de nieren; direct kaliumverlies uit maagsap is klein.
         </p>
       </div>
 

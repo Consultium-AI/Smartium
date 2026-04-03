@@ -49,8 +49,11 @@ export default function Sect05Cytokinen() {
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag</strong>
         </p>
         <p className="text-amber-950 dark:text-amber-100 mt-2">
-          Welke cytokinen zijn vooral pro-inflammatoir?{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> vooral IL-1β en
+          Welke cytokinen zijn vooral pro-inflammatoir?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            vooral IL-1β en
           TNF-alfa.
         </p>
       </div>

@@ -24,7 +24,9 @@ export default function Sect17PleuraleInfectie() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Waarom is een pleuravocht op de foto nog niet genoeg om een infectie te bewijzen?  Mini-antwoord: Omdat je op beeldvorming wel vocht ziet, maar niet kunt zien of dat vocht ook echt geïnfecteerd is.
+          Aandacht-vraagje: Waarom is een pleuravocht op de foto nog niet genoeg om een infectie te bewijzen?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat je op beeldvorming wel vocht ziet, maar niet kunt zien of dat vocht ook echt geïnfecteerd is.
         </p>
       </div>
     </div>

@@ -17,7 +17,9 @@ export default function Sect02FarmacokinetiekEnADME() {
         In deze stof ligt de nadruk op de A van absorptie, en dan vooral op de absorptie van geneesmiddelen via de huid.
       </p>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span> Waarom is dit onderscheid belangrijk?{`  `}Mini-antwoord:
+        <span className="font-semibold">Aandachtsvraag:</span> Waarom is dit onderscheid belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}
         Omdat de manier waarop een geneesmiddel het lichaam binnenkomt, veel bepaalt voor de opname, werking en
         uitscheiding.
       </p>

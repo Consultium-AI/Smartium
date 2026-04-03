@@ -67,8 +67,9 @@ export default function Sect20VeiligheidEnRisicos() {
       <p>
         <span className="font-semibold">Aandachtspunt:</span>
         {'  '}
-        Waarom is een atrio-oesofageale fistel zo ernstig?{`  `}
-        Kort antwoord: omdat de slokdarm direct achter het linker atrium ligt en hitte daar een gevaarlijke verbinding kan veroorzaken.
+        Waarom is een atrio-oesofageale fistel zo ernstig?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}omdat de slokdarm direct achter het linker atrium ligt en hitte daar een gevaarlijke verbinding kan veroorzaken.
       </p>
     </div>
   )

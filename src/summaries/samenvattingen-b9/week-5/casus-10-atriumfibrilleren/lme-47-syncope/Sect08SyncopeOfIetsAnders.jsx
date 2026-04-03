@@ -14,7 +14,9 @@ export default function Sect08SyncopeOfIetsAnders() {
         <li>een post-ictale fase: verwardheid en slaperigheid na het bijkomen.</li>
       </ul>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span> wat past meer bij epilepsie dan bij syncope? <span className="font-semibold">Mini-antwoord:</span> een post-ictale fase na het bijkomen.
+        <span className="font-semibold">Aandachtsvraag:</span> wat past meer bij epilepsie dan bij syncope?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}een post-ictale fase na het bijkomen.
       </p>
     </div>
   )

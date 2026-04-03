@@ -25,7 +25,9 @@ export default function Sect11ParenchymateuzeNierziekten() {
       <p>Soms zie je cystenieren, die vaak gepaard gaan met hypertensie.</p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtspunt: waarom geeft nierziekte hypertensie?  Kort antwoord: doordat de nier natrium en water niet goed kan uitscheiden, neemt het circulerend volume toe en stijgt de bloeddruk.
+          Aandachtspunt: waarom geeft nierziekte hypertensie?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}doordat de nier natrium en water niet goed kan uitscheiden, neemt het circulerend volume toe en stijgt de bloeddruk.
         </p>
       </div>
     </div>

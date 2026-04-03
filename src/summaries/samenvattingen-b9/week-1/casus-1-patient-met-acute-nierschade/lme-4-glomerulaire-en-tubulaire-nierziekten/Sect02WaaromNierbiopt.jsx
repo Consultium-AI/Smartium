@@ -10,7 +10,9 @@ export default function Sect02WaaromNierbiopt() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vragetje: Waarom is de afstemming tussen patholoog en behandelaar zo belangrijk?  *Kort antwoord:* Omdat niet elke laesie specifiek is en klinische en histopathologische gegevens samen moeten worden geïnterpreteerd.
+          Aandacht-vragetje: Waarom is de afstemming tussen patholoog en behandelaar zo belangrijk?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Omdat niet elke laesie specifiek is en klinische en histopathologische gegevens samen moeten worden geïnterpreteerd.
         </p>
       </div>
     </div>

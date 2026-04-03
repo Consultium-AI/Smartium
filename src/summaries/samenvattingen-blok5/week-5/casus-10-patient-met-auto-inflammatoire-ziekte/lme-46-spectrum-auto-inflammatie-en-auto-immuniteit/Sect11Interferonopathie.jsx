@@ -14,7 +14,9 @@ export default function Sect11Interferonopathie() {
         interferon.
       </p>
       <p>
-        Aandacht: welke infecties geven vooral een toename van interferonproductie?{"  "}Kort antwoord: virale infecties.
+        Aandacht: welke infecties geven vooral een toename van interferonproductie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}virale infecties.
         Bij tuberculose speelt juist interferon-gamma een belangrijke rol.
       </p>
       <p>

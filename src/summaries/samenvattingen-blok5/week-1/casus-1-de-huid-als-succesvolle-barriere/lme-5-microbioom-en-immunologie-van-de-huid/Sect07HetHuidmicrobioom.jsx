@@ -77,7 +77,9 @@ export default function Sect07HetHuidmicrobioom() {
       </div>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span>
-        {` Wat is het verschil tussen microbiota en microbioom?  Mini-antwoord: Microbiota is vooral de bacteriële component; microbioom is het totaal van alle micro-organismen.`}
+        {` Wat is het verschil tussen microbiota en microbioom?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Microbiota is vooral de bacteriële component; microbioom is het totaal van alle micro-organismen.`}
       </p>
     </div>
   )

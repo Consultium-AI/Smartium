@@ -1,0 +1,93 @@
+mutation SeedData @transaction @auth(level: PUBLIC, insecureReason: "This is seed data and does not require authentication.") {
+  user_insertMany(data: [
+    {
+      id: "b4b3b2b1-0000-4000-8000-000000000001",
+      authId: "firebase-auth-uid-1",
+      displayName: "Alice Smith",
+      email: "alice.smith@example.com",
+      createdAt: "2023-01-01T10:00:00Z",
+      studyYear: 2,
+      specializationInterest: "Artificial Intelligence"
+    },
+    {
+      id: "b4b3b2b1-0000-4000-8000-000000000002",
+      authId: "firebase-auth-uid-2",
+      displayName: "Bob Johnson",
+      email: "bob.johnson@example.com",
+      createdAt: "2023-01-02T11:00:00Z",
+      studyYear: 3,
+      specializationInterest: "Data Science"
+    }
+  ])
+  course_insertMany(data: [
+    {
+      id: "c1c2c3c4-0000-4000-8000-000000000001",
+      name: "Introduction to AI",
+      courseCode: "CS101",
+      createdAt: "2023-01-03T09:00:00Z",
+      department: "Computer Science",
+      description: "A foundational course in Artificial Intelligence."
+    },
+    {
+      id: "c1c2c3c4-0000-4000-8000-000000000002",
+      name: "Advanced Data Structures",
+      courseCode: "CS201",
+      createdAt: "2023-01-04T10:00:00Z",
+      department: "Computer Science",
+      description: "In-depth study of complex data structures."
+    }
+  ])
+  studyGroup_insertMany(data: [
+    {
+      id: "g1g2g3g4-0000-4000-8000-000000000001",
+      creatorId: "b4b3b2b1-0000-4000-8000-000000000001",
+      courseId: "c1c2c3c4-0000-4000-8000-000000000001",
+      name: "AI Study Group",
+      createdAt: "2023-01-05T14:00:00Z",
+      description: "Study group for Introduction to AI course."
+    }
+  ])
+  groupMembership_insertMany(data: [
+    {
+      userId: "b4b3b2b1-0000-4000-8000-000000000001",
+      studyGroupId: "g1g2g3g4-0000-4000-8000-000000000001",
+      role: "Leader",
+      joinedAt: "2023-01-05T14:00:00Z"
+    },
+    {
+      userId: "b4b3b2b1-0000-4000-8000-000000000002",
+      studyGroupId: "g1g2g3g4-0000-4000-8000-000000000001",
+      role: "Member",
+      joinedAt: "2023-01-06T15:00:00Z"
+    }
+  ])
+  studyMaterial_insertMany(data: [
+    {
+      id: "m1m2m3m4-0000-4000-8000-000000000001",
+      userId: "b4b3b2b1-0000-4000-8000-000000000001",
+      courseId: "c1c2c3c4-0000-4000-8000-000000000001",
+      title: "AI Concepts Cheatsheet",
+      type: "Note",
+      visibility: "Public",
+      createdAt: "2023-01-07T10:00:00Z",
+      updatedAt: "2023-01-07T10:00:00Z",
+      content: "Key concepts for AI.",
+      tags: ["AI", "concepts", "notes"]
+    }
+  ])
+  studyScheduleEntry_insertMany(data: [
+    {
+      id: "s1s2s3s4-0000-4000-8000-000000000001",
+      userId: "b4b3b2b1-0000-4000-8000-000000000001",
+      courseId: "c1c2c3c4-0000-4000-8000-000000000001",
+      title: "AI Study Session",
+      startTime: "2024-03-15T18:00:00Z",
+      endTime: "2024-03-15T20:00:00Z",
+      type: "Study Session",
+      createdAt: "2024-03-10T09:00:00Z",
+      description: "Weekly study session for AI.",
+      location: "Online",
+      isReminderSet: true
+    }
+  ])
+}

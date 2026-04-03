@@ -42,7 +42,9 @@ export default function Sect02EcgEnHartfrequentieBijKinderen() {
         De aftelmethode gebruik je vooral bij een normaal sinusritme. Je kiest een willekeurige R-top als startpunt en telt hoeveel grote hokjes er tussen twee opeenvolgende R-toppen zitten. Ligt de volgende R-top precies na 1 groot hokje, dan is de frequentie ongeveer 300/min. Na 2 grote hokjes is dat 150/min, na 3 grote hokjes 100/min, enzovoort.
       </p>
       <p>
-        <span className="font-semibold">Aandachtvraag:</span> waarom is de hartfrequentie bij een baby zo belangrijk?{`  `}*Mini-antwoord: omdat het slagvolume klein is en de circulatie dus sterk afhangt van de snelheid van het hart.*
+        <span className="font-semibold">Aandachtvraag:</span> waarom is de hartfrequentie bij een baby zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}<em>omdat het slagvolume klein is en de circulatie dus sterk afhangt van de snelheid van het hart.</em>
       </p>
     </div>
   )

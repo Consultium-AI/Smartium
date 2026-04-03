@@ -40,7 +40,9 @@ export default function Sect10VasovagaleSyncope() {
         Het herstel is meestal snel en volledig zodra de patiënt gaat liggen. Dat past precies bij het beeld van vasovagale syncope.
       </p>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span> wat is hier de directe trigger voor de reflex? <span className="font-semibold">Mini-antwoord:</span> het krachtig samentrekken van een bijna leeg hart, waardoor mechanoreceptoren worden geactiveerd.
+        <span className="font-semibold">Aandachtsvraag:</span> wat is hier de directe trigger voor de reflex?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}het krachtig samentrekken van een bijna leeg hart, waardoor mechanoreceptoren worden geactiveerd.
       </p>
     </div>
   )

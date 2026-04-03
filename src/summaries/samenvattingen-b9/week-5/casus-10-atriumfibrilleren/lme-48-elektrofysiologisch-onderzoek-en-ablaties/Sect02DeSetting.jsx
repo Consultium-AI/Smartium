@@ -11,8 +11,9 @@ export default function Sect02DeSetting() {
       <p>
         <span className="font-semibold">Aandachtspunt:</span>
         {'  '}
-        Waarom is dat mechanisme zo belangrijk?{`  `}
-        Kort antwoord: omdat je een ritmestoornis alleen definitief kunt behandelen als je weet of je een cirkel moet doorbreken of juist een focale bron moet uitschakelen.
+        Waarom is dat mechanisme zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}omdat je een ritmestoornis alleen definitief kunt behandelen als je weet of je een cirkel moet doorbreken of juist een focale bron moet uitschakelen.
       </p>
     </div>
   )

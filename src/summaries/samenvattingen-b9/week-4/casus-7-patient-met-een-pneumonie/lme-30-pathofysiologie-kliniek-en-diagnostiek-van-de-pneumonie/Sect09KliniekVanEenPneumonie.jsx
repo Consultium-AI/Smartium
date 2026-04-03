@@ -64,7 +64,9 @@ export default function Sect09KliniekVanEenPneumonie() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Sluit een normale saturatie een pneumonie uit?  Mini-antwoord: Nee. Een normale saturatie sluit een pneumonie niet uit.
+          Aandachtsvraag: Sluit een normale saturatie een pneumonie uit?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Nee. Een normale saturatie sluit een pneumonie niet uit.
         </p>
       </div>
     </div>

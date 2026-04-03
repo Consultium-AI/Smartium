@@ -26,7 +26,9 @@ export default function Sect12Therapietrouw() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Wat is een praktische eerste stap om therapietrouw te verbeteren?  Mini-antwoord: Houd het schema zo eenvoudig mogelijk, liefst met weinig tabletten en zo weinig mogelijk innamemomenten.
+          Aandacht-vraagje: Wat is een praktische eerste stap om therapietrouw te verbeteren?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Houd het schema zo eenvoudig mogelijk, liefst met weinig tabletten en zo weinig mogelijk innamemomenten.
         </p>
       </div>
     </div>

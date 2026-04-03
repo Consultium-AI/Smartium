@@ -49,7 +49,9 @@ export default function Sect04Celdood() {
         </table>
       </div>
       <p>
-        Aandacht: welke vorm van celdood hoort bij inflammasoomactivatie?{"  "}Kort antwoord: pyroptose.
+        Aandacht: welke vorm van celdood hoort bij inflammasoomactivatie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}pyroptose.
       </p>
     </div>
   )

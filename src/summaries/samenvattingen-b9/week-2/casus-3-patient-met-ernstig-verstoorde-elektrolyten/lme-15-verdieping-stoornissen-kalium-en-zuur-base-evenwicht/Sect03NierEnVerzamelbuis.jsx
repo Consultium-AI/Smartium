@@ -11,7 +11,9 @@ export default function Sect03NierEnVerzamelbuis() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom gaat de nier extra kalium kwijt raken?  Mini-antwoord: Omdat de nier bicarbonaat wil uitscheiden, chloride wil vasthouden en aldosteron de kaliumsecretie stimuleert.
+          Aandachtsvraag: Waarom gaat de nier extra kalium kwijt raken?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de nier bicarbonaat wil uitscheiden, chloride wil vasthouden en aldosteron de kaliumsecretie stimuleert.
         </p>
       </div>
 

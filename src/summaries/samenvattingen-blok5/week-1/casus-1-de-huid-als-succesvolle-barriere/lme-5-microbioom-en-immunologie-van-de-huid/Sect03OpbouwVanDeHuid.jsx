@@ -57,7 +57,9 @@ export default function Sect03OpbouwVanDeHuid() {
       </p>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span>
-        {` Waaruit bestaat de belangrijkste barrièrelaag van de epidermis?  Mini-antwoord: Uit dode epitheelcellen, keratine, lipiden en eiwitten.`}
+        {` Waaruit bestaat de belangrijkste barrièrelaag van de epidermis?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Uit dode epitheelcellen, keratine, lipiden en eiwitten.`}
       </p>
     </div>
   )

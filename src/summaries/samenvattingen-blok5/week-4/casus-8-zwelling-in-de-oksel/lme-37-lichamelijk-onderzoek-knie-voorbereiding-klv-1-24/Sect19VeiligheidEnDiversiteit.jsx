@@ -12,7 +12,9 @@ export default function Sect19VeiligheidEnDiversiteit() {
         de klachten.
       </p>
       <p>
-        Aandacht-vraag: Wat betekent dit concreet tijdens het onderzoek?{`  `}Mini-antwoord: Dat je duidelijk uitlegt,
+        Aandacht-vraag: Wat betekent dit concreet tijdens het onderzoek?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Dat je duidelijk uitlegt,
         veilig werkt, respectvol omgaat met de patiënt en oog houdt voor diens ervaring.
       </p>
     </div>

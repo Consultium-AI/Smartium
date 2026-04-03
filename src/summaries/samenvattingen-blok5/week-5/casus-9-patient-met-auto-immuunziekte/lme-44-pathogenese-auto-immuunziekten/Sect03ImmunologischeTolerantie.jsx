@@ -74,8 +74,11 @@ export default function Sect03ImmunologischeTolerantie() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Wat is het nut van
-          zo’n afgeschermde locatie?{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Daardoor komen
+          zo’n afgeschermde locatie?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Daardoor komen
           potentieel autoreactieve lymfocyten nauwelijks in contact met die lichaamseigen antigenen.
         </p>
       </div>

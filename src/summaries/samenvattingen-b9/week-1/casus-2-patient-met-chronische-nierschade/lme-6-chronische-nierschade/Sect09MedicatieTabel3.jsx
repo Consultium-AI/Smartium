@@ -54,7 +54,9 @@ export default function Sect09MedicatieTabel3() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Wat is de basis van de behandeling?  Mini-antwoord: Eerst leefstijl, daarna de kernmedicatie met RAAS-remming, SGLT2-remming en bij 50+ een statine.
+          Aandachtsvraag: Wat is de basis van de behandeling?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Eerst leefstijl, daarna de kernmedicatie met RAAS-remming, SGLT2-remming en bij 50+ een statine.
         </p>
       </div>
     </div>

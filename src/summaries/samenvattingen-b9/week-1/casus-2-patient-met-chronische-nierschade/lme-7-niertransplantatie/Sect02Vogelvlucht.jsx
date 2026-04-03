@@ -18,7 +18,9 @@ export default function Sect02Vogelvlucht() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraag: Waarom begint men al zo vroeg met screening?  Mini-antwoord: Omdat de voorbereiding tijd kost en de nierfunctie geleidelijk slechter wordt; het is dus belangrijk om niet te laat te starten.
+          Aandacht-vraag: Waarom begint men al zo vroeg met screening?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de voorbereiding tijd kost en de nierfunctie geleidelijk slechter wordt; het is dus belangrijk om niet te laat te starten.
         </p>
       </div>
     </div>

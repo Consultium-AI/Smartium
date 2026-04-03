@@ -31,7 +31,9 @@ export default function Sect05OpbouwEnFunctieVanDeEpidermis() {
       </p>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span> Welke huidlaag is het belangrijkst voor de barrière tegen
-        stoffen van buitenaf?{`  `}Mini-antwoord: Het stratum corneum.
+        stoffen van buitenaf?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Het stratum corneum.
       </p>
     </div>
   )

@@ -41,8 +41,11 @@ export default function Sect06KoortsEnAcuteFaseEiwitten() {
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag</strong>
         </p>
         <p className="text-amber-950 dark:text-amber-100 mt-2">
-          Noem vier acute-fase-eiwitten.{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> CRP, BSE, ferritine,
+          Noem vier acute-fase-eiwitten.
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            CRP, BSE, ferritine,
           SAA en fibrinogeen zijn voorbeelden.
         </p>
       </div>

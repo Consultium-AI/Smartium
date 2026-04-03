@@ -16,7 +16,9 @@ export default function Sect02GroteIndelingVanKinderkanker() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> waarom is deze globale indeling
-          handig? <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> omdat je zo snel kunt
+          handig?</p>
+        <p className="mt-2">
+          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}omdat je zo snel kunt
           begrijpen tot welke hoofdgroep een tumor hoort en welke diagnostiek en behandeling daarbij meestal passen.
         </p>
       </div>

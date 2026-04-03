@@ -20,7 +20,9 @@ export default function Sect13LangQtSyndroom() {
         <li>soms ICD-plaatsing.</li>
       </ul>
       <p>
-        <span className="font-semibold">Aandachtvraag:</span> waarom mogen sommige medicijnen niet bij long QT-syndroom?{`  `}*Mini-antwoord: omdat ze de QT-tijd nog verder verlengen en zo het risico op ritmestoornissen vergroten.*
+        <span className="font-semibold">Aandachtvraag:</span> waarom mogen sommige medicijnen niet bij long QT-syndroom?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}<em>omdat ze de QT-tijd nog verder verlengen en zo het risico op ritmestoornissen vergroten.</em>
       </p>
     </div>
   )

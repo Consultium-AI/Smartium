@@ -10,7 +10,9 @@ export default function Sect02Introductie() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Wanneer start je dialyse soms acuut?  Kort antwoord: Bijvoorbeeld bij ernstige hyperkaliëmie, overvulling met acute dyspnoe, ernstige metabole acidose en ernstige hyperfosfatemie.
+          Aandachtsvraag: Wanneer start je dialyse soms acuut?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Bijvoorbeeld bij ernstige hyperkaliëmie, overvulling met acute dyspnoe, ernstige metabole acidose en ernstige hyperfosfatemie.
         </p>
       </div>
     </div>

@@ -56,7 +56,9 @@ export default function Sect03SinustachycardieOfCirkeltachycardie() {
         Bij sinustachycardie zie je dus P-toppen vóór elk QRS-complex. Op het ECG is het ritme bovendien positief in I, II en aVF. Bij cirkeltachycardie is het ritme veel strakker en sneller, en de P-toppen zijn niet goed te zien of zitten verstopt in of achter het QRS-complex.
       </p>
       <p>
-        <span className="font-semibold">Aandachtvraag:</span> wat is het typische gevoel bij een cirkeltachycardie?{`  `}*Mini-antwoord: een plots begin en plots einde van heel snelle hartkloppingen.*
+        <span className="font-semibold">Aandachtvraag:</span> wat is het typische gevoel bij een cirkeltachycardie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}<em>een plots begin en plots einde van heel snelle hartkloppingen.</em>
       </p>
     </div>
   )

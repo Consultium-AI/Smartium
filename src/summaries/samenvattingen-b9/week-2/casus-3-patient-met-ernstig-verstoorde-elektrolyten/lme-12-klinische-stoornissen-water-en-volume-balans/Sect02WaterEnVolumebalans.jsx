@@ -18,7 +18,9 @@ export default function Sect02WaterEnVolumebalans() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtvraag: Waarom is serum-natrium zo’n belangrijk getal?  Mini-antwoord: Omdat het meestal een afspiegeling is van de waterbalans, niet alleen van de natriumbalans.
+          Aandachtvraag: Waarom is serum-natrium zo’n belangrijk getal?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat het meestal een afspiegeling is van de waterbalans, niet alleen van de natriumbalans.
         </p>
       </div>
     </div>

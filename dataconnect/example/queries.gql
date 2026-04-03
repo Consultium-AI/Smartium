@@ -1,0 +1,10 @@
+query ListAllCourses @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  courses {
+    id
+    name
+    courseCode
+    description
+    department
+    createdAt
+  }
+}

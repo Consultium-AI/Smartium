@@ -22,7 +22,9 @@ export default function Sect04Chirurgie() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraag: Waar let de chirurg vooral op bij de voorbereiding?  Mini-antwoord: Op de bloedvaten, de beschikbare ruimte voor de nier en op factoren die de operatie technisch moeilijk maken.
+          Aandacht-vraag: Waar let de chirurg vooral op bij de voorbereiding?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Op de bloedvaten, de beschikbare ruimte voor de nier en op factoren die de operatie technisch moeilijk maken.
         </p>
       </div>
     </div>

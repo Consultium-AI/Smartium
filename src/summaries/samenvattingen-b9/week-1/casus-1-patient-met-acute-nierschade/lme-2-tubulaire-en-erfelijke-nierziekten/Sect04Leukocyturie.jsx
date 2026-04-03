@@ -13,7 +13,9 @@ export default function Sect04Leukocyturie() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Hoe onderscheid je TIN van een urineweginfectie?  *Kort antwoord:* Door te letten op de klachten en het lichamelijk onderzoek, maar vooral door de urinekweek. Bij infectie is die positief, bij TIN niet.
+          Aandachtsvraag: Hoe onderscheid je TIN van een urineweginfectie?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Door te letten op de klachten en het lichamelijk onderzoek, maar vooral door de urinekweek. Bij infectie is die positief, bij TIN niet.
         </p>
       </div>
     </div>

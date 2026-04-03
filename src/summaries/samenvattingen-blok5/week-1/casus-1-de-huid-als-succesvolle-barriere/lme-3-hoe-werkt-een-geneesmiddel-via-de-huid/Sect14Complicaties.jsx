@@ -35,8 +35,9 @@ export default function Sect14Complicaties() {
         </li>
       </ul>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span> Waarom moet je injectieplaatsen afwisselen?{`  `}
-        Mini-antwoord: Om lipodystrofie en lokale complicaties te voorkomen.
+        <span className="font-semibold">Aandachtsvraag:</span> Waarom moet je injectieplaatsen afwisselen?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Om lipodystrofie en lokale complicaties te voorkomen.
       </p>
     </div>
   )

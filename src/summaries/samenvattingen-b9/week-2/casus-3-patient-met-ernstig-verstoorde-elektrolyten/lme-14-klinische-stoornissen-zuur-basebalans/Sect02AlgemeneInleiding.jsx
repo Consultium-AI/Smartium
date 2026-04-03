@@ -58,7 +58,9 @@ export default function Sect02AlgemeneInleiding() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Wanneer denk je bij een stoornis eerst aan de longen en wanneer aan de nieren?  Mini-antwoord: Bij een respiratoire stoornis ligt de primaire oorzaak in de ventilatie en CO2-verandering; bij een metabole stoornis zit het probleem vooral in bicarbonaat, zuurproductie of zuurverlies.
+          Aandachtsvraag: Wanneer denk je bij een stoornis eerst aan de longen en wanneer aan de nieren?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Bij een respiratoire stoornis ligt de primaire oorzaak in de ventilatie en CO2-verandering; bij een metabole stoornis zit het probleem vooral in bicarbonaat, zuurproductie of zuurverlies.
         </p>
       </div>
     </div>

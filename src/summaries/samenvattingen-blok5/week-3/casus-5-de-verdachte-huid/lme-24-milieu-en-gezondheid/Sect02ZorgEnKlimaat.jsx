@@ -16,7 +16,10 @@ export default function Sect02ZorgEnKlimaat() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-900 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Wat bedoelen we met een
-          CO₂-equivalent? <span className="font-medium">Mini-antwoord: Dat is een manier om verschillende broeikasgassen onderling vergelijkbaar te maken door ze om te rekenen naar eenzelfde klimaatimpact.</span>
+          CO₂-equivalent?</p>
+        <p className="mt-2 text-amber-900 dark:text-amber-100">
+          <span className="font-medium">Mini-antwoord:</span>{' '}
+          <span className="font-medium">Dat is een manier om verschillende broeikasgassen onderling vergelijkbaar te maken door ze om te rekenen naar eenzelfde klimaatimpact.</span>
         </p>
       </div>
     </div>

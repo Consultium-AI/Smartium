@@ -380,13 +380,13 @@ async function handleRecoverAccess(request: Request, env: Env, origin: string): 
 
   const uid = body.uid?.trim()
   const email = body.email?.trim().toLowerCase()
-  if (!uid || !email) return json(origin, { error: 'uid and email required' }, 400)
+  if (!uid) return json(origin, { error: 'uid required' }, 400)
 
   const byUidQuery =
     `payment_status:'paid' AND status:'complete' AND metadata['uid']:'${escapeStripeSearchValue(uid)}'`
   let session = await findLatestPaidSession(secret, byUidQuery)
 
-  if (!session) {
+  if (!session && email) {
     const byEmailQuery =
       `payment_status:'paid' AND status:'complete' AND customer_email:'${escapeStripeSearchValue(email)}'`
     session = await findLatestPaidSession(secret, byEmailQuery)
@@ -403,7 +403,7 @@ async function handleRecoverAccess(request: Request, env: Env, origin: string): 
   if (paidUntil <= Date.now()) return json(origin, { error: 'Access expired' }, 410)
 
   const sessionId = String(session.id || '')
-  const customerEmail = String(session.customer_email || email)
+  const customerEmail = String(session.customer_email || email || '')
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
   if (projectId) {
     try {

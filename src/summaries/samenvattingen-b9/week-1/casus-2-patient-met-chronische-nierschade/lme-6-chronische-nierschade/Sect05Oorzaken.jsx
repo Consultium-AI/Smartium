@@ -10,7 +10,9 @@ export default function Sect05Oorzaken() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is het soms moeilijk om de oorzaak te vinden?  Mini-antwoord: Omdat chronische nierschade vaak samen voorkomt met andere aandoeningen en omdat oude nierfunctiewaarden niet altijd beschikbaar zijn.
+          Aandachtsvraag: Waarom is het soms moeilijk om de oorzaak te vinden?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat chronische nierschade vaak samen voorkomt met andere aandoeningen en omdat oude nierfunctiewaarden niet altijd beschikbaar zijn.
         </p>
       </div>
       <p>

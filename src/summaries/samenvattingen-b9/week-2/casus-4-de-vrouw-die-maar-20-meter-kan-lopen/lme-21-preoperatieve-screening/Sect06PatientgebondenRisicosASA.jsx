@@ -52,7 +52,9 @@ export default function Sect06PatientgebondenRisicosASA() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Wat is de kern van de ASA-classificatie?  Mini-antwoord: Het is een snelle manier om de algemene lichamelijke toestand en daarmee het operatierisico van de patiënt in te schatten.
+          Aandacht-vraagje: Wat is de kern van de ASA-classificatie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Het is een snelle manier om de algemene lichamelijke toestand en daarmee het operatierisico van de patiënt in te schatten.
         </p>
       </div>
     </div>

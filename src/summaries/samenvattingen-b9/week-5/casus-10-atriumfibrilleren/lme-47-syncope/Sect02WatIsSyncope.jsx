@@ -20,7 +20,9 @@ export default function Sect02WatIsSyncope() {
         <li>of een toename van de weerstand door een obstructie.</li>
       </ul>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span> waarom valt iemand vaak snel weer bij als hij gaat liggen? <span className="font-semibold">Mini-antwoord:</span> doordat de bloedtoevoer naar de hersenen dan weer makkelijker herstelt.
+        <span className="font-semibold">Aandachtsvraag:</span> waarom valt iemand vaak snel weer bij als hij gaat liggen?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}doordat de bloedtoevoer naar de hersenen dan weer makkelijker herstelt.
       </p>
     </div>
   )

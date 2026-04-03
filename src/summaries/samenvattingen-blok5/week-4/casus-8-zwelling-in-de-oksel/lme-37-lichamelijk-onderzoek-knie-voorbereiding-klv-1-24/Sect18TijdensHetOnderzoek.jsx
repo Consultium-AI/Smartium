@@ -17,7 +17,9 @@ export default function Sect18TijdensHetOnderzoek() {
         patiënt. Maak regelmatig oogcontact en let op hoe iemand het onderzoek ervaart.
       </p>
       <p>
-        Aandacht-vraag: Waarom is uitleg zo belangrijk vóór het lichamelijk onderzoek?{`  `}Mini-antwoord: Omdat de
+        Aandacht-vraag: Waarom is uitleg zo belangrijk vóór het lichamelijk onderzoek?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de
         patiënt dan weet wat er gaat gebeuren, minder spanning ervaart en beter kan meewerken.
       </p>
     </div>

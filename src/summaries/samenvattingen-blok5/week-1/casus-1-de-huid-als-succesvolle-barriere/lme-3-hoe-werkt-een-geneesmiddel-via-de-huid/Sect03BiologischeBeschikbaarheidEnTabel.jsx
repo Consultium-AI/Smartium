@@ -43,7 +43,9 @@ export default function Sect03BiologischeBeschikbaarheidEnTabel() {
       </div>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span> Waarom is intraveneuze toediening 100% biologisch
-        beschikbaar?{`  `}Mini-antwoord: Omdat het geneesmiddel direct in de bloedbaan wordt gebracht.
+        beschikbaar?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat het geneesmiddel direct in de bloedbaan wordt gebracht.
       </p>
     </div>
   )

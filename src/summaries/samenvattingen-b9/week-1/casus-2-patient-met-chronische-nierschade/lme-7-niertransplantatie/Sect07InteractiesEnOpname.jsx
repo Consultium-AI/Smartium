@@ -17,7 +17,9 @@ export default function Sect07InteractiesEnOpname() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraag: Waarom is diarree bij een patiënt op tacrolimus zo belangrijk?  Mini-antwoord: Omdat de opname toeneemt en de bloedspiegel daardoor gevaarlijk hoog kan worden.
+          Aandacht-vraag: Waarom is diarree bij een patiënt op tacrolimus zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de opname toeneemt en de bloedspiegel daardoor gevaarlijk hoog kan worden.
         </p>
       </div>
     </div>

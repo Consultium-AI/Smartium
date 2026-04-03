@@ -69,8 +69,9 @@ export default function Sect08SchildklierGraves() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtspunt:</strong> Waarom zijn bij
-          Graves TSH laag en FT4 hoog?{'  '}
-          *Kort antwoord:* de auto-antistoffen stimuleren de TSH-receptor direct, waardoor de schildklier
+          Graves TSH laag en FT4 hoog?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}de auto-antistoffen stimuleren de TSH-receptor direct, waardoor de schildklier
           veel hormoon maakt en de hypofyse minder TSH afgeeft.
         </p>
       </div>

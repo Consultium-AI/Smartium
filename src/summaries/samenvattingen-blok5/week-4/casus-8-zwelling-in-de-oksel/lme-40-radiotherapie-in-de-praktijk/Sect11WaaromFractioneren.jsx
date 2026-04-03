@@ -32,7 +32,9 @@ export default function Sect11WaaromFractioneren() {
         </li>
       </ul>
       <p>
-        Aandachtsvraag: Waarom zijn hypoxische cellen minder gevoelig?{`  `}Antwoord: Omdat ze minder zuurstof hebben;
+        Aandachtsvraag: Waarom zijn hypoxische cellen minder gevoelig?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Antwoord:</span>{' '}Omdat ze minder zuurstof hebben;
         tijdens behandeling kan reoxygenatie optreden, waardoor ze gevoeliger worden.
       </p>
     </div>

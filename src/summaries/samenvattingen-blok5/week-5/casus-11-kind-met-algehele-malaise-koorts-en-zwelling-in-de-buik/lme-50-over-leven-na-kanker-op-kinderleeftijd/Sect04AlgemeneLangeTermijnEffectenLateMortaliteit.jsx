@@ -21,7 +21,9 @@ export default function Sect04AlgemeneLangeTermijnEffectenLateMortaliteit() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Zijn late recidieven en late effecten
-          hetzelfde? <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Nee. In de eerste jaren spelen
+          hetzelfde?</p>
+        <p className="mt-2">
+          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}Nee. In de eerste jaren spelen
           late recidieven een grote rol, maar later zijn vooral behandelgerelateerde aandoeningen belangrijk.
         </p>
       </div>

@@ -10,7 +10,9 @@ export default function Sect02WaarDraaitDezeModuleOm() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraag: Waarom is dat ruimtelijke inzicht zo belangrijk?  Mini-antwoord: Omdat vaatproblemen vaak pas goed te begrijpen zijn als je weet welk vat is aangedaan en hoe dat vat loopt in het lichaam.
+          Aandacht-vraag: Waarom is dat ruimtelijke inzicht zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat vaatproblemen vaak pas goed te begrijpen zijn als je weet welk vat is aangedaan en hoe dat vat loopt in het lichaam.
         </p>
       </div>
     </div>

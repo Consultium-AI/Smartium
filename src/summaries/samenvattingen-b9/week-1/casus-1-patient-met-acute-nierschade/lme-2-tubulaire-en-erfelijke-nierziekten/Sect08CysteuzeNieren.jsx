@@ -22,7 +22,9 @@ export default function Sect08CysteuzeNieren() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is veel drinken logisch bij ADPKD?  *Kort antwoord:* Omdat ADH cAMP stimuleert en cAMP de cystegroei aanjaagt. Door ADH laag te houden probeer je die groei te remmen.
+          Aandachtsvraag: Waarom is veel drinken logisch bij ADPKD?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Omdat ADH cAMP stimuleert en cAMP de cystegroei aanjaagt. Door ADH laag te houden probeer je die groei te remmen.
         </p>
       </div>
     </div>

@@ -15,7 +15,9 @@ export default function Sect13AbsorptieEnToxiciteit() {
         Bij prematuren is de absorptie verhoogd door de hoge verhouding van oppervlak ten opzichte van gewicht. Hoe prematuurder het kind, hoe hoger de absorptie. Door de onrijpe lever- en nierfunctie is er ook risico op systemische toxiciteit.
       </p>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom moet je bij een prematuur extra voorzichtig zijn met wat je op de huid smeert?{`  `}Mini-antwoord: Omdat stoffen sneller via de huid opgenomen kunnen worden en dan systemische toxiciteit kunnen geven.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom moet je bij een prematuur extra voorzichtig zijn met wat je op de huid smeert?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat stoffen sneller via de huid opgenomen kunnen worden en dan systemische toxiciteit kunnen geven.
       </p>
     </div>
   )

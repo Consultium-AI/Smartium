@@ -18,7 +18,9 @@ export default function Sect06Gewichtsverlies() {
         <li>gewichtsverlies hoort bij de behandeling van het ritme, niet alleen bij algemene gezondheidszorg.</li>
       </ul>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Is 3 kilo afvallen dan helemaal zinloos? <span className="font-semibold">Mini-antwoord:</span> Nee, het is wel positief, maar voor een duidelijk effect op het hartritme wordt een groter gewichtsverlies nagestreefd.
+        <span className="font-semibold">Aandacht-vraag:</span> Is 3 kilo afvallen dan helemaal zinloos?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Nee, het is wel positief, maar voor een duidelijk effect op het hartritme wordt een groter gewichtsverlies nagestreefd.
       </p>
     </div>
   )

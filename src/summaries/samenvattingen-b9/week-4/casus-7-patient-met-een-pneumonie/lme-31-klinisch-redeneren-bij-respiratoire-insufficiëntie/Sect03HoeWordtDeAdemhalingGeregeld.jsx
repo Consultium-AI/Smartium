@@ -14,7 +14,9 @@ export default function Sect03HoeWordtDeAdemhalingGeregeld() {
       <p>Zo wordt in normale omstandigheden voldoende lucht in de alveoli gebracht voor een goede gaswisseling.</p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: waarom is een stijging van CO₂ zo belangrijk?  Mini-antwoord: omdat een hogere CO₂ in het bloed leidt tot een lagere pH in de liquor, en dat prikkelt het ademhalingscentrum om sneller en dieper te ademen.
+          Aandachtsvraag: waarom is een stijging van CO₂ zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}omdat een hogere CO₂ in het bloed leidt tot een lagere pH in de liquor, en dat prikkelt het ademhalingscentrum om sneller en dieper te ademen.
         </p>
       </div>
     </div>

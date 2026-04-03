@@ -23,7 +23,9 @@ export default function Sect06Cd8PlusTCellenInDeHuid() {
       </ul>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span>
-        {` Wat is de belangrijkste functie van CD8+ T-cellen in de huid?  Mini-antwoord: Het doden van geïnfecteerde cellen, vooral virusgeïnfecteerde cellen.`}
+        {` Wat is de belangrijkste functie van CD8+ T-cellen in de huid?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Het doden van geïnfecteerde cellen, vooral virusgeïnfecteerde cellen.`}
       </p>
     </div>
   )

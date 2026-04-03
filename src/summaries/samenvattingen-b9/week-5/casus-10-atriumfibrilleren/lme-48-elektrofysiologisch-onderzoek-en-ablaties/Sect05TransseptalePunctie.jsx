@@ -11,8 +11,9 @@ export default function Sect05TransseptalePunctie() {
       <p>
         <span className="font-semibold">Aandachtspunt:</span>
         {'  '}
-        Waarom kies je bij boezemfibrilleren voor een transseptale punctie?{`  `}
-        Kort antwoord: omdat de belangrijkste bron vaak in het linker atrium ligt, en je daar via het rechter atrium binnendoor naartoe moet.
+        Waarom kies je bij boezemfibrilleren voor een transseptale punctie?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}omdat de belangrijkste bron vaak in het linker atrium ligt, en je daar via het rechter atrium binnendoor naartoe moet.
       </p>
     </div>
   )

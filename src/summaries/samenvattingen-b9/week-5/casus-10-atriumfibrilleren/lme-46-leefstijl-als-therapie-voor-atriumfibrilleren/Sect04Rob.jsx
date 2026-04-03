@@ -9,7 +9,9 @@ export default function Sect04Rob() {
         Rob denkt in eerste instantie vooral aan een snelle oplossing, zoals een ablatie. Maar de benadering is juist dat je eerst onderzoekt waarom hij dit heeft gekregen en wat je kunt doen om de kans op terugkeer te verkleinen. Dat past bij de moderne visie: eerst de oorzaken en risicofactoren aanpakken.
       </p>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom is een snelle ingreep niet altijd de eerste stap? <span className="font-semibold">Mini-antwoord:</span> Omdat zonder leefstijlverandering de onderliggende prikkels voor atriumfibrilleren kunnen blijven bestaan, waardoor de kans op succes kleiner wordt.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom is een snelle ingreep niet altijd de eerste stap?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat zonder leefstijlverandering de onderliggende prikkels voor atriumfibrilleren kunnen blijven bestaan, waardoor de kans op succes kleiner wordt.
       </p>
     </div>
   )

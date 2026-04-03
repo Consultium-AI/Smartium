@@ -20,7 +20,9 @@ export default function Sect02DeHuidbarriere() {
         Als deze barrière beschadigd raakt, wordt de huid droger, gevoeliger en vatbaarder voor irritatie en infecties.
       </p>
       <p>
-        <span className="font-semibold">Aandacht:</span> wat is de buitenste laag van de huid?{`  `}Mini-antwoord: het
+        <span className="font-semibold">Aandacht:</span> wat is de buitenste laag van de huid?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}het
         stratum corneum, ook wel de hoornlaag.
       </p>
     </div>

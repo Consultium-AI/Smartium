@@ -10,7 +10,9 @@ export default function Sect02GroteLijnen() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: waarom is deze verdieping klinisch relevant?  Kort antwoord: omdat je als arts te maken kunt krijgen met complicaties die de uitkomst van een transplantatie sterk beïnvloeden, of met intensieve behandeling zoals dialyse op de IC.
+          Aandachtsvraag: waarom is deze verdieping klinisch relevant?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}omdat je als arts te maken kunt krijgen met complicaties die de uitkomst van een transplantatie sterk beïnvloeden, of met intensieve behandeling zoals dialyse op de IC.
         </p>
       </div>
     </div>

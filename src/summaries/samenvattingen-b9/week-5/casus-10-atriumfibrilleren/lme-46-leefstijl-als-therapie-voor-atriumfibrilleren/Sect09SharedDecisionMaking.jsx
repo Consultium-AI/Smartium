@@ -24,7 +24,9 @@ export default function Sect09SharedDecisionMaking() {
       </ul>
       <p>Dat soort plannen zijn niet realistisch of juist te risicovol.</p>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom werkt een haalbaar plan beter? <span className="font-semibold">Mini-antwoord:</span> Omdat de patiënt dan zelf mede-eigenaar wordt van het plan, waardoor de kans op succes groter is.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom werkt een haalbaar plan beter?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de patiënt dan zelf mede-eigenaar wordt van het plan, waardoor de kans op succes groter is.
       </p>
     </div>
   )

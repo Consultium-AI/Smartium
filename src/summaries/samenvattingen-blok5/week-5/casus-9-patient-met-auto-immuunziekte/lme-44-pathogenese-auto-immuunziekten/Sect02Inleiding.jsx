@@ -17,8 +17,11 @@ export default function Sect02Inleiding() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Waarom is
-          auto-immuniteit niet automatisch een ziekte?{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Omdat een
+          auto-immuniteit niet automatisch een ziekte?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Omdat een
           immuunreactie tegen lichaamseigen antigenen pas tot een auto-immuunziekte leidt als die reactie ook
           daadwerkelijk schade veroorzaakt.
         </p>

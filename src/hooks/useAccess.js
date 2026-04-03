@@ -74,7 +74,7 @@ export function useAccess() {
 
     const uid = user.uid
     const initial = resolveFromLocal(uid)
-    setAccess(initial)
+    setAccess({ ...initial, loading: !initial.hasAccess })
 
     const onAccessUpdated = (e) => {
       if (e.detail?.uid === uid) {
@@ -85,6 +85,57 @@ export function useAccess() {
 
     let unsub = null
     let cancelled = false
+
+    async function loadAccountAccess() {
+      // If local cache is still valid, allow immediately while snapshot keeps data fresh.
+      if (initial.hasAccess) return
+
+      try {
+        const { db, isFirebaseConfigured } = await import('../lib/firebase')
+        if (!isFirebaseConfigured || !db || cancelled) return
+
+        const { doc, getDoc } = await import('firebase/firestore')
+        const ref = doc(db, 'users', uid)
+        const snap = await getDoc(ref)
+        if (cancelled) return
+
+        if (snap.exists()) {
+          const data = snap.data()
+          const paidUntil = Number(data.paidUntil) || 0
+          const plan = data.plan || null
+          const hasAccess = paidUntil > Date.now()
+          if (hasAccess) {
+            writeLocalAccess(uid, { paidUntil, plan })
+            setAccess({ hasAccess: true, loading: false, paidUntil, plan })
+            return
+          }
+        }
+      } catch {
+        // no-op: still try recover endpoint below
+      }
+
+      try {
+        const recovered = await recoverAccessForUser(uid, user?.email || undefined)
+        if (recovered?.paidUntil) {
+          await grantAccess(uid, recovered.paidUntil, recovered.plan)
+          if (!cancelled) {
+            setAccess({
+              hasAccess: Number(recovered.paidUntil) > Date.now(),
+              loading: false,
+              paidUntil: Number(recovered.paidUntil) || null,
+              plan: recovered.plan || null,
+            })
+          }
+          return
+        }
+      } catch {
+        // no-op: user may simply not have active paid access
+      }
+
+      if (!cancelled) {
+        setAccess((prev) => ({ ...prev, loading: false }))
+      }
+    }
 
     async function listenFirestore() {
       try {
@@ -112,29 +163,8 @@ export function useAccess() {
       } catch {}
     }
 
-    listenFirestore()
-
-    async function recoverFromAccountIfNeeded() {
-      if (initial.hasAccess) return
-      if (!user?.email) return
-      try {
-        const recovered = await recoverAccessForUser(uid, user.email)
-        if (recovered?.paidUntil) {
-          await grantAccess(uid, recovered.paidUntil, recovered.plan)
-          if (!cancelled) {
-            setAccess({
-              hasAccess: Number(recovered.paidUntil) > Date.now(),
-              loading: false,
-              paidUntil: Number(recovered.paidUntil) || null,
-              plan: recovered.plan || null,
-            })
-          }
-        }
-      } catch {
-        // no-op: user may simply not have an active paid session
-      }
-    }
-    void recoverFromAccountIfNeeded()
+    void loadAccountAccess()
+    void listenFirestore()
 
     return () => {
       cancelled = true

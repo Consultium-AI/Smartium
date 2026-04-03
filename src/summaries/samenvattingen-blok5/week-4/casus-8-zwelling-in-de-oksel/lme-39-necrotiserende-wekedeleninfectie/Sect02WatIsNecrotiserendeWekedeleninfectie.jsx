@@ -13,7 +13,9 @@ export default function Sect02WatIsNecrotiserendeWekedeleninfectie() {
         snel levensbedreigend worden.
       </p>
       <p>
-        Aandacht-vraagje: Waarom is dit zo urgent?{`  `}Mini-antwoord: Omdat de infectie heel snel kan uitbreiden, tot
+        Aandacht-vraagje: Waarom is dit zo urgent?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de infectie heel snel kan uitbreiden, tot
         weefselafsterving leidt en al vroeg sepsis en multiorgaanfalen kan geven.
       </p>
     </div>

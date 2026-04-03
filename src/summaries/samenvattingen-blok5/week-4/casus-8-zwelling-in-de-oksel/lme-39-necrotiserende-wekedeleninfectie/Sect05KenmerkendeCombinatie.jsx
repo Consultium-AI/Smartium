@@ -10,7 +10,9 @@ export default function Sect05KenmerkendeCombinatie() {
         <li>en eventueel tekenen van sepsis.</li>
       </ul>
       <p>
-        Aandacht-vraagje: Wat is het belangrijkste klinische signaal?{`  `}Mini-antwoord: Extreem pijnlijke, snel
+        Aandacht-vraagje: Wat is het belangrijkste klinische signaal?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Extreem pijnlijke, snel
         uitbreidende huid- of weke-delenafwijkingen bij een zieke patiënt.
       </p>
     </div>

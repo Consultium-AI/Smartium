@@ -15,7 +15,9 @@ export default function Sect05BloeddrukMeten() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Waarom is een 24-uursmeting zo handig?  Mini-antwoord: Omdat je dan een realistischer beeld krijgt van de bloeddruk dan met één meting in de spreekkamer.
+          Aandacht-vraagje: Waarom is een 24-uursmeting zo handig?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat je dan een realistischer beeld krijgt van de bloeddruk dan met één meting in de spreekkamer.
         </p>
       </div>
     </div>

@@ -20,8 +20,11 @@ export default function Sect07WeefselschadeDoorLangdurigeOntsteking() {
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtvraag</strong>
           {'  '}
-          Wat betekent erythrodermie?{'  '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> de hele huid is rood;
+          Wat betekent erythrodermie?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            de hele huid is rood;
           vervelling kan ook optreden.
         </p>
       </div>

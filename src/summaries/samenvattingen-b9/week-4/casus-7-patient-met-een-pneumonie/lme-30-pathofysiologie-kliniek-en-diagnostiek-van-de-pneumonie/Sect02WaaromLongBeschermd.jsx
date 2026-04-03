@@ -56,7 +56,9 @@ export default function Sect02WaaromLongBeschermd() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is de grens tussen bovenste en onderste luchtwegen belangrijk?  Mini-antwoord: Omdat infecties op verschillende plaatsen andere klachten, verwekkers en verdedigingsmechanismen hebben.
+          Aandachtsvraag: Waarom is de grens tussen bovenste en onderste luchtwegen belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat infecties op verschillende plaatsen andere klachten, verwekkers en verdedigingsmechanismen hebben.
         </p>
       </div>
     </div>

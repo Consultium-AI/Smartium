@@ -75,7 +75,9 @@ export default function Sect04RisicofactorenDegeneratiefAAA() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Welke risicofactor springt er het meest uit?  Mini-antwoord: Roken. Dat is de belangrijkste modificeerbare risicofactor voor AAA.
+          Aandachtsvraag: Welke risicofactor springt er het meest uit?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Roken. Dat is de belangrijkste modificeerbare risicofactor voor AAA.
         </p>
       </div>
     </div>

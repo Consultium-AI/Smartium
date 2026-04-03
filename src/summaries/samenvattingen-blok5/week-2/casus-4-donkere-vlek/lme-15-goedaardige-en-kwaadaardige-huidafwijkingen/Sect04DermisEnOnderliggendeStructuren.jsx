@@ -63,7 +63,9 @@ export default function Sect04DermisEnOnderliggendeStructuren() {
         </table>
       </div>
       <p>
-        <strong>Aandachtsvraag:</strong> Wat zijn adnexen? Mini-antwoord: Haarfollikels, talgklieren en zweetklieren.
+        <strong>Aandachtsvraag:</strong> Wat zijn adnexen?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Haarfollikels, talgklieren en zweetklieren.
       </p>
     </div>
   )

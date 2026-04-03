@@ -22,7 +22,9 @@ export default function Sect02AlgemeenBeeld() {
       </p>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is de urine zo belangrijk?  Kort antwoord: Omdat glomerulaire aandoeningen zich bijna altijd als eerste laten zien met hematurie en/of proteïnurie.
+          Aandachtsvraag: Waarom is de urine zo belangrijk?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}Omdat glomerulaire aandoeningen zich bijna altijd als eerste laten zien met hematurie en/of proteïnurie.
         </p>
       </div>
       <p>

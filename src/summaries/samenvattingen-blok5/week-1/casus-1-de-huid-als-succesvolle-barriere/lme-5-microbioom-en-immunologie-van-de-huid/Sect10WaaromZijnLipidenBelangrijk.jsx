@@ -8,7 +8,9 @@ export default function Sect10WaaromZijnLipidenBelangrijk() {
       </p>
       <p>
         <span className="font-semibold">Aandachtsvraag:</span>
-        {` Waarom zijn lipiden op de huid zo belangrijk?  Mini-antwoord: Ze maken de huid waterafstotend en ondersteunen de barrière.`}
+        {` Waarom zijn lipiden op de huid zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Ze maken de huid waterafstotend en ondersteunen de barrière.`}
       </p>
     </div>
   )

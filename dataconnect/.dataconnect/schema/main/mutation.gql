@@ -1,0 +1,664 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Course` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  course_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Course_Data!
+  ): Course_KeyOutput! @fdc_generated(from: "Course", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `GroupMembership` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  groupMembership_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: GroupMembership_Data!
+  ): GroupMembership_KeyOutput! @fdc_generated(from: "GroupMembership", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `StudyGroup` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyGroup_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: StudyGroup_Data!
+  ): StudyGroup_KeyOutput! @fdc_generated(from: "StudyGroup", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `StudyMaterial` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyMaterial_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: StudyMaterial_Data!
+  ): StudyMaterial_KeyOutput! @fdc_generated(from: "StudyMaterial", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `StudyScheduleEntry` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyScheduleEntry_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: StudyScheduleEntry_Data!
+  ): StudyScheduleEntry_KeyOutput! @fdc_generated(from: "StudyScheduleEntry", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Course` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  course_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Course_Data!]!
+  ): [Course_KeyOutput!]! @fdc_generated(from: "Course", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `GroupMembership` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  groupMembership_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [GroupMembership_Data!]!
+  ): [GroupMembership_KeyOutput!]! @fdc_generated(from: "GroupMembership", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `StudyGroup` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyGroup_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [StudyGroup_Data!]!
+  ): [StudyGroup_KeyOutput!]! @fdc_generated(from: "StudyGroup", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `StudyMaterial` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyMaterial_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [StudyMaterial_Data!]!
+  ): [StudyMaterial_KeyOutput!]! @fdc_generated(from: "StudyMaterial", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `StudyScheduleEntry` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  studyScheduleEntry_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [StudyScheduleEntry_Data!]!
+  ): [StudyScheduleEntry_KeyOutput!]! @fdc_generated(from: "StudyScheduleEntry", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Course` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Course`.
+  """
+  course_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Course_Data!
+  ): Course_KeyOutput! @fdc_generated(from: "Course", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `GroupMembership` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `GroupMembership`.
+  """
+  groupMembership_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: GroupMembership_Data!
+  ): GroupMembership_KeyOutput! @fdc_generated(from: "GroupMembership", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `StudyGroup` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyGroup`.
+  """
+  studyGroup_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: StudyGroup_Data!
+  ): StudyGroup_KeyOutput! @fdc_generated(from: "StudyGroup", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `StudyMaterial` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyMaterial`.
+  """
+  studyMaterial_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: StudyMaterial_Data!
+  ): StudyMaterial_KeyOutput! @fdc_generated(from: "StudyMaterial", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `StudyScheduleEntry` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyScheduleEntry`.
+  """
+  studyScheduleEntry_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: StudyScheduleEntry_Data!
+  ): StudyScheduleEntry_KeyOutput! @fdc_generated(from: "StudyScheduleEntry", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Course` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Course`.
+  """
+  course_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Course_Data!]!
+  ): [Course_KeyOutput!]! @fdc_generated(from: "Course", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `GroupMembership` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `GroupMembership`.
+  """
+  groupMembership_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [GroupMembership_Data!]!
+  ): [GroupMembership_KeyOutput!]! @fdc_generated(from: "GroupMembership", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `StudyGroup` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyGroup`.
+  """
+  studyGroup_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [StudyGroup_Data!]!
+  ): [StudyGroup_KeyOutput!]! @fdc_generated(from: "StudyGroup", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `StudyMaterial` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyMaterial`.
+  """
+  studyMaterial_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [StudyMaterial_Data!]!
+  ): [StudyMaterial_KeyOutput!]! @fdc_generated(from: "StudyMaterial", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `StudyScheduleEntry` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `StudyScheduleEntry`.
+  """
+  studyScheduleEntry_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [StudyScheduleEntry_Data!]!
+  ): [StudyScheduleEntry_KeyOutput!]! @fdc_generated(from: "StudyScheduleEntry", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Course` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Course` or `null` if not found.
+  """
+  course_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Course_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Course_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Course_Data!
+  ): Course_KeyOutput @fdc_generated(from: "Course", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `GroupMembership` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `GroupMembership` or `null` if not found.
+  """
+  groupMembership_update(
+    """
+    The key used to identify the object.
+    """
+    key: GroupMembership_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: GroupMembership_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: GroupMembership_Data!
+  ): GroupMembership_KeyOutput @fdc_generated(from: "GroupMembership", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `StudyGroup` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `StudyGroup` or `null` if not found.
+  """
+  studyGroup_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyGroup_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyGroup_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: StudyGroup_Data!
+  ): StudyGroup_KeyOutput @fdc_generated(from: "StudyGroup", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `StudyMaterial` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `StudyMaterial` or `null` if not found.
+  """
+  studyMaterial_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyMaterial_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyMaterial_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: StudyMaterial_Data!
+  ): StudyMaterial_KeyOutput @fdc_generated(from: "StudyMaterial", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `StudyScheduleEntry` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `StudyScheduleEntry` or `null` if not found.
+  """
+  studyScheduleEntry_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyScheduleEntry_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyScheduleEntry_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: StudyScheduleEntry_Data!
+  ): StudyScheduleEntry_KeyOutput @fdc_generated(from: "StudyScheduleEntry", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Course` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  course_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Course_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Course_Data!
+  ): Int! @fdc_generated(from: "Course", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `GroupMembership` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  groupMembership_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: GroupMembership_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: GroupMembership_Data!
+  ): Int! @fdc_generated(from: "GroupMembership", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `StudyGroup` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  studyGroup_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: StudyGroup_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: StudyGroup_Data!
+  ): Int! @fdc_generated(from: "StudyGroup", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `StudyMaterial` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  studyMaterial_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: StudyMaterial_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: StudyMaterial_Data!
+  ): Int! @fdc_generated(from: "StudyMaterial", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `StudyScheduleEntry` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  studyScheduleEntry_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: StudyScheduleEntry_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: StudyScheduleEntry_Data!
+  ): Int! @fdc_generated(from: "StudyScheduleEntry", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Course` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  course_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Course_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Course_FirstRow
+  ): Course_KeyOutput @fdc_generated(from: "Course", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `GroupMembership` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  groupMembership_delete(
+    """
+    The key used to identify the object.
+    """
+    key: GroupMembership_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: GroupMembership_FirstRow
+  ): GroupMembership_KeyOutput @fdc_generated(from: "GroupMembership", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `StudyGroup` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  studyGroup_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyGroup_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyGroup_FirstRow
+  ): StudyGroup_KeyOutput @fdc_generated(from: "StudyGroup", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `StudyMaterial` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  studyMaterial_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyMaterial_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyMaterial_FirstRow
+  ): StudyMaterial_KeyOutput @fdc_generated(from: "StudyMaterial", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `StudyScheduleEntry` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  studyScheduleEntry_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: StudyScheduleEntry_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: StudyScheduleEntry_FirstRow
+  ): StudyScheduleEntry_KeyOutput @fdc_generated(from: "StudyScheduleEntry", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Course` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  course_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Course_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Course", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `GroupMembership` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  groupMembership_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: GroupMembership_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "GroupMembership", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `StudyGroup` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  studyGroup_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: StudyGroup_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "StudyGroup", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `StudyMaterial` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  studyMaterial_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: StudyMaterial_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "StudyMaterial", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `StudyScheduleEntry` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  studyScheduleEntry_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: StudyScheduleEntry_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "StudyScheduleEntry", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}

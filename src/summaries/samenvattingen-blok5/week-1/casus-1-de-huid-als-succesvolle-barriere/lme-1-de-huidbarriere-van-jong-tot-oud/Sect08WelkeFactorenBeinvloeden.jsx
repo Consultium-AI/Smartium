@@ -59,7 +59,9 @@ export default function Sect08WelkeFactorenBeinvloeden() {
       </ul>
       <p>Emolliens helpen dus om de huid soepel te houden en de barrière te ondersteunen.</p>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom wordt de huid liever ingesmeerd dan vaak gewassen?{`  `}Mini-antwoord: Omdat vaak wassen de barrière belast, terwijl een neutrale zalf de huid ondersteunt en helpt beschermen.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom wordt de huid liever ingesmeerd dan vaak gewassen?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat vaak wassen de barrière belast, terwijl een neutrale zalf de huid ondersteunt en helpt beschermen.
       </p>
     </div>
   )

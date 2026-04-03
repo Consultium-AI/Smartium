@@ -33,7 +33,9 @@ export default function Sect08FamiliaireMediterraneKoorts() {
         makkelijker en continu, omdat het inflammasoom voortdurend actief is.
       </p>
       <p>
-        Aandacht: waarom werkt colchicine bij FMF goed?{"  "}Kort antwoord: colchicine grijpt in op het
+        Aandacht: waarom werkt colchicine bij FMF goed?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Kort antwoord:</span>{' '}colchicine grijpt in op het
         pyrine-inflammasoom. Het verhoogt de activiteit van RhoA en stimuleert PKN1/2, waardoor het inflammasoom geremd
         wordt.
       </p>

@@ -9,8 +9,12 @@ export default function Sect03WaarHangtHuidkleurVanAf() {
         <li>blootstelling aan ultraviolette straling, die de melanineproductie beïnvloedt.</li>
       </ul>
       <p>
-        <span className="font-semibold">Aandachtsvraag:</span>
-        {`  *Wordt huidkleur vooral bepaald door het aantal melanocyten?*  Mini-antwoord: Nee, vooral door de hoeveelheid en verdeling van melanine, niet door het aantal melanocyten.`}
+        <span className="font-semibold">Aandachtsvraag:</span>{' '}
+        <em>Wordt huidkleur vooral bepaald door het aantal melanocyten?</em>
+      </p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}
+        Nee, vooral door de hoeveelheid en verdeling van melanine, niet door het aantal melanocyten.
       </p>
       <p>
         Bij mensen met sproeten en rood haar is feomelanine relatief belangrijker. Donkerder huidtypen bevatten meer

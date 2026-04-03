@@ -35,7 +35,9 @@ export default function Sect05ChronischeRejectie() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: wat maakt chronische rejectie anders dan acute rejectie?  Kort antwoord: chronische rejectie verloopt geleidelijk en wordt vooral aangedreven door donor-specifieke antistoffen, met progressief functieverlies van het transplantaat.
+          Aandachtsvraag: wat maakt chronische rejectie anders dan acute rejectie?</p>
+        <p className="mt-2">
+          <span className="font-semibold">Kort antwoord:</span>{' '}chronische rejectie verloopt geleidelijk en wordt vooral aangedreven door donor-specifieke antistoffen, met progressief functieverlies van het transplantaat.
         </p>
       </div>
 

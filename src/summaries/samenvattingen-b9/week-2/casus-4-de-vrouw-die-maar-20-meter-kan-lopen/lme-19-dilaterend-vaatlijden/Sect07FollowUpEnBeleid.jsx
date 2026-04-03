@@ -90,7 +90,9 @@ export default function Sect07FollowUpEnBeleid() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Wanneer moet je extra alert zijn, ook als de diameter nog niet heel groot is?  Mini-antwoord: Bij snelle groei en bij klachten, omdat dat een aanwijzing kan zijn voor dreigende ruptuur.
+          Aandachtsvraag: Wanneer moet je extra alert zijn, ook als de diameter nog niet heel groot is?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Bij snelle groei en bij klachten, omdat dat een aanwijzing kan zijn voor dreigende ruptuur.
         </p>
       </div>
     </div>

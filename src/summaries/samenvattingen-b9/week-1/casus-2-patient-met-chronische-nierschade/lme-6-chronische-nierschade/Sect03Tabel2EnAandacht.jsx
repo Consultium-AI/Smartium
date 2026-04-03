@@ -37,7 +37,9 @@ export default function Sect03Tabel2EnAandacht() {
       </div>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandachtsvraag: Waarom is een combinatie van eGFR en albuminurie handig?  Mini-antwoord: Omdat je daarmee niet alleen de nierfunctie, maar ook de mate van nierschade en het risico beter kunt beschrijven.
+          Aandachtsvraag: Waarom is een combinatie van eGFR en albuminurie handig?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat je daarmee niet alleen de nierfunctie, maar ook de mate van nierschade en het risico beter kunt beschrijven.
         </p>
       </div>
     </div>

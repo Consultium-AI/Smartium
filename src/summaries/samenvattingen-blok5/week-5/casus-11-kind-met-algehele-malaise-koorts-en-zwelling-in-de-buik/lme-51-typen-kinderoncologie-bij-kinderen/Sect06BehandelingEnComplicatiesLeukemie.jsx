@@ -29,7 +29,9 @@ export default function Sect06BehandelingEnComplicatiesLeukemie() {
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
           <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> waarom is de lumbaalpunctie zo
-          belangrijk? <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> om na te gaan of er
+          belangrijk?</p>
+        <p className="mt-2">
+          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}om na te gaan of er
           leukemiecellen in het hersenvocht zitten en om tijdens de behandeling chemotherapie toe te kunnen dienen.
         </p>
       </div>

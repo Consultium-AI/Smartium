@@ -20,8 +20,11 @@ export default function Sect02WaaromOverlevenNaKinderkankerZoBelangrijkIs() {
       </p>
       <div className="rounded-xl border border-amber-200 dark:border-amber-600/40 bg-amber-50 dark:bg-amber-950/65 p-4">
         <p className="text-amber-950 dark:text-amber-100">
-          <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Hoe vaak komen late effecten voor?{' '}
-          <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong> Ongeveer 75% van de kinderkanker
+          <strong className="text-amber-950 dark:text-amber-50">Aandachtsvraag:</strong> Hoe vaak komen late effecten voor?
+          </p>
+          <p className="mt-2">
+            <strong className="text-amber-950 dark:text-amber-50">Mini-antwoord:</strong>{' '}
+            Ongeveer 75% van de kinderkanker
           survivors heeft minstens één late effect, en 25% heeft er zelfs vijf of meer.
         </p>
       </div>

@@ -41,8 +41,9 @@ export default function Sect07OrthoErgischeFactorenEnEelt() {
         Eelt kan ook op de handen ontstaan door herhaalde trauma’s, maar is meestal asymptomatisch.
       </p>
       <p>
-        <span className="font-semibold">Aandacht:</span> wat is het verschil tussen eelt en een likdoorn?{`  `}
-        Mini-antwoord: eelt heeft een bredere basis, een likdoorn is kleiner en scherp begrensd.
+        <span className="font-semibold">Aandacht:</span> wat is het verschil tussen eelt en een likdoorn?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}eelt heeft een bredere basis, een likdoorn is kleiner en scherp begrensd.
       </p>
     </div>
   )

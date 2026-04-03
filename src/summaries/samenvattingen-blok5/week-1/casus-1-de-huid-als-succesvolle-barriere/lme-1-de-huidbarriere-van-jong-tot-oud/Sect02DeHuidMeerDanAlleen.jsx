@@ -53,7 +53,9 @@ export default function Sect02DeHuidMeerDanAlleen() {
         </table>
       </div>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom is de huidbarrière zo belangrijk?{`  `}Mini-antwoord: Omdat de huid niet alleen bescherming geeft tegen buitenaf, maar ook voorkomt dat het lichaam te veel water verliest.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom is de huidbarrière zo belangrijk?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de huid niet alleen bescherming geeft tegen buitenaf, maar ook voorkomt dat het lichaam te veel water verliest.
       </p>
     </div>
   )

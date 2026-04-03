@@ -18,7 +18,9 @@ export default function Sect02WatGebeurtEr() {
 
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vragetje: waarom krijgt iemand met PAV vooral pijn bij inspanning?  Mini-antwoord: omdat de zuurstofvraag dan stijgt, terwijl de doorbloeding door de vernauwing niet genoeg kan toenemen.
+          Aandacht-vragetje: waarom krijgt iemand met PAV vooral pijn bij inspanning?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}omdat de zuurstofvraag dan stijgt, terwijl de doorbloeding door de vernauwing niet genoeg kan toenemen.
         </p>
       </div>
     </div>

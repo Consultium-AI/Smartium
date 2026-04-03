@@ -14,7 +14,9 @@ export default function Sect11UglyDuckFenomeen() {
       </ul>
       <p>Het idee is simpel: als één moedervlek anders is dan de rest, moet je daar extra goed naar kijken.</p>
       <p>
-        <strong>Aandachtsvraag:</strong> Waarom is een &quot;ugly duck&quot; verdacht? Mini-antwoord: Omdat de moedervlek duidelijk
+        <strong>Aandachtsvraag:</strong> Waarom is een &quot;ugly duck&quot; verdacht?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat de moedervlek duidelijk
         afwijkt van de andere moedervlekken van dezelfde persoon.
       </p>
     </div>

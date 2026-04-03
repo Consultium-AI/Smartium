@@ -15,7 +15,9 @@ export default function Sect02WaaromPreoperatieveScreeningBelangrijkIs() {
       </ul>
       <div className="p-4 bg-amber-50 dark:bg-amber-950/40 rounded-xl border border-amber-200 dark:border-amber-600/35">
         <p className="text-amber-900 dark:text-amber-100 text-sm m-0">
-          Aandacht-vraagje: Waarom is deze screening meer dan “een formaliteit”?  Mini-antwoord: Omdat je er risico’s mee opspoort die je later vaak niet meer kunt corrigeren en omdat een deel van de complicaties te voorkomen is.
+          Aandacht-vraagje: Waarom is deze screening meer dan “een formaliteit”?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat je er risico’s mee opspoort die je later vaak niet meer kunt corrigeren en omdat een deel van de complicaties te voorkomen is.
         </p>
       </div>
     </div>

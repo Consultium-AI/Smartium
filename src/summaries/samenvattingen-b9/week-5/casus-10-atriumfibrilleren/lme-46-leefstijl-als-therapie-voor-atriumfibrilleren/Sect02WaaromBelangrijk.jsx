@@ -13,7 +13,9 @@ export default function Sect02WaaromBelangrijk() {
         De behandeling van atriumfibrilleren gaat niet alleen over het ritme zelf, maar ook over de omstandigheden die het ritme in stand houden of verergeren. Daarom is de leefstijl geen bijzaak, maar onderdeel van de behandeling.
       </p>
       <p>
-        <span className="font-semibold">Aandacht-vraag:</span> Waarom is dit meer dan alleen “gezond leven”? <span className="font-semibold">Mini-antwoord:</span> Omdat leefstijlverandering hier direct invloed heeft op het hartritme, het terugkomen van atriumfibrilleren en het succes van behandelingen zoals ablatie.
+        <span className="font-semibold">Aandacht-vraag:</span> Waarom is dit meer dan alleen “gezond leven”?</p>
+      <p className="mt-2">
+        <span className="font-semibold">Mini-antwoord:</span>{' '}Omdat leefstijlverandering hier direct invloed heeft op het hartritme, het terugkomen van atriumfibrilleren en het succes van behandelingen zoals ablatie.
       </p>
     </div>
   )
