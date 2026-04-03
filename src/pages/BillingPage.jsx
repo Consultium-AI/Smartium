@@ -116,7 +116,7 @@ export default function BillingPage() {
             initial={reduceMotion ? false : { opacity: 0, scale: 0.94, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="relative w-full max-w-md rounded-2xl border border-emerald-200/90 bg-white/95 p-8 text-center shadow-soft-lg backdrop-blur-sm dark:border-emerald-500/30 dark:bg-slate-900/90"
+            className="relative w-full max-w-md rounded-2xl border border-emerald-200/90 bg-white/95 p-8 text-center shadow-soft-lg backdrop-blur-sm dark:border-emerald-500/40 dark:bg-[#111827]"
           >
             <motion.div
               initial={reduceMotion ? false : { scale: 0 }}
@@ -173,7 +173,7 @@ export default function BillingPage() {
           )}
 
           <motion.div
-            className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/90 p-8 shadow-soft-lg backdrop-blur-md dark:border-slate-700/80 dark:bg-slate-900/85 dark:shadow-black/40"
+            className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/90 p-8 shadow-soft-lg backdrop-blur-md dark:border-slate-600/60 dark:bg-[#111827] dark:shadow-black/40"
           >
             <div className="relative">
               <div className="mb-6 flex items-center gap-3">
@@ -203,29 +203,29 @@ export default function BillingPage() {
                     <button
                       type="button"
                       onClick={() => { setPlan('monthly'); setStep(2) }}
-                      className="group relative w-full rounded-2xl border-2 border-slate-200 bg-white p-5 text-left transition hover:border-primary-400 hover:shadow-md dark:border-slate-600 dark:bg-slate-950/40 dark:hover:border-primary-500"
+                      className="group relative w-full rounded-2xl border-2 border-slate-200 bg-white p-5 text-left transition hover:border-primary-400 hover:shadow-md dark:border-slate-600 dark:bg-[#1a2233] dark:hover:border-primary-500"
                     >
                       <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Maandelijks</p>
                       <p className="mt-1 font-display text-3xl font-bold text-navy-900 dark:text-white">
-                        {eur(MONTHLY)}<span className="text-base font-semibold text-slate-500">/maand</span>
+                        {eur(MONTHLY)}<span className="text-base font-semibold text-slate-500 dark:text-slate-400">/maand</span>
                       </p>
-                      <p className="mt-2 text-xs text-slate-500">Maandelijks opzegbaar</p>
+                      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">Maandelijks opzegbaar</p>
                     </button>
 
                     <button
                       type="button"
                       onClick={() => { setPlan('yearly'); setStep(2) }}
-                      className="group relative w-full overflow-hidden rounded-2xl border-2 border-primary-400/80 bg-gradient-to-br from-primary-50/90 to-white p-5 text-left shadow-md transition hover:shadow-lg dark:border-primary-500/50 dark:from-primary-950/50 dark:to-slate-950/60"
+                      className="group relative w-full overflow-hidden rounded-2xl border-2 border-primary-400/80 bg-gradient-to-br from-primary-50/90 to-white p-5 text-left shadow-md transition hover:shadow-lg dark:border-primary-500/60 dark:from-[#162033] dark:to-[#1a2233]"
                     >
                       <span className="absolute right-4 top-4 rounded-full bg-primary-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
                         {DISCOUNT}% korting
                       </span>
                       <p className="text-xs font-semibold uppercase tracking-wider text-primary-700 dark:text-primary-300">Jaarlijks</p>
                       <p className="mt-1 font-display text-3xl font-bold text-navy-900 dark:text-white">
-                        {eur(YEARLY_PER_MONTH)}<span className="text-base font-semibold text-slate-500">/maand</span>
+                        {eur(YEARLY_PER_MONTH)}<span className="text-base font-semibold text-slate-500 dark:text-slate-400">/maand</span>
                       </p>
                       <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">{eur(YEARLY_TOTAL)} per jaar</p>
-                      <p className="mt-1 text-xs text-slate-400 line-through">Was {eur(MONTHLY * 12)}/jaar</p>
+                      <p className="mt-1 text-xs text-slate-400 dark:text-slate-500 line-through">Was {eur(MONTHLY * 12)}/jaar</p>
                     </button>
                   </motion.div>
                 )}
