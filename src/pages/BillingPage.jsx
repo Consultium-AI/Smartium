@@ -55,6 +55,19 @@ export default function BillingPage() {
     }
   }, [urlPlan, user])
 
+  useEffect(() => {
+    if ((status === 'success' || sessionId) && user?.uid) {
+      const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
+      if (sid) {
+        grantAccessAfterPayment(sid, user.uid).then((res) => {
+          if (res.paidUntil) {
+            writeLocalAccess(user.uid, { paidUntil: res.paidUntil, plan: res.plan })
+          }
+        }).catch(() => {})
+      }
+    }
+  }, [status, sessionId, user?.uid])
+
   const startCheckout = async () => {
     if (!plan) return
     if (!user) {
@@ -92,19 +105,6 @@ export default function BillingPage() {
       </>
     )
   }
-
-  useEffect(() => {
-    if ((status === 'success' || sessionId) && user?.uid) {
-      const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
-      if (sid) {
-        grantAccessAfterPayment(sid, user.uid).then((res) => {
-          if (res.paidUntil) {
-            writeLocalAccess(user.uid, { paidUntil: res.paidUntil, plan: res.plan })
-          }
-        }).catch(() => {})
-      }
-    }
-  }, [status, sessionId, user?.uid])
 
   if (status === 'success' || sessionId) {
     return (
