@@ -2,10 +2,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useSearchParams } from 'react-router-dom'
 import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
-  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers
+  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers, Lock
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
+import { useAccess } from '../hooks/useAccess'
+import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
 import { FoetaleBeeldvormingSummary } from './summary/SummaryFoetaleBeeldvorming'
@@ -186,6 +188,9 @@ import Blok9Week5Casus10RitmestoornissenBijKinderenSummary from '../summaries/sa
 const SummaryPage = () => {
   const [searchParams] = useSearchParams()
   const lme = searchParams.get('lme') || 'index'
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const hasPaidAccess = hasAccess && plan !== 'free'
+  const showPremiumLocks = !accessLoading && !hasPaidAccess
   const blokParam = searchParams.get('blok')
   const [expandedBlok, setExpandedBlok] = useState(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
@@ -3240,15 +3245,16 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                              {casus.lmes.map((lmeItem, lmeIndex) => {
+                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
+                                return (
                                 <Link
                                   key={lmeIndex}
-                                  to={`/summary?lme=${lmeItem.id}`}
-                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    bg-white dark:bg-slate-800/60
-                                    border-slate-200/90 dark:border-slate-600/90
-                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
-                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
+                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    ${locked
+                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
+                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
                                 >
                                   <div className="flex items-center gap-3 min-w-0">
                                     <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
@@ -3258,17 +3264,24 @@ const SummaryPage = () => {
                                       <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
                                         {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-1">
+                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
                                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                                           <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
+                                        {locked && (
+                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                                            <Lock className="w-3 h-3" />
+                                            Premium
+                                          </span>
+                                        )}
                                       </div>
                                     </div>
                                   </div>
                                   <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
-                              ))}
+                                )
+                              })}
                             </div>
                           </div>
                         ))}
@@ -3361,32 +3374,37 @@ const SummaryPage = () => {
                                       <span>{lmeItem.name} ({lmeItem.imageCount} afbeeldingen)</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                      {getImageIdsForLme(lmeItem.baseId, lmeItem.imageCount).map((img) => (
+                                      {getImageIdsForLme(lmeItem.baseId, lmeItem.imageCount).map((img) => {
+                                        const locked = showPremiumLocks && isFreePlanBlockedLme(img.id)
+                                        return (
                                         <Link
                                           key={img.id}
-                                          to={`/summary?lme=${img.id}`}
-                                          className="text-center px-3 py-2.5 rounded-lg border text-sm transition-all
-                                            bg-slate-50 dark:bg-slate-900/60
-                                            border-slate-200 dark:border-slate-600
-                                            text-slate-700 dark:text-slate-200
-                                            hover:border-emerald-400 dark:hover:border-emerald-500/50
-                                            hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10
-                                            hover:text-emerald-900 dark:hover:text-emerald-300"
+                                          to={locked ? '/billing' : `/summary?lme=${img.id}`}
+                                          className={`text-center px-3 py-2.5 rounded-lg border text-sm transition-all
+                                            ${locked
+                                              ? 'bg-slate-100 dark:bg-slate-900/40 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400'
+                                              : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-900 dark:hover:text-emerald-300'}`}
                                         >
-                                          {img.name}
+                                          <span className="inline-flex items-center gap-1.5">
+                                            {img.name}
+                                            {locked && <Lock className="w-3 h-3" />}
+                                          </span>
                                         </Link>
-                                      ))}
+                                        )
+                                      })}
                                     </div>
                                   </div>
                                 ) : (
+                                (() => {
+                                  const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
+                                  return (
                                 <Link
                                   key={lmeIndex}
-                                  to={`/summary?lme=${lmeItem.id}`}
-                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    bg-white dark:bg-slate-800/60
-                                    border-slate-200/90 dark:border-slate-600/90
-                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
-                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
+                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    ${locked
+                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
+                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
                                 >
                                   <div className="flex items-center gap-3 min-w-0">
                                     <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
@@ -3396,16 +3414,24 @@ const SummaryPage = () => {
                                       <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
                                         {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-1">
+                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
                                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                                           <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
+                                        {locked && (
+                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                                            <Lock className="w-3 h-3" />
+                                            Premium
+                                          </span>
+                                        )}
                                       </div>
                                     </div>
                                   </div>
                                   <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
+                                  )
+                                })()
                                 )
                               ))}
                             </div>
@@ -3471,15 +3497,16 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                              {casus.lmes.map((lmeItem, lmeIndex) => {
+                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
+                                return (
                                 <Link
                                   key={lmeIndex}
-                                  to={`/summary?lme=${lmeItem.id}`}
-                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    bg-white dark:bg-slate-800/60
-                                    border-slate-200/90 dark:border-slate-600/90
-                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
-                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
+                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    ${locked
+                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
+                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
                                 >
                                   <div className="flex items-center gap-3 min-w-0">
                                     <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
@@ -3489,17 +3516,24 @@ const SummaryPage = () => {
                                       <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
                                         {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-1">
+                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
                                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                                           <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
+                                        {locked && (
+                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                                            <Lock className="w-3 h-3" />
+                                            Premium
+                                          </span>
+                                        )}
                                       </div>
                                     </div>
                                   </div>
                                   <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
-                              ))}
+                                )
+                              })}
                             </div>
                           </div>
                         ))}
@@ -3576,15 +3610,16 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                              {casus.lmes.map((lmeItem, lmeIndex) => {
+                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
+                                return (
                                 <Link
                                   key={lmeIndex}
-                                  to={`/summary?lme=${lmeItem.id}`}
-                                  className="group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    bg-white dark:bg-slate-800/60
-                                    border-slate-200/90 dark:border-slate-600/90
-                                    hover:border-emerald-400/70 dark:hover:border-emerald-500/45
-                                    hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95"
+                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
+                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
+                                    ${locked
+                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
+                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
                                 >
                                   <div className="flex items-center gap-3 min-w-0">
                                     <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
@@ -3594,17 +3629,24 @@ const SummaryPage = () => {
                                       <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
                                         {lmeItem.name}
                                       </span>
-                                      <div className="flex items-center gap-3 mt-1">
+                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
                                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
                                           <Clock className="w-3 h-3 shrink-0 opacity-80" />
                                           ~15 min
                                         </span>
+                                        {locked && (
+                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                                            <Lock className="w-3 h-3" />
+                                            Premium
+                                          </span>
+                                        )}
                                       </div>
                                     </div>
                                   </div>
                                   <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
                                 </Link>
-                              ))}
+                                )
+                              })}
                             </div>
                           </div>
                         ))}

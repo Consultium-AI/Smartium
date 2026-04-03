@@ -42,7 +42,7 @@ const ExamSelection = () => {
             <Link
               to="/tentamen-blok5"
               className="group flex items-center justify-between gap-4 p-6 rounded-2xl border-2 border-primary-300/60 dark:border-primary-500/40 transition-all
-                bg-gradient-to-r from-primary-50/90 to-white dark:from-primary-950/40 dark:to-slate-900/80
+                bg-gradient-to-r from-primary-50/90 to-white dark:bg-slate-900/85 dark:from-transparent dark:to-transparent
                 shadow-md dark:shadow-black/30
                 hover:border-primary-500 hover:shadow-lg"
             >
@@ -52,7 +52,7 @@ const ExamSelection = () => {
                 </div>
                 <div className="min-w-0 text-left">
                   <h2 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Oefententamen Blok 5</h2>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
                     Bedreigingen van binnenuit en buitenaf · casusgerichte tentamens
                   </p>
                 </div>
@@ -69,7 +69,7 @@ const ExamSelection = () => {
             <Link
               to="/tentamen-blok9"
               className="group flex items-center justify-between gap-4 p-6 rounded-2xl border-2 border-sky-300/60 dark:border-sky-500/40 transition-all
-                bg-gradient-to-r from-sky-50/90 to-white dark:from-sky-950/35 dark:to-slate-900/80
+                bg-gradient-to-r from-sky-50/90 to-white dark:bg-slate-900/85 dark:from-transparent dark:to-transparent
                 shadow-md dark:shadow-black/30
                 hover:border-sky-500 hover:shadow-lg"
             >
@@ -79,7 +79,7 @@ const ExamSelection = () => {
                 </div>
                 <div className="min-w-0 text-left">
                   <h2 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Oefententamen Blok 9</h2>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
                     Homeostase Ba2 · casusgerichte tentamens
                   </p>
                 </div>

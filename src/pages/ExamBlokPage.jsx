@@ -11,6 +11,7 @@ import {
   AlertTriangle,
   Stethoscope,
   GraduationCap,
+  Lock,
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import {
@@ -33,7 +34,9 @@ import {
   examBlokHasInProgress,
 } from '../utils/accountProgressStorage'
 import { useAuth } from '../context/AuthContext'
+import { useAccess } from '../hooks/useAccess'
 import { getExamsForBlok } from '../registry/examBlokRegistry'
+import { isFreePlanAllowedExam } from '../utils/freePlanAccess'
 
 export function calculateGradeBlok(earned, total, cesuur = 0.55) {
   if (!total || total <= 0) return 1
@@ -92,6 +95,9 @@ function gradePathForBlok(blok) {
 // ─── Selection ─────────────────────────────────────────────────
 function ExamBlokSelection({ blok }) {
   const { user, loading: authLoading } = useAuth()
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const hasPaidAccess = hasAccess && plan !== 'free'
+  const showPremiumLocks = !accessLoading && !hasPaidAccess
   const progressUserId = getProgressUserId(user, authLoading)
   const exams = getExamsForBlok(blok)
   const path = gradePathForBlok(blok)
@@ -120,18 +126,19 @@ function ExamBlokSelection({ blok }) {
           ) : (
             exams.map((exam, i) => {
               const nr = i + 1
+              const locked = showPremiumLocks && !isFreePlanAllowedExam(blok, nr)
               const showResume =
                 progressUserId && examBlokHasInProgress(progressUserId, blok, nr)
               const estMin = Math.round((exam.totalPoints / 168) * 90) || 90
               return (
                 <motion.div key={exam.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
                   <Link
-                    to={`${path}?nr=${nr}`}
-                    className="group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
-                      bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm
-                      border-slate-200/90 dark:border-slate-700/90
-                      shadow-sm dark:shadow-lg dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5
-                      hover:border-primary-400/70 dark:hover:border-primary-500/45 hover:shadow-md"
+                    to={locked ? '/billing' : `${path}?nr=${nr}`}
+                    className={`group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
+                      ${locked
+                        ? 'bg-slate-100/95 dark:bg-slate-900/60 border-slate-300/90 dark:border-slate-700/90'
+                        : 'bg-white/90 dark:bg-slate-900/80 border-slate-200/90 dark:border-slate-700/90 hover:border-primary-400/70 dark:hover:border-primary-500/45 hover:shadow-md'}
+                      backdrop-blur-sm shadow-sm dark:shadow-lg dark:shadow-black/40 ring-1 ring-slate-900/5 dark:ring-white/5`}
                   >
                     <div className="flex items-center gap-4 min-w-0">
                       <div className="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-500/20 flex items-center justify-center text-primary-700 dark:text-primary-300 font-bold text-lg shrink-0">
@@ -143,6 +150,12 @@ function ExamBlokSelection({ blok }) {
                           {showResume && (
                             <span className="inline-flex rounded-full bg-primary-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-700 dark:text-primary-300">
                               Ga verder
+                            </span>
+                          )}
+                          {locked && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
+                              <Lock className="w-3.5 h-3.5" />
+                              Premium
                             </span>
                           )}
                         </div>

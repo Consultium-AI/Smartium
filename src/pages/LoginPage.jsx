@@ -672,7 +672,10 @@ const LoginPage = () => {
                   transition={{ delay: reduceMotion ? 0 : 0.45, duration: 0.4, ease }}
                   className="w-full"
                 >
-                  <GoogleSignInButton disabled={submitting} />
+                  <GoogleSignInButton
+                    disabled={submitting}
+                    redirectPath={mode === 'register' ? '/billing' : postLoginPath}
+                  />
                   {import.meta.env.DEV && !isFirebaseConfigured ? <GoogleOAuthOriginHint /> : null}
                 </motion.div>
               ) : (

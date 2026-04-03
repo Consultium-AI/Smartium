@@ -34,7 +34,7 @@ function GoogleMark({ className }) {
  * Met Firebase: popup (juiste OAuth-client automatisch).
  * Zonder Firebase: Google Identity Services + optionele lokale sessie.
  */
-export default function GoogleSignInButton({ disabled }) {
+export default function GoogleSignInButton({ disabled, redirectPath = '/summary' }) {
   const containerRef = useRef(null)
   const navigate = useNavigate()
   const { signInWithGoogleOAuth, signInWithGoogleFirebasePopup } = useAuth()
@@ -58,7 +58,7 @@ export default function GoogleSignInButton({ disabled }) {
               if (!response?.credential) return
               try {
                 await signInWithGoogleOAuth(response.credential)
-                navigate('/summary', { replace: true })
+                navigate(redirectPath, { replace: true })
               } catch {
                 /* fout staat in AuthContext.error */
               }
@@ -85,7 +85,7 @@ export default function GoogleSignInButton({ disabled }) {
       cancelled = true
       if (el) el.innerHTML = ''
     }
-  }, [disabled, navigate, signInWithGoogleOAuth])
+  }, [disabled, navigate, redirectPath, signInWithGoogleOAuth])
 
   if (isFirebaseConfigured) {
     return (
@@ -96,7 +96,7 @@ export default function GoogleSignInButton({ disabled }) {
           setPopupBusy(true)
           try {
             await signInWithGoogleFirebasePopup()
-            navigate('/summary', { replace: true })
+            navigate(redirectPath, { replace: true })
           } catch {
             /* AuthContext.error */
           } finally {
