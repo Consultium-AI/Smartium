@@ -57,7 +57,6 @@ export default function BillingPage() {
     const p = stored || urlPlan
     if (p === 'monthly' || p === 'yearly') {
       setPlan(p)
-      setStep(2)
       if (stored) sessionStorage.removeItem('smartium_billing_plan')
     }
   }, [loading, user, urlPlan])
@@ -65,7 +64,6 @@ export default function BillingPage() {
   useEffect(() => {
     if (!user && urlPlan) {
       setPlan(urlPlan === 'yearly' ? 'yearly' : 'monthly')
-      setStep(2)
     }
   }, [urlPlan, user])
 
@@ -215,7 +213,7 @@ export default function BillingPage() {
                     transition={{ duration: 0.3, delay: 0.03, ease }}
                   >
                     <Link
-                      to={user ? '/summary' : '/login'}
+                      to="/login"
                       className="group block h-full rounded-2xl border border-slate-200/90 bg-white/90 p-7 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] transition-all hover:border-slate-300 hover:shadow-md dark:border-slate-600/60 dark:bg-[#141a24] dark:ring-1 dark:ring-white/[0.08] dark:hover:border-slate-500 dark:hover:ring-white/[0.12]"
                     >
                       <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">

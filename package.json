@@ -8,13 +8,15 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "secrets:github": "node scripts/push-github-secrets.mjs"
+    "secrets:github": "node scripts/push-github-secrets.mjs",
+    "automation:export-user-access-status": "node scripts/exportFirebaseUserAccessStatus.mjs"
   },
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
     "@stripe/react-stripe-js": "^6.1.0",
     "@stripe/stripe-js": "^9.0.1",
     "firebase": "^12.11.0",
+    "firebase-admin": "^13.7.0",
     "framer-motion": "^11.15.0",
     "html2pdf.js": "^0.14.0",
     "lucide-react": "^0.468.0",
