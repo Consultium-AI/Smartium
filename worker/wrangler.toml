@@ -5,8 +5,12 @@ compatibility_date = "2024-12-01"
 # Comma-separated list, no spaces. Add http://localhost:5174 for local Vite dev.
 [vars]
 ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl,http://localhost:5174,http://127.0.0.1:5174"
-STRIPE_PRICE_MONTHLY = "price_1THuz72NJGvegKCX9gOfXLaG"
-STRIPE_PRICE_YEARLY = "price_1THuz72NJGvegKCXJVQMpyqY"
+# Production prices (restore after testing):
+# STRIPE_PRICE_MONTHLY = "price_1THuz72NJGvegKCX9gOfXLaG"
+# STRIPE_PRICE_YEARLY = "price_1THuz72NJGvegKCXJVQMpyqY"
+# Test prices (EUR 0.01):
+STRIPE_PRICE_MONTHLY = "price_1TI2Vp2NJGvegKCXuhQ4mq8Q"
+STRIPE_PRICE_YEARLY = "price_1TI2Vq2NJGvegKCX1sEf9bgs"
 STRIPE_PAYMENT_METHOD_TYPES = "ideal"
 
 # Mode: payment (one-time iDEAL). Frontend toont maandelijks/jaarlijks;

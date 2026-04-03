@@ -4,7 +4,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, Check, CreditCard, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { createCheckoutSession, createEmbeddedCheckoutSession, grantAccessAfterPayment } from '../lib/billingApi'
-import { writeLocalAccess } from '../hooks/useAccess'
+import { grantAccess } from '../hooks/useAccess'
 import { hasStripePublishableKey } from '../lib/stripeClient'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -56,16 +56,17 @@ export default function BillingPage() {
   }, [urlPlan, user])
 
   useEffect(() => {
-    if ((status === 'success' || sessionId) && user?.uid) {
-      const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
-      if (sid) {
-        grantAccessAfterPayment(sid, user.uid).then((res) => {
-          if (res.paidUntil) {
-            writeLocalAccess(user.uid, { paidUntil: res.paidUntil, plan: res.plan })
-          }
-        }).catch(() => {})
-      }
-    }
+    if (!(status === 'success' || sessionId) || !user?.uid) return
+    const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
+    if (!sid) return
+
+    grantAccessAfterPayment(sid, user.uid)
+      .then((res) => {
+        if (res.paidUntil) {
+          return grantAccess(user.uid, res.paidUntil, res.plan)
+        }
+      })
+      .catch(() => {})
   }, [status, sessionId, user?.uid])
 
   const startCheckout = async () => {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useAuth } from '../context/AuthContext'
 
 const LOCAL_KEY = 'smartium_access'
@@ -16,7 +16,33 @@ function readLocalAccess(uid) {
 export function writeLocalAccess(uid, data) {
   try {
     localStorage.setItem(`${LOCAL_KEY}:${uid}`, JSON.stringify(data))
+    window.dispatchEvent(new CustomEvent('smartium-access-updated', { detail: { uid } }))
   } catch { /* quota */ }
+}
+
+/**
+ * After successful payment, write paidUntil to both localStorage and Firestore.
+ */
+export async function grantAccess(uid, paidUntil, plan) {
+  writeLocalAccess(uid, { paidUntil, plan })
+
+  try {
+    const { db, isFirebaseConfigured } = await import('../lib/firebase')
+    if (!isFirebaseConfigured || !db) return
+
+    const { doc, setDoc, serverTimestamp } = await import('firebase/firestore')
+    await setDoc(
+      doc(db, 'users', uid),
+      {
+        paidUntil,
+        plan,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    )
+  } catch (e) {
+    console.warn('[Smartium] Firestore write for access failed, localStorage still valid:', e?.message)
+  }
 }
 
 function resolveFromLocal(uid) {
@@ -31,6 +57,12 @@ export function useAccess() {
   const { user, loading: authLoading } = useAuth()
   const [access, setAccess] = useState({ hasAccess: false, loading: true, paidUntil: null, plan: null })
 
+  const refresh = useCallback(() => {
+    if (user?.uid) {
+      setAccess(resolveFromLocal(user.uid))
+    }
+  }, [user?.uid])
+
   useEffect(() => {
     if (authLoading) return
 
@@ -40,7 +72,14 @@ export function useAccess() {
     }
 
     const uid = user.uid
-    setAccess((prev) => ({ ...prev, ...resolveFromLocal(uid) }))
+    setAccess(resolveFromLocal(uid))
+
+    const onAccessUpdated = (e) => {
+      if (e.detail?.uid === uid) {
+        setAccess(resolveFromLocal(uid))
+      }
+    }
+    window.addEventListener('smartium-access-updated', onAccessUpdated)
 
     let unsub = null
     let cancelled = false
@@ -48,10 +87,7 @@ export function useAccess() {
     async function listenFirestore() {
       try {
         const { db, isFirebaseConfigured } = await import('../lib/firebase')
-        if (!isFirebaseConfigured || !db || cancelled) {
-          if (!cancelled) setAccess(resolveFromLocal(uid))
-          return
-        }
+        if (!isFirebaseConfigured || !db || cancelled) return
 
         const { doc, onSnapshot } = await import('firebase/firestore')
         const ref = doc(db, 'users', uid)
@@ -67,26 +103,21 @@ export function useAccess() {
               const hasAccess = paidUntil > Date.now()
               writeLocalAccess(uid, { paidUntil, plan })
               setAccess({ hasAccess, loading: false, paidUntil, plan })
-            } else {
-              if (!cancelled) setAccess(resolveFromLocal(uid))
             }
           },
-          () => {
-            if (!cancelled) setAccess(resolveFromLocal(uid))
-          }
+          () => {}
         )
-      } catch {
-        if (!cancelled) setAccess(resolveFromLocal(uid))
-      }
+      } catch {}
     }
 
     listenFirestore()
 
     return () => {
       cancelled = true
+      window.removeEventListener('smartium-access-updated', onAccessUpdated)
       if (unsub) unsub()
     }
   }, [user?.uid, authLoading])
 
-  return access
+  return { ...access, refresh }
 }

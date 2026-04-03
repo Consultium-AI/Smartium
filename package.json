@@ -11,6 +11,7 @@
     "secrets:github": "node scripts/push-github-secrets.mjs"
   },
   "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated",
     "@stripe/react-stripe-js": "^6.1.0",
     "@stripe/stripe-js": "^9.0.1",
     "firebase": "^12.11.0",

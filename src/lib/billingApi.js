@@ -4,10 +4,16 @@ function apiBase() {
   return (raw || fallback).replace(/\/$/, '')
 }
 
+function billingPageUrl(suffix) {
+  const root = new URL(import.meta.env.BASE_URL || '/', window.location.origin)
+  const path = `${root.pathname.replace(/\/$/, '')}/billing${suffix}`
+  return `${root.origin}${path.startsWith('/') ? '' : '/'}${path}`
+}
+
 export async function createCheckoutSession(plan, opts = {}) {
-  const baseHref = new URL(import.meta.env.BASE_URL || '/', window.location.origin).href
-  const successUrl = new URL('billing?status=success', baseHref).href
-  const cancelUrl = new URL('billing?status=cancel', baseHref).href
+  // Stripe vervangt {CHECKOUT_SESSION_ID}; zonder dit geen grant-access-call na iDEAL-redirect
+  const successUrl = billingPageUrl('?session_id={CHECKOUT_SESSION_ID}&status=success')
+  const cancelUrl = billingPageUrl('?status=cancel')
 
   const res = await fetch(`${apiBase()}/api/create-checkout-session`, {
     method: 'POST',
@@ -28,8 +34,7 @@ export async function createCheckoutSession(plan, opts = {}) {
 }
 
 export async function createEmbeddedCheckoutSession(plan, opts = {}) {
-  const baseHref = new URL(import.meta.env.BASE_URL || '/', window.location.origin).href
-  const returnUrl = new URL('billing?session_id={CHECKOUT_SESSION_ID}', baseHref).href
+  const returnUrl = billingPageUrl('?session_id={CHECKOUT_SESSION_ID}&status=success')
 
   const res = await fetch(`${apiBase()}/api/create-checkout-session`, {
     method: 'POST',
