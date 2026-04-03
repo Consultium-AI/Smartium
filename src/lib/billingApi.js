@@ -64,3 +64,14 @@ export async function grantAccessAfterPayment(sessionId, uid) {
   if (!res.ok) return { error: data.error || 'Fout bij toegang verlenen' }
   return data
 }
+
+export async function recoverAccessForUser(uid, email) {
+  const res = await fetch(`${apiBase()}/api/recover-access`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ uid, email }),
+  })
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) return { error: data.error || 'Geen actieve toegang gevonden' }
+  return data
+}

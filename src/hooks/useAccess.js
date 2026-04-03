@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { recoverAccessForUser } from '../lib/billingApi'
 
 const LOCAL_KEY = 'smartium_access'
 
@@ -72,7 +73,8 @@ export function useAccess() {
     }
 
     const uid = user.uid
-    setAccess(resolveFromLocal(uid))
+    const initial = resolveFromLocal(uid)
+    setAccess(initial)
 
     const onAccessUpdated = (e) => {
       if (e.detail?.uid === uid) {
@@ -112,12 +114,34 @@ export function useAccess() {
 
     listenFirestore()
 
+    async function recoverFromAccountIfNeeded() {
+      if (initial.hasAccess) return
+      if (!user?.email) return
+      try {
+        const recovered = await recoverAccessForUser(uid, user.email)
+        if (recovered?.paidUntil) {
+          await grantAccess(uid, recovered.paidUntil, recovered.plan)
+          if (!cancelled) {
+            setAccess({
+              hasAccess: Number(recovered.paidUntil) > Date.now(),
+              loading: false,
+              paidUntil: Number(recovered.paidUntil) || null,
+              plan: recovered.plan || null,
+            })
+          }
+        }
+      } catch {
+        // no-op: user may simply not have an active paid session
+      }
+    }
+    void recoverFromAccountIfNeeded()
+
     return () => {
       cancelled = true
       window.removeEventListener('smartium-access-updated', onAccessUpdated)
       if (unsub) unsub()
     }
-  }, [user?.uid, authLoading])
+  }, [user?.uid, user?.email, authLoading])
 
   return { ...access, refresh }
 }

@@ -13,6 +13,7 @@ export interface Env {
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
 const STRIPE_API = 'https://api.stripe.com/v1/checkout/sessions'
+const STRIPE_SEARCH_API = 'https://api.stripe.com/v1/checkout/sessions/search'
 
 function parseAllowedOrigins(raw: string): string[] {
   return raw.split(',').map((s) => s.trim()).filter(Boolean)
@@ -343,6 +344,78 @@ async function handleGrantAccess(request: Request, env: Env, origin: string): Pr
   return json(origin, { granted: true, paidUntil, plan })
 }
 
+function escapeStripeSearchValue(value: string): string {
+  return value.replace(/\\/g, '\\\\').replace(/'/g, "\\'")
+}
+
+function paidUntilFromSession(createdSeconds: number, plan: string): number {
+  const daysToAdd = plan === 'yearly' ? 365 : 30
+  return createdSeconds * 1000 + daysToAdd * 24 * 60 * 60 * 1000
+}
+
+async function findLatestPaidSession(
+  secret: string,
+  query: string
+): Promise<Record<string, unknown> | null> {
+  const url = `${STRIPE_SEARCH_API}?${new URLSearchParams({ limit: '20', query }).toString()}`
+  const stripeRes = await fetch(url, {
+    headers: { Authorization: `Bearer ${secret}` },
+  })
+  if (!stripeRes.ok) return null
+  const result = (await stripeRes.json()) as { data?: Record<string, unknown>[] }
+  return Array.isArray(result.data) && result.data.length > 0 ? result.data[0] : null
+}
+
+// ─── Recover access by account (cross-device/incognito) ───────
+async function handleRecoverAccess(request: Request, env: Env, origin: string): Promise<Response> {
+  let body: { uid?: string; email?: string }
+  try {
+    body = await request.json()
+  } catch {
+    return json(origin, { error: 'Invalid JSON' }, 400)
+  }
+
+  const secret = env.STRIPE_SECRET_KEY?.trim()
+  if (!secret) return json(origin, { error: 'Not configured' }, 503)
+
+  const uid = body.uid?.trim()
+  const email = body.email?.trim().toLowerCase()
+  if (!uid || !email) return json(origin, { error: 'uid and email required' }, 400)
+
+  const byUidQuery =
+    `payment_status:'paid' AND status:'complete' AND metadata['uid']:'${escapeStripeSearchValue(uid)}'`
+  let session = await findLatestPaidSession(secret, byUidQuery)
+
+  if (!session) {
+    const byEmailQuery =
+      `payment_status:'paid' AND status:'complete' AND customer_email:'${escapeStripeSearchValue(email)}'`
+    session = await findLatestPaidSession(secret, byEmailQuery)
+  }
+
+  if (!session) return json(origin, { error: 'No paid session found' }, 404)
+
+  const metadata = (session.metadata || {}) as Record<string, string>
+  const plan = metadata.plan === 'yearly' ? 'yearly' : 'monthly'
+  const created = Number(session.created) || 0
+  if (!created) return json(origin, { error: 'Invalid paid session data' }, 500)
+
+  const paidUntil = paidUntilFromSession(created, plan)
+  if (paidUntil <= Date.now()) return json(origin, { error: 'Access expired' }, 410)
+
+  const sessionId = String(session.id || '')
+  const customerEmail = String(session.customer_email || email)
+  const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  if (projectId) {
+    try {
+      await writeAccessToFirestore(env, uid, plan, sessionId, customerEmail)
+    } catch (e) {
+      console.error('Firestore write in recover-access failed:', e)
+    }
+  }
+
+  return json(origin, { granted: true, paidUntil, plan, recovered: true })
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
@@ -368,6 +441,10 @@ export default {
 
     if (url.pathname === '/api/grant-access' && request.method === 'POST') {
       return handleGrantAccess(request, env, origin)
+    }
+
+    if (url.pathname === '/api/recover-access' && request.method === 'POST') {
+      return handleRecoverAccess(request, env, origin)
     }
 
     if (url.pathname !== '/api/chat' || request.method !== 'POST') {
