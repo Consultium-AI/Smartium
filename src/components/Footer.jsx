@@ -16,6 +16,12 @@ const navLinks = [
   { name: 'Prijzen', href: '/billing' },
 ]
 
+const legalDocs = [
+  { label: 'Privacyverklaring', file: 'privacyverklaring-smartium-ai.docx' },
+  { label: 'Cookiebeleid', file: 'cookiebeleid-smartium-ai.docx' },
+  { label: 'Voorwaarden & regelgeving', file: 'smartium-regelgeving.docx' },
+]
+
 const Footer = () => {
   return (
     <footer className="relative z-10 border-t border-slate-200/90 dark:border-slate-700/40 footer-section-bg">
@@ -92,10 +98,31 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-700/35 flex flex-wrap items-center justify-between gap-2">
+        <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-700/35 flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-navy-400 dark:text-slate-500/90 tracking-wide">
             &copy; 2024–{new Date().getFullYear()} Smartium &middot; Consultium
           </p>
+          <nav
+            className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-navy-500 dark:text-slate-400"
+            aria-label="Privacy en juridische documenten"
+          >
+            {legalDocs.map((doc, i) => (
+              <span key={doc.file} className="inline-flex items-center gap-x-2">
+                {i > 0 && (
+                  <span className="text-navy-300 dark:text-slate-600 select-none" aria-hidden>
+                    &middot;
+                  </span>
+                )}
+                <a
+                  href={`${import.meta.env.BASE_URL}legal/${doc.file}`}
+                  className="hover:text-navy-900 dark:hover:text-white underline-offset-2 hover:underline transition-colors"
+                  download
+                >
+                  {doc.label}
+                </a>
+              </span>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

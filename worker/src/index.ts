@@ -5,6 +5,10 @@ export interface Env {
   STRIPE_PRICE_MONTHLY?: string
   STRIPE_PRICE_YEARLY?: string
   STRIPE_PAYMENT_METHOD_TYPES?: string
+  STRIPE_WEBHOOK_SECRET?: string
+  FIREBASE_PROJECT_ID?: string
+  FIREBASE_CLIENT_EMAIL?: string
+  FIREBASE_PRIVATE_KEY?: string
 }
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
@@ -48,6 +52,7 @@ async function handleCreateCheckoutSession(
     successUrl?: string
     cancelUrl?: string
     customerEmail?: string
+    customerUid?: string
     embedded?: boolean
     returnUrl?: string
   }
@@ -86,6 +91,11 @@ async function handleCreateCheckoutSession(
 
   params.set('line_items[0][price]', priceId)
   params.set('line_items[0][quantity]', '1')
+
+  params.set('metadata[plan]', plan)
+  if (body.customerUid) {
+    params.set('metadata[uid]', body.customerUid)
+  }
 
   const rawPm = env.STRIPE_PAYMENT_METHOD_TYPES?.trim()
   const methods = rawPm ? rawPm.split(',').map((s) => s.trim().toLowerCase()).filter(Boolean) : ['ideal']
@@ -127,6 +137,212 @@ async function handleCreateCheckoutSession(
   return json(origin, { url: stripeJson.url })
 }
 
+// ─── Stripe Webhook ────────────────────────────────────────────
+async function verifyStripeSignature(
+  payload: string,
+  sigHeader: string,
+  secret: string
+): Promise<boolean> {
+  const parts = sigHeader.split(',')
+  let timestamp = ''
+  const signatures: string[] = []
+  for (const part of parts) {
+    const [k, v] = part.split('=')
+    if (k === 't') timestamp = v
+    if (k === 'v1') signatures.push(v)
+  }
+  if (!timestamp || signatures.length === 0) return false
+
+  const signedPayload = `${timestamp}.${payload}`
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  )
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(signedPayload))
+  const expected = [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, '0')).join('')
+  return signatures.some((s) => s === expected)
+}
+
+async function writeAccessToFirestore(
+  env: Env,
+  uid: string,
+  plan: string,
+  sessionId: string,
+  email: string | null
+): Promise<void> {
+  const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  if (!projectId) {
+    console.log('FIREBASE_PROJECT_ID not set, skipping Firestore write. Falling back to client-side access grant.')
+    return
+  }
+
+  const now = Date.now()
+  const daysToAdd = plan === 'yearly' ? 365 : 30
+  const paidUntil = now + daysToAdd * 24 * 60 * 60 * 1000
+
+  const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/users/${uid}?updateMask.fieldPaths=paidUntil&updateMask.fieldPaths=plan&updateMask.fieldPaths=lastPayment&updateMask.fieldPaths=email`
+
+  const docData = {
+    fields: {
+      paidUntil: { integerValue: String(paidUntil) },
+      plan: { stringValue: plan },
+      lastPayment: {
+        mapValue: {
+          fields: {
+            sessionId: { stringValue: sessionId },
+            at: { integerValue: String(now) },
+            plan: { stringValue: plan },
+          },
+        },
+      },
+      ...(email ? { email: { stringValue: email } } : {}),
+    },
+  }
+
+  const firestoreRes = await fetch(url, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await getFirebaseAccessToken(env)}` },
+    body: JSON.stringify(docData),
+  })
+
+  if (!firestoreRes.ok) {
+    const errText = await firestoreRes.text()
+    console.error('Firestore write failed:', firestoreRes.status, errText)
+  }
+}
+
+async function getFirebaseAccessToken(env: Env): Promise<string> {
+  const email = env.FIREBASE_CLIENT_EMAIL?.trim()
+  const keyRaw = env.FIREBASE_PRIVATE_KEY?.trim()
+
+  if (!email || !keyRaw) {
+    throw new Error('FIREBASE_CLIENT_EMAIL or FIREBASE_PRIVATE_KEY not set')
+  }
+
+  const key = keyRaw.replace(/\\n/g, '\n')
+  const now = Math.floor(Date.now() / 1000)
+  const header = btoa(JSON.stringify({ alg: 'RS256', typ: 'JWT' })).replace(/=/g, '')
+  const claim = btoa(
+    JSON.stringify({
+      iss: email,
+      scope: 'https://www.googleapis.com/auth/datastore',
+      aud: 'https://oauth2.googleapis.com/token',
+      exp: now + 3600,
+      iat: now,
+    })
+  ).replace(/=/g, '')
+
+  const signInput = `${header}.${claim}`
+  const pemBody = key.replace(/-----BEGIN PRIVATE KEY-----/, '').replace(/-----END PRIVATE KEY-----/, '').replace(/\s/g, '')
+  const binaryKey = Uint8Array.from(atob(pemBody), (c) => c.charCodeAt(0))
+  const cryptoKey = await crypto.subtle.importKey('pkcs8', binaryKey, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['sign'])
+  const signature = await crypto.subtle.sign('RSASSA-PKCS1-v1_5', cryptoKey, new TextEncoder().encode(signInput))
+  const sig = btoa(String.fromCharCode(...new Uint8Array(signature))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '')
+  const jwt = `${signInput}.${sig}`
+
+  const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${jwt}`,
+  })
+  const tokenData = (await tokenRes.json()) as { access_token?: string }
+  if (!tokenData.access_token) throw new Error('Failed to get Firebase access token')
+  return tokenData.access_token
+}
+
+async function handleStripeWebhook(request: Request, env: Env): Promise<Response> {
+  const webhookSecret = env.STRIPE_WEBHOOK_SECRET?.trim()
+  const payload = await request.text()
+
+  if (webhookSecret) {
+    const sig = request.headers.get('stripe-signature') || ''
+    const valid = await verifyStripeSignature(payload, sig, webhookSecret)
+    if (!valid) {
+      return new Response('Invalid signature', { status: 400 })
+    }
+  }
+
+  let event: { type?: string; data?: { object?: Record<string, unknown> } }
+  try {
+    event = JSON.parse(payload)
+  } catch {
+    return new Response('Invalid JSON', { status: 400 })
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data?.object
+    if (session) {
+      const metadata = (session.metadata || {}) as Record<string, string>
+      const uid = metadata.uid
+      const plan = metadata.plan || 'monthly'
+      const sessionId = (session.id as string) || ''
+      const email = (session.customer_email as string) || null
+
+      if (uid) {
+        try {
+          await writeAccessToFirestore(env, uid, plan, sessionId, email)
+        } catch (e) {
+          console.error('Failed to grant access:', e)
+        }
+      }
+    }
+  }
+
+  return new Response('ok', { status: 200 })
+}
+
+// ─── Grant access client-side (fallback when no webhook) ───────
+async function handleGrantAccess(request: Request, env: Env, origin: string): Promise<Response> {
+  let body: { sessionId?: string; uid?: string }
+  try {
+    body = await request.json()
+  } catch {
+    return json(origin, { error: 'Invalid JSON' }, 400)
+  }
+
+  const secret = env.STRIPE_SECRET_KEY?.trim()
+  if (!secret) return json(origin, { error: 'Not configured' }, 503)
+
+  const sid = body.sessionId?.trim()
+  const uid = body.uid?.trim()
+  if (!sid || !uid) return json(origin, { error: 'sessionId and uid required' }, 400)
+
+  const stripeRes = await fetch(`https://api.stripe.com/v1/checkout/sessions/${sid}`, {
+    headers: { Authorization: `Bearer ${secret}` },
+  })
+  if (!stripeRes.ok) return json(origin, { error: 'Invalid session' }, 400)
+
+  const session = (await stripeRes.json()) as Record<string, unknown>
+  if (session.payment_status !== 'paid') {
+    return json(origin, { error: 'Not paid' }, 400)
+  }
+
+  const metadata = (session.metadata || {}) as Record<string, string>
+  if (metadata.uid && metadata.uid !== uid) {
+    return json(origin, { error: 'UID mismatch' }, 403)
+  }
+
+  const plan = metadata.plan || 'monthly'
+  const now = Date.now()
+  const daysToAdd = plan === 'yearly' ? 365 : 30
+  const paidUntil = now + daysToAdd * 24 * 60 * 60 * 1000
+
+  const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  if (projectId) {
+    try {
+      await writeAccessToFirestore(env, uid, plan, sid, (session.customer_email as string) || null)
+      return json(origin, { granted: true, paidUntil, plan })
+    } catch (e) {
+      console.error('Firestore write in grant-access failed:', e)
+    }
+  }
+
+  return json(origin, { granted: true, paidUntil, plan })
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
@@ -134,16 +350,24 @@ export default {
     const allowed = parseAllowedOrigins(env.ALLOWED_ORIGINS || '')
     const isAllowed = allowed.length === 0 || allowed.includes(origin)
 
-    if (!isAllowed) {
-      return new Response('CORS: origin not allowed', { status: 403 })
-    }
-
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: corsHeaders(origin) })
     }
 
+    if (url.pathname === '/api/stripe-webhook' && request.method === 'POST') {
+      return handleStripeWebhook(request, env)
+    }
+
+    if (!isAllowed) {
+      return new Response('CORS: origin not allowed', { status: 403 })
+    }
+
     if (url.pathname === '/api/create-checkout-session' && request.method === 'POST') {
       return handleCreateCheckoutSession(request, env, origin)
+    }
+
+    if (url.pathname === '/api/grant-access' && request.method === 'POST') {
+      return handleGrantAccess(request, env, origin)
     }
 
     if (url.pathname !== '/api/chat' || request.method !== 'POST') {

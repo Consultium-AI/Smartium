@@ -12,7 +12,13 @@ export async function createCheckoutSession(plan, opts = {}) {
   const res = await fetch(`${apiBase()}/api/create-checkout-session`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ plan, successUrl, cancelUrl, customerEmail: opts.email || undefined }),
+    body: JSON.stringify({
+      plan,
+      successUrl,
+      cancelUrl,
+      customerEmail: opts.email || undefined,
+      customerUid: opts.uid || undefined,
+    }),
   })
 
   const data = await res.json().catch(() => ({}))
@@ -28,11 +34,28 @@ export async function createEmbeddedCheckoutSession(plan, opts = {}) {
   const res = await fetch(`${apiBase()}/api/create-checkout-session`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ plan, embedded: true, returnUrl, customerEmail: opts.email || undefined }),
+    body: JSON.stringify({
+      plan,
+      embedded: true,
+      returnUrl,
+      customerEmail: opts.email || undefined,
+      customerUid: opts.uid || undefined,
+    }),
   })
 
   const data = await res.json().catch(() => ({}))
   if (!res.ok) return { error: data.error || `Serverfout (${res.status})` }
   if (!data.clientSecret) return { error: 'Geen client_secret ontvangen.' }
   return { clientSecret: data.clientSecret }
+}
+
+export async function grantAccessAfterPayment(sessionId, uid) {
+  const res = await fetch(`${apiBase()}/api/grant-access`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessionId, uid }),
+  })
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) return { error: data.error || 'Fout bij toegang verlenen' }
+  return data
 }

@@ -3,7 +3,8 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, Check, CreditCard, Loader2, Sparkles } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
-import { createCheckoutSession, createEmbeddedCheckoutSession } from '../lib/billingApi'
+import { createCheckoutSession, createEmbeddedCheckoutSession, grantAccessAfterPayment } from '../lib/billingApi'
+import { writeLocalAccess } from '../hooks/useAccess'
 import { hasStripePublishableKey } from '../lib/stripeClient'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -65,13 +66,13 @@ export default function BillingPage() {
     setCheckoutLoading(true)
     try {
       if (embedAvailable) {
-        const result = await createEmbeddedCheckoutSession(plan, { email: user?.email })
+        const result = await createEmbeddedCheckoutSession(plan, { email: user?.email, uid: user?.uid })
         if (result.error) { setCheckoutError(result.error); return }
         setEmbedClientSecret(result.clientSecret)
         setStep(3)
         return
       }
-      const result = await createCheckoutSession(plan, { email: user?.email })
+      const result = await createCheckoutSession(plan, { email: user?.email, uid: user?.uid })
       if (result.error) { setCheckoutError(result.error); return }
       window.location.href = result.url
     } finally {
@@ -91,6 +92,19 @@ export default function BillingPage() {
       </>
     )
   }
+
+  useEffect(() => {
+    if ((status === 'success' || sessionId) && user?.uid) {
+      const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
+      if (sid) {
+        grantAccessAfterPayment(sid, user.uid).then((res) => {
+          if (res.paidUntil) {
+            writeLocalAccess(user.uid, { paidUntil: res.paidUntil, plan: res.plan })
+          }
+        }).catch(() => {})
+      }
+    }
+  }, [status, sessionId, user?.uid])
 
   if (status === 'success' || sessionId) {
     return (
