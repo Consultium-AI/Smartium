@@ -11,7 +11,8 @@
     "secrets:github": "node scripts/push-github-secrets.mjs",
     "automation:export-user-access-status": "node scripts/exportFirebaseUserAccessStatus.mjs",
     "automation:export-user-access-to-sheets": "node scripts/exportFirebaseUserAccessToGoogleSheets.mjs",
-    "automation:export-user-access-to-excel": "node scripts/exportFirebaseUserAccessToExcel.mjs"
+    "automation:export-user-access-to-excel": "node scripts/exportFirebaseUserAccessToExcel.mjs",
+    "automation:watch-user-access-to-excel": "node scripts/watchFirebaseUserAccessToExcel.mjs"
   },
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",

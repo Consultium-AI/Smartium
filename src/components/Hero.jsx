@@ -31,7 +31,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.05, ease }}
             className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-6"
           >
-            Geneeskunde · Nieuw curriculum
+            Smartium.nl · Consultium · Geneeskunde
           </motion.p>
 
           <motion.h1
