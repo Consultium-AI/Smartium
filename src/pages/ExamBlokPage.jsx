@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useMemo, useEffect, useCallback } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import {
   ChevronLeft,
   ChevronRight,
@@ -274,6 +274,8 @@ function GradeResultBlok({ exam, answers, cesuur, onReset, onReview }) {
 // ─── Active exam ───────────────────────────────────────────────
 function ExamBlokActive({ blok, exam, examNr }) {
   const { user, loading: authLoading } = useAuth()
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const hasPaidAccess = !accessLoading && hasAccess && plan !== 'free'
   const progressUserId = getProgressUserId(user, authLoading)
 
   const [currentCasus, setCurrentCasus] = useState(0)
@@ -467,23 +469,24 @@ function ExamBlokActive({ blok, exam, examNr }) {
                     displayQ={displayMc[q.id] || q}
                     answer={a}
                     onReveal={onReveal}
+                    canUseAiFollowUp={hasPaidAccess}
                   />
                 )
               case 'meerdere_antwoorden':
-                return <MeerdereAntwoordenBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <MeerdereAntwoordenBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               case 'koppelvraag':
-                return <KoppelvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <KoppelvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               case 'juist_onjuist':
-                return <JuistOnjuistBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <JuistOnjuistBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               case 'open':
-                return <OpenVraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <OpenVraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               case 'beeldvraag':
                 if (q.gradingMethod === 'order') {
-                  return <BeeldvraagOrderBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                  return <BeeldvraagOrderBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
                 }
-                return <BeeldvraagAiBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <BeeldvraagAiBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               case 'rekenvraag':
-                return <RekenvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} />
+                return <RekenvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
               default:
                 return (
                   <div key={q.id} className="rounded-xl border border-amber-200 p-4 text-sm text-amber-800">
@@ -524,9 +527,15 @@ export default function ExamBlokPage({ blokNumber = 5 }) {
   const [searchParams] = useSearchParams()
   const blok = Number(blokNumber) || 5
   const examNr = parseInt(searchParams.get('nr'), 10)
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const hasPaidAccess = hasAccess && plan !== 'free'
 
   const exams = getExamsForBlok(blok)
   const exam = examNr >= 1 && examNr <= exams.length ? exams[examNr - 1] : null
+
+  if (exam && !accessLoading && !hasPaidAccess && !isFreePlanAllowedExam(blok, examNr)) {
+    return <Navigate to={gradePathForBlok(blok)} replace />
+  }
 
   if (!examNr || !exam) {
     return <ExamBlokSelection blok={blok} />

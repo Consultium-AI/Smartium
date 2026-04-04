@@ -9,11 +9,17 @@ export interface Env {
   FIREBASE_PROJECT_ID?: string
   FIREBASE_CLIENT_EMAIL?: string
   FIREBASE_PRIVATE_KEY?: string
+  FIREBASE_MAIL_COLLECTION?: string
+  /** https://resend.com — optioneel: branded betaalbevestiging na checkout */
+  RESEND_API_KEY?: string
+  /** bv. Smartium <factuur@jouwdomein.nl> (Resend: geverifieerd afzenderdomein) */
+  RESEND_FROM?: string
 }
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
 const STRIPE_API = 'https://api.stripe.com/v1/checkout/sessions'
 const STRIPE_SEARCH_API = 'https://api.stripe.com/v1/checkout/sessions/search'
+const FREE_CHAT_PROMPT_LIMIT = 20
 
 function parseAllowedOrigins(raw: string): string[] {
   return raw.split(',').map((s) => s.trim()).filter(Boolean)
@@ -33,6 +39,156 @@ function json(origin: string, data: unknown, status = 200): Response {
     status,
     headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
   })
+}
+
+/** E-mail die de klant bij Stripe Checkout heeft opgegeven (na betaling beschikbaar). */
+function checkoutSessionCustomerEmail(session: Record<string, unknown>): string | null {
+  const direct = typeof session.customer_email === 'string' ? session.customer_email.trim() : ''
+  if (direct) return direct
+  const details = session.customer_details as { email?: string } | undefined
+  const fromDetails = typeof details?.email === 'string' ? details.email.trim() : ''
+  return fromDetails || null
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
+async function sendPaymentConfirmationEmail(
+  env: Env,
+  opts: { to: string; plan: string; sessionId: string }
+): Promise<boolean> {
+  const key = env.RESEND_API_KEY?.trim()
+  const from = env.RESEND_FROM?.trim()
+  if (!key || !from) return false
+
+  const planLabel = opts.plan === 'yearly' ? 'Jaarlijks' : 'Maandelijks'
+  const safeEmail = escapeHtml(opts.to)
+  const html = `<p>Hallo,</p>
+<p>Bedankt voor je betaling bij Smartium. Je betaling is ontvangen.</p>
+<p><strong>Plan:</strong> ${escapeHtml(planLabel)}<br/>
+<strong>Factuur-/contactmail:</strong> ${safeEmail}</p>
+<p>Je hebt nu volledige toegang tot het platform. Veel succes met studeren.</p>
+<p style="color:#64748b;font-size:12px;margin-top:2rem;">Sessie: ${escapeHtml(opts.sessionId)}</p>`
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/json',
+      'Idempotency-Key': `smartium-payment-${opts.sessionId}`,
+    },
+    body: JSON.stringify({
+      from,
+      to: [opts.to],
+      subject: 'Bevestiging van je Smartium-betaling',
+      html,
+    }),
+  })
+  if (!res.ok) {
+    const t = await res.text()
+    console.error('Resend payment confirmation failed:', res.status, t)
+    return false
+  }
+  return true
+}
+
+function toFirestoreDocId(input: string): string {
+  return input.trim().replace(/[^a-zA-Z0-9_-]/g, '_')
+}
+
+async function queueFirebasePaymentConfirmationEmail(
+  env: Env,
+  opts: { to: string; plan: string; sessionId: string }
+): Promise<boolean> {
+  const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  const email = opts.to.trim()
+  if (!projectId || !email) return false
+
+  const token = await getFirebaseAccessToken(env)
+  const collection = (env.FIREBASE_MAIL_COLLECTION || 'mail').trim() || 'mail'
+  const planLabel = opts.plan === 'yearly' ? 'Jaarlijks' : 'Maandelijks'
+  const docId = `payment_confirmation_${toFirestoreDocId(opts.sessionId)}`
+  const url =
+    `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/` +
+    `${encodeURIComponent(collection)}/${encodeURIComponent(docId)}?currentDocument.exists=false`
+
+  const safeEmail = escapeHtml(email)
+  const html = `<p>Hallo,</p>
+<p>Bedankt voor je betaling bij Smartium. Je betaling is ontvangen.</p>
+<p><strong>Plan:</strong> ${escapeHtml(planLabel)}<br/>
+<strong>Factuur-/contactmail:</strong> ${safeEmail}</p>
+<p>Je hebt nu volledige toegang tot het platform. Veel succes met studeren.</p>
+<p style="color:#64748b;font-size:12px;margin-top:2rem;">Sessie: ${escapeHtml(opts.sessionId)}</p>`
+  const text =
+    `Bedankt voor je betaling bij Smartium.\n` +
+    `Plan: ${planLabel}\n` +
+    `Factuur-/contactmail: ${email}\n` +
+    `Sessie: ${opts.sessionId}`
+
+  const payload = {
+    fields: {
+      to: { arrayValue: { values: [{ stringValue: email }] } },
+      message: {
+        mapValue: {
+          fields: {
+            subject: { stringValue: 'Bevestiging van je Smartium-betaling' },
+            text: { stringValue: text },
+            html: { stringValue: html },
+          },
+        },
+      },
+      meta: {
+        mapValue: {
+          fields: {
+            sessionId: { stringValue: opts.sessionId },
+            plan: { stringValue: opts.plan },
+            source: { stringValue: 'worker-payment-confirmation' },
+          },
+        },
+      },
+    },
+  }
+
+  const res = await fetch(url, {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+
+  // 409 = document bestond al (idempotent), dus prima.
+  if (res.status === 409) return true
+  if (!res.ok) {
+    const t = await res.text()
+    console.error('Firebase payment confirmation queue failed:', res.status, t)
+    return false
+  }
+  return true
+}
+
+async function sendPaymentConfirmation(
+  env: Env,
+  opts: { plan: string; sessionId: string; email: string }
+): Promise<{ firebaseQueued: boolean; resendSent: boolean }> {
+  const email = opts.email.trim()
+  if (!email) return { firebaseQueued: false, resendSent: false }
+
+  const [firebaseResult, resendResult] = await Promise.allSettled([
+    queueFirebasePaymentConfirmationEmail(env, { to: email, plan: opts.plan, sessionId: opts.sessionId }),
+    // Optionele fallback als Firebase Trigger Email nog niet actief is.
+    sendPaymentConfirmationEmail(env, { to: email, plan: opts.plan, sessionId: opts.sessionId }),
+  ])
+  return {
+    firebaseQueued: firebaseResult.status === 'fulfilled' ? firebaseResult.value : false,
+    resendSent: resendResult.status === 'fulfilled' ? resendResult.value : false,
+  }
 }
 
 async function handleCreateCheckoutSession(
@@ -56,6 +212,8 @@ async function handleCreateCheckoutSession(
     customerUid?: string
     embedded?: boolean
     returnUrl?: string
+    /** false = geen customer_email op de sessie; Stripe laat de klant e-mail invullen bij checkout */
+    prefillCustomerEmail?: boolean
   }
   try {
     body = await request.json()
@@ -107,10 +265,11 @@ async function handleCreateCheckoutSession(
     params.append('payment_method_types[]', pm)
   }
 
+  const prefillEmail = body.prefillCustomerEmail !== false
   const email = body.customerEmail?.trim()
-  if (email) {
+  if (prefillEmail && email) {
     params.set('customer_email', email)
-    // Laat Stripe een betalingsbevestiging/receipt mailen naar de klant.
+    // Stripe stuurt een betaalbewijs/receipt naar dit adres (Dashboard: e-mails voor klanten aan).
     params.set('payment_intent_data[receipt_email]', email)
   }
 
@@ -254,6 +413,11 @@ function readIntegerField(field: unknown): number {
   return Number.isFinite(n) ? n : 0
 }
 
+function readStringField(field: unknown): string {
+  if (!field || typeof field !== 'object') return ''
+  return ((field as { stringValue?: string }).stringValue || '').trim()
+}
+
 function readNestedStringField(
   fields: Record<string, unknown> | undefined,
   path: string[]
@@ -272,6 +436,204 @@ function readNestedStringField(
   }
   if (!cursor || typeof cursor !== 'object') return ''
   return ((cursor as { stringValue?: string }).stringValue || '').trim()
+}
+
+function readNestedIntegerField(
+  fields: Record<string, unknown> | undefined,
+  path: string[]
+): number {
+  if (!fields) return 0
+  let cursor: unknown = fields
+  for (let i = 0; i < path.length; i++) {
+    const key = path[i]
+    if (!cursor || typeof cursor !== 'object') return 0
+    const typed = cursor as Record<string, unknown>
+    if (i === 0) {
+      cursor = typed[key]
+      continue
+    }
+    cursor = (typed.mapValue as { fields?: Record<string, unknown> } | undefined)?.fields?.[key]
+  }
+  return readIntegerField(cursor)
+}
+
+function currentMonthKeyUtc(nowMs = Date.now()): string {
+  const d = new Date(nowMs)
+  const y = d.getUTCFullYear()
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0')
+  return `${y}-${m}`
+}
+
+function hasUnlimitedChatAccess(plan: string, paidUntilMs: number): boolean {
+  if (plan === 'admin' || plan === 'vip') return true
+  if ((plan === 'monthly' || plan === 'yearly') && paidUntilMs > Date.now()) return true
+  return false
+}
+
+async function consumeChatPromptQuota(
+  env: Env,
+  opts: { uid: string; email?: string; firebaseIdToken?: string }
+): Promise<{
+  allowed: boolean
+  limit: number
+  used: number
+  remaining: number
+  monthKey: string
+  reason?: string
+}> {
+  const uid = opts.uid.trim()
+  if (!uid) {
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used: 0,
+      remaining: 0,
+      monthKey: currentMonthKeyUtc(),
+      reason: 'auth_required',
+    }
+  }
+
+  const projectId = env.FIREBASE_PROJECT_ID?.trim()
+  if (!projectId) {
+    // Hard fail: quota must be enforced server-side via Firebase.
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used: 0,
+      remaining: 0,
+      monthKey: currentMonthKeyUtc(),
+      reason: 'firebase_not_configured',
+    }
+  }
+
+  let token = ''
+  const userToken = (opts.firebaseIdToken || '').trim()
+  const hasServiceAccountCreds =
+    Boolean(env.FIREBASE_CLIENT_EMAIL?.trim()) && Boolean(env.FIREBASE_PRIVATE_KEY?.trim())
+
+  // Preferred: use end-user Firebase ID token (SDK/ADC-style auth path, no service-account secret needed).
+  // Fallback: service-account token when configured.
+  const userAuthHeader = userToken ? `Bearer ${userToken}` : ''
+
+  if (!userAuthHeader && !hasServiceAccountCreds) {
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used: 0,
+      remaining: 0,
+      monthKey: currentMonthKeyUtc(),
+      reason: 'firebase_auth_failed',
+    }
+  }
+
+  try {
+    if (!userToken) {
+      token = await getFirebaseAccessToken(env)
+    }
+  } catch (e) {
+    console.error('Failed to get Firebase token for chat quota:', e)
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used: 0,
+      remaining: 0,
+      monthKey: currentMonthKeyUtc(),
+      reason: 'firebase_auth_failed',
+    }
+  }
+  const docUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/users/${uid}`
+  const doc = userToken
+    ? await (async () => {
+        const res = await fetch(docUrl, { headers: { Authorization: userAuthHeader } })
+        if (res.status === 404) return null
+        if (!res.ok) {
+          const errText = await res.text()
+          console.error('Firestore read failed (user token):', res.status, errText)
+          return null
+        }
+        return (await res.json()) as { fields?: Record<string, unknown> }
+      })()
+    : await fetchFirestoreUserDoc(docUrl, token)
+  const fields = doc?.fields
+  const plan = readStringField(fields?.plan).toLowerCase()
+  const paidUntilMs = readIntegerField(fields?.paidUntil)
+
+  // Premium users are not rate-limited.
+  if (hasUnlimitedChatAccess(plan, paidUntilMs)) {
+    return {
+      allowed: true,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used: 0,
+      remaining: FREE_CHAT_PROMPT_LIMIT,
+      monthKey: currentMonthKeyUtc(),
+      reason: 'premium',
+    }
+  }
+
+  const now = Date.now()
+  const monthKey = currentMonthKeyUtc(now)
+  const storedMonth = readNestedStringField(fields, ['chatUsage', 'monthKey'])
+  const storedCount = readNestedIntegerField(fields, ['chatUsage', 'promptCount'])
+  const used = storedMonth === monthKey ? Math.max(0, storedCount) : 0
+
+  if (used >= FREE_CHAT_PROMPT_LIMIT) {
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used,
+      remaining: 0,
+      monthKey,
+      reason: 'free_limit_reached',
+    }
+  }
+
+  const nextUsed = used + 1
+  const writeUrl = `${docUrl}?updateMask.fieldPaths=chatUsage&updateMask.fieldPaths=email`
+  const payload = {
+    fields: {
+      chatUsage: {
+        mapValue: {
+          fields: {
+            monthKey: { stringValue: monthKey },
+            promptCount: { integerValue: String(nextUsed) },
+            limit: { integerValue: String(FREE_CHAT_PROMPT_LIMIT) },
+            updatedAt: { integerValue: String(now) },
+          },
+        },
+      },
+      ...(opts.email ? { email: { stringValue: opts.email.trim().toLowerCase() } } : {}),
+    },
+  }
+
+  const writeRes = await fetch(writeUrl, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: userToken ? userAuthHeader : `Bearer ${token}`,
+    },
+    body: JSON.stringify(payload),
+  })
+  if (!writeRes.ok) {
+    const errText = await writeRes.text()
+    console.error('Failed to update chatUsage quota:', writeRes.status, errText)
+    return {
+      allowed: false,
+      limit: FREE_CHAT_PROMPT_LIMIT,
+      used,
+      remaining: Math.max(0, FREE_CHAT_PROMPT_LIMIT - used),
+      monthKey,
+      reason: 'quota_write_failed',
+    }
+  }
+
+  return {
+    allowed: true,
+    limit: FREE_CHAT_PROMPT_LIMIT,
+    used: nextUsed,
+    remaining: Math.max(0, FREE_CHAT_PROMPT_LIMIT - nextUsed),
+    monthKey,
+    reason: 'free_consumed',
+  }
 }
 
 async function fetchFirestoreUserDoc(
@@ -349,20 +711,32 @@ async function handleStripeWebhook(request: Request, env: Env): Promise<Response
     return new Response('Invalid JSON', { status: 400 })
   }
 
-  if (event.type === 'checkout.session.completed') {
-    const session = event.data?.object
+  if (event.type === 'checkout.session.completed' || event.type === 'checkout.session.async_payment_succeeded') {
+    const session = event.data?.object as Record<string, unknown> | undefined
     if (session) {
+      const paymentStatus = typeof session.payment_status === 'string' ? session.payment_status : ''
+      if (paymentStatus !== 'paid') {
+        return new Response('ok', { status: 200 })
+      }
+
       const metadata = (session.metadata || {}) as Record<string, string>
       const uid = metadata.uid
       const plan = metadata.plan || 'monthly'
       const sessionId = (session.id as string) || ''
-      const email = (session.customer_email as string) || null
+      const email = checkoutSessionCustomerEmail(session)
 
       if (uid) {
         try {
           await writeAccessToFirestore(env, uid, plan, sessionId, email)
         } catch (e) {
           console.error('Failed to grant access:', e)
+        }
+      }
+
+      if (email) {
+        const mailStatus = await sendPaymentConfirmation(env, { plan, sessionId, email })
+        if (!mailStatus.firebaseQueued && !mailStatus.resendSent) {
+          console.error('Payment confirmation mail was not queued/sent (webhook):', { sessionId, uid, email })
         }
       }
     }
@@ -373,7 +747,7 @@ async function handleStripeWebhook(request: Request, env: Env): Promise<Response
 
 // ─── Grant access client-side (fallback when no webhook) ───────
 async function handleGrantAccess(request: Request, env: Env, origin: string): Promise<Response> {
-  let body: { sessionId?: string; uid?: string }
+  let body: { sessionId?: string; uid?: string; email?: string }
   try {
     body = await request.json()
   } catch {
@@ -385,11 +759,13 @@ async function handleGrantAccess(request: Request, env: Env, origin: string): Pr
 
   const sid = body.sessionId?.trim()
   const uid = body.uid?.trim()
+  const claimedEmail = body.email?.trim().toLowerCase() || ''
   if (!sid || !uid) return json(origin, { error: 'sessionId and uid required' }, 400)
 
-  const stripeRes = await fetch(`https://api.stripe.com/v1/checkout/sessions/${sid}`, {
-    headers: { Authorization: `Bearer ${secret}` },
-  })
+  const stripeRes = await fetch(
+    `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sid)}`,
+    { headers: { Authorization: `Bearer ${secret}` } }
+  )
   if (!stripeRes.ok) return json(origin, { error: 'Invalid session' }, 400)
 
   const session = (await stripeRes.json()) as Record<string, unknown>
@@ -403,6 +779,7 @@ async function handleGrantAccess(request: Request, env: Env, origin: string): Pr
   }
 
   const plan = metadata.plan || 'monthly'
+  const customerEmail = checkoutSessionCustomerEmail(session) || claimedEmail || ''
   const now = Date.now()
   const daysToAdd = plan === 'yearly' ? 365 : 30
   const paidUntilFallback = now + daysToAdd * 24 * 60 * 60 * 1000
@@ -410,14 +787,38 @@ async function handleGrantAccess(request: Request, env: Env, origin: string): Pr
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
   if (projectId) {
     try {
-      const paidUntilStored = await writeAccessToFirestore(env, uid, plan, sid, (session.customer_email as string) || null)
-      return json(origin, { granted: true, paidUntil: paidUntilStored || paidUntilFallback, plan })
+      const paidUntilStored = await writeAccessToFirestore(env, uid, plan, sid, customerEmail)
+      const mailStatus = customerEmail
+        ? await sendPaymentConfirmation(env, { plan, sessionId: sid, email: customerEmail })
+        : { firebaseQueued: false, resendSent: false }
+      if (customerEmail && !mailStatus.firebaseQueued && !mailStatus.resendSent) {
+        console.error('Payment confirmation mail was not queued/sent (grant-access):', { sid, uid, email: customerEmail })
+      }
+      return json(origin, {
+        granted: true,
+        paidUntil: paidUntilStored || paidUntilFallback,
+        plan,
+        customerEmail: customerEmail || undefined,
+        paymentConfirmation: mailStatus,
+      })
     } catch (e) {
       console.error('Firestore write in grant-access failed:', e)
     }
   }
 
-  return json(origin, { granted: true, paidUntil: paidUntilFallback, plan })
+  const mailStatus = customerEmail
+    ? await sendPaymentConfirmation(env, { plan, sessionId: sid, email: customerEmail })
+    : { firebaseQueued: false, resendSent: false }
+  if (customerEmail && !mailStatus.firebaseQueued && !mailStatus.resendSent) {
+    console.error('Payment confirmation mail was not queued/sent (fallback grant-access):', { sid, uid, email: customerEmail })
+  }
+  return json(origin, {
+    granted: true,
+    paidUntil: paidUntilFallback,
+    plan,
+    customerEmail: customerEmail || undefined,
+    paymentConfirmation: mailStatus,
+  })
 }
 
 function escapeStripeSearchValue(value: string): string {
@@ -479,7 +880,7 @@ async function handleRecoverAccess(request: Request, env: Env, origin: string): 
   if (paidUntil <= Date.now()) return json(origin, { error: 'Access expired' }, 410)
 
   const sessionId = String(session.id || '')
-  const customerEmail = String(session.customer_email || email || '')
+  const customerEmail = checkoutSessionCustomerEmail(session) || email || ''
   const projectId = env.FIREBASE_PROJECT_ID?.trim()
   let finalPaidUntil = paidUntil
   if (projectId) {
@@ -547,11 +948,61 @@ export default {
       return json(origin, { error: { message: 'Expected { messages: [...] }' } }, 400)
     }
 
-    const { messages, model, temperature, max_tokens } = body as {
+    const { messages, model, temperature, max_tokens, usageScope, uid, email, firebaseIdToken } = body as {
       messages: unknown[]
       model?: string
       temperature?: number
       max_tokens?: number
+      usageScope?: string
+      uid?: string
+      email?: string
+      firebaseIdToken?: string
+    }
+
+    if (usageScope === 'chat') {
+      const quota = await consumeChatPromptQuota(env, {
+        uid: typeof uid === 'string' ? uid : '',
+        email: typeof email === 'string' ? email : undefined,
+        firebaseIdToken: typeof firebaseIdToken === 'string' ? firebaseIdToken : undefined,
+      })
+
+      if (!quota.allowed) {
+        if (quota.reason === 'auth_required') {
+          return json(origin, { error: { message: 'Log in om AI Chat te gebruiken.' } }, 401)
+        }
+        if (quota.reason === 'free_limit_reached') {
+          return json(
+            origin,
+            {
+              error: {
+                message: `Je gratis AI-limiet (${quota.limit} prompts per maand) is bereikt. Upgrade naar premium voor onbeperkte AI Chat.`,
+                limit: quota.limit,
+                used: quota.used,
+                remaining: quota.remaining,
+                monthKey: quota.monthKey,
+              },
+            },
+            429
+          )
+        }
+        if (quota.reason === 'firebase_not_configured' || quota.reason === 'firebase_auth_failed') {
+          return json(
+            origin,
+            {
+              error: {
+                message:
+                  'AI Chat-limiet is nog niet geactiveerd op de server (Firebase config ontbreekt). Neem contact op met support.',
+              },
+            },
+            503
+          )
+        }
+        return json(
+          origin,
+          { error: { message: 'AI Chat-limiet kon niet worden gecontroleerd. Probeer opnieuw.' } },
+          503
+        )
+      }
     }
 
     const payload = {

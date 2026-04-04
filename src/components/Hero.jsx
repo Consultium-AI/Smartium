@@ -39,7 +39,7 @@ const Hero = () => {
   const { user } = useAuth()
 
   return (
-    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+    <section className="relative pt-28 pb-28 md:pt-40 md:pb-32 overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
         aria-hidden
@@ -73,7 +73,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="mb-10 md:mb-12">
+          <motion.div variants={itemVariants} className="mb-8 md:mb-12">
             <div className="mx-auto w-fit motion-reduce:animate-none animate-float">
               <img
                 src={`${import.meta.env.BASE_URL}smartium-logo.png`}
@@ -99,7 +99,7 @@ const Hero = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed max-w-md mx-auto mb-12 md:mb-14"
+            className="text-base md:text-lg text-navy-500 dark:text-slate-300/90 leading-relaxed max-w-md mx-auto mb-14 md:mb-14"
           >
             Samenvattingen, oefenvragen en tentamens die aansluiten op jouw blok. Alles op
             één plek, zodat jij je kunt focussen op leren.
@@ -136,7 +136,7 @@ const Hero = () => {
 
           <motion.div
             variants={lineVariants}
-            className="mt-16 md:mt-20 h-px w-12 mx-auto bg-gradient-to-r from-transparent via-navy-200 dark:via-slate-500/50 to-transparent origin-center"
+            className="mt-20 md:mt-20 h-px w-12 mx-auto bg-gradient-to-r from-transparent via-navy-200 dark:via-slate-500/50 to-transparent origin-center"
             aria-hidden
           />
         </motion.div>

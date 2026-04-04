@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Loader2, Send } from 'lucide-react'
+import { Loader2, Lock, Send } from 'lucide-react'
 import { parseReferences, fetchPracticeChatCompletion, normalizeAiDisplayText } from '../utils/practiceExamAi'
 
 function cleanDisplayTextAfterRefs(displayText, hasRefs) {
@@ -61,6 +61,7 @@ export default function PracticeAiInlinePanel({
   initialExplanation,
   explanationLoading,
   explanationError,
+  canUseFollowUp = true,
 }) {
   const [open, setOpen] = useState(false)
   const [thread, setThread] = useState([])
@@ -87,10 +88,12 @@ export default function PracticeAiInlinePanel({
   }, [thread, open, sending])
 
   const canChat = initialExplanation && !explanationLoading && !explanationError
+  const canUseAiFollowUp = canUseFollowUp === true
+  const canOpenFollowUp = canChat && canUseAiFollowUp
 
   const handleSend = async () => {
     const text = input.trim()
-    if (!text || sending || !canChat || inFlightRef.current) return
+    if (!text || sending || !canOpenFollowUp || inFlightRef.current) return
     inFlightRef.current = true
     const userMessage = { role: 'user', content: text }
     setInput('')
@@ -122,17 +125,29 @@ export default function PracticeAiInlinePanel({
   return (
     <div className="mt-5">
       {!open ? (
-        <button
-          type="button"
-          onClick={() => {
-            setOpen(true)
-            setTimeout(() => inputRef.current?.focus(), 100)
-          }}
-          disabled={!canChat}
-          className="text-[13px] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 disabled:opacity-40 rounded-lg px-3 py-2 bg-slate-100/80 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-        >
-          Stel een vervolgvraag
-        </button>
+        canUseAiFollowUp ? (
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(true)
+              setTimeout(() => inputRef.current?.focus(), 100)
+            }}
+            disabled={!canChat}
+            className="text-[13px] text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 disabled:opacity-40 rounded-lg px-3 py-2 bg-slate-100/80 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          >
+            Stel een vervolgvraag
+          </button>
+        ) : (
+          <div className="rounded-lg border border-amber-200/80 bg-amber-50/80 px-3 py-2 text-xs text-amber-800 dark:border-amber-500/40 dark:bg-amber-950/20 dark:text-amber-200">
+            <div className="flex items-center gap-1.5 font-medium">
+              <Lock className="h-3.5 w-3.5" />
+              AI doorvragen is premium.
+            </div>
+            <Link to="/billing" className="mt-1 inline-block underline underline-offset-2">
+              Upgrade voor toegang
+            </Link>
+          </div>
+        )
       ) : (
         <div className="space-y-2">
           <div className="flex items-center justify-between gap-2 px-0.5">
@@ -199,13 +214,13 @@ export default function PracticeAiInlinePanel({
                   }}
                   placeholder="Vervolgvraag…"
                   rows={1}
-                  disabled={sending || !canChat}
+                  disabled={sending || !canOpenFollowUp}
                   className="flex-1 min-h-[38px] max-h-28 resize-y rounded-lg border-0 bg-slate-50 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 text-[13px] px-3 py-2 placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary-500/30 dark:focus:ring-primary-400/25"
                 />
                 <button
                   type="button"
                   onClick={handleSend}
-                  disabled={sending || !input.trim() || !canChat}
+                  disabled={sending || !input.trim() || !canOpenFollowUp}
                   className="shrink-0 self-end h-9 w-9 flex items-center justify-center rounded-lg bg-primary-600 dark:bg-primary-600 text-white hover:bg-primary-700 dark:hover:bg-primary-500 disabled:opacity-40 disabled:hover:bg-primary-600"
                   aria-label="Verstuur"
                 >

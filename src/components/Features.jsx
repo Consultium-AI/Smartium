@@ -42,12 +42,12 @@ const Features = () => {
       <div className="absolute inset-0 platform-section-bg -z-20" aria-hidden />
       <div className="absolute inset-0 platform-section-grid -z-10 pointer-events-none" aria-hidden />
 
-      <div className="container-custom relative py-20 md:py-28">
+      <div className="container-custom relative pt-24 pb-24 md:py-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease }}
-          className="text-center max-w-2xl mx-auto mb-14 md:mb-16"
+          className="text-center max-w-2xl mx-auto mb-16 md:mb-16"
         >
           <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-5">
             Platform

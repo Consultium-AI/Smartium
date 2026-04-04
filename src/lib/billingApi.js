@@ -24,6 +24,7 @@ export async function createCheckoutSession(plan, opts = {}) {
       cancelUrl,
       customerEmail: opts.email || undefined,
       customerUid: opts.uid || undefined,
+      prefillCustomerEmail: opts.prefillCustomerEmail !== false,
     }),
   })
 
@@ -45,6 +46,7 @@ export async function createEmbeddedCheckoutSession(plan, opts = {}) {
       returnUrl,
       customerEmail: opts.email || undefined,
       customerUid: opts.uid || undefined,
+      prefillCustomerEmail: opts.prefillCustomerEmail !== false,
     }),
   })
 
@@ -54,11 +56,11 @@ export async function createEmbeddedCheckoutSession(plan, opts = {}) {
   return { clientSecret: data.clientSecret }
 }
 
-export async function grantAccessAfterPayment(sessionId, uid) {
+export async function grantAccessAfterPayment(sessionId, uid, email) {
   const res = await fetch(`${apiBase()}/api/grant-access`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ sessionId, uid }),
+    body: JSON.stringify({ sessionId, uid, email: email || undefined }),
   })
   const data = await res.json().catch(() => ({}))
   if (!res.ok) return { error: data.error || 'Fout bij toegang verlenen' }

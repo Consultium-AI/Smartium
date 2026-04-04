@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo, useEffect } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import { 
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen,
@@ -66,6 +66,7 @@ const PracticeQuestionsPage = () => {
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
+  const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedLme(lmeParam)
   const progressUserId = getProgressUserId(user, authLoading)
   const blokParam = searchParams.get('blok')
   const [expandedBlok, setExpandedBlok] = useState(() => {
@@ -91,6 +92,10 @@ const PracticeQuestionsPage = () => {
       setExpandedBlok('blok9')
     }
   }, [lmeParam, blokParam])
+
+  if (isBlockedDirectLme) {
+    return <Navigate to="/oefenvragen" replace />
+  }
 
 
   const questions = useMemo(() => {
@@ -1003,6 +1008,7 @@ const PracticeQuestionsPage = () => {
                           initialExplanation={explanations[currentQ.id].text}
                           explanationLoading={!!explanations[currentQ.id]?.loading}
                           explanationError={explanations[currentQ.id]?.error}
+                          canUseFollowUp={hasPaidAccess}
                         />
                       </>
                     )}

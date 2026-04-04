@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
   GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers, Lock
@@ -191,6 +191,7 @@ const SummaryPage = () => {
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
+  const isBlockedDirectLme = lme !== 'index' && showPremiumLocks && isFreePlanBlockedLme(lme)
   const blokParam = searchParams.get('blok')
   const [expandedBlok, setExpandedBlok] = useState(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
@@ -206,6 +207,10 @@ const SummaryPage = () => {
       })
     }
   }, [blokParam])
+
+  if (isBlockedDirectLme) {
+    return <Navigate to="/summary" replace />
+  }
 
   const courseStructure = {
     blok3: {

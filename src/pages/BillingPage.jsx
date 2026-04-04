@@ -45,6 +45,8 @@ export default function BillingPage() {
   const [checkoutError, setCheckoutError] = useState(null)
   const [embedClientSecret, setEmbedClientSecret] = useState(null)
   const [step, setStep] = useState(1)
+  /** E-mail uit Stripe-checkout (na betaling), voor bevestigingstekst */
+  const [receiptEmail, setReceiptEmail] = useState(null)
 
   const status = searchParams.get('status')
   const sessionId = searchParams.get('session_id')
@@ -72,8 +74,9 @@ export default function BillingPage() {
     const sid = sessionId || new URLSearchParams(window.location.search).get('session_id')
     if (!sid) return
 
-    grantAccessAfterPayment(sid, user.uid)
+    grantAccessAfterPayment(sid, user.uid, user.email || undefined)
       .then((res) => {
+        if (res.customerEmail) setReceiptEmail(res.customerEmail)
         if (res.paidUntil) {
           return grantAccess(user.uid, res.paidUntil, res.plan)
         }
@@ -91,14 +94,21 @@ export default function BillingPage() {
     setCheckoutError(null)
     setCheckoutLoading(true)
     try {
+      const billingEmail = user?.email?.trim() || undefined
+      const prefillCustomerEmail = Boolean(billingEmail)
+      const checkoutOpts = {
+        email: billingEmail,
+        uid: user?.uid,
+        prefillCustomerEmail,
+      }
       if (embedAvailable) {
-        const result = await createEmbeddedCheckoutSession(plan, { email: user?.email, uid: user?.uid })
+        const result = await createEmbeddedCheckoutSession(plan, checkoutOpts)
         if (result.error) { setCheckoutError(result.error); return }
         setEmbedClientSecret(result.clientSecret)
         setStep(3)
         return
       }
-      const result = await createCheckoutSession(plan, { email: user?.email, uid: user?.uid })
+      const result = await createCheckoutSession(plan, checkoutOpts)
       if (result.error) { setCheckoutError(result.error); return }
       window.location.href = result.url
     } finally {
@@ -143,6 +153,13 @@ export default function BillingPage() {
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
               Je betaling is gelukt. Je hebt nu volledige toegang.
             </p>
+            {receiptEmail ? (
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                Bevestiging en Stripe-betaalbewijs worden naar{' '}
+                <span className="font-medium text-navy-800 dark:text-slate-200">{receiptEmail}</span> gestuurd
+                (controleer ook je spammap).
+              </p>
+            ) : null}
             <Link
               to="/summary"
               className="mt-8 inline-flex w-full items-center justify-center rounded-xl bg-primary-500 px-5 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-primary-600"

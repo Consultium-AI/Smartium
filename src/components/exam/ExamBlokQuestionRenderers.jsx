@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { CheckCircle, XCircle, Loader2, Send } from 'lucide-react'
 import { InlineAiText } from '../PracticeAiInlinePanel'
 import { ExamRichText } from './ExamScenarioContent'
@@ -72,7 +73,7 @@ function RubricPanel({ question }) {
   )
 }
 
-function ExamFollowUpChat({ question, aiFeedback }) {
+function ExamFollowUpChat({ question, aiFeedback, canUseFollowUp = true }) {
   const [open, setOpen] = useState(false)
   const [thread, setThread] = useState([])
   const [input, setInput] = useState('')
@@ -100,6 +101,17 @@ function ExamFollowUpChat({ question, aiFeedback }) {
     } finally {
       setSending(false)
     }
+  }
+
+  if (!canUseFollowUp) {
+    return (
+      <div className="mt-3 rounded-lg border border-amber-200/80 bg-amber-50/80 px-3 py-2 text-xs text-amber-800 dark:border-amber-500/40 dark:bg-amber-950/20 dark:text-amber-200">
+        AI doorvragen is premium.
+        <Link to="/billing" className="ml-1 underline underline-offset-2">
+          Upgrade voor toegang
+        </Link>
+      </div>
+    )
   }
 
   if (!open) {
@@ -169,7 +181,7 @@ function ExamFollowUpChat({ question, aiFeedback }) {
   )
 }
 
-export function MeerkeuzeBlock({ question, displayQ, answer, onReveal }) {
+export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiFollowUp = true }) {
   const revealed = answer?.revealed
   const selected = answer?.answer
   const correctLetter = displayQ._shuffledCorrect ?? displayQ.correctAnswer
@@ -231,13 +243,13 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal }) {
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )
 }
 
-export function MeerdereAntwoordenBlock({ question, answer, onReveal }) {
+export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const [selected, setSelected] = useState(() => new Set(answer?.answer ?? []))
   const revealed = answer?.revealed
 
@@ -370,13 +382,13 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal }) {
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )
 }
 
-export function KoppelvraagBlock({ question, answer, onReveal }) {
+export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const items = question.items
   const [mapping, setMapping] = useState(() => {
     const a = answer?.answer
@@ -475,13 +487,13 @@ export function KoppelvraagBlock({ question, answer, onReveal }) {
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )
 }
 
-export function JuistOnjuistBlock({ question, answer, onReveal }) {
+export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const [choices, setChoices] = useState(() =>
     question.statements.map((_, i) => (answer?.answer?.[i] !== undefined ? answer.answer[i] : null))
   )
@@ -577,7 +589,7 @@ export function JuistOnjuistBlock({ question, answer, onReveal }) {
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )
@@ -590,7 +602,7 @@ function countWords(s) {
     .filter(Boolean).length
 }
 
-export function OpenVraagBlock({ question, answer, onReveal }) {
+export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const [text, setText] = useState(() => (typeof answer?.answer === 'string' ? answer.answer : ''))
   const [loading, setLoading] = useState(false)
   const [err, setErr] = useState(null)
@@ -714,12 +726,16 @@ export function OpenVraagBlock({ question, answer, onReveal }) {
           </button>
         </div>
       )}
-      <ExamFollowUpChat question={question} aiFeedback={answer.aiFeedback || question.explanation || ''} />
+      <ExamFollowUpChat
+        question={question}
+        aiFeedback={answer.aiFeedback || question.explanation || ''}
+        canUseFollowUp={canUseAiFollowUp}
+      />
     </div>
   )
 }
 
-export function BeeldvraagOrderBlock({ question, answer, onReveal }) {
+export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const opts = question.orderOptions
   const correct = question.correctOrder
   const [order, setOrder] = useState(() => {
@@ -796,17 +812,24 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal }) {
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )
 }
 
-export function BeeldvraagAiBlock({ question, answer, onReveal }) {
-  return <OpenVraagBlock question={{ ...question, wordLimit: null }} answer={answer} onReveal={onReveal} />
+export function BeeldvraagAiBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+  return (
+    <OpenVraagBlock
+      question={{ ...question, wordLimit: null }}
+      answer={answer}
+      onReveal={onReveal}
+      canUseAiFollowUp={canUseAiFollowUp}
+    />
+  )
 }
 
-export function RekenvraagBlock({ question, answer, onReveal }) {
+export function RekenvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
   const [val, setVal] = useState(() => (answer?.answer != null ? String(answer.answer) : ''))
   const revealed = answer?.revealed
 
@@ -862,7 +885,7 @@ export function RekenvraagBlock({ question, answer, onReveal }) {
         </div>
       )}
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
-        <ExamFollowUpChat question={question} aiFeedback={question.modelAnswer || ''} />
+        <ExamFollowUpChat question={question} aiFeedback={question.modelAnswer || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
     </div>
   )

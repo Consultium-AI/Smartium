@@ -5,12 +5,12 @@ compatibility_date = "2024-12-01"
 # Comma-separated list, no spaces. Add http://localhost:5174 for local Vite dev.
 [vars]
 ALLOWED_ORIGINS = "https://smartium.nl,https://www.smartium.nl,http://localhost:5174,http://127.0.0.1:5174"
-# Production prices (restore after testing):
-# STRIPE_PRICE_MONTHLY = "price_1THuz72NJGvegKCX9gOfXLaG"
-# STRIPE_PRICE_YEARLY = "price_1THuz72NJGvegKCXJVQMpyqY"
-# Test prices (EUR 0.01):
-STRIPE_PRICE_MONTHLY = "price_1TI2Vp2NJGvegKCXuhQ4mq8Q"
-STRIPE_PRICE_YEARLY = "price_1TI2Vq2NJGvegKCX1sEf9bgs"
+FIREBASE_PROJECT_ID = "smartium-8e7b3"
+# Live prices:
+# - Maandelijks: EUR 9,99
+# - Jaarlijks: EUR 106,68 (EUR 8,89 p/m effectief)
+STRIPE_PRICE_MONTHLY = "price_1THuz72NJGvegKCX9gOfXLaG"
+STRIPE_PRICE_YEARLY = "price_1THuz72NJGvegKCXJVQMpyqY"
 STRIPE_PAYMENT_METHOD_TYPES = "ideal"
 
 # Mode: payment (one-time iDEAL). Frontend toont maandelijks/jaarlijks;
@@ -20,6 +20,9 @@ STRIPE_PAYMENT_METHOD_TYPES = "ideal"
 # Secrets (nooit in git):
 #   cd worker && npx wrangler secret put OPENAI_API_KEY
 #   cd worker && npx wrangler secret put STRIPE_SECRET_KEY
+# Optioneel — branded betaalbevestiging (Resend):
+#   npx wrangler secret put RESEND_API_KEY
+#   Cloudflare Dashboard → Worker → Variables: RESEND_FROM = Smartium <SmartiumSupport@gmail.nl>
 #
 # Prijzen genereren (eenmalig, lokaal):
 #   1) Zet STRIPE_SECRET_KEY=sk_... in worker/.dev.vars

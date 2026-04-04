@@ -82,19 +82,17 @@ const Footer = () => {
               Contact
             </p>
             <address className="not-italic text-sm text-navy-600 dark:text-slate-400 space-y-1.5 leading-relaxed">
-              <p>
-                <a href="mailto:SmartiumSupport@gmail.com" className="hover:text-navy-900 dark:hover:text-white transition-colors">
-                  SmartiumSupport@gmail.com
-                </a>
-              </p>
               <p>Westerstraat 10</p>
-              <p>
-                <a href="tel:01036031123" className="hover:text-navy-900 dark:hover:text-white transition-colors">
-                  010 360 31123
-                </a>
-              </p>
               <p>3016DH Rotterdam</p>
               <p>Nederland</p>
+              <p>
+              </p>
+              <a href="tel:01036031123" className="hover:text-navy-900 dark:hover:text-white transition-colors">
+                  010 360 31123
+                </a>
+                <p><a href="mailto:SmartiumSupport@gmail.com" className="hover:text-navy-900 dark:hover:text-white transition-colors">
+                  SmartiumSupport@gmail.com</a>
+              </p>
             </address>
             <div className="mt-4 text-xs text-navy-400 dark:text-slate-500 space-y-0.5">
               <p>KVK: 96716606</p>
@@ -105,7 +103,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-700/35 flex flex-col sm:flex-row flex-wrap items-start sm:items-center justify-between gap-4">
           <p className="text-xs text-navy-400 dark:text-slate-500/90 tracking-wide">
-            &copy; 2024–{new Date().getFullYear()} Smartium &middot; Consultium
+            &copy; 2026 Smartium
           </p>
           <nav
             className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-navy-500 dark:text-slate-400"

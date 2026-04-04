@@ -355,6 +355,7 @@ const ChatPage = () => {
     ;(async () => {
       setLoading(true)
       try {
+        const firebaseIdToken = user?.getIdToken ? await user.getIdToken() : undefined
         const apiMessages = [
           { role: 'system', content: getSystemPrompt(answerMode, ctx) },
           { role: 'user', content: userMessage.content },
@@ -367,6 +368,10 @@ const ChatPage = () => {
             messages: apiMessages,
             temperature: 0.35,
             max_tokens: 500,
+            usageScope: 'chat',
+            uid: user?.uid,
+            email: user?.email || undefined,
+            firebaseIdToken,
           }),
         })
         const data = await res.json()
@@ -421,6 +426,7 @@ const ChatPage = () => {
     const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
 
     try {
+      const firebaseIdToken = user?.getIdToken ? await user.getIdToken() : undefined
       const apiMessages = [
         { role: 'system', content: getSystemPrompt(answerMode, practiceContext) },
         ...newMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
@@ -436,6 +442,10 @@ const ChatPage = () => {
           max_tokens: practiceContext
             ? (answerMode === 'extended' ? 2000 : 900)
             : (answerMode === 'extended' ? 2000 : 800),
+          usageScope: 'chat',
+          uid: user?.uid,
+          email: user?.email || undefined,
+          firebaseIdToken,
         }),
       })
 

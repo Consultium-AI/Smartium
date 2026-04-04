@@ -15,7 +15,8 @@ import LoginPage from './pages/LoginPage'
 import BillingPage from './pages/BillingPage'
 import ProfileSettingsPage from './pages/ProfileSettingsPage'
 import ContentProtectionWrapper from './components/ContentProtectionWrapper'
-import PaidRoute from './components/PaidRoute'
+import AccountRoute from './components/AccountRoute'
+import ScrollToTopRoutes from './components/ScrollToTopRoutes'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -48,14 +49,15 @@ function App() {
   return (
     <Router basename={getBasename()}>
       <div className="relative min-h-screen overflow-hidden bg-[#f8f9fb] dark:bg-gradient-to-b dark:from-[#0c1018] dark:via-[#0a0d12] dark:to-[#080b10] transition-colors duration-300">
+        <ScrollToTopRoutes />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/oefenvragen" element={<PaidRoute><ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper></PaidRoute>} />
-          <Route path="/summary" element={<PaidRoute><ContentProtectionWrapper><SummaryPage /></ContentProtectionWrapper></PaidRoute>} />
-          <Route path="/chat" element={<PaidRoute><ChatPage /></PaidRoute>} />
-          <Route path="/tentamen" element={<PaidRoute><ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper></PaidRoute>} />
-          <Route path="/tentamen-blok5" element={<PaidRoute><ContentProtectionWrapper><ExamBlokPage blokNumber={5} /></ContentProtectionWrapper></PaidRoute>} />
-          <Route path="/tentamen-blok9" element={<PaidRoute><ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper></PaidRoute>} />
+          <Route path="/oefenvragen" element={<ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper>} />
+          <Route path="/summary" element={<ContentProtectionWrapper><SummaryPage /></ContentProtectionWrapper>} />
+          <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
+          <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
+          <Route path="/tentamen-blok5" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={5} /></ContentProtectionWrapper>} />
+          <Route path="/tentamen-blok9" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/billing" element={<BillingPage />} />
           <Route path="/settings/profile" element={<ProfileSettingsPage />} />

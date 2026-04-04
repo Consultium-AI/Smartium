@@ -37,12 +37,12 @@ const Pricing = () => {
     <section id="pricing" className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
       <div className="absolute inset-0 cta-section-bg -z-10" aria-hidden />
 
-      <div className="container-custom py-20 md:py-28">
+      <div className="container-custom pt-24 pb-24 md:py-28">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease }}
-          className="text-center max-w-2xl mx-auto mb-12 md:mb-14"
+          className="text-center max-w-2xl mx-auto mb-14 md:mb-14"
         >
           <p className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-navy-400 dark:text-slate-400 mb-5">
             Prijzen

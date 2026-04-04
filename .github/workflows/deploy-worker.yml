@@ -5,6 +5,7 @@
 #
 # Worker billing (Stripe): lokaal `wrangler secret put STRIPE_SECRET_KEY` en in Dashboard
 # Variables zetten: STRIPE_PRICE_MONTHLY, STRIPE_PRICE_YEARLY (price_…).
+# Optioneel: `wrangler secret put RESEND_API_KEY` + var RESEND_FROM voor bevestigingsmail na betaling.
 name: Deploy Worker
 
 on:
