@@ -125,6 +125,11 @@ function firebaseAuthMessage(err, googleFlow = false) {
   return messages[code] || 'Inloggen is mislukt. Probeer het opnieuw.'
 }
 
+function isPermissionDeniedError(err) {
+  const code = err && typeof err === 'object' && 'code' in err ? String(err.code) : ''
+  return code === 'permission-denied' || code === 'firestore/permission-denied'
+}
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -277,16 +282,22 @@ export function AuthProvider({ children }) {
 
     try {
       if (db) {
-        const { collection, getDocs, limit, query, where } = await import('firebase/firestore')
-        const q = query(
-          collection(db, 'users'),
-          where('usernameNormalized', '==', usernameNormalized),
-          limit(1)
-        )
-        const exists = await getDocs(q)
-        if (!exists.empty) {
-          setError('Deze gebruikersnaam is al in gebruik.')
-          throw new Error('username exists')
+        try {
+          const { collection, getDocs, limit, query, where } = await import('firebase/firestore')
+          const q = query(
+            collection(db, 'users'),
+            where('usernameNormalized', '==', usernameNormalized),
+            limit(1)
+          )
+          const exists = await getDocs(q)
+          if (!exists.empty) {
+            setError('Deze gebruikersnaam is al in gebruik.')
+            throw new Error('username exists')
+          }
+        } catch (err) {
+          // Bij strikte Firestore rules (alleen eigen uid leesbaar) is deze pre-check niet mogelijk
+          // vóór accountcreatie. Sla de check dan over zodat registreren kan doorgaan.
+          if (!isPermissionDeniedError(err)) throw err
         }
       }
 
