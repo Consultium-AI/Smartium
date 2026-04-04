@@ -317,6 +317,12 @@ export async function buildUserAccessRows() {
     })
   }
 
-  rows.sort((a, b) => a.email.localeCompare(b.email))
+  // Sort by registration date so newest users appear at the bottom in exports.
+  rows.sort((a, b) => {
+    const aCreatedMs = toMillis(a.authCreatedAt) || 0
+    const bCreatedMs = toMillis(b.authCreatedAt) || 0
+    if (aCreatedMs !== bCreatedMs) return aCreatedMs - bCreatedMs
+    return a.email.localeCompare(b.email)
+  })
   return rows
 }

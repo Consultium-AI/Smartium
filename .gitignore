@@ -12,6 +12,7 @@ dist
 dist-ssr
 
 # Local exports / tooling
+.tools/
 output/
 scripts/__pycache__/
 

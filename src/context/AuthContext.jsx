@@ -9,7 +9,6 @@ import {
 } from 'react'
 import {
   createUserWithEmailAndPassword,
-  fetchSignInMethodsForEmail,
   GoogleAuthProvider,
   onAuthStateChanged,
   sendPasswordResetEmail,
@@ -114,6 +113,8 @@ function firebaseAuthMessage(err, googleFlow = false) {
   const messages = {
     'auth/email-already-in-use': 'Er bestaat al een account met dit e-mailadres.',
     'auth/invalid-email': 'Ongeldig e-mailadres.',
+    'auth/operation-not-allowed': 'Registreren met e-mail/wachtwoord staat uit in Firebase Authentication.',
+    'auth/configuration-not-found': 'Firebase Authentication is niet volledig geconfigureerd voor dit project.',
     'auth/invalid-credential': 'Onjuist e-mailadres of wachtwoord.',
     'auth/wrong-password': 'Onjuist e-mailadres of wachtwoord.',
     'auth/user-not-found': 'Onjuist e-mailadres of wachtwoord.',
@@ -301,12 +302,6 @@ export function AuthProvider({ children }) {
         }
       }
 
-      const methods = await fetchSignInMethodsForEmail(auth, emailTrimmed)
-      if (methods.length > 0) {
-        setError('Er bestaat al een account met dit e-mailadres.')
-        throw new Error('email exists')
-      }
-
       const cred = await createUserWithEmailAndPassword(auth, emailTrimmed, password)
       await updateProfile(cred.user, { displayName: nameTrimmed })
       if (db) {
@@ -325,7 +320,7 @@ export function AuthProvider({ children }) {
       }
       clearLocalSession()
     } catch (err) {
-      setError(firebaseAuthMessage(err))
+      setError((prev) => prev || firebaseAuthMessage(err))
       throw err
     }
   }, [])
