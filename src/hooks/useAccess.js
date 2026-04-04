@@ -5,6 +5,11 @@ import { recoverAccessForUser } from '../lib/billingApi'
 const LOCAL_KEY = 'smartium_access'
 const ADMIN_EMAILS = new Set(['smartiumsupport@gmail.com'])
 
+/** Onbeperkte toegang zonder betaalde einddatum (Firestore-plan of hardcoded support-e-mail). */
+function isUnlimitedPlan(plan) {
+  return plan === 'admin' || plan === 'vip'
+}
+
 function readLocalAccess(uid) {
   try {
     const raw = localStorage.getItem(`${LOCAL_KEY}:${uid}`)
@@ -56,6 +61,15 @@ export async function grantAccess(uid, paidUntil, plan) {
 
 function resolveFromLocal(uid) {
   const local = readLocalAccess(uid)
+  if (local && isUnlimitedPlan(local.plan)) {
+    return {
+      hasAccess: true,
+      loading: false,
+      paidUntil: local.paidUntil || null,
+      plan: local.plan,
+      subscriptionStopped: false,
+    }
+  }
   if (local?.paidUntil && local.paidUntil > Date.now()) {
     return {
       hasAccess: true,
@@ -177,7 +191,7 @@ export function useAccess() {
           const paidUntil = Number(data.paidUntil) || 0
           const plan = data.plan || null
           const subscriptionStopped = Boolean(data.subscriptionStopped || data.billingReminderOptOut)
-          const hasAccess = paidUntil > Date.now()
+          const hasAccess = isUnlimitedPlan(plan) || paidUntil > Date.now()
           writeLocalAccess(uid, { paidUntil, plan, subscriptionStopped, billingReminderOptOut: subscriptionStopped })
           if (hasAccess || subscriptionStopped) {
             setAccess({ hasAccess, loading: false, paidUntil: paidUntil || null, plan, subscriptionStopped })
@@ -229,7 +243,7 @@ export function useAccess() {
               const paidUntil = Number(data.paidUntil) || 0
               const plan = data.plan || null
               const subscriptionStopped = Boolean(data.subscriptionStopped || data.billingReminderOptOut)
-              const hasAccess = paidUntil > Date.now()
+              const hasAccess = isUnlimitedPlan(plan) || paidUntil > Date.now()
               writeLocalAccess(uid, { paidUntil, plan, subscriptionStopped, billingReminderOptOut: subscriptionStopped })
               setAccess({ hasAccess, loading: false, paidUntil, plan, subscriptionStopped })
             }

@@ -58,7 +58,7 @@ export default function ProfileSettingsPage() {
     }
   }
 
-  const isAdmin = plan === 'admin'
+  const isComplimentaryUnlimited = plan === 'admin' || plan === 'vip'
   const isPaidPlan = plan === 'monthly' || plan === 'yearly'
   const paidUntilMs = Number(paidUntil) || 0
   const now = Date.now()
@@ -80,7 +80,9 @@ export default function ProfileSettingsPage() {
         ? 'Jaarlijks'
         : plan === 'admin'
           ? 'Admin'
-          : 'Gratis'
+          : plan === 'vip'
+            ? 'VIP'
+            : 'Gratis'
   const onStopSubscription = async () => {
     if (!user?.uid || stoppingSubscription || subscriptionStopped) return
     const confirmStop = window.confirm(
@@ -212,23 +214,31 @@ export default function ProfileSettingsPage() {
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-700 dark:bg-slate-900/70">
                   <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Einddatum toegang</p>
-                  <p className="mt-1 text-sm font-semibold text-navy-900 dark:text-slate-100">{isAdmin ? 'Onbeperkt' : endDateText}</p>
+                  <p className="mt-1 text-sm font-semibold text-navy-900 dark:text-slate-100">
+                    {isComplimentaryUnlimited ? 'Onbeperkt' : endDateText}
+                  </p>
                 </div>
               </div>
 
-              {isAdmin && (
+              {plan === 'admin' && (
                 <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:border-emerald-500/35 dark:bg-emerald-950/30 dark:text-emerald-300">
                   Admin-account: altijd toegang.
                 </p>
               )}
 
-              {!isAdmin && isExpired && (
+              {plan === 'vip' && (
+                <p className="mt-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:border-emerald-500/35 dark:bg-emerald-950/30 dark:text-emerald-300">
+                  VIP-account: onbeperkte gratis toegang.
+                </p>
+              )}
+
+              {!isComplimentaryUnlimited && isExpired && (
                 <p className="mt-3 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-medium text-rose-700 dark:border-rose-500/35 dark:bg-rose-950/30 dark:text-rose-300">
                   Je toegang is verlopen. Verleng je plan om direct weer toegang te krijgen.
                 </p>
               )}
 
-              {!isAdmin && !subscriptionStopped && shouldShowPaymentRequest && (
+              {!isComplimentaryUnlimited && !subscriptionStopped && shouldShowPaymentRequest && (
                 <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 dark:border-amber-500/35 dark:bg-amber-950/25">
                   <p className="flex items-center gap-2 text-sm font-semibold text-amber-800 dark:text-amber-300">
                     <CalendarClock className="h-4 w-4" strokeWidth={2} />
@@ -240,13 +250,13 @@ export default function ProfileSettingsPage() {
                 </div>
               )}
 
-              {!isAdmin && subscriptionStopped && (
+              {!isComplimentaryUnlimited && subscriptionStopped && (
                 <p className="mt-3 rounded-xl border border-slate-300 bg-slate-100 px-3 py-2 text-sm font-medium text-slate-700 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200">
                   Abonnement gestopt. Je toegang loopt af op {isExpired ? 'direct' : endDateText}.
                 </p>
               )}
 
-              {!isAdmin && (
+              {!isComplimentaryUnlimited && (
                 <div className="mt-4 flex flex-wrap gap-2.5">
                   <Link
                     to={`/billing${isPaidPlan ? `?plan=${plan}` : ''}`}
@@ -274,7 +284,7 @@ export default function ProfileSettingsPage() {
                 </div>
               )}
 
-              {!isAdmin && !hasAccess && (
+              {!isComplimentaryUnlimited && !hasAccess && (
                 <p className="mt-2 text-xs text-navy-500 dark:text-slate-400">
                   Na betaling wordt je nieuwe einddatum direct bijgewerkt in je account.
                 </p>

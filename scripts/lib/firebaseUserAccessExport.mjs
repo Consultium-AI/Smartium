@@ -192,6 +192,10 @@ export function resolveStatus(data, paidUntilMs) {
   const plan = (data?.plan || '').toString().toLowerCase()
   const now = Date.now()
 
+  if (plan === 'vip' || plan === 'admin') {
+    return `complimentary_${plan}`
+  }
+
   if (plan === 'monthly' || plan === 'yearly') {
     if (paidUntilMs && paidUntilMs > now) return `paid_${plan}`
     if (paidUntilMs) return `expired_${plan}`
