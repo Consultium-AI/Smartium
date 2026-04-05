@@ -8,6 +8,7 @@ import {
   Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles, Lock
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro from '../components/Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro'
 import Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro from '../components/Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro'
 import Blok5Week4Casus8HydradenitisSuppurativaPracticeIntro from '../components/Blok5Week4Casus8HydradenitisSuppurativaPracticeIntro'
@@ -71,7 +72,7 @@ const PracticeQuestionsPage = () => {
   const blokParam = searchParams.get('blok')
   const [expandedBlok, setExpandedBlok] = useState(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
-    return 'blok4'
+    return null
   })
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
@@ -633,6 +634,10 @@ const PracticeQuestionsPage = () => {
                       className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
                       <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                        <BlokWeekoverzichtPanel
+                          title="Weekoverzicht blok 5 — BA1 2025–26"
+                          pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
+                        />
                         {practiceQuestionsCourseStructure.blok5.weeks.map((week, weekIndex) => (
                           <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                             <div className="flex items-center gap-3 mb-4 -ml-7">
@@ -728,6 +733,10 @@ const PracticeQuestionsPage = () => {
                       className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
                       <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                        <BlokWeekoverzichtPanel
+                          title="Weekoverzicht blok 9 — BA2 2025–26"
+                          pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
+                        />
                         {practiceQuestionsCourseStructure.blok9.weeks.map((week, weekIndex) => (
                           <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                             <div className="flex items-center gap-3 mb-4 -ml-7">

@@ -10,7 +10,7 @@ export const blok5Tentamen1 = {
   title: 'Oefententamen 1',
   subtitle: 'Bedreigingen van binnenuit en buitenaf',
   totalPoints: 168,
-  cesuur: 0.55,
+  cesuur: 0.6,
   casussen: [
     ...blok5Tentamen1PartA,
     ...blok5Tentamen1PartB,

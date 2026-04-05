@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
 import { useAccess } from '../hooks/useAccess'
 import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
+import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
 import { FoetaleBeeldvormingSummary } from './summary/SummaryFoetaleBeeldvorming'
@@ -3482,6 +3483,10 @@ const SummaryPage = () => {
                   className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
                   <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                    <BlokWeekoverzichtPanel
+                      title="Weekoverzicht blok 5 — BA1 2025–26"
+                      pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
+                    />
                     {courseStructure.blok5.weeks.map((week, weekIndex) => (
                       <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                         <div className="flex items-center gap-3 mb-4 -ml-7">
@@ -3595,6 +3600,10 @@ const SummaryPage = () => {
                   className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
                   <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                    <BlokWeekoverzichtPanel
+                      title="Weekoverzicht blok 9 — BA2 2025–26"
+                      pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
+                    />
                     {courseStructure.blok9.weeks.map((week, weekIndex) => (
                       <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                         <div className="flex items-center gap-3 mb-4 -ml-7">

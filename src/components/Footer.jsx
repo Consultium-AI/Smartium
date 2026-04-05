@@ -17,9 +17,9 @@ const navLinks = [
 ]
 
 const legalDocs = [
-  { label: 'Privacyverklaring', file: 'privacyverklaring-smartium-ai.docx' },
-  { label: 'Cookiebeleid', file: 'cookiebeleid-smartium-ai.docx' },
-  { label: 'Voorwaarden & regelgeving', file: 'smartium-regelgeving.docx' },
+  { label: 'Privacyverklaring', file: 'privacyverklaring-smartium.pdf' },
+  { label: 'Cookiebeleid', file: 'cookiebeleid-smartium.pdf' },
+  { label: 'Voorwaarden & regelgeving', file: 'smartium-regelgeving.pdf' },
 ]
 
 const Footer = () => {
@@ -118,8 +118,9 @@ const Footer = () => {
                 )}
                 <a
                   href={`${import.meta.env.BASE_URL}legal/${doc.file}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-navy-900 dark:hover:text-white underline-offset-2 hover:underline transition-colors"
-                  download
                 >
                   {doc.label}
                 </a>

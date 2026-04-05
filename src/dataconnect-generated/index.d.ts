@@ -1,4 +1,4 @@
-import { ConnectorConfig, DataConnect, QueryRef, QueryPromise } from 'firebase/data-connect';
+import { ConnectorConfig, DataConnect, QueryRef, QueryPromise, ExecuteQueryOptions } from 'firebase/data-connect';
 
 export const connectorConfig: ConnectorConfig;
 
@@ -61,6 +61,6 @@ interface ListAllCoursesRef {
 }
 export const listAllCoursesRef: ListAllCoursesRef;
 
-export function listAllCourses(): QueryPromise<ListAllCoursesData, undefined>;
-export function listAllCourses(dc: DataConnect): QueryPromise<ListAllCoursesData, undefined>;
+export function listAllCourses(options?: ExecuteQueryOptions): QueryPromise<ListAllCoursesData, undefined>;
+export function listAllCourses(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListAllCoursesData, undefined>;
 

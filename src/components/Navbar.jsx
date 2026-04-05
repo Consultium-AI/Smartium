@@ -23,6 +23,7 @@ const navItems = [
   { name: 'Home', href: '/', icon: Home },
   {
     name: 'Samenvattingen',
+    href: '/summary',
     icon: FileText,
     subGroups: [
       { label: 'Ba1', links: [
@@ -37,6 +38,7 @@ const navItems = [
   },
   {
     name: 'Oefenvragen',
+    href: '/oefenvragen',
     icon: ClipboardCheck,
     subGroups: [
       { label: 'Ba1', links: [
@@ -51,6 +53,7 @@ const navItems = [
   },
   {
     name: 'Tentamens',
+    href: '/tentamen',
     icon: GraduationCap,
     subGroups: [
       { label: 'Ba1', links: [
@@ -66,6 +69,7 @@ const navItems = [
 
 function isActiveDropdown(item, pathname) {
   if (!item.subGroups) return false
+  if (item.href && pathname === item.href) return true
   return item.subGroups.some((g) => g.links.some((l) => pathname === l.href || pathname.startsWith(l.href.split('?')[0])))
 }
 
@@ -214,18 +218,17 @@ const Navbar = () => {
               {navItems.map((item) =>
                 item.subGroups ? (
                   <div key={item.name} className="relative group">
-                    <button
-                      type="button"
+                    <Link
+                      to={item.href}
                       className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
                         isActiveDropdown(item, location.pathname)
                           ? 'bg-white text-navy-900 shadow-sm dark:bg-slate-800 dark:text-white dark:shadow-none dark:ring-1 dark:ring-white/10'
                           : 'text-navy-600 hover:text-navy-900 dark:text-slate-400 dark:hover:text-white'
                       }`}
-                      aria-haspopup="menu"
                     >
                       {item.name}
                       <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" strokeWidth={2} />
-                    </button>
+                    </Link>
                     <div
                       role="menu"
                       className="pointer-events-none invisible absolute left-0 top-full z-50 pt-1.5 opacity-0 transition-all group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
@@ -375,17 +378,23 @@ const Navbar = () => {
                   {navItems.map((item) =>
                     item.subGroups ? (
                       <div key={item.name} className="py-0.5">
-                        <button
-                          type="button"
-                          onClick={() => setMobileExpanded((p) => (p === item.name ? null : item.name))}
-                          className="flex w-full items-center justify-between gap-3 rounded-xl px-4 py-3 text-[15px] font-medium text-navy-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors"
-                        >
-                          <span className="flex items-center gap-3">
+                        <div className="flex items-center gap-1 rounded-xl px-2 py-1">
+                          <Link
+                            to={item.href}
+                            className="flex min-w-0 flex-1 items-center gap-3 rounded-xl px-2 py-2 text-[15px] font-medium text-navy-700 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/80"
+                          >
                             <item.icon className="h-[1.125rem] w-[1.125rem] shrink-0 opacity-80" strokeWidth={1.75} />
                             {item.name}
-                          </span>
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => setMobileExpanded((p) => (p === item.name ? null : item.name))}
+                            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-navy-700 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/80"
+                            aria-label={mobileExpanded === item.name ? `${item.name} inklappen` : `${item.name} uitklappen`}
+                          >
                           <ChevronDown className={`h-4 w-4 opacity-50 transition-transform ${mobileExpanded === item.name ? 'rotate-180' : ''}`} strokeWidth={2} />
-                        </button>
+                          </button>
+                        </div>
                         <AnimatePresence initial={false}>
                           {mobileExpanded === item.name && (
                             <motion.div

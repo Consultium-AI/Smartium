@@ -10,7 +10,7 @@ export const blok9Tentamen1 = {
   title: 'Oefententamen 1',
   subtitle: 'Bachelor geneeskunde Ba2',
   totalPoints: 141,
-  cesuur: 0.55,
+  cesuur: 0.6,
   casussen: [
     ...blok9Tentamen1PartA,
     ...blok9Tentamen1PartB,

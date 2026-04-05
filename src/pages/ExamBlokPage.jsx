@@ -14,6 +14,7 @@ import {
   Lock,
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import {
   shuffleMeerkeuzeQuestion,
   MeerkeuzeBlock,
@@ -38,7 +39,7 @@ import { useAccess } from '../hooks/useAccess'
 import { getExamsForBlok } from '../registry/examBlokRegistry'
 import { isFreePlanAllowedExam } from '../utils/freePlanAccess'
 
-export function calculateGradeBlok(earned, total, cesuur = 0.55) {
+export function calculateGradeBlok(earned, total, cesuur = 0.6) {
   if (!total || total <= 0) return 1
   const pct = earned / total
   if (pct <= cesuur) return 1 + (pct / cesuur) * 4.5
@@ -120,6 +121,15 @@ function ExamBlokSelection({ blok }) {
           </p>
         </motion.div>
 
+        {(blok === 5 || blok === 9) && (
+          <div className="max-w-2xl mx-auto mb-6">
+            <BlokWeekoverzichtPanel
+              title={blok === 5 ? 'Weekoverzicht blok 5 — BA1 2025–26' : 'Weekoverzicht blok 9 — BA2 2025–26'}
+              pdfFileName={blok === 5 ? 'weekoverzicht-blok5-ba1-25-26.pdf' : 'weekoverzicht-blok9-ba2-25-26.pdf'}
+            />
+          </div>
+        )}
+
         <div className="max-w-2xl mx-auto space-y-4">
           {exams.length === 0 ? (
             <p className="text-center text-slate-500 dark:text-slate-400">Nog geen tentamens voor dit blok.</p>
@@ -179,7 +189,7 @@ function ExamBlokSelection({ blok }) {
           transition={{ delay: 0.4 }}
           className="text-center mt-8 text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto"
         >
-          Cijfer op basis van gehaalde punten ({Math.round(0.55 * 100)}% = 5,5) ·{' '}
+          Cijfer op basis van gehaalde punten ({Math.round(0.6 * 100)}% = 5,5) ·{' '}
           <Link to="/tentamen" className="text-primary-600 dark:text-primary-400 font-medium hover:underline">
             Overzicht oefententamens
           </Link>
@@ -193,7 +203,7 @@ function ExamBlokSelection({ blok }) {
 function GradeResultBlok({ exam, answers, cesuur, onReset, onReview }) {
   const total = exam.totalPoints
   const earned = computeEarned(exam, answers)
-  const grade = calculateGradeBlok(earned, total, cesuur ?? exam.cesuur ?? 0.55)
+  const grade = calculateGradeBlok(earned, total, cesuur ?? exam.cesuur ?? 0.6)
   const passed = grade >= 5.5
   const pct = Math.round((earned / total) * 1000) / 10
 

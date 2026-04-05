@@ -10,7 +10,7 @@ export const blok9Tentamen2 = {
   title: 'Oefententamen 2',
   subtitle: 'Oefententamen Homeostase Ba2',
   totalPoints: 129,
-  cesuur: 0.55,
+  cesuur: 0.6,
   casussen: [
     ...blok9Tentamen2PartA,
     ...blok9Tentamen2PartB,

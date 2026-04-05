@@ -61,7 +61,7 @@ Below are examples of how to use the `example` connector's generated functions t
 ## ListAllCourses
 You can execute the `ListAllCourses` query using the following action shortcut function, or by calling `executeQuery()` after calling the following `QueryRef` function, both of which are defined in [dataconnect-generated/index.d.ts](./index.d.ts):
 ```typescript
-listAllCourses(): QueryPromise<ListAllCoursesData, undefined>;
+listAllCourses(options?: ExecuteQueryOptions): QueryPromise<ListAllCoursesData, undefined>;
 
 interface ListAllCoursesRef {
   ...
@@ -72,7 +72,7 @@ export const listAllCoursesRef: ListAllCoursesRef;
 ```
 You can also pass in a `DataConnect` instance to the action shortcut function or `QueryRef` function.
 ```typescript
-listAllCourses(dc: DataConnect): QueryPromise<ListAllCoursesData, undefined>;
+listAllCourses(dc: DataConnect, options?: ExecuteQueryOptions): QueryPromise<ListAllCoursesData, undefined>;
 
 interface ListAllCoursesRef {
   ...

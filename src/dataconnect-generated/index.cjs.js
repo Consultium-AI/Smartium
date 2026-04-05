@@ -1,4 +1,4 @@
-const { queryRef, executeQuery, validateArgs } = require('firebase/data-connect');
+const { queryRef, executeQuery, validateArgsWithOptions, validateArgs } = require('firebase/data-connect');
 
 const connectorConfig = {
   connector: 'example',
@@ -15,6 +15,9 @@ const listAllCoursesRef = (dc) => {
 listAllCoursesRef.operationName = 'ListAllCourses';
 exports.listAllCoursesRef = listAllCoursesRef;
 
-exports.listAllCourses = function listAllCourses(dc) {
-  return executeQuery(listAllCoursesRef(dc));
-};
+exports.listAllCourses = function listAllCourses(dcOrOptions, options) {
+  
+  const { dc: dcInstance, vars: inputVars, options: inputOpts } = validateArgsWithOptions(connectorConfig, dcOrOptions, options, undefined,false, false);
+  return executeQuery(listAllCoursesRef(dcInstance, inputVars), inputOpts && inputOpts.fetchPolicy);
+}
+;

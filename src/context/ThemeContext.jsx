@@ -9,7 +9,7 @@ export function ThemeProvider({ children }) {
     if (typeof window === 'undefined') return false
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored !== null) return stored === 'dark'
-    return false // Standaard licht, tenzij gebruiker expliciet donker kiest
+    return true // Standaard donker, tenzij gebruiker expliciet licht kiest
   })
 
   useEffect(() => {
