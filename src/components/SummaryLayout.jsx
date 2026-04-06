@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { BookOpen, ClipboardCheck, Clock, FileText, ChevronUp } from 'lucide-react'
+import { summaryModuleHeaderBadgeClass, summaryModuleKindLabel } from '../utils/summaryModuleLinkStyles'
 
 /**
  * Dark-mode voor typografie en callouts. Let op: algemene [&_p]/[&_h4]-regels overschrijven
@@ -72,6 +73,7 @@ const SummaryLayout = ({
   title,
   description,
   caseLabel,
+  moduleKind,
   tableOfContents,
   practiceLink,
   practiceFooter,
@@ -168,6 +170,13 @@ const SummaryLayout = ({
               <span className="px-3 py-1 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 text-amber-800 dark:text-amber-300 rounded-full text-xs font-medium">
                 {caseLabel}
               </span>
+              {moduleKind ? (
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-medium ${summaryModuleHeaderBadgeClass(moduleKind)}`}
+                >
+                  {summaryModuleKindLabel(moduleKind)}
+                </span>
+              ) : null}
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-50 mb-3">
               {title}

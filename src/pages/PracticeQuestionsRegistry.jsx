@@ -1,4 +1,4 @@
-import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
+﻿import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
 import { lme2QuestionsMap } from '../questions/lme2-virale-verwekkers-gastro-enteritis'
@@ -70,11 +70,16 @@ import { blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbQuestionsMap } from '../q
 import { blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidQuestionsMap } from '../questions/blok5-week1-casus1-microbioom-en-immunologie-van-de-huid'
 import { blok5Week1Casus2VoedingEnInhalatieallergieQuestionsMap } from '../questions/blok5-week1-casus2-voeding-en-inhalatieallergie'
 import { blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap } from '../questions/blok5-week1-casus2-nadelige-reacties-van-medicatie'
+import { blok5Week1Casus2LmoEczeemQuestionsMap } from '../questions/blok5-week1-casus2-lmo-eczeem'
 import { blok5Week1Casus2ProvokeQuestionsMap } from '../questions/blok5-week1-casus2-provoke'
 import { blok5Week1Casus2PsoriasisQuestionsMap } from '../questions/blok5-week1-casus2-psoriasis'
+import { blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap } from '../questions/blok5-week1-casus2-lmv-anafylaxie-type-i-allergie'
+import { blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap } from '../questions/blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie'
+import { blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap } from '../questions/blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek'
 import { blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap } from '../questions/blok5-week2-casus3-aangeboren-stollingsstoornissen'
 import { blok5Week2Casus3BegripsbepalingDermatologischeUitingenQuestionsMap } from '../questions/blok5-week2-casus3-begripsbepaling-dermatologische-uitingen'
 import { blok5Week2Casus3HemostaseBasisQuestionsMap } from '../questions/blok5-week2-casus3-hemostase-basis'
+import { blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap } from '../questions/blok5-week2-casus3-lmv-vasculitis-of-vasculopathie'
 import { blok5Week2Casus3VasculitisKleinMiddelGrootQuestionsMap } from '../questions/blok5-week2-casus3-vasculitis-klein-middel-groot'
 import { blok5Week2Casus4ChronischeOntstekingQuestionsMap } from '../questions/blok5-week2-casus4-chronische-ontsteking'
 import { blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenQuestionsMap } from '../questions/blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen'
@@ -83,6 +88,8 @@ import { blok5Week2Casus4MelanoomGelokaliseerdQuestionsMap } from '../questions/
 import { blok5Week2Casus4MriEnPetScanBenignemaligneQuestionsMap } from '../questions/blok5-week2-casus4-mri-en-pet-scan-benignemaligne'
 import { blok5Week2Casus4SentinelNodeQuestionsMap } from '../questions/blok5-week2-casus4-sentinel-node'
 import { blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap } from '../questions/blok5-week2-casus4-systemische-therapie-van-melanoom'
+import { blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap } from '../questions/blok5-week3-casus5-lmo-verdachte-huidafwijkingen'
+import { blok5Week3Casus5LmoZorgmijdingQuestionsMap } from '../questions/blok5-week3-casus5-lmo-zorgmijding'
 import { blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomQuestionsMap } from '../questions/blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom'
 import { blok5Week3Casus5HuidtumorenBenigneEnPremaligneQuestionsMap } from '../questions/blok5-week3-casus5-huidtumoren-benigne-en-premaligne'
 import { blok5Week3Casus5LeefstijlEnKankerQuestionsMap } from '../questions/blok5-week3-casus5-leefstijl-en-kanker'
@@ -96,6 +103,8 @@ import { blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomQuestionsMap } fr
 import { blok5Week4Casus7FlebologischeAandoeningenQuestionsMap } from '../questions/blok5-week4-casus7-flebologische-aandoeningen'
 import { blok5Week4Casus7LymfadenopathieQuestionsMap } from '../questions/blok5-week4-casus7-lymfadenopathie'
 import { blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap } from '../questions/blok5-week4-casus7-trombose-verhoogde-stollingsneiging'
+import { blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap } from '../questions/blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been'
+import { blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap } from '../questions/blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten'
 import { blok5Week4Casus8ErysipelasEnCellulitisQuestionsMap } from '../questions/blok5-week4-casus8-erysipelas-en-cellulitis'
 import { blok5Week4Casus8HydradenitisSuppurativaQuestionsMap } from '../questions/blok5-week4-casus8-hydradenitis-suppurativa'
 import { blok5Week4Casus8IntroductiemodulePlanetaryHealthQuestionsMap } from '../questions/blok5-week4-casus8-introductiemodule-planetary-health'
@@ -103,6 +112,7 @@ import { blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124QuestionsMap
 import { blok5Week4Casus8LymfeklierdissectieQuestionsMap } from '../questions/blok5-week4-casus8-lymfeklierdissectie'
 import { blok5Week4Casus8NecrotiserendeWekedeleninfectieQuestionsMap } from '../questions/blok5-week4-casus8-necrotiserende-wekedeleninfectie'
 import { blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap } from '../questions/blok5-week4-casus8-radiotherapie-in-de-praktijk'
+import { blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap } from '../questions/blok5-week4-casus8-lmv-verworven-stollingsstoornissen'
 import { blok5Week4Casus8VolksgezondheidsindicatorenDalysQuestionsMap } from '../questions/blok5-week4-casus8-volksgezondheidsindicatoren-dalys'
 import { blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdQuestionsMap } from '../questions/blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd'
 import { blok5Week5Casus11IntroductieKinderoncologieQuestionsMap } from '../questions/blok5-week5-casus11-introductie-kinderoncologie'
@@ -421,6 +431,13 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap,
               },
               {
+                id: 'blok5-week1-casus2-lmo-eczeem',
+                name: 'Eczeem',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week1Casus2LmoEczeemQuestionsMap,
+              },
+              {
                 id: 'blok5-week1-casus2-provoke',
                 name: 'PROVOKE',
                 type: 'simple',
@@ -431,6 +448,27 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Psoriasis',
                 type: 'simple',
                 questionsMap: blok5Week1Casus2PsoriasisQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
+                name: 'Anafylaxie, type I allergie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie',
+                name: 'Centrale vs perifere tolerantie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek',
+                name: 'Contactallergie en allergologisch onderzoek',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap,
               },
             ],
           },
@@ -459,6 +497,13 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Hemostase basis',
                 type: 'simple',
                 questionsMap: blok5Week2Casus3HemostaseBasisQuestionsMap,
+              },
+              {
+                id: 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie',
+                name: 'Vasculitis of vasculopathie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap,
               },
             ],
           },
@@ -517,6 +562,20 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 5: De verdachte huid',
             lmes: [
+              {
+                id: 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen',
+                name: 'Verdachte huidafwijkingen',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap,
+              },
+              {
+                id: 'blok5-week3-casus5-lmo-zorgmijding',
+                name: 'Zorgmijding',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week3Casus5LmoZorgmijdingQuestionsMap,
+              },
               {
                 id: 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom',
                 name: 'Huidtumoren basaalcel- en plaveiselcelcarcinoom',
@@ -599,6 +658,20 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 questionsMap: blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap,
               },
+              {
+                id: 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been',
+                name: 'Differentiaal diagnostische aanpak van zwelling in het been',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten',
+                name: 'Voorbereiding VOW: Hoeveel mag een levensjaar kosten?',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap,
+              },
             ],
           },
           {
@@ -645,6 +718,13 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Radiotherapie in de praktijk',
                 type: 'simple',
                 questionsMap: blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
+                name: 'Verworven stollingsstoornissen',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap,
               },
               {
                 id: 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys',
@@ -1425,6 +1505,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap[lmeParam]) {
     return blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week1-casus2-lmo-eczeem') {
+    return Object.values(blok5Week1Casus2LmoEczeemQuestionsMap).flat()
+  }
+  if (blok5Week1Casus2LmoEczeemQuestionsMap[lmeParam]) {
+    return blok5Week1Casus2LmoEczeemQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week1-casus2-provoke') {
     return Object.values(blok5Week1Casus2ProvokeQuestionsMap).flat()
   }
@@ -1436,6 +1522,24 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok5Week1Casus2PsoriasisQuestionsMap[lmeParam]) {
     return blok5Week1Casus2PsoriasisQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
+    return Object.values(blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap).flat()
+  }
+  if (blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap[lmeParam]) {
+    return blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
+    return Object.values(blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap).flat()
+  }
+  if (blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap[lmeParam]) {
+    return blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
+    return Object.values(blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap).flat()
+  }
+  if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
+    return blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return Object.values(blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap).flat()
@@ -1454,6 +1558,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok5Week2Casus3HemostaseBasisQuestionsMap[lmeParam]) {
     return blok5Week2Casus3HemostaseBasisQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
+    return Object.values(blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap).flat()
+  }
+  if (blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap[lmeParam]) {
+    return blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
     return Object.values(blok5Week2Casus3VasculitisKleinMiddelGrootQuestionsMap).flat()
@@ -1502,6 +1612,18 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap[lmeParam]) {
     return blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
+    return Object.values(blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap).flat()
+  }
+  if (blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap[lmeParam]) {
+    return blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week3-casus5-lmo-zorgmijding') {
+    return Object.values(blok5Week3Casus5LmoZorgmijdingQuestionsMap).flat()
+  }
+  if (blok5Week3Casus5LmoZorgmijdingQuestionsMap[lmeParam]) {
+    return blok5Week3Casus5LmoZorgmijdingQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
     return Object.values(blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomQuestionsMap).flat()
@@ -1577,6 +1699,18 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap[lmeParam]) {
     return blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
+    return Object.values(blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap).flat()
+  }
+  if (blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap[lmeParam]) {
+    return blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
+    return Object.values(blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap).flat()
+  }
+  if (blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap[lmeParam]) {
+    return blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
     return Object.values(blok5Week4Casus8ErysipelasEnCellulitisQuestionsMap).flat()
   }
@@ -1618,6 +1752,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap[lmeParam]) {
     return blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
+    return Object.values(blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap).flat()
+  }
+  if (blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap[lmeParam]) {
+    return blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
     return Object.values(blok5Week4Casus8VolksgezondheidsindicatorenDalysQuestionsMap).flat()
@@ -2016,6 +2156,12 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap[lmeParam]) {
     return 'Nadelige reacties van medicatie (Adverse Drug Reactions)'
   }
+  if (lmeParam === 'blok5-week1-casus2-lmo-eczeem') {
+    return 'Eczeem'
+  }
+  if (blok5Week1Casus2LmoEczeemQuestionsMap[lmeParam]) {
+    return 'Eczeem'
+  }
   if (lmeParam === 'blok5-week1-casus2-provoke') {
     return 'PROVOKE'
   }
@@ -2027,6 +2173,24 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (blok5Week1Casus2PsoriasisQuestionsMap[lmeParam]) {
     return 'Psoriasis'
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
+    return 'Anafylaxie, type I allergie'
+  }
+  if (blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap[lmeParam]) {
+    return 'Anafylaxie, type I allergie'
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
+    return 'Centrale vs perifere tolerantie'
+  }
+  if (blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap[lmeParam]) {
+    return 'Centrale vs perifere tolerantie'
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
+    return 'Contactallergie en allergologisch onderzoek'
+  }
+  if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
+    return 'Contactallergie en allergologisch onderzoek'
   }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return 'Aangeboren stollingsstoornissen'
@@ -2045,6 +2209,12 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (blok5Week2Casus3HemostaseBasisQuestionsMap[lmeParam]) {
     return 'Hemostase basis'
+  }
+  if (lmeParam === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
+    return 'Vasculitis of vasculopathie'
+  }
+  if (blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap[lmeParam]) {
+    return 'Vasculitis of vasculopathie'
   }
   if (lmeParam === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
     return 'Vasculitis - klein, middel, groot'
@@ -2094,6 +2264,18 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap[lmeParam]) {
     return 'Systemische therapie van melanoom'
   }
+  if (lmeParam === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
+    return 'Verdachte huidafwijkingen'
+  }
+  if (blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap[lmeParam]) {
+    return 'Verdachte huidafwijkingen'
+  }
+  if (lmeParam === 'blok5-week3-casus5-lmo-zorgmijding') {
+    return 'Zorgmijding'
+  }
+  if (blok5Week3Casus5LmoZorgmijdingQuestionsMap[lmeParam]) {
+    return 'Zorgmijding'
+  }
   if (lmeParam === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
     return 'Huidtumoren basaalcel- en plaveiselcelcarcinoom'
   }
@@ -2105,6 +2287,18 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (blok5Week3Casus5HuidtumorenBenigneEnPremaligneQuestionsMap[lmeParam]) {
     return 'Huidtumoren benigne en premaligne'
+  }
+  if (lmeParam === 'blok5-week3-casus5-leefstijl-en-kanker') {
+    return 'Leefstijl en kanker'
+  }
+  if (blok5Week3Casus5LeefstijlEnKankerQuestionsMap[lmeParam]) {
+    return 'Leefstijl en kanker'
+  }
+  if (lmeParam === 'blok5-week3-casus5-milieu-en-gezondheid') {
+    return 'Milieu en gezondheid'
+  }
+  if (blok5Week3Casus5MilieuEnGezondheidQuestionsMap[lmeParam]) {
+    return 'Milieu en gezondheid'
   }
   if (lmeParam === 'blok5-week3-casus6-behandeling-van-mammacarcinoom') {
     return 'Behandeling van mammacarcinoom'
@@ -2154,6 +2348,18 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap[lmeParam]) {
     return 'Trombose verhoogde stollingsneiging'
   }
+  if (lmeParam === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
+    return 'Differentiaal diagnostische aanpak van zwelling in het been'
+  }
+  if (blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap[lmeParam]) {
+    return 'Differentiaal diagnostische aanpak van zwelling in het been'
+  }
+  if (lmeParam === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
+    return 'Voorbereiding VOW: Hoeveel mag een levensjaar kosten?'
+  }
+  if (blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap[lmeParam]) {
+    return 'Voorbereiding VOW: Hoeveel mag een levensjaar kosten?'
+  }
   if (lmeParam === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
     return 'Erysipelas en cellulitis'
   }
@@ -2195,6 +2401,12 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap[lmeParam]) {
     return 'Radiotherapie in de praktijk'
+  }
+  if (lmeParam === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
+    return 'Verworven stollingsstoornissen'
+  }
+  if (blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap[lmeParam]) {
+    return 'Verworven stollingsstoornissen'
   }
   if (lmeParam === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
     return 'Volksgezondheidsindicatoren DALY\u2019s'
@@ -2484,6 +2696,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over nadelige reacties van medicatie.`
   }
+  if (lmeParam === 'blok5-week1-casus2-lmo-eczeem') {
+    return `Test je kennis met ${getQuestionCount(blok5Week1Casus2LmoEczeemQuestionsMap)} vragen over eczeem (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week1Casus2LmoEczeemQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week1Casus2LmoEczeemQuestionsMap[lmeParam]?.length || 0} vragen over eczeem (inclusief een open vraag met modelantwoord).`
+  }
   if (lmeParam === 'blok5-week1-casus2-provoke') {
     return `Test je kennis met ${getQuestionCount(blok5Week1Casus2ProvokeQuestionsMap)} meerkeuzevragen over PROVOKE.`
   }
@@ -2495,6 +2713,24 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week1Casus2PsoriasisQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week1Casus2PsoriasisQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over psoriasis.`
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap)} vragen over anafylaxie en type I allergie (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap[lmeParam]?.length || 0} vragen over anafylaxie en type I allergie (inclusief een open vraag met modelantwoord).`
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap)} vragen over centrale en perifere tolerantie (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap[lmeParam]?.length || 0} vragen over centrale en perifere tolerantie (inclusief een open vraag met modelantwoord).`
+  }
+  if (lmeParam === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
+    return `Test je kennis met ${getQuestionCount(blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap)} vragen over contactallergie en allergologisch onderzoek (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]?.length || 0} vragen over contactallergie en allergologisch onderzoek (inclusief een open vraag met modelantwoord).`
   }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return `Test je kennis met ${getQuestionCount(blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap)} meerkeuzevragen over aangeboren stollingsstoornissen.`
@@ -2513,6 +2749,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week2Casus3HemostaseBasisQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week2Casus3HemostaseBasisQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over hemostase basis.`
+  }
+  if (lmeParam === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap)} meerkeuzevragen over vasculitis of vasculopathie.`
+  }
+  if (blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week2Casus3LmvVasculitisOfVasculopathieQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over vasculitis of vasculopathie.`
   }
   if (lmeParam === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
     return `Test je kennis met ${getQuestionCount(blok5Week2Casus3VasculitisKleinMiddelGrootQuestionsMap)} meerkeuzevragen over vasculitis - klein, middel, groot.`
@@ -2561,6 +2803,18 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over systemische therapie van melanoom.`
+  }
+  if (lmeParam === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
+    return `Test je kennis met ${getQuestionCount(blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap)} meerkeuzevragen over verdachte huidafwijkingen.`
+  }
+  if (blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over verdachte huidafwijkingen.`
+  }
+  if (lmeParam === 'blok5-week3-casus5-lmo-zorgmijding') {
+    return `Test je kennis met ${getQuestionCount(blok5Week3Casus5LmoZorgmijdingQuestionsMap)} vragen over zorgmijding (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week3Casus5LmoZorgmijdingQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week3Casus5LmoZorgmijdingQuestionsMap[lmeParam]?.length || 0} vragen over zorgmijding (inclusief een open vraag met modelantwoord).`
   }
   if (lmeParam === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
     return `Test je kennis met ${getQuestionCount(blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomQuestionsMap)} meerkeuzevragen over huidtumoren basaalcel- en plaveiselcelcarcinoom.`
@@ -2631,6 +2885,18 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap[lmeParam]) {
     return `Test je kennis met ${getQuestionCount(blok5Week4Casus7TromboseVerhoogdeStollingsneigingQuestionsMap)} meerkeuzevragen over trombose en verhoogde stollingsneiging.`
   }
+  if (lmeParam === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
+    return `Test je kennis met ${getQuestionCount(blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap)} meerkeuzevragen over de differentiaal diagnostische aanpak van zwelling in het been.`
+  }
+  if (blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${getQuestionCount(blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap)} meerkeuzevragen over de differentiaal diagnostische aanpak van zwelling in het been.`
+  }
+  if (lmeParam === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
+    return `Test je kennis met ${getQuestionCount(blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap)} vragen over Voorbereiding VOW: hoeveel mag een levensjaar kosten (QALY, IKER, basispakket, rechtvaardigheid).`
+  }
+  if (blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${getQuestionCount(blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenQuestionsMap)} vragen over Voorbereiding VOW: hoeveel mag een levensjaar kosten (QALY, IKER, basispakket, rechtvaardigheid).`
+  }
   if (lmeParam === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
     return `Test je kennis met ${getQuestionCount(blok5Week4Casus8ErysipelasEnCellulitisQuestionsMap)} meerkeuzevragen over erysipelas en cellulitis.`
   }
@@ -2672,6 +2938,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over radiotherapie in de praktijk.`
+  }
+  if (lmeParam === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
+    return `Test je kennis met ${getQuestionCount(blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap)} vragen over verworven stollingsstoornissen (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap[lmeParam]?.length || 0} vragen over verworven stollingsstoornissen (inclusief een open vraag met modelantwoord).`
   }
   if (lmeParam === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
     return `Test je kennis met ${getQuestionCount(blok5Week4Casus8VolksgezondheidsindicatorenDalysQuestionsMap)} meerkeuzevragen over volksgezondheidsindicatoren DALY\u2019s.`

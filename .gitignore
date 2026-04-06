@@ -15,6 +15,10 @@ dist-ssr
 .tools/
 output/
 scripts/__pycache__/
+scripts/_tmp_*.mjs
+
+# Local course materials (not part of the app)
+SS1B5-smartium met vos/
 
 # Wrangler dev bundles (regenerated locally)
 worker/.wrangler/

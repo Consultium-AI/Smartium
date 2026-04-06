@@ -8,6 +8,7 @@ import {
   Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles, Lock
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import PracticeCourseModuleLink from '../components/PracticeCourseModuleLink'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro from '../components/Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro'
 import Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro from '../components/Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro'
@@ -17,10 +18,13 @@ import Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124PracticeIntro 
 import Blok5Week4Casus8LymfeklierdissectiePracticeIntro from '../components/Blok5Week4Casus8LymfeklierdissectiePracticeIntro'
 import Blok5Week4Casus8NecrotiserendeWekedeleninfectiePracticeIntro from '../components/Blok5Week4Casus8NecrotiserendeWekedeleninfectiePracticeIntro'
 import Blok5Week4Casus8RadiotherapieInDePraktijkPracticeIntro from '../components/Blok5Week4Casus8RadiotherapieInDePraktijkPracticeIntro'
+import Blok5Week4Casus8LmvVerworvenStollingsstoornissenPracticeIntro from '../components/Blok5Week4Casus8LmvVerworvenStollingsstoornissenPracticeIntro'
 import Blok5Week4Casus8VolksgezondheidsindicatorenDalysPracticeIntro from '../components/Blok5Week4Casus8VolksgezondheidsindicatorenDalysPracticeIntro'
 import Blok5Week4Casus7FlebologischeAandoeningenPracticeIntro from '../components/Blok5Week4Casus7FlebologischeAandoeningenPracticeIntro'
 import Blok5Week4Casus7LymfadenopathiePracticeIntro from '../components/Blok5Week4Casus7LymfadenopathiePracticeIntro'
 import Blok5Week4Casus7TromboseVerhoogdeStollingsneigingPracticeIntro from '../components/Blok5Week4Casus7TromboseVerhoogdeStollingsneigingPracticeIntro'
+import Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenPracticeIntro from '../components/Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenPracticeIntro'
+import Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenPracticeIntro from '../components/Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenPracticeIntro'
 import Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdPracticeIntro from '../components/Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdPracticeIntro'
 import Blok5Week5Casus11IntroductieKinderoncologiePracticeIntro from '../components/Blok5Week5Casus11IntroductieKinderoncologiePracticeIntro'
 import Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksPracticeIntro from '../components/Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksPracticeIntro'
@@ -330,6 +334,9 @@ const PracticeQuestionsPage = () => {
           {lmeParam === 'blok5-week4-casus8-radiotherapie-in-de-praktijk' && (
             <Blok5Week4Casus8RadiotherapieInDePraktijkPracticeIntro />
           )}
+          {lmeParam === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen' && (
+            <Blok5Week4Casus8LmvVerworvenStollingsstoornissenPracticeIntro />
+          )}
           {lmeParam === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys' && (
             <Blok5Week4Casus8VolksgezondheidsindicatorenDalysPracticeIntro />
           )}
@@ -341,6 +348,12 @@ const PracticeQuestionsPage = () => {
           )}
           {lmeParam === 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging' && (
             <Blok5Week4Casus7TromboseVerhoogdeStollingsneigingPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been' && (
+            <Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten' && (
+            <Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenPracticeIntro />
           )}
           {lmeParam === 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd' && (
             <Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdPracticeIntro />
@@ -431,40 +444,15 @@ const PracticeQuestionsPage = () => {
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
                                 <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => {
-                                    const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                    return (
-                                    <Link
+                                  {casus.lmes.map((lmeItem, lmeIndex) => (
+                                    <PracticeCourseModuleLink
                                       key={lmeIndex}
-                                      to={locked ? '/billing' : `/oefenvragen?lme=${lmeItem.id}`}
-                                      className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                        ${locked
-                                          ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                          : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                    >
-                                      <div className="flex items-center gap-3 min-w-0">
-                                        <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                          <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                        </div>
-                                        <div className="min-w-0">
-                                          <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                            {lmeItem.name}
-                                          </span>
-                                          <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 inline-flex items-center gap-1.5">
-                                            {getLmeQuestionCount(lmeItem)} vragen
-                                            {locked && (
-                                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                                <Lock className="w-3 h-3" />
-                                                Premium
-                                              </span>
-                                            )}
-                                          </span>
-                                        </div>
-                                      </div>
-                                      <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                    </Link>
-                                    )
-                                  })}
+                                      lmeItem={lmeItem}
+                                      questionCount={getLmeQuestionCount(lmeItem)}
+                                      showPremiumLocks={showPremiumLocks}
+                                      isBlocked={isFreePlanBlockedLme}
+                                    />
+                                  ))}
                                 </div>
                               </div>
                             ))}
@@ -528,40 +516,13 @@ const PracticeQuestionsPage = () => {
                                 <div className="ml-0 sm:ml-2 space-y-2">
                                   {casus.lmes.map((lmeItem, lmeIndex) => (
                                     lmeItem.type === 'simple' ? (
-                                      (() => {
-                                        const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                        return (
-                                      <Link
+                                      <PracticeCourseModuleLink
                                         key={lmeIndex}
-                                        to={locked ? '/billing' : `/oefenvragen?lme=${lmeItem.id}`}
-                                        className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                          ${locked
-                                            ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                            : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                      >
-                                        <div className="flex items-center gap-3 min-w-0">
-                                          <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                            <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                          </div>
-                                          <div className="min-w-0">
-                                            <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                              {lmeItem.name}
-                                            </span>
-                                            <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 inline-flex items-center gap-1.5">
-                                              {getLmeQuestionCount(lmeItem)} vragen
-                                              {locked && (
-                                                <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                                  <Lock className="w-3 h-3" />
-                                                  Premium
-                                                </span>
-                                              )}
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                      </Link>
-                                        )
-                                      })()
+                                        lmeItem={lmeItem}
+                                        questionCount={getLmeQuestionCount(lmeItem)}
+                                        showPremiumLocks={showPremiumLocks}
+                                        isBlocked={isFreePlanBlockedLme}
+                                      />
                                     ) : (
                                       <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
                                         <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
@@ -656,40 +617,15 @@ const PracticeQuestionsPage = () => {
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
                                 <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => {
-                                    const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                    return (
-                                    <Link
+                                  {casus.lmes.map((lmeItem, lmeIndex) => (
+                                    <PracticeCourseModuleLink
                                       key={lmeIndex}
-                                      to={locked ? '/billing' : `/oefenvragen?lme=${lmeItem.id}`}
-                                      className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                        ${locked
-                                          ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                          : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                    >
-                                      <div className="flex items-center gap-3 min-w-0">
-                                        <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                          <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                        </div>
-                                        <div className="min-w-0">
-                                          <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                            {lmeItem.name}
-                                          </span>
-                                          <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 inline-flex items-center gap-1.5">
-                                            {getLmeQuestionCount(lmeItem)} vragen
-                                            {locked && (
-                                              <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                                <Lock className="w-3 h-3" />
-                                                Premium
-                                              </span>
-                                            )}
-                                          </span>
-                                        </div>
-                                      </div>
-                                      <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                    </Link>
-                                    )
-                                  })}
+                                      lmeItem={lmeItem}
+                                      questionCount={getLmeQuestionCount(lmeItem)}
+                                      showPremiumLocks={showPremiumLocks}
+                                      isBlocked={isFreePlanBlockedLme}
+                                    />
+                                  ))}
                                 </div>
                               </div>
                             ))}
@@ -757,40 +693,13 @@ const PracticeQuestionsPage = () => {
                                 <div className="ml-0 sm:ml-2 space-y-2">
                                   {casus.lmes.map((lmeItem, lmeIndex) => (
                                     lmeItem.type === 'simple' ? (
-                                      (() => {
-                                        const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                        return (
-                                      <Link
+                                      <PracticeCourseModuleLink
                                         key={lmeIndex}
-                                        to={locked ? '/billing' : `/oefenvragen?lme=${lmeItem.id}`}
-                                        className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                          ${locked
-                                            ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                            : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                      >
-                                        <div className="flex items-center gap-3 min-w-0">
-                                          <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                            <ClipboardCheck className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                          </div>
-                                          <div className="min-w-0">
-                                            <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                              {lmeItem.name}
-                                            </span>
-                                            <span className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 inline-flex items-center gap-1.5">
-                                              {getLmeQuestionCount(lmeItem)} vragen
-                                              {locked && (
-                                                <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                                  <Lock className="w-3 h-3" />
-                                                  Premium
-                                                </span>
-                                              )}
-                                            </span>
-                                          </div>
-                                        </div>
-                                        <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                      </Link>
-                                        )
-                                      })()
+                                        lmeItem={lmeItem}
+                                        questionCount={getLmeQuestionCount(lmeItem)}
+                                        showPremiumLocks={showPremiumLocks}
+                                        isBlocked={isFreePlanBlockedLme}
+                                      />
                                     ) : (
                                       <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
                                         <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
@@ -988,6 +897,29 @@ const PracticeQuestionsPage = () => {
                     </motion.button>
                   ))}
                 </div>
+
+                {revealedAnswers[currentQ.id] && currentQ.modelAnswer && (
+                  <div
+                    className={
+                      lmeParam?.includes('-lmv-')
+                        ? 'mt-6 rounded-xl border border-orange-200 bg-orange-50/80 dark:bg-orange-950/40 dark:border-orange-700/60 p-4'
+                        : 'mt-6 rounded-xl border border-sky-200 bg-sky-50/80 dark:bg-sky-950/40 dark:border-sky-700/60 p-4'
+                    }
+                  >
+                    <p
+                      className={
+                        lmeParam?.includes('-lmv-')
+                          ? 'text-[10px] font-semibold uppercase tracking-wide text-orange-800 dark:text-orange-300 mb-2'
+                          : 'text-[10px] font-semibold uppercase tracking-wide text-sky-800 dark:text-sky-300 mb-2'
+                      }
+                    >
+                      Modelantwoord
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                      {currentQ.modelAnswer}
+                    </p>
+                  </div>
+                )}
 
                 {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] !== currentQ.correctAnswer && (
                   <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">

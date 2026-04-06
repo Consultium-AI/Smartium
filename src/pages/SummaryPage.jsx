@@ -9,6 +9,7 @@ import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
 import { useAccess } from '../hooks/useAccess'
 import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
+import SummaryCourseModuleLink from '../components/SummaryCourseModuleLink'
 import { Header, BackButton, Footer } from './summary/SummaryShared'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
 import { FoetaleBeeldvormingSummary } from './summary/SummaryFoetaleBeeldvorming'
@@ -79,9 +80,11 @@ import Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary from '../summaries/
 import Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-5-microbioom-en-immunologie-van-de-huid/Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary'
 import Blok5Week1Casus2VoedingEnInhalatieallergieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-6-voeding-en-inhalatieallergie/Blok5Week1Casus2VoedingEnInhalatieallergieSummary'
 import Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-7-nadelige-reacties-van-medicatie/Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary'
+import Blok5Week1Casus2LmoEczeemSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lmo-eczeem/Blok5Week1Casus2LmoEczeemSummary'
 import Blok5Week2Casus3AangeborenStollingsstoornissenSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-10-aangeboren-stollingsstoornissen/Blok5Week2Casus3AangeborenStollingsstoornissenSummary'
 import Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-11-begripsbepaling-dermatologische-uitingen/Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary'
 import Blok5Week2Casus3HemostaseBasisSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-12-hemostase-basis/Blok5Week2Casus3HemostaseBasisSummary'
+import Blok5Week2Casus3LmvVasculitisOfVasculopathieSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lmv-vasculitis-of-vasculopathie-samenvatting/Blok5Week2Casus3LmvVasculitisOfVasculopathieSummary'
 import Blok5Week2Casus3VasculitisKleinMiddelGrootSummary from '../summaries/samenvattingen-blok5/week-2/casus-3-paarse-vlek/lme-13-vasculitis-klein-middel-groot/Blok5Week2Casus3VasculitisKleinMiddelGrootSummary'
 import Blok5Week2Casus4ChronischeOntstekingSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-14-chronische-ontsteking/Blok5Week2Casus4ChronischeOntstekingSummary'
 import Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-15-goedaardige-en-kwaadaardige-huidafwijkingen/Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary'
@@ -92,6 +95,12 @@ import Blok5Week2Casus4SentinelNodeSummary from '../summaries/samenvattingen-blo
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary from '../summaries/samenvattingen-blok5/week-2/casus-4-donkere-vlek/lme-20-systemische-therapie-van-melanoom/Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary'
 import Blok5Week1Casus2ProvokeSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-8-provoke/Blok5Week1Casus2ProvokeSummary'
 import Blok5Week1Casus2PsoriasisSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lme-9-psoriasis/Blok5Week1Casus2PsoriasisSummary'
+import Blok5Week1Casus2LmvAnafylaxieTypeIAllergieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lmv-anafylaxie-type-i-allergie-samenvatting/Blok5Week1Casus2LmvAnafylaxieTypeIAllergieSummary'
+import Blok5Week1Casus2LmvCentraleVsPerifereTolerantieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lmv-centrale-vs-perifere-tolerantie-samenvatting/Blok5Week1Casus2LmvCentraleVsPerifereTolerantieSummary'
+import Blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/lmv-contact-allergie-en-allergologisch-onderzoek-samenvatting/Blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekSummary'
+import Blok5Week1Casus2StmPathogeneseTypeIVAllergieSummary from '../summaries/samenvattingen-blok5/week-1/casus-2-de-veranderde-barriere/stm-pathogenese-type-iv-allergie-samenvatting/Blok5Week1Casus2StmPathogeneseTypeIVAllergieSummary'
+import Blok5Week3Casus5LmoVerdachteHuidafwijkingenSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lmo-verdachte-huidafwijkingen-samenvatting/Blok5Week3Casus5LmoVerdachteHuidafwijkingenSummary'
+import Blok5Week3Casus5LmoZorgmijdingSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lmo-zorgmijding-samenvatting/Blok5Week3Casus5LmoZorgmijdingSummary'
 import Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-21-huidtumoren-basaalcel-en-plaveiselcelcarcinoom/Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary'
 import Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-22-huidtumoren-benigne-en-premaligne/Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary'
 import Blok5Week3Casus5LeefstijlEnKankerSummary from '../summaries/samenvattingen-blok5/week-3/casus-5-de-verdachte-huid/lme-23-leefstijl-en-kanker/Blok5Week3Casus5LeefstijlEnKankerSummary'
@@ -122,6 +131,8 @@ import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary fro
 import Blok5Week8Casus15ScyllaEnCharybdisSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-63-scylla-en-charybdis/Blok5Week8Casus15ScyllaEnCharybdisSummary'
 import Blok5Week4Casus7LymfadenopathieSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-32-lymfadenopathie/Blok5Week4Casus7LymfadenopathieSummary'
 import Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-33-trombose-verhoogde-stollingsneiging/Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary'
+import Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lmo-differentiaal-diagnostische-aanpak-zwelling-been/Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary'
+import Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten/Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenSummary'
 import Blok5Week4Casus8ErysipelasEnCellulitisSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-34-erysipelas-en-cellulitis/Blok5Week4Casus8ErysipelasEnCellulitisSummary'
 import Blok5Week4Casus8HydradenitisSuppurativaSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-35-hydradenitis-suppurativa/Blok5Week4Casus8HydradenitisSuppurativaSummary'
 import Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-36-introductiemodule-planetary-health/Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary'
@@ -443,6 +454,12 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
+                  id: "blok5-week1-casus2-lmo-eczeem",
+                  name: "Eczeem",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
                   id: "blok5-week1-casus2-provoke",
                   name: "PROVOKE",
                   available: true,
@@ -451,6 +468,30 @@ const SummaryPage = () => {
                   id: "blok5-week1-casus2-psoriasis",
                   name: "Psoriasis",
                   available: true,
+                },
+                {
+                  id: "blok5-week1-casus2-lmv-anafylaxie-type-i-allergie",
+                  name: "Anafylaxie, type I allergie",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie",
+                  name: "Centrale vs perifere tolerantie",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek",
+                  name: "Contactallergie en allergologisch onderzoek",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week1-casus2-stm-pathogenese-type-iv-allergie",
+                  name: "Pathogenese type IV allergie",
+                  available: true,
+                  moduleKind: "stm",
                 },
               ],
             },
@@ -476,6 +517,12 @@ const SummaryPage = () => {
                   id: "blok5-week2-casus3-hemostase-basis",
                   name: "Hemostase basis",
                   available: true,
+                },
+                {
+                  id: "blok5-week2-casus3-lmv-vasculitis-of-vasculopathie",
+                  name: "Vasculitis of vasculopathie",
+                  available: true,
+                  moduleKind: "lmv",
                 },
                 {
                   id: "blok5-week2-casus3-vasculitis-klein-middel-groot",
@@ -532,6 +579,18 @@ const SummaryPage = () => {
             {
               name: "Casus 5: De verdachte huid",
               lmes: [
+                {
+                  id: "blok5-week3-casus5-lmo-verdachte-huidafwijkingen",
+                  name: "Verdachte huidafwijkingen",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week3-casus5-lmo-zorgmijding",
+                  name: "Zorgmijding",
+                  available: true,
+                  moduleKind: "lmo",
+                },
                 {
                   id: "blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom",
                   name: "Huidtumoren basaalcel- en plaveiselcelcarcinoom",
@@ -611,6 +670,18 @@ const SummaryPage = () => {
                   id: "blok5-week4-casus7-trombose-verhoogde-stollingsneiging",
                   name: "Trombose verhoogde stollingsneiging",
                   available: true,
+                },
+                {
+                  id: "blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been",
+                  name: "Differentiaal diagnostische aanpak van zwelling in het been",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten",
+                  name: "Voorbereiding VOW: Hoeveel mag een levensjaar kosten?",
+                  available: true,
+                  moduleKind: "lmo",
                 },
               ],
             },
@@ -1779,6 +1850,19 @@ const SummaryPage = () => {
     )
   }
 
+  if (lme === 'blok5-week1-casus2-lmo-eczeem') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2LmoEczeemSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
   if (lme === 'blok5-week1-casus2-provoke') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
@@ -1799,6 +1883,58 @@ const SummaryPage = () => {
         <main className="container-custom py-8 md:py-12">
           <BackButton />
           <Blok5Week1Casus2PsoriasisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2LmvAnafylaxieTypeIAllergieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2LmvCentraleVsPerifereTolerantieSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week1Casus2StmPathogeneseTypeIVAllergieSummary />
         </main>
         <Footer />
       </div>
@@ -1838,6 +1974,19 @@ const SummaryPage = () => {
         <main className="container-custom py-8 md:py-12">
           <BackButton />
           <Blok5Week2Casus3HemostaseBasisSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week2Casus3LmvVasculitisOfVasculopathieSummary />
         </main>
         <Footer />
       </div>
@@ -1942,6 +2091,32 @@ const SummaryPage = () => {
         <main className="container-custom py-8 md:py-12">
           <BackButton />
           <Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5LmoVerdachteHuidafwijkingenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week3-casus5-lmo-zorgmijding') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week3Casus5LmoZorgmijdingSummary />
         </main>
         <Footer />
       </div>
@@ -2182,6 +2357,19 @@ const SummaryPage = () => {
     )
   }
 
+  if (lme === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus8LmvVerworvenStollingsstoornissenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
   if (lme === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
@@ -2215,6 +2403,32 @@ const SummaryPage = () => {
         <main className="container-custom py-8 md:py-12">
           <BackButton />
           <Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
+
+  if (lme === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+        <Header />
+        <main className="container-custom py-8 md:py-12">
+          <BackButton />
+          <Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenSummary />
         </main>
         <Footer />
       </div>
@@ -3185,7 +3399,7 @@ const SummaryPage = () => {
             Samenvattingen
           </h1>
           <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-            Kies je bachelorjaar, blok en week — elke LME opent de volledige samenvatting.
+            Kies je bachelorjaar, blok en week — elke module opent de volledige samenvatting.
           </p>
 
           <div className="space-y-10">
@@ -3251,43 +3465,14 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => {
-                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                return (
-                                <Link
+                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                                <SummaryCourseModuleLink
                                   key={lmeIndex}
-                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
-                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    ${locked
-                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                >
-                                  <div className="flex items-center gap-3 min-w-0">
-                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                    </div>
-                                    <div className="min-w-0">
-                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                        {lmeItem.name}
-                                      </span>
-                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
-                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
-                                          ~15 min
-                                        </span>
-                                        {locked && (
-                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                            <Lock className="w-3 h-3" />
-                                            Premium
-                                          </span>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                </Link>
-                                )
-                              })}
+                                  lmeItem={lmeItem}
+                                  showPremiumLocks={showPremiumLocks}
+                                  isBlocked={isFreePlanBlockedLme}
+                                />
+                              ))}
                             </div>
                           </div>
                         ))}
@@ -3401,43 +3586,12 @@ const SummaryPage = () => {
                                     </div>
                                   </div>
                                 ) : (
-                                (() => {
-                                  const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                  return (
-                                <Link
-                                  key={lmeIndex}
-                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
-                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    ${locked
-                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                >
-                                  <div className="flex items-center gap-3 min-w-0">
-                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                    </div>
-                                    <div className="min-w-0">
-                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                        {lmeItem.name}
-                                      </span>
-                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
-                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
-                                          ~15 min
-                                        </span>
-                                        {locked && (
-                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                            <Lock className="w-3 h-3" />
-                                            Premium
-                                          </span>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                </Link>
-                                  )
-                                })()
+                                  <SummaryCourseModuleLink
+                                    key={lmeIndex}
+                                    lmeItem={lmeItem}
+                                    showPremiumLocks={showPremiumLocks}
+                                    isBlocked={isFreePlanBlockedLme}
+                                  />
                                 )
                               ))}
                             </div>
@@ -3507,43 +3661,14 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => {
-                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                return (
-                                <Link
+                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                                <SummaryCourseModuleLink
                                   key={lmeIndex}
-                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
-                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    ${locked
-                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                >
-                                  <div className="flex items-center gap-3 min-w-0">
-                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                    </div>
-                                    <div className="min-w-0">
-                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                        {lmeItem.name}
-                                      </span>
-                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
-                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
-                                          ~15 min
-                                        </span>
-                                        {locked && (
-                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                            <Lock className="w-3 h-3" />
-                                            Premium
-                                          </span>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                </Link>
-                                )
-                              })}
+                                  lmeItem={lmeItem}
+                                  showPremiumLocks={showPremiumLocks}
+                                  isBlocked={isFreePlanBlockedLme}
+                                />
+                              ))}
                             </div>
                           </div>
                         ))}
@@ -3624,43 +3749,14 @@ const SummaryPage = () => {
                             </div>
 
                             <div className="ml-0 sm:ml-2 space-y-2">
-                              {casus.lmes.map((lmeItem, lmeIndex) => {
-                                const locked = showPremiumLocks && isFreePlanBlockedLme(lmeItem.id)
-                                return (
-                                <Link
+                              {casus.lmes.map((lmeItem, lmeIndex) => (
+                                <SummaryCourseModuleLink
                                   key={lmeIndex}
-                                  to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
-                                  className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                                    ${locked
-                                      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-                                      : 'bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 hover:border-emerald-400/70 dark:hover:border-emerald-500/45 hover:shadow-md dark:hover:shadow-emerald-950/20 hover:bg-emerald-50/50 dark:hover:bg-slate-800/95'}`}
-                                >
-                                  <div className="flex items-center gap-3 min-w-0">
-                                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 dark:ring-1 dark:ring-emerald-500/20 shrink-0">
-                                      <BookOpen className="w-4 h-4 text-emerald-700 dark:text-emerald-400" />
-                                    </div>
-                                    <div className="min-w-0">
-                                      <span className="font-medium text-slate-800 dark:text-slate-100 text-sm leading-snug block group-hover:text-emerald-900 dark:group-hover:text-emerald-300 transition-colors">
-                                        {lmeItem.name}
-                                      </span>
-                                      <div className="flex items-center gap-3 mt-1 flex-wrap">
-                                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                                          <Clock className="w-3 h-3 shrink-0 opacity-80" />
-                                          ~15 min
-                                        </span>
-                                        {locked && (
-                                          <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
-                                            <Lock className="w-3 h-3" />
-                                            Premium
-                                          </span>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ChevronRight className="w-4 h-4 text-slate-400 dark:text-slate-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors" />
-                                </Link>
-                                )
-                              })}
+                                  lmeItem={lmeItem}
+                                  showPremiumLocks={showPremiumLocks}
+                                  isBlocked={isFreePlanBlockedLme}
+                                />
+                              ))}
                             </div>
                           </div>
                         ))}
