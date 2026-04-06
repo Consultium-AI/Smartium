@@ -59,13 +59,16 @@ export default function BillingPage() {
     const p = stored || urlPlan
     if (p === 'monthly' || p === 'yearly') {
       setPlan(p)
+      setStep(2)
       if (stored) sessionStorage.removeItem('smartium_billing_plan')
     }
   }, [loading, user, urlPlan])
 
   useEffect(() => {
     if (!user && urlPlan) {
-      setPlan(urlPlan === 'yearly' ? 'yearly' : 'monthly')
+      const selectedPlan = urlPlan === 'yearly' ? 'yearly' : 'monthly'
+      setPlan(selectedPlan)
+      setStep(2)
     }
   }, [urlPlan, user])
 
