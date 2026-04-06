@@ -414,8 +414,13 @@ const SummaryPage = () => {
               name: "Casus 1: De huid als succesvolle barrière",
               lmes: [
                 {
-                  id: "blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud",
-                  name: "De huidbarrière van jong tot oud",
+                  id: "blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb",
+                  name: "Huidtypen met invloed van UVA en UVB",
+                  available: true,
+                },
+                {
+                  id: "blok5-week1-casus1-microbioom-en-immunologie-van-de-huid",
+                  name: "Microbioom en immunologie van de huid",
                   available: true,
                 },
                 {
@@ -429,13 +434,8 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb",
-                  name: "Huidtypen met invloed van UVA en UVB",
-                  available: true,
-                },
-                {
-                  id: "blok5-week1-casus1-microbioom-en-immunologie-van-de-huid",
-                  name: "Microbioom en immunologie van de huid",
+                  id: "blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud",
+                  name: "De huidbarrière van jong tot oud",
                   available: true,
                 },
               ],
@@ -443,6 +443,23 @@ const SummaryPage = () => {
             {
               name: "Casus 2: De veranderde barrière",
               lmes: [
+                {
+                  id: "blok5-week1-casus2-lmo-eczeem",
+                  name: "Eczeem",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek",
+                  name: "Contactallergie en allergologisch onderzoek",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week1-casus2-psoriasis",
+                  name: "Psoriasis",
+                  available: true,
+                },
                 {
                   id: "blok5-week1-casus2-voeding-en-inhalatieallergie",
                   name: "Voeding en inhalatieallergie",
@@ -454,19 +471,8 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week1-casus2-lmo-eczeem",
-                  name: "Eczeem",
-                  available: true,
-                  moduleKind: "lmo",
-                },
-                {
                   id: "blok5-week1-casus2-provoke",
                   name: "PROVOKE",
-                  available: true,
-                },
-                {
-                  id: "blok5-week1-casus2-psoriasis",
-                  name: "Psoriasis",
                   available: true,
                 },
                 {
@@ -478,12 +484,6 @@ const SummaryPage = () => {
                 {
                   id: "blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie",
                   name: "Centrale vs perifere tolerantie",
-                  available: true,
-                  moduleKind: "lmv",
-                },
-                {
-                  id: "blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek",
-                  name: "Contactallergie en allergologisch onderzoek",
                   available: true,
                   moduleKind: "lmv",
                 },
@@ -504,11 +504,6 @@ const SummaryPage = () => {
               name: "Casus 3: Paarse vlek",
               lmes: [
                 {
-                  id: "blok5-week2-casus3-aangeboren-stollingsstoornissen",
-                  name: "Aangeboren stollingsstoornissen",
-                  available: true,
-                },
-                {
                   id: "blok5-week2-casus3-begripsbepaling-dermatologische-uitingen",
                   name: "Begripsbepaling dermatologische uitingen",
                   available: true,
@@ -519,15 +514,20 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week2-casus3-lmv-vasculitis-of-vasculopathie",
-                  name: "Vasculitis of vasculopathie",
+                  id: "blok5-week2-casus3-aangeboren-stollingsstoornissen",
+                  name: "Aangeboren stollingsstoornissen",
                   available: true,
-                  moduleKind: "lmv",
                 },
                 {
                   id: "blok5-week2-casus3-vasculitis-klein-middel-groot",
                   name: "Vasculitis - klein, middel, groot",
                   available: true,
+                },
+                {
+                  id: "blok5-week2-casus3-lmv-vasculitis-of-vasculopathie",
+                  name: "Vasculitis of vasculopathie",
+                  available: true,
+                  moduleKind: "lmv",
                 },
               ],
             },
@@ -535,18 +535,8 @@ const SummaryPage = () => {
               name: "Casus 4: Donkere vlek",
               lmes: [
                 {
-                  id: "blok5-week2-casus4-chronische-ontsteking",
-                  name: "Chronische ontsteking",
-                  available: true,
-                },
-                {
                   id: "blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen",
                   name: "Goedaardige en kwaadaardige huidafwijkingen",
-                  available: true,
-                },
-                {
-                  id: "blok5-week2-casus4-immuuntherapie-van-kanker",
-                  name: "Immuuntherapie van kanker",
                   available: true,
                 },
                 {
@@ -555,18 +545,28 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week2-casus4-mri-en-pet-scan-benignemaligne",
-                  name: "MRI en PET-scan benignemaligne",
-                  available: true,
-                },
-                {
                   id: "blok5-week2-casus4-sentinel-node",
                   name: "Sentinel node",
                   available: true,
                 },
                 {
+                  id: "blok5-week2-casus4-immuuntherapie-van-kanker",
+                  name: "Immuuntherapie van kanker",
+                  available: true,
+                },
+                {
                   id: "blok5-week2-casus4-systemische-therapie-van-melanoom",
                   name: "Systemische therapie van melanoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-chronische-ontsteking",
+                  name: "Chronische ontsteking",
+                  available: true,
+                },
+                {
+                  id: "blok5-week2-casus4-mri-en-pet-scan-benignemaligne",
+                  name: "MRI en PET-scan benignemaligne",
                   available: true,
                 },
               ],
@@ -586,10 +586,9 @@ const SummaryPage = () => {
                   moduleKind: "lmo",
                 },
                 {
-                  id: "blok5-week3-casus5-lmo-zorgmijding",
-                  name: "Zorgmijding",
+                  id: "blok5-week3-casus5-huidtumoren-benigne-en-premaligne",
+                  name: "Huidtumoren benigne en premaligne",
                   available: true,
-                  moduleKind: "lmo",
                 },
                 {
                   id: "blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom",
@@ -597,18 +596,19 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week3-casus5-huidtumoren-benigne-en-premaligne",
-                  name: "Huidtumoren benigne en premaligne",
+                  id: "blok5-week3-casus5-lmo-zorgmijding",
+                  name: "Zorgmijding",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week3-casus5-milieu-en-gezondheid",
+                  name: "Milieu en gezondheid",
                   available: true,
                 },
                 {
                   id: "blok5-week3-casus5-leefstijl-en-kanker",
                   name: "Leefstijl en kanker",
-                  available: true,
-                },
-                {
-                  id: "blok5-week3-casus5-milieu-en-gezondheid",
-                  name: "Milieu en gezondheid",
                   available: true,
                 },
               ],
@@ -617,18 +617,8 @@ const SummaryPage = () => {
               name: "Casus 6: Knobbel in de borst",
               lmes: [
                 {
-                  id: "blok5-week3-casus6-behandeling-van-mammacarcinoom",
-                  name: "Behandeling van mammacarcinoom",
-                  available: true,
-                },
-                {
-                  id: "blok5-week3-casus6-familiair-mammacarcinoom",
-                  name: "Familiair mammacarcinoom",
-                  available: true,
-                },
-                {
-                  id: "blok5-week3-casus6-het-slechtnieuwsgesprek",
-                  name: "Het slechtnieuwsgesprek",
+                  id: "blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom",
+                  name: "Radiologische diagnostiek mammacarcinoom",
                   available: true,
                 },
                 {
@@ -637,13 +627,23 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom",
-                  name: "Overdiagnose bij bevolkingsonderzoek mammacarcinoom",
+                  id: "blok5-week3-casus6-behandeling-van-mammacarcinoom",
+                  name: "Behandeling van mammacarcinoom",
                   available: true,
                 },
                 {
-                  id: "blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom",
-                  name: "Radiologische diagnostiek mammacarcinoom",
+                  id: "blok5-week3-casus6-het-slechtnieuwsgesprek",
+                  name: "Het slechtnieuwsgesprek",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-familiair-mammacarcinoom",
+                  name: "Familiair mammacarcinoom",
+                  available: true,
+                },
+                {
+                  id: "blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom",
+                  name: "Overdiagnose bij bevolkingsonderzoek mammacarcinoom",
                   available: true,
                 },
               ],
@@ -662,11 +662,6 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week4-casus7-lymfadenopathie",
-                  name: "Lymfadenopathie",
-                  available: true,
-                },
-                {
                   id: "blok5-week4-casus7-trombose-verhoogde-stollingsneiging",
                   name: "Trombose verhoogde stollingsneiging",
                   available: true,
@@ -676,6 +671,11 @@ const SummaryPage = () => {
                   name: "Differentiaal diagnostische aanpak van zwelling in het been",
                   available: true,
                   moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week4-casus7-lymfadenopathie",
+                  name: "Lymfadenopathie",
+                  available: true,
                 },
                 {
                   id: "blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten",
@@ -689,28 +689,13 @@ const SummaryPage = () => {
               name: "Casus 8: Zwelling in de oksel",
               lmes: [
                 {
-                  id: "blok5-week4-casus8-erysipelas-en-cellulitis",
-                  name: "Erysipelas en cellulitis",
-                  available: true,
-                },
-                {
-                  id: "blok5-week4-casus8-hydradenitis-suppurativa",
-                  name: "Hidradenitis suppurativa",
-                  available: true,
-                },
-                {
-                  id: "blok5-week4-casus8-introductiemodule-planetary-health",
-                  name: "Introductiemodule Planetary health",
-                  available: true,
-                },
-                {
-                  id: "blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24",
-                  name: "Lichamelijk onderzoek Knie (voorbereiding KLV 1.24)",
-                  available: true,
-                },
-                {
                   id: "blok5-week4-casus8-lymfeklierdissectie",
                   name: "Lymfeklierdissectie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-erysipelas-en-cellulitis",
+                  name: "Erysipelas en cellulitis",
                   available: true,
                 },
                 {
@@ -724,9 +709,30 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
+                  id: "blok5-week4-casus8-hydradenitis-suppurativa",
+                  name: "Hidradenitis suppurativa",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24",
+                  name: "Lichamelijk onderzoek Knie (voorbereiding KLV 1.24)",
+                  available: true,
+                },
+                {
                   id: "blok5-week4-casus8-volksgezondheidsindicatoren-dalys",
                   name: "Volksgezondheidsindicatoren DALY’s",
                   available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-introductiemodule-planetary-health",
+                  name: "Introductiemodule Planetary health",
+                  available: true,
+                },
+                {
+                  id: "blok5-week4-casus8-lmv-verworven-stollingsstoornissen",
+                  name: "Verworven stollingsstoornissen",
+                  available: true,
+                  moduleKind: "lmv",
                 },
               ],
             },
@@ -739,8 +745,8 @@ const SummaryPage = () => {
               name: "Casus 9: Patiënt met auto-immuunziekte",
               lmes: [
                 {
-                  id: "blok5-week5-casus9-bouw-en-functie-van-de-thymus",
-                  name: "Bouw en functie van de thymus",
+                  id: "blok5-week5-casus9-pathogenese-auto-immuunziekten",
+                  name: "Pathogenese auto-immuunziekten",
                   available: true,
                 },
                 {
@@ -749,8 +755,8 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week5-casus9-pathogenese-auto-immuunziekten",
-                  name: "Pathogenese auto-immuunziekten",
+                  id: "blok5-week5-casus9-bouw-en-functie-van-de-thymus",
+                  name: "Bouw en functie van de thymus",
                   available: true,
                 },
               ],
@@ -770,17 +776,22 @@ const SummaryPage = () => {
                 },
               ],
             },
+          ],
+        },
+        {
+          name: "Week 6",
+          cases: [
             {
               name: "Casus 11: Kind met algehele malaise, koorts en zwelling in de buik",
               lmes: [
                 {
-                  id: "blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd",
-                  name: "Alarmsymptomen op de kinderleeftijd",
+                  id: "blok5-week5-casus11-introductie-kinderoncologie",
+                  name: "Introductie kinderoncologie",
                   available: true,
                 },
                 {
-                  id: "blok5-week5-casus11-introductie-kinderoncologie",
-                  name: "Introductie kinderoncologie",
+                  id: "blok5-week5-casus11-typen-kinderoncologie-bij-kinderen",
+                  name: "Typen kinderoncologie bij kinderen",
                   available: true,
                 },
                 {
@@ -789,22 +800,17 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
+                  id: "blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd",
+                  name: "Alarmsymptomen op de kinderleeftijd",
+                  available: true,
+                },
+                {
                   id: "blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd",
                   name: "Over leven na kanker op kinderleeftijd",
                   available: true,
                 },
-                {
-                  id: "blok5-week5-casus11-typen-kinderoncologie-bij-kinderen",
-                  name: "Typen kinderoncologie bij kinderen",
-                  available: true,
-                },
               ],
             },
-          ],
-        },
-        {
-          name: "Week 6",
-          cases: [
             {
               name: "Casus 12: Verwarde patiënt met griepachtige klachten",
               lmes: [
@@ -814,43 +820,13 @@ const SummaryPage = () => {
                   available: true,
                 },
                 {
-                  id: "blok5-week6-casus12-nvic-acute-vergiftiging",
-                  name: "NVIC acute vergiftiging",
-                  available: true,
-                },
-                {
                   id: "blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties",
                   name: "Slechte woningen lucht & luchtverontreiniging  bovenste luchtweginfecties",
                   available: true,
                 },
-              ],
-            },
-            {
-              name: "Casus 13: Multipel myeloom",
-              lmes: [
                 {
-                  id: "blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken",
-                  name: "Botopbouw, botafbraak en pathologische breuken",
-                  available: true,
-                },
-                {
-                  id: "blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten",
-                  name: "Celtherapie als behandeling voor maligniteiten",
-                  available: true,
-                },
-                {
-                  id: "blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie",
-                  name: "Het MM als voorbeeld voor targeted therapy in de hemato-oncologie",
-                  available: true,
-                },
-                {
-                  id: "blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker",
-                  name: "M-proteine diagnostiek, eiwit als tumormarker",
-                  available: true,
-                },
-                {
-                  id: "blok5-week6-casus13-transplantatiegeneeskunde",
-                  name: "Transplantatiegeneeskunde",
+                  id: "blok5-week6-casus12-nvic-acute-vergiftiging",
+                  name: "NVIC acute vergiftiging",
                   available: true,
                 },
               ],
@@ -860,6 +836,36 @@ const SummaryPage = () => {
         {
           name: "Week 7",
           cases: [
+            {
+              name: "Casus 13: Multipel myeloom",
+              lmes: [
+                {
+                  id: "blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken",
+                  name: "Botopbouw, botafbraak en pathologische breuken",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker",
+                  name: "M-proteine diagnostiek, eiwit als tumormarker",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie",
+                  name: "Het MM als voorbeeld voor targeted therapy in de hemato-oncologie",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten",
+                  name: "Celtherapie als behandeling voor maligniteiten",
+                  available: true,
+                },
+                {
+                  id: "blok5-week6-casus13-transplantatiegeneeskunde",
+                  name: "Transplantatiegeneeskunde",
+                  available: true,
+                },
+              ],
+            },
             {
               name: "Casus 14: AI in de zorg",
               lmes: [
@@ -879,11 +885,6 @@ const SummaryPage = () => {
               name: "Casus 15: Kiezen tussen twee kwaden",
               lmes: [
                 {
-                  id: "blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem",
-                  name: "Remmen versus stimuleren van het afweersysteem",
-                  available: true,
-                },
-                {
                   id: "blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie",
                   name: "Risico op iatrogene schade na orgaantransplantatie",
                   available: true,
@@ -891,6 +892,11 @@ const SummaryPage = () => {
                 {
                   id: "blok5-week8-casus15-scylla-en-charybdis",
                   name: "Scylla en Charybdis",
+                  available: true,
+                },
+                {
+                  id: "blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem",
+                  name: "Remmen versus stimuleren van het afweersysteem",
                   available: true,
                 },
               ],

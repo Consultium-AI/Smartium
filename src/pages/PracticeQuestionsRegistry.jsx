@@ -384,10 +384,16 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 1: De huid als succesvolle barrière',
             lmes: [
               {
-                id: 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
-                name: 'De huidbarrière van jong tot oud',
+                id: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb',
+                name: 'Huidtypen met invloed van UVA en UVB',
                 type: 'simple',
-                questionsMap: blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap,
+                questionsMap: blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus1-microbioom-en-immunologie-van-de-huid',
+                name: 'Microbioom en immunologie van de huid',
+                type: 'simple',
+                questionsMap: blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidQuestionsMap,
               },
               {
                 id: 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere',
@@ -402,22 +408,36 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidQuestionsMap,
               },
               {
-                id: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb',
-                name: 'Huidtypen met invloed van UVA en UVB',
+                id: 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
+                name: 'De huidbarrière van jong tot oud',
                 type: 'simple',
-                questionsMap: blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbQuestionsMap,
-              },
-              {
-                id: 'blok5-week1-casus1-microbioom-en-immunologie-van-de-huid',
-                name: 'Microbioom en immunologie van de huid',
-                type: 'simple',
-                questionsMap: blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidQuestionsMap,
+                questionsMap: blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap,
               },
             ],
           },
           {
             name: 'Casus 2: De veranderde barrière',
             lmes: [
+              {
+                id: 'blok5-week1-casus2-lmo-eczeem',
+                name: 'Eczeem',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week1Casus2LmoEczeemQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek',
+                name: 'Contactallergie en allergologisch onderzoek',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap,
+              },
+              {
+                id: 'blok5-week1-casus2-psoriasis',
+                name: 'Psoriasis',
+                type: 'simple',
+                questionsMap: blok5Week1Casus2PsoriasisQuestionsMap,
+              },
               {
                 id: 'blok5-week1-casus2-voeding-en-inhalatieallergie',
                 name: 'Voeding en inhalatieallergie',
@@ -431,23 +451,10 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week1Casus2NadeligeReactiesVanMedicatieQuestionsMap,
               },
               {
-                id: 'blok5-week1-casus2-lmo-eczeem',
-                name: 'Eczeem',
-                type: 'simple',
-                moduleKind: 'lmo',
-                questionsMap: blok5Week1Casus2LmoEczeemQuestionsMap,
-              },
-              {
                 id: 'blok5-week1-casus2-provoke',
                 name: 'PROVOKE',
                 type: 'simple',
                 questionsMap: blok5Week1Casus2ProvokeQuestionsMap,
-              },
-              {
-                id: 'blok5-week1-casus2-psoriasis',
-                name: 'Psoriasis',
-                type: 'simple',
-                questionsMap: blok5Week1Casus2PsoriasisQuestionsMap,
               },
               {
                 id: 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
@@ -463,13 +470,6 @@ export const practiceQuestionsCourseStructure = {
                 moduleKind: 'lmv',
                 questionsMap: blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap,
               },
-              {
-                id: 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek',
-                name: 'Contactallergie en allergologisch onderzoek',
-                type: 'simple',
-                moduleKind: 'lmv',
-                questionsMap: blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap,
-              },
             ],
           },
         ],
@@ -481,12 +481,6 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 3: Paarse vlek',
             lmes: [
               {
-                id: 'blok5-week2-casus3-aangeboren-stollingsstoornissen',
-                name: 'Aangeboren stollingsstoornissen',
-                type: 'simple',
-                questionsMap: blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap,
-              },
-              {
                 id: 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen',
                 name: 'Begripsbepaling dermatologische uitingen',
                 type: 'simple',
@@ -497,6 +491,18 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Hemostase basis',
                 type: 'simple',
                 questionsMap: blok5Week2Casus3HemostaseBasisQuestionsMap,
+              },
+              {
+                id: 'blok5-week2-casus3-aangeboren-stollingsstoornissen',
+                name: 'Aangeboren stollingsstoornissen',
+                type: 'simple',
+                questionsMap: blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap,
+              },
+              {
+                id: 'blok5-week2-casus3-vasculitis-klein-middel-groot',
+                name: 'Vasculitis - klein, middel, groot',
+                type: 'simple',
+                questionsMap: blok5Week2Casus3VasculitisKleinMiddelGrootQuestionsMap,
               },
               {
                 id: 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie',
@@ -511,22 +517,10 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 4: Donkere vlek',
             lmes: [
               {
-                id: 'blok5-week2-casus4-chronische-ontsteking',
-                name: 'Chronische ontsteking',
-                type: 'simple',
-                questionsMap: blok5Week2Casus4ChronischeOntstekingQuestionsMap,
-              },
-              {
                 id: 'blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen',
                 name: 'Goedaardige en kwaadaardige huidafwijkingen',
                 type: 'simple',
                 questionsMap: blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenQuestionsMap,
-              },
-              {
-                id: 'blok5-week2-casus4-immuuntherapie-van-kanker',
-                name: 'Immuuntherapie van kanker',
-                type: 'simple',
-                questionsMap: blok5Week2Casus4ImmuuntherapieVanKankerQuestionsMap,
               },
               {
                 id: 'blok5-week2-casus4-melanoom-gelokaliseerd',
@@ -535,22 +529,34 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week2Casus4MelanoomGelokaliseerdQuestionsMap,
               },
               {
-                id: 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
-                name: 'MRI en PET-scan benignemaligne',
-                type: 'simple',
-                questionsMap: blok5Week2Casus4MriEnPetScanBenignemaligneQuestionsMap,
-              },
-              {
                 id: 'blok5-week2-casus4-sentinel-node',
                 name: 'Sentinel node',
                 type: 'simple',
                 questionsMap: blok5Week2Casus4SentinelNodeQuestionsMap,
               },
               {
+                id: 'blok5-week2-casus4-immuuntherapie-van-kanker',
+                name: 'Immuuntherapie van kanker',
+                type: 'simple',
+                questionsMap: blok5Week2Casus4ImmuuntherapieVanKankerQuestionsMap,
+              },
+              {
                 id: 'blok5-week2-casus4-systemische-therapie-van-melanoom',
                 name: 'Systemische therapie van melanoom',
                 type: 'simple',
                 questionsMap: blok5Week2Casus4SystemischeTherapieVanMelanoomQuestionsMap,
+              },
+              {
+                id: 'blok5-week2-casus4-chronische-ontsteking',
+                name: 'Chronische ontsteking',
+                type: 'simple',
+                questionsMap: blok5Week2Casus4ChronischeOntstekingQuestionsMap,
+              },
+              {
+                id: 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
+                name: 'MRI en PET-scan benignemaligne',
+                type: 'simple',
+                questionsMap: blok5Week2Casus4MriEnPetScanBenignemaligneQuestionsMap,
               },
             ],
           },
@@ -570,11 +576,10 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week3Casus5LmoVerdachteHuidafwijkingenQuestionsMap,
               },
               {
-                id: 'blok5-week3-casus5-lmo-zorgmijding',
-                name: 'Zorgmijding',
+                id: 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne',
+                name: 'Huidtumoren benigne en premaligne',
                 type: 'simple',
-                moduleKind: 'lmo',
-                questionsMap: blok5Week3Casus5LmoZorgmijdingQuestionsMap,
+                questionsMap: blok5Week3Casus5HuidtumorenBenigneEnPremaligneQuestionsMap,
               },
               {
                 id: 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom',
@@ -583,10 +588,17 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomQuestionsMap,
               },
               {
-                id: 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne',
-                name: 'Huidtumoren benigne en premaligne',
+                id: 'blok5-week3-casus5-lmo-zorgmijding',
+                name: 'Zorgmijding',
                 type: 'simple',
-                questionsMap: blok5Week3Casus5HuidtumorenBenigneEnPremaligneQuestionsMap,
+                moduleKind: 'lmo',
+                questionsMap: blok5Week3Casus5LmoZorgmijdingQuestionsMap,
+              },
+              {
+                id: 'blok5-week3-casus5-milieu-en-gezondheid',
+                name: 'Milieu en gezondheid',
+                type: 'simple',
+                questionsMap: blok5Week3Casus5MilieuEnGezondheidQuestionsMap,
               },
               {
                 id: 'blok5-week3-casus5-leefstijl-en-kanker',
@@ -600,6 +612,18 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 6: Knobbel in de borst',
             lmes: [
               {
+                id: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom',
+                name: 'Radiologische diagnostiek mammacarcinoom',
+                type: 'simple',
+                questionsMap: blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomQuestionsMap,
+              },
+              {
+                id: 'blok5-week3-casus6-mammapathologie',
+                name: 'Mammapathologie',
+                type: 'simple',
+                questionsMap: blok5Week3Casus6MammapathologieQuestionsMap,
+              },
+              {
                 id: 'blok5-week3-casus6-behandeling-van-mammacarcinoom',
                 name: 'Behandeling van mammacarcinoom',
                 type: 'simple',
@@ -612,23 +636,11 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap,
               },
               {
-                id: 'blok5-week3-casus6-mammapathologie',
-                name: 'Mammapathologie',
-                type: 'simple',
-                questionsMap: blok5Week3Casus6MammapathologieQuestionsMap,
-              },
-              {
                 id: 'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom',
                 name: 'Overdiagnose bij bevolkingsonderzoek mammacarcinoom',
                 type: 'simple',
                 questionsMap:
                   blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomQuestionsMap,
-              },
-              {
-                id: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom',
-                name: 'Radiologische diagnostiek mammacarcinoom',
-                type: 'simple',
-                questionsMap: blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomQuestionsMap,
               },
             ],
           },
@@ -647,12 +659,6 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week4Casus7FlebologischeAandoeningenQuestionsMap,
               },
               {
-                id: 'blok5-week4-casus7-lymfadenopathie',
-                name: 'Lymfadenopathie',
-                type: 'simple',
-                questionsMap: blok5Week4Casus7LymfadenopathieQuestionsMap,
-              },
-              {
                 id: 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging',
                 name: 'Trombose verhoogde stollingsneiging',
                 type: 'simple',
@@ -664,6 +670,12 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 moduleKind: 'lmo',
                 questionsMap: blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus7-lymfadenopathie',
+                name: 'Lymfadenopathie',
+                type: 'simple',
+                questionsMap: blok5Week4Casus7LymfadenopathieQuestionsMap,
               },
               {
                 id: 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten',
@@ -678,34 +690,16 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 8: Zwelling in de oksel',
             lmes: [
               {
-                id: 'blok5-week4-casus8-erysipelas-en-cellulitis',
-                name: 'Erysipelas en cellulitis',
-                type: 'simple',
-                questionsMap: blok5Week4Casus8ErysipelasEnCellulitisQuestionsMap,
-              },
-              {
-                id: 'blok5-week4-casus8-hydradenitis-suppurativa',
-                name: 'Hidradenitis suppurativa',
-                type: 'simple',
-                questionsMap: blok5Week4Casus8HydradenitisSuppurativaQuestionsMap,
-              },
-              {
-                id: 'blok5-week4-casus8-introductiemodule-planetary-health',
-                name: 'Introductiemodule Planetary health',
-                type: 'simple',
-                questionsMap: blok5Week4Casus8IntroductiemodulePlanetaryHealthQuestionsMap,
-              },
-              {
-                id: 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
-                name: 'Lichamelijk onderzoek Knie (voorbereiding KLV 1.24)',
-                type: 'simple',
-                questionsMap: blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124QuestionsMap,
-              },
-              {
                 id: 'blok5-week4-casus8-lymfeklierdissectie',
                 name: 'Lymfeklierdissectie',
                 type: 'simple',
                 questionsMap: blok5Week4Casus8LymfeklierdissectieQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus8-erysipelas-en-cellulitis',
+                name: 'Erysipelas en cellulitis',
+                type: 'simple',
+                questionsMap: blok5Week4Casus8ErysipelasEnCellulitisQuestionsMap,
               },
               {
                 id: 'blok5-week4-casus8-necrotiserende-wekedeleninfectie',
@@ -720,17 +714,35 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week4Casus8RadiotherapieInDePraktijkQuestionsMap,
               },
               {
-                id: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
-                name: 'Verworven stollingsstoornissen',
+                id: 'blok5-week4-casus8-hydradenitis-suppurativa',
+                name: 'Hidradenitis suppurativa',
                 type: 'simple',
-                moduleKind: 'lmv',
-                questionsMap: blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap,
+                questionsMap: blok5Week4Casus8HydradenitisSuppurativaQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
+                name: 'Lichamelijk onderzoek Knie (voorbereiding KLV 1.24)',
+                type: 'simple',
+                questionsMap: blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124QuestionsMap,
               },
               {
                 id: 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys',
                 name: 'Volksgezondheidsindicatoren DALY\u2019s',
                 type: 'simple',
                 questionsMap: blok5Week4Casus8VolksgezondheidsindicatorenDalysQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus8-introductiemodule-planetary-health',
+                name: 'Introductiemodule Planetary health',
+                type: 'simple',
+                questionsMap: blok5Week4Casus8IntroductiemodulePlanetaryHealthQuestionsMap,
+              },
+              {
+                id: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
+                name: 'Verworven stollingsstoornissen',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week4Casus8LmvVerworvenStollingsstoornissenQuestionsMap,
               },
             ],
           },
@@ -743,10 +755,10 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 9: Patiënt met auto-immuunziekte',
             lmes: [
               {
-                id: 'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
-                name: 'Bouw en functie van de thymus',
+                id: 'blok5-week5-casus9-pathogenese-auto-immuunziekten',
+                name: 'Pathogenese auto-immuunziekten',
                 type: 'simple',
-                questionsMap: blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap,
+                questionsMap: blok5Week5Casus9PathogeneseAutoImmuunziektenQuestionsMap,
               },
               {
                 id: 'blok5-week5-casus9-endocriene-auto-immuunziekten',
@@ -755,10 +767,10 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week5Casus9EndocrieneAutoImmuunziektenQuestionsMap,
               },
               {
-                id: 'blok5-week5-casus9-pathogenese-auto-immuunziekten',
-                name: 'Pathogenese auto-immuunziekten',
+                id: 'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+                name: 'Bouw en functie van de thymus',
                 type: 'simple',
-                questionsMap: blok5Week5Casus9PathogeneseAutoImmuunziektenQuestionsMap,
+                questionsMap: blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap,
               },
             ],
           },
@@ -779,20 +791,25 @@ export const practiceQuestionsCourseStructure = {
               },
             ],
           },
+        ],
+      },
+      {
+        name: 'Week 6',
+        cases: [
           {
             name: 'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik',
             lmes: [
-              {
-                id: 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd',
-                name: 'Alarmsymptomen op de kinderleeftijd',
-                type: 'simple',
-                questionsMap: blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdQuestionsMap,
-              },
               {
                 id: 'blok5-week5-casus11-introductie-kinderoncologie',
                 name: 'Introductie kinderoncologie',
                 type: 'simple',
                 questionsMap: blok5Week5Casus11IntroductieKinderoncologieQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen',
+                name: 'Typen kinderoncologie bij kinderen',
+                type: 'simple',
+                questionsMap: blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap,
               },
               {
                 id: 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks',
@@ -801,24 +818,19 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week5Casus11KinderoncologieBegrijpDeHallmarksQuestionsMap,
               },
               {
+                id: 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd',
+                name: 'Alarmsymptomen op de kinderleeftijd',
+                type: 'simple',
+                questionsMap: blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdQuestionsMap,
+              },
+              {
                 id: 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
                 name: 'Over leven na kanker op kinderleeftijd',
                 type: 'simple',
                 questionsMap: blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdQuestionsMap,
               },
-              {
-                id: 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen',
-                name: 'Typen kinderoncologie bij kinderen',
-                type: 'simple',
-                questionsMap: blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap,
-              },
             ],
           },
-        ],
-      },
-      {
-        name: 'Week 6',
-        cases: [
           {
             name: 'Casus 12: Verwarde patiënt met griepachtige klachten',
             lmes: [
@@ -829,20 +841,25 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week6Casus12GaswisselingHbO2Co2CoQuestionsMap,
               },
               {
-                id: 'blok5-week6-casus12-nvic-acute-vergiftiging',
-                name: 'NVIC acute vergiftiging',
-                type: 'simple',
-                questionsMap: blok5Week6Casus12NvicAcuteVergiftigingQuestionsMap,
-              },
-              {
                 id: 'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties',
                 name: 'Slechte woningen lucht & luchtverontreiniging  bovenste luchtweginfecties',
                 type: 'simple',
                 questionsMap:
                   blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesQuestionsMap,
               },
+              {
+                id: 'blok5-week6-casus12-nvic-acute-vergiftiging',
+                name: 'NVIC acute vergiftiging',
+                type: 'simple',
+                questionsMap: blok5Week6Casus12NvicAcuteVergiftigingQuestionsMap,
+              },
             ],
           },
+        ],
+      },
+      {
+        name: 'Week 7',
+        cases: [
           {
             name: 'Casus 13: Multipel myeloom',
             lmes: [
@@ -853,10 +870,10 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenQuestionsMap,
               },
               {
-                id: 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
-                name: 'Celtherapie als behandeling voor maligniteiten',
+                id: 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker',
+                name: 'M-proteine diagnostiek, eiwit als tumormarker',
                 type: 'simple',
-                questionsMap: blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenQuestionsMap,
+                questionsMap: blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerQuestionsMap,
               },
               {
                 id: 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie',
@@ -865,10 +882,10 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieQuestionsMap,
               },
               {
-                id: 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker',
-                name: 'M-proteine diagnostiek, eiwit als tumormarker',
+                id: 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
+                name: 'Celtherapie als behandeling voor maligniteiten',
                 type: 'simple',
-                questionsMap: blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerQuestionsMap,
+                questionsMap: blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenQuestionsMap,
               },
               {
                 id: 'blok5-week6-casus13-transplantatiegeneeskunde',
@@ -878,11 +895,6 @@ export const practiceQuestionsCourseStructure = {
               },
             ],
           },
-        ],
-      },
-      {
-        name: 'Week 7',
-        cases: [
           {
             name: 'Casus 14: AI in de zorg',
             lmes: [
@@ -903,12 +915,6 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 15: Kiezen tussen twee kwaden',
             lmes: [
               {
-                id: 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem',
-                name: 'Remmen versus stimuleren van het afweersysteem',
-                type: 'simple',
-                questionsMap: blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap,
-              },
-              {
                 id: 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie',
                 name: 'Risico op iatrogene schade na orgaantransplantatie',
                 type: 'simple',
@@ -919,6 +925,12 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Scylla en Charybdis',
                 type: 'simple',
                 questionsMap: blok5Week8Casus15ScyllaEnCharybdisQuestionsMap,
+              },
+              {
+                id: 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem',
+                name: 'Remmen versus stimuleren van het afweersysteem',
+                type: 'simple',
+                questionsMap: blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap,
               },
             ],
           },
