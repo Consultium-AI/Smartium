@@ -414,7 +414,6 @@ const PracticeQuestionsPage = () => {
         revealedCount,
         totalQuestions: total,
         correctCount: correct,
-        percent: total > 0 ? Math.round((revealedCount / total) * 100) : 0,
       }
     }
 
@@ -422,31 +421,30 @@ const PracticeQuestionsPage = () => {
   }, [hasAccountProgress, progressUserId, progressVersion, lmeParam])
 
   const getSectionProgress = (items) => {
-    let startedUnits = 0
-    let doneUnits = 0
-    let totalUnits = 0
+    let completedQuestions = 0
+    let totalQuestions = 0
     for (const item of items) {
       if (item.type === 'simple') {
-        totalUnits += 1
+        const localTotal = getLmeQuestionCount(item)
+        totalQuestions += localTotal
         const p = lmeProgressById[item.id]
-        if (p?.started) startedUnits += 1
-        if (p?.completed) doneUnits += 1
+        completedQuestions += p?.revealedCount ?? 0
       } else {
         const imageIds = getImagesFromMap(item.questionsMap).map((img) => img.id)
-        totalUnits += imageIds.length
         for (const imgId of imageIds) {
+          const fallbackTotal = getPracticeQuestionsForLme(imgId).length
           const p = lmeProgressById[imgId]
-          if (p?.started) startedUnits += 1
-          if (p?.completed) doneUnits += 1
+          totalQuestions += p?.totalQuestions ?? fallbackTotal
+          completedQuestions += p?.revealedCount ?? 0
         }
       }
     }
-    const statusLabel = doneUnits === totalUnits && totalUnits > 0
+    const statusLabel = completedQuestions === totalQuestions && totalQuestions > 0
       ? 'Af'
-      : startedUnits > 0
+      : completedQuestions > 0
         ? 'Bezig'
         : 'Nog niet gestart'
-    return { startedUnits, doneUnits, totalUnits, statusLabel }
+    return { completedQuestions, totalQuestions, statusLabel }
   }
 
   const renderCourseModule = (lmeItem, lmeIndex) => {
@@ -486,12 +484,12 @@ const PracticeQuestionsPage = () => {
                 <span className="inline-flex items-center gap-1.5">{img.name} {locked && <Lock className="w-3 h-3" />}</span>
                 {hasAccountProgress && !locked && progress?.started && !progress?.completed && (
                   <span className="mt-1 block text-[11px] font-medium text-sky-700 dark:text-sky-300">
-                    Bezig · {progress.percent}%
+                    Bezig · {progress.revealedCount}/{progress.totalQuestions}
                   </span>
                 )}
                 {hasAccountProgress && !locked && progress?.completed && (
                   <span className="mt-1 block text-[11px] font-medium text-emerald-700 dark:text-emerald-300">
-                    Af · {progress.correctCount}/{progress.totalQuestions} goed
+                    Af · {progress.revealedCount}/{progress.totalQuestions} · {progress.correctCount} goed
                   </span>
                 )}
               </Link>
@@ -522,7 +520,7 @@ const PracticeQuestionsPage = () => {
                   const progress = getSectionProgress(section.items)
                   return (
                     <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                      {progress.statusLabel} · {progress.doneUnits}/{progress.totalUnits}
+                      {progress.statusLabel} · {progress.completedQuestions}/{progress.totalQuestions}
                     </span>
                   )
                 })()}

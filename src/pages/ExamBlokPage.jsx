@@ -103,16 +103,15 @@ function getExamProgressMeta(exam, savedProgress) {
     (acc, casus) => acc + casus.questions.filter((q) => Boolean(answers[q.id]?.revealed)).length,
     0,
   )
-  const percent = totalQuestions > 0 ? Math.round((revealedCount / totalQuestions) * 100) : 0
 
   if (savedProgress.submitted) {
     const earned = computeEarned(exam, answers)
     const grade = calculateGradeBlok(earned, exam.totalPoints, exam.cesuur ?? 0.6)
-    return { completed: true, grade, percent: 100 }
+    return { completed: true, grade, revealedCount: totalQuestions, totalQuestions }
   }
 
   if (revealedCount > 0) {
-    return { completed: false, percent }
+    return { completed: false, revealedCount, totalQuestions }
   }
 
   return null
@@ -206,12 +205,12 @@ function ExamBlokSelection({ blok }) {
                           )}
                           {hasAccountProgress && !locked && progressMeta?.completed && (
                             <span className="inline-flex rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
-                              Af · Cijfer {progressMeta.grade.toFixed(1)}
+                              Af · {progressMeta.revealedCount}/{progressMeta.totalQuestions} · Cijfer {progressMeta.grade.toFixed(1)}
                             </span>
                           )}
-                          {hasAccountProgress && !locked && !progressMeta?.completed && progressMeta?.percent > 0 && (
+                          {hasAccountProgress && !locked && !progressMeta?.completed && progressMeta?.revealedCount > 0 && (
                             <span className="inline-flex rounded-full bg-sky-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
-                              Bezig · {progressMeta.percent}%
+                              Bezig · {progressMeta.revealedCount}/{progressMeta.totalQuestions}
                             </span>
                           )}
                           {locked && (
@@ -396,6 +395,17 @@ function ExamBlokActive({ blok, exam, examNr }) {
 
   const earned = useMemo(() => computeEarned(exam, answers), [exam, answers])
   const complete = allAnswered(exam, answers)
+  const totalQuestions = useMemo(
+    () => exam.casussen.reduce((acc, c) => acc + c.questions.length, 0),
+    [exam],
+  )
+  const completedQuestions = useMemo(
+    () => exam.casussen.reduce(
+      (acc, c) => acc + c.questions.filter((q) => Boolean(answers[q.id]?.revealed)).length,
+      0,
+    ),
+    [exam, answers],
+  )
 
   const mergeAnswer = useCallback((qid, patch) => {
     setAnswers((prev) => ({
@@ -447,7 +457,7 @@ function ExamBlokActive({ blok, exam, examNr }) {
         <div className="mb-3 flex items-center justify-between gap-2 flex-wrap">
           <span className="text-sm text-navy-600 dark:text-slate-400 flex items-center gap-1.5">
             <Target className="w-4 h-4 text-primary-500" />
-            {earned.toFixed(1)} / {exam.totalPoints} punten
+            {completedQuestions} / {totalQuestions} vragen
           </span>
           <span className="text-sm text-navy-600 dark:text-slate-400 flex items-center gap-1.5">
             <GraduationCap className="w-4 h-4 text-accent-500" />
@@ -457,7 +467,7 @@ function ExamBlokActive({ blok, exam, examNr }) {
         <div className="h-2 bg-navy-100 dark:bg-slate-700 rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-gradient-to-r from-primary-400 to-accent-400"
-            animate={{ width: `${(earned / exam.totalPoints) * 100}%` }}
+            animate={{ width: `${totalQuestions > 0 ? (completedQuestions / totalQuestions) * 100 : 0}%` }}
             transition={{ duration: 0.25 }}
           />
         </div>

@@ -36,13 +36,13 @@ export default function PracticeCourseModuleLink({
             {showProgress && !locked && progress?.started && !progress?.completed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
                 <Timer className="w-3 h-3" />
-                Bezig {progress.percent}%
+                Bezig {progress.revealedCount}/{progress.totalQuestions}
               </span>
             )}
             {showProgress && !locked && progress?.completed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
                 <CheckCircle2 className="w-3 h-3" />
-                Af · {progress.correctCount}/{progress.totalQuestions} goed
+                Af {progress.revealedCount}/{progress.totalQuestions} · {progress.correctCount} goed
               </span>
             )}
             {locked && (
