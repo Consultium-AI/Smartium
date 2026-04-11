@@ -53,6 +53,37 @@ function ScoreBadge({ earned, max }) {
   )
 }
 
+function ExplanationReveal({ questionId, revealed, earnedPoints, maxPoints, explanation }) {
+  const [showExplanation, setShowExplanation] = useState(false)
+  const fullScore = (earnedPoints ?? 0) >= maxPoints
+
+  useEffect(() => {
+    if (!revealed || !explanation) {
+      setShowExplanation(false)
+      return
+    }
+    if (!fullScore) {
+      setShowExplanation(true)
+    }
+  }, [questionId, revealed, fullScore, explanation])
+
+  if (!revealed || !explanation) return null
+
+  if (!showExplanation) {
+    return (
+      <button
+        type="button"
+        onClick={() => setShowExplanation(true)}
+        className="mt-2 inline-flex items-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/50 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-primary-400 dark:hover:border-primary-500/50 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+      >
+        Uitleg antwoord
+      </button>
+    )
+  }
+
+  return <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{explanation}</p>
+}
+
 function RubricPanel({ question }) {
   if (!question.rubric && !question.modelAnswer) return null
   return (
@@ -239,9 +270,13 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiF
           <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
         </div>
       )}
-      {revealed && question.explanation && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
-      )}
+      <ExplanationReveal
+        questionId={question.id}
+        revealed={revealed}
+        earnedPoints={answer.earnedPoints ?? 0}
+        maxPoints={question.points}
+        explanation={question.explanation}
+      />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
@@ -378,9 +413,13 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFo
           <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
         </div>
       )}
-      {revealed && question.explanation && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
-      )}
+      <ExplanationReveal
+        questionId={question.id}
+        revealed={revealed}
+        earnedPoints={answer.earnedPoints ?? 0}
+        maxPoints={question.points}
+        explanation={question.explanation}
+      />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
@@ -483,9 +522,13 @@ export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp 
           <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
         </div>
       )}
-      {revealed && question.explanation && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
-      )}
+      <ExplanationReveal
+        questionId={question.id}
+        revealed={revealed}
+        earnedPoints={answer.earnedPoints ?? 0}
+        maxPoints={question.points}
+        explanation={question.explanation}
+      />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
@@ -585,9 +628,13 @@ export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp
           <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
         </div>
       )}
-      {revealed && question.explanation && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
-      )}
+      <ExplanationReveal
+        questionId={question.id}
+        revealed={revealed}
+        earnedPoints={answer.earnedPoints ?? 0}
+        maxPoints={question.points}
+        explanation={question.explanation}
+      />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}
@@ -808,9 +855,13 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollo
           <ScoreBadge earned={answer.earnedPoints ?? 0} max={question.points} />
         </div>
       )}
-      {revealed && question.explanation && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{question.explanation}</p>
-      )}
+      <ExplanationReveal
+        questionId={question.id}
+        revealed={revealed}
+        earnedPoints={answer.earnedPoints ?? 0}
+        maxPoints={question.points}
+        explanation={question.explanation}
+      />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
       )}

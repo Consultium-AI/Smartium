@@ -1259,6 +1259,29 @@ const SummaryPage = () => {
     )
   }
 
+  const getSectionReadProgress = (items) => {
+    let seenUnits = 0
+    let totalUnits = 0
+    for (const item of items) {
+      if (item.type === 'image-based') {
+        const imageIds = getImageIdsForLme(item.baseId, item.imageCount).map((img) => img.id)
+        totalUnits += imageIds.length
+        for (const imageId of imageIds) {
+          if (seenMap[imageId]) seenUnits += 1
+        }
+      } else {
+        totalUnits += 1
+        if (seenMap[item.id]) seenUnits += 1
+      }
+    }
+    const statusLabel = seenUnits === totalUnits && totalUnits > 0
+      ? 'Af'
+      : seenUnits > 0
+        ? 'Bezig'
+        : 'Nog niet gestart'
+    return { seenUnits, totalUnits, statusLabel }
+  }
+
   const renderCaseSections = (casus) => {
     const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(casus)
     const sections = [
@@ -1271,9 +1294,19 @@ const SummaryPage = () => {
         {sections.map((section) => (
           section.items.length > 0 ? (
             <section key={section.key} className="space-y-2">
-              <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                {section.title}
-              </h4>
+              {(() => {
+                const progress = getSectionReadProgress(section.items)
+                return (
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      {section.title}
+                    </h4>
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                      {progress.statusLabel} · {progress.seenUnits}/{progress.totalUnits}
+                    </span>
+                  </div>
+                )
+              })()}
               <div className="space-y-2">
                 {section.items.map((lmeItem, idx) => renderSummaryModule(lmeItem, `${section.key}-${idx}`))}
               </div>

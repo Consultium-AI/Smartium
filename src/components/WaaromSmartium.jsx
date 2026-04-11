@@ -1,8 +1,10 @@
+import { memo } from 'react'
+
 const WaaromSmartium = () => {
   return (
     <section
       id="waarom-smartium"
-      className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40"
+      className="section-content-visibility relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40"
     >
       <div className="absolute inset-0 cta-section-bg -z-10" aria-hidden />
       <div className="absolute -top-20 left-1/2 -translate-x-1/2 h-56 w-56 rounded-full bg-primary-500/10 blur-3xl -z-10" aria-hidden />
@@ -38,4 +40,4 @@ const WaaromSmartium = () => {
   )
 }
 
-export default WaaromSmartium
+export default memo(WaaromSmartium)

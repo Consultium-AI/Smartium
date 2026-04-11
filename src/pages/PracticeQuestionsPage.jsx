@@ -64,6 +64,80 @@ import {
   getPracticeSubtitleForLme,
 } from './PracticeQuestionsRegistry'
 
+const FLANKEREND_LME_IDS_BY_CASE = {
+  'Casus 1: De huid als succesvolle barrière': new Set([
+    'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
+  ]),
+  'Casus 2: De veranderde barrière': new Set([
+    'blok5-week1-casus2-provoke',
+    'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
+    'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie',
+  ]),
+  'Casus 4: Donkere vlek': new Set([
+    'blok5-week2-casus4-chronische-ontsteking',
+    'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
+  ]),
+  'Casus 5: De verdachte huid': new Set([
+    'blok5-week3-casus5-milieu-en-gezondheid',
+    'blok5-week3-casus5-leefstijl-en-kanker',
+  ]),
+  'Casus 6: Knobbel in de borst': new Set([
+    'blok5-week3-casus6-het-slechtnieuwsgesprek',
+  ]),
+  'Casus 7: Zwelling van de lies en/of een dik been': new Set([
+    'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten',
+  ]),
+  'Casus 8: Zwelling in de oksel': new Set([
+    'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
+    'blok5-week4-casus8-volksgezondheidsindicatoren-dalys',
+    'blok5-week4-casus8-introductiemodule-planetary-health',
+    'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
+  ]),
+  'Casus 9: Patiënt met auto-immuunziekte': new Set([
+    'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+  ]),
+  'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik': new Set([
+    'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
+  ]),
+  'Casus 13: Multipel myeloom': new Set([
+    'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
+    'blok5-week6-casus13-transplantatiegeneeskunde',
+  ]),
+  'Casus 1: Patiënt met acute nierschade': new Set([
+    'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten',
+    'blok9-week1-casus1-acute-nierschade-verdieping',
+  ]),
+  'Casus 2: Patiënt met chronische nierschade': new Set([
+    'blok9-week1-casus2-chronische-nierschade-verdieping',
+    'blok9-week1-casus2-nierfunctievervangende-therapie',
+    'blok9-week1-casus2-ethiek-van-orgaantransplantatie',
+  ]),
+  'Casus 3: Patiënt met ernstig verstoorde elektrolyten': new Set([
+    'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping',
+    'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping',
+  ]),
+  'Casus 4: De vrouw die maar 20 meter kan lopen': new Set([
+    'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools',
+    'blok9-week2-casus4-preoperatieve-screening',
+    'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie',
+  ]),
+  'Casus 5: Patiënt met hypertensie': new Set([
+    'blok9-week3-casus5-ai-act',
+  ]),
+  'Casus 6: Volwassene met pijn op de borst': new Set([
+    'blok9-week3-casus6-cvrm',
+  ]),
+  'Casus 8: Een leuk feestje': new Set([
+    'blok9-week4-casus8-passende-zorg-op-de-intensive-care',
+  ]),
+  'Casus 10: Atriumfibrilleren': new Set([
+    'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren',
+    'blok9-week5-casus10-syncope',
+    'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties',
+    'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
+  ]),
+}
+
 const PracticeQuestionsPage = () => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
@@ -119,6 +193,7 @@ const PracticeQuestionsPage = () => {
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [explanations, setExplanations] = useState({})
+  const [explanationRequests, setExplanationRequests] = useState({})
   const [progressHydrated, setProgressHydrated] = useState(false)
 
   useEffect(() => {
@@ -152,11 +227,17 @@ const PracticeQuestionsPage = () => {
       setExplanations(
         saved.explanations && typeof saved.explanations === 'object' ? saved.explanations : {}
       )
+      setExplanationRequests(
+        saved.explanationRequests && typeof saved.explanationRequests === 'object'
+          ? saved.explanationRequests
+          : {}
+      )
     } else {
       setCurrentQuestion(0)
       setSelectedAnswers({})
       setRevealedAnswers({})
       setExplanations({})
+      setExplanationRequests({})
     }
     setProgressHydrated(true)
   }, [progressUserId, lmeParam, questions.length])
@@ -172,6 +253,7 @@ const PracticeQuestionsPage = () => {
         selectedAnswers,
         revealedAnswers,
         explanations,
+        explanationRequests,
       })
     }, 400)
     return () => clearTimeout(timer)
@@ -183,6 +265,7 @@ const PracticeQuestionsPage = () => {
     selectedAnswers,
     revealedAnswers,
     explanations,
+    explanationRequests,
   ])
 
   const currentQ = questions[currentQuestion]
@@ -215,10 +298,15 @@ const PracticeQuestionsPage = () => {
     setSelectedAnswers({})
     setRevealedAnswers({})
     setExplanations({})
+    setExplanationRequests({})
     setCurrentQuestion(0)
     if (progressUserId && lmeParam && lmeParam !== 'alle-random') {
       clearPracticeProgress(progressUserId, lmeParam)
     }
+  }
+
+  const handleRequestExplanation = (questionId) => {
+    setExplanationRequests((prev) => ({ ...prev, [questionId]: true }))
   }
 
   // Auto-fetch uitleg zodra antwoord fout is onthuld
@@ -226,7 +314,9 @@ const PracticeQuestionsPage = () => {
     if (!currentQ) return
     const qId = currentQ.id
     if (!revealedAnswers[qId]) return
-    if (selectedAnswers[qId] === currentQ.correctAnswer) return
+    const explanationRequested = Boolean(explanationRequests[qId])
+    const answeredCorrectly = selectedAnswers[qId] === currentQ.correctAnswer
+    if (answeredCorrectly && !explanationRequested) return
     if (explanations[qId]) return
 
     setExplanations((prev) => ({ ...prev, [qId]: { loading: true } }))
@@ -234,7 +324,7 @@ const PracticeQuestionsPage = () => {
     fetchPracticeExplanation(ctx)
       .then((text) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, text } })))
       .catch((err) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, error: err?.message || 'Fout bij ophalen' } })))
-  }, [currentQ, revealedAnswers, selectedAnswers, lmeParam, explanations])
+  }, [currentQ, revealedAnswers, selectedAnswers, lmeParam, explanations, explanationRequests])
 
   const getOptionStyle = (questionId, letter) => {
     const isSelected = selectedAnswers[questionId] === letter
@@ -256,6 +346,180 @@ const PracticeQuestionsPage = () => {
     }
     
     return "border-navy-200 dark:border-slate-600 bg-white dark:bg-slate-800/50 text-navy-700 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-500/50 hover:bg-primary-50/50 dark:hover:bg-primary-500/10"
+  }
+
+  const splitCasusModules = (casus) => {
+    const flankerendIds = FLANKEREND_LME_IDS_BY_CASE[casus.name]
+    if (!flankerendIds) {
+      return {
+        casusbijeenkomstItems: casus.lmes,
+        flankerendItems: [],
+      }
+    }
+
+    const casusbijeenkomstItems = []
+    const flankerendItems = []
+    for (const lmeItem of casus.lmes) {
+      if (flankerendIds.has(lmeItem.id)) {
+        flankerendItems.push(lmeItem)
+      } else {
+        casusbijeenkomstItems.push(lmeItem)
+      }
+    }
+    return { casusbijeenkomstItems, flankerendItems }
+  }
+
+  const lmeProgressById = useMemo(() => {
+    if (!progressUserId) return {}
+    const progressMap = {}
+
+    for (const lmeId of PRACTICE_QUESTION_ORDER) {
+      const questionsForLme = getPracticeQuestionsForLme(lmeId)
+      if (!questionsForLme.length) continue
+      const saved = loadPracticeProgress(progressUserId, lmeId)
+      if (!saved || typeof saved !== 'object') continue
+
+      const selected = saved.selectedAnswers && typeof saved.selectedAnswers === 'object'
+        ? saved.selectedAnswers
+        : {}
+      const revealed = saved.revealedAnswers && typeof saved.revealedAnswers === 'object'
+        ? saved.revealedAnswers
+        : {}
+
+      const total = questionsForLme.length
+      const answered = questionsForLme.filter((q) => selected[q.id] !== undefined).length
+      const revealedCount = questionsForLme.filter((q) => Boolean(revealed[q.id])).length
+      const correct = questionsForLme.filter((q) => Boolean(revealed[q.id]) && selected[q.id] === q.correctAnswer).length
+      const started = answered > 0 || (typeof saved.currentQuestion === 'number' && saved.currentQuestion > 0)
+      if (!started && revealedCount === 0) continue
+
+      progressMap[lmeId] = {
+        started: true,
+        completed: total > 0 && revealedCount >= total,
+        answeredCount: answered,
+        revealedCount,
+        totalQuestions: total,
+        correctCount: correct,
+        percent: total > 0 ? Math.round((revealedCount / total) * 100) : 0,
+      }
+    }
+
+    return progressMap
+  }, [progressUserId])
+
+  const getSectionProgress = (items) => {
+    let startedUnits = 0
+    let doneUnits = 0
+    let totalUnits = 0
+    for (const item of items) {
+      if (item.type === 'simple') {
+        totalUnits += 1
+        const p = lmeProgressById[item.id]
+        if (p?.started) startedUnits += 1
+        if (p?.completed) doneUnits += 1
+      } else {
+        const imageIds = getImagesFromMap(item.questionsMap).map((img) => img.id)
+        totalUnits += imageIds.length
+        for (const imgId of imageIds) {
+          const p = lmeProgressById[imgId]
+          if (p?.started) startedUnits += 1
+          if (p?.completed) doneUnits += 1
+        }
+      }
+    }
+    const statusLabel = doneUnits === totalUnits && totalUnits > 0
+      ? 'Af'
+      : startedUnits > 0
+        ? 'Bezig'
+        : 'Nog niet gestart'
+    return { startedUnits, doneUnits, totalUnits, statusLabel }
+  }
+
+  const renderCourseModule = (lmeItem, lmeIndex) => {
+    if (lmeItem.type === 'simple') {
+      return (
+        <PracticeCourseModuleLink
+          key={lmeIndex}
+          lmeItem={lmeItem}
+          questionCount={getLmeQuestionCount(lmeItem)}
+          showPremiumLocks={showPremiumLocks}
+          isBlocked={isFreePlanBlockedLme}
+          progress={lmeProgressById[lmeItem.id]}
+        />
+      )
+    }
+
+    return (
+      <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
+        <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
+          <ClipboardCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+          <span>{lmeItem.name} ({getLmeQuestionCount(lmeItem)} vragen)</span>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {getImagesFromMap(lmeItem.questionsMap).map((img) => {
+            const locked = showPremiumLocks && isFreePlanBlockedLme(img.id)
+            const progress = lmeProgressById[img.id]
+            return (
+              <Link
+                key={img.id}
+                to={locked ? '/billing' : `/oefenvragen?lme=${img.id}`}
+                className={`text-center px-3 py-2.5 rounded-lg border text-sm transition-all
+                  ${locked
+                    ? 'bg-slate-100 dark:bg-slate-900/40 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400'
+                    : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-900 dark:hover:text-emerald-300'}`}
+              >
+                <span className="inline-flex items-center gap-1.5">{img.name} {locked && <Lock className="w-3 h-3" />}</span>
+                {!locked && progress?.started && !progress?.completed && (
+                  <span className="mt-1 block text-[11px] font-medium text-sky-700 dark:text-sky-300">
+                    Bezig · {progress.percent}%
+                  </span>
+                )}
+                {!locked && progress?.completed && (
+                  <span className="mt-1 block text-[11px] font-medium text-emerald-700 dark:text-emerald-300">
+                    Af · {progress.correctCount}/{progress.totalQuestions} goed
+                  </span>
+                )}
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
+  const renderCaseSections = (casus) => {
+    const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(casus)
+    const sectionDefs = [
+      { key: 'casusbijeenkomst', title: 'Casusbijeenkomst', items: casusbijeenkomstItems },
+      { key: 'flankerend', title: 'Flankerend onderwijs', items: flankerendItems },
+    ]
+
+    return (
+      <div className="ml-0 sm:ml-2 space-y-3">
+        {sectionDefs.map((section) => (
+          section.items.length > 0 ? (
+            <section key={section.key} className="space-y-2">
+              {(() => {
+                const progress = getSectionProgress(section.items)
+                return (
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      {section.title}
+                    </h4>
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                      {progress.statusLabel} · {progress.doneUnits}/{progress.totalUnits}
+                    </span>
+                  </div>
+                )
+              })()}
+              <div className="space-y-2">
+                {section.items.map((lmeItem, lmeIndex) => renderCourseModule(lmeItem, `${section.key}-${lmeIndex}`))}
+              </div>
+            </section>
+          ) : null
+        ))}
+      </div>
+    )
   }
 
   return (
@@ -443,17 +707,7 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => (
-                                    <PracticeCourseModuleLink
-                                      key={lmeIndex}
-                                      lmeItem={lmeItem}
-                                      questionCount={getLmeQuestionCount(lmeItem)}
-                                      showPremiumLocks={showPremiumLocks}
-                                      isBlocked={isFreePlanBlockedLme}
-                                    />
-                                  ))}
-                                </div>
+                                {renderCaseSections(casus)}
                               </div>
                             ))}
                           </div>
@@ -513,46 +767,7 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => (
-                                    lmeItem.type === 'simple' ? (
-                                      <PracticeCourseModuleLink
-                                        key={lmeIndex}
-                                        lmeItem={lmeItem}
-                                        questionCount={getLmeQuestionCount(lmeItem)}
-                                        showPremiumLocks={showPremiumLocks}
-                                        isBlocked={isFreePlanBlockedLme}
-                                      />
-                                    ) : (
-                                      <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
-                                        <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
-                                          <ClipboardCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                                          <span>{lmeItem.name} ({getLmeQuestionCount(lmeItem)} vragen)</span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                          {getImagesFromMap(lmeItem.questionsMap).map((img) => {
-                                            const locked = showPremiumLocks && isFreePlanBlockedLme(img.id)
-                                            return (
-                                            <Link
-                                              key={img.id}
-                                              to={locked ? '/billing' : `/oefenvragen?lme=${img.id}`}
-                                              className={`text-center px-3 py-2.5 rounded-lg border text-sm transition-all
-                                                ${locked
-                                                  ? 'bg-slate-100 dark:bg-slate-900/40 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400'
-                                                  : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-900 dark:hover:text-emerald-300'}`}
-                                            >
-                                              <span className="inline-flex items-center gap-1.5">
-                                                {img.name}
-                                                {locked && <Lock className="w-3 h-3" />}
-                                              </span>
-                                            </Link>
-                                            )
-                                          })}
-                                        </div>
-                                      </div>
-                                    )
-                                  ))}
-                                </div>
+                                {renderCaseSections(casus)}
                               </div>
                             ))}
                           </div>
@@ -616,17 +831,7 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => (
-                                    <PracticeCourseModuleLink
-                                      key={lmeIndex}
-                                      lmeItem={lmeItem}
-                                      questionCount={getLmeQuestionCount(lmeItem)}
-                                      showPremiumLocks={showPremiumLocks}
-                                      isBlocked={isFreePlanBlockedLme}
-                                    />
-                                  ))}
-                                </div>
+                                {renderCaseSections(casus)}
                               </div>
                             ))}
                           </div>
@@ -690,46 +895,7 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                <div className="ml-0 sm:ml-2 space-y-2">
-                                  {casus.lmes.map((lmeItem, lmeIndex) => (
-                                    lmeItem.type === 'simple' ? (
-                                      <PracticeCourseModuleLink
-                                        key={lmeIndex}
-                                        lmeItem={lmeItem}
-                                        questionCount={getLmeQuestionCount(lmeItem)}
-                                        showPremiumLocks={showPremiumLocks}
-                                        isBlocked={isFreePlanBlockedLme}
-                                      />
-                                    ) : (
-                                      <div key={lmeIndex} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
-                                        <div className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-200 py-1">
-                                          <ClipboardCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                                          <span>{lmeItem.name} ({getLmeQuestionCount(lmeItem)} vragen)</span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                          {getImagesFromMap(lmeItem.questionsMap).map((img) => {
-                                            const locked = showPremiumLocks && isFreePlanBlockedLme(img.id)
-                                            return (
-                                            <Link
-                                              key={img.id}
-                                              to={locked ? '/billing' : `/oefenvragen?lme=${img.id}`}
-                                              className={`text-center px-3 py-2.5 rounded-lg border text-sm transition-all
-                                                ${locked
-                                                  ? 'bg-slate-100 dark:bg-slate-900/40 border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400'
-                                                  : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-900 dark:hover:text-emerald-300'}`}
-                                            >
-                                              <span className="inline-flex items-center gap-1.5">
-                                                {img.name}
-                                                {locked && <Lock className="w-3 h-3" />}
-                                              </span>
-                                            </Link>
-                                            )
-                                          })}
-                                        </div>
-                                      </div>
-                                    )
-                                  ))}
-                                </div>
+                                {renderCaseSections(casus)}
                               </div>
                             ))}
                           </div>
@@ -864,6 +1030,15 @@ const PracticeQuestionsPage = () => {
                 <h2 className="text-xl md:text-2xl font-bold text-navy-900 dark:text-slate-100 mb-6">
                   {currentQ.question}
                 </h2>
+                {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] === currentQ.correctAnswer && !explanationRequests[currentQ.id] && (
+                  <button
+                    type="button"
+                    onClick={() => handleRequestExplanation(currentQ.id)}
+                    className="mb-4 inline-flex items-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/60 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500/60 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                  >
+                    Uitleg antwoord
+                  </button>
+                )}
 
                 {/* Options */}
                 <div className="space-y-3">
@@ -921,7 +1096,12 @@ const PracticeQuestionsPage = () => {
                   </div>
                 )}
 
-                {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] !== currentQ.correctAnswer && (
+                {revealedAnswers[currentQ.id] &&
+                  (
+                    selectedAnswers[currentQ.id] !== currentQ.correctAnswer ||
+                    explanationRequests[currentQ.id] ||
+                    explanations[currentQ.id]
+                  ) && (
                   <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">
                     {lmeParam === 'alle-random' && (
                       <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">

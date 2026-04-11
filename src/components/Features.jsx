@@ -1,44 +1,43 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 import { FileText, GraduationCap, Bot, ClipboardCheck, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const ease = [0.25, 0.1, 0.25, 1]
+const features = [
+  {
+    icon: FileText,
+    title: 'Samenvattingen',
+    description: 'Kernstof per casus, overzichtelijk opgebouwd met tabellen en klinische toepassingen.',
+    link: '/summary',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Oefententamens',
+    description: 'Casusgerichte tentamens met directe feedback en puntentelling per vraag.',
+    link: '/tentamen',
+  },
+  {
+    icon: Bot,
+    title: 'AI Chat',
+    description: 'Stel vragen over de stof en krijg antwoorden op basis van jouw samenvattingen.',
+    link: '/chat',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Oefenvragen',
+    description: 'Meerkeuze per onderwerp — test je kennis gericht en zie direct wat je mist.',
+    link: '/oefenvragen',
+  },
+]
 
 const Features = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
-  const features = [
-    {
-      icon: FileText,
-      title: 'Samenvattingen',
-      description: 'Kernstof per casus, overzichtelijk opgebouwd met tabellen en klinische toepassingen.',
-      link: '/summary',
-    },
-    {
-      icon: GraduationCap,
-      title: 'Oefententamens',
-      description: 'Casusgerichte tentamens met directe feedback en puntentelling per vraag.',
-      link: '/tentamen',
-    },
-    {
-      icon: Bot,
-      title: 'AI Chat',
-      description: 'Stel vragen over de stof en krijg antwoorden op basis van jouw samenvattingen.',
-      link: '/chat',
-    },
-    {
-      icon: ClipboardCheck,
-      title: 'Oefenvragen',
-      description: 'Meerkeuze per onderwerp — test je kennis gericht en zie direct wat je mist.',
-      link: '/oefenvragen',
-    },
-  ]
-
   return (
-    <section id="features" className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
+    <section id="features" className="section-content-visibility relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
       <div className="absolute inset-0 platform-section-bg -z-20" aria-hidden />
       <div className="absolute inset-0 platform-section-grid -z-10 pointer-events-none" aria-hidden />
 
@@ -93,4 +92,4 @@ const Features = () => {
   )
 }
 
-export default Features
+export default memo(Features)

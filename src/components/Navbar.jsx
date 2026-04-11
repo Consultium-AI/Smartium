@@ -124,13 +124,32 @@ const Navbar = () => {
   const [mobileExpanded, setMobileExpanded] = useState(null)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
   const profileMenuRef = useRef(null)
+  const rafIdRef = useRef(null)
+  const isScrolledRef = useRef(false)
+  const tickingRef = useRef(false)
   const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8)
-    onScroll()
+    const syncScrolledState = () => {
+      tickingRef.current = false
+      const next = window.scrollY > 8
+      if (isScrolledRef.current === next) return
+      isScrolledRef.current = next
+      setIsScrolled(next)
+    }
+    const onScroll = () => {
+      if (tickingRef.current) return
+      tickingRef.current = true
+      rafIdRef.current = window.requestAnimationFrame(syncScrolledState)
+    }
+    syncScrolledState()
     window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      if (rafIdRef.current != null) {
+        window.cancelAnimationFrame(rafIdRef.current)
+      }
+    }
   }, [])
 
   useEffect(() => {

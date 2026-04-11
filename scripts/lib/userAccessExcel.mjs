@@ -5,9 +5,14 @@ import { ROOT_DIR, planLabel, accessSummary, toMillis } from './firebaseUserAcce
 
 export const OUTPUT_DIR = path.join(ROOT_DIR, 'output', 'firebase-user-status')
 
-export function toSheetRow(row) {
+export function toSheetRow(row, excelRowNumber, numberingStartRow = 18) {
   const paidUntilMs = toMillis(row.paidUntil) || 0
+  const nummer =
+    excelRowNumber >= numberingStartRow
+      ? excelRowNumber - numberingStartRow + 1
+      : 0
   return {
+    nummer,
     email: row.email || '',
     plan: planLabel(row.plan),
     toegang: accessSummary(row.status, paidUntilMs),
@@ -22,10 +27,16 @@ export function toSheetRow(row) {
 }
 
 export async function writeUserAccessExcel(rows, opts = {}) {
-  const sheetRows = rows.map(toSheetRow)
+  const numberingStartRow = Number.isFinite(opts.numberingStartRow)
+    ? Number(opts.numberingStartRow)
+    : 18
+  const sheetRows = rows.map((row, index) =>
+    toSheetRow(row, index + 2, numberingStartRow),
+  )
   const workbook = XLSX.utils.book_new()
   const worksheet = XLSX.utils.json_to_sheet(sheetRows, {
     header: [
+      'nummer',
       'email',
       'plan',
       'toegang',

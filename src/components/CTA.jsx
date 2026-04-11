@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
@@ -40,7 +40,7 @@ const Pricing = () => {
     : `/login?redirect=${encodeURIComponent('/billing?plan=yearly')}`
 
   return (
-    <section id="pricing" className="relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
+    <section id="pricing" className="section-content-visibility relative isolate overflow-hidden border-t border-slate-200/90 dark:border-slate-700/40" ref={ref}>
       <div className="absolute inset-0 cta-section-bg -z-10" aria-hidden />
 
       <div className="container-custom pt-24 pb-24 md:py-28">
@@ -189,4 +189,4 @@ const Pricing = () => {
   )
 }
 
-export default Pricing
+export default memo(Pricing)

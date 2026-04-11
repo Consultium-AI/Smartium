@@ -93,6 +93,31 @@ function gradePathForBlok(blok) {
   return `/tentamen-blok${blok}`
 }
 
+function getExamProgressMeta(exam, savedProgress) {
+  if (!savedProgress || typeof savedProgress !== 'object') return null
+  const answers = savedProgress.answers && typeof savedProgress.answers === 'object'
+    ? savedProgress.answers
+    : {}
+  const totalQuestions = exam.casussen.reduce((acc, casus) => acc + casus.questions.length, 0)
+  const revealedCount = exam.casussen.reduce(
+    (acc, casus) => acc + casus.questions.filter((q) => Boolean(answers[q.id]?.revealed)).length,
+    0,
+  )
+  const percent = totalQuestions > 0 ? Math.round((revealedCount / totalQuestions) * 100) : 0
+
+  if (savedProgress.submitted) {
+    const earned = computeEarned(exam, answers)
+    const grade = calculateGradeBlok(earned, exam.totalPoints, exam.cesuur ?? 0.6)
+    return { completed: true, grade, percent: 100 }
+  }
+
+  if (revealedCount > 0) {
+    return { completed: false, percent }
+  }
+
+  return null
+}
+
 // ─── Selection ─────────────────────────────────────────────────
 function ExamBlokSelection({ blok }) {
   const { user, loading: authLoading } = useAuth()
@@ -137,8 +162,9 @@ function ExamBlokSelection({ blok }) {
             exams.map((exam, i) => {
               const nr = i + 1
               const locked = showPremiumLocks && !isFreePlanAllowedExam(blok, nr)
-              const showResume =
-                progressUserId && examBlokHasInProgress(progressUserId, blok, nr)
+              const savedProgress = progressUserId ? loadExamBlokProgress(progressUserId, blok, nr) : null
+              const progressMeta = getExamProgressMeta(exam, savedProgress)
+              const showResume = progressUserId && examBlokHasInProgress(progressUserId, blok, nr)
               const estMin = Math.round((exam.totalPoints / 168) * 90) || 90
               return (
                 <motion.div key={exam.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
@@ -160,6 +186,16 @@ function ExamBlokSelection({ blok }) {
                           {showResume && (
                             <span className="inline-flex rounded-full bg-primary-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-primary-700 dark:text-primary-300">
                               Ga verder
+                            </span>
+                          )}
+                          {!locked && progressMeta?.completed && (
+                            <span className="inline-flex rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+                              Af · Cijfer {progressMeta.grade.toFixed(1)}
+                            </span>
+                          )}
+                          {!locked && !progressMeta?.completed && progressMeta?.percent > 0 && (
+                            <span className="inline-flex rounded-full bg-sky-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
+                              Bezig · {progressMeta.percent}%
                             </span>
                           )}
                           {locked && (

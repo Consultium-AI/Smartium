@@ -603,7 +603,7 @@ const LoginPage = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className={loginInputClass}
-                    placeholder={mode === 'login' ? 'naam@student.ru.nl of gebruikersnaam' : 'naam@student.ru.nl'}
+                    placeholder={mode === 'login' ? 'naam@gmail.com of gebruikersnaam' : 'naam@gmail.com'}
                   />
                 </div>
               </motion.label>
