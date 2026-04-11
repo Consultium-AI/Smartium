@@ -8,6 +8,7 @@ export default function PracticeCourseModuleLink({
   showPremiumLocks,
   isBlocked,
   progress,
+  showProgress = false,
 }) {
   const locked = showPremiumLocks && isBlocked(lmeItem.id)
   const s = getSummaryModuleLinkStyles(lmeItem.moduleKind)
@@ -32,13 +33,13 @@ export default function PracticeCourseModuleLink({
           </span>
           <div className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
             <span>{questionCount} vragen</span>
-            {!locked && progress?.started && !progress?.completed && (
+            {showProgress && !locked && progress?.started && !progress?.completed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-700 dark:bg-sky-500/15 dark:text-sky-300">
                 <Timer className="w-3 h-3" />
                 Bezig {progress.percent}%
               </span>
             )}
-            {!locked && progress?.completed && (
+            {showProgress && !locked && progress?.completed && (
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
                 <CheckCircle2 className="w-3 h-3" />
                 Af · {progress.correctCount}/{progress.totalQuestions} goed

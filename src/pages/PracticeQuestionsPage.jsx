@@ -147,6 +147,7 @@ const PracticeQuestionsPage = () => {
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedLme(lmeParam)
   const progressUserId = getProgressUserId(user, authLoading)
+  const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
   const blokParam = searchParams.get('blok')
   const [expandedBlok, setExpandedBlok] = useState(() => {
     if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
@@ -195,6 +196,7 @@ const PracticeQuestionsPage = () => {
   const [explanations, setExplanations] = useState({})
   const [explanationRequests, setExplanationRequests] = useState({})
   const [progressHydrated, setProgressHydrated] = useState(false)
+  const [progressVersion, setProgressVersion] = useState(0)
 
   useEffect(() => {
     if (progressUserId === null) {
@@ -267,6 +269,18 @@ const PracticeQuestionsPage = () => {
     explanations,
     explanationRequests,
   ])
+
+  useEffect(() => {
+    const onCloudSynced = (event) => {
+      if (!progressUserId || progressUserId === 'guest') return
+      const syncedUid = event?.detail?.uid
+      if (!syncedUid || syncedUid === progressUserId) {
+        setProgressVersion((v) => v + 1)
+      }
+    }
+    window.addEventListener('smartium-cloud-synced', onCloudSynced)
+    return () => window.removeEventListener('smartium-cloud-synced', onCloudSynced)
+  }, [progressUserId])
 
   const currentQ = questions[currentQuestion]
   const totalQuestions = questions.length
@@ -370,7 +384,7 @@ const PracticeQuestionsPage = () => {
   }
 
   const lmeProgressById = useMemo(() => {
-    if (!progressUserId) return {}
+    if (!hasAccountProgress || !progressUserId) return {}
     const progressMap = {}
 
     for (const lmeId of PRACTICE_QUESTION_ORDER) {
@@ -405,7 +419,7 @@ const PracticeQuestionsPage = () => {
     }
 
     return progressMap
-  }, [progressUserId])
+  }, [hasAccountProgress, progressUserId, progressVersion, lmeParam])
 
   const getSectionProgress = (items) => {
     let startedUnits = 0
@@ -445,6 +459,7 @@ const PracticeQuestionsPage = () => {
           showPremiumLocks={showPremiumLocks}
           isBlocked={isFreePlanBlockedLme}
           progress={lmeProgressById[lmeItem.id]}
+          showProgress={hasAccountProgress}
         />
       )
     }
@@ -469,12 +484,12 @@ const PracticeQuestionsPage = () => {
                     : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:border-emerald-400 dark:hover:border-emerald-500/50 hover:bg-emerald-50/80 dark:hover:bg-emerald-500/10 hover:text-emerald-900 dark:hover:text-emerald-300'}`}
               >
                 <span className="inline-flex items-center gap-1.5">{img.name} {locked && <Lock className="w-3 h-3" />}</span>
-                {!locked && progress?.started && !progress?.completed && (
+                {hasAccountProgress && !locked && progress?.started && !progress?.completed && (
                   <span className="mt-1 block text-[11px] font-medium text-sky-700 dark:text-sky-300">
                     Bezig · {progress.percent}%
                   </span>
                 )}
-                {!locked && progress?.completed && (
+                {hasAccountProgress && !locked && progress?.completed && (
                   <span className="mt-1 block text-[11px] font-medium text-emerald-700 dark:text-emerald-300">
                     Af · {progress.correctCount}/{progress.totalQuestions} goed
                   </span>
@@ -499,19 +514,19 @@ const PracticeQuestionsPage = () => {
         {sectionDefs.map((section) => (
           section.items.length > 0 ? (
             <section key={section.key} className="space-y-2">
-              {(() => {
-                const progress = getSectionProgress(section.items)
-                return (
-                  <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      {section.title}
-                    </h4>
+              <div className="flex items-center justify-between gap-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  {section.title}
+                </h4>
+                {hasAccountProgress && (() => {
+                  const progress = getSectionProgress(section.items)
+                  return (
                     <span className="text-[11px] text-slate-500 dark:text-slate-400">
                       {progress.statusLabel} · {progress.doneUnits}/{progress.totalUnits}
                     </span>
-                  </div>
-                )
-              })()}
+                  )
+                })()}
+              </div>
               <div className="space-y-2">
                 {section.items.map((lmeItem, lmeIndex) => renderCourseModule(lmeItem, `${section.key}-${lmeIndex}`))}
               </div>

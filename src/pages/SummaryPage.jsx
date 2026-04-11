@@ -282,6 +282,7 @@ const SummaryPage = () => {
   const lme = searchParams.get('lme') || 'index'
   const { user, loading: authLoading } = useAuth()
   const progressUserId = getProgressUserId(user, authLoading)
+  const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
@@ -1214,7 +1215,7 @@ const SummaryPage = () => {
   }
 
   const renderSummaryModule = (lmeItem, key) => {
-    const seen = Boolean(seenMap[lmeItem.id])
+    const seen = hasAccountProgress && Boolean(seenMap[lmeItem.id])
     if (lmeItem.type === 'image-based') {
       return (
         <div key={key} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
@@ -1225,7 +1226,7 @@ const SummaryPage = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {getImageIdsForLme(lmeItem.baseId, lmeItem.imageCount).map((img) => {
               const locked = showPremiumLocks && isFreePlanBlockedLme(img.id)
-              const imgSeen = Boolean(seenMap[img.id])
+              const imgSeen = hasAccountProgress && Boolean(seenMap[img.id])
               return (
                 <Link
                   key={img.id}
@@ -1294,19 +1295,19 @@ const SummaryPage = () => {
         {sections.map((section) => (
           section.items.length > 0 ? (
             <section key={section.key} className="space-y-2">
-              {(() => {
-                const progress = getSectionReadProgress(section.items)
-                return (
-                  <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      {section.title}
-                    </h4>
+              <div className="flex items-center justify-between gap-2">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  {section.title}
+                </h4>
+                {hasAccountProgress && (() => {
+                  const progress = getSectionReadProgress(section.items)
+                  return (
                     <span className="text-[11px] text-slate-500 dark:text-slate-400">
                       {progress.statusLabel} · {progress.seenUnits}/{progress.totalUnits}
                     </span>
-                  </div>
-                )
-              })()}
+                  )
+                })()}
+              </div>
               <div className="space-y-2">
                 {section.items.map((lmeItem, idx) => renderSummaryModule(lmeItem, `${section.key}-${idx}`))}
               </div>

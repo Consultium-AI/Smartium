@@ -125,8 +125,22 @@ function ExamBlokSelection({ blok }) {
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const progressUserId = getProgressUserId(user, authLoading)
+  const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
+  const [progressVersion, setProgressVersion] = useState(0)
   const exams = getExamsForBlok(blok)
   const path = gradePathForBlok(blok)
+
+  useEffect(() => {
+    const onCloudSynced = (event) => {
+      if (!progressUserId || progressUserId === 'guest') return
+      const syncedUid = event?.detail?.uid
+      if (!syncedUid || syncedUid === progressUserId) {
+        setProgressVersion((v) => v + 1)
+      }
+    }
+    window.addEventListener('smartium-cloud-synced', onCloudSynced)
+    return () => window.removeEventListener('smartium-cloud-synced', onCloudSynced)
+  }, [progressUserId])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
@@ -162,12 +176,14 @@ function ExamBlokSelection({ blok }) {
             exams.map((exam, i) => {
               const nr = i + 1
               const locked = showPremiumLocks && !isFreePlanAllowedExam(blok, nr)
-              const savedProgress = progressUserId ? loadExamBlokProgress(progressUserId, blok, nr) : null
+              const savedProgress = hasAccountProgress && progressUserId
+                ? loadExamBlokProgress(progressUserId, blok, nr)
+                : null
               const progressMeta = getExamProgressMeta(exam, savedProgress)
-              const showResume = progressUserId && examBlokHasInProgress(progressUserId, blok, nr)
+              const showResume = hasAccountProgress && progressUserId && examBlokHasInProgress(progressUserId, blok, nr)
               const estMin = Math.round((exam.totalPoints / 168) * 90) || 90
               return (
-                <motion.div key={exam.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
+                <motion.div key={`${exam.id}-${progressVersion}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
                   <Link
                     to={locked ? '/billing' : `${path}?nr=${nr}`}
                     className={`group flex items-center justify-between gap-4 p-5 rounded-2xl border transition-all
@@ -188,12 +204,12 @@ function ExamBlokSelection({ blok }) {
                               Ga verder
                             </span>
                           )}
-                          {!locked && progressMeta?.completed && (
+                          {hasAccountProgress && !locked && progressMeta?.completed && (
                             <span className="inline-flex rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
                               Af · Cijfer {progressMeta.grade.toFixed(1)}
                             </span>
                           )}
-                          {!locked && !progressMeta?.completed && progressMeta?.percent > 0 && (
+                          {hasAccountProgress && !locked && !progressMeta?.completed && progressMeta?.percent > 0 && (
                             <span className="inline-flex rounded-full bg-sky-500/15 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
                               Bezig · {progressMeta.percent}%
                             </span>
