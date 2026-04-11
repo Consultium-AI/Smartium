@@ -8,6 +8,8 @@ import { getChatStorageKey } from '../utils/accountProgressStorage'
 
 const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
+const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
+const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
 const COLLECTION = 'userProgress'
 
 let debounceTimer = null
@@ -47,8 +49,12 @@ function canSyncUid(uid) {
 function collectBundledProgress(userId) {
   const practice = {}
   const exams = {}
+  const examBlok = {}
+  const summarySeen = {}
   const prefixP = `${PREFIX_PRACTICE}:${userId}:`
   const prefixE = `${PREFIX_EXAM}:${userId}:`
+  const prefixEb = `${PREFIX_EXAM_BLOK}:${userId}:`
+  const summaryKey = `${PREFIX_SUMMARY_READ}:${userId}`
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i)
@@ -71,12 +77,32 @@ function collectBundledProgress(userId) {
         } catch {
           /* skip */
         }
+      } else if (k.startsWith(prefixEb)) {
+        const exb = k.slice(prefixEb.length)
+        const raw = localStorage.getItem(k)
+        if (!raw) continue
+        try {
+          examBlok[exb] = JSON.parse(raw)
+        } catch {
+          /* skip */
+        }
+      } else if (k === summaryKey) {
+        const raw = localStorage.getItem(k)
+        if (!raw) continue
+        try {
+          const parsed = JSON.parse(raw)
+          if (parsed && typeof parsed === 'object') {
+            Object.assign(summarySeen, parsed)
+          }
+        } catch {
+          /* skip */
+        }
       }
     }
     const chatsJson = localStorage.getItem(getChatStorageKey(userId))
-    return { practice, exams, chatsJson: chatsJson || null }
+    return { practice, exams, examBlok, summarySeen, chatsJson: chatsJson || null }
   } catch {
-    return { practice: {}, exams: {}, chatsJson: null }
+    return { practice: {}, exams: {}, examBlok: {}, summarySeen: {}, chatsJson: null }
   }
 }
 
@@ -92,6 +118,16 @@ function applyBundledProgressToLocal(userId, bundle) {
       if (data && typeof data === 'object') {
         localStorage.setItem(`${PREFIX_EXAM}:${userId}:${ex}`, JSON.stringify(data))
       }
+    }
+    for (const [exb, data] of Object.entries(bundle.examBlok || {})) {
+      if (data && typeof data === 'object') {
+        localStorage.setItem(`${PREFIX_EXAM_BLOK}:${userId}:${exb}`, JSON.stringify(data))
+      }
+    }
+    if (bundle.summarySeen && typeof bundle.summarySeen === 'object') {
+      const summaryKey = `${PREFIX_SUMMARY_READ}:${userId}`
+      const localSummary = JSON.parse(localStorage.getItem(summaryKey) || '{}')
+      localStorage.setItem(summaryKey, JSON.stringify({ ...(bundle.summarySeen || {}), ...(localSummary || {}) }))
     }
     if (bundle.chatsJson && typeof bundle.chatsJson === 'string') {
       localStorage.setItem(getChatStorageKey(userId), bundle.chatsJson)
@@ -111,8 +147,16 @@ function mergeServerWithLocal(localBundle, serverData) {
   for (const [k, v] of Object.entries(localBundle.exams)) {
     if (!(k in exams) && v) exams[k] = v
   }
+  const examBlok = { ...(serverData.examBlok || {}) }
+  for (const [k, v] of Object.entries(localBundle.examBlok || {})) {
+    if (!(k in examBlok) && v) examBlok[k] = v
+  }
+  const summarySeen = { ...(serverData.summarySeen || {}) }
+  for (const [k, v] of Object.entries(localBundle.summarySeen || {})) {
+    if (!(k in summarySeen) && v) summarySeen[k] = v
+  }
   const chatsJson = serverData.chatsJson || localBundle.chatsJson || null
-  return { practice, exams, chatsJson }
+  return { practice, exams, examBlok, summarySeen, chatsJson }
 }
 
 async function pushProgressToCloudInternal(uid) {
@@ -136,9 +180,11 @@ async function pushProgressToCloudInternal(uid) {
   await setDoc(
     ref,
     {
-      v: 1,
+      v: 2,
       practice: stripForFirestore(bundle.practice),
       exams: stripForFirestore(bundle.exams),
+      examBlok: stripForFirestore(bundle.examBlok),
+      summarySeen: stripForFirestore(bundle.summarySeen),
       chatsJson: bundle.chatsJson ?? null,
       syncedFrom: 'smartium-web',
       updatedAt: serverTimestamp(),
@@ -183,6 +229,8 @@ export async function hydrateFromCloud(uid) {
       const merged = mergeServerWithLocal(localBefore, {
         practice: d.practice,
         exams: d.exams,
+        examBlok: d.examBlok,
+        summarySeen: d.summarySeen,
         chatsJson: d.chatsJson,
       })
       applyBundledProgressToLocal(uid, merged)

@@ -7,6 +7,8 @@ const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
 /** Blok-tentamens (Blok 5, 9, …) met casusgebaseerde vragen */
 const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
+/** Gelezen samenvattingen per account */
+const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
 /** Oude globale chatsleutel (vóór per-account) */
 export const LEGACY_CHAT_STORAGE_KEY = 'smartium-chat-chats'
 
@@ -33,6 +35,10 @@ function storageKeyExam(userId, examNumber) {
 
 function storageKeyExamBlok(userId, blok, examNr) {
   return `${PREFIX_EXAM_BLOK}:${userId}:${blok}:${examNr}`
+}
+
+function storageKeySummaryRead(userId) {
+  return `${PREFIX_SUMMARY_READ}:${userId}`
 }
 
 export function loadExamBlokProgress(userId, blok, examNr) {
@@ -63,6 +69,32 @@ export function examBlokHasInProgress(userId, blok, examNr) {
   if (!p) return false
   const n = Object.keys(p.answers || {}).length
   return n > 0 && !p.submitted
+}
+
+export function loadSummarySeenMap(userId) {
+  if (!userId) return {}
+  const data = safeParse(localStorage.getItem(storageKeySummaryRead(userId)))
+  if (!data || typeof data !== 'object') return {}
+  return data
+}
+
+export function hasSummarySeen(userId, lmeId) {
+  if (!userId || !lmeId) return false
+  const m = loadSummarySeenMap(userId)
+  return Boolean(m[lmeId])
+}
+
+export function markSummarySeen(userId, lmeId) {
+  if (!userId || !lmeId || lmeId === 'index') return
+  const now = Date.now()
+  try {
+    const prev = loadSummarySeenMap(userId)
+    if (prev[lmeId]) return
+    localStorage.setItem(storageKeySummaryRead(userId), JSON.stringify({ ...prev, [lmeId]: now }))
+  } catch {
+    /* quota */
+  }
+  scheduleCloudIfNeeded(userId)
 }
 
 export function loadPracticeProgress(userId, lmeParam) {
@@ -154,9 +186,10 @@ function clearGuestScopedData(guestId) {
   const pPref = `${PREFIX_PRACTICE}:${guestId}:`
   const ePref = `${PREFIX_EXAM}:${guestId}:`
   const ebPref = `${PREFIX_EXAM_BLOK}:${guestId}:`
+  const sKey = storageKeySummaryRead(guestId)
   const chatKey = getChatStorageKey(guestId)
   for (const key of keys) {
-    if (key.startsWith(pPref) || key.startsWith(ePref) || key.startsWith(ebPref) || key === chatKey) {
+    if (key.startsWith(pPref) || key.startsWith(ePref) || key.startsWith(ebPref) || key === chatKey || key === sKey) {
       try {
         localStorage.removeItem(key)
       } catch {
@@ -181,6 +214,8 @@ export function migrateGuestDataToUser(guestId, newUserId) {
     const prefixP = `${PREFIX_PRACTICE}:${guestId}:`
     const prefixE = `${PREFIX_EXAM}:${guestId}:`
     const prefixEb = `${PREFIX_EXAM_BLOK}:${guestId}:`
+    const summaryGuest = storageKeySummaryRead(guestId)
+    const summaryUser = storageKeySummaryRead(newUserId)
     for (const key of allKeys) {
       if (key.startsWith(prefixP)) {
         const suffix = key.slice(prefixP.length)
@@ -207,6 +242,14 @@ export function migrateGuestDataToUser(guestId, newUserId) {
     const gRaw = localStorage.getItem(gChat)
     if (gRaw && !localStorage.getItem(uChat)) {
       localStorage.setItem(uChat, gRaw)
+    }
+    const gSummaryRaw = localStorage.getItem(summaryGuest)
+    if (gSummaryRaw) {
+      const guestMap = safeParse(gSummaryRaw)
+      const userMap = safeParse(localStorage.getItem(summaryUser)) || {}
+      if (guestMap && typeof guestMap === 'object') {
+        localStorage.setItem(summaryUser, JSON.stringify({ ...guestMap, ...userMap }))
+      }
     }
     clearGuestScopedData(guestId)
   } catch {

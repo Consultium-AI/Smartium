@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, ChevronRight, Clock, Lock } from 'lucide-react'
+import { BookOpen, CheckCircle2, ChevronRight, Clock, Lock } from 'lucide-react'
 import { getSummaryModuleLinkStyles } from '../utils/summaryModuleLinkStyles'
 
-export default function SummaryCourseModuleLink({ lmeItem, showPremiumLocks, isBlocked }) {
+export default function SummaryCourseModuleLink({ lmeItem, showPremiumLocks, isBlocked, seen = false }) {
   const locked = showPremiumLocks && isBlocked(lmeItem.id)
   const s = getSummaryModuleLinkStyles(lmeItem.moduleKind)
 
@@ -33,6 +33,12 @@ export default function SummaryCourseModuleLink({ lmeItem, showPremiumLocks, isB
               <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
                 <Lock className="w-3 h-3" />
                 Premium
+              </span>
+            )}
+            {!locked && seen && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
+                <CheckCircle2 className="w-3 h-3" />
+                Gelezen
               </span>
             )}
           </div>
