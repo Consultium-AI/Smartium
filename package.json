@@ -13,7 +13,8 @@
     "automation:export-user-access-to-sheets": "node scripts/exportFirebaseUserAccessToGoogleSheets.mjs",
     "automation:export-user-access-to-excel": "node scripts/exportFirebaseUserAccessToExcel.mjs",
     "automation:watch-user-access-to-excel": "node scripts/watchFirebaseUserAccessToExcel.mjs",
-    "grant-vip": "node scripts/grantVipAccessByEmail.mjs"
+    "grant-vip": "node scripts/grantVipAccessByEmail.mjs",
+    "reset-pfp-default-except-vip": "node scripts/resetDefaultPfpExceptVip.mjs"
   },
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
