@@ -132,10 +132,6 @@ function isPermissionDeniedError(err) {
   return code === 'permission-denied' || code === 'firestore/permission-denied'
 }
 
-function isVipPlan(plan) {
-  return (plan || '').toString().toLowerCase() === 'vip'
-}
-
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -143,25 +139,6 @@ export function AuthProvider({ children }) {
   const lastHydratedUid = useRef(null)
 
   const clearError = useCallback(() => setError(null), [])
-
-  const readUserPlan = useCallback(async (uid) => {
-    if (!uid || !isFirebaseConfigured || !db) return null
-    try {
-      const { doc, getDoc } = await import('firebase/firestore')
-      const snap = await getDoc(doc(db, 'users', uid))
-      if (!snap.exists()) return null
-      return (snap.data()?.plan || '').toString().toLowerCase() || null
-    } catch {
-      return null
-    }
-  }, [])
-
-  const resolvePhotoUrlForUpdate = useCallback(async ({ uid, nextPhotoURL }) => {
-    const requestedPhoto = nextPhotoURL?.trim() || DEFAULT_PFP_URL
-    if (!uid) return requestedPhoto
-    const plan = await readUserPlan(uid)
-    return isVipPlan(plan) ? requestedPhoto : DEFAULT_PFP_URL
-  }, [readUserPlan])
 
   useEffect(() => {
     if (!isFirebaseConfigured) {
@@ -172,27 +149,13 @@ export function AuthProvider({ children }) {
 
     const unsub = onAuthStateChanged(auth, async (u) => {
       if (u) {
-        let resolvedUser = u
-        const plan = await readUserPlan(u.uid)
-        const currentPhoto = (u.photoURL || '').trim()
-        const shouldForceDefaultPfp = !isVipPlan(plan) && currentPhoto !== DEFAULT_PFP_URL
-
-        if (shouldForceDefaultPfp) {
-          try {
-            await updateProfile(u, { photoURL: DEFAULT_PFP_URL })
-            resolvedUser = auth.currentUser || u
-          } catch {
-            // Non-blocking: keep login flow running even if profile reset fails.
-          }
-        }
-
         if (lastHydratedUid.current !== u.uid) {
           lastHydratedUid.current = u.uid
           // Eerst guest → uid, daarna cloud: anders schrijft hydrate vóór migratie een lege bundel.
           migrateGuestDataToUser('guest', u.uid)
           await hydrateFromCloud(u.uid)
         }
-        setUser(resolvedUser)
+        setUser(u)
       } else {
         lastHydratedUid.current = null
         setUser(readDemoSession())
@@ -200,7 +163,7 @@ export function AuthProvider({ children }) {
       setLoading(false)
     })
     return () => unsub()
-  }, [readUserPlan])
+  }, [])
 
   const resolveEmailFromUsername = useCallback(async (usernameInput) => {
     const usernameNormalized = normalizeUsername(usernameInput)
@@ -462,10 +425,7 @@ export function AuthProvider({ children }) {
 
     if (!user) throw new Error('Niet ingelogd.')
 
-    const photoTrimmed = await resolvePhotoUrlForUpdate({
-      uid: user?.uid || null,
-      nextPhotoURL: photoURL,
-    })
+    const photoTrimmed = photoURL?.trim() || DEFAULT_PFP_URL
 
     if (!isFirebaseConfigured || user.isDemo) {
       const merged = {
@@ -493,7 +453,7 @@ export function AuthProvider({ children }) {
     }
     setUser(merged)
     return merged
-  }, [user, resolvePhotoUrlForUpdate])
+  }, [user])
 
   const value = useMemo(
     () => ({

@@ -948,16 +948,34 @@ export default {
       return json(origin, { error: { message: 'Expected { messages: [...] }' } }, 400)
     }
 
-    const { messages, model, temperature, max_tokens, usageScope, uid, email, firebaseIdToken } = body as {
+    const {
+      messages,
+      model,
+      temperature,
+      max_tokens,
+      max_completion_tokens,
+      usageScope,
+      uid,
+      email,
+      firebaseIdToken,
+    } = body as {
       messages: unknown[]
       model?: string
       temperature?: number
       max_tokens?: number
+      max_completion_tokens?: number
       usageScope?: string
       uid?: string
       email?: string
       firebaseIdToken?: string
     }
+
+    const normalizedMaxCompletionTokens =
+      typeof max_completion_tokens === 'number'
+        ? max_completion_tokens
+        : typeof max_tokens === 'number'
+          ? max_tokens
+          : undefined
 
     if (usageScope === 'chat') {
       const quota = await consumeChatPromptQuota(env, {
@@ -1006,10 +1024,12 @@ export default {
     }
 
     const payload = {
-      model: typeof model === 'string' && model ? model : 'gpt-5-mini',
+      model: typeof model === 'string' && model ? model : 'gpt-5.4-mini',
       messages,
       ...(typeof temperature === 'number' ? { temperature } : {}),
-      ...(typeof max_tokens === 'number' ? { max_tokens } : {}),
+      ...(typeof normalizedMaxCompletionTokens === 'number'
+        ? { max_completion_tokens: normalizedMaxCompletionTokens }
+        : {}),
     }
 
     const r = await fetch(OPENAI_URL, {
