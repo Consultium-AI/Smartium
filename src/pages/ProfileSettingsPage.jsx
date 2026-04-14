@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
-import { CalendarClock, CreditCard, Loader2, Save, User, X } from 'lucide-react'
+import { CalendarClock, CreditCard, Loader2, Lock, Save, User, X } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { DEFAULT_PFP_OPTIONS, DEFAULT_PFP_URL } from '../constants/defaultPfps'
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000
 const DAY_MS = 24 * 60 * 60 * 1000
@@ -22,14 +23,26 @@ export default function ProfileSettingsPage() {
   const { user, loading, updateUserProfile } = useAuth()
   const { hasAccess, plan, paidUntil, subscriptionStopped, stopSubscription } = useAccess()
   const [displayName, setDisplayName] = useState('')
+  const [photoURL, setPhotoURL] = useState(DEFAULT_PFP_URL)
   const [saving, setSaving] = useState(false)
   const [stoppingSubscription, setStoppingSubscription] = useState(false)
   const [error, setError] = useState('')
   const [saved, setSaved] = useState(false)
+  const canUsePremiumPfps = hasAccess || plan === 'admin' || plan === 'vip'
 
   useEffect(() => {
     setDisplayName(user?.displayName || '')
   }, [user?.displayName])
+
+  useEffect(() => {
+    setPhotoURL(user?.photoURL || DEFAULT_PFP_URL)
+  }, [user?.photoURL])
+
+  useEffect(() => {
+    if (!canUsePremiumPfps && photoURL !== DEFAULT_PFP_URL) {
+      setPhotoURL(DEFAULT_PFP_URL)
+    }
+  }, [canUsePremiumPfps, photoURL])
 
   const onSave = async (e) => {
     e.preventDefault()
@@ -38,9 +51,12 @@ export default function ProfileSettingsPage() {
     try {
       const currentDisplayName = user?.displayName?.trim() || ''
       const nextDisplayName = displayName?.trim() || ''
+      const currentPhotoURL = user?.photoURL?.trim() || DEFAULT_PFP_URL
+      const selectedPhotoURL = photoURL?.trim() || DEFAULT_PFP_URL
+      const nextPhotoURL = canUsePremiumPfps ? selectedPhotoURL : DEFAULT_PFP_URL
 
       // Niets gewijzigd: sla direct "opgeslagen" terug zonder loading-state.
-      if (nextDisplayName === currentDisplayName) {
+      if (nextDisplayName === currentDisplayName && nextPhotoURL === currentPhotoURL) {
         setSaved(true)
         return
       }
@@ -48,7 +64,7 @@ export default function ProfileSettingsPage() {
       setSaving(true)
       await updateUserProfile({
         displayName: nextDisplayName,
-        photoURL: user?.photoURL || '',
+        photoURL: nextPhotoURL,
       })
       setSaved(true)
     } catch (err) {
@@ -166,21 +182,55 @@ export default function ProfileSettingsPage() {
               <div>
                 <p className="mb-1.5 block text-sm font-medium text-navy-800 dark:text-slate-200">Profielfoto</p>
                 <div className="flex items-center gap-4">
-                  {user?.photoURL ? (
-                    <img
-                      src={user.photoURL}
-                      alt="Profielfoto preview"
-                      className="h-16 w-16 rounded-full border border-slate-200 object-cover dark:border-slate-600"
-                    />
-                  ) : (
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-lg font-semibold text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">
-                      {(displayName?.trim()?.[0] || user?.email?.[0] || 'S').toUpperCase()}
-                    </div>
-                  )}
+                  <img
+                    src={photoURL || DEFAULT_PFP_URL}
+                    alt="Profielfoto preview"
+                    className="h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-600"
+                    onError={(event) => {
+                      event.currentTarget.onerror = null
+                      event.currentTarget.src = DEFAULT_PFP_URL
+                    }}
+                  />
                 </div>
-                <p className="mt-2 text-xs text-navy-500 dark:text-slate-400">
-                  Profielfoto uploaden is uitgeschakeld.
-                </p>
+                <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5 lg:grid-cols-6">
+                  {DEFAULT_PFP_OPTIONS.map((option) => {
+                    const isActive = option === (photoURL || DEFAULT_PFP_URL)
+                    const isPremiumPfp = option !== DEFAULT_PFP_URL
+                    const isLocked = isPremiumPfp && !canUsePremiumPfps
+                    return (
+                      <button
+                        key={option}
+                        type="button"
+                        onClick={() => setPhotoURL(option)}
+                        disabled={isLocked}
+                        className={`h-20 w-20 appearance-none overflow-hidden rounded-full border-2 p-0.5 transition ${
+                          isActive
+                            ? 'border-primary-500'
+                            : 'border-transparent hover:border-slate-300 dark:hover:border-slate-600'
+                        } ${isLocked ? 'cursor-not-allowed opacity-55' : ''}`}
+                        aria-label="Kies profielfoto"
+                      >
+                        <span className="relative block h-full w-full rounded-full">
+                          <img
+                            src={option}
+                            alt=""
+                            className="h-full w-full rounded-full object-cover"
+                          />
+                          {isLocked && (
+                            <span className="absolute inset-0 flex items-center justify-center rounded-full bg-black/45 text-white">
+                              <Lock className="h-4 w-4" strokeWidth={2.4} />
+                            </span>
+                          )}
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+                {!canUsePremiumPfps && (
+                  <p className="mt-2 text-xs text-navy-500 dark:text-slate-400">
+                    Alleen de default profielfoto is gratis. Alle andere profielfoto&apos;s zijn premium.
+                  </p>
+                )}
               </div>
 
               {error && <p className="text-sm font-medium text-rose-600 dark:text-rose-400">{error}</p>}
