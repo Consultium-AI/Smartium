@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
+import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
@@ -27,12 +28,12 @@ const navItems = [
     icon: FileText,
     subGroups: [
       { label: 'Ba1', links: [
-        { name: 'Blok 3', href: '/summary?blok=blok3' },
-        { name: 'Blok 4', href: '/summary?blok=blok4' },
-        { name: 'Blok 5', href: '/summary?blok=blok5' },
+        { name: 'Blok 3', href: '/summary-blok3' },
+        { name: 'Blok 4', href: '/summary-blok4' },
+        { name: 'Blok 5', href: '/summary-blok5' },
       ]},
       { label: 'Ba2', links: [
-        { name: 'Blok 9', href: '/summary?blok=blok9' },
+        { name: 'Blok 9', href: '/summary-blok9' },
       ]},
     ],
   },
@@ -42,12 +43,12 @@ const navItems = [
     icon: ClipboardCheck,
     subGroups: [
       { label: 'Ba1', links: [
-        { name: 'Blok 3', href: '/oefenvragen?blok=blok3' },
-        { name: 'Blok 4', href: '/oefenvragen?blok=blok4' },
-        { name: 'Blok 5', href: '/oefenvragen?blok=blok5' },
+        { name: 'Blok 3', href: '/oefenvragen-blok3' },
+        { name: 'Blok 4', href: '/oefenvragen-blok4' },
+        { name: 'Blok 5', href: '/oefenvragen-blok5' },
       ]},
       { label: 'Ba2', links: [
-        { name: 'Blok 9', href: '/oefenvragen?blok=blok9' },
+        { name: 'Blok 9', href: '/oefenvragen-blok9' },
       ]},
     ],
   },
@@ -57,6 +58,7 @@ const navItems = [
     icon: GraduationCap,
     subGroups: [
       { label: 'Ba1', links: [
+        { name: 'Blok 4', href: '/tentamen-blok4' },
         { name: 'Blok 5', href: '/tentamen-blok5' },
       ]},
       { label: 'Ba2', links: [
@@ -86,33 +88,19 @@ function userDisplayTitle(user) {
   return e || n || ''
 }
 
-function userInitials(user) {
-  const fromName = user?.displayName?.trim()
-  if (fromName) {
-    const parts = fromName.split(/\s+/).filter(Boolean)
-    return parts.slice(0, 2).map((p) => p[0]?.toUpperCase() || '').join('') || 'S'
-  }
-  const fromEmail = user?.email?.trim()
-  if (fromEmail) return fromEmail.charAt(0).toUpperCase()
-  return 'S'
-}
-
 function UserAvatar({ user, className = '' }) {
-  const photo = user?.photoURL?.trim()
-  if (photo) {
-    return (
-      <img
-        src={photo}
-        alt=""
-        aria-hidden
-        className={`rounded-full object-cover ${className}`}
-      />
-    )
-  }
+  const photo = user?.photoURL?.trim() || DEFAULT_PFP_URL
   return (
-    <span className={`inline-flex items-center justify-center rounded-full bg-slate-200 text-[11px] font-bold text-slate-700 dark:bg-slate-700 dark:text-slate-100 ${className}`}>
-      {userInitials(user)}
-    </span>
+    <img
+      src={photo}
+      alt=""
+      aria-hidden
+      className={`rounded-full object-cover ${className}`}
+      onError={(event) => {
+        event.currentTarget.onerror = null
+        event.currentTarget.src = DEFAULT_PFP_URL
+      }}
+    />
   )
 }
 

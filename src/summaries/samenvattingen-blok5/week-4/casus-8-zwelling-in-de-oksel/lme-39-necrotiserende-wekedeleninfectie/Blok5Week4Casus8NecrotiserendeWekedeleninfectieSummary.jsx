@@ -60,6 +60,13 @@ const Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week4-casus8-necrotiserende-wekedeleninfectie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus8-necrotiserende-wekedeleninfectie',
+      variants: [
+        { id: 'blok5-week4-casus8-necrotiserende-wekedeleninfectie', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus8-necrotiserende-wekedeleninfectie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

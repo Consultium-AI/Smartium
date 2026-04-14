@@ -55,6 +55,13 @@ const Blok5Week1Casus2PsoriasisSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week1-casus2-psoriasis"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus2-psoriasis',
+      variants: [
+        { id: 'blok5-week1-casus2-psoriasis', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus2-psoriasis-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

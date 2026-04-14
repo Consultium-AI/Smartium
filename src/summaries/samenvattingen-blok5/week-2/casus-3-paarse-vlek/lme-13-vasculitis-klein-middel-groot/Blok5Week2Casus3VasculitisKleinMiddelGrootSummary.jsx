@@ -55,6 +55,13 @@ const Blok5Week2Casus3VasculitisKleinMiddelGrootSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus3-vasculitis-klein-middel-groot"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus3-vasculitis-klein-middel-groot',
+      variants: [
+        { id: 'blok5-week2-casus3-vasculitis-klein-middel-groot', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus3-vasculitis-klein-middel-groot-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

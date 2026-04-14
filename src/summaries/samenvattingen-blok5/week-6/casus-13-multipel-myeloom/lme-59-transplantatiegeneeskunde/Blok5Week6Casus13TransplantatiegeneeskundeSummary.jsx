@@ -64,6 +64,13 @@ const Blok5Week6Casus13TransplantatiegeneeskundeSummary = () => {
       practiceFooter={
         <Blok5Week6Casus13TransplantatiegeneeskundeOefenvragenCallout to={PRACTICE_LME_PATH} />
       }
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week6-casus13-transplantatiegeneeskunde',
+      variants: [
+        { id: 'blok5-week6-casus13-transplantatiegeneeskunde', label: 'Uitgebreid' },
+        { id: 'blok5-week6-casus13-transplantatiegeneeskunde-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

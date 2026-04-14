@@ -44,6 +44,13 @@ const Blok9Week1Casus1AcuteNierschadeVerdiepingSummary = () => {
       caseLabel="Week 1 · Casus 1: Patiënt met acute nierschade"
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus1-acute-nierschade-verdieping',
+        variants: [
+          { id: 'blok9-week1-casus1-acute-nierschade-verdieping', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus1-acute-nierschade-verdieping-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02EssentieleDiagnostiekTabel1 /></section>

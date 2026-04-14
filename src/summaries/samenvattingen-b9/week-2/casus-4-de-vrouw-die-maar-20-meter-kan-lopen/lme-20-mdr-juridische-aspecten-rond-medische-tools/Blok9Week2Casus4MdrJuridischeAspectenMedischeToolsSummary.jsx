@@ -44,6 +44,13 @@ const Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week2-casus4-mdr-juridische-aspecten-medische-tools"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools',
+        variants: [
+          { id: 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WaaromEuropeseRegelgeving /></section>

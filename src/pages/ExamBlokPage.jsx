@@ -80,6 +80,26 @@ function allAnswered(exam, answers) {
   return true
 }
 
+function allAttempted(exam, answers) {
+  for (const c of exam.casussen) {
+    for (const q of c.questions) {
+      if (answers[q.id]?.earnedPoints == null) return false
+    }
+  }
+  return true
+}
+
+function markAllRevealed(exam, answers) {
+  const next = { ...answers }
+  for (const c of exam.casussen) {
+    for (const q of c.questions) {
+      if (!next[q.id]) continue
+      next[q.id] = { ...next[q.id], revealed: true }
+    }
+  }
+  return next
+}
+
 function casusEarned(casus, answers) {
   let t = 0
   for (const q of casus.questions) {
@@ -341,6 +361,7 @@ function ExamBlokActive({ blok, exam, examNr }) {
 
   const [currentCasus, setCurrentCasus] = useState(0)
   const [answers, setAnswers] = useState({})
+  const [gradingMode, setGradingMode] = useState('direct')
   const [submitted, setSubmitted] = useState(false)
   const [reviewMode, setReviewMode] = useState(false)
   const [progressHydrated, setProgressHydrated] = useState(false)
@@ -368,11 +389,13 @@ function ExamBlokActive({ blok, exam, examNr }) {
     if (saved && typeof saved === 'object') {
       setCurrentCasus(Math.min(Math.max(0, saved.currentCasus ?? 0), exam.casussen.length - 1))
       setAnswers(saved.answers && typeof saved.answers === 'object' ? saved.answers : {})
+      setGradingMode(saved.gradingMode === 'end' ? 'end' : 'direct')
       setSubmitted(Boolean(saved.submitted))
       setReviewMode(Boolean(saved.reviewMode))
     } else {
       setCurrentCasus(0)
       setAnswers({})
+      setGradingMode('direct')
       setSubmitted(false)
       setReviewMode(false)
     }
@@ -386,26 +409,32 @@ function ExamBlokActive({ blok, exam, examNr }) {
         v: 2,
         currentCasus,
         answers,
+        gradingMode,
         submitted,
         reviewMode,
       })
     }, 400)
     return () => clearTimeout(t)
-  }, [progressHydrated, progressUserId, blok, examNr, currentCasus, answers, submitted, reviewMode])
+  }, [progressHydrated, progressUserId, blok, examNr, currentCasus, answers, gradingMode, submitted, reviewMode])
 
   const earned = useMemo(() => computeEarned(exam, answers), [exam, answers])
-  const complete = allAnswered(exam, answers)
+  const complete = gradingMode === 'end' ? allAttempted(exam, answers) : allAnswered(exam, answers)
   const totalQuestions = useMemo(
     () => exam.casussen.reduce((acc, c) => acc + c.questions.length, 0),
     [exam],
   )
-  const completedQuestions = useMemo(
-    () => exam.casussen.reduce(
+  const completedQuestions = useMemo(() => {
+    if (gradingMode === 'end') {
+      return exam.casussen.reduce(
+        (acc, c) => acc + c.questions.filter((q) => answers[q.id]?.earnedPoints != null).length,
+        0,
+      )
+    }
+    return exam.casussen.reduce(
       (acc, c) => acc + c.questions.filter((q) => Boolean(answers[q.id]?.revealed)).length,
       0,
-    ),
-    [exam, answers],
-  )
+    )
+  }, [exam, answers, gradingMode])
 
   const mergeAnswer = useCallback((qid, patch) => {
     setAnswers((prev) => ({
@@ -454,6 +483,37 @@ function ExamBlokActive({ blok, exam, examNr }) {
         </div>
       )}
       <div className="max-w-3xl mx-auto mb-6">
+        {!submitted && (
+          <div className="mb-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/50 p-3">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+              Nakijkmodus
+            </p>
+            <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-600 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setGradingMode('direct')}
+                className={`px-3 py-1.5 text-sm font-semibold ${
+                  gradingMode === 'direct'
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300'
+                }`}
+              >
+                Direct nakijken
+              </button>
+              <button
+                type="button"
+                onClick={() => setGradingMode('end')}
+                className={`px-3 py-1.5 text-sm font-semibold border-l border-slate-200 dark:border-slate-600 ${
+                  gradingMode === 'end'
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300'
+                }`}
+              >
+                Nakijken op einde
+              </button>
+            </div>
+          </div>
+        )}
         <div className="mb-3 flex items-center justify-between gap-2 flex-wrap">
           <span className="text-sm text-navy-600 dark:text-slate-400 flex items-center gap-1.5">
             <Target className="w-4 h-4 text-primary-500" />
@@ -474,7 +534,12 @@ function ExamBlokActive({ blok, exam, examNr }) {
         {complete && !submitted && (
           <button
             type="button"
-            onClick={() => setSubmitted(true)}
+            onClick={() => {
+              if (gradingMode === 'end') {
+                setAnswers((prev) => markAllRevealed(exam, prev))
+              }
+              setSubmitted(true)
+            }}
             className="mt-4 w-full sm:w-auto px-5 py-2.5 bg-primary-500 text-white rounded-xl font-bold text-sm"
           >
             Bekijk cijfer
@@ -485,7 +550,9 @@ function ExamBlokActive({ blok, exam, examNr }) {
       <div className="max-w-3xl mx-auto mb-6 flex flex-wrap gap-1.5 justify-center">
         {exam.casussen.map((c, i) => {
           const ce = casusEarned(c, answers)
-          const done = c.questions.every((q) => answers[q.id]?.revealed)
+          const done = gradingMode === 'end'
+            ? c.questions.every((q) => answers[q.id]?.earnedPoints != null)
+            : c.questions.every((q) => answers[q.id]?.revealed)
           return (
             <button
               key={c.id}
@@ -542,23 +609,24 @@ function ExamBlokActive({ blok, exam, examNr }) {
                     answer={a}
                     onReveal={onReveal}
                     canUseAiFollowUp={hasPaidAccess}
+                    deferGrading={gradingMode === 'end'}
                   />
                 )
               case 'meerdere_antwoorden':
-                return <MeerdereAntwoordenBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <MeerdereAntwoordenBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               case 'koppelvraag':
-                return <KoppelvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <KoppelvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               case 'juist_onjuist':
-                return <JuistOnjuistBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <JuistOnjuistBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               case 'open':
-                return <OpenVraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <OpenVraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               case 'beeldvraag':
                 if (q.gradingMethod === 'order') {
-                  return <BeeldvraagOrderBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                  return <BeeldvraagOrderBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
                 }
-                return <BeeldvraagAiBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <BeeldvraagAiBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               case 'rekenvraag':
-                return <RekenvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} />
+                return <RekenvraagBlock key={q.id} question={q} answer={a} onReveal={onReveal} canUseAiFollowUp={hasPaidAccess} deferGrading={gradingMode === 'end'} />
               default:
                 return (
                   <div key={q.id} className="rounded-xl border border-amber-200 p-4 text-sm text-amber-800">

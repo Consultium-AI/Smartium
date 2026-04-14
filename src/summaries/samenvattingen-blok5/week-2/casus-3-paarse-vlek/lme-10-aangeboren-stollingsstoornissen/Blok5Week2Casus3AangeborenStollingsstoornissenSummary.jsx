@@ -63,6 +63,13 @@ const Blok5Week2Casus3AangeborenStollingsstoornissenSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus3-aangeboren-stollingsstoornissen"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus3-aangeboren-stollingsstoornissen',
+      variants: [
+        { id: 'blok5-week2-casus3-aangeboren-stollingsstoornissen', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus3-aangeboren-stollingsstoornissen-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

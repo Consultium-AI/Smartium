@@ -41,6 +41,13 @@ const Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie',
+        variants: [
+          { id: 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WaarDraaitDezeModuleOm /></section>

@@ -64,6 +64,13 @@ const Blok5Week1Casus2StmPathogeneseTypeIVAllergieSummary = () => {
       blokLabel="Blok 5"
       moduleKind="stm"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie',
+        variants: [
+          { id: 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie', label: 'Uitgebreid' },
+          { id: 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -76,6 +76,7 @@ import { blok5Week1Casus2PsoriasisQuestionsMap } from '../questions/blok5-week1-
 import { blok5Week1Casus2LmvAnafylaxieTypeIAllergieQuestionsMap } from '../questions/blok5-week1-casus2-lmv-anafylaxie-type-i-allergie'
 import { blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap } from '../questions/blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie'
 import { blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap } from '../questions/blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek'
+import { blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap } from '../questions/blok5-week1-casus2-stm-pathogenese-type-iv-allergie'
 import { blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap } from '../questions/blok5-week2-casus3-aangeboren-stollingsstoornissen'
 import { blok5Week2Casus3BegripsbepalingDermatologischeUitingenQuestionsMap } from '../questions/blok5-week2-casus3-begripsbepaling-dermatologische-uitingen'
 import { blok5Week2Casus3HemostaseBasisQuestionsMap } from '../questions/blok5-week2-casus3-hemostase-basis'
@@ -119,6 +120,8 @@ import { blok5Week5Casus11IntroductieKinderoncologieQuestionsMap } from '../ques
 import { blok5Week5Casus11KinderoncologieBegrijpDeHallmarksQuestionsMap } from '../questions/blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks'
 import { blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdQuestionsMap } from '../questions/blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd'
 import { blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap } from '../questions/blok5-week5-casus11-typen-kinderoncologie-bij-kinderen'
+import { blok5Week5Casus11LmoImportziektenQuestionsMap } from '../questions/blok5-week5-casus11-lmo-importziekten'
+import { blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap } from '../questions/blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie'
 import { blok5Week6Casus12GaswisselingHbO2Co2CoQuestionsMap } from '../questions/blok5-week6-casus12-gaswisseling-hb-o2-co2-co'
 import { blok5Week6Casus12NvicAcuteVergiftigingQuestionsMap } from '../questions/blok5-week6-casus12-nvic-acute-vergiftiging'
 import { blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesQuestionsMap } from '../questions/blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties'
@@ -128,14 +131,23 @@ import { blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologi
 import { blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerQuestionsMap } from '../questions/blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker'
 import { blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap } from '../questions/blok5-week6-casus13-transplantatiegeneeskunde'
 import { blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap } from '../questions/blok5-week5-casus9-bouw-en-functie-van-de-thymus'
+import { blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap } from '../questions/blok5-week5-casus9-lmo-positieve-en-negatieve-selectie'
+import { blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap } from '../questions/blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen'
 import { blok5Week5Casus9EndocrieneAutoImmuunziektenQuestionsMap } from '../questions/blok5-week5-casus9-endocriene-auto-immuunziekten'
 import { blok5Week5Casus9PathogeneseAutoImmuunziektenQuestionsMap } from '../questions/blok5-week5-casus9-pathogenese-auto-immuunziekten'
+import { blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap } from '../questions/blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie'
+import { blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap } from '../questions/blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie'
+import { blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap } from '../questions/blok5-week5-casus9-lmv-patient-met-sle-samenvatting'
 import { blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieQuestionsMap } from '../questions/blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie'
 import { blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitQuestionsMap } from '../questions/blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit'
 import { blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap } from '../questions/blok5-week7-casus14-dermatoloog-in-je-broekzak'
+import { blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap } from '../questions/blok5-week7-casus14-lmo-ethiek-van-derma-apps'
+import { blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap } from '../questions/blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk'
+import { blok5Week7Casus14LmoWatIsAiQuestionsMap } from '../questions/blok5-week7-casus14-lmo-wat-is-ai'
 import { blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap } from '../questions/blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem'
 import { blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieQuestionsMap } from '../questions/blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie'
 import { blok5Week8Casus15ScyllaEnCharybdisQuestionsMap } from '../questions/blok5-week8-casus15-scylla-en-charybdis'
+import { blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap } from '../questions/blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg'
 
 import {
   embryogeneseQuestions,
@@ -470,6 +482,13 @@ export const practiceQuestionsCourseStructure = {
                 moduleKind: 'lmv',
                 questionsMap: blok5Week1Casus2LmvCentraleVsPerifereTolerantieQuestionsMap,
               },
+              {
+                id: 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie',
+                name: 'Pathogenese type IV allergie',
+                type: 'simple',
+                moduleKind: 'stm',
+                questionsMap: blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap,
+              },
             ],
           },
         ],
@@ -636,6 +655,12 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap: blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap,
               },
               {
+                id: 'blok5-week3-casus6-familiair-mammacarcinoom',
+                name: 'Familiair mammacarcinoom',
+                type: 'simple',
+                questionsMap: blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap,
+              },
+              {
                 id: 'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom',
                 name: 'Overdiagnose bij bevolkingsonderzoek mammacarcinoom',
                 type: 'simple',
@@ -772,6 +797,41 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 questionsMap: blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap,
               },
+              {
+                id: 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
+                name: 'Positieve en negatieve selectie',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
+                name: 'Klinische presentatie en immuunmechanismen',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
+                name: 'Introductie auto-immuniteit versus auto-inflammatie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
+                name: 'Auto-immuniteit als bijwerking bij immunotherapie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
+                name: 'Patiënt met SLE',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap,
+              },
             ],
           },
           {
@@ -828,6 +888,18 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Over leven na kanker op kinderleeftijd',
                 type: 'simple',
                 questionsMap: blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus11-lmo-importziekten',
+                name: 'Importziekten',
+                type: 'simple',
+                questionsMap: blok5Week5Casus11LmoImportziektenQuestionsMap,
+              },
+              {
+                id: 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie',
+                name: 'Infecties binnen de kinderoncologie',
+                type: 'simple',
+                questionsMap: blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap,
               },
             ],
           },
@@ -899,10 +971,31 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 14: AI in de zorg',
             lmes: [
               {
+                id: 'blok5-week7-casus14-lmo-wat-is-ai',
+                name: 'Wat is AI?',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week7Casus14LmoWatIsAiQuestionsMap,
+              },
+              {
                 id: 'blok5-week7-casus14-dermatoloog-in-je-broekzak',
                 name: 'Dermatoloog in je broekzak',
                 type: 'simple',
                 questionsMap: blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap,
+              },
+              {
+                id: 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk',
+                name: 'Implementatie in de dermatologische praktijk',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap,
+              },
+              {
+                id: 'blok5-week7-casus14-lmo-ethiek-van-derma-apps',
+                name: 'Ethiek van derma-apps',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap,
               },
             ],
           },
@@ -931,6 +1024,13 @@ export const practiceQuestionsCourseStructure = {
                 name: 'Remmen versus stimuleren van het afweersysteem',
                 type: 'simple',
                 questionsMap: blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap,
+              },
+              {
+                id: 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg',
+                name: 'Voorbereiding VOW palliatieve zorg',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap,
               },
             ],
           },
@@ -1324,6 +1424,29 @@ export const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStru
       : getImagesFromMap(lmeItem.questionsMap).map(img => img.id)
   ))
 
+/** Alle leaf-LME-id's (incl. image-sets) voor één blok — zelfde volgorde als het cursusoverzicht. */
+export function getPracticeLmeIdsForBlok(blokKey) {
+  const blok = practiceQuestionsCourseStructure[blokKey]
+  if (!blok?.weeks) return []
+  const ids = []
+  for (const week of blok.weeks) {
+    for (const casus of week.cases) {
+      for (const lmeItem of casus.lmes) {
+        if (lmeItem.type === 'simple') {
+          ids.push(lmeItem.id)
+        } else if (lmeItem.questionsMap) {
+          ids.push(...getImagesFromMap(lmeItem.questionsMap).map((img) => img.id))
+        }
+      }
+    }
+  }
+  return ids
+}
+
+export function buildBlokWrongAnswersParam(blokKey) {
+  return `blok-fouten-${blokKey}`
+}
+
 export function getLmeQuestionCount(lmeItem) {
   if (lmeItem.type === 'image-based' && lmeItem.questionsMap) return getQuestionCount(lmeItem.questionsMap)
   if (lmeItem.type === 'simple' && lmeItem.questionsMap) return getQuestionCount(lmeItem.questionsMap)
@@ -1388,7 +1511,69 @@ export function getLmeQuestionCount(lmeItem) {
   return Array.isArray(q) ? q.length : (q && typeof q === 'object' ? getQuestionCount(q) : 0)
 }
 
+export function isRandomMode(param) {
+  return param === 'alle-random' || param?.startsWith('casus-random-') || param?.startsWith('blok-random-') || param?.startsWith('blok-fouten-')
+}
+
+function collectQuestionsForCasus(casus) {
+  const allQuestions = []
+  for (const lmeItem of casus.lmes) {
+    if (lmeItem.type === 'image-based' && lmeItem.questionsMap) {
+      allQuestions.push(...Object.values(lmeItem.questionsMap).flat())
+    } else {
+      const questions = getPracticeQuestionsForLme(lmeItem.id)
+      allQuestions.push(...questions)
+    }
+  }
+  return allQuestions
+}
+
+function collectQuestionsForBlok(blokKey) {
+  const blok = practiceQuestionsCourseStructure[blokKey]
+  if (!blok) return []
+  const allQuestions = []
+  for (const week of blok.weeks) {
+    for (const casus of week.cases) {
+      allQuestions.push(...collectQuestionsForCasus(casus))
+    }
+  }
+  return allQuestions
+}
+
+function parseCasusRandomParam(lmeParam) {
+  // format: casus-random-blok5-w0-c1
+  const suffix = lmeParam.replace('casus-random-', '')
+  const wIdx = suffix.lastIndexOf('-w')
+  const cIdx = suffix.lastIndexOf('-c')
+  const blokKey = suffix.substring(0, wIdx)
+  const weekIdx = parseInt(suffix.substring(wIdx + 2, cIdx), 10)
+  const casusIdx = parseInt(suffix.substring(cIdx + 2), 10)
+  return { blokKey, weekIdx, casusIdx }
+}
+
+export function buildCasusRandomParam(blokKey, weekIdx, casusIdx) {
+  return `casus-random-${blokKey}-w${weekIdx}-c${casusIdx}`
+}
+
+export function buildBlokRandomParam(blokKey) {
+  return `blok-random-${blokKey}`
+}
+
 export function getPracticeQuestionsForLme(lmeParam) {
+  // Handle casus-random and blok-random
+  if (lmeParam?.startsWith('casus-random-')) {
+    const { blokKey, weekIdx, casusIdx } = parseCasusRandomParam(lmeParam)
+    const blok = practiceQuestionsCourseStructure[blokKey]
+    const casus = blok?.weeks[weekIdx]?.cases[casusIdx]
+    return casus ? collectQuestionsForCasus(casus) : []
+  }
+  if (lmeParam?.startsWith('blok-random-')) {
+    const blokKey = lmeParam.replace('blok-random-', '')
+    return collectQuestionsForBlok(blokKey)
+  }
+  if (lmeParam?.startsWith('blok-fouten-')) {
+    return []
+  }
   if (lmeParam === 'embryogenese') return embryogeneseQuestions
   if (lmeParam === 'beeldvorming') return beeldvormingQuestions
   if (lmeParam === 'extraembryonaal') return extraembryonaalQuestions
@@ -1553,6 +1738,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
     return blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
+    return Object.values(blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap).flat()
+  }
+  if (blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap[lmeParam]) {
+    return blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return Object.values(blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap).flat()
   }
@@ -1673,6 +1864,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap[lmeParam]) {
     return blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week3-casus6-familiair-mammacarcinoom') {
+    return Object.values(blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap).flat()
+  }
+  if (blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap[lmeParam]) {
+    return blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week3-casus6-mammapathologie') {
     return Object.values(blok5Week3Casus6MammapathologieQuestionsMap).flat()
   }
@@ -1783,6 +1980,36 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap[lmeParam]) {
     return blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie') {
+    return Object.values(blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap).flat()
+  }
+  if (blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap[lmeParam]) {
+    return blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen') {
+    return Object.values(blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap).flat()
+  }
+  if (blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap[lmeParam]) {
+    return blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie') {
+    return Object.values(blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap).flat()
+  }
+  if (blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap[lmeParam]) {
+    return blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie') {
+    return Object.values(blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap).flat()
+  }
+  if (blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap[lmeParam]) {
+    return blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting') {
+    return Object.values(blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap).flat()
+  }
+  if (blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap[lmeParam]) {
+    return blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
     return Object.values(blok5Week5Casus9EndocrieneAutoImmuunziektenQuestionsMap).flat()
   }
@@ -1837,6 +2064,18 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap[lmeParam]) {
     return blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week5-casus11-lmo-importziekten') {
+    return Object.values(blok5Week5Casus11LmoImportziektenQuestionsMap).flat()
+  }
+  if (blok5Week5Casus11LmoImportziektenQuestionsMap[lmeParam]) {
+    return blok5Week5Casus11LmoImportziektenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie') {
+    return Object.values(blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap).flat()
+  }
+  if (blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap[lmeParam]) {
+    return blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
     return Object.values(blok5Week6Casus12GaswisselingHbO2Co2CoQuestionsMap).flat()
   }
@@ -1887,11 +2126,29 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap[lmeParam]) {
     return blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok5-week7-casus14-lmo-wat-is-ai') {
+    return Object.values(blok5Week7Casus14LmoWatIsAiQuestionsMap).flat()
+  }
+  if (blok5Week7Casus14LmoWatIsAiQuestionsMap[lmeParam]) {
+    return blok5Week7Casus14LmoWatIsAiQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
     return Object.values(blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap).flat()
   }
   if (blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap[lmeParam]) {
     return blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk') {
+    return Object.values(blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap).flat()
+  }
+  if (blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap[lmeParam]) {
+    return blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-ethiek-van-derma-apps') {
+    return Object.values(blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap).flat()
+  }
+  if (blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap[lmeParam]) {
+    return blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
     return Object.values(blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap).flat()
@@ -1910,6 +2167,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok5Week8Casus15ScyllaEnCharybdisQuestionsMap[lmeParam]) {
     return blok5Week8Casus15ScyllaEnCharybdisQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg') {
+    return Object.values(blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap).flat()
+  }
+  if (blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap[lmeParam]) {
+    return blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok9-week1-casus1-acute-nierschade') return Object.values(blok9Week1Casus1AcuteNierschadeQuestionsMap).flat()
   if (blok9Week1Casus1AcuteNierschadeQuestionsMap[lmeParam]) return blok9Week1Casus1AcuteNierschadeQuestionsMap[lmeParam]
@@ -2204,6 +2467,12 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
     return 'Contactallergie en allergologisch onderzoek'
   }
+  if (lmeParam === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
+    return 'Pathogenese type IV allergie'
+  }
+  if (blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap[lmeParam]) {
+    return 'Pathogenese type IV allergie'
+  }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return 'Aangeboren stollingsstoornissen'
   }
@@ -2324,6 +2593,12 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap[lmeParam]) {
     return 'Het slechtnieuwsgesprek'
   }
+  if (lmeParam === 'blok5-week3-casus6-familiair-mammacarcinoom') {
+    return 'Familiair mammacarcinoom'
+  }
+  if (blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap[lmeParam]) {
+    return 'Familiair mammacarcinoom'
+  }
   if (lmeParam === 'blok5-week3-casus6-mammapathologie') {
     return 'Mammapathologie'
   }
@@ -2432,6 +2707,36 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap[lmeParam]) {
     return 'Bouw en functie van de thymus'
   }
+  if (lmeParam === 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie') {
+    return 'Positieve en negatieve selectie'
+  }
+  if (blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap[lmeParam]) {
+    return 'Positieve en negatieve selectie'
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen') {
+    return 'Klinische presentatie en immuunmechanismen'
+  }
+  if (blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap[lmeParam]) {
+    return 'Klinische presentatie en immuunmechanismen'
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie') {
+    return 'Introductie auto-immuniteit versus auto-inflammatie'
+  }
+  if (blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap[lmeParam]) {
+    return 'Introductie auto-immuniteit versus auto-inflammatie'
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie') {
+    return 'Auto-immuniteit als bijwerking bij immunotherapie'
+  }
+  if (blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap[lmeParam]) {
+    return 'Auto-immuniteit als bijwerking bij immunotherapie'
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting') {
+    return 'Patiënt met SLE'
+  }
+  if (blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap[lmeParam]) {
+    return 'Patiënt met SLE'
+  }
   if (lmeParam === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
     return 'Endocriene auto-immuunziekten'
   }
@@ -2486,6 +2791,18 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week5Casus11TypenKinderoncologieBijKinderenQuestionsMap[lmeParam]) {
     return 'Typen kinderoncologie bij kinderen'
   }
+  if (lmeParam === 'blok5-week5-casus11-lmo-importziekten') {
+    return 'Importziekten'
+  }
+  if (blok5Week5Casus11LmoImportziektenQuestionsMap[lmeParam]) {
+    return 'Importziekten'
+  }
+  if (lmeParam === 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie') {
+    return 'Infecties binnen de kinderoncologie'
+  }
+  if (blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap[lmeParam]) {
+    return 'Infecties binnen de kinderoncologie'
+  }
   if (lmeParam === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
     return 'Gaswisseling Hb, O2, CO2, CO'
   }
@@ -2534,11 +2851,29 @@ export function getPracticeTitleForLme(lmeParam) {
   if (blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap[lmeParam]) {
     return 'Transplantatiegeneeskunde'
   }
+  if (lmeParam === 'blok5-week7-casus14-lmo-wat-is-ai') {
+    return 'Wat is AI?'
+  }
+  if (blok5Week7Casus14LmoWatIsAiQuestionsMap[lmeParam]) {
+    return 'Wat is AI?'
+  }
   if (lmeParam === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
     return 'Dermatoloog in je broekzak'
   }
   if (blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap[lmeParam]) {
     return 'Dermatoloog in je broekzak'
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk') {
+    return 'Implementatie in de dermatologische praktijk'
+  }
+  if (blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap[lmeParam]) {
+    return 'Implementatie in de dermatologische praktijk'
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-ethiek-van-derma-apps') {
+    return 'Ethiek van derma-apps'
+  }
+  if (blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap[lmeParam]) {
+    return 'Ethiek van derma-apps'
   }
   if (lmeParam === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
     return 'Remmen versus stimuleren van het afweersysteem'
@@ -2557,6 +2892,12 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (blok5Week8Casus15ScyllaEnCharybdisQuestionsMap[lmeParam]) {
     return 'Scylla en Charybdis'
+  }
+  if (lmeParam === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg') {
+    return 'Voorbereiding VOW palliatieve zorg'
+  }
+  if (blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap[lmeParam]) {
+    return 'Voorbereiding VOW palliatieve zorg'
   }
   if (lmeParam === 'blok9-week1-casus1-acute-nierschade') return 'Acute nierschade'
   if (lmeParam === 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten') return 'Tubulaire en erfelijke nierziekten'
@@ -2608,7 +2949,22 @@ export function getPracticeTitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return 'Elektrofysiologisch onderzoek en ablaties'
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return 'Ritmestoornissen bij kinderen'
   if (lmeParam === 'alle-random') return 'Alle vragen (random)'
-  return 'Alle Oefenvragen'
+  if (lmeParam?.startsWith('casus-random-')) {
+    const { blokKey, weekIdx, casusIdx } = parseCasusRandomParam(lmeParam)
+    const casus = practiceQuestionsCourseStructure[blokKey]?.weeks[weekIdx]?.cases[casusIdx]
+    return casus?.name || 'Casusvragen'
+  }
+  if (lmeParam?.startsWith('blok-random-')) {
+    const blokKey = lmeParam.replace('blok-random-', '')
+    const blok = practiceQuestionsCourseStructure[blokKey]
+    return blok?.name || 'Blokvragen'
+  }
+  if (lmeParam?.startsWith('blok-fouten-')) {
+    const blokKey = lmeParam.replace('blok-fouten-', '')
+    const blok = practiceQuestionsCourseStructure[blokKey]
+    return blok ? `Fouten — ${blok.name}` : 'Fouten — oefenmix'
+  }
+  return 'Overzicht'
 }
 
 export function getPracticeSubtitleForLme(lmeParam) {
@@ -2744,6 +3100,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekQuestionsMap[lmeParam]?.length || 0} vragen over contactallergie en allergologisch onderzoek (inclusief een open vraag met modelantwoord).`
   }
+  if (lmeParam === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap)} meerkeuzevragen over pathogenese type IV allergie.`
+  }
+  if (blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week1Casus2StmPathogeneseTypeIVAllergieQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over pathogenese type IV allergie.`
+  }
   if (lmeParam === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return `Test je kennis met ${getQuestionCount(blok5Week2Casus3AangeborenStollingsstoornissenQuestionsMap)} meerkeuzevragen over aangeboren stollingsstoornissen.`
   }
@@ -2864,6 +3226,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week3Casus6HetSlechtnieuwsgesprekQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over het slechtnieuwsgesprek.`
   }
+  if (lmeParam === 'blok5-week3-casus6-familiair-mammacarcinoom') {
+    return `Test je kennis met ${getQuestionCount(blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap)} meerkeuzevragen over familiair mammacarcinoom.`
+  }
+  if (blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week3Casus6FamiliairMammacarcinoomQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over familiair mammacarcinoom.`
+  }
   if (lmeParam === 'blok5-week3-casus6-mammapathologie') {
     return `Test je kennis met ${getQuestionCount(blok5Week3Casus6MammapathologieQuestionsMap)} meerkeuzevragen over mammapathologie.`
   }
@@ -2969,6 +3337,36 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week5Casus9BouwEnFunctieVanDeThymusQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over bouw en functie van de thymus.`
   }
+  if (lmeParam === 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap)} meerkeuzevragen over positieve en negatieve selectie.`
+  }
+  if (blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus9LmoPositieveEnNegatieveSelectieQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over positieve en negatieve selectie.`
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap)} meerkeuzevragen over klinische presentatie en immuunmechanismen bij RA (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over klinische presentatie en immuunmechanismen bij RA (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap)} meerkeuzevragen over introductie auto-immuniteit versus auto-inflammatie.`
+  }
+  if (blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over introductie auto-immuniteit versus auto-inflammatie.`
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap)} vragen over auto-immuniteit als bijwerking bij immunotherapie (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieQuestionsMap[lmeParam]?.length || 0} vragen over auto-immuniteit als bijwerking bij immunotherapie (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (lmeParam === 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap)} meerkeuzevragen over patiënt met SLE.`
+  }
+  if (blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus9LmvPatientMetSleSamenvattingQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over patiënt met SLE.`
+  }
   if (lmeParam === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
     return `Test je kennis met ${getQuestionCount(blok5Week5Casus9EndocrieneAutoImmuunziektenQuestionsMap)} meerkeuzevragen over endocriene auto-immuunziekten.`
   }
@@ -3016,6 +3414,18 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over leven na kanker op kinderleeftijd en LATER-zorg.`
+  }
+  if (lmeParam === 'blok5-week5-casus11-lmo-importziekten') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus11LmoImportziektenQuestionsMap)} vragen over importziekten (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week5Casus11LmoImportziektenQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus11LmoImportziektenQuestionsMap[lmeParam]?.length || 0} vragen over importziekten (inclusief een open vraag met modelantwoord).`
+  }
+  if (lmeParam === 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie') {
+    return `Test je kennis met ${getQuestionCount(blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap)} vragen over infecties binnen de kinderoncologie (inclusief een open vraag met modelantwoord).`
+  }
+  if (blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieQuestionsMap[lmeParam]?.length || 0} vragen over infecties binnen de kinderoncologie (inclusief een open vraag met modelantwoord).`
   }
   if (lmeParam === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
     return `Test je kennis met ${getQuestionCount(blok5Week6Casus12GaswisselingHbO2Co2CoQuestionsMap)} meerkeuzevragen over gaswisseling, hemoglobine, zuurstoftransport en koolmonoxide.`
@@ -3065,11 +3475,29 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week6Casus13TransplantatiegeneeskundeQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over transplantatiegeneeskunde.`
   }
+  if (lmeParam === 'blok5-week7-casus14-lmo-wat-is-ai') {
+    return `Test je kennis met ${getQuestionCount(blok5Week7Casus14LmoWatIsAiQuestionsMap)} meerkeuzevragen over wat AI is en hoe het in de zorg past (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (blok5Week7Casus14LmoWatIsAiQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week7Casus14LmoWatIsAiQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over wat AI is en hoe het in de zorg past (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
   if (lmeParam === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
     return `Test je kennis met ${getQuestionCount(blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap)} meerkeuzevragen over dermatoloog in je broekzak (AI en huidapps).`
   }
   if (blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week7Casus14DermatoloogInJeBroekzakQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over dermatoloog in je broekzak (AI en huidapps).`
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk') {
+    return `Test je kennis met ${getQuestionCount(blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap)} meerkeuzevragen over implementatie van AI in de dermatologische praktijk (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over implementatie van AI in de dermatologische praktijk (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (lmeParam === 'blok5-week7-casus14-lmo-ethiek-van-derma-apps') {
+    return `Test je kennis met ${getQuestionCount(blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap)} meerkeuzevragen over ethiek van derma-apps (inclusief een vraag die het modelantwoord van de open vraag toetst).`
+  }
+  if (blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week7Casus14LmoEthiekVanDermaAppsQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over ethiek van derma-apps (inclusief een vraag die het modelantwoord van de open vraag toetst).`
   }
   if (lmeParam === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
     return `Test je kennis met ${getQuestionCount(blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemQuestionsMap)} meerkeuzevragen over remmen versus stimuleren van het afweersysteem.`
@@ -3088,6 +3516,12 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (blok5Week8Casus15ScyllaEnCharybdisQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week8Casus15ScyllaEnCharybdisQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over Scylla en Charybdis.`
+  }
+  if (lmeParam === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg') {
+    return `Test je kennis met ${getQuestionCount(blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap)} meerkeuzevragen over voorbereiding VOW palliatieve zorg.`
+  }
+  if (blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap[lmeParam]) {
+    return `Test je kennis met ${blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over voorbereiding VOW palliatieve zorg.`
   }
   if (blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomQuestionsMap[lmeParam]) {
     return `Test je kennis met ${blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over radiologische diagnostiek mammacarcinoom.`
@@ -3206,5 +3640,16 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]) return `Test je kennis met ${blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over elektrofysiologisch onderzoek en ablaties.`
   if (blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]) return `Test je kennis met ${blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over ritmestoornissen bij kinderen.`
   if (lmeParam === 'alle-random') return 'Oefen alle meerkeuzevragen in willekeurige volgorde.'
-  return 'Test je kennis met 607 meerkeuzevragen over alle LMEs.'
+  if (lmeParam?.startsWith('casus-random-')) {
+    const q = getPracticeQuestionsForLme(lmeParam)
+    return `Oefen alle ${q.length} vragen van deze casus.`
+  }
+  if (lmeParam?.startsWith('blok-random-')) {
+    const q = getPracticeQuestionsForLme(lmeParam)
+    return `Oefen alle ${q.length} vragen van dit blok.`
+  }
+  if (lmeParam?.startsWith('blok-fouten-')) {
+    return 'Alle meerkeuzevragen die je in dit blok fout had (volgens je opgeslagen voortgang), in willekeurige volgorde.'
+  }
+  return 'Test je kennis over de stof met oefenvragen per LME, casus of blok.'
 }

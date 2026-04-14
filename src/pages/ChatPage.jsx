@@ -185,9 +185,13 @@ const ChatPage = () => {
   const inputRef = useRef(null)
   const answerModeRef = useRef(null)
   const lastPracticeBootstrapKey = useRef(null)
+  const lastSummaryBootstrapKey = useRef(null)
 
   useEffect(() => {
-    if (location.pathname !== '/chat') lastPracticeBootstrapKey.current = null
+    if (location.pathname !== '/chat') {
+      lastPracticeBootstrapKey.current = null
+      lastSummaryBootstrapKey.current = null
+    }
   }, [location.pathname])
 
   useEffect(() => {
@@ -200,7 +204,7 @@ const ChatPage = () => {
     const key = getChatStorageKey(progressUserId)
     chatStorageKeyRef.current = key
     let loaded = loadChatsForKey(key)
-    const skipEmpty = Boolean(location.state?.practiceContext)
+    const skipEmpty = Boolean(location.state?.practiceContext) || Boolean(location.state?.summaryContext)
     if (loaded.length === 0 && !skipEmpty) {
       const id = generateId()
       loaded = [
@@ -364,10 +368,91 @@ const ChatPage = () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            model: 'gpt-4o',
+            model: 'gpt-5.4-mini',
             messages: apiMessages,
             temperature: 0.35,
-            max_tokens: 500,
+            max_completion_tokens: 500,
+            usageScope: 'chat',
+            uid: user?.uid,
+            email: user?.email || undefined,
+            firebaseIdToken,
+          }),
+        })
+        const data = await res.json()
+        if (data.error) {
+          appendAssistantMessage(id, `Fout: ${data.error.message}`)
+        } else {
+          const reply = data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
+          appendAssistantMessage(id, reply)
+        }
+      } catch {
+        appendAssistantMessage(id, 'Er ging iets mis met de verbinding. Probeer het opnieuw.')
+      } finally {
+        setLoading(false)
+        inputRef.current?.focus()
+      }
+    })()
+  }, [location.state, navigate, answerMode, appendAssistantMessage, progressUserId])
+
+  // From summary page: start a chat about summary content
+  useEffect(() => {
+    const ctx = location.state?.summaryContext
+    if (!ctx) return
+    if (progressUserId == null) return
+    const key = JSON.stringify(ctx)
+    if (lastSummaryBootstrapKey.current === key) return
+    lastSummaryBootstrapKey.current = key
+
+    navigate('/chat', { replace: true, state: null })
+
+    const id = generateId()
+    const userContent = ctx.selectedText
+      ? `Ik lees de samenvatting "${ctx.lmeName}" en begrijp het volgende stuk niet goed:\n\n"${ctx.selectedText}"\n\nKun je dit uitleggen?`
+      : `Ik heb de samenvatting "${ctx.lmeName}" gelezen maar begrijp sommige delen niet helemaal. Kun je de belangrijkste punten kort en duidelijk uitleggen?`
+    const userMessage = { role: 'user', content: userContent }
+
+    setChats((prev) => {
+      const next = [
+        ...prev,
+        {
+          id,
+          title: ctx.selectedText
+            ? `Samenvatting — ${ctx.lmeName}`
+            : `Uitleg — ${ctx.lmeName}`,
+          messages: [userMessage],
+          summaryLmeId: ctx.lmeId,
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        },
+      ]
+      saveChats(next)
+      return next
+    })
+    setCurrentChatId(id)
+
+    const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(
+      /\/$/,
+      ''
+    )
+
+    ;(async () => {
+      setLoading(true)
+      try {
+        const firebaseIdToken = user?.getIdToken ? await user.getIdToken() : undefined
+        const systemPrompt = getSystemPrompt(answerMode) +
+          `\n\nDe student leest de samenvatting: [[${ctx.lmeId}|${ctx.lmeName}]]. Verwijs in je antwoord altijd naar deze samenvatting. Geef een heldere, beknopte uitleg.`
+        const apiMessages = [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userContent },
+        ]
+        const res = await fetch(`${apiBase}/api/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'gpt-5.4-mini',
+            messages: apiMessages,
+            temperature: 0.35,
+            max_completion_tokens: 800,
             usageScope: 'chat',
             uid: user?.uid,
             email: user?.email || undefined,
@@ -436,10 +521,10 @@ const ChatPage = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'gpt-4o',
+          model: 'gpt-5.4-mini',
           messages: apiMessages,
           temperature: 0.4,
-          max_tokens: practiceContext
+          max_completion_tokens: practiceContext
             ? (answerMode === 'extended' ? 2000 : 900)
             : (answerMode === 'extended' ? 2000 : 800),
           usageScope: 'chat',

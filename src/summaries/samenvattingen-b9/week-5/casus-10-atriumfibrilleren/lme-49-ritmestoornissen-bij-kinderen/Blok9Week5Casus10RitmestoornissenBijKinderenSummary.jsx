@@ -59,6 +59,13 @@ const Blok9Week5Casus10RitmestoornissenBijKinderenSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus10-ritmestoornissen-bij-kinderen"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
+        variants: [
+          { id: 'blok9-week5-casus10-ritmestoornissen-bij-kinderen', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus10-ritmestoornissen-bij-kinderen-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -61,6 +61,13 @@ const Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus9-pathogenese-auto-immuunziekten"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus9-pathogenese-auto-immuunziekten',
+      variants: [
+        { id: 'blok5-week5-casus9-pathogenese-auto-immuunziekten', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus9-pathogenese-auto-immuunziekten-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

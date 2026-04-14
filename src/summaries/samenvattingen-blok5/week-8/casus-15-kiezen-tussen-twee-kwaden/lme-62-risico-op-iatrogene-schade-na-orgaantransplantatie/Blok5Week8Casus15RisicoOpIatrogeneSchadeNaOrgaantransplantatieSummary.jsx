@@ -55,6 +55,13 @@ const Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary = ()
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie',
+      variants: [
+        { id: 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie', label: 'Uitgebreid' },
+        { id: 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

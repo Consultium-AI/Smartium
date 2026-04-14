@@ -1006,7 +1006,7 @@ export default {
     }
 
     const payload = {
-      model: typeof model === 'string' && model ? model : 'gpt-4o',
+      model: typeof model === 'string' && model ? model : 'gpt-5-mini',
       messages,
       ...(typeof temperature === 'number' ? { temperature } : {}),
       ...(typeof max_tokens === 'number' ? { max_tokens } : {}),

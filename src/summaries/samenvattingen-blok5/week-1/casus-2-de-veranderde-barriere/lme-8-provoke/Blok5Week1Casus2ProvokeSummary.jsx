@@ -55,6 +55,13 @@ const Blok5Week1Casus2ProvokeSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week1-casus2-provoke"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus2-provoke',
+      variants: [
+        { id: 'blok5-week1-casus2-provoke', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus2-provoke-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

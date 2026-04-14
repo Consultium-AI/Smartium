@@ -52,6 +52,13 @@ const Blok5Week4Casus7LymfadenopathieSummary = () => {
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok5-week4-casus7-lymfadenopathie"
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus7-lymfadenopathie',
+      variants: [
+        { id: 'blok5-week4-casus7-lymfadenopathie', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus7-lymfadenopathie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Brondocumentkop />

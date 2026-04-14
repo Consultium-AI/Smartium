@@ -62,6 +62,13 @@ const Blok5Week1Casus2LmvAnafylaxieTypeIAllergieSummary = () => {
       moduleKind="lmv"
       practiceLink="/oefenvragen?lme=blok5-week1-casus2-lmv-anafylaxie-type-i-allergie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
+      variants: [
+        { id: 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

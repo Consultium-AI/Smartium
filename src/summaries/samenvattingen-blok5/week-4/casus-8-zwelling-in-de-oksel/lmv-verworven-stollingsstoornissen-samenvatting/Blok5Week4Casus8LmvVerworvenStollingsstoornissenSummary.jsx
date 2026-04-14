@@ -52,6 +52,13 @@ const Blok5Week4Casus8LmvVerworvenStollingsstoornissenSummary = () => {
       moduleKind="lmv"
       practiceLink="/oefenvragen?lme=blok5-week4-casus8-lmv-verworven-stollingsstoornissen"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
+      variants: [
+        { id: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

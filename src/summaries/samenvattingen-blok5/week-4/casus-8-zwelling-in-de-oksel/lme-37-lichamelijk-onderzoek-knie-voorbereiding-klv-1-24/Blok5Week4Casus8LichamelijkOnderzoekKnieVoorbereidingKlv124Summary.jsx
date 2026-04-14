@@ -65,6 +65,13 @@ const Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary = () =>
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
+      variants: [
+        { id: 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

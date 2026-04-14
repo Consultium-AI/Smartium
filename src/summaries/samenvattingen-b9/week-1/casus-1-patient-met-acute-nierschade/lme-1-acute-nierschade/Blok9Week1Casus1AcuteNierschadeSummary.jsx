@@ -37,6 +37,13 @@ const Blok9Week1Casus1AcuteNierschadeSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus1-acute-nierschade"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus1-acute-nierschade',
+        variants: [
+          { id: 'blok9-week1-casus1-acute-nierschade', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus1-acute-nierschade-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <SectLeerdoelenEnWatIs />

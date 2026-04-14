@@ -68,6 +68,13 @@ const Blok9Week4Casus7PneumonieEpidemiologieSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling',
+        variants: [
+          { id: 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02PneumonieInHetKort /></section>

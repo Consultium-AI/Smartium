@@ -49,6 +49,13 @@ const Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary = () => {
       tableOfContents={tableOfContents}
       practiceLink={PRACTICE_LME_PATH}
       practiceFooter={<Blok5Week6Casus13MProteineDiagnostiekOefenvragenCallout to={PRACTICE_LME_PATH} />}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker',
+      variants: [
+        { id: 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker', label: 'Uitgebreid' },
+        { id: 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

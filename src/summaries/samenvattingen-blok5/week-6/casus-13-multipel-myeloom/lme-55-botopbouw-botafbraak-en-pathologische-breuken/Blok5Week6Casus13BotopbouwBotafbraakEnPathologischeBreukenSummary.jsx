@@ -47,6 +47,13 @@ const Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary = () => 
       tableOfContents={tableOfContents}
       practiceLink={PRACTICE_LME_PATH}
       practiceFooter={<Blok5Week6Casus13BotopbouwOefenvragenCallout to={PRACTICE_LME_PATH} />}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken',
+      variants: [
+        { id: 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken', label: 'Uitgebreid' },
+        { id: 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

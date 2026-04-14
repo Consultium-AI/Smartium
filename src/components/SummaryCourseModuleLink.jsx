@@ -3,16 +3,19 @@ import { BookOpen, CheckCircle2, ChevronRight, Clock, Lock } from 'lucide-react'
 import { getSummaryModuleLinkStyles } from '../utils/summaryModuleLinkStyles'
 
 export default function SummaryCourseModuleLink({ lmeItem, showPremiumLocks, isBlocked, seen = false }) {
-  const locked = showPremiumLocks && isBlocked(lmeItem.id)
   const s = getSummaryModuleLinkStyles(lmeItem.moduleKind)
+  const locked = showPremiumLocks && isBlocked(lmeItem.id)
+
+  const cardClassName = `group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all ${
+    locked
+      ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
+      : `bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 ${s.hoverBorder} hover:shadow-md ${s.hoverShadow} ${s.hoverBg} dark:hover:bg-slate-800/95`
+  }`
 
   return (
     <Link
       to={locked ? '/billing' : `/summary?lme=${lmeItem.id}`}
-      className={`group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-        ${locked
-          ? 'bg-slate-100 dark:bg-slate-800/50 border-slate-300/90 dark:border-slate-600/90 opacity-90'
-          : `bg-white dark:bg-slate-800/60 border-slate-200/90 dark:border-slate-600/90 ${s.hoverBorder} hover:shadow-md ${s.hoverShadow} ${s.hoverBg} dark:hover:bg-slate-800/95`}`}
+      className={cardClassName}
     >
       <div className="flex items-center gap-3 min-w-0">
         <div className={`p-2 rounded-lg shrink-0 ${s.iconWrap}`}>

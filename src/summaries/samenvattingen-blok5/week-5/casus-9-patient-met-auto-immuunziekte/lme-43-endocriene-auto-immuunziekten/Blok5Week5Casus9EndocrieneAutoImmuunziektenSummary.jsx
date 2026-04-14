@@ -53,6 +53,13 @@ const Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus9-endocriene-auto-immuunziekten"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus9-endocriene-auto-immuunziekten',
+      variants: [
+        { id: 'blok5-week5-casus9-endocriene-auto-immuunziekten', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus9-endocriene-auto-immuunziekten-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

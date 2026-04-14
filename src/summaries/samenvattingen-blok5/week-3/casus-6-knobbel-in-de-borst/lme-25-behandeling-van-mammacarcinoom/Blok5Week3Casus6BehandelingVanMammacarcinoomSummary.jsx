@@ -52,6 +52,13 @@ const Blok5Week3Casus6BehandelingVanMammacarcinoomSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus6-behandeling-van-mammacarcinoom"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus6-behandeling-van-mammacarcinoom',
+      variants: [
+        { id: 'blok5-week3-casus6-behandeling-van-mammacarcinoom', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus6-behandeling-van-mammacarcinoom-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

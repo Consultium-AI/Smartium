@@ -52,6 +52,13 @@ const Blok5Week5Casus11IntroductieKinderoncologieSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus11-introductie-kinderoncologie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus11-introductie-kinderoncologie',
+      variants: [
+        { id: 'blok5-week5-casus11-introductie-kinderoncologie', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus11-introductie-kinderoncologie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

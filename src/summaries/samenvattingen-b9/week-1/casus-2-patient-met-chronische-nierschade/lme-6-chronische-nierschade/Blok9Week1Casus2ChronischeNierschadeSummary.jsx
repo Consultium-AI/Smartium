@@ -47,6 +47,13 @@ const Blok9Week1Casus2ChronischeNierschadeSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus2-chronische-nierschade"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus2-chronische-nierschade',
+        variants: [
+          { id: 'blok9-week1-casus2-chronische-nierschade', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus2-chronische-nierschade-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsHetTabel1 /></section>

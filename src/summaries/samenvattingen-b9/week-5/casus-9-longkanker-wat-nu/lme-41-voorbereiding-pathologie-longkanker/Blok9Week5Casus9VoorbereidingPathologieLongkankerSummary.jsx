@@ -72,6 +72,13 @@ const Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus9-voorbereiding-pathologie-longkanker"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus9-voorbereiding-pathologie-longkanker',
+        variants: [
+          { id: 'blok9-week5-casus9-voorbereiding-pathologie-longkanker', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus9-voorbereiding-pathologie-longkanker-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02NormaleLongIntro /></section>

@@ -53,9 +53,18 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper>} />
+          <Route path="/oefenvragen-blok3" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok3" /></ContentProtectionWrapper>} />
+          <Route path="/oefenvragen-blok4" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok4" /></ContentProtectionWrapper>} />
+          <Route path="/oefenvragen-blok5" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
+          <Route path="/oefenvragen-blok9" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
           <Route path="/summary" element={<ContentProtectionWrapper><SummaryPage /></ContentProtectionWrapper>} />
+          <Route path="/summary-blok3" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok3" /></ContentProtectionWrapper>} />
+          <Route path="/summary-blok4" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok4" /></ContentProtectionWrapper>} />
+          <Route path="/summary-blok5" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
+          <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
           <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
           <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
+          <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />
           <Route path="/tentamen-blok5" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={5} /></ContentProtectionWrapper>} />
           <Route path="/tentamen-blok9" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper>} />
           <Route path="/login" element={<LoginPage />} />

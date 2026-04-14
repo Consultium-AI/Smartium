@@ -9,6 +9,7 @@ import {
   fetchExamOpenGrading,
   parseExamOpenScore,
   fetchExamFollowUp,
+  fetchExamCorrectExplanation,
 } from '../../utils/examBlokAi'
 
 /** @param {() => number} rng */
@@ -53,27 +54,46 @@ function ScoreBadge({ earned, max }) {
   )
 }
 
-function ExplanationReveal({ questionId, revealed, earnedPoints, maxPoints, explanation }) {
+function ExplanationReveal({ questionId, revealed, earnedPoints, maxPoints, question }) {
   const [showExplanation, setShowExplanation] = useState(false)
+  const [aiExplanation, setAiExplanation] = useState('')
+  const [aiLoading, setAiLoading] = useState(false)
+  const [aiError, setAiError] = useState('')
   const fullScore = (earnedPoints ?? 0) >= maxPoints
+  const staticExplanation = question?.explanation || ''
 
   useEffect(() => {
-    if (!revealed || !explanation) {
+    if (!revealed) {
       setShowExplanation(false)
-      return
+      setAiExplanation('')
+      setAiError('')
+      setAiLoading(false)
     }
-    if (!fullScore) {
-      setShowExplanation(true)
-    }
-  }, [questionId, revealed, fullScore, explanation])
+  }, [questionId, revealed])
 
-  if (!revealed || !explanation) return null
+  if (!revealed) return null
+  if (!fullScore && !staticExplanation) return null
+
+  const handleShowExplanation = async () => {
+    setShowExplanation(true)
+    if (!fullScore || aiExplanation || aiLoading) return
+    setAiError('')
+    setAiLoading(true)
+    try {
+      const text = await fetchExamCorrectExplanation({ question, maxPoints })
+      setAiExplanation(text)
+    } catch (e) {
+      setAiError(e?.message || 'Kon AI-uitleg niet ophalen.')
+    } finally {
+      setAiLoading(false)
+    }
+  }
 
   if (!showExplanation) {
     return (
       <button
         type="button"
-        onClick={() => setShowExplanation(true)}
+        onClick={handleShowExplanation}
         className="mt-2 inline-flex items-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/50 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-primary-400 dark:hover:border-primary-500/50 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
       >
         Uitleg antwoord
@@ -81,7 +101,28 @@ function ExplanationReveal({ questionId, revealed, earnedPoints, maxPoints, expl
     )
   }
 
-  return <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{explanation}</p>
+  if (fullScore) {
+    return (
+      <div className="mt-2 rounded-lg border border-slate-200/90 dark:border-slate-700/80 bg-slate-50/70 dark:bg-slate-900/40 p-3">
+        {aiLoading && (
+          <div className="inline-flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+            AI-uitleg ophalen...
+          </div>
+        )}
+        {!aiLoading && aiExplanation && (
+          <InlineAiText text={aiExplanation} className="text-sm text-slate-600 dark:text-slate-400" />
+        )}
+        {!aiLoading && aiError && (
+          <p className="text-sm text-red-600 dark:text-red-400">
+            Fout: {aiError}
+          </p>
+        )}
+      </div>
+    )
+  }
+
+  return <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{staticExplanation}</p>
 }
 
 function RubricPanel({ question }) {
@@ -212,7 +253,7 @@ function ExamFollowUpChat({ question, aiFeedback, canUseFollowUp = true }) {
   )
 }
 
-export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiFollowUp = true }) {
+export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const revealed = answer?.revealed
   const selected = answer?.answer
   const correctLetter = displayQ._shuffledCorrect ?? displayQ.correctAnswer
@@ -249,7 +290,7 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiF
               onReveal({
                 answer: option.letter,
                 earnedPoints: option.letter === correctLetter ? question.points : 0,
-                revealed: true,
+                revealed: !deferGrading,
               })
             }
             className={`flex w-full items-start gap-3 rounded-xl border-2 p-3 text-left transition-all ${getStyle(option.letter)}`}
@@ -275,7 +316,7 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiF
         revealed={revealed}
         earnedPoints={answer.earnedPoints ?? 0}
         maxPoints={question.points}
-        explanation={question.explanation}
+        question={question}
       />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
@@ -284,7 +325,7 @@ export function MeerkeuzeBlock({ question, displayQ, answer, onReveal, canUseAiF
   )
 }
 
-export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const [selected, setSelected] = useState(() => new Set(answer?.answer ?? []))
   const revealed = answer?.revealed
 
@@ -341,7 +382,7 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFo
       }
       earnedPoints = (ok / letters.length) * question.points
     }
-    onReveal({ answer: [...selected], earnedPoints, revealed: true })
+    onReveal({ answer: [...selected], earnedPoints, revealed: !deferGrading })
   }
 
   return (
@@ -405,7 +446,7 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFo
           }
           className="mt-4 rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white hover:bg-primary-600 disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          Controleer
+          {deferGrading ? 'Antwoord opslaan' : 'Controleer'}
         </button>
       )}
       {revealed && (
@@ -418,7 +459,7 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFo
         revealed={revealed}
         earnedPoints={answer.earnedPoints ?? 0}
         maxPoints={question.points}
-        explanation={question.explanation}
+        question={question}
       />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
@@ -427,7 +468,7 @@ export function MeerdereAntwoordenBlock({ question, answer, onReveal, canUseAiFo
   )
 }
 
-export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const items = question.items
   const [mapping, setMapping] = useState(() => {
     const a = answer?.answer
@@ -456,7 +497,7 @@ export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp 
       if ((mapping[String(i)] || '').toLowerCase() === String(want).toLowerCase()) ok++
     }
     const earnedPoints = (ok / items.length) * question.points
-    onReveal({ answer: { ...mapping }, earnedPoints, revealed: true })
+    onReveal({ answer: { ...mapping }, earnedPoints, revealed: !deferGrading })
   }
 
   return (
@@ -514,7 +555,7 @@ export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp 
           onClick={submit}
           className="mt-4 rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white hover:bg-primary-600 disabled:opacity-40"
         >
-          Controleer koppelingen
+          {deferGrading ? 'Koppelingen opslaan' : 'Controleer koppelingen'}
         </button>
       )}
       {revealed && (
@@ -527,7 +568,7 @@ export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp 
         revealed={revealed}
         earnedPoints={answer.earnedPoints ?? 0}
         maxPoints={question.points}
-        explanation={question.explanation}
+        question={question}
       />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
@@ -536,7 +577,7 @@ export function KoppelvraagBlock({ question, answer, onReveal, canUseAiFollowUp 
   )
 }
 
-export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const [choices, setChoices] = useState(() =>
     question.statements.map((_, i) => (answer?.answer?.[i] !== undefined ? answer.answer[i] : null))
   )
@@ -565,7 +606,7 @@ export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp
     question.statements.forEach((s, i) => {
       if (choices[i] === s.correct) earned += pps
     })
-    onReveal({ answer: [...choices], earnedPoints: earned, revealed: true })
+    onReveal({ answer: [...choices], earnedPoints: earned, revealed: !deferGrading })
   }
 
   return (
@@ -620,7 +661,7 @@ export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp
           onClick={submit}
           className="mt-4 rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
         >
-          Controleer
+          {deferGrading ? 'Antwoorden opslaan' : 'Controleer'}
         </button>
       )}
       {revealed && (
@@ -633,7 +674,7 @@ export function JuistOnjuistBlock({ question, answer, onReveal, canUseAiFollowUp
         revealed={revealed}
         earnedPoints={answer.earnedPoints ?? 0}
         maxPoints={question.points}
-        explanation={question.explanation}
+        question={question}
       />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
@@ -649,7 +690,7 @@ function countWords(s) {
     .filter(Boolean).length
 }
 
-export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const [text, setText] = useState(() => (typeof answer?.answer === 'string' ? answer.answer : ''))
   const [loading, setLoading] = useState(false)
   const [err, setErr] = useState(null)
@@ -682,7 +723,7 @@ export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = 
         aiFeedback: feedback,
         earnedPoints: earned ?? 0,
         manualOnly: earned == null,
-        revealed: true,
+        revealed: !deferGrading,
       })
     } catch (e) {
       setErr(e?.message || 'Fout bij nakijken')
@@ -700,7 +741,7 @@ export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = 
       aiFeedback: answer?.aiFeedback ?? '',
       earnedPoints: earned,
       manualOnly: false,
-      revealed: true,
+      revealed: !deferGrading,
     })
   }
 
@@ -731,8 +772,11 @@ export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = 
           className="mt-3 inline-flex items-center gap-2 rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white disabled:opacity-40"
         >
           {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-          Controleer antwoord
+          {deferGrading ? 'Antwoord opslaan' : 'Controleer antwoord'}
         </button>
+        {deferGrading && answer?.earnedPoints != null && (
+          <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-300">Antwoord opgeslagen.</p>
+        )}
         {err && <p className="mt-2 text-sm text-red-600">{err}</p>}
       </div>
     )
@@ -782,7 +826,7 @@ export function OpenVraagBlock({ question, answer, onReveal, canUseAiFollowUp = 
   )
 }
 
-export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const opts = question.orderOptions
   const correct = question.correctOrder
   const [order, setOrder] = useState(() => {
@@ -808,7 +852,7 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollo
 
   const submit = () => {
     const ok = order.every((layer, i) => layer === correct[i])
-    onReveal({ answer: [...order], earnedPoints: ok ? question.points : 0, revealed: true })
+    onReveal({ answer: [...order], earnedPoints: ok ? question.points : 0, revealed: !deferGrading })
   }
 
   return (
@@ -847,7 +891,7 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollo
       </ol>
       {!revealed && (
         <button type="button" onClick={submit} className="mt-4 rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white">
-          Controleer
+          {deferGrading ? 'Volgorde opslaan' : 'Controleer'}
         </button>
       )}
       {revealed && (
@@ -860,7 +904,7 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollo
         revealed={revealed}
         earnedPoints={answer.earnedPoints ?? 0}
         maxPoints={question.points}
-        explanation={question.explanation}
+        question={question}
       />
       {revealed && (answer.earnedPoints ?? 0) < question.points && (
         <ExamFollowUpChat question={question} aiFeedback={question.explanation || ''} canUseFollowUp={canUseAiFollowUp} />
@@ -869,18 +913,19 @@ export function BeeldvraagOrderBlock({ question, answer, onReveal, canUseAiFollo
   )
 }
 
-export function BeeldvraagAiBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function BeeldvraagAiBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   return (
     <OpenVraagBlock
       question={{ ...question, wordLimit: null }}
       answer={answer}
       onReveal={onReveal}
       canUseAiFollowUp={canUseAiFollowUp}
+      deferGrading={deferGrading}
     />
   )
 }
 
-export function RekenvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true }) {
+export function RekenvraagBlock({ question, answer, onReveal, canUseAiFollowUp = true, deferGrading = false }) {
   const [val, setVal] = useState(() => (answer?.answer != null ? String(answer.answer) : ''))
   const revealed = answer?.revealed
 
@@ -893,7 +938,7 @@ export function RekenvraagBlock({ question, answer, onReveal, canUseAiFollowUp =
     if (Number.isNaN(n)) return
     const diff = Math.abs(n - question.correctValue)
     const ok = diff <= (question.tolerance ?? 0.001)
-    onReveal({ answer: n, earnedPoints: ok ? question.points : 0, revealed: true })
+    onReveal({ answer: n, earnedPoints: ok ? question.points : 0, revealed: !deferGrading })
   }
 
   return (
@@ -914,7 +959,7 @@ export function RekenvraagBlock({ question, answer, onReveal, canUseAiFollowUp =
         />
         {!revealed && (
           <button type="button" onClick={submit} className="rounded-xl bg-primary-500 px-4 py-2 text-sm font-bold text-white">
-            Controleer
+            {deferGrading ? 'Antwoord opslaan' : 'Controleer'}
           </button>
         )}
       </div>

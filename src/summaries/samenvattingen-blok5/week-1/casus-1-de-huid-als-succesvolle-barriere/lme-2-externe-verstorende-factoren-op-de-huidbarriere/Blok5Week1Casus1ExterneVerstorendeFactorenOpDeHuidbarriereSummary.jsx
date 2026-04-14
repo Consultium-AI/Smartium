@@ -55,6 +55,13 @@ const Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary = () => 
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere',
+      variants: [
+        { id: 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

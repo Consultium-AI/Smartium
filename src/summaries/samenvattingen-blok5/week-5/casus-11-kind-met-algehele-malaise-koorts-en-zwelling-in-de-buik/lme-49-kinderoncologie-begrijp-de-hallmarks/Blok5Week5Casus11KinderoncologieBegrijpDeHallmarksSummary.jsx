@@ -47,6 +47,13 @@ const Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks',
+      variants: [
+        { id: 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

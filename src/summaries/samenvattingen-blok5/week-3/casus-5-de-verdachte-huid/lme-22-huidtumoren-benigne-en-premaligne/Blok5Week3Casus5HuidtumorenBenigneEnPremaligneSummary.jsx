@@ -58,6 +58,13 @@ const Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus5-huidtumoren-benigne-en-premaligne"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne',
+      variants: [
+        { id: 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

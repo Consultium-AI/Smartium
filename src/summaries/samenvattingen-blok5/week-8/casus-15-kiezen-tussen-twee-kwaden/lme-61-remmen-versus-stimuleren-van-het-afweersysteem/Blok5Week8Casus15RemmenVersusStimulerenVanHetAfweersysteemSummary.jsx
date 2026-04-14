@@ -51,6 +51,13 @@ const Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary = () => 
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem',
+      variants: [
+        { id: 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem', label: 'Uitgebreid' },
+        { id: 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

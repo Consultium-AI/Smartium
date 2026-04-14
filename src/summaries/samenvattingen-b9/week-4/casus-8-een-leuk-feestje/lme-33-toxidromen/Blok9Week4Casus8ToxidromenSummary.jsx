@@ -41,6 +41,13 @@ const Blok9Week4Casus8ToxidromenSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus8-toxidromen"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus8-toxidromen',
+        variants: [
+          { id: 'blok9-week4-casus8-toxidromen', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus8-toxidromen-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsEenIntoxicatie /></section>

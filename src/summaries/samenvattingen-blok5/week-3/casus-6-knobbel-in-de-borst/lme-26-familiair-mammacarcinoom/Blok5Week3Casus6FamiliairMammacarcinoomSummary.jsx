@@ -56,6 +56,13 @@ const Blok5Week3Casus6FamiliairMammacarcinoomSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus6-familiair-mammacarcinoom"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus6-familiair-mammacarcinoom',
+      variants: [
+        { id: 'blok5-week3-casus6-familiair-mammacarcinoom', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus6-familiair-mammacarcinoom-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

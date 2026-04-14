@@ -2,6 +2,10 @@ import { motion } from 'framer-motion'
 import { Link, useSearchParams } from 'react-router-dom'
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react'
 import Navbar from '../../components/Navbar'
+import SummaryAiAssistant from '../../components/SummaryAiAssistant'
+import { useAccess } from '../../hooks/useAccess'
+import { VariantSwitchProvider } from '../../components/SummaryLayout'
+import { lmeMap } from '../../data/lmeIndex'
 
 const SUMMARY_ORDER = [
   'embryogenese',
@@ -113,6 +117,11 @@ const SUMMARY_ORDER = [
   'blok5-week5-casus9-pathogenese-auto-immuunziekten',
   'blok5-week5-casus9-endocriene-auto-immuunziekten',
   'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+  'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
+  'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
+  'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
+  'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
+  'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
   'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie',
   'blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit',
   'blok5-week5-casus11-introductie-kinderoncologie',
@@ -120,6 +129,8 @@ const SUMMARY_ORDER = [
   'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks',
   'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd',
   'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
+  'blok5-week5-casus11-lmo-importziekten',
+  'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie',
   'blok5-week6-casus12-gaswisseling-hb-o2-co2-co',
   'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties',
   'blok5-week6-casus12-nvic-acute-vergiftiging',
@@ -128,10 +139,14 @@ const SUMMARY_ORDER = [
   'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie',
   'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
   'blok5-week6-casus13-transplantatiegeneeskunde',
+  'blok5-week7-casus14-lmo-wat-is-ai',
   'blok5-week7-casus14-dermatoloog-in-je-broekzak',
+  'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk',
+  'blok5-week7-casus14-lmo-ethiek-van-derma-apps',
   'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie',
   'blok5-week8-casus15-scylla-en-charybdis',
   'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem',
+  'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg',
   'blok9-week1-casus1-acute-nierschade',
   'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten',
   'blok9-week1-casus1-glomerulaire-nierziekten',
@@ -243,4 +258,86 @@ export const Footer = () => {
       <p>© {new Date().getFullYear()} Smartium</p>
     </footer>
   )
+}
+
+export const SummaryLayout = ({ lmeId, lmeName, activeLmeId, onVariantSwitch, children }) => {
+  const { hasAccess, plan, loading } = useAccess()
+  const hasPaidAccess = !loading && hasAccess && plan !== 'free'
+  const currentLme = activeLmeId || lmeId
+  const prefersMini = typeof currentLme === 'string' && currentLme.endsWith('-mini')
+  const fallbackBaseLme = prefersMini ? currentLme.replace(/-mini$/, '') : null
+  const orderAnchorLme = SUMMARY_ORDER.includes(currentLme) ? currentLme : fallbackBaseLme
+  const currentIndex = orderAnchorLme ? SUMMARY_ORDER.indexOf(orderAnchorLme) : -1
+
+  const resolveTargetId = (baseCandidate) => {
+    if (!baseCandidate) return null
+    if (prefersMini) {
+      const miniCandidate = `${baseCandidate}-mini`
+      if (lmeMap[miniCandidate]) return miniCandidate
+    }
+    return baseCandidate
+  }
+
+  const prevLme = currentIndex > 0 ? resolveTargetId(SUMMARY_ORDER[currentIndex - 1]) : null
+  const nextLme = currentIndex >= 0 && currentIndex < SUMMARY_ORDER.length - 1
+    ? resolveTargetId(SUMMARY_ORDER[currentIndex + 1])
+    : null
+
+  const moduleNavButtons = (position = 'top') => (
+    (prevLme || nextLme) ? (
+      <div className={position === 'top' ? 'flex items-center gap-2' : 'mt-6 flex items-center justify-end gap-2'}>
+        {prevLme ? (
+          <Link
+            to={`/summary?lme=${prevLme}`}
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-500/50 transition-colors text-sm"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Vorige module
+          </Link>
+        ) : null}
+        {nextLme ? (
+          <Link
+            to={`/summary?lme=${nextLme}`}
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-500/50 transition-colors text-sm"
+          >
+            Volgende module
+            <ChevronRight className="w-4 h-4" />
+          </Link>
+        ) : null}
+      </div>
+    ) : null
+  )
+
+  const inner = (
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
+      <Header />
+      <main className="container-custom py-8 md:py-12">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <Link
+            to="/summary"
+            className="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span className="font-medium">Terug naar overzicht</span>
+          </Link>
+          {moduleNavButtons('top')}
+        </div>
+        <SummaryAiAssistant lmeId={lmeId} lmeName={lmeName} hasPaidAccess={hasPaidAccess}>
+          {children}
+        </SummaryAiAssistant>
+        {moduleNavButtons('bottom')}
+      </main>
+      <Footer />
+    </div>
+  )
+
+  if (onVariantSwitch) {
+    return (
+      <VariantSwitchProvider activeLmeId={activeLmeId} onSwitch={onVariantSwitch}>
+        {inner}
+      </VariantSwitchProvider>
+    )
+  }
+
+  return inner
 }

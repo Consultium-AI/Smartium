@@ -47,6 +47,13 @@ const Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus8-passende-zorg-op-de-intensive-care"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus8-passende-zorg-op-de-intensive-care',
+        variants: [
+          { id: 'blok9-week4-casus8-passende-zorg-op-de-intensive-care', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus8-passende-zorg-op-de-intensive-care-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

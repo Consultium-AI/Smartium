@@ -51,6 +51,13 @@ const Blok5Week4Casus8LymfeklierdissectieSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week4-casus8-lymfeklierdissectie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus8-lymfeklierdissectie',
+      variants: [
+        { id: 'blok5-week4-casus8-lymfeklierdissectie', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus8-lymfeklierdissectie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

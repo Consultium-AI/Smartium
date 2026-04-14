@@ -2,6 +2,7 @@
  * Lokale voortgang per gebruiker (Firebase uid of 'guest') voor oefenvragen en tentamens.
  * Chats: smartium-chat-chats:<userId> (legacy key smartium-chat-chats wordt eenmalig naar :guest gemigreerd).
  */
+import { isRandomMode } from '../pages/PracticeQuestionsRegistry'
 
 const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
@@ -98,7 +99,7 @@ export function markSummarySeen(userId, lmeId) {
 }
 
 export function loadPracticeProgress(userId, lmeParam) {
-  if (!userId || !lmeParam || lmeParam === 'alle-random') return null
+  if (!userId || !lmeParam || isRandomMode(lmeParam)) return null
   const data = safeParse(localStorage.getItem(storageKeyPractice(userId, lmeParam)))
   if (!data || typeof data !== 'object') return null
   return data
@@ -112,7 +113,7 @@ function scheduleCloudIfNeeded(userId) {
 }
 
 export function savePracticeProgress(userId, lmeParam, payload) {
-  if (!userId || !lmeParam || lmeParam === 'alle-random') return
+  if (!userId || !lmeParam || isRandomMode(lmeParam)) return
   try {
     localStorage.setItem(storageKeyPractice(userId, lmeParam), JSON.stringify(payload))
   } catch {

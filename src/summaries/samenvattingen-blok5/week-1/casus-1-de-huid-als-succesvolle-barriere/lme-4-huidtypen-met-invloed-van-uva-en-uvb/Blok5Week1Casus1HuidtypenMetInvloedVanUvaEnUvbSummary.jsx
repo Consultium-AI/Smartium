@@ -49,6 +49,13 @@ const Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb',
+      variants: [
+        { id: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

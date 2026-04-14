@@ -61,6 +61,13 @@ const Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary = (
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie',
+      variants: [
+        { id: 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

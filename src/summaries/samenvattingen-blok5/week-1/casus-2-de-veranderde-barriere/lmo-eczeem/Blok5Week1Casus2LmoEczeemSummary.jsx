@@ -61,6 +61,13 @@ const Blok5Week1Casus2LmoEczeemSummary = () => {
       moduleKind="lmo"
       practiceLink="/oefenvragen?lme=blok5-week1-casus2-lmo-eczeem"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus2-lmo-eczeem',
+      variants: [
+        { id: 'blok5-week1-casus2-lmo-eczeem', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus2-lmo-eczeem-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

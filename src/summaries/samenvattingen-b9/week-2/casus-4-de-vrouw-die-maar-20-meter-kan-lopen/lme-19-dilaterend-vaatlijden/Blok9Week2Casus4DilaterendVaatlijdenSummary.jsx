@@ -50,6 +50,13 @@ const Blok9Week2Casus4DilaterendVaatlijdenSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week2-casus4-dilaterend-vaatlijden"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus4-dilaterend-vaatlijden',
+        variants: [
+          { id: 'blok9-week2-casus4-dilaterend-vaatlijden', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus4-dilaterend-vaatlijden-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsEenAneurysma /></section>

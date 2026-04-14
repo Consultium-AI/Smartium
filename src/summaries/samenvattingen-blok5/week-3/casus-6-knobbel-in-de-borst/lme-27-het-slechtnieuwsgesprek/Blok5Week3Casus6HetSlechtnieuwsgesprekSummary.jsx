@@ -61,6 +61,13 @@ const Blok5Week3Casus6HetSlechtnieuwsgesprekSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus6-het-slechtnieuwsgesprek"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus6-het-slechtnieuwsgesprek',
+      variants: [
+        { id: 'blok5-week3-casus6-het-slechtnieuwsgesprek', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus6-het-slechtnieuwsgesprek-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

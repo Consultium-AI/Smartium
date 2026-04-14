@@ -49,6 +49,13 @@ const Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary = (
       moduleKind="lmo"
       practiceLink="/oefenvragen?lme=blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been',
+      variants: [
+        { id: 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

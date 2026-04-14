@@ -23,6 +23,8 @@ import Sect08CARTCeltherapie from './Sect08CARTCeltherapie'
 import Sect09UitdagingenVanCARTCeltherapie from './Sect09UitdagingenVanCARTCeltherapie'
 import Sect10Samenvatting from './Sect10Samenvatting'
 
+const PRACTICE_LME_PATH = '/oefenvragen?lme=blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten'
+
 const Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary = () => {
   const tableOfContents = [
     { id: 'sect-01', title: 'Leerdoelen', icon: BookOpen },
@@ -46,6 +48,13 @@ const Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary = () =>
       tableOfContents={tableOfContents}
       practiceLink={PRACTICE_LME_PATH}
       practiceFooter={<Blok5Week6Casus13CeltherapieOefenvragenCallout to={PRACTICE_LME_PATH} />}
+      summaryVariantToggle={{
+        activeLmeId: 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
+        variants: [
+          { id: 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten', label: 'Uitgebreid' },
+          { id: 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

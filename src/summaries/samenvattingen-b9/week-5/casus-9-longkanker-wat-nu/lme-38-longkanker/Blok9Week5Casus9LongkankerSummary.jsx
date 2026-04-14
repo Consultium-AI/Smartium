@@ -72,6 +72,13 @@ const Blok9Week5Casus9LongkankerSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus9-longkanker"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus9-longkanker',
+        variants: [
+          { id: 'blok9-week5-casus9-longkanker', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus9-longkanker-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

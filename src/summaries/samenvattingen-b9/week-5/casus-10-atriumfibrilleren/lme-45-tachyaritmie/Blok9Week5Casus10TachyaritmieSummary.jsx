@@ -55,6 +55,13 @@ const Blok9Week5Casus10TachyaritmieSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus10-tachyaritmie"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus10-tachyaritmie',
+        variants: [
+          { id: 'blok9-week5-casus10-tachyaritmie', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus10-tachyaritmie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

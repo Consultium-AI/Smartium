@@ -56,6 +56,13 @@ const Blok9Week4Casus8ShockSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus8-shock"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus8-shock',
+        variants: [
+          { id: 'blok9-week4-casus8-shock', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus8-shock-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsShock /></section>

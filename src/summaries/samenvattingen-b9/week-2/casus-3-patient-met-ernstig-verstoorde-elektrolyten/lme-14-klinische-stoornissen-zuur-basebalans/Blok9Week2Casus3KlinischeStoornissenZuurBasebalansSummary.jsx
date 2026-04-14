@@ -41,6 +41,13 @@ const Blok9Week2Casus3KlinischeStoornissenZuurBasebalansSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week2-casus3-klinische-stoornissen-zuur-basebalans"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans',
+        variants: [
+          { id: 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02AlgemeneInleiding /></section>

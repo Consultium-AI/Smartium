@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vite:*)",
+      "Bash(python -c ':*)",
+      "Bash(python -c \" import sys, json for line in sys.stdin: obj = json.loads\\(line\\) content = obj.get\\('message',{}\\).get\\('content',''\\) if isinstance\\(content, str\\) and len\\(content\\) > 5: print\\('---'\\) print\\(content[:400]\\) elif isinstance\\(content, list\\): for c in content: if isinstance\\(c, dict\\) and c.get\\('type'\\) == 'text' and len\\(c.get\\('text',''\\)\\) > 5: print\\('---'\\) print\\(c['text'][:400]\\) \")",
+      "Bash(npm install:*)",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const pkg = require\\('./package.json'\\); console.log\\('type:', pkg.type\\)\")",
+      "Bash(node scripts/generate-mini-summaries.mjs)",
+      "Bash(node -e \"const conf = require\\('./src/summaries/mini-samenvattingen-b9/blok9MiniConfigs.js'\\); const keys = Object.keys\\(conf.BLOK9_MINI_CONFIG['blok9-week1-casus1-acute-nierschade-verdieping-mini'].sections[0]\\); console.log\\(keys\\)\")",
+      "Bash(node -e \"require\\('mammoth'\\); console.log\\('mammoth OK'\\)\")",
+      "Bash(node scripts/generate-blok5-mini-summaries.mjs)",
+      "Bash(xargs grep:*)",
+      "Bash(xargs head:*)",
+      "Bash(grep -E \"\\\\.\\(mjs|js|sh\\)$\")",
+      "Bash(node scripts/generate-blok9-mini-summaries.mjs)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl -s http://localhost:5174/summary?lme=blok9-week1-casus1-acute-nierschade-mini)",
+      "Bash(node scripts/fix-flebologische.mjs)",
+      "Bash(node -e \"const m=require\\('mammoth'\\);m.convertToHtml\\({path:'LME Flebologische aandoeningen samenvatting.docx'}\\).then\\(r=>{const t=r.value.replace\\(/<[^>]+>/g,' '\\).replace\\(/\\\\s+/g,' '\\).trim\\(\\);console.log\\('Current words: '+t.split\\(' '\\).length\\)}\\)\")",
+      "Bash(node -e \"const m=require\\('mammoth'\\);m.convertToHtml\\({path:'LME Flebologische aandoeningen samenvatting.docx'}\\).then\\(r=>console.log\\(r.value\\)\\)\")"
+    ]
+  }
+}

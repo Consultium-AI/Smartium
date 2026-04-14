@@ -41,6 +41,13 @@ const Blok9Week2Casus3VerdiepingStoornissenWaterEnVolumebalansSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping',
+        variants: [
+          { id: 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02Inleiding /></section>

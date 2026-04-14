@@ -55,6 +55,13 @@ const Blok5Week4Casus7FlebologischeAandoeningenSummary = () => {
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok5-week4-casus7-flebologische-aandoeningen"
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus7-flebologische-aandoeningen',
+      variants: [
+        { id: 'blok5-week4-casus7-flebologische-aandoeningen', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus7-flebologische-aandoeningen-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

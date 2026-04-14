@@ -1,0 +1,171 @@
+﻿Oefententamen
+Afweer en aanpak van infectiesBachelor 1 Geneeskunde
+Casus 1 van 11 ÔÇô Cytokinen en sepsis
+Een 67-jarige man presenteert zich op de SEH met koorts, tachycardie en hypotensie na een ernstige bacteri├½le infectie. De arts bespreekt met een coassistent dat verhoogde spiegels van bepaalde cytokinen een belangrijke rol spelen in dit ziektebeeld.
+1a. Welke cytokinen passen het best bij hypotensie bij sepsis? (2.0p)A. IL-4 en IL-5B. IL-6 en TNF-╬▒C. IL-10 en TGF-╬▓D. IL-17 en IL-22
+1b. Wat is de beste omschrijving van een chemokine? (2.0p)A. Een cytokine dat alleen B-cellen activeertB. Een cytokine dat vooral celdeling remtC. Een cytokine dat cellen aantrekt en migratie stuurtD. Een cytokine dat uitsluitend endocrien werkt
+1c. Zet de stappen van JAK-STAT-signalering in de juiste volgorde. (3.0p)
+STAT-dimerisatie en translocatie naar de kern
+Cytokine bindt aan receptor
+Transcriptie van cytokine-afhankelijke genen
+JAK-activatie
+Fosforylering van STAT
+1d. Welke uitspraak over IL-10 is juist? (2.0p)A. IL-10 is overwegend pro-inflammatoirB. IL-10 remt onder andere pro-inflammatoire cytokinenC. IL-10 veroorzaakt vooral neutrofielenmigratieD. IL-10 is uitsluitend een groeifactor
+1e. Leg in maximaal 45 woorden uit waarom de indeling van cytokinen in pro- en anti-inflammatoir een nuttige maar vereenvoudigde benadering is. (4.0p)
+Casus 2 van 11 ÔÇô Schimmelafweer
+Een 8-jarig meisje wordt opgenomen met een invasieve schimmelinfectie. Uit aanvullend onderzoek blijkt een defect in de afweerroute die belangrijk is voor herkenning van ╬▓-glucanen en mannan.
+2a. Welke receptorfamilie is het meest direct betrokken bij herkenning van veel schimmelcelwandcomponenten? (2.0p)A. Fc-receptorenB. C-type lectin receptorenC. B├¿talactamasesD. TCR-receptoren
+2b. Welke combinatie van fungale structuur en klinische relevantie is juist? (3.0p)A. Ergosterol ÔÇô doelwit van sommige antifungale therapie├½nB. Peptidoglycaan ÔÇô hoofdbestanddeel van de fungale celwandC. Mycolzuur ÔÇô belangrijkste fungale sterolD. Porines ÔÇô essentieel voor gistbudding
+2c. Wat is het beste onderscheid tussen een gist en een schimmel? (2.0p)A. Een gist is prokaryoot, een schimmel eukaryootB. Een gist is eencellig, een schimmel meestal meercellig met hyfenC. Een gist heeft een celwand, een schimmel nietD. Een gist veroorzaakt alleen huidinfecties
+2d. Welke test is het meest logisch bij verdenking op een systemische schimmelinfectie waarbij een celwandcomponent in serum wordt opgespoord? (2.0p)A. Bepaling van ╬▓-1,3-D-glucanB. Urine-antigeentest voor pneumokokkenC. MonospotD. Dikke druppel
+2e. In maximaal 40 woorden: waarom is fagocytose belangrijk in de afweer tegen schimmels? (3.0p)
+Casus 3 van 11 ÔÇô Parasieten en ontwikkelingscycli
+Een coschapstudent leert dat parasieten sterk van bacteri├½n en virussen verschillen doordat zij eukaryoot zijn en vaak meerdere ontwikkelingsstadia hebben.
+3a. Welke combinatie is juist? (2.0p)A. Giardia lamblia ÔÇô meercellige wormB. Ascaris lumbricoides ÔÇô protozoC. Cryptosporidium ÔÇô eencellige parasietD. Taenia saginata ÔÇô virusachtige parasiet
+3b. Wat is het beste voorbeeld van een directe ontwikkelingscyclus? (2.0p)A. Een parasiet heeft mens ├®n rund nodigB. Een parasiet heeft slechts ├®├®n gastheersoort nodigC. Een parasiet kan alleen via een mug worden overgedragenD. Een parasiet vermeerdert zich alleen in water
+3c. Welke uitspraak over darmparasieten is juist? (2.0p)A. Kweek is meestal de beste routinetestB. Microscopie is vaak nuttig omdat parasieten relatief groot zijnC. Parasieten zijn meestal kleiner dan virussenD. PCR is nooit bruikbaar
+3d. Welke klacht past het best bij Entamoeba histolytica? (2.0p)A. Uitsluitend droge hoestB. Bloederige diarreeC. Purulente conjunctivitisD. Erythemateuze huidplaque
+3e. Leg in maximaal 45 woorden uit waarom worminfecties vaak langdurig verlopen. (4.0p)
+Casus 4 van 11 ÔÇô Virale diagnostiek
+Een 24-jarige vrouw met koorts, blaasjes en lymfadenopathie wordt onderzocht op een virale infectie. De arts-microbioloog wil dat de coassistent niet alleen de juiste test aanvraagt, maar ook het juiste materiaal en de juiste buis.
+4a. Waarom is heparinebloed ongeschikt voor PCR/NAAT? (2.0p)A. Omdat het virussen direct doodtB. Omdat heparine PCR kan remmenC. Omdat het alleen bruikbaar is voor bacteri├½nD. Omdat heparine antistoffen afbreekt
+4b. Welke interpretatie van serologie past het best bij een acute primaire infectie? (2.0p)A. Geen IgM, hoge IgGB. Hoge IgM, lage of afwezige IgGC. Alleen IgAD. Alleen complementverbruik
+4c. Wat betekent een lage Ct-waarde bij realtime PCR meestal? (2.0p)A. Lage virale loadB. Hoge virale loadC. Negatieve testD. Alleen oude infectie
+4d. Welk materiaal is het meest passend voor virale diagnostiek van een luchtweginfectie? (2.0p)A. FecesB. Nasofarynxuitstrijk of respiratoir materiaalC. NagelschraapselD. Arteri├½le punctie zonder klinische context
+4e. Noem in maximaal 45 woorden ├®├®n voordeel van serologie en ├®├®n voordeel van moleculaire diagnostiek bij virale infecties. (4.0p)
+Casus 5 van 11 ÔÇô Secundaire lymfo├»de organen
+Beperkte schemavraag
+Een schema toont een doorsnede van de milt met de volgende labels:
+A: veneuze sinus
+B: rode pulpa parenchym / miltstrengen
+C: follikel
+D: marginale zone
+E: T-celgebied rond centrale arteriole
+5a. Welke structuren behoren tot de rode pulpa? (2.0p)A. A en BB. C en DC. C en ED. D en E
+5b. Welke structuur wordt ook wel PALS genoemd? (2.0p)A. Veneuze sinusB. Rode pulpa parenchymC. T-celgebied rond de centrale arterioleD. Marginale zone
+5c. Welk belangrijk verschil tussen lymfeklier en milt is juist? (2.0p)A. In beide komt antigeen uitsluitend via lymfe binnenB. In de milt komt antigeen vooral via het bloed binnenC. De milt bevat geen lymfocytenD. De lymfeklier filtert bloed, de milt lymfe
+5d. Welke uitspraak over open en gesloten circulatie in de milt is juist? (2.0p)A. Bij open circulatie blijft bloed voortdurend binnen endotheelB. Bij gesloten circulatie stroomt bloed eerst door miltstrengenC. Bij open circulatie komt bloed in direct contact met het rode pulpa parenchymD. Bij de mens is alleen gesloten circulatie aanwezig
+5e. Leg in maximaal 45 woorden uit waarom de milt belangrijk is voor de afweer, ondanks dat B- en T-lymfocyten daar niet worden gevormd. (4.0p)
+Casus 6 van 11 ÔÇô Vaccinatie en passieve immunisatie
+Een 19-jarige reiziger wordt in het buitenland gebeten door een mogelijk met rabi├½s besmet dier. In de kliniek wordt direct een combinatiebehandeling gestart.
+6a. Waarom krijgt deze pati├½nt zowel rabies-immunoglobuline als rabi├½svaccin? (3.0p)A. Twee vormen van passieve immunisatie voor extra effectB. Passieve bescherming voor direct effect en actieve immunisatie voor langdurige beschermingC. Alleen om bijwerkingen van het vaccin te voorkomenD. Omdat vaccinatie zonder immunoglobuline altijd gecontra-indiceerd is
+6b. Wat is een adjuvans in een vaccin? (2.0p)A. Een antibioticum tegen contaminatieB. Een stof die de immuunrespons versterktC. Een virale envelopD. Een antistof die direct neutraliseert
+6c. Welk vaccintype gebruikt mRNA als basis? (2.0p)A. Levend verzwakt vaccinB. Ge├»nactiveerd vaccinC. mRNA-vaccinD. Passief serumvaccin
+6d. Welke uitspraak over passieve immunisatie is juist? (2.0p)A. Leidt altijd tot langdurig immunologisch geheugenB. Geeft directe maar tijdelijke beschermingC. Vereist altijd klonale expansie van eigen B-cellenD. Is hetzelfde als natuurlijke infectie
+6e. Beschrijf in maximaal 50 woorden hoe vaccinatie leidt tot immunologisch geheugen. (4.0p)
+Casus 7 van 11 ÔÇô Immunomodulatie en infectierisico
+Een 54-jarige vrouw met reumato├»de artritis gebruikt al langere tijd een biological en later ook een JAK-remmer. De arts bespreekt met haar waarom deze middelen effectief zijn, maar ook invloed hebben op de afweer.
+7a. Wat is het beste voorbeeld van immunosuppressie? (2.0p)A. Vaccinatie tegen influenzaB. Toediening van een biological tegen TNF-╬▒C. Toediening van rabies-immunoglobulineD. Orale rehydratie
+7b. Waarom kunnen JAK-remmers ontstekingsactiviteit verminderen? (2.0p)A. Ze remmen de GramkleuringB. Ze remmen cytokinesignalering via de JAK-STAT-routeC. Ze vernietigen alle B-cellenD. Ze neutraliseren alleen IgM
+7c. Wat is een logisch gevolg van krachtige immuunremming? (2.0p)A. Altijd betere klaring van opportunistische infectiesB. Groter risico op infecties door verzwakte afweerresponsC. Volledige afwezigheid van bijwerkingenD. Geen effect op inflammatie
+7d. Methotrexaat is in deze context vooral een voorbeeld van: (2.0p)A. Een immunostimulansB. Een antimetaboliet met immuunremmend effectC. Een passief vaccinD. Een antiviraal middel
+7e. Leg in maximaal 45 woorden uit wat het verschil is tussen immunostimulatie en immunosuppressie. (4.0p)
+Casus 8 van 11 ÔÇô Virale pathogenese en ziektebeloop
+Een docent bespreekt drie pati├½nten:
+pati├½nt A met influenza die volledig herstelt
+pati├½nt B met HSV-1 dat later opnieuw activeert
+pati├½nt C met chronische HIV-infectie die zonder behandeling progressief verslechtert
+8a. Welke combinatie van ziektebeloop is juist? (3.0p)A. Influenza ÔÇô latent, HSV ÔÇô acuut, HIV ÔÇô self-limitingB. Influenza ÔÇô acuut, HSV ÔÇô latent met reactivatie, HIV ÔÇô persistent progressiefC. Influenza ÔÇô chronisch, HSV ÔÇô uitsluitend asymptomatisch, HIV ÔÇô acuutD. Influenza ÔÇô sluipend progressief, HSV ÔÇô bacterieel, HIV ÔÇô latent
+8b. Welke uitspraak over asymptomatische infecties is juist? (2.0p)A. Asymptomatisch betekent per definitie niet besmettelijkB. Asymptomatische personen kunnen toch virus verspreidenC. Asymptomatische infecties geven altijd steriele immuniteitD. Asymptomatische infecties komen alleen bij hepatitis voor
+8c. Welk virus is klassiek geassocieerd met maligne ontaarding? (2.0p)A. HPVB. RotavirusC. NorovirusD. RSV
+8d. Welke uitspraak over virale immunopathologie is juist? (2.0p)A. Alle ziekteverschijnselen worden alleen door directe celdood veroorzaaktB. Cytokinen kunnen bijdragen aan klachten zoals koorts en malaiseC. Virussen veroorzaken nooit immuuncomplexziekteD. Cytokinestormen zijn alleen een bacterieel fenomeen
+8e. Leg in maximaal 45 woorden uit wat bedoeld wordt met breed tropisme bij enterovirussen. (3.0p)
+Casus 9 van 11 ÔÇô Malaria: cyclus en preventie
+Een 25-jarige geneeskundestudent bereidt zich voor op een tropencursus en leert dat malaria meer is dan alleen ÔÇÿkoorts na een reisÔÇÖ.
+9a. Zet de stadia van Plasmodium in de juiste volgorde vanaf besmetting door de mug. (3.0p)
+Merozo├»et
+Gametocyt
+Sporozo├»et
+Leverschizont
+Trofozo├»et
+Bloedschizont
+9b. Welke soort kan hypnozo├»eten vormen? (2.0p)A. P. falciparumB. P. vivax of P. ovaleC. Alleen P. malariaeD. Geen enkele Plasmodium-soort
+9c. Welke uitspraak over malariaprofylaxe is juist? (2.0p)A. Profylaxe voorkomt altijd infectie van levercellenB. Profylaxe beschermt vooral tegen ziekte door werking op bloedstadiaC. Profylaxe maakt diagnostiek overbodigD. Profylaxe voorkomt ook altijd hypnozo├»etvorming
+9d. Welke combinatie van test en sensitiviteit is juist? (2.0p)A. Antigeensneltest is gevoeliger dan dikke druppelB. Uitstrijk is gevoeliger dan dikke druppelC. Dikke druppel is het gevoeligstD. Alle drie zijn even gevoelig
+9e. Leg in maximaal 45 woorden uit waarom P. falciparum gevaarlijker is dan de andere veelvoorkomende malaria-soorten. (4.0p)
+Casus 10 van 11 ÔÇô Antibiotica: spectrum en bijwerkingen
+Een huisarts ziet drie pati├½nten op ├®├®n dag:
+een jonge vrouw met ongecompliceerde urineweginfectie
+een pati├½nt met verdenking op atypische pneumonie
+een kind van 6 jaar waarvoor doxycycline wordt overwogen
+10a. Wat is de eerste keus bij een ongecompliceerde urineweginfectie volgens de besproken basisstof? (2.0p)A. Nitrofuranto├»neB. MeropenemC. ClindamycineD. Oseltamivir
+10b. Welk middel past het best bij atypische pneumonie door Mycoplasma of Legionella? (2.0p)A. AzitromycineB. FlucloxacillineC. MetronidazolD. Vancomycine
+10c. Waarom is doxycycline ongunstig bij jonge kinderen? (2.0p)A. Het geeft vaak acute hemolyseB. Het kan verkleuring van tanden en remming van botgroei gevenC. Het werkt alleen intraveneusD. Het dekt geen enkele bacterie
+10d. Welke combinatie van middel en spectrum is juist? (3.0p)A. Metronidazol ÔÇô alleen anaerobe bacteri├½nB. Clindamycine ÔÇô goede dekking van gramnegatieve stavenC. Flucloxacilline ÔÇô vooral respiratoire virussenD. Nitrofuranto├»ne ÔÇô beste keuze voor atypische pneumonie
+10e. Noem in maximaal 45 woorden ├®├®n belangrijk verschil tussen amoxicilline en amoxicilline-clavulaanzuur. (4.0p)
+Casus 11 van 11 ÔÇô Antibioticaresistentie
+Op een verpleegafdeling wordt bij een pati├½nt een ESBL-producerende gramnegatieve bacterie gevonden. Een andere pati├½nt blijkt een bacterie te dragen met verminderde porine-expressie. De arts vraagt de coassistent om de onderliggende resistentiemechanismen uit te leggen.
+11a. Wat doet een ESBL in essentie? (2.0p)A. Het stimuleert fagocytoseB. Het inactiveert veel beta-lactam antibioticaC. Het verhoogt de opname van antibioticaD. Het remt uitsluitend virussen
+11b. Wat is het effect van minder porines in het buitenmembraan van een gramnegatieve bacterie? (2.0p)A. Meer influx van antibioticumB. Minder influx van antibioticumC. Meer antistofproductieD. Verlies van peptidoglycaan
+11c. Welke uitspraak over resistentie is juist? (2.0p)A. Antibiotica doden uitsluitend resistente bacteri├½nB. Antibioticagebruik kan gevoelige bacteri├½n selectief verwijderen, waardoor resistente overblijvenC. Resistentie ontstaat alleen in ziekenhuizenD. ESBL-dragerschap is voor gezonde mensen altijd direct ziekteverwekkend
+11d. Welke uitspraak past het best bij de Nederlandse context zoals in de stof besproken? (2.0p)A. ESBLÔÇÖs worden in Nederland uitsluitend via vee overgedragenB. Mens-op-mens overdracht speelt een belangrijke rol bij ESBL-verspreidingC. Antibioticagebruik in de dierhouderij is de laatste jaren sterk gestegenD. Kritieke antibiotica worden op grote schaal in alle diersectoren gebruikt
+11e. Leg in maximaal 50 woorden uit wat het verschil is tussen natuurlijke en verkregen resistentie. (4.0p)
+Einde tentamen
+Antwoordmodel met korte motivering
+Casus 1 ÔÇô Cytokinen en sepsis
+1a. BIL-6 en TNF-╬▒ zijn belangrijke pro-inflammatoire cytokinen en spelen een rol bij systemische effecten zoals hypotensie bij sepsis.
+1b. CChemokinen sturen vooral migratie en aantrekking van immuuncellen.
+1c. 2 ÔåÆ 4 ÔåÆ 5 ÔåÆ 1 ÔåÆ 3Eerst bindt het cytokine aan de receptor, daarna volgt JAK-activatie, STAT-fosforylering, STAT-dimerisatie/translocatie en uiteindelijk transcriptie van genen.
+1d. BIL-10 werkt overwegend anti-inflammatoir en remt onder andere pro-inflammatoire responsen.
+1e.De indeling is nuttig omdat veel cytokinen vooral pro- of anti-inflammatoir werken, maar het blijft vereenvoudigd omdat hetzelfde cytokine contextafhankelijk verschillende effecten kan hebben op verschillende cellen en in verschillende fasen van de afweerrespons.
+Casus 2 ÔÇô Schimmelafweer
+2a. BC-type lectin receptoren herkennen veel schimmelcomponenten zoals mannan en ╬▓-glucanen.
+2b. AErgosterol is een belangrijk onderdeel van de fungale membraan en een aangrijpingspunt voor antifungale therapie.
+2c. BGisten zijn eencellig; schimmels zijn meestal meercellig en vormen hyfen.
+2d. A╬▓-1,3-D-glucan is een relevante serumtest bij systemische fungale infecties.
+2e.Fagocyten ruimen schimmels op door opname en killing. Vooral bij invasieve schimmelinfecties is fagocytose een cruciaal onderdeel van de aangeboren afweer.
+Casus 3 ÔÇô Parasieten en ontwikkelingscycli
+3a. CCryptosporidium is een eencellige parasiet, dus een protozo.
+3b. BEen directe ontwikkelingscyclus betekent dat slechts ├®├®n gastheersoort nodig is.
+3c. BParasieten zijn relatief groot en daardoor vaak goed aantoonbaar met microscopie.
+3d. BEntamoeba histolytica past bij amoebendysenterie met bloederige diarree.
+3e.Wormen hebben een trage levenscyclus en kunnen zich meestal niet direct in de darm tot nieuwe volwassen wormen vermenigvuldigen. Daardoor duren infecties vaak weken tot maanden en verlopen ze chronisch.
+Casus 4 ÔÇô Virale diagnostiek
+4a. BHeparine kan PCR remmen en daardoor fout-negatieve resultaten geven.
+4b. BBij een acute primaire infectie zie je vaak eerst IgM, terwijl IgG nog laag of afwezig is.
+4c. BEen lage Ct-waarde betekent dat het signaal al vroeg detecteerbaar is en past dus bij een hoge virale load.
+4d. BBij luchtweginfecties is respiratoir materiaal zoals een nasofarynxuitstrijk of ander respiratoir monster het meest geschikt.
+4e.Serologie is nuttig wanneer het virus al verdwenen is of om eerdere blootstelling/immuniteit te beoordelen. Moleculaire diagnostiek is nuttig voor snelle en gevoelige detectie van actuele infectie en virale load.
+Casus 5 ÔÇô Secundaire lymfo├»de organen
+5a. ADe rode pulpa bestaat uit veneuze sinussen en rode pulpa parenchym/miltstrengen.
+5b. CPALS is het T-celgebied rond de centrale arteriole.
+5c. BDe milt filtert bloed en vangt dus vooral bloedgedragen antigenen op.
+5d. CBij open circulatie komt bloed uit de vaten en passeert het rode pulpa parenchym voordat het weer in sinussen terugstroomt.
+5e.De milt filtert bloed, verwijdert oude erytrocyten en vangt bloedgedragen antigenen op. Daartegen wordt in de witte pulpa een immuunrespons opgewekt door aanwezige B- en T-lymfocyten.
+Casus 6 ÔÇô Vaccinatie en passieve immunisatie
+6a. BImmunoglobuline geeft directe bescherming; vaccinatie zorgt voor actieve immunisatie en langduriger bescherming via geheugen.
+6b. BEen adjuvans versterkt de immuunrespons op het vaccinantigeen.
+6c. CmRNA-vaccins gebruiken mRNA als basis voor antigeenproductie in de gastheer.
+6d. BPassieve immunisatie geeft direct effect, maar is tijdelijk en leidt niet tot eigen geheugenrespons.
+6e.Vaccinatie activeert specifieke B- en T-lymfocyten tegen een antigeen. Een deel differentieert tot geheugencellen, waardoor bij hernieuwde blootstelling sneller en krachtiger wordt gereageerd.
+Casus 7 ÔÇô Immunomodulatie en infectierisico
+7a. BEen anti-TNF biological is een vorm van gerichte immuunsuppressie.
+7b. BJAK-remmers verminderen cytokinesignalering door de JAK-STAT-route te remmen.
+7c. BBij immuunremming neemt het risico op infecties toe doordat afweerreacties verzwakken.
+7d. BMethotrexaat is een antimetaboliet met immuunremmende werking.
+7e.Immunostimulatie versterkt of activeert de afweer, bijvoorbeeld bij vaccinatie. Immunosuppressie remt onderdelen van de afweer, bijvoorbeeld om auto-immuunziekte of overmatige ontsteking te behandelen.
+Casus 8 ÔÇô Virale pathogenese en ziektebeloop
+8a. BInfluenza verloopt meestal acuut, HSV kent latentie met reactivatie, en HIV is zonder behandeling persistent progressief.
+8b. BAsymptomatische personen kunnen wel degelijk besmettelijk zijn.
+8c. AHPV is klassiek geassocieerd met maligne ontaarding, zoals cervixcarcinoom.
+8d. BVeel klachten bij virale infecties ontstaan mede door cytokinen en de afweerreactie van de gastheer.
+8e.Breed tropisme betekent dat een virus verschillende celtypen of orgaansystemen kan infecteren. Daardoor kunnen enterovirussen uiteenlopende ziektebeelden geven, van darm- en luchtwegklachten tot neurologische symptomen.
+Casus 9 ÔÇô Malaria: cyclus en preventie
+9a. 3 ÔåÆ 4 ÔåÆ 1 ÔåÆ 5 ÔåÆ 6 ÔåÆ 2Na besmetting volgen sporozo├»et, leverschizont, merozo├»et, trofozo├»et, bloedschizont en gametocyt.
+9b. BP. vivax en P. ovale kunnen hypnozo├»eten vormen.
+9c. BProfylaxe beschermt vooral tegen ziekte door effect op bloedstadia, niet per se tegen de infectie zelf.
+9d. CVan de genoemde methoden is de dikke druppel het gevoeligst.
+9e.P. falciparum is gevaarlijker doordat ge├»nfecteerde erytrocyten kunnen sekwestreren in capillairen. Dat kan leiden tot ernstige orgaanschade, cerebrale malaria en een snel fulminant beloop.
+Casus 10 ÔÇô Antibiotica: spectrum en bijwerkingen
+10a. ANitrofuranto├»ne is eerste keus bij een ongecompliceerde urineweginfectie.
+10b. AAzitromycine past bij atypische verwekkers zoals Mycoplasma en Legionella.
+10c. BDoxycycline kan tandverkleuring en remming van botgroei geven en is daarom ongunstig bij jonge kinderen.
+10d. AMetronidazol werkt tegen anaerobe bacteri├½n.
+10e.Amoxicilline-clavulaanzuur bevat naast amoxicilline ook een ╬▓-lactamaseremmer. Daardoor heeft het een bredere dekking tegen bacteri├½n die smalspectrum ╬▓-lactamases produceren.
+Casus 11 ÔÇô Antibioticaresistentie
+11a. BEen ESBL inactiveert veel beta-lactam antibiotica.
+11b. BMinder porines betekent minder influx van antibioticum in de bacterie.
+11c. BAntibioticagebruik selecteert resistente bacteri├½n door gevoelige bacteri├½n weg te nemen.
+11d. BIn Nederland speelt mens-op-mens overdracht een belangrijke rol bij verspreiding van ESBLÔÇÖs.
+11e.Natuurlijke resistentie is intrinsiek: een bacteriesoort is van zichzelf ongevoelig, bijvoorbeeld door ontbreken van een aangrijpingspunt. Verkregen resistentie ontstaat later, bijvoorbeeld door mutaties of opname van resistentiegenen.
+De volgende logische stap is een nakijkversie met punten per vraag en een totaalscoremodel.

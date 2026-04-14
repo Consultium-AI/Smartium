@@ -58,6 +58,13 @@ const Blok5Week6Casus12GaswisselingHbO2Co2CoSummary = () => {
       caseLabel="Week 6 · Casus 12: Verwarde patiënt met griepachtige klachten"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co',
+      variants: [
+        { id: 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co', label: 'Uitgebreid' },
+        { id: 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

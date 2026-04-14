@@ -70,6 +70,13 @@ const Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary = () => {
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok5-week4-casus7-trombose-verhoogde-stollingsneiging"
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging',
+      variants: [
+        { id: 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Brondocumentkop />

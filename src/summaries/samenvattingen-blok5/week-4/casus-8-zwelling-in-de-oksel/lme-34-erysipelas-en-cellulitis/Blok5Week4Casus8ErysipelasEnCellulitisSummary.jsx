@@ -47,6 +47,13 @@ const Blok5Week4Casus8ErysipelasEnCellulitisSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week4-casus8-erysipelas-en-cellulitis"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week4-casus8-erysipelas-en-cellulitis',
+      variants: [
+        { id: 'blok5-week4-casus8-erysipelas-en-cellulitis', label: 'Uitgebreid' },
+        { id: 'blok5-week4-casus8-erysipelas-en-cellulitis-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Brondocumentkop />

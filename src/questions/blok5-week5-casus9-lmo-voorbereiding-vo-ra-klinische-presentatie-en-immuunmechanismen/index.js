@@ -1,0 +1,6 @@
+import { blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestions } from './Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestions'
+
+export const blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestionsMap = {
+  'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen':
+    blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenQuestions,
+}

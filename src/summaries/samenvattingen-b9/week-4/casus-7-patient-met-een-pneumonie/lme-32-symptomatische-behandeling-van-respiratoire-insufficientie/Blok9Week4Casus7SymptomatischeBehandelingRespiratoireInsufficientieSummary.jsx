@@ -62,6 +62,13 @@ const Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie',
+        variants: [
+          { id: 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02ZuurstofopnameTransportAfgifte /></section>

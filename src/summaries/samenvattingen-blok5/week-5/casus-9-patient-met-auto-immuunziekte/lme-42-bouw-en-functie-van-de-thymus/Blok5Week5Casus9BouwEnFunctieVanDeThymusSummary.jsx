@@ -44,6 +44,13 @@ const Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus9-bouw-en-functie-van-de-thymus"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+      variants: [
+        { id: 'blok5-week5-casus9-bouw-en-functie-van-de-thymus', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus9-bouw-en-functie-van-de-thymus-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

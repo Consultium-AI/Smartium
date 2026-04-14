@@ -12,7 +12,8 @@ import { useAuth } from '../context/AuthContext'
 import { getProgressUserId, loadSummarySeenMap, markSummarySeen } from '../utils/accountProgressStorage'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import SummaryCourseModuleLink from '../components/SummaryCourseModuleLink'
-import { Header, BackButton, Footer } from './summary/SummaryShared'
+import { Header, Footer, SummaryLayout } from './summary/SummaryShared'
+import { lmeMap } from '../data/lmeIndex'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
 import { FoetaleBeeldvormingSummary } from './summary/SummaryFoetaleBeeldvorming'
 import { ExtraEmbryonaalSummary } from './summary/SummaryExtraEmbryonaal'
@@ -119,6 +120,8 @@ import Blok5Week5Casus11IntroductieKinderoncologieSummary from '../summaries/sam
 import Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-49-kinderoncologie-begrijp-de-hallmarks/Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary'
 import Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-50-over-leven-na-kanker-op-kinderleeftijd/Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary'
 import Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary from '../summaries/samenvattingen-blok5/week-5/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lme-51-typen-kinderoncologie-bij-kinderen/Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary'
+import Blok5Week5Casus11LmoImportziektenSamenvattingSummary from '../summaries/samenvattingen-blok5/week-6/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lmo-importziekten-samenvatting/Blok5Week5Casus11LmoImportziektenSamenvattingSummary'
+import Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieSamenvattingSummary from '../summaries/samenvattingen-blok5/week-6/casus-11-kind-met-algehele-malaise-koorts-en-zwelling-in-de-buik/lmo-infecties-binnen-de-kinderoncologie-samenvatting/Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieSamenvattingSummary'
 import Blok5Week6Casus12GaswisselingHbO2Co2CoSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-52-gaswisseling-hb-o2-co2-co/Blok5Week6Casus12GaswisselingHbO2Co2CoSummary'
 import Blok5Week6Casus12NvicAcuteVergiftigingSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-53-nvic-acute-vergiftiging/Blok5Week6Casus12NvicAcuteVergiftigingSummary'
 import Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary from '../summaries/samenvattingen-blok5/week-6/casus-12-verwarde-patient-met-griepachtige-klachten/lme-54-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties/Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary'
@@ -128,9 +131,13 @@ import Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieS
 import Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-58-m-proteine-diagnostiek-eiwit-als-tumormarker/Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary'
 import Blok5Week6Casus13TransplantatiegeneeskundeSummary from '../summaries/samenvattingen-blok5/week-6/casus-13-multipel-myeloom/lme-59-transplantatiegeneeskunde/Blok5Week6Casus13TransplantatiegeneeskundeSummary'
 import Blok5Week7Casus14DermatoloogInJeBroekzakSummary from '../summaries/samenvattingen-blok5/week-7/casus-14-ai-in-de-zorg/lme-60-dermatoloog-in-je-broekzak/Blok5Week7Casus14DermatoloogInJeBroekzakSummary'
+import Blok5Week7Casus14LmoEthiekVanDermaAppsSamenvattingSummary from '../summaries/samenvattingen-blok5/week-7/casus-14-ai-in-de-zorg/lmo-ethiek-van-derma-apps-samenvatting/Blok5Week7Casus14LmoEthiekVanDermaAppsSamenvattingSummary'
+import Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkSamenvattingSummary from '../summaries/samenvattingen-blok5/week-7/casus-14-ai-in-de-zorg/lmo-implementatie-in-de-dermatologische-praktijk-samenvatting/Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkSamenvattingSummary'
+import Blok5Week7Casus14LmoWatIsAiSamenvattingSummary from '../summaries/samenvattingen-blok5/week-7/casus-14-ai-in-de-zorg/lmo-wat-is-ai-samenvatting/Blok5Week7Casus14LmoWatIsAiSamenvattingSummary'
 import Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-61-remmen-versus-stimuleren-van-het-afweersysteem/Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary'
 import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-62-risico-op-iatrogene-schade-na-orgaantransplantatie/Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary'
 import Blok5Week8Casus15ScyllaEnCharybdisSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lme-63-scylla-en-charybdis/Blok5Week8Casus15ScyllaEnCharybdisSummary'
+import Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgSummary from '../summaries/samenvattingen-blok5/week-8/casus-15-kiezen-tussen-twee-kwaden/lmo-voorbereiding-vow-palliatieve-zorg/Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgSummary'
 import Blok5Week4Casus7LymfadenopathieSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-32-lymfadenopathie/Blok5Week4Casus7LymfadenopathieSummary'
 import Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lme-33-trombose-verhoogde-stollingsneiging/Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary'
 import Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary from '../summaries/samenvattingen-blok5/week-4/casus-7-zwelling-van-de-lies-en-of-een-dik-been/lmo-differentiaal-diagnostische-aanpak-zwelling-been/Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary'
@@ -142,13 +149,23 @@ import Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary from '
 import Blok5Week4Casus8LymfeklierdissectieSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-38-lymfeklierdissectie/Blok5Week4Casus8LymfeklierdissectieSummary'
 import Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-39-necrotiserende-wekedeleninfectie/Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary'
 import Blok5Week4Casus8RadiotherapieInDePraktijkSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-40-radiotherapie-in-de-praktijk/Blok5Week4Casus8RadiotherapieInDePraktijkSummary'
+import Blok5Week4Casus8LmvVerworvenStollingsstoornissenSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lmv-verworven-stollingsstoornissen-samenvatting/Blok5Week4Casus8LmvVerworvenStollingsstoornissenSummary'
 import Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary from '../summaries/samenvattingen-blok5/week-4/casus-8-zwelling-in-de-oksel/lme-41-volksgezondheidsindicatoren-dalys/Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary'
 import Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-42-bouw-en-functie-van-de-thymus/Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary'
+import Blok5Week5Casus9LmoPositieveEnNegatieveSelectieSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lmo-positieve-en-negatieve-selectie/Blok5Week5Casus9LmoPositieveEnNegatieveSelectieSummary'
+import Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen/Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenSummary'
+import Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lmv-introductie-auto-immuniteit-versus-auto-inflammatie-samenvatting/Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieSummary'
+import Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie/Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieSummary'
+import Blok5Week5Casus9LmvPatientMetSleSamenvattingSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lmv-patient-met-sle-samenvatting/Blok5Week5Casus9LmvPatientMetSleSamenvattingSummary'
 import Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-43-endocriene-auto-immuunziekten/Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary'
 import Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary from '../summaries/samenvattingen-blok5/week-5/casus-9-patient-met-auto-immuunziekte/lme-44-pathogenese-auto-immuunziekten/Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary'
 import Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary from '../summaries/samenvattingen-blok5/week-5/casus-10-patient-met-auto-inflammatoire-ziekte/lme-45-principes-en-klinische-aspecten-van-auto-inflammatie/Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary'
 import Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary from '../summaries/samenvattingen-blok5/week-5/casus-10-patient-met-auto-inflammatoire-ziekte/lme-46-spectrum-auto-inflammatie-en-auto-immuniteit/Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary'
 import Blok9Week1Casus1AcuteNierschadeSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-1-acute-nierschade/Blok9Week1Casus1AcuteNierschadeSummary'
+import ConfigMiniSummary from '../components/ConfigMiniSummary'
+import { getBlok9MiniConfig } from '../summaries/mini-samenvattingen-b9/blok9MiniConfigs'
+import { getBlok5MiniConfig } from '../summaries/mini-samenvattingen-blok5/blok5MiniConfigs'
+import { VariantSwitchProvider } from '../components/SummaryLayout'
 import Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-2-tubulaire-en-erfelijke-nierziekten/Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary'
 import Blok9Week1Casus1GlomerulaireNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-3-glomerulaire-nierziekten/Blok9Week1Casus1GlomerulaireNierziektenSummary'
 import Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary from '../summaries/samenvattingen-b9/week-1/casus-1-patient-met-acute-nierschade/lme-4-glomerulaire-en-tubulaire-nierziekten/Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary'
@@ -232,6 +249,11 @@ const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
   ]),
   'Casus 9: Patiënt met auto-immuunziekte': new Set([
     'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+    'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
+    'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
+    'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
+    'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
+    'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
   ]),
   'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik': new Set([
     'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
@@ -277,7 +299,9 @@ const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
 }
 
 // Main Summary Page Component
-const SummaryPage = () => {
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9']
+
+const SummaryPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
   const lme = searchParams.get('lme') || 'index'
   const { user, loading: authLoading } = useAuth()
@@ -288,21 +312,32 @@ const SummaryPage = () => {
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const isBlockedDirectLme = lme !== 'index' && showPremiumLocks && isFreePlanBlockedLme(lme)
   const blokParam = searchParams.get('blok')
+  const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
+  const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
+  const selectedOverviewBlok = forcedBlokKey || urlBlokKey
+  const [activeLme, setActiveLme] = useState(lme)
+  useEffect(() => { setActiveLme(lme) }, [lme])
+
+  const handleVariantSwitch = (newLmeId) => {
+    setActiveLme(newLmeId)
+    window.history.replaceState(null, '', `/summary?lme=${encodeURIComponent(newLmeId)}`)
+  }
+
   const [seenMap, setSeenMap] = useState({})
   const [expandedBlok, setExpandedBlok] = useState(() => {
-    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
+    if (selectedOverviewBlok) return selectedOverviewBlok
     return null
   })
 
   useEffect(() => {
-    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
-      setExpandedBlok(blokParam)
+    if (selectedOverviewBlok) {
+      setExpandedBlok(selectedOverviewBlok)
       requestAnimationFrame(() => {
-        const el = document.getElementById(`section-${blokParam}`)
+        const el = document.getElementById(`section-${selectedOverviewBlok}`)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       })
     }
-  }, [blokParam])
+  }, [selectedOverviewBlok])
 
   useEffect(() => {
     if (progressUserId == null) return
@@ -328,7 +363,6 @@ const SummaryPage = () => {
   if (isBlockedDirectLme) {
     return <Navigate to="/summary" replace />
   }
-
   const courseStructure = {
     blok3: {
       name: "Blok 3: Groei en Ontwikkeling II",
@@ -864,6 +898,36 @@ const SummaryPage = () => {
                   name: "Bouw en functie van de thymus",
                   available: true,
                 },
+                {
+                  id: "blok5-week5-casus9-lmo-positieve-en-negatieve-selectie",
+                  name: "Positieve en negatieve selectie",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen",
+                  name: "Klinische presentatie en immuunmechanismen",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie",
+                  name: "Introductie auto-immuniteit versus auto-inflammatie",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie",
+                  name: "Auto-immuniteit als bijwerking bij immunotherapie",
+                  available: true,
+                  moduleKind: "lmv",
+                },
+                {
+                  id: "blok5-week5-casus9-lmv-patient-met-sle-samenvatting",
+                  name: "Patiënt met SLE",
+                  available: true,
+                  moduleKind: "lmv",
+                },
               ],
             },
             {
@@ -913,6 +977,18 @@ const SummaryPage = () => {
                   id: "blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd",
                   name: "Over leven na kanker op kinderleeftijd",
                   available: true,
+                },
+                {
+                  id: "blok5-week5-casus11-lmo-importziekten",
+                  name: "Importziekten",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie",
+                  name: "Infecties binnen de kinderoncologie",
+                  available: true,
+                  moduleKind: "lmo",
                 },
               ],
             },
@@ -975,9 +1051,27 @@ const SummaryPage = () => {
               name: "Casus 14: AI in de zorg",
               lmes: [
                 {
+                  id: "blok5-week7-casus14-lmo-wat-is-ai",
+                  name: "Wat is AI?",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
                   id: "blok5-week7-casus14-dermatoloog-in-je-broekzak",
                   name: "Dermatoloog in je broekzak",
                   available: true,
+                },
+                {
+                  id: "blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk",
+                  name: "Implementatie in de dermatologische praktijk",
+                  available: true,
+                  moduleKind: "lmo",
+                },
+                {
+                  id: "blok5-week7-casus14-lmo-ethiek-van-derma-apps",
+                  name: "Ethiek van derma-apps",
+                  available: true,
+                  moduleKind: "lmo",
                 },
               ],
             },
@@ -1003,6 +1097,12 @@ const SummaryPage = () => {
                   id: "blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem",
                   name: "Remmen versus stimuleren van het afweersysteem",
                   available: true,
+                },
+                {
+                  id: "blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg",
+                  name: "Voorbereiding VOW palliatieve zorg",
+                  available: true,
+                  moduleKind: "lmo",
                 },
               ],
             },
@@ -1319,2304 +1419,1527 @@ const SummaryPage = () => {
   }
 
   // Render specific LME content
-  if (lme === 'embryogenese') {
+  if (activeLme === 'embryogenese') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <EmbryogeneseSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'beeldvorming') {
+  if (activeLme === 'beeldvorming') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <FoetaleBeeldvormingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'extraembryonaal') {
+  if (activeLme === 'extraembryonaal') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <ExtraEmbryonaalSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'extremiteiten') {
+  if (activeLme === 'extremiteiten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <ExtremiteitenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'aangeboren-immuniteit-herkenning') {
+  if (activeLme === 'aangeboren-immuniteit-herkenning') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <AangeborenImmuniteitHerkenningSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-bacteriologie') {
+  if (activeLme === 'introductie-bacteriologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieBacteriologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-immunologie') {
+  if (activeLme === 'introductie-immunologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieImmunologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-mycologie') {
+  if (activeLme === 'introductie-mycologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieMycologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-parasitologie') {
+  if (activeLme === 'introductie-parasitologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieParasitologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-virologie') {
+  if (activeLme === 'introductie-virologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieVirologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'voorbereiding-vow-microbiologie') {
+  if (activeLme === 'voorbereiding-vow-microbiologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <VoorbereidingVOWMicrobiologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'aangeboren-immuniteit-respons') {
+  if (activeLme === 'aangeboren-immuniteit-respons') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <AangeborenImmuniteitResponsSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'antibiotica-leerlijn') {
+  if (activeLme === 'antibiotica-leerlijn') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <AntibioticaLeerlijnSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-antimicrobiele-therapie') {
+  if (activeLme === 'introductie-antimicrobiele-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieAntimicrobieleTherapieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'urineweginfecties') {
+  if (activeLme === 'urineweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <UrineweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'infectiepreventie') {
+  if (activeLme === 'infectiepreventie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <InfectiepreventieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-luchtweginfecties') {
+  if (activeLme === 'introductie-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieLuchtweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'microscopische-anatomie-luchtwegen') {
+  if (activeLme === 'microscopische-anatomie-luchtwegen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <MicroscopischeAnatomieLuchtwegenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'pathofysiologie-virale-luchtweginfecties') {
+  if (activeLme === 'pathofysiologie-virale-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <PathofysiologieViraleLuchtweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'vervolg-introductie-virologie-2') {
+  if (activeLme === 'vervolg-introductie-virologie-2') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <VervolgIntroductieVirologie2Summary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'virale-diagnostiek') {
+  if (activeLme === 'virale-diagnostiek') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <ViraleDiagnostiekSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'cytokinen') {
+  if (activeLme === 'cytokinen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <CytokinenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'infectieuze-oorzaken-koorts') {
+  if (activeLme === 'infectieuze-oorzaken-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <InfectieuzeOorzakenKoortsSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'niet-infectieuze-oorzaken-koorts') {
+  if (activeLme === 'niet-infectieuze-oorzaken-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <NietInfectieuzeOorzakenKoortsSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'ontstekingsmediatoren') {
+  if (activeLme === 'ontstekingsmediatoren') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <OntstekingsmediatorenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'wat-is-koorts') {
+  if (activeLme === 'wat-is-koorts') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <WatIsKoortsSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'specifieke-verwekkers-lagere-luchtweginfecties') {
+  if (activeLme === 'specifieke-verwekkers-lagere-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <SpecifiekeVerwekkersLagereLuchtweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'therapie-lagere-luchtweginfecties') {
+  if (activeLme === 'therapie-lagere-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <TherapieLagereLuchtweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'homing-migratie-recirculatie') {
+  if (activeLme === 'homing-migratie-recirculatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <HomingMigratieRecirculatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'infectieuze-lymfadenopathie') {
+  if (activeLme === 'infectieuze-lymfadenopathie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <InfectieuzeLymfadenopathieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'introductie-verworven-immuniteit') {
+  if (activeLme === 'introductie-verworven-immuniteit') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <IntroductieVerworvenImmuniteitSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'secundaire-lymfoide-organen') {
+  if (activeLme === 'secundaire-lymfoide-organen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <SecundaireLymfoideOrganenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'antivirale-therapie') {
+  if (activeLme === 'antivirale-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <AntiviraleTherapieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'de-grote-drie-malaria') {
+  if (activeLme === 'de-grote-drie-malaria') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <DeGroteDrieMalariaSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'duurzame-hiv-zorg') {
+  if (activeLme === 'duurzame-hiv-zorg') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <DuurzameHivZorgSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'immunologische-consequenties-hiv') {
+  if (activeLme === 'immunologische-consequenties-hiv') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <ImmunologischeConsequentiesHivSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'tuberculose-bij-migranten') {
+  if (activeLme === 'tuberculose-bij-migranten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <TuberculoseBijMigrantenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'tuberculose-inleiding') {
+  if (activeLme === 'tuberculose-inleiding') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <TuberculoseInleidingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'lme5-schimmelinfecties') {
+  if (activeLme === 'lme5-schimmelinfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Lme5SchimmelinfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'lme6-voorbereiding-vow-milt') {
+  if (activeLme === 'lme6-voorbereiding-vow-milt') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Lme6VoorbereidingVowMiltSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'lme1-parasitaire-verwekkers-gastro-enteritis') {
+  if (activeLme === 'lme1-parasitaire-verwekkers-gastro-enteritis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Lme1ParasitaireVerwekkersSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'lme2-virale-verwekkers-gastro-enteritis') {
+  if (activeLme === 'lme2-virale-verwekkers-gastro-enteritis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Lme2ViraleVerwekkersSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'lme3-welk-antibioticum-kies-ik') {
+  if (activeLme === 'lme3-welk-antibioticum-kies-ik') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Lme3WelkAntibioticumKiesIkSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus10-lme1-dwang-en-drang-historisch-perspectief') {
+  if (activeLme === 'casus10-lme1-dwang-en-drang-historisch-perspectief') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus10Lme1DwangEnDrangSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus10-lme2-immunomodulatie') {
+  if (activeLme === 'casus10-lme2-immunomodulatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus10Lme2ImmunomodulatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') {
+  if (activeLme === 'casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus10Lme3RechtvaardigingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') {
+  if (activeLme === 'casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus10Lme4WiskundeVaccinatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus11-lme1-leefstijl-en-immuunsysteem') {
+  if (activeLme === 'casus11-lme1-leefstijl-en-immuunsysteem') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus11Lme1LeefstijlSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus12-lme3-patient-en-medicatieveiligheid') {
+  if (activeLme === 'casus12-lme3-patient-en-medicatieveiligheid') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus12Lme3PatientMedicatieveiligheidSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus12-lme4-zorggerelateerde-infecties') {
+  if (activeLme === 'casus12-lme4-zorggerelateerde-infecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus12Lme4ZorggerelateerdeInfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus13-lme1-antibiotica-introductie') {
+  if (activeLme === 'casus13-lme1-antibiotica-introductie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus13Lme1AntibioticaIntroductieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus13-lme2-antibiotica-resistentie') {
+  if (activeLme === 'casus13-lme2-antibiotica-resistentie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus13Lme2AntibioticaResistentieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud') {
+  if (activeLme === 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere') {
+  if (activeLme === 'blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid') {
+  if (activeLme === 'blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb') {
+  if (activeLme === 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus1HuidtypenMetInvloedVanUvaEnUvbSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus1-microbioom-en-immunologie-van-de-huid') {
+  if (activeLme === 'blok5-week1-casus1-microbioom-en-immunologie-van-de-huid') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus1MicrobioomEnImmunologieVanDeHuidSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-voeding-en-inhalatieallergie') {
+  if (activeLme === 'blok5-week1-casus2-voeding-en-inhalatieallergie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2VoedingEnInhalatieallergieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-nadelige-reacties-van-medicatie') {
+  if (activeLme === 'blok5-week1-casus2-nadelige-reacties-van-medicatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2NadeligeReactiesVanMedicatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-lmo-eczeem') {
+  if (activeLme === 'blok5-week1-casus2-lmo-eczeem') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2LmoEczeemSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-provoke') {
+  if (activeLme === 'blok5-week1-casus2-provoke') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2ProvokeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-psoriasis') {
+  if (activeLme === 'blok5-week1-casus2-psoriasis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2PsoriasisSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
+  if (activeLme === 'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2LmvAnafylaxieTypeIAllergieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
+  if (activeLme === 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2LmvCentraleVsPerifereTolerantieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
+  if (activeLme === 'blok5-week1-casus2-lmv-contact-allergie-en-allergologisch-onderzoek') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2LmvContactAllergieEnAllergologischOnderzoekSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
+  if (activeLme === 'blok5-week1-casus2-stm-pathogenese-type-iv-allergie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week1Casus2StmPathogeneseTypeIVAllergieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
+  if (activeLme === 'blok5-week2-casus3-aangeboren-stollingsstoornissen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus3AangeborenStollingsstoornissenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen') {
+  if (activeLme === 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus3-hemostase-basis') {
+  if (activeLme === 'blok5-week2-casus3-hemostase-basis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus3HemostaseBasisSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
+  if (activeLme === 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus3LmvVasculitisOfVasculopathieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
+  if (activeLme === 'blok5-week2-casus3-vasculitis-klein-middel-groot') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus3VasculitisKleinMiddelGrootSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-chronische-ontsteking') {
+  if (activeLme === 'blok5-week2-casus4-chronische-ontsteking') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4ChronischeOntstekingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen') {
+  if (activeLme === 'blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4GoedaardigeEnKwaadaardigeHuidafwijkingenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-immuuntherapie-van-kanker') {
+  if (activeLme === 'blok5-week2-casus4-immuuntherapie-van-kanker') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4ImmuuntherapieVanKankerSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-melanoom-gelokaliseerd') {
+  if (activeLme === 'blok5-week2-casus4-melanoom-gelokaliseerd') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4MelanoomGelokaliseerdSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne') {
+  if (activeLme === 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4MriEnPetScanBenignemaligneSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-sentinel-node') {
+  if (activeLme === 'blok5-week2-casus4-sentinel-node') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4SentinelNodeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week2-casus4-systemische-therapie-van-melanoom') {
+  if (activeLme === 'blok5-week2-casus4-systemische-therapie-van-melanoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
+  if (activeLme === 'blok5-week3-casus5-lmo-verdachte-huidafwijkingen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5LmoVerdachteHuidafwijkingenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-lmo-zorgmijding') {
+  if (activeLme === 'blok5-week3-casus5-lmo-zorgmijding') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5LmoZorgmijdingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
+  if (activeLme === 'blok5-week3-casus5-huidtumoren-basaalcel-en-plaveiselcelcarcinoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5HuidtumorenBasaalcelEnPlaveiselcelcarcinoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne') {
+  if (activeLme === 'blok5-week3-casus5-huidtumoren-benigne-en-premaligne') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5HuidtumorenBenigneEnPremaligneSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-leefstijl-en-kanker') {
+  if (activeLme === 'blok5-week3-casus5-leefstijl-en-kanker') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5LeefstijlEnKankerSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus5-milieu-en-gezondheid') {
+  if (activeLme === 'blok5-week3-casus5-milieu-en-gezondheid') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus5MilieuEnGezondheidSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-behandeling-van-mammacarcinoom') {
+  if (activeLme === 'blok5-week3-casus6-behandeling-van-mammacarcinoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6BehandelingVanMammacarcinoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-familiair-mammacarcinoom') {
+  if (activeLme === 'blok5-week3-casus6-familiair-mammacarcinoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6FamiliairMammacarcinoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-het-slechtnieuwsgesprek') {
+  if (activeLme === 'blok5-week3-casus6-het-slechtnieuwsgesprek') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6HetSlechtnieuwsgesprekSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-mammapathologie') {
+  if (activeLme === 'blok5-week3-casus6-mammapathologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6MammapathologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom') {
+  if (activeLme === 'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6OverdiagnoseBijBevolkingsonderzoekMammacarcinoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom') {
+  if (activeLme === 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus7-flebologische-aandoeningen') {
+  if (activeLme === 'blok5-week4-casus7-flebologische-aandoeningen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus7FlebologischeAandoeningenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
+  if (activeLme === 'blok5-week4-casus8-erysipelas-en-cellulitis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8ErysipelasEnCellulitisSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-hydradenitis-suppurativa') {
+  if (activeLme === 'blok5-week4-casus8-hydradenitis-suppurativa') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8HydradenitisSuppurativaSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-introductiemodule-planetary-health') {
+  if (activeLme === 'blok5-week4-casus8-introductiemodule-planetary-health') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8IntroductiemodulePlanetaryHealthSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24') {
+  if (activeLme === 'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8LichamelijkOnderzoekKnieVoorbereidingKlv124Summary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-lymfeklierdissectie') {
+  if (activeLme === 'blok5-week4-casus8-lymfeklierdissectie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8LymfeklierdissectieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-necrotiserende-wekedeleninfectie') {
+  if (activeLme === 'blok5-week4-casus8-necrotiserende-wekedeleninfectie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8NecrotiserendeWekedeleninfectieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-radiotherapie-in-de-praktijk') {
+  if (activeLme === 'blok5-week4-casus8-radiotherapie-in-de-praktijk') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8RadiotherapieInDePraktijkSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
+  if (activeLme === 'blok5-week4-casus8-lmv-verworven-stollingsstoornissen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8LmvVerworvenStollingsstoornissenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
+  if (activeLme === 'blok5-week4-casus8-volksgezondheidsindicatoren-dalys') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus8VolksgezondheidsindicatorenDalysSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus7-lymfadenopathie') {
+  if (activeLme === 'blok5-week4-casus7-lymfadenopathie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus7LymfadenopathieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging') {
+  if (activeLme === 'blok5-week4-casus7-trombose-verhoogde-stollingsneiging') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus7TromboseVerhoogdeStollingsneigingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
+  if (activeLme === 'blok5-week4-casus7-lmo-differentiaal-diagnostische-aanpak-zwelling-been') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus7LmoDifferentiaalDiagnostischeAanpakZwellingBeenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
+  if (activeLme === 'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week4Casus7LmoVoorbereidingVowHoeveelMagEenLevensjaarKostenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus9-bouw-en-functie-van-de-thymus') {
+  if (activeLme === 'blok5-week5-casus9-bouw-en-functie-van-de-thymus') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus9BouwEnFunctieVanDeThymusSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
+  if (activeLme === 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus9LmoPositieveEnNegatieveSelectieSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatieSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapieSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus9LmvPatientMetSleSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus9-endocriene-auto-immuunziekten') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus9EndocrieneAutoImmuunziektenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus9-pathogenese-auto-immuunziekten') {
+  if (activeLme === 'blok5-week5-casus9-pathogenese-auto-immuunziekten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus9PathogeneseAutoImmuunziektenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie') {
+  if (activeLme === 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit') {
+  if (activeLme === 'blok5-week5-casus10-spectrum-auto-inflammatie-en-auto-immuniteit') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd') {
+  if (activeLme === 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus11-introductie-kinderoncologie') {
+  if (activeLme === 'blok5-week5-casus11-introductie-kinderoncologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus11IntroductieKinderoncologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks') {
+  if (activeLme === 'blok5-week5-casus11-kinderoncologie-begrijp-de-hallmarks') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd') {
+  if (activeLme === 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen') {
+  if (activeLme === 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
+  if (activeLme === 'blok5-week5-casus11-lmo-importziekten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus11LmoImportziektenSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologieSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus12GaswisselingHbO2Co2CoSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus12-nvic-acute-vergiftiging') {
+  if (activeLme === 'blok5-week6-casus12-nvic-acute-vergiftiging') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus12NvicAcuteVergiftigingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties') {
+  if (activeLme === 'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken') {
+  if (activeLme === 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus13BotopbouwBotafbraakEnPathologischeBreukenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten') {
+  if (activeLme === 'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus13CeltherapieAlsBehandelingVoorMaligniteitenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie') {
+  if (activeLme === 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker') {
+  if (activeLme === 'blok5-week6-casus13-m-proteine-diagnostiek-eiwit-als-tumormarker') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus13MProteineDiagnostiekEiwitAlsTumormarkerSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week6-casus13-transplantatiegeneeskunde') {
+  if (activeLme === 'blok5-week6-casus13-transplantatiegeneeskunde') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week6Casus13TransplantatiegeneeskundeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
+  if (activeLme === 'blok5-week7-casus14-lmo-wat-is-ai') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week7Casus14LmoWatIsAiSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week7-casus14-dermatoloog-in-je-broekzak') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week7Casus14DermatoloogInJeBroekzakSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
+  if (activeLme === 'blok5-week7-casus14-lmo-ethiek-van-derma-apps') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week7Casus14LmoEthiekVanDermaAppsSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkSamenvattingSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie') {
+  if (activeLme === 'blok5-week8-casus15-risico-op-iatrogene-schade-na-orgaantransplantatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok5-week8-casus15-scylla-en-charybdis') {
+  if (activeLme === 'blok5-week8-casus15-scylla-en-charybdis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok5Week8Casus15ScyllaEnCharybdisSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus1-acute-nierschade') {
+  if (activeLme === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok9-week1-casus1-acute-nierschade') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1AcuteNierschadeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten') {
+  if (activeLme === 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus1-glomerulaire-nierziekten') {
+  if (activeLme === 'blok9-week1-casus1-glomerulaire-nierziekten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1GlomerulaireNierziektenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten') {
+  if (activeLme === 'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1GlomerulaireEnTubulaireNierziektenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus1-acute-nierschade-verdieping') {
+  if (activeLme === 'blok9-week1-casus1-acute-nierschade-verdieping') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1AcuteNierschadeVerdiepingSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-chronische-nierschade') {
+  if (activeLme === 'blok9-week1-casus2-chronische-nierschade') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2ChronischeNierschadeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-niertransplantatie') {
+  if (activeLme === 'blok9-week1-casus2-niertransplantatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2NiertransplantatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-dialyse') {
+  if (activeLme === 'blok9-week1-casus2-dialyse') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2DialyseSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-chronische-nierschade-verdieping') {
+  if (activeLme === 'blok9-week1-casus2-chronische-nierschade-verdieping') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2VerdiepingChronischeNierschadeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-nierfunctievervangende-therapie') {
+  if (activeLme === 'blok9-week1-casus2-nierfunctievervangende-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2NierfunctievervangendeTherapieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week1-casus2-ethiek-van-orgaantransplantatie') {
+  if (activeLme === 'blok9-week1-casus2-ethiek-van-orgaantransplantatie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus3-klinische-stoornissen-water-en-volume-balans') {
+  if (activeLme === 'blok9-week2-casus3-klinische-stoornissen-water-en-volume-balans') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus3KlinischeStoornissenWaterEnVolumeBalansSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus3-klinische-stoornissen-kaliumbalans') {
+  if (activeLme === 'blok9-week2-casus3-klinische-stoornissen-kaliumbalans') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus3KlinischeStoornissenKaliumbalansSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans') {
+  if (activeLme === 'blok9-week2-casus3-klinische-stoornissen-zuur-basebalans') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus3KlinischeStoornissenZuurBasebalansSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping') {
+  if (activeLme === 'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus3VerdiepingStoornissenKaliumEnZuurBaseEvenwichtSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping') {
+  if (activeLme === 'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus3VerdiepingStoornissenWaterEnVolumebalansSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-perifeer-arterieel-vaatlijden') {
+  if (activeLme === 'blok9-week2-casus4-perifeer-arterieel-vaatlijden') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4PerifeerArterieelVaatlijdenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-diabetische-voet') {
+  if (activeLme === 'blok9-week2-casus4-diabetische-voet') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4DiabetischeVoetSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-dilaterend-vaatlijden') {
+  if (activeLme === 'blok9-week2-casus4-dilaterend-vaatlijden') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4DilaterendVaatlijdenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools') {
+  if (activeLme === 'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4MdrJuridischeAspectenMedischeToolsSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-preoperatieve-screening') {
+  if (activeLme === 'blok9-week2-casus4-preoperatieve-screening') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4PreoperatieveScreeningSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie') {
+  if (activeLme === 'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week2Casus4CtScansBeoordelenVowToegepasteAnatomieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus5-hypertensie') {
+  if (activeLme === 'blok9-week3-casus5-hypertensie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus5HypertensieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus5-secundaire-hypertensie') {
+  if (activeLme === 'blok9-week3-casus5-secundaire-hypertensie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus5SecundaireHypertensieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus5-hypertensief-spoedgeval') {
+  if (activeLme === 'blok9-week3-casus5-hypertensief-spoedgeval') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus5HypertensiefSpoedgevalSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus5-farmacogenetica') {
+  if (activeLme === 'blok9-week3-casus5-farmacogenetica') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus5FarmacogeneticaSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus5-ai-act') {
+  if (activeLme === 'blok9-week3-casus5-ai-act') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus5AiActSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week3-casus6-cvrm') {
+  if (activeLme === 'blok9-week3-casus6-cvrm') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week3Casus6CvrmSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling') {
+  if (activeLme === 'blok9-week4-casus7-pneumonie-epidemiologie-verwekkers-behandeling') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus7PneumonieEpidemiologieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus7-pathofysiologie-kliniek-diagnostiek-pneumonie') {
+  if (activeLme === 'blok9-week4-casus7-pathofysiologie-kliniek-diagnostiek-pneumonie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus7PathofysiologieKliniekDiagnostiekPneumonieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie') {
+  if (activeLme === 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus7KlinischRedenerenRespiratoireInsufficiëntieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie') {
+  if (activeLme === 'blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus7SymptomatischeBehandelingRespiratoireInsufficientieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus8-toxidromen') {
+  if (activeLme === 'blok9-week4-casus8-toxidromen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus8ToxidromenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus8-shock') {
+  if (activeLme === 'blok9-week4-casus8-shock') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus8ShockSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen') {
+  if (activeLme === 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus8-passende-zorg-op-de-intensive-care') {
+  if (activeLme === 'blok9-week4-casus8-passende-zorg-op-de-intensive-care') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus8PassendeZorgOpDeIntensiveCareSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week4-casus8-lineare-regressielijn') {
+  if (activeLme === 'blok9-week4-casus8-lineare-regressielijn') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week4Casus8LineareRegressielijnSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus9-longkanker') {
+  if (activeLme === 'blok9-week5-casus9-longkanker') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus9LongkankerSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus9-pleuravocht') {
+  if (activeLme === 'blok9-week5-casus9-pleuravocht') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus9PleuravochtSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus9-voorbereiding-ct-en-pet-ct') {
+  if (activeLme === 'blok9-week5-casus9-voorbereiding-ct-en-pet-ct') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus9VoorbereidingCtEnPetCtSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus9-voorbereiding-pathologie-longkanker') {
+  if (activeLme === 'blok9-week5-casus9-voorbereiding-pathologie-longkanker') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus9VoorbereidingPathologieLongkankerSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-basis-analyse-ecg') {
+  if (activeLme === 'blok9-week5-casus10-basis-analyse-ecg') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10BasisAnalyseEcgSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-atriumfibrilleren') {
+  if (activeLme === 'blok9-week5-casus10-atriumfibrilleren') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10AtriumfibrillerenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices') {
+  if (activeLme === 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-tachyaritmie') {
+  if (activeLme === 'blok9-week5-casus10-tachyaritmie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10TachyaritmieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren') {
+  if (activeLme === 'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-syncope') {
+  if (activeLme === 'blok9-week5-casus10-syncope') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10SyncopeSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') {
+  if (activeLme === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') {
+  if (activeLme === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10RitmestoornissenBijKinderenSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus12-lme2-sepsis') {
+  if (activeLme === 'casus12-lme2-sepsis') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus12Lme2SepsisSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
     )
   }
 
-  if (lme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
+  if (activeLme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900 transition-colors duration-300">
-        <Header />
-        <main className="container-custom py-8 md:py-12">
-          <BackButton />
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus12Lme1AntibioticaresistentieSummary />
-        </main>
-        <Footer />
-      </div>
+        </SummaryLayout>
+    )
+  }
+
+  // Config-based mini summaries — Blok 5 (auto-generated from docx)
+  const blok5MiniConfig = getBlok5MiniConfig(activeLme)
+  if (blok5MiniConfig) {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <ConfigMiniSummary config={blok5MiniConfig} miniLmeId={activeLme} blokLabel="Blok 5" />
+      </SummaryLayout>
+    )
+  }
+
+  // Config-based mini summaries — Blok 9 (auto-generated from docx)
+  const miniConfig = getBlok9MiniConfig(activeLme)
+  if (miniConfig) {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <ConfigMiniSummary config={miniConfig} miniLmeId={activeLme} blokLabel="Blok 9" />
+      </SummaryLayout>
     )
   }
 
@@ -3638,7 +2961,99 @@ const SummaryPage = () => {
             Kies je bachelorjaar, blok en week — elke module opent de volledige samenvatting.
           </p>
 
+          {forcedBlokKey && (
+            <div className="mb-6">
+              <Link
+                to="/summary"
+                className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
+              >
+                <ChevronRight className="w-4 h-4 rotate-180" />
+                Terug naar alle blokken
+              </Link>
+            </div>
+          )}
+
+          {!forcedBlokKey && (
+            <div className="space-y-10">
+              <section aria-labelledby="summary-index-ba1-heading">
+                <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                  <h2 id="summary-index-ba1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                    Bachelorjaar 1
+                  </h2>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Blokken 3, 4 en 5
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <Link to="/summary-blok3" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-500/20">
+                        <GraduationCap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok3.name}</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok3)}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto" />
+                    </div>
+                  </Link>
+                  <Link to="/summary-blok4" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20">
+                        <Shield className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok4.name}</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok4)}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 ml-auto" />
+                    </div>
+                  </Link>
+                  <Link to="/summary-blok5" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-500/20">
+                        <Layers className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok5.name}</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok5)}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 ml-auto" />
+                    </div>
+                  </Link>
+                </div>
+              </section>
+
+              <section aria-labelledby="summary-index-ba2-heading">
+                <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                  <h2 id="summary-index-ba2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                    Bachelorjaar 2
+                  </h2>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Blok 9
+                  </p>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <Link to="/summary-blok9" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-cyan-400/70 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-cyan-100 dark:bg-cyan-500/20">
+                        <Droplets className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok9.name}</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok9)}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-cyan-500 ml-auto" />
+                    </div>
+                  </Link>
+                </div>
+              </section>
+            </div>
+          )}
+
+          {forcedBlokKey && (
           <div className="space-y-10">
+            {(forcedBlokKey === 'blok3' || forcedBlokKey === 'blok4' || forcedBlokKey === 'blok5') && (
             <section aria-labelledby="bachelor-year-1-heading">
               <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
                 <h2 id="bachelor-year-1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
@@ -3649,10 +3064,14 @@ const SummaryPage = () => {
                 </p>
               </div>
               <div className="space-y-4">
+          {forcedBlokKey === 'blok3' && (
           <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
-              onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
+              onClick={() => {
+                if (forcedBlokKey) return
+                setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')
+              }}
               className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
@@ -3668,11 +3087,13 @@ const SummaryPage = () => {
                   </p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+              {!forcedBlokKey && (
+                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+              )}
             </button>
 
             <AnimatePresence>
-              {expandedBlok === 'blok3' && (
+              {(forcedBlokKey === 'blok3' || expandedBlok === 'blok3') && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -3731,11 +3152,16 @@ const SummaryPage = () => {
               )}
             </AnimatePresence>
           </div>
+          )}
 
+          {forcedBlokKey === 'blok4' && (
           <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
-              onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
+              onClick={() => {
+                if (forcedBlokKey) return
+                setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')
+              }}
               className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
@@ -3751,11 +3177,13 @@ const SummaryPage = () => {
                   </p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+              {!forcedBlokKey && (
+                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+              )}
             </button>
 
             <AnimatePresence>
-              {expandedBlok === 'blok4' && (
+              {(forcedBlokKey === 'blok4' || expandedBlok === 'blok4') && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -3793,11 +3221,16 @@ const SummaryPage = () => {
               )}
             </AnimatePresence>
           </div>
+          )}
 
+          {forcedBlokKey === 'blok5' && (
           <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
-              onClick={() => setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')}
+              onClick={() => {
+                if (forcedBlokKey) return
+                setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')
+              }}
               className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
@@ -3813,11 +3246,13 @@ const SummaryPage = () => {
                   </p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
+              {!forcedBlokKey && (
+                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
+              )}
             </button>
 
             <AnimatePresence>
-              {expandedBlok === 'blok5' && (
+              {(forcedBlokKey === 'blok5' || expandedBlok === 'blok5') && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -3859,9 +3294,12 @@ const SummaryPage = () => {
               )}
             </AnimatePresence>
           </div>
+          )}
               </div>
             </section>
+            )}
 
+            {forcedBlokKey === 'blok9' && (
             <section aria-labelledby="bachelor-year-2-heading">
               <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
                 <h2 id="bachelor-year-2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
@@ -3873,10 +3311,14 @@ const SummaryPage = () => {
               </div>
               <div className="space-y-4">
 
+          {forcedBlokKey === 'blok9' && (
           <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
             <button
               type="button"
-              onClick={() => setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')}
+              onClick={() => {
+                if (forcedBlokKey) return
+                setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')
+              }}
               className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
             >
               <div className="flex items-center gap-4">
@@ -3892,11 +3334,13 @@ const SummaryPage = () => {
                   </p>
                 </div>
               </div>
-              <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
+              {!forcedBlokKey && (
+                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
+              )}
             </button>
 
             <AnimatePresence>
-              {expandedBlok === 'blok9' && (
+              {(forcedBlokKey === 'blok9' || expandedBlok === 'blok9') && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -3938,9 +3382,12 @@ const SummaryPage = () => {
               )}
             </AnimatePresence>
           </div>
+          )}
               </div>
             </section>
+            )}
           </div>
+          )}
         </motion.div>
       </main>
 

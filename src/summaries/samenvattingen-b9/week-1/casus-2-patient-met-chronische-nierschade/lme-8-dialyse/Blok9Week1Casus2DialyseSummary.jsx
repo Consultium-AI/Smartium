@@ -50,6 +50,13 @@ const Blok9Week1Casus2DialyseSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus2-dialyse"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus2-dialyse',
+        variants: [
+          { id: 'blok9-week1-casus2-dialyse', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus2-dialyse-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02Introductie /></section>

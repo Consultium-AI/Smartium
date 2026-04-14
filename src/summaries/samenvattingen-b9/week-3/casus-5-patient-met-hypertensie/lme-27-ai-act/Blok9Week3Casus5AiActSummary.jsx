@@ -53,6 +53,13 @@ const Blok9Week3Casus5AiActSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week3-casus5-ai-act"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week3-casus5-ai-act',
+        variants: [
+          { id: 'blok9-week3-casus5-ai-act', label: 'Uitgebreid' },
+          { id: 'blok9-week3-casus5-ai-act-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsDeAiAct /></section>

@@ -62,6 +62,13 @@ const Blok5Week2Casus4MriEnPetScanBenignemaligneSummary = () => {
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok5-week2-casus4-mri-en-pet-scan-benignemaligne"
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
+      variants: [
+        { id: 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus4-mri-en-pet-scan-benignemaligne-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

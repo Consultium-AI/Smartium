@@ -50,6 +50,13 @@ const Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
+      variants: [
+        { id: 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

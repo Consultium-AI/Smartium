@@ -54,6 +54,13 @@ const Blok5Week2Casus4MelanoomGelokaliseerdSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus4-melanoom-gelokaliseerd"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus4-melanoom-gelokaliseerd',
+      variants: [
+        { id: 'blok5-week2-casus4-melanoom-gelokaliseerd', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus4-melanoom-gelokaliseerd-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

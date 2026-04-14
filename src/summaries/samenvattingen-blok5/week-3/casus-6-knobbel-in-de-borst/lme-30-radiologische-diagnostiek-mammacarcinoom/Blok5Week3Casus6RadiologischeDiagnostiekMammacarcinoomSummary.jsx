@@ -58,6 +58,13 @@ const Blok5Week3Casus6RadiologischeDiagnostiekMammacarcinoomSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom',
+      variants: [
+        { id: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -57,6 +57,13 @@ const Blok9Week3Casus5FarmacogeneticaSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week3-casus5-farmacogenetica"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week3-casus5-farmacogenetica',
+        variants: [
+          { id: 'blok9-week3-casus5-farmacogenetica', label: 'Uitgebreid' },
+          { id: 'blok9-week3-casus5-farmacogenetica-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02VanDnaNaarEiwit /></section>

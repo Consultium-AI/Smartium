@@ -52,6 +52,13 @@ const Blok5Week6Casus12NvicAcuteVergiftigingSummary = () => {
       caseLabel="Week 6 · Casus 12: Verwarde patiënt met griepachtige klachten"
       blokLabel="Blok 5"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week6-casus12-nvic-acute-vergiftiging',
+      variants: [
+        { id: 'blok5-week6-casus12-nvic-acute-vergiftiging', label: 'Uitgebreid' },
+        { id: 'blok5-week6-casus12-nvic-acute-vergiftiging-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

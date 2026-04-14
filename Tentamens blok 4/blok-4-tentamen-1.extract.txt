@@ -1,0 +1,181 @@
+﻿Oefententamen
+Afweer en aanpak van infectiesBachelor 1 Geneeskunde
+Casus 1 van 12 ÔÇô De eerste afweerreactie
+Een 22-jarige man prikt zich tijdens het tuinieren aan een vervuilde roestige spijker. Binnen enkele uren ontstaat lokale roodheid, warmte en zwelling. In het beschadigde weefsel reageren residente macrofagen en dendritische cellen als eerste op binnengedrongen micro-organismen.
+1a. Welke combinatie past het best bij herkenning van een gramnegatieve bacterie door de aangeboren afweer? (2.0p)A. TLR3 herkent dsRNA en induceert vooral IL-4B. TLR4 herkent LPS en induceert via NF-╬║B pro-inflammatoire cytokinenC. BCR herkent LPS en activeert direct macrofagenD. MHC-II herkent LPS en activeert direct neutrofielen
+1b. Koppel de receptor aan het meest passende type herkenning. (3.0p)
+PRR
+Fc-receptor
+Complementreceptor
+C-type lectin receptor
+a. Herkent mannan/╬▓-glucanen op schimmelsb. Herkent antistoffen gebonden aan micro-organismenc. Herkent PAMPs directd. Herkent complement op een geopsoneerd micro-organisme
+1c. Bij jicht activeert een kristal het NLRP3-inflammasoom. Welke stof wordt dan direct actief gemaakt door caspase-1? (2.0p)A. pro-IL-4B. IL-1╬▓C. TNF-╬▓D. IFN-╬│
+1d. Leg in maximaal 40 woorden uit waarom de aanwezigheid van PAMPs niet automatisch betekent dat er sprake is van een infectie. (3.0p)
+Casus 2 van 12 ÔÇô Kolonisatie of infectie?
+Een 79-jarige vrouw ontwikkelt twee dagen na blaaskatheterisatie dysurie en koorts. De urinekweek toont groei van E. coli. De arts vraagt zich af of dit het gevolg is van een endogene of exogene bron.
+2a. Wat is in deze casus de meest waarschijnlijke bron? (2.0p)A. Exogene infectie vanuit de luchtB. Endogene infectie vanuit de darmfloraC. Exogene infectie via muggenoverdrachtD. Endogene infectie vanuit de milt
+2b. Welke twee uitspraken over gramnegatieve bacteri├½n zijn juist? Kies 2. (3.0p)A. Ze hebben een dikke peptidoglycaanlaag zonder buitenmembraanB. Ze bevatten LPS in het buitenmembraanC. Porines spelen een rol in transport door het buitenmembraanD. Beta-lactam antibiotica grijpen vooral aan op mitochondri├½nE. Ze hebben geen celwand
+2c. Waarom werken beta-lactam antibiotica niet goed tegen Mycoplasma pneumoniae? (2.0p)A. Omdat de bacterie intracellulair leeftB. Omdat de bacterie geen celwand heeftC. Omdat de bacterie alleen in de lever voorkomtD. Omdat de bacterie alleen via feces wordt overgedragen
+2d. Welke uitspraak over kolonisatie en infectie is het best? (2.0p)A. Kolonisatie veroorzaakt altijd weefselschadeB. Infectie betekent aanwezigheid van micro-organismen zonder immuunresponsC. Kolonisatie kan bestaan zonder symptomen of weefselschadeD. Infectie en kolonisatie betekenen in de microbiologie hetzelfde
+Casus 3 van 12 ÔÇô Een virus in zes stappen
+Een student krijgt tijdens de winter keelpijn, koorts en hoesten. Een PCR toont een respiratoir virus aan. Je wilt de basis van virusstructuur en -replicatie toepassen.
+3a. Welke uitspraak over een virus met envelop is juist? (2.0p)A. Het is meestal stabieler buiten het lichaam dan een naakt virusB. Het bevat altijd een dubbelstrengs DNA-genoomC. Het bezit een lipide membraan en is vaak kwetsbaarder buiten de gastheerD. Het kan niet via budding vrijkomen
+3b. Zet de stappen van virale replicatie in de juiste volgorde. (3.0p)
+Assemblage
+Ontmanteling
+Penetratie
+Aanhechting
+Vrijkomen
+Replicatie
+3c. In welke Baltimore-groep valt HIV? (2.0p)A. Groep III: dsRNAB. Groep IV: ssRNA+C. Groep VI: ssRNA+ met reverse transcriptaseD. Groep VII: dsDNA met reverse transcriptase
+3d. Het woord tropisme betekent hier: (2.0p)A. De snelheid waarmee een virus muteertB. De voorkeur van een virus voor bepaalde cellen of weefselsC. De duur van de incubatietijdD. De gevoeligheid van een virus voor antibiotica
+Casus 4 van 12 ÔÇô Infectiepreventie op de afdeling
+Een kind wordt opgenomen met overvloedige diarree na recent antibioticagebruik. De PCR op feces is positief voor Clostridioides difficile. De zaalarts twijfelt over de juiste isolatiemaatregelen.
+4a. Welke isolatie is het meest passend? (2.0p)A. Druppelisolatie met mondmasker alleenB. Contactisolatie met schort en handschoenenC. A├½rogene isolatie met onderdrukD. Geen isolatie nodig bij diarree
+4b. Welke combinatie van begrippen en definities is juist? (3.0p)A. Contaminatie = vermenigvuldiging in het lichaam met symptomenB. Kolonisatie = aanwezigheid van micro-organismen zonder ziekteC. Nosocomiale infectie = infectie die al aanwezig was v├│├│r opnameD. Endogene bron = altijd afkomstig van een andere pati├½nt
+4c. Welke van de volgende momenten hoort bij de vijf momenten van handhygi├½ne? (2.0p)A. Alleen na zichtbaar vuile handenB. Alleen na contact met bloedC. Voor een aseptische handelingD. Alleen voor opname van een pati├½nt
+4d. Leg in maximaal 35 woorden uit waarom het signaleren van een indicatie voor isolatiemaatregelen een verantwoordelijkheid van de behandelaar is. (3.0p)
+Casus 5 van 12 ÔÇô Kind met benauwdheid in de winter
+Een jongen van 4 maanden presenteert zich in januari met rhinorroe, hoesten en toenemende ademarbeid. Hij drinkt minder goed. Auscultatie toont piepende en ratelende bijgeluiden. Saturatie is 91%.
+5a. Wat is de meest waarschijnlijke diagnose? (2.0p)A. Typische pneumonie door pneumokokB. Bronchiolitis, waarschijnlijk door RSVC. TuberculoseD. Kinkhoest in reconvalescentiefase
+5b. Welk aanvullend onderzoek is bij een ongecompliceerde onderste luchtweginfectie doorgaans niet standaard ge├»ndiceerd? (2.0p)A. Klinische observatieB. Beoordeling van ademarbeidC. X-thorax om viraal en bacterieel betrouwbaar te onderscheidenD. Saturatiemeting
+5c. Welke drie bevindingen passen bij een ernstig beloop van pneumonie of bronchiolitis? Kies 3. (3.0p)A. Saturatie &lt;92%B. Zelf goed drinkenC. ApneusD. Ernstige intrekkingenE. Geen koortsF. Capillary refill ÔëÑ2 seconden
+5d. Wat is het beste initi├½le beleid? (2.0p)A. Routinematig corticostero├»den en amoxicillineB. Ondersteunende zorg met zuurstof/vocht, geen standaard antibioticaC. Altijd oseltamivirD. Direct claritromycine vanwege atypische verwekker
+5e. Welk materiaal is het meest sensitief voor moleculaire diagnostiek van respiratoire virussen bij dit kind? (2.0p)A. SerumB. UrineC. Nasofarynxspoelsel of -aspiraatD. Feces
+Casus 6 van 12 ÔÇô Community acquired pneumonia
+Een 46-jarige man komt met koorts, hoesten en dyspneu. Hij was vier dagen geleden in een vakantiewoning met bubbelbad en douche-installatie. Zijn klachten namen toe ondanks start van amoxicilline. Hij heeft nu ook diarree en is verward.
+6a. Welke verwekker is het meest waarschijnlijk? (2.0p)A. Streptococcus pneumoniaeB. Legionella pneumophilaC. Moraxella catarrhalisD. Haemophilus influenzae type b
+6b. Welke bevinding ondersteunt het sterkst een atypische verwekker in deze casus? (2.0p)A. Pijn op de borst na inspanningB. Achteruitgang onder beta-lactam en blootstelling aan wateraerosolenC. Purulent sputum sinds ├®├®n dagD. Bekende atopie
+6c. Welke diagnostiek is het meest passend om Legionella pneumophila snel aan te tonen? (2.0p)A. Gramkleuring van fecesB. Urine-antigeentestC. MonospotD. Antistoftiter in acute fase als enige test
+6d. Welke uitspraak over Mycoplasma pneumoniae is juist? (2.0p)A. De bacterie heeft een celwand en is goed gevoelig voor amoxicillineB. De bacterie veroorzaakt vaak een zeer acuut lobair beeldC. De bacterie heeft geen celwand en kan een ÔÇÿwalking pneumoniaÔÇÖ gevenD. De bacterie is vooral via kattenkrabben overdraagbaar
+6e. Noem in maximaal 40 woorden ├®├®n belangrijke complicatie van een community acquired pneumonie en het kernbeleid daarbij. (3.0p)
+Casus 7 van 12 ÔÇô Lymfeklier en lymfadenopathie
+Een 19-jarige student heeft sinds een week koorts, keelpijn en pijnlijke cervicale lymfeklieren. Het bloedbeeld toont atypische lymfocyten.
+Afbeelding 1 ÔÇô schematische lymfeklier (tekstuele beschrijving)
+Zone A: follikels in de buitenste cortex
+Zone B: paracortex
+Zone C: medullaire strengen
+Ingang vanuit bloed via een HEV (hoog-endotheliale venule)
+7a. In welke zone ontmoeten na├»eve T-cellen en dendritische cellen elkaar vooral? (2.0p)A. Zone AB. Zone BC. Zone CD. Buiten de lymfeklier in de miltvene
+7b. Welke test past het best bij de meest waarschijnlijke diagnose in deze casus? (2.0p)A. Paul-Bunnell/MonospotB. Urine-antigeentest pneumokokC. Dikke druppelD. WoodÔÇÖs lamp
+7c. Welke uitspraak onderscheidt CMV-mononucleosis het best van EBV-mononucleosis? (2.0p)A. CMV geeft vaker keelpijn en tonsilhypertrofie dan EBVB. Monospot is meestal positief bij CMV en negatief bij EBVC. CMV kan klinisch lijken op EBV, maar vaak zonder duidelijke keelpijn of tonsilhypertrofieD. EBV veroorzaakt nooit atypische lymfocytose
+7d. Een pati├½nt heeft niet-pijnlijke chronische cervicale lymfadenopathie met nachtzweten en vermagering. Welke diagnose past het best? (2.0p)A. KattenkrabziekteB. Tuberculeuze lymfadenitisC. Tinea capitisD. Rotavirusinfectie
+7e. Beschrijf in maximaal 45 woorden de recirculatieroute van een na├»eve lymfocyt vanaf het bloed naar en uit de lymfeklier. (4.0p)
+Casus 8 van 12 ÔÇô Schimmels of niet?
+Beeldvraag 1
+Afbeelding 2 ÔÇô tekstuele foto-beschrijvingOp de romp zie je een ronde, scherp begrensde erythemateuze plaque met een rodere verheven rand, fijne schilfering aan de rand en centrale opheldering.
+8a. Wat is de meest waarschijnlijke diagnose? (2.0p)A. Tinea corporisB. EczeemC. ImpetigoD. Psoriasis vulgaris
+Beeldvraag 2
+Afbeelding 3 ÔÇô tekstuele foto-beschrijvingEen afwijking in de flexuur van de elleboog is onscherp begrensd. Er is lichenificatie, papels en krabeffecten. Duidelijke randactiviteit ontbreekt.
+8b. Wat is de meest waarschijnlijke diagnose? (2.0p)A. Tinea corporisB. EczeemC. Tinea barbaeD. Onychomycose
+Beeldvraag 3
+Afbeelding 4 ÔÇô tekstuele foto-beschrijvingDe nagel toont distaal een gelige verkleuring als een ÔÇÿolievlekÔÇÖ met onycholyse.
+8c. Welke diagnose past het best? (2.0p)A. NagelpsoriasisB. OnychomycoseC. ImpetigoD. Tinea capitis
+8d. Welk onderzoek is het meest geschikt om snel schimmeldraden aan te tonen bij twijfel aan een dermatomycose? (2.0p)A. Dikke druppelB. KOH-preparaatC. MonospotD. Antigeentest in urine
+8e. Een 8-jarig kind heeft tinea capitis met kale plekken en afgebroken haren. Wat is het beste beleid? (2.0p)A. Alleen drooghouden van de hoofdhuidB. Alleen topicale terbinafineC. Oraal antimycoticum om verlittekening te voorkomenD. Geen behandeling, spontane genezing is altijd snel
+Casus 9 van 12 ÔÇô Diarree: viraal of parasitair?
+Een 11 maanden oud meisje, niet gevaccineerd volgens het Rijksvaccinatieprogramma, presenteert zich in februari met koorts, waterige diarree en braken. Ze drinkt nog redelijk, heeft minder plasluiers, maar is alert.
+9a. Wat is de meest waarschijnlijke verwekker? (2.0p)A. Entamoeba histolyticaB. RotavirusC. Ascaris lumbricoidesD. Bartonella henselae
+9b. Welk materiaal is het meest aangewezen voor moleculaire diagnostiek van virale gastro-enteritis? (2.0p)A. UrineB. SerumC. FecesD. Liquor
+9c. Welke uitspraak over norovirus is juist? (2.0p)A. Het veroorzaakt nooit uitbraken in zorginstellingenB. Het heeft een hoge infectiedosis nodigC. Het kan ook aerogeen via braaksel verspreidenD. Het is een dubbelstrengs DNA-virus
+9d. Welke combinatie van verwekker en klacht is het meest passend? (3.0p)A. Giardia lamblia ÔÇô bloederige diarreeB. Entamoeba histolytica ÔÇô bloederige diarreeC. Cryptosporidium ÔÇô uitsluitend langdurige obstipatieD. Ascaris ÔÇô acute virale conjunctivitis
+9e. Leg in maximaal 45 woorden uit waarom vaccinatie een vorm van actieve immunisatie is. Gebruik in je antwoord ook het begrip immunologisch geheugen. (4.0p)
+Casus 10 van 12 ÔÇô Koorts na een verre reis
+Een 27-jarige vrouw komt terug uit Angola. Sinds drie dagen heeft zij koorts, hoofdpijn, spierpijn en misselijkheid. Ze hoest niet en heeft geen huiduitslag. Het laboratorium meldt trombocytopenie en een verhoogd lactaat.
+10a. Welke diagnose moet nu hoog in de differentiaaldiagnose staan? (2.0p)A. Malaria tropicaB. Influenza BC. Tinea corporisD. Kattenkrabziekte
+10b. Welke Plasmodium-soort is het sterkst geassocieerd met sekwestratie en cerebrale malaria? (2.0p)A. P. vivaxB. P. ovaleC. P. malariaeD. P. falciparum
+10c. Zet de ontwikkelingsstadia in de juiste volgorde. (3.0p)
+Merozo├»et
+Leverschizont
+Trofozo├»et
+Sporozo├»et
+Bloedschizont
+Gametocyt
+10d. Rangschik de diagnostische methoden van hoogste naar laagste sensitiviteit. (3.0p)
+uitstrijk
+dikke druppel
+antigeensneltest
+10e. Leg in maximaal 40 woorden uit waarom malariaprofylaxe wel tegen ziekte kan beschermen, maar niet per se tegen infectie of hypnozo├»etvorming. (4.0p)
+Casus 11 van 12 ÔÇô HIV en immuunfalen
+Een 31-jarige man presenteert zich met gewichtsverlies, recidiverende orale candidiasis en gegeneraliseerde lymfadenopathie. Bij aanvullend onderzoek blijkt hij HIV-1 positief.
+11a. Welke cellen worden primair ge├»nfecteerd door HIV-1? (2.0p)A. Alleen neutrofielenB. Alleen erytrocytenC. CD4-positieve cellen, waaronder T-cellen en macrofagen/monocytenD. Alleen B-geheugencellen
+11b. Welke uitspraak over co-receptoren is juist? (2.0p)A. R5-stammen gebruiken meestal CCR5B. X4-stammen gebruiken alleen CD8C. CCR5 komt niet voor op geactiveerde T-cellenD. HIV gebruikt geen co-receptor
+11c. Waarom overlijden onbehandelde HIV-pati├½nten meestal niet direct aan HIV zelf, maar aan opportunistische infecties? (3.0p)A. Omdat HIV alleen de lever beschadigtB. Omdat verlies van CD4+ helperfunctie brede immuundefici├½ntie veroorzaaktC. Omdat HIV geen effect heeft op afweercellenD. Omdat alle antistoffen direct verdwijnen binnen 24 uur
+11d. Noem in maximaal 50 woorden twee redenen waarom verticale, ziekte-specifieke HIV-zorgprogrammaÔÇÖs in sub-Sahara Afrika op lange termijn niet volledig houdbaar zijn. (4.0p)
+Casus 12 van 12 ÔÇô Therapie en resistentie
+Een 68-jarige man met influenza verslechtert klinisch na vier dagen en ontwikkelt toenemende dyspneu en koorts. Een andere pati├½nt op de afdeling heeft een ESBL-producerende gramnegatieve bacterie. Op een derde kamer ligt een pati├½nt met een urineweginfectie zonder complicaties.
+12a. Welk antiviraal middel past het best bij een kwetsbare pati├½nt met influenza binnen 48 uur na begin van de klachten? (2.0p)A. AciclovirB. OseltamivirC. ValganciclovirD. Metronidazol
+12b. Welke uitspraak over de klinische verslechtering van de eerste pati├½nt is het best? (2.0p)A. Dit past per definitie bij een tweede virale piek, antibiotica zijn zinloosB. Denk aan bacteri├½le superinfectie; antibiotica kunnen nu w├®l ge├»ndiceerd zijnC. Alleen een antischimmelmiddel is nu zinvolD. Dit past niet bij influenza
+12c. Wat is volgens de NHG-standaard de eerste keus bij een ongecompliceerde urineweginfectie? (2.0p)A. Nitrofuranto├»neB. MeropenemC. ClindamycineD. Ceftriaxon
+12d. Welke twee voorbeelden passen het best bij resistentiemechanismen? Kies 2. (3.0p)A. ESBL inactiveert veel beta-lactam antibioticaB. Efflux betekent dat de bacterie het antibioticum actief naar binnen pomptC. Minder porines bij gramnegatieven kan influx van antibioticum verminderenD. Macrolideresistentie kan nooit ontstaan door verandering van het ribosoomE. Dikkere celwand bij S. aureus kan vancomycine beter laten binden aan het doelwit
+12e. Leg in maximaal 50 woorden uit waarom Mycoplasma pneumoniae een voorbeeld is van natuurlijke resistentie tegen beta-lactam antibiotica. (4.0p)
+Einde tentamen
+Antwoordmodel met korte motivering
+Casus 1 ÔÇô De eerste afweerreactie
+1a. BTLR4 herkent LPS van gramnegatieve bacteri├½n en activeert via MyD88/TIRAP onder andere NF-╬║B, wat leidt tot pro-inflammatoire cytokinen.
+1b. 1-c, 2-b, 3-d, 4-aPRRs herkennen PAMPs direct. Fc-receptoren en complementreceptoren herkennen juist brugmoleculen. C-type lectin receptoren herkennen onder andere schimmelcomponenten zoals mannan en ╬▓-glucanen.
+1c. BBij activatie van het NLRP3-inflammasoom zet caspase-1 pro-IL-1╬▓ om in actief IL-1╬▓.
+1d.PAMPs komen ook voor op niet-pathogene micro-organismen. Hun aanwezigheid betekent dus alleen dat er microben zijn, niet automatisch dat er weefselschade of een echte infectie is.
+Casus 2 ÔÇô Kolonisatie of infectie?
+2a. BEen urineweginfectie door E. coli ontstaat klassiek endogeen vanuit de darmflora.
+2b. B en CGramnegatieven hebben een buitenmembraan met LPS en porines.
+2c. BMycoplasma heeft geen celwand, dus beta-lactam antibiotica hebben geen aangrijpingspunt.
+2d. CKolonisatie betekent aanwezigheid en groei van micro-organismen zonder schade of symptomen; infectie geeft juist weefselschade/ziekte.
+Casus 3 ÔÇô Een virus in zes stappen
+3a. CEen envelopvirus heeft een lipidenmembraan en is daardoor meestal kwetsbaarder buiten de gastheer.
+3b. 4 ÔåÆ 3 ÔåÆ 2 ÔåÆ 6 ÔåÆ 1 ÔåÆ 5Aanhechting, penetratie, ontmanteling, replicatie, assemblage, vrijkomen.
+3c. CHIV hoort in Baltimore-groep VI: positief enkelstrengs RNA met reverse transcriptase.
+3d. BTropisme is de voorkeur van een virus voor bepaalde cellen of weefsels, bepaald door receptor- en gastheerfactoren.
+Casus 4 ÔÇô Infectiepreventie op de afdeling
+4a. BClostridioides difficile vraagt contactisolatie met schort en handschoenen.
+4b. BKolonisatie is vestiging van micro-organismen zonder ziekte of symptomen.
+4c. CÔÇ£Voor een aseptische handelingÔÇØ is ├®├®n van de vijf momenten van handhygi├½ne.
+4d.De behandelaar moet mogelijke besmettelijkheid vroeg herkennen, zodat passende isolatie direct kan worden gestart en transmissie naar andere pati├½nten of zorgverleners wordt voorkomen.
+Casus 5 ÔÇô Kind met benauwdheid in de winter
+5a. BEen jong kind in de winter met rhinorroe, piepen, ratels en verhoogde ademarbeid past het best bij RSV-bronchiolitis.
+5b. CEen X-thorax onderscheidt bij een ongecompliceerde onderste luchtweginfectie niet betrouwbaar tussen viraal en bacterieel.
+5c. A, C en DSaturatie &lt;92%, apneus en ernstige intrekkingen passen bij een ernstig beloop.
+5d. BBronchiolitis wordt primair ondersteunend behandeld; antibiotica zijn niet standaard nodig.
+5e. CPCR op nasofarynxspoelsel of -aspiraat is het meest sensitief voor virale en atypische verwekkers.
+Casus 6 ÔÇô Community acquired pneumonia
+6a. BWateraerosolen, diarree, verwardheid en verslechtering onder amoxicilline passen sterk bij Legionella pneumophila.
+6b. BDe combinatie van blootstelling aan wateraerosolen en falen van beta-lactamtherapie is een klassieke rode vlag voor Legionella.
+6c. BDe urine-antigeentest is de meest gebruikte snelle test voor Legionella pneumophila.
+6d. CMycoplasma heeft geen celwand en kan een geleidelijk ontstane ÔÇ£walking pneumoniaÔÇØ geven.
+6e.Een belangrijke complicatie is pleuravocht/empyeem. Bij pus in de pleuraholte is drainage absoluut ge├»ndiceerd, naast antibiotische behandeling.
+Casus 7 ÔÇô Lymfeklier en lymfadenopathie
+7a. BNa├»eve T-cellen komen via HEV binnen en ontmoeten dendritische cellen vooral in de paracortex.
+7b. ABij EBV is de Paul-Bunnell/Monospot-test klassiek positief.
+7c. CCMV-mononucleosis lijkt op EBV, maar geeft vaker minder keelpijn en minder tonsilhypertrofie.
+7d. BChronische, niet-pijnlijke lymfadenopathie met nachtzweten en vermagering past goed bij tuberculeuze lymfadenitis.
+7e.Bloed ÔåÆ via HEV de lymfeklier in ÔåÆ daarna via efferente lymfe ÔåÆ ductus thoracicus ÔåÆ terug in de bloedbaan. Dat is de basisroute van recirculatie van na├»eve lymfocyten.
+Casus 8 ÔÇô Schimmels of niet?
+8a. AEen scherp begrensde ringvormige plaque met randactiviteit en centrale opheldering past bij tinea corporis.
+8b. BFlexurale lokalisatie, lichenificatie en afwezige randactiviteit passen beter bij eczeem.
+8c. BGele distale verkleuring met onycholyse is kenmerkend voor onychomycose.
+8d. BEen KOH-preparaat is geschikt om snel schimmeldraden aan te tonen.
+8e. CTinea capitis vereist orale therapie, mede om verlittekening en blijvende alopecie te voorkomen.
+Casus 9 ÔÇô Diarree: viraal of parasitair?
+9a. BEen ongevaccineerd kind in februari met koorts, braken en waterige diarree past goed bij rotavirus.
+9b. CFeces is het aangewezen materiaal voor moleculaire diagnostiek van virale gastro-enteritis.
+9c. CNorovirus kan ook aerogeen via braaksel verspreiden.
+9d. BEntamoeba histolytica past bij bloederige diarree.
+9e.Vaccinatie is actieve immunisatie omdat het eigen immuunsysteem wordt gestimuleerd om een specifieke afweerrespons en immunologisch geheugen op te bouwen, waardoor latere blootstelling sneller en effectiever wordt opgevangen.
+Casus 10 ÔÇô Koorts na een verre reis
+10a. AKoorts na terugkeer uit Angola met trombocytopenie en verhoogd lactaat moet malaria tropica doen vermoeden.
+10b. DSekwestratie en cerebrale malaria horen bij P. falciparum.
+10c. 4 ÔåÆ 2 ÔåÆ 1 ÔåÆ 3 ÔåÆ 5 ÔåÆ 6Sporozo├»et, leverschizont, merozo├»et, trofozo├»et, bloedschizont, gametocyt.
+10d. dikke druppel ÔåÆ uitstrijk ÔåÆ antigeensneltestDat is de volgorde van hoog naar laag in sensitiviteit.
+10e.Profylaxe werkt vooral tegen de erytrocytaire bloedstadia en voorkomt daardoor ziekte. Zij voorkomt niet per se infectie zelf en ook niet de vorming van hypnozo├»eten in de lever.
+Casus 11 ÔÇô HIV en immuunfalen
+11a. CHIV infecteert CD4-positieve cellen, waaronder CD4 T-cellen en monocyten/macrofagen.
+11b. AR5-stammen gebruiken meestal CCR5.
+11c. BDoor verlies van CD4+ helperfunctie raken veel delen van de afweer ontregeld, waardoor opportunistische infecties ontstaan.
+11d.Bijvoorbeeld: het donorgeld neemt af, er is een tekort aan zorgpersoneel, pati├½nten leven langer met meer co-morbiditeit, en HIV-zorg groeide scheef ten opzichte van andere zorg. Twee van deze punten waren voldoende.
+Casus 12 ÔÇô Therapie en resistentie
+12a. BOseltamivir is de standaardkeuze bij kwetsbare pati├½nten met influenza binnen 48 uur na begin van de klachten.
+12b. BKlinische verslechtering na enkele dagen influenza past bij een bacteri├½le superinfectie; dan kunnen antibiotica w├®l nodig zijn.
+12c. ANitrofuranto├»ne is eerste keus bij een ongecompliceerde UWI.
+12d. A en CESBL inactiveert beta-lactams. Minder porines vermindert influx van antibioticum.
+12e.Mycoplasma heeft van nature geen celwand. Daardoor hebben beta-lactam antibiotica geen aangrijpingspunt. Dat is natuurlijke resistentie: de hele soort is hier intrinsiek ongevoelig voor.
+Als je wilt, maak ik hierna ook nog een nakijkversie in tabelvorm met punten per vraag.

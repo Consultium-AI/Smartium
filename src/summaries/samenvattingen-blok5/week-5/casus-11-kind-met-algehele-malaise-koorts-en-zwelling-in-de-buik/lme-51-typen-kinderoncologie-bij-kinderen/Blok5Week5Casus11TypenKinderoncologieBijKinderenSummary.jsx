@@ -55,6 +55,13 @@ const Blok5Week5Casus11TypenKinderoncologieBijKinderenSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus11-typen-kinderoncologie-bij-kinderen"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen',
+      variants: [
+        { id: 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

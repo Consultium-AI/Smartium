@@ -55,6 +55,13 @@ const Blok9Week5Casus10BradyAritmieEnImplanteerbareCardialeDevicesSummary = () =
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices',
+        variants: [
+          { id: 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus10-brady-aritmie-en-implanteerbare-cardiale-devices-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

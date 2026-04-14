@@ -53,6 +53,13 @@ const Blok9Week4Casus7KlinischRedenerenRespiratoireInsufficiëntieSummary = () =
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie',
+        variants: [
+          { id: 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus7-klinisch-redeneren-respiratoire-insufficiëntie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02BasisVanGaswisseling /></section>

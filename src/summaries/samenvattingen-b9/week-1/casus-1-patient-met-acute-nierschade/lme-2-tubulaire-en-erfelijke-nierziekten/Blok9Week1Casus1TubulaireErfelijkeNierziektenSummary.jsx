@@ -41,6 +41,13 @@ const Blok9Week1Casus1TubulaireErfelijkeNierziektenSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten',
+        variants: [
+          { id: 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus1-tubulaire-en-erfelijke-nierziekten-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01LeerdoelenPresentatie />

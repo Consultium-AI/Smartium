@@ -53,6 +53,13 @@ const Blok9Week1Casus2VerdiepingChronischeNierschadeSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus2-chronische-nierschade-verdieping"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus2-chronische-nierschade-verdieping',
+        variants: [
+          { id: 'blok9-week1-casus2-chronische-nierschade-verdieping', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus2-chronische-nierschade-verdieping-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02BehandelingKern /></section>

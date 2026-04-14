@@ -1,10 +1,11 @@
 import lmeIndex, { lmeMap } from '../data/lmeIndex'
+import { isRandomMode } from '../pages/PracticeQuestionsRegistry'
 
 /**
  * Zet oefenvragen-URL (evt. ...-image12) om naar de bijbehorende samenvatting-LME.
  */
 export function resolveSummaryLmeId(lmeParam) {
-  if (!lmeParam || lmeParam === 'alle-random') return null
+  if (!lmeParam || isRandomMode(lmeParam)) return null
   return lmeParam.replace(/-image\d+$/i, '')
 }
 
@@ -119,10 +120,10 @@ export async function fetchPracticeChatCompletion(practiceContext, threadMessage
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'gpt-4o',
+      model: 'gpt-5.4-mini',
       messages,
       temperature: 0.35,
-      max_tokens: 450,
+      max_completion_tokens: 450,
     }),
   })
   const data = await res.json()
@@ -141,6 +142,42 @@ function collapseDuplicateAssistantReply(text) {
   const n = Math.min(120, a.length, b.length)
   if (a.slice(0, n) === b.slice(0, n)) return a
   return text
+}
+
+/**
+ * API-call voor inline chat over samenvattingen.
+ */
+export async function fetchSummaryChatCompletion(lmeId, lmeName, threadMessages) {
+  const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
+  const systemPrompt = `Je bent Smartium AI, een studieassistent voor geneeskundestudenten. Beschikbare samenvattingen (LME's):
+
+${LME_LIST}
+
+REGELS:
+1. Geef KORTE, directe antwoorden (max 3-4 zinnen per punt). Wees beknopt en to-the-point.
+2. De student leest de samenvatting: [[${lmeId}|${lmeName}]]. Verwijs in je antwoord naar deze samenvatting tenzij een andere duidelijk beter past.
+3. Antwoord in het Nederlands.
+4. Gebruik bullet points waar relevant.
+5. Geef per bericht precies ÉÉN kort antwoord. Geen duplicaat of herformulering.`
+
+  const messages = [
+    { role: 'system', content: systemPrompt },
+    ...threadMessages,
+  ]
+  const res = await fetch(`${apiBase}/api/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'gpt-5.4-mini',
+      messages,
+      temperature: 0.35,
+      max_completion_tokens: 600,
+    }),
+  })
+  const data = await res.json()
+  if (data.error) throw new Error(data.error?.message || 'API fout')
+  const raw = data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
+  return collapseDuplicateAssistantReply(raw)
 }
 
 /**
@@ -166,7 +203,7 @@ export async function fetchPracticeExplanation(context) {
   const res = await fetch(`${apiBase}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: 'gpt-4o', messages, temperature: 0.35, max_tokens: 400 }),
+    body: JSON.stringify({ model: 'gpt-5.4-mini', messages, temperature: 0.35, max_completion_tokens: 400 }),
   })
   const data = await res.json()
   if (data.error) throw new Error(data.error?.message || 'API fout')

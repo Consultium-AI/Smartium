@@ -42,6 +42,8 @@ import Sect19EersteLijnVervolgEnEerstelijnsbehandeling from './Sect19EersteLijnV
 import Sect20WaaromOntstaatResistentie from './Sect20WaaromOntstaatResistentie'
 import Sect21Samenvatting from './Sect21Samenvatting'
 
+const PRACTICE_LME_PATH = '/oefenvragen?lme=blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie'
+
 const Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSummary = () => {
   const tableOfContents = [
     { id: 'sect-01', title: 'Leerdoelen', icon: BookOpen },
@@ -76,6 +78,13 @@ const Blok5Week6Casus13HetMmAlsVoorbeeldVoorTargetedTherapyInDeHematoOncologieSu
       tableOfContents={tableOfContents}
       practiceLink={PRACTICE_LME_PATH}
       practiceFooter={<Blok5Week6Casus13MmTargetedTherapyOefenvragenCallout to={PRACTICE_LME_PATH} />}
+      summaryVariantToggle={{
+        activeLmeId: 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie',
+        variants: [
+          { id: 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie', label: 'Uitgebreid' },
+          { id: 'blok5-week6-casus13-het-mm-als-voorbeeld-voor-targeted-therapy-in-de-hemato-oncologie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -53,6 +53,13 @@ const Blok9Week1Casus2EthiekVanOrgaantransplantatieSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week1-casus2-ethiek-van-orgaantransplantatie"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus2-ethiek-van-orgaantransplantatie',
+        variants: [
+          { id: 'blok9-week1-casus2-ethiek-van-orgaantransplantatie', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus2-ethiek-van-orgaantransplantatie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WaaromOrgaandonatie /></section>

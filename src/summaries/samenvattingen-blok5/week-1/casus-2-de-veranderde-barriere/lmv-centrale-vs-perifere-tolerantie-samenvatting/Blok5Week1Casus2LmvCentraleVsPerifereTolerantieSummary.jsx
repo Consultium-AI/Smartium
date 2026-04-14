@@ -56,6 +56,13 @@ const Blok5Week1Casus2LmvCentraleVsPerifereTolerantieSummary = () => {
       practiceLink="/oefenvragen?lme=blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie"
       moduleKind="lmv"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie',
+      variants: [
+        { id: 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

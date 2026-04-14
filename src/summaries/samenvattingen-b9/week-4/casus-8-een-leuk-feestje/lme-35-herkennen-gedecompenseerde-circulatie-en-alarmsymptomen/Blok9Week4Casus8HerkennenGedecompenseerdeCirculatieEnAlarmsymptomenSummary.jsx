@@ -59,6 +59,13 @@ const Blok9Week4Casus8HerkennenGedecompenseerdeCirculatieEnAlarmsymptomenSummary
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen',
+        variants: [
+          { id: 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus8-herkennen-gedecompenseerde-circulatie-en-alarmsymptomen-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

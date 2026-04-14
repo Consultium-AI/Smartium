@@ -56,6 +56,13 @@ const Blok9Week5Casus10BasisAnalyseEcgSummary = () => {
       blokLabel="Blok 9"
       practiceLink="/oefenvragen?lme=blok9-week5-casus10-basis-analyse-ecg"
       tableOfContents={tableOfContents}
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week5-casus10-basis-analyse-ecg',
+        variants: [
+          { id: 'blok9-week5-casus10-basis-analyse-ecg', label: 'Uitgebreid' },
+          { id: 'blok9-week5-casus10-basis-analyse-ecg-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02DeBasisVanEcgAnalyse /></section>

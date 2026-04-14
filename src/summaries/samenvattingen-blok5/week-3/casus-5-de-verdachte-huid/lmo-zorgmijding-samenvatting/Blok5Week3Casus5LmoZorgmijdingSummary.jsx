@@ -70,6 +70,13 @@ const Blok5Week3Casus5LmoZorgmijdingSummary = () => {
       moduleKind="lmo"
       practiceLink="/oefenvragen?lme=blok5-week3-casus5-lmo-zorgmijding"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus5-lmo-zorgmijding',
+      variants: [
+        { id: 'blok5-week3-casus5-lmo-zorgmijding', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus5-lmo-zorgmijding-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

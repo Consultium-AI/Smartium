@@ -56,6 +56,13 @@ const Blok9Week2Casus4DiabetischeVoetSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week2-casus4-diabetische-voet"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week2-casus4-diabetische-voet',
+        variants: [
+          { id: 'blok9-week2-casus4-diabetische-voet', label: 'Uitgebreid' },
+          { id: 'blok9-week2-casus4-diabetische-voet-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsDeDiabetischeVoet /></section>

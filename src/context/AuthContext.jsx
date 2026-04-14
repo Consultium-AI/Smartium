@@ -22,6 +22,7 @@ import { auth, db, isFirebaseConfigured } from '../lib/firebase'
 import { hydrateFromCloud, triggerCloudProgressSyncNow } from '../lib/cloudUserProgress'
 import { parseGoogleIdTokenPayload } from '../lib/googleOAuth'
 import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
+import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 
 const DEMO_USERS_KEY = 'smartium_demo_users'
 /** localStorage: demo + Google OAuth (zonder Firebase); uitloggen wist de sessie */
@@ -271,7 +272,7 @@ export function AuthProvider({ children }) {
         uid: `demo:${entry.email}`,
         email: entry.email,
         displayName: nameTrimmed,
-        photoURL: null,
+        photoURL: DEFAULT_PFP_URL,
         username: usernameTrimmed,
         isDemo: true,
       }
@@ -303,7 +304,7 @@ export function AuthProvider({ children }) {
       }
 
       const cred = await createUserWithEmailAndPassword(auth, emailTrimmed, password)
-      await updateProfile(cred.user, { displayName: nameTrimmed })
+      await updateProfile(cred.user, { displayName: nameTrimmed, photoURL: DEFAULT_PFP_URL })
       if (db) {
         const { doc, serverTimestamp, setDoc } = await import('firebase/firestore')
         await setDoc(

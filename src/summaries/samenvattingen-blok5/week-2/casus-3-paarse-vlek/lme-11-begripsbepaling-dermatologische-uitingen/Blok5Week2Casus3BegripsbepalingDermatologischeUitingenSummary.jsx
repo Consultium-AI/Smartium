@@ -51,6 +51,13 @@ const Blok5Week2Casus3BegripsbepalingDermatologischeUitingenSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus3-begripsbepaling-dermatologische-uitingen"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen',
+      variants: [
+        { id: 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

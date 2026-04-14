@@ -50,6 +50,13 @@ const Blok5Week7Casus14DermatoloogInJeBroekzakSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week7-casus14-dermatoloog-in-je-broekzak"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week7-casus14-dermatoloog-in-je-broekzak',
+      variants: [
+        { id: 'blok5-week7-casus14-dermatoloog-in-je-broekzak', label: 'Uitgebreid' },
+        { id: 'blok5-week7-casus14-dermatoloog-in-je-broekzak-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -63,6 +63,13 @@ const Blok5Week3Casus5MilieuEnGezondheidSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week3-casus5-milieu-en-gezondheid"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week3-casus5-milieu-en-gezondheid',
+      variants: [
+        { id: 'blok5-week3-casus5-milieu-en-gezondheid', label: 'Uitgebreid' },
+        { id: 'blok5-week3-casus5-milieu-en-gezondheid-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

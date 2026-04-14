@@ -2,7 +2,7 @@
  * Grading and follow-up for open/beeldvragen on blok-tentamens.
  */
 
-const EXAM_GRADING_MODEL = 'gpt-4o'
+const EXAM_GRADING_MODEL = 'gpt-5.4-mini'
 
 export function parseExamOpenScore(feedbackText, maxPoints) {
   if (!feedbackText || typeof feedbackText !== 'string') return null
@@ -54,7 +54,7 @@ export async function fetchExamOpenGrading(content) {
       model: EXAM_GRADING_MODEL,
       messages,
       temperature: 0.2,
-      max_tokens: 600,
+      max_completion_tokens: 600,
     }),
   })
   const data = await res.json()
@@ -90,7 +90,44 @@ REGELS:
       model: EXAM_GRADING_MODEL,
       messages,
       temperature: 0.35,
-      max_tokens: 450,
+      max_completion_tokens: 450,
+    }),
+  })
+  const data = await res.json()
+  if (data.error) throw new Error(data.error?.message || 'API fout')
+  return data.choices?.[0]?.message?.content || 'Geen antwoord ontvangen.'
+}
+
+export async function fetchExamCorrectExplanation({ question, maxPoints }) {
+  const apiBase = (import.meta.env.VITE_API_BASE_URL || 'https://smartium-openai-proxy.yellow-fog-b95b.workers.dev').replace(/\/$/, '')
+  const prompt = `Je bent Smartium, een studieassistent geneeskunde.
+De student heeft deze tentamenvraag volledig goed beantwoord (${maxPoints}/${maxPoints} punten).
+Leg kort uit waarom dit antwoord inhoudelijk klopt.
+
+VRAAGTYPE: ${question?.type ?? 'onbekend'}
+VRAAG: ${question?.question ?? ''}
+${question?.rubric ? `RUBRIC: ${question.rubric}` : ''}
+${question?.modelAnswer ? `MODELANTWOORD: ${question.modelAnswer}` : ''}
+${question?.explanation ? `BASISUITLEG: ${question.explanation}` : ''}
+
+REGELS:
+1. Antwoord in het Nederlands.
+2. Max 3-4 zinnen.
+3. Focus op de kern (waarom juist), geen lange uitweiding.`
+
+  const messages = [
+    { role: 'system', content: 'Je volgt exact de instructies in het gebruikersbericht.' },
+    { role: 'user', content: prompt },
+  ]
+
+  const res = await fetch(`${apiBase}/api/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: EXAM_GRADING_MODEL,
+      messages,
+      temperature: 0.35,
+      max_completion_tokens: 350,
     }),
   })
   const data = await res.json()

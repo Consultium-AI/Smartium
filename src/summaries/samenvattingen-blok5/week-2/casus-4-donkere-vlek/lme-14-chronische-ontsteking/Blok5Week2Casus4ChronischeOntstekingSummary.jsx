@@ -38,6 +38,13 @@ const Blok5Week2Casus4ChronischeOntstekingSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus4-chronische-ontsteking"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus4-chronische-ontsteking',
+      variants: [
+        { id: 'blok5-week2-casus4-chronische-ontsteking', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus4-chronische-ontsteking-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

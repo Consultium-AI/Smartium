@@ -30,18 +30,29 @@ import Blok5Week5Casus11IntroductieKinderoncologiePracticeIntro from '../compone
 import Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksPracticeIntro from '../components/Blok5Week5Casus11KinderoncologieBegrijpDeHallmarksPracticeIntro'
 import Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdPracticeIntro from '../components/Blok5Week5Casus11OverLevenNaKankerOpKinderleeftijdPracticeIntro'
 import Blok5Week5Casus11TypenKinderoncologieBijKinderenPracticeIntro from '../components/Blok5Week5Casus11TypenKinderoncologieBijKinderenPracticeIntro'
+import Blok5Week5Casus11LmoImportziektenPracticeIntro from '../components/Blok5Week5Casus11LmoImportziektenPracticeIntro'
+import Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologiePracticeIntro from '../components/Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologiePracticeIntro'
 import Blok5Week5Casus9BouwEnFunctieVanDeThymusPracticeIntro from '../components/Blok5Week5Casus9BouwEnFunctieVanDeThymusPracticeIntro'
+import Blok5Week5Casus9LmoPositieveEnNegatieveSelectiePracticeIntro from '../components/Blok5Week5Casus9LmoPositieveEnNegatieveSelectiePracticeIntro'
+import Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenPracticeIntro from '../components/Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenPracticeIntro'
 import Blok5Week5Casus9EndocrieneAutoImmuunziektenPracticeIntro from '../components/Blok5Week5Casus9EndocrieneAutoImmuunziektenPracticeIntro'
 import Blok5Week5Casus9PathogeneseAutoImmuunziektenPracticeIntro from '../components/Blok5Week5Casus9PathogeneseAutoImmuunziektenPracticeIntro'
+import Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatiePracticeIntro from '../components/Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatiePracticeIntro'
+import Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapiePracticeIntro from '../components/Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapiePracticeIntro'
+import Blok5Week5Casus9LmvPatientMetSleSamenvattingPracticeIntro from '../components/Blok5Week5Casus9LmvPatientMetSleSamenvattingPracticeIntro'
 import Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatiePracticeIntro from '../components/Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatiePracticeIntro'
 import Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitPracticeIntro from '../components/Blok5Week5Casus10SpectrumAutoInflammatieEnAutoImmuuniteitPracticeIntro'
 import Blok5Week6Casus12GaswisselingHbO2Co2CoPracticeIntro from '../components/Blok5Week6Casus12GaswisselingHbO2Co2CoPracticeIntro'
 import Blok5Week6Casus12NvicAcuteVergiftigingPracticeIntro from '../components/Blok5Week6Casus12NvicAcuteVergiftigingPracticeIntro'
 import Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesPracticeIntro from '../components/Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesPracticeIntro'
 import Blok5Week7Casus14DermatoloogInJeBroekzakPracticeIntro from '../components/Blok5Week7Casus14DermatoloogInJeBroekzakPracticeIntro'
+import Blok5Week7Casus14LmoWatIsAiPracticeIntro from '../components/Blok5Week7Casus14LmoWatIsAiPracticeIntro'
+import Blok5Week7Casus14LmoEthiekVanDermaAppsPracticeIntro from '../components/Blok5Week7Casus14LmoEthiekVanDermaAppsPracticeIntro'
+import Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkPracticeIntro from '../components/Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkPracticeIntro'
 import Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemPracticeIntro from '../components/Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemPracticeIntro'
 import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro from '../components/Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro'
 import Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro from '../components/Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro'
+import Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro from '../components/Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro'
 import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
 import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
 import {
@@ -62,7 +73,12 @@ import {
   getPracticeQuestionsForLme,
   getPracticeTitleForLme,
   getPracticeSubtitleForLme,
+  isRandomMode,
+  buildCasusRandomParam,
+  buildBlokRandomParam,
+  buildBlokWrongAnswersParam,
 } from './PracticeQuestionsRegistry'
+import { collectWrongAnsweredQuestionsForBlok, countWrongAnsweredQuestionsForBlok } from '../utils/practiceBlokWrongAnswers'
 
 const FLANKEREND_LME_IDS_BY_CASE = {
   'Casus 1: De huid als succesvolle barrière': new Set([
@@ -95,6 +111,11 @@ const FLANKEREND_LME_IDS_BY_CASE = {
   ]),
   'Casus 9: Patiënt met auto-immuunziekte': new Set([
     'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
+    'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
+    'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
+    'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
+    'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
+    'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
   ]),
   'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik': new Set([
     'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
@@ -138,21 +159,27 @@ const FLANKEREND_LME_IDS_BY_CASE = {
   ]),
 }
 
-const PracticeQuestionsPage = () => {
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9']
+
+const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
   const { user, loading: authLoading } = useAuth()
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
-  const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedLme(lmeParam)
+  const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && (isFreePlanBlockedLme(lmeParam) || lmeParam.startsWith('casus-random-') || lmeParam.startsWith('blok-random-') || lmeParam.startsWith('blok-fouten-'))
   const progressUserId = getProgressUserId(user, authLoading)
   const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
   const blokParam = searchParams.get('blok')
+  const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
+  const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
+  const selectedOverviewBlok = forcedBlokKey || urlBlokKey
   const [expandedBlok, setExpandedBlok] = useState(() => {
-    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) return blokParam
+    if (selectedOverviewBlok) return selectedOverviewBlok
     return null
   })
+  const [progressVersion, setProgressVersion] = useState(0)
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
   const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
@@ -160,10 +187,10 @@ const PracticeQuestionsPage = () => {
     : null
 
   useEffect(() => {
-    if (blokParam && ['blok3', 'blok4', 'blok5', 'blok9'].includes(blokParam)) {
-      setExpandedBlok(blokParam)
+    if (selectedOverviewBlok) {
+      setExpandedBlok(selectedOverviewBlok)
       requestAnimationFrame(() => {
-        const el = document.getElementById(`section-${blokParam}`)
+        const el = document.getElementById(`section-${selectedOverviewBlok}`)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       })
     } else if (lmeParam?.startsWith('blok5-week')) {
@@ -171,7 +198,7 @@ const PracticeQuestionsPage = () => {
     } else if (lmeParam?.startsWith('blok9-week')) {
       setExpandedBlok('blok9')
     }
-  }, [lmeParam, blokParam])
+  }, [lmeParam, selectedOverviewBlok])
 
   if (isBlockedDirectLme) {
     return <Navigate to="/oefenvragen" replace />
@@ -179,8 +206,19 @@ const PracticeQuestionsPage = () => {
 
 
   const questions = useMemo(() => {
+    if (lmeParam?.startsWith('blok-fouten-')) {
+      const blokKey = lmeParam.replace('blok-fouten-', '')
+      if (!progressUserId || !VALID_BLOK_KEYS.includes(blokKey)) return []
+      const wrong = collectWrongAnsweredQuestionsForBlok(progressUserId, blokKey)
+      const arr = [...wrong]
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        ;[arr[i], arr[j]] = [arr[j], arr[i]]
+      }
+      return arr.map((item, idx) => ({ ...item, id: idx + 1 }))
+    }
     const q = getPracticeQuestionsForLme(lmeParam)
-    if (lmeParam === 'alle-random') {
+    if (isRandomMode(lmeParam)) {
       const arr = [...q]
       for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
@@ -189,21 +227,20 @@ const PracticeQuestionsPage = () => {
       return arr.map((item, idx) => ({ ...item, id: idx + 1 }))
     }
     return q
-  }, [lmeParam])
+  }, [lmeParam, progressUserId, progressVersion])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [explanations, setExplanations] = useState({})
   const [explanationRequests, setExplanationRequests] = useState({})
   const [progressHydrated, setProgressHydrated] = useState(false)
-  const [progressVersion, setProgressVersion] = useState(0)
 
   useEffect(() => {
     if (progressUserId === null) {
       setProgressHydrated(false)
       return
     }
-    if (!lmeParam || lmeParam === 'alle-random') {
+    if (!lmeParam || isRandomMode(lmeParam)) {
       setProgressHydrated(true)
       return
     }
@@ -245,7 +282,7 @@ const PracticeQuestionsPage = () => {
   }, [progressUserId, lmeParam, questions.length])
 
   useEffect(() => {
-    if (!progressHydrated || progressUserId === null || !lmeParam || lmeParam === 'alle-random') {
+    if (!progressHydrated || progressUserId === null || !lmeParam || isRandomMode(lmeParam)) {
       return
     }
     const timer = setTimeout(() => {
@@ -314,31 +351,26 @@ const PracticeQuestionsPage = () => {
     setExplanations({})
     setExplanationRequests({})
     setCurrentQuestion(0)
-    if (progressUserId && lmeParam && lmeParam !== 'alle-random') {
+    if (progressUserId && lmeParam && !isRandomMode(lmeParam)) {
       clearPracticeProgress(progressUserId, lmeParam)
     }
   }
 
-  const handleRequestExplanation = (questionId) => {
+  const handleRequestExplanation = async (questionId) => {
+    if (!hasPaidAccess) return
+    if (!currentQ || questionId !== currentQ.id) return
+    if (explanations[questionId]?.loading || explanations[questionId]?.text) return
+
     setExplanationRequests((prev) => ({ ...prev, [questionId]: true }))
+    setExplanations((prev) => ({ ...prev, [questionId]: { loading: true } }))
+    try {
+      const ctx = buildPracticeContext(currentQ, selectedAnswers[questionId], lmeParam)
+      const text = await fetchPracticeExplanation(ctx)
+      setExplanations((prev) => ({ ...prev, [questionId]: { loading: false, text } }))
+    } catch (err) {
+      setExplanations((prev) => ({ ...prev, [questionId]: { loading: false, error: err?.message || 'Fout bij ophalen' } }))
+    }
   }
-
-  // Auto-fetch uitleg zodra antwoord fout is onthuld
-  useEffect(() => {
-    if (!currentQ) return
-    const qId = currentQ.id
-    if (!revealedAnswers[qId]) return
-    const explanationRequested = Boolean(explanationRequests[qId])
-    const answeredCorrectly = selectedAnswers[qId] === currentQ.correctAnswer
-    if (answeredCorrectly && !explanationRequested) return
-    if (explanations[qId]) return
-
-    setExplanations((prev) => ({ ...prev, [qId]: { loading: true } }))
-    const ctx = buildPracticeContext(currentQ, selectedAnswers[qId], lmeParam)
-    fetchPracticeExplanation(ctx)
-      .then((text) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, text } })))
-      .catch((err) => setExplanations((prev) => ({ ...prev, [qId]: { loading: false, error: err?.message || 'Fout bij ophalen' } })))
-  }, [currentQ, revealedAnswers, selectedAnswers, lmeParam, explanations, explanationRequests])
 
   const getOptionStyle = (questionId, letter) => {
     const isSelected = selectedAnswers[questionId] === letter
@@ -420,6 +452,11 @@ const PracticeQuestionsPage = () => {
     return progressMap
   }, [hasAccountProgress, progressUserId, progressVersion, lmeParam])
 
+  const wrongAnswersCountForForcedBlok = useMemo(() => {
+    if (!forcedBlokKey || !hasAccountProgress || !progressUserId) return null
+    return countWrongAnsweredQuestionsForBlok(progressUserId, forcedBlokKey)
+  }, [forcedBlokKey, hasAccountProgress, progressUserId, progressVersion])
+
   const getSectionProgress = (items) => {
     let completedQuestions = 0
     let totalQuestions = 0
@@ -500,12 +537,13 @@ const PracticeQuestionsPage = () => {
     )
   }
 
-  const renderCaseSections = (casus) => {
+  const renderCaseSections = (casus, blokKey, weekIdx, casusIdx) => {
     const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(casus)
     const sectionDefs = [
       { key: 'casusbijeenkomst', title: 'Casusbijeenkomst', items: casusbijeenkomstItems },
       { key: 'flankerend', title: 'Flankerend onderwijs', items: flankerendItems },
     ]
+    const totalCasusQuestions = [...casusbijeenkomstItems, ...flankerendItems].reduce((sum, item) => sum + getLmeQuestionCount(item), 0)
 
     return (
       <div className="ml-0 sm:ml-2 space-y-3">
@@ -531,6 +569,15 @@ const PracticeQuestionsPage = () => {
             </section>
           ) : null
         ))}
+        {totalCasusQuestions > 0 && (
+          <Link
+            to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildCasusRandomParam(blokKey, weekIdx, casusIdx)}`}
+            className={`mt-2 flex items-center gap-2 px-3 py-2 rounded-lg border border-dashed text-sm transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-400 dark:hover:border-primary-500 hover:text-primary-700 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-primary-500/5'}`}
+          >
+            {showPremiumLocks ? <Lock className="w-3.5 h-3.5" /> : <RotateCcw className="w-3.5 h-3.5" />}
+            <span>Oefen alle casusvragen ({totalCasusQuestions} vragen)</span>
+          </Link>
+        )}
       </div>
     )
   }
@@ -549,12 +596,22 @@ const PracticeQuestionsPage = () => {
             className="mb-8 md:mb-10 max-w-3xl mx-auto"
           >
             <Link
-              to={lmeParam === 'alle-random' ? '/oefenvragen' : `/summary?lme=${lmeParam}`}
+              to={
+                lmeParam?.startsWith('blok-fouten-')
+                  ? `/oefenvragen-${lmeParam.replace('blok-fouten-', '')}`
+                  : isRandomMode(lmeParam)
+                    ? '/oefenvragen'
+                    : `/summary?lme=${lmeParam}`
+              }
               className="inline-flex items-center gap-2 text-navy-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="font-medium">
-                {lmeParam === 'alle-random' ? 'Terug naar overzicht' : 'Terug naar samenvatting'}
+                {lmeParam?.startsWith('blok-fouten-')
+                  ? 'Terug naar dit blok'
+                  : isRandomMode(lmeParam)
+                    ? 'Terug naar overzicht'
+                    : 'Terug naar samenvatting'}
               </span>
             </Link>
           </motion.div>
@@ -578,11 +635,26 @@ const PracticeQuestionsPage = () => {
           {lmeParam === 'blok5-week5-casus9-bouw-en-functie-van-de-thymus' && (
             <Blok5Week5Casus9BouwEnFunctieVanDeThymusPracticeIntro />
           )}
+          {lmeParam === 'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie' && (
+            <Blok5Week5Casus9LmoPositieveEnNegatieveSelectiePracticeIntro />
+          )}
+          {lmeParam === 'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen' && (
+            <Blok5Week5Casus9LmoVoorbereidingVoRaKlinischePresentatieEnImmuunmechanismenPracticeIntro />
+          )}
           {lmeParam === 'blok5-week5-casus9-endocriene-auto-immuunziekten' && (
             <Blok5Week5Casus9EndocrieneAutoImmuunziektenPracticeIntro />
           )}
           {lmeParam === 'blok5-week5-casus9-pathogenese-auto-immuunziekten' && (
             <Blok5Week5Casus9PathogeneseAutoImmuunziektenPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie' && (
+            <Blok5Week5Casus9LmvIntroductieAutoImmuniteitVersusAutoInflammatiePracticeIntro />
+          )}
+          {lmeParam === 'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie' && (
+            <Blok5Week5Casus9LmvAutoImmuniteitAlsBijwerkingBijImmunotherapiePracticeIntro />
+          )}
+          {lmeParam === 'blok5-week5-casus9-lmv-patient-met-sle-samenvatting' && (
+            <Blok5Week5Casus9LmvPatientMetSleSamenvattingPracticeIntro />
           )}
           {lmeParam === 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie' && (
             <Blok5Week5Casus10PrincipesEnKlinischeAspectenVanAutoInflammatiePracticeIntro />
@@ -647,6 +719,12 @@ const PracticeQuestionsPage = () => {
           {lmeParam === 'blok5-week5-casus11-typen-kinderoncologie-bij-kinderen' && (
             <Blok5Week5Casus11TypenKinderoncologieBijKinderenPracticeIntro />
           )}
+          {lmeParam === 'blok5-week5-casus11-lmo-importziekten' && (
+            <Blok5Week5Casus11LmoImportziektenPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week5-casus11-lmo-infecties-binnen-de-kinderoncologie' && (
+            <Blok5Week5Casus11LmoInfectiesBinnenDeKinderoncologiePracticeIntro />
+          )}
           {lmeParam === 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co' && (
             <Blok5Week6Casus12GaswisselingHbO2Co2CoPracticeIntro />
           )}
@@ -657,8 +735,17 @@ const PracticeQuestionsPage = () => {
             'blok5-week6-casus12-slechte-woningen-lucht-luchtverontreiniging-bovenste-luchtweginfecties' && (
             <Blok5Week6Casus12SlechteWoningenLuchtLuchtverontreinigingBovensteLuchtweginfectiesPracticeIntro />
           )}
+          {lmeParam === 'blok5-week7-casus14-lmo-wat-is-ai' && (
+            <Blok5Week7Casus14LmoWatIsAiPracticeIntro />
+          )}
           {lmeParam === 'blok5-week7-casus14-dermatoloog-in-je-broekzak' && (
             <Blok5Week7Casus14DermatoloogInJeBroekzakPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week7-casus14-lmo-implementatie-in-de-dermatologische-praktijk' && (
+            <Blok5Week7Casus14LmoImplementatieInDeDermatologischePraktijkPracticeIntro />
+          )}
+          {lmeParam === 'blok5-week7-casus14-lmo-ethiek-van-derma-apps' && (
+            <Blok5Week7Casus14LmoEthiekVanDermaAppsPracticeIntro />
           )}
           {lmeParam === 'blok5-week8-casus15-remmen-versus-stimuleren-van-het-afweersysteem' && (
             <Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemPracticeIntro />
@@ -669,13 +756,111 @@ const PracticeQuestionsPage = () => {
           {lmeParam === 'blok5-week8-casus15-scylla-en-charybdis' && (
             <Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro />
           )}
+          {lmeParam === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg' && (
+            <Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro />
+          )}
           {!lmeParam && (
+            <>
+              {forcedBlokKey && (
+                <div className="mb-6">
+                  <Link
+                    to="/oefenvragen"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <ChevronRight className="w-4 h-4 rotate-180" />
+                    Terug naar alle blokken
+                  </Link>
+                </div>
+              )}
+              {!forcedBlokKey && (
+                <div className="mt-8 space-y-10 text-left">
+                  <section aria-labelledby="practice-index-ba1-heading">
+                    <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                      <h2 id="practice-index-ba1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                        Bachelorjaar 1
+                      </h2>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                        Blokken 3, 4 en 5
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                      <Link to="/oefenvragen-blok3" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-500/20">
+                            <GraduationCap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok3.name}</h2>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok3)}</p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto" />
+                        </div>
+                      </Link>
+                      <Link to="/oefenvragen-blok4" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20">
+                            <Shield className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok4.name}</h2>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok4)}</p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 ml-auto" />
+                        </div>
+                      </Link>
+                      <Link to="/oefenvragen-blok5" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors sm:col-span-2">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-500/20">
+                            <Sparkles className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok5.name}</h2>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok5)}</p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 ml-auto" />
+                        </div>
+                      </Link>
+                    </div>
+                  </section>
+
+                  <section aria-labelledby="practice-index-ba2-heading">
+                    <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+                      <h2 id="practice-index-ba2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                        Bachelorjaar 2
+                      </h2>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                        Blok 9
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                      <Link to="/oefenvragen-blok9" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-teal-400/70 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-teal-100 dark:bg-teal-500/20">
+                            <Activity className="w-5 h-5 text-teal-600 dark:text-teal-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok9.name}</h2>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok9)}</p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-teal-500 ml-auto" />
+                        </div>
+                      </Link>
+                    </div>
+                  </section>
+                </div>
+              )}
+              {forcedBlokKey && (
+            <>
             <div className="mt-8 space-y-4 text-left">
               {/* Blok 3 */}
+              {forcedBlokKey === 'blok3' && (
               <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
-                  onClick={() => setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')}
+                  onClick={() => {
+                    if (forcedBlokKey) return
+                    setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')
+                  }}
                   className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
@@ -691,10 +876,12 @@ const PracticeQuestionsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+                  {!forcedBlokKey && (
+                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
+                  )}
                 </button>
                 <AnimatePresence>
-                  {expandedBlok === 'blok3' && (
+                  {(forcedBlokKey === 'blok3' || expandedBlok === 'blok3') && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -720,22 +907,34 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                {renderCaseSections(casus)}
+                                {renderCaseSections(casus, 'blok3', weekIndex, casusIndex)}
                               </div>
                             ))}
                           </div>
                         ))}
+                        <Link
+                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok3')}`}
+                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-primary-300 dark:border-primary-600/50 text-primary-700 dark:text-primary-400 hover:border-primary-500 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10'}`}
+                        >
+                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
+                          Oefen alle vragen van Blok 3
+                        </Link>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+              )}
 
               {/* Blok 4 */}
+              {forcedBlokKey === 'blok4' && (
               <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
-                  onClick={() => setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')}
+                  onClick={() => {
+                    if (forcedBlokKey) return
+                    setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')
+                  }}
                   className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
@@ -751,10 +950,12 @@ const PracticeQuestionsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+                  {!forcedBlokKey && (
+                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
+                  )}
                 </button>
                 <AnimatePresence>
-                  {expandedBlok === 'blok4' && (
+                  {(forcedBlokKey === 'blok4' || expandedBlok === 'blok4') && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -780,22 +981,34 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                {renderCaseSections(casus)}
+                                {renderCaseSections(casus, 'blok4', weekIndex, casusIndex)}
                               </div>
                             ))}
                           </div>
                         ))}
+                        <Link
+                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok4')}`}
+                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-indigo-300 dark:border-indigo-600/50 text-indigo-700 dark:text-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'}`}
+                        >
+                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
+                          Oefen alle vragen van Blok 4
+                        </Link>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+              )}
 
               {/* Blok 5 */}
+              {forcedBlokKey === 'blok5' && (
               <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
-                  onClick={() => setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')}
+                  onClick={() => {
+                    if (forcedBlokKey) return
+                    setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')
+                  }}
                   className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
@@ -811,10 +1024,12 @@ const PracticeQuestionsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
+                  {!forcedBlokKey && (
+                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
+                  )}
                 </button>
                 <AnimatePresence>
-                  {expandedBlok === 'blok5' && (
+                  {(forcedBlokKey === 'blok5' || expandedBlok === 'blok5') && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -844,22 +1059,34 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                {renderCaseSections(casus)}
+                                {renderCaseSections(casus, 'blok5', weekIndex, casusIndex)}
                               </div>
                             ))}
                           </div>
                         ))}
+                        <Link
+                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok5')}`}
+                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-rose-300 dark:border-rose-600/50 text-rose-700 dark:text-rose-400 hover:border-rose-500 dark:hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10'}`}
+                        >
+                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
+                          Oefen alle vragen van Blok 5
+                        </Link>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+              )}
 
               {/* Blok 9 */}
+              {forcedBlokKey === 'blok9' && (
               <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
                 <button
                   type="button"
-                  onClick={() => setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')}
+                  onClick={() => {
+                    if (forcedBlokKey) return
+                    setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')
+                  }}
                   className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
                 >
                   <div className="flex items-center gap-4">
@@ -875,10 +1102,12 @@ const PracticeQuestionsPage = () => {
                       </p>
                     </div>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
+                  {!forcedBlokKey && (
+                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
+                  )}
                 </button>
                 <AnimatePresence>
-                  {expandedBlok === 'blok9' && (
+                  {(forcedBlokKey === 'blok9' || expandedBlok === 'blok9') && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -908,22 +1137,76 @@ const PracticeQuestionsPage = () => {
                                   </div>
                                   <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
                                 </div>
-                                {renderCaseSections(casus)}
+                                {renderCaseSections(casus, 'blok9', weekIndex, casusIndex)}
                               </div>
                             ))}
                           </div>
                         ))}
+                        <Link
+                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok9')}`}
+                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-teal-300 dark:border-teal-600/50 text-teal-700 dark:text-teal-400 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-500/10'}`}
+                        >
+                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
+                          Oefen alle vragen van Blok 9
+                        </Link>
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
+              )}
             </div>
+            <div className="mt-6 max-w-3xl mx-auto">
+              <Link
+                to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokWrongAnswersParam(forcedBlokKey)}`}
+                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm transition-colors ${
+                  showPremiumLocks
+                    ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500'
+                    : 'border-dashed border-amber-300/80 dark:border-amber-600/50 text-amber-900 dark:text-amber-200/90 bg-amber-50/80 dark:bg-amber-950/25 hover:border-amber-400 dark:hover:border-amber-500'
+                }`}
+              >
+                {showPremiumLocks ? <Lock className="w-4 h-4 shrink-0" /> : <XCircle className="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" />}
+                <span className="text-left font-medium">
+                  Oefen alle foute antwoorden van dit blok
+                  {wrongAnswersCountForForcedBlok != null && (
+                    <span className="block font-normal text-slate-600 dark:text-slate-400 mt-0.5">
+                      {wrongAnswersCountForForcedBlok === 0
+                        ? 'Nog geen opgeslagen foute antwoorden — maak eerst oefenvragen met zichtbare uitslag.'
+                        : `${wrongAnswersCountForForcedBlok} vraag${wrongAnswersCountForForcedBlok === 1 ? '' : 'en'} in willekeurige volgorde`}
+                    </span>
+                  )}
+                </span>
+              </Link>
+            </div>
+            </>
+              )}
+            </>
           )}
         </motion.div>
 
         {lmeParam &&
-          lmeParam !== 'alle-random' &&
+          isRandomMode(lmeParam) &&
+          totalQuestions === 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-3xl mx-auto mb-10 rounded-2xl border border-navy-100 dark:border-slate-600 bg-white/90 dark:bg-slate-800/50 px-6 py-8 text-center"
+          >
+            <p className="text-navy-700 dark:text-slate-300 font-medium">
+              {lmeParam?.startsWith('blok-fouten-')
+                ? 'Er zijn nog geen foute antwoorden om te oefenen voor dit blok.'
+                : 'Er zijn nu geen vragen beschikbaar in deze sessie.'}
+            </p>
+            <p className="mt-2 text-sm text-navy-500 dark:text-slate-500">
+              {lmeParam?.startsWith('blok-fouten-')
+                ? 'Beantwoord oefenvragen en bekijk de uitslag; foute antwoorden worden hier verzameld.'
+                : 'Probeer het later opnieuw of kies een andere module.'}
+            </p>
+          </motion.div>
+        )}
+
+        {lmeParam &&
+          !isRandomMode(lmeParam) &&
           totalQuestions === 0 && (
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -939,8 +1222,8 @@ const PracticeQuestionsPage = () => {
           </motion.div>
         )}
 
-        {/* Progress Bar + vragen (alleen tonen bij gekozen LME of alle-random) */}
-        {(lmeParam && (lmeParam === 'alle-random' || totalQuestions > 0)) && (
+        {/* Progress Bar + vragen (alleen tonen bij gekozen LME of random modes met vragen) */}
+        {lmeParam && totalQuestions > 0 && (
         <>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -1043,16 +1326,6 @@ const PracticeQuestionsPage = () => {
                 <h2 className="text-xl md:text-2xl font-bold text-navy-900 dark:text-slate-100 mb-6">
                   {currentQ.question}
                 </h2>
-                {revealedAnswers[currentQ.id] && selectedAnswers[currentQ.id] === currentQ.correctAnswer && !explanationRequests[currentQ.id] && (
-                  <button
-                    type="button"
-                    onClick={() => handleRequestExplanation(currentQ.id)}
-                    className="mb-4 inline-flex items-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/60 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500/60 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                  >
-                    Uitleg antwoord
-                  </button>
-                )}
-
                 {/* Options */}
                 <div className="space-y-3">
                   {currentQ.options.map((option) => (
@@ -1086,6 +1359,26 @@ const PracticeQuestionsPage = () => {
                   ))}
                 </div>
 
+                {revealedAnswers[currentQ.id] && !explanationRequests[currentQ.id] && !explanations[currentQ.id] && (
+                  hasPaidAccess ? (
+                    <button
+                      type="button"
+                      onClick={() => handleRequestExplanation(currentQ.id)}
+                      className="mt-4 inline-flex items-center rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/60 px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-primary-400 dark:hover:border-primary-500/60 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+                    >
+                      Uitleg antwoord
+                    </button>
+                  ) : (
+                    <Link
+                      to="/billing"
+                      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-amber-300/80 dark:border-amber-500/40 bg-amber-50/80 dark:bg-amber-900/20 px-3 py-2 text-sm font-medium text-amber-800 dark:text-amber-300 hover:border-amber-400 dark:hover:border-amber-400/60 transition-colors"
+                    >
+                      <Lock className="w-4 h-4" />
+                      Uitleg antwoord (Premium)
+                    </Link>
+                  )
+                )}
+
                 {revealedAnswers[currentQ.id] && currentQ.modelAnswer && (
                   <div
                     className={
@@ -1109,14 +1402,13 @@ const PracticeQuestionsPage = () => {
                   </div>
                 )}
 
-                {revealedAnswers[currentQ.id] &&
+                {hasPaidAccess && revealedAnswers[currentQ.id] &&
                   (
-                    selectedAnswers[currentQ.id] !== currentQ.correctAnswer ||
                     explanationRequests[currentQ.id] ||
                     explanations[currentQ.id]
                   ) && (
                   <div className="mt-6 rounded-lg border border-slate-200/90 dark:border-slate-700/90 bg-slate-50/70 dark:bg-slate-900/40 p-4">
-                    {lmeParam === 'alle-random' && (
+                    {isRandomMode(lmeParam) && (
                       <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">
                         Gemengde modus: de uitleg verwijst naar de best passende samenvatting.
                       </p>
@@ -1237,7 +1529,7 @@ const PracticeQuestionsPage = () => {
         )}
 
         {/* Previous / Next Practice Set */}
-        {lmeParam && lmeParam !== 'alle-random' && (prevPracticeLme || nextPracticeLme) && (
+        {lmeParam && !isRandomMode(lmeParam) && (prevPracticeLme || nextPracticeLme) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

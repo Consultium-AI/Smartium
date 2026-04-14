@@ -41,6 +41,13 @@ const Blok9Week1Casus2NierfunctievervangendeTherapieSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week1-casus2-nierfunctievervangende-therapie"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week1-casus2-nierfunctievervangende-therapie',
+        variants: [
+          { id: 'blok9-week1-casus2-nierfunctievervangende-therapie', label: 'Uitgebreid' },
+          { id: 'blok9-week1-casus2-nierfunctievervangende-therapie-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02GroteLijnen /></section>

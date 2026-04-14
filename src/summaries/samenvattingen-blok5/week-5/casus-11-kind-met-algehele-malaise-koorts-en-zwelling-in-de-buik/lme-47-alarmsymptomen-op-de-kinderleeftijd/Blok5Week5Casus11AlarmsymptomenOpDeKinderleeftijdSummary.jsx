@@ -45,6 +45,13 @@ const Blok5Week5Casus11AlarmsymptomenOpDeKinderleeftijdSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd',
+      variants: [
+        { id: 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd', label: 'Uitgebreid' },
+        { id: 'blok5-week5-casus11-alarmsymptomen-op-de-kinderleeftijd-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

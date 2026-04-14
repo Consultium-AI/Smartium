@@ -1,8 +1,20 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { BookOpen, ClipboardCheck, Clock, FileText, ChevronUp } from 'lucide-react'
+import { BookOpen, ClipboardCheck, Clock, FileText, ChevronUp, Lock, List, X } from 'lucide-react'
 import { summaryModuleHeaderBadgeClass, summaryModuleKindLabel } from '../utils/summaryModuleLinkStyles'
+import { useAccess } from '../hooks/useAccess'
+import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
+
+const VariantSwitchCtx = createContext(null)
+
+export function VariantSwitchProvider({ activeLmeId, onSwitch, children }) {
+  return (
+    <VariantSwitchCtx.Provider value={{ activeLmeId, onSwitch }}>
+      {children}
+    </VariantSwitchCtx.Provider>
+  )
+}
 
 /**
  * Dark-mode voor typografie en callouts. Let op: algemene [&_p]/[&_h4]-regels overschrijven
@@ -77,13 +89,21 @@ const SummaryLayout = ({
   tableOfContents,
   practiceLink,
   practiceFooter,
+  summaryVariantToggle,
   blokLabel = 'Blok 4',
   children,
   standalone = true,
 }) => {
   if (!standalone) return <>{children}</>
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const showPremiumLocks = !accessLoading && (!hasAccess || plan === 'free')
+  const variantCtx = useContext(VariantSwitchCtx)
+  const activeVariantId = variantCtx?.activeLmeId ?? summaryVariantToggle?.activeLmeId ?? ''
+  const isMiniSummary = typeof activeVariantId === 'string' && activeVariantId.endsWith('-mini')
+  const readingTimeLabel = isMiniSummary ? '~5 min leestijd' : '~15 min leestijd'
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const [tocOpen, setTocOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,51 +128,121 @@ const SummaryLayout = ({
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const closeTocOnMobile = () => {
+    if (window.matchMedia('(max-width: 1023px)').matches) {
+      setTocOpen(false)
+    }
+  }
+
+  const hasToc = tableOfContents && tableOfContents.length > 0
+
   return (
     <>
-      <div className="grid lg:grid-cols-[260px_1fr] gap-8">
-        {/* Sidebar */}
-        <motion.aside
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-          className="hidden lg:block"
-        >
-          <div className="sticky top-24 bg-white/90 dark:bg-slate-900/85 backdrop-blur-sm rounded-2xl shadow-sm dark:shadow-lg dark:shadow-black/40 border border-slate-200/90 dark:border-slate-700/90 ring-1 ring-slate-900/5 dark:ring-white/5 p-5">
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-4 flex items-center gap-2 text-sm uppercase tracking-wide">
-              <BookOpen className="w-4 h-4 text-primary-500 dark:text-primary-400" />
-              Inhoud
-            </h3>
-            <nav className="space-y-1">
-              {tableOfContents.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-all ${
-                    activeSection === item.id
-                      ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium'
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-slate-800 dark:hover:text-slate-200'
-                  }`}
+      <div className={hasToc && tocOpen ? 'mx-auto max-w-7xl grid lg:grid-cols-[280px_1fr] gap-6' : 'max-w-4xl mx-auto'}>
+        {hasToc && tocOpen ? (
+          <motion.aside
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.2 }}
+            className="hidden lg:block"
+          >
+            <div className="sticky top-24 bg-white/90 dark:bg-slate-900/85 backdrop-blur-sm rounded-2xl shadow-sm dark:shadow-lg dark:shadow-black/40 border border-slate-200/90 dark:border-slate-700/90 ring-1 ring-slate-900/5 dark:ring-white/5 p-5">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 text-sm uppercase tracking-wide">
+                  <BookOpen className="w-4 h-4 text-primary-500 dark:text-primary-400" />
+                  Inhoud
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setTocOpen(false)}
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors"
+                  aria-label="Inhoud sluiten"
                 >
-                  <item.icon className="w-4 h-4 shrink-0 opacity-70" />
-                  <span>{item.title}</span>
-                </a>
-              ))}
-            </nav>
-
-            {practiceLink ? (
-              <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700/80">
-                <Link
-                  to={practiceLink}
-                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-accent-500 dark:bg-accent-600 text-white rounded-xl font-medium hover:bg-accent-600 dark:hover:bg-accent-500 transition-colors text-sm shadow-sm"
-                >
-                  <ClipboardCheck className="w-4 h-4" />
-                  Oefenvragen
-                </Link>
+                  <X className="w-4 h-4" />
+                </button>
               </div>
-            ) : null}
-          </div>
-        </motion.aside>
+              <nav className="space-y-1">
+                {tableOfContents.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-all ${
+                      activeSection === item.id
+                        ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-slate-800 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    <item.icon className="w-4 h-4 shrink-0 opacity-70" />
+                    <span>{item.title}</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </motion.aside>
+        ) : null}
+
+        {hasToc && (
+          <>
+            <AnimatePresence>
+              {tocOpen && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="fixed inset-0 bg-black/25 dark:bg-black/45 z-40 lg:hidden"
+                  onClick={() => setTocOpen(false)}
+                />
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {tocOpen && (
+                <motion.aside
+                  initial={{ x: -280, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -280, opacity: 0 }}
+                  transition={{ type: 'spring', damping: 28, stiffness: 330 }}
+                  className="fixed top-20 left-0 bottom-0 z-50 w-72 overflow-y-auto lg:hidden"
+                >
+                  <div className="h-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-r-2xl shadow-xl dark:shadow-black/50 border-r border-slate-200/90 dark:border-slate-700/90 p-5">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 text-sm uppercase tracking-wide">
+                        <BookOpen className="w-4 h-4 text-primary-500 dark:text-primary-400" />
+                        Inhoud
+                      </h3>
+                      <button
+                        type="button"
+                        onClick={() => setTocOpen(false)}
+                        className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 dark:hover:text-slate-300 dark:hover:bg-slate-800 transition-colors"
+                        aria-label="Inhoud sluiten"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                    <nav className="space-y-1">
+                      {tableOfContents.map((item) => (
+                        <a
+                          key={item.id}
+                          href={`#${item.id}`}
+                          onClick={closeTocOnMobile}
+                          className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-all ${
+                            activeSection === item.id
+                              ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-700 dark:text-primary-300 font-medium'
+                              : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-slate-800 dark:hover:text-slate-200'
+                          }`}
+                        >
+                          <item.icon className="w-4 h-4 shrink-0 opacity-70" />
+                          <span>{item.title}</span>
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
+                </motion.aside>
+              )}
+            </AnimatePresence>
+          </>
+        )}
 
         {/* Main Content */}
         <motion.article
@@ -163,6 +253,56 @@ const SummaryLayout = ({
         >
           {/* Header */}
           <div className="px-6 py-8 md:px-8 md:py-10 border-b border-slate-100 dark:border-slate-800/80">
+            {summaryVariantToggle?.variants?.length ? (
+              <div
+                className="mb-5 flex flex-wrap items-center gap-2"
+                role="group"
+                aria-label="Versie van de samenvatting"
+              >
+                {summaryVariantToggle.variants.map((v) => {
+                  const isActive = v.id === activeVariantId
+                  const locked = showPremiumLocks && isFreePlanBlockedLme(v.id)
+                  const canSwitchInline = variantCtx?.onSwitch && !locked
+
+                  if (canSwitchInline) {
+                    return (
+                      <button
+                        key={v.id}
+                        type="button"
+                        onClick={() => variantCtx.onSwitch(v.id)}
+                        aria-current={isActive ? 'page' : undefined}
+                        className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+                          isActive
+                            ? 'bg-primary-600 text-white shadow-sm hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400'
+                            : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800/60 dark:text-slate-200 dark:hover:bg-slate-800'
+                        }`}
+                      >
+                        {v.label}
+                      </button>
+                    )
+                  }
+
+                  const to = locked ? '/billing' : `/summary?lme=${encodeURIComponent(v.id)}`
+                  return (
+                    <Link
+                      key={v.id}
+                      to={to}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${
+                        isActive
+                          ? 'bg-primary-600 text-white shadow-sm hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-400'
+                          : locked
+                            ? 'border border-slate-200 bg-slate-50 text-slate-500 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-400'
+                            : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800/60 dark:text-slate-200 dark:hover:bg-slate-800'
+                      }`}
+                    >
+                      {v.label}
+                      {locked ? <Lock className="h-3.5 w-3.5 shrink-0 opacity-90" aria-hidden /> : null}
+                    </Link>
+                  )
+                })}
+              </div>
+            ) : null}
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 text-slate-600 dark:text-slate-300 rounded-full text-xs font-medium">
                 {blokLabel}
@@ -187,12 +327,28 @@ const SummaryLayout = ({
             <div className="flex items-center gap-5 mt-5 text-sm text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" />
-                ~15 min leestijd
+                {readingTimeLabel}
               </span>
-              <span className="flex items-center gap-1.5">
-                <FileText className="w-4 h-4" />
-                {tableOfContents.length} secties
-              </span>
+              {tableOfContents.length > 0 ? (
+                <span className="flex items-center gap-1.5">
+                  <FileText className="w-4 h-4" />
+                  {tableOfContents.length} secties
+                </span>
+              ) : null}
+              {hasToc && (
+                <button
+                  type="button"
+                  onClick={() => setTocOpen((v) => !v)}
+                  className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 font-medium transition-colors ${
+                    tocOpen
+                      ? 'border-primary-300 bg-primary-50 text-primary-700 dark:border-primary-500/50 dark:bg-primary-500/15 dark:text-primary-300'
+                      : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800/60 dark:text-slate-300 dark:hover:bg-slate-800'
+                  }`}
+                >
+                  <List className="w-4 h-4" />
+                  {tocOpen ? 'Inhoud verbergen' : 'Inhoud'}
+                </button>
+              )}
             </div>
           </div>
 

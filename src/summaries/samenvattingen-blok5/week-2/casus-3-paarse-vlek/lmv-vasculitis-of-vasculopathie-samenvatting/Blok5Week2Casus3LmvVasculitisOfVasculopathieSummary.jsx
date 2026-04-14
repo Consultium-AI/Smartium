@@ -47,6 +47,13 @@ const Blok5Week2Casus3LmvVasculitisOfVasculopathieSummary = () => {
       moduleKind="lmv"
       practiceLink="/oefenvragen?lme=blok5-week2-casus3-lmv-vasculitis-of-vasculopathie"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie',
+      variants: [
+        { id: 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus3-lmv-vasculitis-of-vasculopathie-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

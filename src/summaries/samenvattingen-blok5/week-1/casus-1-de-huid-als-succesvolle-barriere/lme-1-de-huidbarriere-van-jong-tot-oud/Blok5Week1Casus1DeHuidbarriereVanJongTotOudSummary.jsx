@@ -66,6 +66,13 @@ const Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
+      variants: [
+        { id: 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud', label: 'Uitgebreid' },
+        { id: 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

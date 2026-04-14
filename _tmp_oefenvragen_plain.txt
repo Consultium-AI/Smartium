@@ -1,0 +1,147 @@
+﻿Oefenvragen
+
+Welk probleem probeert selectie van B- en T-lymfocyten in de eerste plaats te voorkomen?
+A. Dat lymfocyten te weinig cytokinen produceren
+B. Dat lymfocyten geen MHC meer kunnen herkennen
+C. Dat autoreactieve lymfocyten behouden blijven
+D. Dat alle lymfocyten dezelfde receptor krijgen
+
+Waar vindt de centrale selectie van B-lymfocyten vooral plaats?
+A. In de thymuscortex
+B. In de thymusmedulla
+C. In het beenmerg
+D. In de perifere lymfeklier
+
+Een onrijpe B-lymfocyt bindt sterk aan een autoantigeen in het beenmerg. Welke twee centrale uitkomsten passen daar het best bij?
+A. Klonale expansie of klasseswitch
+B. Klonale deletie of receptor editing
+C. Positieve selectie of anergie
+D. Suppressie door Treg of migratie naar de milt
+
+Wat wordt bedoeld met receptor editing bij B-lymfocyten?
+A. Het uitschakelen van costimulatie zodat de B-cel niet meer activeert
+B. Het vervangen van een autoreactieve kloon door een macrofaag
+C. Het veranderen van de receptorspecificiteit door nieuwe herschikking
+D. Het omzetten van IgM naar IgG om autoreactiviteit te verminderen
+
+Welk kenmerk past het best bij positieve selectie van T-lymfocyten?
+A. Selectie van cellen die sterk binden aan lichaamseigen peptiden
+B. Selectie van cellen die helemaal niet binden aan MHC
+C. Selectie van cellen die zwak tot intermediair binden aan eigen MHC
+D. Selectie van cellen die alleen aan vreemd antigeen binden
+
+Waar vindt positieve selectie van T-lymfocyten vooral plaats?
+A. In de medulla van de thymus
+B. In de cortex van de thymus
+C. In het beenmerg
+D. In de perifere lymfoïde organen
+
+Wat gebeurt er meestal met een dubbelpositieve thymocyt die helemaal niet aan MHC bindt?
+A. Die differentieert tot Treg-cel
+B. Die wordt positief geselecteerd als CD8-cel
+C. Die migreert direct naar de periferie
+D. Die gaat in apoptose
+
+Een thymocyt bindt met hoge affiniteit aan lichaamseigen peptide-MHC in de medulla. Wat is dan de meest waarschijnlijke uitkomst?
+A. Positieve selectie
+B. Negatieve selectie
+C. Receptor editing
+D. Klassenwisseling
+
+Welke combinatie is juist?
+A. MHC-klasse I herkenning stuurt naar CD4, MHC-klasse II naar CD8
+B. MHC-klasse I herkenning stuurt naar CD8, MHC-klasse II naar CD4
+C. Beide MHC-klassen sturen altijd naar CD4
+D. Beide MHC-klassen sturen altijd naar CD8
+
+Welke uitspraak over AIRE is het meest juist?
+A. AIRE zorgt ervoor dat B-lymfocyten hun lichte keten kunnen herschikken
+B. AIRE bevordert de vorming van MHC-klasse I op alle perifere cellen
+C. AIRE laat medullaire thymusepitheelcellen weefselspecifieke autoantigenen tot expressie brengen
+D. AIRE remt positieve selectie in de thymuscortex
+
+Waarom is AIRE belangrijk voor negatieve selectie?
+A. Omdat zonder AIRE thymocyten geen CD4 of CD8 meer kunnen vormen
+B. Omdat zonder AIRE minder weefselspecifieke autoantigenen in de thymus zichtbaar worden
+C. Omdat zonder AIRE B-cellen de thymus niet kunnen verlaten
+D. Omdat zonder AIRE MHC-moleculen geen peptide meer kunnen binden
+
+Welke situatie past het best bij perifere tolerantie?
+A. Een autoreactieve B-cel wordt in het beenmerg verwijderd
+B. Een thymocyt in de cortex overleeft zwakke MHC-binding
+C. Een uitrijpte autoreactieve lymfocyt wordt in de periferie functioneel uitgeschakeld
+D. Een T-cel kiest in de thymus tussen CD4 en CD8
+
+Wat is het belangrijkste verschil tussen centrale en perifere tolerantie?
+A. Centrale tolerantie geldt alleen voor T-cellen, perifere alleen voor B-cellen
+B. Centrale tolerantie vindt plaats tijdens ontwikkeling, perifere na uittrede naar de periferie
+C. Centrale tolerantie berust alleen op anergie, perifere alleen op apoptose
+D. Centrale tolerantie gebeurt in lymfeklieren, perifere in beenmerg en thymus
+
+Welke combinatie van mechanisme en celtype is het meest specifiek juist?
+A. Receptor editing – T-lymfocyt
+B. Positieve selectie – B-lymfocyt
+C. Receptoraanpassing – B-lymfocyt
+D. Klassenwisseling – thymocyt
+
+Welke uitspraak over regulatorische T-lymfocyten past het best bij deze stof?
+A. Ze ontstaan alleen in het beenmerg als onderdeel van B-celselectie
+B. Ze kunnen bijdragen aan onderdrukking van autoreactieve immuunreacties
+C. Ze ontstaan alleen na perifere infectie en niet in de thymus
+D. Ze vervangen negatieve selectie volledig
+
+Waarom is positieve selectie functioneel noodzakelijk voor T-lymfocyten?
+A. Omdat T-cellen anders te sterk tegen autoantigenen reageren
+B. Omdat T-cellen anders geen cytokinen kunnen maken
+C. Omdat T-cellen anders geen antigenen in de context van MHC kunnen herkennen
+D. Omdat T-cellen anders geen costimulatie kunnen geven aan B-cellen
+
+Welke uitspraak over B-lymfocyten is het meest juist?
+A. Rijpe B-lymfocyten brengen alleen IgD tot expressie
+B. Onrijpe B-lymfocyten kunnen via centrale tolerantie worden aangepast of verwijderd
+C. B-lymfocyten ondergaan positieve selectie op MHC in het beenmerg
+D. B-lymfocyten worden pas autoreactief na klasseswitch
+
+Wat is de beste beschrijving van klonale deletie?
+A. Het tijdelijk remmen van een lymfocyt zonder verlies van levensvatbaarheid
+B. Het veranderen van de receptor zodat het autoantigeen niet meer herkend wordt
+C. Het differentiëren naar een geheugencel met lage autoreactiviteit
+D. Het verwijderen van een autoreactieve lymfocyt door apoptose
+
+Antwoorden
+
+C
+
+C
+
+B
+
+C
+
+C
+
+B
+
+D
+
+B
+
+B
+
+C
+
+B
+
+C
+
+B
+
+C
+
+B
+
+C
+
+B
+
+D

@@ -56,6 +56,13 @@ const Blok5Week2Casus4SystemischeTherapieVanMelanoomSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus4-systemische-therapie-van-melanoom"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus4-systemische-therapie-van-melanoom',
+      variants: [
+        { id: 'blok5-week2-casus4-systemische-therapie-van-melanoom', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus4-systemische-therapie-van-melanoom-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

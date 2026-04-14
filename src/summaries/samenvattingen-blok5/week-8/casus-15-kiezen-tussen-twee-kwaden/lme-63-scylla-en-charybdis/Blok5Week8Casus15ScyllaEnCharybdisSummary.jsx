@@ -68,6 +68,13 @@ const Blok5Week8Casus15ScyllaEnCharybdisSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week8-casus15-scylla-en-charybdis"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week8-casus15-scylla-en-charybdis',
+      variants: [
+        { id: 'blok5-week8-casus15-scylla-en-charybdis', label: 'Uitgebreid' },
+        { id: 'blok5-week8-casus15-scylla-en-charybdis-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

@@ -50,6 +50,13 @@ const Blok5Week2Casus4ImmuuntherapieVanKankerSummary = () => {
       blokLabel="Blok 5"
       practiceLink="/oefenvragen?lme=blok5-week2-casus4-immuuntherapie-van-kanker"
       tableOfContents={tableOfContents}
+    summaryVariantToggle={{
+      activeLmeId: 'blok5-week2-casus4-immuuntherapie-van-kanker',
+      variants: [
+        { id: 'blok5-week2-casus4-immuuntherapie-van-kanker', label: 'Uitgebreid' },
+        { id: 'blok5-week2-casus4-immuuntherapie-van-kanker-mini', label: 'Kort' },
+      ],
+    }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12">
         <Sect01Leerdoelen />

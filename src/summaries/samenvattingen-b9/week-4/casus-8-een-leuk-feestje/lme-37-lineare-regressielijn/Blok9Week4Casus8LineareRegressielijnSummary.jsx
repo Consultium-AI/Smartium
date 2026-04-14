@@ -59,6 +59,13 @@ const Blok9Week4Casus8LineareRegressielijnSummary = () => {
       blokLabel="Blok 9"
       tableOfContents={tableOfContents}
       practiceLink="/oefenvragen?lme=blok9-week4-casus8-lineare-regressielijn"
+      summaryVariantToggle={{
+        activeLmeId: 'blok9-week4-casus8-lineare-regressielijn',
+        variants: [
+          { id: 'blok9-week4-casus8-lineare-regressielijn', label: 'Uitgebreid' },
+          { id: 'blok9-week4-casus8-lineare-regressielijn-mini', label: 'Kort' },
+        ],
+      }}
     >
       <section id="sect-01" className="scroll-mt-24 mb-12"><Sect01Leerdoelen /></section>
       <section id="sect-02" className="scroll-mt-24 mb-12"><Sect02WatIsLineaireRegressie /></section>
