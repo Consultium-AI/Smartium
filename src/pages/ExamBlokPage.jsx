@@ -100,6 +100,23 @@ function markAllRevealed(exam, answers) {
   return next
 }
 
+function normalizeAnswersForGradingMode(exam, answers, nextMode) {
+  const next = { ...answers }
+  for (const c of exam.casussen) {
+    for (const q of c.questions) {
+      const existing = next[q.id]
+      if (!existing) continue
+      const attempted = existing.earnedPoints != null
+      if (!attempted) continue
+      next[q.id] = {
+        ...existing,
+        revealed: nextMode === 'direct',
+      }
+    }
+  }
+  return next
+}
+
 function casusEarned(casus, answers) {
   let t = 0
   for (const q of casus.questions) {
@@ -387,9 +404,11 @@ function ExamBlokActive({ blok, exam, examNr }) {
     setProgressHydrated(false)
     const saved = loadExamBlokProgress(progressUserId, blok, examNr)
     if (saved && typeof saved === 'object') {
+      const savedMode = saved.gradingMode === 'end' ? 'end' : 'direct'
+      const rawAnswers = saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
       setCurrentCasus(Math.min(Math.max(0, saved.currentCasus ?? 0), exam.casussen.length - 1))
-      setAnswers(saved.answers && typeof saved.answers === 'object' ? saved.answers : {})
-      setGradingMode(saved.gradingMode === 'end' ? 'end' : 'direct')
+      setAnswers(normalizeAnswersForGradingMode(exam, rawAnswers, savedMode))
+      setGradingMode(savedMode)
       setSubmitted(Boolean(saved.submitted))
       setReviewMode(Boolean(saved.reviewMode))
     } else {
@@ -448,6 +467,14 @@ function ExamBlokActive({ blok, exam, examNr }) {
 
   const casus = exam.casussen[currentCasus]
 
+  const switchGradingMode = useCallback((nextMode) => {
+    setGradingMode((currentMode) => {
+      if (currentMode === nextMode) return currentMode
+      setAnswers((prev) => normalizeAnswersForGradingMode(exam, prev, nextMode))
+      return nextMode
+    })
+  }, [exam])
+
   const handleReset = () => {
     setAnswers({})
     setCurrentCasus(0)
@@ -491,7 +518,7 @@ function ExamBlokActive({ blok, exam, examNr }) {
             <div className="inline-flex rounded-lg border border-slate-200 dark:border-slate-600 overflow-hidden">
               <button
                 type="button"
-                onClick={() => setGradingMode('direct')}
+                onClick={() => switchGradingMode('direct')}
                 className={`px-3 py-1.5 text-sm font-semibold ${
                   gradingMode === 'direct'
                     ? 'bg-primary-500 text-white'
@@ -502,7 +529,7 @@ function ExamBlokActive({ blok, exam, examNr }) {
               </button>
               <button
                 type="button"
-                onClick={() => setGradingMode('end')}
+                onClick={() => switchGradingMode('end')}
                 className={`px-3 py-1.5 text-sm font-semibold border-l border-slate-200 dark:border-slate-600 ${
                   gradingMode === 'end'
                     ? 'bg-primary-500 text-white'
