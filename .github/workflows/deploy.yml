@@ -56,9 +56,6 @@ jobs:
             echo "::warning::Geen Firebase-config in de build. Zet de VITE_FIREBASE_* + VITE_GOOGLE_OAUTH_CLIENT_ID secrets in GitHub Actions en deploy opnieuw."
           fi
 
-      - name: Copy index.html to 404.html for SPA support
-        run: cp ./dist/index.html ./dist/404.html
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

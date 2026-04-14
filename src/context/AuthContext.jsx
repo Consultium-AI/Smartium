@@ -22,7 +22,7 @@ import { auth, db, isFirebaseConfigured } from '../lib/firebase'
 import { hydrateFromCloud, triggerCloudProgressSyncNow } from '../lib/cloudUserProgress'
 import { parseGoogleIdTokenPayload } from '../lib/googleOAuth'
 import { migrateGuestDataToUser } from '../utils/accountProgressStorage'
-import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
+import { DEFAULT_PFP_URL, normalizePfpUrl } from '../constants/defaultPfps'
 
 const DEMO_USERS_KEY = 'smartium_demo_users'
 /** localStorage: demo + Google OAuth (zonder Firebase); uitloggen wist de sessie */
@@ -149,13 +149,25 @@ export function AuthProvider({ children }) {
 
     const unsub = onAuthStateChanged(auth, async (u) => {
       if (u) {
+        const normalizedPhotoURL = normalizePfpUrl(u.photoURL || DEFAULT_PFP_URL)
+        let resolvedUser = u
+
+        if ((u.photoURL || '').trim() !== normalizedPhotoURL) {
+          try {
+            await updateProfile(u, { photoURL: normalizedPhotoURL })
+            resolvedUser = auth.currentUser || u
+          } catch {
+            // Non-blocking: continue sign-in even if photoURL migration fails.
+          }
+        }
+
         if (lastHydratedUid.current !== u.uid) {
           lastHydratedUid.current = u.uid
           // Eerst guest → uid, daarna cloud: anders schrijft hydrate vóór migratie een lege bundel.
           migrateGuestDataToUser('guest', u.uid)
           await hydrateFromCloud(u.uid)
         }
-        setUser(u)
+        setUser(resolvedUser)
       } else {
         lastHydratedUid.current = null
         setUser(readDemoSession())
@@ -425,7 +437,7 @@ export function AuthProvider({ children }) {
 
     if (!user) throw new Error('Niet ingelogd.')
 
-    const photoTrimmed = photoURL?.trim() || DEFAULT_PFP_URL
+    const photoTrimmed = normalizePfpUrl(photoURL || DEFAULT_PFP_URL)
 
     if (!isFirebaseConfigured || user.isDemo) {
       const merged = {

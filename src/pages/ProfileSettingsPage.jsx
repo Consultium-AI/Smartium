@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
-import { DEFAULT_PFP_OPTIONS, DEFAULT_PFP_URL } from '../constants/defaultPfps'
+import { DEFAULT_PFP_OPTIONS, DEFAULT_PFP_URL, normalizePfpUrl } from '../constants/defaultPfps'
 
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000
 const DAY_MS = 24 * 60 * 60 * 1000
@@ -35,7 +35,7 @@ export default function ProfileSettingsPage() {
   }, [user?.displayName])
 
   useEffect(() => {
-    setPhotoURL(user?.photoURL || DEFAULT_PFP_URL)
+    setPhotoURL(normalizePfpUrl(user?.photoURL || DEFAULT_PFP_URL))
   }, [user?.photoURL])
 
   useEffect(() => {
@@ -51,8 +51,8 @@ export default function ProfileSettingsPage() {
     try {
       const currentDisplayName = user?.displayName?.trim() || ''
       const nextDisplayName = displayName?.trim() || ''
-      const currentPhotoURL = user?.photoURL?.trim() || DEFAULT_PFP_URL
-      const selectedPhotoURL = photoURL?.trim() || DEFAULT_PFP_URL
+      const currentPhotoURL = normalizePfpUrl(user?.photoURL || DEFAULT_PFP_URL)
+      const selectedPhotoURL = normalizePfpUrl(photoURL || DEFAULT_PFP_URL)
       const nextPhotoURL = canUsePremiumPfps ? selectedPhotoURL : DEFAULT_PFP_URL
 
       // Niets gewijzigd: sla direct "opgeslagen" terug zonder loading-state.

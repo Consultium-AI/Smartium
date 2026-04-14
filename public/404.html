@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Smartium</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Plus Jakarta Sans", Arial, sans-serif;
+        background: radial-gradient(circle at 10% 10%, #1e293b 0%, #0f172a 55%, #020617 100%);
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 560px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(4px);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        border: 1px solid rgba(14, 165, 233, 0.4);
+        background: rgba(14, 165, 233, 0.16);
+        color: #7dd3fc;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 6px 12px;
+      }
+      h1 {
+        margin: 14px 0 8px;
+        font-size: clamp(28px, 5vw, 38px);
+        line-height: 1.1;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #cbd5e1;
+        line-height: 1.6;
+      }
+      .code {
+        display: inline-block;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px;
+        color: #f8fafc;
+        background: rgba(148, 163, 184, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 8px;
+        padding: 4px 8px;
+      }
+      .actions {
+        margin-top: 20px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #0ea5e9;
+        color: #0f172a;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 10px 16px;
+      }
+    </style>
+    <script>
+      (function () {
+        var l = window.location
+        var blocked = l.pathname === '/pfps' || l.pathname.indexOf('/pfps/') === 0
+        if (blocked) return
+
+        var target =
+          l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          '/?/' +
+          l.pathname.slice(1).replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        window.location.replace(target)
+      })()
+    </script>
+  </head>
+  <body>
+    <main class="card">
+      <span class="badge">Error 404</span>
+      <h1>Deze pagina bestaat niet.</h1>
+      <p>
+        Directe toegang tot profielafbeeldingen via
+        <span class="code">/pfps/*</span>
+        is uitgeschakeld.
+      </p>
+      <p>Ga terug naar Smartium om verder te gaan.</p>
+      <div class="actions">
+        <a class="btn" href="/">Terug naar Smartium</a>
+      </div>
+    </main>
+  </body>
+</html>

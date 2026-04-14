@@ -11,7 +11,7 @@
 import admin from 'firebase-admin'
 import { initFirebaseAdmin } from './lib/firebaseUserAccessExport.mjs'
 
-const DEFAULT_PFP_URL = process.env.DEFAULT_PFP_URL?.trim() || 'https://smartium.nl/pfps/pfp_1.png'
+const DEFAULT_PFP_URL = process.env.DEFAULT_PFP_URL?.trim() || 'https://smartium.nl/pfp-assets/pfp_1.png'
 const dryRun = process.argv.slice(2).includes('--dry-run')
 
 function normalizePlan(value) {
