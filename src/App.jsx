@@ -17,6 +17,7 @@ import ProfileSettingsPage from './pages/ProfileSettingsPage'
 import ContentProtectionWrapper from './components/ContentProtectionWrapper'
 import AccountRoute from './components/AccountRoute'
 import ScrollToTopRoutes from './components/ScrollToTopRoutes'
+import SubscriptionRenewalModal from './components/SubscriptionRenewalModal'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -50,6 +51,7 @@ function App() {
     <Router basename={getBasename()}>
       <div className="relative min-h-screen overflow-hidden bg-[#f8f9fb] dark:bg-gradient-to-b dark:from-[#0c1018] dark:via-[#0a0d12] dark:to-[#080b10] transition-colors duration-300">
         <ScrollToTopRoutes />
+        <SubscriptionRenewalModal />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper>} />

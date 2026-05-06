@@ -7,9 +7,8 @@ import ParticleBackground from '../components/ParticleBackground'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { DEFAULT_PFP_OPTIONS, DEFAULT_PFP_URL, normalizePfpUrl } from '../constants/defaultPfps'
-
-const WEEK_MS = 7 * 24 * 60 * 60 * 1000
-const DAY_MS = 24 * 60 * 60 * 1000
+import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
+import { redirectToRenewalCheckout } from '../lib/billingApi'
 
 function profileSettingsErrorMessage(err) {
   const code = err && typeof err === 'object' && 'code' in err ? String(err.code) : ''
@@ -26,6 +25,7 @@ export default function ProfileSettingsPage() {
   const [photoURL, setPhotoURL] = useState(DEFAULT_PFP_URL)
   const [saving, setSaving] = useState(false)
   const [stoppingSubscription, setStoppingSubscription] = useState(false)
+  const [renewalPayLoading, setRenewalPayLoading] = useState(false)
   const [error, setError] = useState('')
   const [saved, setSaved] = useState(false)
   const canUsePremiumPfps = hasAccess || plan === 'admin' || plan === 'vip'
@@ -78,16 +78,12 @@ export default function ProfileSettingsPage() {
   const isPaidPlan = plan === 'monthly' || plan === 'yearly'
   const paidUntilMs = Number(paidUntil) || 0
   const now = Date.now()
-  const remainingMs = paidUntilMs - now
-  const daysLeft = Math.ceil(remainingMs / DAY_MS)
-  const endDateText = paidUntilMs
-    ? new Intl.DateTimeFormat('nl-NL', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      }).format(new Date(paidUntilMs))
-    : '—'
-  const shouldShowPaymentRequest = isPaidPlan && paidUntilMs > now && remainingMs <= WEEK_MS
+  const {
+    showRenewalReminder: shouldShowPaymentRequest,
+    daysLeft,
+    endDateText,
+    renewalPlan,
+  } = getSubscriptionRenewalState(plan, paidUntil, subscriptionStopped, now)
   const isExpired = isPaidPlan && paidUntilMs > 0 && paidUntilMs <= now
   const planLabel =
     plan === 'monthly'
@@ -99,6 +95,18 @@ export default function ProfileSettingsPage() {
           : plan === 'vip'
             ? 'VIP'
             : 'Gratis'
+  const onRenewalPay = async () => {
+    if (!user || !renewalPlan || renewalPayLoading) return
+    setError('')
+    setRenewalPayLoading(true)
+    try {
+      const result = await redirectToRenewalCheckout(renewalPlan, user)
+      if (result.error) setError(result.error)
+    } finally {
+      setRenewalPayLoading(false)
+    }
+  }
+
   const onStopSubscription = async () => {
     if (!user?.uid || stoppingSubscription || subscriptionStopped) return
     const confirmStop = window.confirm(
@@ -295,8 +303,23 @@ export default function ProfileSettingsPage() {
                     Betalingsverzoek: betaal voor {endDateText}
                   </p>
                   <p className="mt-1 text-xs text-amber-700 dark:text-amber-200/90">
-                    Je toegang verloopt over {Math.max(0, daysLeft)} dag(en). Betaal op tijd om direct door te kunnen.
+                    Je toegang verloopt over {daysLeft} dag(en). Betaal op tijd om direct door te kunnen.
                   </p>
+                  {renewalPlan && (
+                    <button
+                      type="button"
+                      disabled={renewalPayLoading}
+                      onClick={() => void onRenewalPay()}
+                      className="mt-3 inline-flex h-10 w-full items-center justify-center gap-2 rounded-full bg-navy-900 px-4 text-sm font-semibold text-white transition hover:bg-navy-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-primary-600 dark:hover:bg-primary-500 sm:w-auto"
+                    >
+                      {renewalPayLoading ? (
+                        <Loader2 className="h-4 w-4 animate-spin" strokeWidth={2} />
+                      ) : (
+                        <CreditCard className="h-4 w-4" strokeWidth={2} />
+                      )}
+                      Nu betalen & verlengen
+                    </button>
+                  )}
                 </div>
               )}
 

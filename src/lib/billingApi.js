@@ -10,6 +10,25 @@ function billingPageUrl(suffix) {
   return `${root.origin}${path.startsWith('/') ? '' : '/'}${path}`
 }
 
+/**
+ * Start Stripe Checkout (redirect). Used for quick renewal from profile, navbar, modals.
+ * Works with the existing worker → Stripe → webhook → Firestore grant flow.
+ * @param {'monthly' | 'yearly'} plan
+ * @param {{ uid?: string, email?: string } | null | undefined} user
+ * @returns {Promise<{ error?: string }>}
+ */
+export async function redirectToRenewalCheckout(plan, user) {
+  const billingEmail = user?.email?.trim() || undefined
+  const result = await createCheckoutSession(plan, {
+    email: billingEmail,
+    uid: user?.uid,
+    prefillCustomerEmail: Boolean(billingEmail),
+  })
+  if (result.error) return { error: result.error }
+  window.location.href = result.url
+  return {}
+}
+
 export async function createCheckoutSession(plan, opts = {}) {
   // Stripe vervangt {CHECKOUT_SESSION_ID}; zonder dit geen grant-access-call na iDEAL-redirect
   const successUrl = billingPageUrl('?session_id={CHECKOUT_SESSION_ID}&status=success')

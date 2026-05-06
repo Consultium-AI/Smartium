@@ -18,6 +18,8 @@ import {
 } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
+import { useAccess } from '../hooks/useAccess'
+import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 
 const navItems = [
@@ -107,6 +109,9 @@ function UserAvatar({ user, className = '' }) {
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme()
   const { user, loading: authLoading, signOut } = useAuth()
+  const { plan, paidUntil, subscriptionStopped, loading: accessLoading } = useAccess()
+  const { showRenewalReminder } = getSubscriptionRenewalState(plan, paidUntil, subscriptionStopped)
+  const showBillingRenewalBadge = Boolean(user && !authLoading && !accessLoading && showRenewalReminder)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState(null)
@@ -278,19 +283,30 @@ const Navbar = () => {
           <div className="flex items-center gap-1.5 sm:gap-2">
             {!authLoading && user && (
               <div ref={profileMenuRef} className="relative hidden sm:block">
-                <button
-                  type="button"
-                  onClick={() => setIsProfileMenuOpen((o) => !o)}
-                  className="flex h-10 items-center gap-2 rounded-full border border-slate-200/90 bg-white/90 px-1.5 pr-2.5 text-xs font-semibold text-navy-700 shadow-sm transition hover:bg-white dark:border-slate-600 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-900"
-                  aria-expanded={isProfileMenuOpen}
-                  aria-haspopup="menu"
-                >
-                  <UserAvatar user={user} className="h-7 w-7" />
-                  <span className="hidden max-w-[9rem] truncate md:block" title={userDisplayTitle(user)}>
-                    {userDisplayLabel(user)}
-                  </span>
-                  <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${isProfileMenuOpen ? 'rotate-180' : ''}`} strokeWidth={2} />
-                </button>
+                <div className="relative inline-flex">
+                  <button
+                    type="button"
+                    onClick={() => setIsProfileMenuOpen((o) => !o)}
+                    className="flex h-10 items-center gap-2 rounded-full border border-slate-200/90 bg-white/90 px-1.5 pr-2.5 text-xs font-semibold text-navy-700 shadow-sm transition hover:bg-white dark:border-slate-600 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-900"
+                    aria-expanded={isProfileMenuOpen}
+                    aria-haspopup="menu"
+                  >
+                    <span className="relative">
+                      <UserAvatar user={user} className="h-7 w-7" />
+                      {showBillingRenewalBadge && (
+                        <span
+                          className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white dark:ring-slate-900"
+                          title="Betalingsherinnering"
+                          aria-label="Er is een betalingsherinnering voor je abonnement"
+                        />
+                      )}
+                    </span>
+                    <span className="hidden max-w-[9rem] truncate md:block" title={userDisplayTitle(user)}>
+                      {userDisplayLabel(user)}
+                    </span>
+                    <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${isProfileMenuOpen ? 'rotate-180' : ''}`} strokeWidth={2} />
+                  </button>
+                </div>
 
                 <AnimatePresence>
                   {isProfileMenuOpen && (
@@ -445,7 +461,16 @@ const Navbar = () => {
                   {!authLoading && user && (
                     <>
                       <div className="flex items-center gap-3 px-4 py-2">
-                        <UserAvatar user={user} className="h-9 w-9 shrink-0" />
+                        <div className="relative shrink-0">
+                          <UserAvatar user={user} className="h-9 w-9 shrink-0" />
+                          {showBillingRenewalBadge && (
+                            <span
+                              className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white dark:ring-[#0c1018]"
+                              title="Betalingsherinnering"
+                              aria-label="Er is een betalingsherinnering voor je abonnement"
+                            />
+                          )}
+                        </div>
                         <div className="min-w-0">
                           <p className="truncate text-sm font-semibold text-navy-900 dark:text-slate-100">{userDisplayLabel(user)}</p>
                           {user.email && (
