@@ -15,18 +15,46 @@ function getBlok5CasusNumberFromLme(lmeId) {
 }
 
 /**
- * Blok 10: alleen week-casus 1 (Maagklachten, `…-casus1-…`) is gratis.
- * `casus2`, `casus-c03`, enz. zijn premium (zelfde als “casus 2 en verder”).
+ * Leidt het officiële casusnummer van Blok 10 uit een LME-id af.
+ * Voorbeelden: `…-casus1-…` / `…-casus2-…`, `…-casus-c03-…` (→ 3), `…-casus-c10-…` (→ 10).
+ */
+function getBlok10CasusOrdinalFromLme(lmeId) {
+  if (!lmeId || typeof lmeId !== 'string') return null
+  const cTagged = lmeId.match(/^blok10-week\d+-casus-c(\d+)-/)
+  if (cTagged) {
+    const n = Number.parseInt(cTagged[1], 10)
+    return Number.isFinite(n) ? n : null
+  }
+  const numTagged = lmeId.match(/^blok10-week\d+-casus(\d+)-/)
+  if (numTagged) {
+    const n = Number.parseInt(numTagged[1], 10)
+    return Number.isFinite(n) ? n : null
+  }
+  return null
+}
+
+/**
+ * Zelfde casusnummers als in `practiceQuestionsCourseStructure` voor blok10:
+ * week 0: casus 1 (en evt. 2); week ≥1: opeenvolgend 3–4, 5–6, …
+ */
+function getBlok10CasusOrdinalFromWeekCaseIndices(weekIdx, casusIdx) {
+  if (weekIdx === 0) return casusIdx + 1
+  return 2 * weekIdx + 1 + casusIdx
+}
+
+/**
+ * Blok 10 free tier: oneven casussen (1, 3, 5, …) gratis, even casussen (2, 4, 6, …) premium.
  */
 function isBlok10PremiumCasusLme(lmeId) {
-  if (!lmeId || typeof lmeId !== 'string') return false
-  if (!lmeId.startsWith('blok10-week')) return false
-  return !/^blok10-week\d+-casus1-/.test(lmeId)
+  if (!lmeId || typeof lmeId !== 'string' || !lmeId.startsWith('blok10-week')) return false
+  const n = getBlok10CasusOrdinalFromLme(lmeId)
+  if (n === null) return true
+  return n % 2 === 0
 }
 
 /**
  * `casus-random-${blok}-w${week}-c${casusIndex}` — indices 0-based (w0 = week 1, c0 = eerste casus).
- * Blok 10: alleen week 1 + eerste casus (Maagklachten) is gratis zonder premium.
+ * Blok 10: zelfde alternating als directe LME’s (oneven casus = gratis).
  */
 function parseCasusRandomParam(lmeParam) {
   const suffix = lmeParam.replace('casus-random-', '')
@@ -61,14 +89,19 @@ export function isFreePlanBlockedPracticeLme(lmeParam) {
   if (lmeParam.startsWith('casus-random-')) {
     const parsed = parseCasusRandomParam(lmeParam)
     if (!parsed) return true
-    if (parsed.blokKey === 'blok10' && parsed.weekIdx === 0 && parsed.casusIdx === 0) return false
+    if (parsed.blokKey === 'blok10') {
+      const n = getBlok10CasusOrdinalFromWeekCaseIndices(parsed.weekIdx, parsed.casusIdx)
+      return n % 2 === 0
+    }
     return true
   }
   return isFreePlanBlockedLme(lmeParam)
 }
 
 export function isFreePlanCasusRandomPracticeUnlocked(blokKey, weekIdx, casusIdx) {
-  return blokKey === 'blok10' && weekIdx === 0 && casusIdx === 0
+  if (blokKey !== 'blok10') return false
+  const n = getBlok10CasusOrdinalFromWeekCaseIndices(weekIdx, casusIdx)
+  return n % 2 === 1
 }
 
 export function isFreePlanAllowedExam(blok, examNr) {
@@ -92,7 +125,7 @@ export function canFreePlanAccessRoute(pathname, search = '') {
   if (tentamenBlokMatch) {
     const nr = Number.parseInt(params.get('nr') || '', 10)
     if (!Number.isFinite(nr)) return true
-    const blok = Number(tentamenBlokMatch[1])
+    const blok = Number.parseInt(tentamenBlokMatch[1], 10)
     return isFreePlanAllowedExam(blok, nr)
   }
 
