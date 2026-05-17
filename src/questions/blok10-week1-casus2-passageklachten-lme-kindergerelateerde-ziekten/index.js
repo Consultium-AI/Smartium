@@ -1,0 +1,12 @@
+import { blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart01 } from './Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart01'
+import { blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart02 } from './Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart02'
+import { blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart03 } from './Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart03'
+
+export const blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap = {
+  'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten-part01':
+    blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart01,
+  'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten-part02':
+    blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart02,
+  'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten-part03':
+    blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsPart03,
+}

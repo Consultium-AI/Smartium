@@ -54,12 +54,19 @@ import Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemPracticeIntro f
 import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro from '../components/Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro'
 import Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro from '../components/Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro'
 import Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro from '../components/Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro'
+import Blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenPracticeIntro'
 import Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro'
 import Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxPracticeIntro'
 import Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalysePracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalysePracticeIntro'
 import Blok10Week1Casus1MaagklachtenRefluxBijKinderenPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenRefluxBijKinderenPracticeIntro'
 import Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriPracticeIntro'
 import Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro'
+import Blok10Week1Casus1MaagklachtenLmvPpiPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLmvPpiPracticeIntro'
+import Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusPracticeIntro from '../components/Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusPracticeIntro'
+import Blok10Week1Casus2PassageklachtenLmeChemoradiatiePracticeIntro from '../components/Blok10Week1Casus2PassageklachtenLmeChemoradiatiePracticeIntro'
+import Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenPracticeIntro from '../components/Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenPracticeIntro'
+import Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusPracticeIntro from '../components/Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusPracticeIntro'
+import Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusPracticeIntro from '../components/Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusPracticeIntro'
 import Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenPracticeIntro from '../components/Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenPracticeIntro'
 import Blok10Week2CasusC04DiarreeMalabsorptiePracticeIntro from '../components/Blok10Week2CasusC04DiarreeMalabsorptiePracticeIntro'
 import Blok10Week2CasusC04DiarreeMorbusCrohnPracticeIntro from '../components/Blok10Week2CasusC04DiarreeMorbusCrohnPracticeIntro'
@@ -678,6 +685,9 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           {lmeParam?.startsWith(
             'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
           ) && <Blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesPracticeIntro />}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen') && (
+            <Blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenPracticeIntro />
+          )}
           {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') && (
             <Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro />
           )}
@@ -696,6 +706,28 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           {lmeParam?.startsWith(
             'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
           ) && <Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro />}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-ppi') && (
+            <Blok10Week1Casus1MaagklachtenLmvPpiPracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+          ) && <Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusPracticeIntro />}
+          {lmeParam?.startsWith('blok10-week1-casus2-passageklachten-lme-chemoradiatie') && (
+            <Blok10Week1Casus2PassageklachtenLmeChemoradiatiePracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten',
+          ) && <Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenPracticeIntro />}
+          {lmeParam?.startsWith(
+            'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+          ) && (
+            <Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusPracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
+          ) && (
+            <Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusPracticeIntro />
+          )}
           {lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie') && (
             <Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologiePracticeIntro />
           )}

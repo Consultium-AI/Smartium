@@ -24,6 +24,7 @@ const Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary = () =
   <SummaryLayout
     title="Kindergerelateerde ziekten"
     moduleKind="lme"
+    practiceLink="/oefenvragen?lme=blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten"
     description={
       <>
         Buikpijn bij kinderen vraagt om een brede kijk. De differentiaaldiagnose is vaak anders dan bij volwassenen en

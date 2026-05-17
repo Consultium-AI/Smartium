@@ -54,6 +54,7 @@ const Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusSumm
     caseLabel="Week 1 · Casus 2: Passageklachten"
     blokLabel="Blok 10"
     tableOfContents={tableOfContents}
+    practiceLink="/oefenvragen?lme=blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus"
   >
     <section id="sect-01" className="scroll-mt-24 mb-12">
       <Sect01Leerdoelen />

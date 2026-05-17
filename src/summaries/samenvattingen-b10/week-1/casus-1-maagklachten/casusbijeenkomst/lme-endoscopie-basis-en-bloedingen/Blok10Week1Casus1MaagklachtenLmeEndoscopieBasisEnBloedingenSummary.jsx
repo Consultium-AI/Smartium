@@ -43,6 +43,7 @@ const Blok10Week1Casus1MaagklachtenLmeEndoscopieBasisEnBloedingenSummary = () =>
     caseLabel="Week 1 · Casus 1: Maagklachten"
     blokLabel="Blok 10"
     tableOfContents={tableOfContents}
+    practiceLink="/oefenvragen?lme=blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen"
   >
     <section id="sect-01" className="scroll-mt-24 mb-12">
       <Sect01Leerdoelen />

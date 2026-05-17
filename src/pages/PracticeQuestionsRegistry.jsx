@@ -63,6 +63,7 @@ import { blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenQuestionsMap 
 import { blok9Week5Casus10SyncopeQuestionsMap } from '../questions/blok9-week5-casus10-syncope'
 import { blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap } from '../questions/blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties'
 import { blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap } from '../questions/blok9-week5-casus10-ritmestoornissen-bij-kinderen'
+import { blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen'
 import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'
 import { blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2'
 import { blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes'
@@ -71,6 +72,12 @@ import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap } 
 import { blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-reflux-bij-kinderen'
 import { blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori'
 import { blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie'
+import { blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-lmv-ppi'
+import { blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap } from '../questions/blok10-week1-casus2-passageklachten-lme-chemoradiatie'
+import { blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap } from '../questions/blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus'
+import { blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap } from '../questions/blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus'
+import { blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap } from '../questions/blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten'
+import { blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap } from '../questions/blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus'
 import { blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn'
 import { blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker'
 import { blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom'
@@ -1448,6 +1455,12 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 1: Maagklachten',
             lmes: [
               {
+                id: 'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen',
+                name: 'Endoscopie basis en bloedingen',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap,
+              },
+              {
                 id: 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
                 name: 'Fysiologie van maagzuur',
                 type: 'simple',
@@ -1482,6 +1495,51 @@ export const practiceQuestionsCourseStructure = {
                 name: 'H. pylori, de zorgkosten die ontstaan vanuit een bacterie',
                 type: 'simple',
                 questionsMap: blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus1-maagklachten-lmv-ppi',
+                name: 'Omeprazol en protonpompremmers',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap,
+              },
+            ],
+          },
+          {
+            name: 'Casus 2: Passageklachten',
+            lmes: [
+              {
+                id: 'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+                name: '(Pre)maligne bovenste tractus digestivus',
+                type: 'simple',
+                questionsMap:
+                  blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus2-passageklachten-lme-chemoradiatie',
+                name: 'Chemoradiatie',
+                type: 'simple',
+                questionsMap: blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten',
+                name: 'Kindergerelateerde ziekten',
+                type: 'simple',
+                questionsMap: blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+                name: 'Motiliteit van de bovenste tractus digestivus',
+                type: 'simple',
+                questionsMap:
+                  blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
+                name: 'Chirurgische behandeling van aandoeningen aan de bovenste tractus digestivus',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap:
+                  blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap,
               },
             ],
           },
@@ -2528,6 +2586,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]) return blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return Object.values(blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap).flat()
   if (blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]) return blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen') {
+    return Object.values(blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') {
     return Object.values(blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap).flat()
   }
@@ -2563,6 +2627,61 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap[lmeParam]) {
     return blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-lmv-ppi') {
+    return Object.values(blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus') {
+    return Object.values(
+      blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap,
+    ).flat()
+  }
+  if (
+    blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap[lmeParam]
+  ) {
+    return blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap[
+      lmeParam
+    ]
+  }
+  if (lmeParam === 'blok10-week1-casus2-passageklachten-lme-chemoradiatie') {
+    return Object.values(blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap).flat()
+  }
+  if (blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap[lmeParam]) {
+    return blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten') {
+    return Object.values(blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap).flat()
+  }
+  if (blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap[lmeParam]) {
+    return blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus') {
+    return Object.values(
+      blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap[lmeParam]) {
+    return blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap[lmeParam]
+  }
+  if (
+    lmeParam ===
+    'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus'
+  ) {
+    return Object.values(
+      blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap,
+    ).flat()
+  }
+  if (
+    blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap[
+      lmeParam
+    ]
+  ) {
+    return blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap[
+      lmeParam
+    ]
   }
   if (lmeParam === 'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn') {
     return Object.values(blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap).flat()
@@ -3366,6 +3485,8 @@ export function getPracticeTitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return 'Syncope'
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return 'Elektrofysiologisch onderzoek en ablaties'
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return 'Ritmestoornissen bij kinderen'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen'))
+    return 'Endoscopie basis en bloedingen'
   if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'))
     return 'Fysiologie van maagzuur'
   if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-leefstijl-bij-reflux')) return 'Leefstijl bij reflux'
@@ -3377,6 +3498,33 @@ export function getPracticeTitleForLme(lmeParam) {
     return 'Pathofysiologie Helicobacter pylori'
   if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie'))
     return 'H. pylori, de zorgkosten die ontstaan vanuit een bacterie'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-ppi'))
+    return 'Omeprazol en protonpompremmers'
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+    )
+  ) {
+    return '(Pre)maligne bovenste tractus digestivus'
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus2-passageklachten-lme-chemoradiatie'))
+    return 'Chemoradiatie'
+  if (lmeParam?.startsWith('blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten'))
+    return 'Kindergerelateerde ziekten'
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+    )
+  ) {
+    return 'Motiliteit van de bovenste tractus digestivus'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
+    )
+  ) {
+    return 'Chirurgische behandeling van aandoeningen aan de bovenste tractus digestivus'
+  }
   if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn'))
     return 'Acute buik en acute buikpijn'
   if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker'))
@@ -4064,6 +4212,9 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10SyncopeQuestionsMap)} meerkeuzevragen over syncope.`
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap)} meerkeuzevragen over elektrofysiologisch onderzoek en ablaties.`
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap)} meerkeuzevragen over ritmestoornissen bij kinderen.`
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap)} meerkeuzevragen over endoscopie bij GI-bloeding, risicoscores en acute behandeling.`
+  }
   if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur')) {
     return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap)} meerkeuzevragen over fysiologie van maagzuur.`
   }
@@ -4081,6 +4232,40 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie')) {
     return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap)} meerkeuzevragen over H. pylori, zorglast op populatieniveau en preventie.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-ppi')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLmvPpiQuestionsMap)} meerkeuzevragen over omeprazol en protonpompremmers.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap)} meerkeuzevragen over (pre)maligne afwijkingen van de bovenste tractus digestivus.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus2-passageklachten-lme-chemoradiatie')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus2PassageklachtenLmeChemoradiatieQuestionsMap)} meerkeuzevragen over chemoradiatie bij slokdarmkanker.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenQuestionsMap)} meerkeuzevragen over kindergerelateerde ziekten bij passageklachten.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(
+      blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusQuestionsMap,
+    )} meerkeuzevragen over motiliteit van slokdarm en maag, GERD en functionele dyspepsie.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(
+      blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusQuestionsMap,
+    )} meerkeuzevragen over chirurgie bij aandoeningen van slokdarm en maag.`
   }
   if (
     lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn')

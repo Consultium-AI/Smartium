@@ -89,6 +89,7 @@ const Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenA
     }
     caseLabel="Week 1 · Casus 2: Passageklachten"
     blokLabel="Blok 10"
+    practiceLink="/oefenvragen?lme=blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus"
     tableOfContents={tableOfContents}
   >
     <section id="sect-01" className="scroll-mt-24 mb-12">

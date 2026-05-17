@@ -1,0 +1,9 @@
+import { blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart01 } from './Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart01'
+import { blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart02 } from './Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart02'
+
+export const blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsMap = {
+  'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus-part01':
+    blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart01,
+  'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus-part02':
+    blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusQuestionsPart02,
+}

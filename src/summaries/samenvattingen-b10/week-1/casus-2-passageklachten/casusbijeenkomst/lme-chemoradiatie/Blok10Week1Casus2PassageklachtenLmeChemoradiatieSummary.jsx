@@ -45,6 +45,7 @@ const Blok10Week1Casus2PassageklachtenLmeChemoradiatieSummary = () => (
     description="Het oesofaguscarcinoom is een maligniteit van de slokdarm. Een belangrijke klinische gedachte is dat klachten vaak pas laat ontstaan. Dat gebeurt meestal wanneer de tumor zo groot is dat er passageklachten ontstaan of wanneer de tumor druk geeft op de omgeving. De plaats van de tumor is daarbij heel bepalend: een tumor hoog in de slokdarm geeft vaak andere klachten dan een tumor laag bij de maagovergang."
     caseLabel="Week 1 · Casus 2: Passageklachten"
     blokLabel="Blok 10"
+    practiceLink="/oefenvragen?lme=blok10-week1-casus2-passageklachten-lme-chemoradiatie"
     tableOfContents={tableOfContents}
   >
     <section id="sect-01" className="scroll-mt-24 mb-12">
