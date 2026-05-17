@@ -36,6 +36,7 @@ const navItems = [
       ]},
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/summary-blok9' },
+        { name: 'Blok 10', href: '/summary-blok10' },
       ]},
     ],
   },
@@ -51,6 +52,7 @@ const navItems = [
       ]},
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/oefenvragen-blok9' },
+        { name: 'Blok 10', href: '/oefenvragen-blok10' },
       ]},
     ],
   },

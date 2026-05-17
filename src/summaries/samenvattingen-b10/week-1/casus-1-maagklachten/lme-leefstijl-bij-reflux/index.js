@@ -1,0 +1,1 @@
+export { default as Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxSummary } from './Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxSummary'

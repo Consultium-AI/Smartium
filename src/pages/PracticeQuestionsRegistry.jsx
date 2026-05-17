@@ -63,6 +63,7 @@ import { blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenQuestionsMap 
 import { blok9Week5Casus10SyncopeQuestionsMap } from '../questions/blok9-week5-casus10-syncope'
 import { blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap } from '../questions/blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties'
 import { blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap } from '../questions/blok9-week5-casus10-ritmestoornissen-bij-kinderen'
+import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'
 import { blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap } from '../questions/blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud'
 import { blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereQuestionsMap } from '../questions/blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere'
 import { blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidQuestionsMap } from '../questions/blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid'
@@ -1412,6 +1413,27 @@ export const practiceQuestionsCourseStructure = {
       },
     ],
   },
+  blok10: {
+    name: 'Blok 10: Maag-Darm-Lever',
+    weeks: [
+      {
+        name: 'Week 1',
+        cases: [
+          {
+            name: 'Casus 1: Maagklachten',
+            lmes: [
+              {
+                id: 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
+                name: 'Fysiologie van maagzuur',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
@@ -2272,6 +2294,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]) return blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap[lmeParam]
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return Object.values(blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap).flat()
   if (blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]) return blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap[lmeParam]
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') {
+    return Object.values(blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap[lmeParam]
+  }
   // Default (incl. alle-random): show all questions combined
   const blok3Count = embryogeneseQuestions.length + beeldvormingQuestions.length + extraembryonaalQuestions.length + extremiteitenQuestions.length
   const blok4Count = blok3Count + aangeborenImmuniteitHerkenningQuestions.length + introductieBacteriologieQuestions.length + introductieImmunologieQuestions.length + introductieMycologieQuestions.length + introductieParasitologieQuestions.length
@@ -2948,6 +2976,7 @@ export function getPracticeTitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return 'Syncope'
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return 'Elektrofysiologisch onderzoek en ablaties'
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return 'Ritmestoornissen bij kinderen'
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') return 'Fysiologie van maagzuur'
   if (lmeParam === 'alle-random') return 'Alle vragen (random)'
   if (lmeParam?.startsWith('casus-random-')) {
     const { blokKey, weekIdx, casusIdx } = parseCasusRandomParam(lmeParam)
@@ -3574,6 +3603,9 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10SyncopeQuestionsMap)} meerkeuzevragen over syncope.`
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap)} meerkeuzevragen over elektrofysiologisch onderzoek en ablaties.`
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap)} meerkeuzevragen over ritmestoornissen bij kinderen.`
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap)} meerkeuzevragen over fysiologie van maagzuur.`
+  }
   if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
   if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`
   if (lme1QuestionsMap[lmeParam]) return `Test je kennis met ${lme1QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over parasitaire verwekkers van gastro-enteritis.`

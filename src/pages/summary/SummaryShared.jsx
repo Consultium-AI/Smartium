@@ -196,6 +196,19 @@ const SUMMARY_ORDER = [
   'blok9-week5-casus10-syncope',
   'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties',
   'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
+  'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen',
+  'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
+  'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux',
+  'blok10-week1-casus1-maagklachten-logistische-regressie-analyse',
+  'blok10-week1-casus1-maagklachten-reflux-bij-kinderen',
+  'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori',
+  'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
+  'blok10-week1-casus1-maagklachten-lmv-ppi',
+  'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+  'blok10-week1-casus2-passageklachten-lme-chemoradiatie',
+  'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten',
+  'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+  'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
 ]
 
 export const Header = () => (

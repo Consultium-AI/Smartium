@@ -19,6 +19,9 @@ scripts/_tmp_*.mjs
 
 # Local course materials (not part of the app)
 SS1B5-smartium met vos/
+SS1B10-smartium/
+SS1B10/
+SS2B9/
 
 # Wrangler dev bundles (regenerated locally)
 worker/.wrangler/

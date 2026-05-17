@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
-  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers, Lock, CheckCircle2
+  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers, Lock, CheckCircle2, FlaskConical
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
@@ -214,6 +214,20 @@ import Blok9Week5Casus10LeefstijlAlsTherapieVoorAtriumfibrillerenSummary from '.
 import Blok9Week5Casus10SyncopeSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-47-syncope/Blok9Week5Casus10SyncopeSummary'
 import Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-48-elektrofysiologisch-onderzoek-en-ablaties/Blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesSummary'
 import Blok9Week5Casus10RitmestoornissenBijKinderenSummary from '../summaries/samenvattingen-b9/week-5/casus-10-atriumfibrilleren/lme-49-ritmestoornissen-bij-kinderen/Blok9Week5Casus10RitmestoornissenBijKinderenSummary'
+import Blok10Week1Casus1MaagklachtenLmeEndoscopieBasisEnBloedingenSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/casusbijeenkomst/lme-endoscopie-basis-en-bloedingen/Blok10Week1Casus1MaagklachtenLmeEndoscopieBasisEnBloedingenSummary'
+import Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/lme-fysiologie-van-maagzuur/Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurSummary'
+import Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurMiniSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/lme-fysiologie-van-maagzuur-mini/Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurMiniSummary'
+import Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/lme-leefstijl-bij-reflux/Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxSummary'
+import Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/lme-logistische-regressie-analyse/Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseSummary'
+import Blok10Week1Casus1MaagklachtenRefluxBijKinderenSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/casusbijeenkomst/lme-reflux-bij-kinderen/Blok10Week1Casus1MaagklachtenRefluxBijKinderenSummary'
+import Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/casusbijeenkomst/lmo-kumar-clark-pathofysiologie-h-pylori/Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriSummary'
+import Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/casusbijeenkomst/lmv-h-pylori-zorgkosten-vanuit-een-bacterie/Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieSummary'
+import Blok10Week1Casus1MaagklachtenLmvPpiSummary from '../summaries/samenvattingen-b10/week-1/casus-1-maagklachten/casusbijeenkomst/lmv-ppi/Blok10Week1Casus1MaagklachtenLmvPpiSummary'
+import Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-pre-maligne-bovenste-tractus-digestivus/Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusSummary'
+import Blok10Week1Casus2PassageklachtenLmeChemoradiatieSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-chemoradiatie/Blok10Week1Casus2PassageklachtenLmeChemoradiatieSummary'
+import Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-kindergerelateerde-ziekten/Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary'
+import Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-motiliteit-van-de-bovenste-tractus-digestivus/Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusSummary'
+import Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus/Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusSummary'
 
 const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
   'Casus 1: De huid als succesvolle barrière': new Set([
@@ -296,10 +310,15 @@ const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
     'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties',
     'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
   ]),
+  'Casus 1: Maagklachten': new Set([
+    'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori',
+    'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
+    'blok10-week1-casus1-maagklachten-lmv-ppi',
+  ]),
 }
 
 // Main Summary Page Component
-const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9']
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
 
 const SummaryPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
@@ -1285,6 +1304,108 @@ const SummaryPage = ({ forcedBlok = null }) => {
         },
       ],
     },
+    blok10: {
+      name: 'Blok 10: Maag-Darm-Lever ',
+      weeks: [
+        {
+          name: 'Week 1',
+          cases: [
+            {
+              name: 'Casus 1: Maagklachten',
+              lmes: [
+                {
+                  id: 'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen',
+                  name: 'Endoscopie basis en bloedingen',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
+                  name: 'Fysiologie van maagzuur',
+                  available: true,
+                  moduleKind: 'lme',
+                  progressLmeIds: [
+                    'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
+                    'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur-mini',
+                  ],
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux',
+                  name: 'Leefstijl bij reflux',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-logistische-regressie-analyse',
+                  name: 'Logistische regressie analyse',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-reflux-bij-kinderen',
+                  name: 'Reflux bij kinderen',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori',
+                  name: 'Pathofysiologie Helicobacter pylori',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
+                  name: 'H. pylori, de zorgkosten die ontstaan vanuit een bacterie',
+                  available: true,
+                  moduleKind: 'lmv',
+                },
+                {
+                  id: 'blok10-week1-casus1-maagklachten-lmv-ppi',
+                  name: 'Omeprazol en protonpompremmers',
+                  available: true,
+                  moduleKind: 'lmv',
+                },
+              ],
+            },
+            {
+              name: 'Casus 2: Passageklachten',
+              lmes: [
+                {
+                  id: 'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus',
+                  name: '(Pre)maligne bovenste tractus digestivus',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus2-passageklachten-lme-chemoradiatie',
+                  name: 'Chemoradiatie',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten',
+                  name: 'Kindergerelateerde ziekten',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus',
+                  name: 'Motiliteit van de bovenste tractus digestivus',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus',
+                  name: 'Chirurgische behandeling van aandoeningen aan de bovenste tractus digestivus',
+                  available: true,
+                  moduleKind: 'lmv',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   }
 
   const getImageIdsForLme = (baseId, imageCount) =>
@@ -1315,7 +1436,8 @@ const SummaryPage = ({ forcedBlok = null }) => {
   }
 
   const renderSummaryModule = (lmeItem, key) => {
-    const seen = hasAccountProgress && Boolean(seenMap[lmeItem.id])
+    const progressIds = lmeItem.progressLmeIds || [lmeItem.id]
+    const seen = hasAccountProgress && progressIds.some((id) => Boolean(seenMap[id]))
     if (lmeItem.type === 'image-based') {
       return (
         <div key={key} className="space-y-2 rounded-xl border border-slate-200/90 dark:border-slate-600/80 bg-white/70 dark:bg-slate-800/40 p-3">
@@ -1371,8 +1493,9 @@ const SummaryPage = ({ forcedBlok = null }) => {
           if (seenMap[imageId]) seenUnits += 1
         }
       } else {
+        const progressIds = item.progressLmeIds || [item.id]
         totalUnits += 1
-        if (seenMap[item.id]) seenUnits += 1
+        if (progressIds.some((id) => seenMap[id])) seenUnits += 1
       }
     }
     const statusLabel = seenUnits === totalUnits && totalUnits > 0
@@ -2515,6 +2638,118 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
+  if (activeLme === 'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLmeEndoscopieBasisEnBloedingenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur-mini') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurMiniSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-logistische-regressie-analyse') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-reflux-bij-kinderen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenRefluxBijKinderenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus1-maagklachten-lmv-ppi') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus1MaagklachtenLmvPpiSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus2-passageklachten-lme-pre-maligne-bovenste-tractus-digestivus') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus2PassageklachtenLmePreMaligneBovensteTractusDigestivusSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus2-passageklachten-lme-chemoradiatie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus2PassageklachtenLmeChemoradiatieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus2-passageklachten-lme-kindergerelateerde-ziekten') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus2-passageklachten-lme-motiliteit-van-de-bovenste-tractus-digestivus') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week1-casus2-passageklachten-lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusSummary />
+      </SummaryLayout>
+    )
+  }
+
   if (activeLme === 'blok9-week1-casus1-acute-nierschade') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
@@ -3030,7 +3265,7 @@ const SummaryPage = ({ forcedBlok = null }) => {
                     Bachelorjaar 2
                   </h2>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    Blok 9
+                    Blok 9 en Blok 10
                   </p>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -3044,6 +3279,18 @@ const SummaryPage = ({ forcedBlok = null }) => {
                         <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok9)}</p>
                       </div>
                       <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-cyan-500 ml-auto" />
+                    </div>
+                  </Link>
+                  <Link to="/summary-blok10" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-violet-100 dark:bg-violet-500/20">
+                        <FlaskConical className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                      </div>
+                      <div className="min-w-0">
+                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok10.name}</h2>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok10)}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-violet-500 ml-auto" />
                     </div>
                   </Link>
                 </div>
@@ -3299,14 +3546,16 @@ const SummaryPage = ({ forcedBlok = null }) => {
             </section>
             )}
 
-            {forcedBlokKey === 'blok9' && (
+            {(forcedBlokKey === 'blok9' || forcedBlokKey === 'blok10') && (
             <section aria-labelledby="bachelor-year-2-heading">
               <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
                 <h2 id="bachelor-year-2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
                   Bachelorjaar 2
                 </h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  Blok 9 — Homeostase II
+                  {forcedBlokKey === 'blok10'
+                    ? 'Blok 10 — Maag-Darm-Lever '
+                    : 'Blok 9 — Homeostase II'}
                 </p>
               </div>
               <div className="space-y-4">
@@ -3357,6 +3606,75 @@ const SummaryPage = ({ forcedBlok = null }) => {
                       <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
                         <div className="flex items-center gap-3 mb-4 -ml-7">
                           <div className="w-3 h-3 rounded-full bg-cyan-500 dark:bg-cyan-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-cyan-500/20 dark:ring-cyan-400/30" />
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
+                          </div>
+                        </div>
+
+                        {week.cases.map((casus, casusIndex) => (
+                          <div key={casusIndex} className="mb-5 last:mb-0">
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
+                              </div>
+                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
+                            </div>
+
+                            {renderCaseSections(casus)}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          )}
+
+          {forcedBlokKey === 'blok10' && (
+          <div id="section-blok10" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+            <button
+              type="button"
+              onClick={() => {
+                if (forcedBlokKey) return
+                setExpandedBlok(expandedBlok === 'blok10' ? null : 'blok10')
+              }}
+              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
+            >
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-violet-100 dark:bg-violet-500/30 rounded-xl">
+                  <FlaskConical className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                </div>
+                <div className="text-left">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                    {courseStructure.blok10.name}
+                  </h2>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    {formatSummaryBlokSubtitle(courseStructure.blok10)}
+                  </p>
+                </div>
+              </div>
+              {!forcedBlokKey && (
+                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok10' ? 'rotate-180' : ''}`} />
+              )}
+            </button>
+
+            <AnimatePresence>
+              {(forcedBlokKey === 'blok10' || expandedBlok === 'blok10') && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
+                >
+                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                    {courseStructure.blok10.weeks.map((week, weekIndex) => (
+                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
+                        <div className="flex items-center gap-3 mb-4 -ml-7">
+                          <div className="w-3 h-3 rounded-full bg-violet-500 dark:bg-violet-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-violet-500/20 dark:ring-violet-400/30" />
                           <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
                             <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
                             <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>

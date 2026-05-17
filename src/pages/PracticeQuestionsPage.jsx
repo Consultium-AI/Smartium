@@ -5,7 +5,8 @@ import {
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen,
   CheckCircle, XCircle, ArrowLeft,
-  Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles, Lock
+  Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles, Lock,
+  FlaskConical
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import PracticeCourseModuleLink from '../components/PracticeCourseModuleLink'
@@ -64,7 +65,7 @@ import {
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { formatPracticeBlokSubtitle } from '../utils/blokRollupStats'
-import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
+import { isFreePlanBlockedLme, isFreePlanBlockedPracticeLme, isFreePlanCasusRandomPracticeUnlocked } from '../utils/freePlanAccess'
 import {
   PRACTICE_QUESTION_ORDER,
   practiceQuestionsCourseStructure,
@@ -159,7 +160,7 @@ const FLANKEREND_LME_IDS_BY_CASE = {
   ]),
 }
 
-const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9']
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
 
 const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
@@ -168,7 +169,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
-  const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && (isFreePlanBlockedLme(lmeParam) || lmeParam.startsWith('casus-random-') || lmeParam.startsWith('blok-random-') || lmeParam.startsWith('blok-fouten-'))
+  const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedPracticeLme(lmeParam)
   const progressUserId = getProgressUserId(user, authLoading)
   const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
   const blokParam = searchParams.get('blok')
@@ -197,6 +198,8 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
       setExpandedBlok('blok5')
     } else if (lmeParam?.startsWith('blok9-week')) {
       setExpandedBlok('blok9')
+    } else if (lmeParam?.startsWith('blok10-week')) {
+      setExpandedBlok('blok10')
     }
   }, [lmeParam, selectedOverviewBlok])
 
@@ -569,15 +572,19 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
             </section>
           ) : null
         ))}
-        {totalCasusQuestions > 0 && (
-          <Link
-            to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildCasusRandomParam(blokKey, weekIdx, casusIdx)}`}
-            className={`mt-2 flex items-center gap-2 px-3 py-2 rounded-lg border border-dashed text-sm transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-400 dark:hover:border-primary-500 hover:text-primary-700 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-primary-500/5'}`}
-          >
-            {showPremiumLocks ? <Lock className="w-3.5 h-3.5" /> : <RotateCcw className="w-3.5 h-3.5" />}
-            <span>Oefen alle casusvragen ({totalCasusQuestions} vragen)</span>
-          </Link>
-        )}
+        {totalCasusQuestions > 0 && (() => {
+          const casusRandomFreeOk = isFreePlanCasusRandomPracticeUnlocked(blokKey, casusIdx)
+          const casusRandomLocked = showPremiumLocks && !casusRandomFreeOk
+          return (
+            <Link
+              to={casusRandomLocked ? '/billing' : `/oefenvragen?lme=${buildCasusRandomParam(blokKey, weekIdx, casusIdx)}`}
+              className={`mt-2 flex items-center gap-2 px-3 py-2 rounded-lg border border-dashed text-sm transition-all ${casusRandomLocked ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:border-primary-400 dark:hover:border-primary-500 hover:text-primary-700 dark:hover:text-primary-400 hover:bg-primary-50/50 dark:hover:bg-primary-500/5'}`}
+            >
+              {casusRandomLocked ? <Lock className="w-3.5 h-3.5" /> : <RotateCcw className="w-3.5 h-3.5" />}
+              <span>Oefen alle casusvragen ({totalCasusQuestions} vragen)</span>
+            </Link>
+          )
+        })()}
       </div>
     )
   }
@@ -829,7 +836,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                         Bachelorjaar 2
                       </h2>
                       <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        Blok 9
+                        Blok 9 en Blok 10
                       </p>
                     </div>
                     <div className="flex flex-col gap-4">
@@ -843,6 +850,18 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                             <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok9)}</p>
                           </div>
                           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-teal-500 ml-auto" />
+                        </div>
+                      </Link>
+                      <Link to="/oefenvragen-blok10" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-violet-100 dark:bg-violet-500/20">
+                            <FlaskConical className="w-5 h-5 text-violet-600 dark:text-violet-400" />
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok10.name}</h2>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok10)}</p>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-violet-500 ml-auto" />
                         </div>
                       </Link>
                     </div>
@@ -1148,6 +1167,80 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                         >
                           {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
                           Oefen alle vragen van Blok 9
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              )}
+
+              {/* Blok 10 */}
+              {forcedBlokKey === 'blok10' && (
+              <div id="section-blok10" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (forcedBlokKey) return
+                    setExpandedBlok(expandedBlok === 'blok10' ? null : 'blok10')
+                  }}
+                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 bg-violet-100 dark:bg-violet-500/30 rounded-xl">
+                      <FlaskConical className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+                    </div>
+                    <div className="text-left">
+                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                        {practiceQuestionsCourseStructure.blok10.name}
+                      </h2>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok10)}
+                      </p>
+                    </div>
+                  </div>
+                  {!forcedBlokKey && (
+                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok10' ? 'rotate-180' : ''}`} />
+                  )}
+                </button>
+                <AnimatePresence>
+                  {(forcedBlokKey === 'blok10' || expandedBlok === 'blok10') && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
+                    >
+                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
+                        {practiceQuestionsCourseStructure.blok10.weeks.map((week, weekIndex) => (
+                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
+                            <div className="flex items-center gap-3 mb-4 -ml-7">
+                              <div className="w-3 h-3 rounded-full bg-violet-500 dark:bg-violet-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-violet-500/20 dark:ring-violet-400/30" />
+                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
+                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
+                              </div>
+                            </div>
+                            {week.cases.map((casus, casusIndex) => (
+                              <div key={casusIndex} className="mb-5 last:mb-0">
+                                <div className="flex items-center gap-3 mb-3">
+                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
+                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
+                                  </div>
+                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
+                                </div>
+                                {renderCaseSections(casus, 'blok10', weekIndex, casusIndex)}
+                              </div>
+                            ))}
+                          </div>
+                        ))}
+                        <Link
+                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok10')}`}
+                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-violet-300 dark:border-violet-600/50 text-violet-700 dark:text-violet-400 hover:border-violet-500 dark:hover:border-violet-500 hover:bg-violet-50 dark:hover:bg-violet-500/10'}`}
+                        >
+                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
+                          Oefen alle vragen van Blok 10
                         </Link>
                       </div>
                     </motion.div>
