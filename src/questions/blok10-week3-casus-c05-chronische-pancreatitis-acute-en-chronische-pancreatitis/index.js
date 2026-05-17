@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis-part01':
+    blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis-part02':
+    blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsPart02,
+}

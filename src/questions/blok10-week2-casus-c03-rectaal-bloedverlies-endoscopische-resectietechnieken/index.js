@@ -1,0 +1,11 @@
+import { blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart01 } from './Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart01'
+import { blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart02 } from './Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart02'
+import { blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart03 } from './Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart03'
+
+export const blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap = {
+  'blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken': [
+    ...blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart01,
+    ...blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart02,
+    ...blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsPart03,
+  ],
+}

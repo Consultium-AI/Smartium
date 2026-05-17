@@ -70,6 +70,7 @@ const Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieSummary 
     }
     caseLabel="Week 1 · Casus 1: Maagklachten"
     blokLabel="Blok 10"
+    practiceLink="/oefenvragen?lme=blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie"
     tableOfContents={tableOfContents}
   >
     <section id="sect-01" className="scroll-mt-24 mb-12">

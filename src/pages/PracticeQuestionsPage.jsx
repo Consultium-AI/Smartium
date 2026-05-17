@@ -54,6 +54,24 @@ import Blok5Week8Casus15RemmenVersusStimulerenVanHetAfweersysteemPracticeIntro f
 import Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro from '../components/Blok5Week8Casus15RisicoOpIatrogeneSchadeNaOrgaantransplantatiePracticeIntro'
 import Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro from '../components/Blok5Week8Casus15ScyllaEnCharybdisPracticeIntro'
 import Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro from '../components/Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro'
+import Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro'
+import Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxPracticeIntro'
+import Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalysePracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalysePracticeIntro'
+import Blok10Week1Casus1MaagklachtenRefluxBijKinderenPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenRefluxBijKinderenPracticeIntro'
+import Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriPracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriPracticeIntro'
+import Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro from '../components/Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro'
+import Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenPracticeIntro from '../components/Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenPracticeIntro'
+import Blok10Week2CasusC04DiarreeMalabsorptiePracticeIntro from '../components/Blok10Week2CasusC04DiarreeMalabsorptiePracticeIntro'
+import Blok10Week2CasusC04DiarreeMorbusCrohnPracticeIntro from '../components/Blok10Week2CasusC04DiarreeMorbusCrohnPracticeIntro'
+import Blok10Week2CasusC04DiarreeVerteringEnOpnamePracticeIntro from '../components/Blok10Week2CasusC04DiarreeVerteringEnOpnamePracticeIntro'
+import Blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasPracticeIntro from '../components/Blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasPracticeIntro'
+import Blok10Week5CasusC09ObesitasLichaamsbewegingPracticeIntro from '../components/Blok10Week5CasusC09ObesitasLichaamsbewegingPracticeIntro'
+import Blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2PracticeIntro from '../components/Blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2PracticeIntro'
+import Blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesPracticeIntro from '../components/Blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesPracticeIntro'
+import Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologiePracticeIntro from '../components/Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologiePracticeIntro'
+import Blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisPracticeIntro from '../components/Blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisPracticeIntro'
+import Blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpPracticeIntro from '../components/Blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpPracticeIntro'
+import Blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenPracticeIntro from '../components/Blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenPracticeIntro'
 import PracticeAiInlinePanel, { InlineAiText } from '../components/PracticeAiInlinePanel'
 import { resolveSummaryLmeId, buildPracticeContext, fetchPracticeExplanation } from '../utils/practiceExamAi'
 import {
@@ -573,7 +591,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           ) : null
         ))}
         {totalCasusQuestions > 0 && (() => {
-          const casusRandomFreeOk = isFreePlanCasusRandomPracticeUnlocked(blokKey, casusIdx)
+          const casusRandomFreeOk = isFreePlanCasusRandomPracticeUnlocked(blokKey, weekIdx, casusIdx)
           const casusRandomLocked = showPremiumLocks && !casusRandomFreeOk
           return (
             <Link
@@ -636,6 +654,60 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           <p className={`text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto ${lmeParam ? 'leading-relaxed' : ''}`}>
             {getPracticeSubtitleForLme(lmeParam)}
           </p>
+          {lmeParam?.startsWith('blok10-week2-casus-c04-diarree-aanhoudende-buikklachten') && (
+            <Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week2-casus-c04-diarree-malabsorptie') && (
+            <Blok10Week2CasusC04DiarreeMalabsorptiePracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week2-casus-c04-diarree-morbus-crohn') && (
+            <Blok10Week2CasusC04DiarreeMorbusCrohnPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week2-casus-c04-diarree-vertering-en-opname') && (
+            <Blok10Week2CasusC04DiarreeVerteringEnOpnamePracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas') && (
+            <Blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lichaamsbeweging') && (
+            <Blok10Week5CasusC09ObesitasLichaamsbewegingPracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
+          ) && <Blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2PracticeIntro />}
+          {lmeParam?.startsWith(
+            'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
+          ) && <Blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesPracticeIntro />}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') && (
+            <Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-leefstijl-bij-reflux') && (
+            <Blok10Week1Casus1MaagklachtenLeefstijlBijRefluxPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-logistische-regressie-analyse') && (
+            <Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalysePracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-reflux-bij-kinderen') && (
+            <Blok10Week1Casus1MaagklachtenRefluxBijKinderenPracticeIntro />
+          )}
+          {lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori') && (
+            <Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriPracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
+          ) && <Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacteriePracticeIntro />}
+          {lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie') && (
+            <Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologiePracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis',
+          ) && <Blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisPracticeIntro />}
+          {lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp') && (
+            <Blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpPracticeIntro />
+          )}
+          {lmeParam?.startsWith(
+            'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen',
+          ) && <Blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenPracticeIntro />}
           {lmeParam === 'blok5-week2-casus4-systemische-therapie-van-melanoom' && (
             <Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro />
           )}

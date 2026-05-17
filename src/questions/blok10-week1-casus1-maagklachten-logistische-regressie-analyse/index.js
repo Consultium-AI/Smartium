@@ -1,0 +1,12 @@
+import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart01 } from './Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart01'
+import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart02 } from './Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart02'
+import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart03 } from './Blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart03'
+
+export const blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap = {
+  'blok10-week1-casus1-maagklachten-logistische-regressie-analyse-part01':
+    blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart01,
+  'blok10-week1-casus1-maagklachten-logistische-regressie-analyse-part02':
+    blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart02,
+  'blok10-week1-casus1-maagklachten-logistische-regressie-analyse-part03':
+    blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsPart03,
+}

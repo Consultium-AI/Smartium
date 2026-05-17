@@ -1,0 +1,11 @@
+import { blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart01 } from './Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart01'
+import { blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart02 } from './Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart02'
+import { blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart03 } from './Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart03'
+
+export const blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap = {
+  'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn': [
+    ...blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart01,
+    ...blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart02,
+    ...blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsPart03,
+  ],
+}

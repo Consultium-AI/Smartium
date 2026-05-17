@@ -1,0 +1,11 @@
+export { default as Section01IntroMiniSummary } from './Section01IntroMiniSummary.jsx';
+export { default as Section02KernVanDePathofysiologieMiniSummary } from './Section02KernVanDePathofysiologieMiniSummary.jsx';
+export { default as Section03KlinischeGevolgenVanHPyloriInfectieMiniSummary } from './Section03KlinischeGevolgenVanHPyloriInfectieMiniSummary.jsx';
+export { default as Section04GastritisMiniSummary } from './Section04GastritisMiniSummary.jsx';
+export { default as Section05UlcuslijdenMiniSummary } from './Section05UlcuslijdenMiniSummary.jsx';
+export { default as Section06VerhoogdRisicoOpMaligniteitMiniSummary } from './Section06VerhoogdRisicoOpMaligniteitMiniSummary.jsx';
+export { default as Section07BelangVanKolonisatieMiniSummary } from './Section07BelangVanKolonisatieMiniSummary.jsx';
+export { default as Section08BeschadigingVanDeMaagwandMiniSummary } from './Section08BeschadigingVanDeMaagwandMiniSummary.jsx';
+export { default as Section09KlinischeRelevantieMiniSummary } from './Section09KlinischeRelevantieMiniSummary.jsx';
+export { default as Section10SamenvattingVanDeLeerpuntenMiniSummary } from './Section10SamenvattingVanDeLeerpuntenMiniSummary.jsx';
+export { default as LmoKumarClarkPathofysiologieHPyloriMiniSummary } from './SummaryContainer.jsx';

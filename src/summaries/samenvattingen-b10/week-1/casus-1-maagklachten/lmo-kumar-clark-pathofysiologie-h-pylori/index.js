@@ -1,0 +1,8 @@
+export { default as Image01LeerdoelenSummary } from './Image01LeerdoelenSummary'
+export { default as Image02AlgemeneBeschrijvingVanHetOnderwerpSummary } from './Image02AlgemeneBeschrijvingVanHetOnderwerpSummary'
+export { default as Image03HelicobacterPyloriEnKlinischeBeeldenSummary } from './Image03HelicobacterPyloriEnKlinischeBeeldenSummary'
+export { default as Image04HoeKoloniseertHelicobacterPyloriDeMaagwandSummary } from './Image04HoeKoloniseertHelicobacterPyloriDeMaagwandSummary'
+export { default as Image05BeschadigingVanDeMaagwandSummary } from './Image05BeschadigingVanDeMaagwandSummary'
+export { default as Image06KlinischeRelevantieSummary } from './Image06KlinischeRelevantieSummary'
+export { default as Image07BelangrijkOmMeeTeNemenSummary } from './Image07BelangrijkOmMeeTeNemenSummary'
+export { default as Image08SamenvattingSummary } from './Image08SamenvattingSummary'

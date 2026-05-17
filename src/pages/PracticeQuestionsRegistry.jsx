@@ -64,6 +64,31 @@ import { blok9Week5Casus10SyncopeQuestionsMap } from '../questions/blok9-week5-c
 import { blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap } from '../questions/blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties'
 import { blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap } from '../questions/blok9-week5-casus10-ritmestoornissen-bij-kinderen'
 import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'
+import { blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2'
+import { blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes'
+import { blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-leefstijl-bij-reflux'
+import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-logistische-regressie-analyse'
+import { blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-reflux-bij-kinderen'
+import { blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori'
+import { blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie'
+import { blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn'
+import { blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker'
+import { blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom'
+import { blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap } from '../questions/blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken'
+import { blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap } from '../questions/blok10-week2-casus-c04-diarree-aanhoudende-buikklachten'
+import { blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap } from '../questions/blok10-week2-casus-c04-diarree-malabsorptie'
+import { blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap } from '../questions/blok10-week2-casus-c04-diarree-morbus-crohn'
+import { blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap } from '../questions/blok10-week2-casus-c04-diarree-vertering-en-opname'
+import { blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie'
+import { blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis'
+import { blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp'
+import { blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen'
+import { blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus'
+import { blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek'
+import { blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-sld-en-masld'
+import { blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten'
+import { blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas'
+import { blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lichaamsbeweging'
 import { blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap } from '../questions/blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud'
 import { blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereQuestionsMap } from '../questions/blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere'
 import { blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidQuestionsMap } from '../questions/blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid'
@@ -1428,6 +1453,215 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 questionsMap: blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap,
               },
+              {
+                id: 'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux',
+                name: 'Leefstijl bij reflux',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus1-maagklachten-logistische-regressie-analyse',
+                name: 'Logistische regressie analyse',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus1-maagklachten-reflux-bij-kinderen',
+                name: 'Reflux bij kinderen',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori',
+                name: 'Pathofysiologie Helicobacter pylori',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap,
+              },
+              {
+                id: 'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
+                name: 'H. pylori, de zorgkosten die ontstaan vanuit een bacterie',
+                type: 'simple',
+                questionsMap: blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Week 2',
+        cases: [
+          {
+            name: 'Casus C03: Rectaal bloedverlies',
+            lmes: [
+              {
+                id: 'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn',
+                name: 'Acute buik en acute buikpijn',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker',
+                name: 'Bevolkingsonderzoek darmkanker',
+                type: 'simple',
+                questionsMap:
+                  blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom',
+                name: 'Colorectaal carcinoom',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken',
+                name: 'Endoscopische resectietechnieken',
+                type: 'simple',
+                questionsMap:
+                  blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap,
+              },
+            ],
+          },
+          {
+            name: 'Casus C04: Diarree',
+            lmes: [
+              {
+                id: 'blok10-week2-casus-c04-diarree-aanhoudende-buikklachten',
+                name: 'Aanhoudende buikklachten',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c04-diarree-malabsorptie',
+                name: 'Malabsorptie',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c04-diarree-morbus-crohn',
+                name: 'Morbus Crohn',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap,
+              },
+              {
+                id: 'blok10-week2-casus-c04-diarree-vertering-en-opname',
+                name: 'Vertering en opname',
+                type: 'simple',
+                questionsMap: blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Week 3',
+        cases: [
+          {
+            name: 'Casus C05: Chronische pancreatitis',
+            lmes: [
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie',
+                name: 'Pancreasfysiologie',
+                type: 'simple',
+                questionsMap: blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis',
+                name: 'Acute en chronische pancreatitis',
+                type: 'simple',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp',
+                name: 'Advanced endoscopie (EUS en ERCP)',
+                type: 'simple',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen',
+                name: 'Dieet, pancreatitis en pancreasenzymen',
+                type: 'simple',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Week 4',
+        cases: [
+          {
+            name: 'Casus C07: Leververvetting',
+            lmes: [
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus',
+                name: 'Vetvertering en entero-hepatische cyclus',
+                type: 'simple',
+                questionsMap:
+                  blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap,
+              },
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek',
+                name: 'De lever als fabriek',
+                type: 'simple',
+                questionsMap: blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap,
+              },
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-sld-en-masld',
+                name: 'SLD en MASLD',
+                type: 'simple',
+                questionsMap: blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap,
+              },
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten',
+                name: 'Auto-immuun gemedieerde leverziekten',
+                type: 'simple',
+                questionsMap:
+                  blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Week 5',
+        cases: [
+          {
+            name: 'Casus C09: Obesitas',
+            lmes: [
+              {
+                id: 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas',
+                name: 'Elke arts behandelt obesitas',
+                type: 'simple',
+                questionsMap: blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c09-obesitas-lichaamsbeweging',
+                name: 'Lichaamsbeweging',
+                type: 'simple',
+                questionsMap: blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap,
+              },
+            ],
+          },
+          {
+            name: 'Casus C10: DM type 2',
+            lmes: [
+              {
+                id: 'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
+                name: 'Symptomen, pathofysiologie en diagnostiek van diabetes mellitus type 2',
+                type: 'simple',
+                questionsMap:
+                  blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
+                name: 'Langetermijncomplicaties van diabetes mellitus',
+                type: 'simple',
+                questionsMap:
+                  blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap,
+              },
             ],
           },
         ],
@@ -2300,6 +2534,162 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap[lmeParam]) {
     return blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux') {
+    return Object.values(blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-logistische-regressie-analyse') {
+    return Object.values(blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-reflux-bij-kinderen') {
+    return Object.values(blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori') {
+    return Object.values(blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie') {
+    return Object.values(blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap).flat()
+  }
+  if (blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap[lmeParam]) {
+    return blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn') {
+    return Object.values(blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker') {
+    return Object.values(blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom') {
+    return Object.values(blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken') {
+    return Object.values(
+      blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c04-diarree-aanhoudende-buikklachten') {
+    return Object.values(blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c04-diarree-malabsorptie') {
+    return Object.values(blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c04-diarree-morbus-crohn') {
+    return Object.values(blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week2-casus-c04-diarree-vertering-en-opname') {
+    return Object.values(blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap).flat()
+  }
+  if (blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap[lmeParam]) {
+    return blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus') {
+    return Object.values(
+      blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek') {
+    return Object.values(blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c07-leververvetting-sld-en-masld') {
+    return Object.values(blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten') {
+    return Object.values(
+      blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas') {
+    return Object.values(blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-lichaamsbeweging') {
+    return Object.values(blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2') {
+    return Object.values(blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap).flat()
+  }
+  if (blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap[lmeParam]) {
+    return blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes') {
+    return Object.values(blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie') {
+    return Object.values(blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap).flat()
+  }
+  if (blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis') {
+    return Object.values(blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap).flat()
+  }
+  if (blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp') {
+    return Object.values(blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap).flat()
+  }
+  if (blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen') {
+    return Object.values(blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap).flat()
+  }
+  if (blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap[lmeParam]
+  }
   // Default (incl. alle-random): show all questions combined
   const blok3Count = embryogeneseQuestions.length + beeldvormingQuestions.length + extraembryonaalQuestions.length + extremiteitenQuestions.length
   const blok4Count = blok3Count + aangeborenImmuniteitHerkenningQuestions.length + introductieBacteriologieQuestions.length + introductieImmunologieQuestions.length + introductieMycologieQuestions.length + introductieParasitologieQuestions.length
@@ -2976,7 +3366,78 @@ export function getPracticeTitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return 'Syncope'
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return 'Elektrofysiologisch onderzoek en ablaties'
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return 'Ritmestoornissen bij kinderen'
-  if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') return 'Fysiologie van maagzuur'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'))
+    return 'Fysiologie van maagzuur'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-leefstijl-bij-reflux')) return 'Leefstijl bij reflux'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-logistische-regressie-analyse'))
+    return 'Logistische regressie analyse'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-reflux-bij-kinderen'))
+    return 'Reflux bij kinderen'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori'))
+    return 'Pathofysiologie Helicobacter pylori'
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie'))
+    return 'H. pylori, de zorgkosten die ontstaan vanuit een bacterie'
+  if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn'))
+    return 'Acute buik en acute buikpijn'
+  if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker'))
+    return 'Bevolkingsonderzoek darmkanker'
+  if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom'))
+    return 'Colorectaal carcinoom'
+  if (lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken'))
+    return 'Endoscopische resectietechnieken'
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-aanhoudende-buikklachten'))
+    return 'Aanhoudende buikklachten'
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-malabsorptie'))
+    return 'Malabsorptie'
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-morbus-crohn'))
+    return 'Morbus Crohn'
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-vertering-en-opname'))
+    return 'Vertering en opname'
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus'))
+    return 'Vetvertering en entero-hepatische cyclus'
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek'))
+    return 'De lever als fabriek'
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-sld-en-masld'))
+    return 'SLD en MASLD'
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten'))
+    return 'Auto-immuun gemedieerde leverziekten'
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas'))
+    return 'Elke arts behandelt obesitas'
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lichaamsbeweging'))
+    return 'Lichaamsbeweging'
+  if (
+    lmeParam?.startsWith(
+      'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
+    )
+  ) {
+    return 'Symptomen, pathofysiologie en diagnostiek van diabetes mellitus type 2'
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes'))
+    return 'Langetermijncomplicaties van diabetes mellitus'
+  if (
+    lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie')
+  ) {
+    return 'Pancreasfysiologie'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis',
+    )
+  ) {
+    return 'Acute en chronische pancreatitis'
+  }
+  if (
+    lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp')
+  ) {
+    return 'Advanced endoscopie (EUS en ERCP)'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen',
+    )
+  ) {
+    return 'Dieet, pancreatitis en pancreasenzymen'
+  }
   if (lmeParam === 'alle-random') return 'Alle vragen (random)'
   if (lmeParam?.startsWith('casus-random-')) {
     const { blokKey, weekIdx, casusIdx } = parseCasusRandomParam(lmeParam)
@@ -3603,8 +4064,119 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (lmeParam === 'blok9-week5-casus10-syncope') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10SyncopeQuestionsMap)} meerkeuzevragen over syncope.`
   if (lmeParam === 'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10ElektrofysiologischOnderzoekEnAblatiesQuestionsMap)} meerkeuzevragen over elektrofysiologisch onderzoek en ablaties.`
   if (lmeParam === 'blok9-week5-casus10-ritmestoornissen-bij-kinderen') return `Test je kennis met ${getQuestionCount(blok9Week5Casus10RitmestoornissenBijKinderenQuestionsMap)} meerkeuzevragen over ritmestoornissen bij kinderen.`
-  if (lmeParam === 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur') {
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur')) {
     return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap)} meerkeuzevragen over fysiologie van maagzuur.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-leefstijl-bij-reflux')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap)} meerkeuzevragen over leefstijl bij reflux.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-logistische-regressie-analyse')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap)} meerkeuzevragen over logistische regressie analyse.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-reflux-bij-kinderen')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap)} meerkeuzevragen over reflux bij kinderen.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap)} meerkeuzevragen over pathofysiologie van Helicobacter pylori.`
+  }
+  if (lmeParam?.startsWith('blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap)} meerkeuzevragen over H. pylori, zorglast op populatieniveau en preventie.`
+  }
+  if (
+    lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn')
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnQuestionsMap)} meerkeuzevragen over acute buik en acute buikpijn.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap)} meerkeuzevragen over bevolkingsonderzoek naar darmkanker.`
+  }
+  if (
+    lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom')
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomQuestionsMap)} meerkeuzevragen over colorectaal carcinoom.`
+  }
+  if (
+    lmeParam?.startsWith('blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken')
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenQuestionsMap)} meerkeuzevragen over endoscopische resectietechnieken.`
+  }
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-aanhoudende-buikklachten')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenQuestionsMap)} meerkeuzevragen over aanhoudende buikklachten.`
+  }
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-malabsorptie')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC04DiarreeMalabsorptieQuestionsMap)} meerkeuzevragen over malabsorptie.`
+  }
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-morbus-crohn')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC04DiarreeMorbusCrohnQuestionsMap)} meerkeuzevragen over Morbus Crohn.`
+  }
+  if (lmeParam?.startsWith('blok10-week2-casus-c04-diarree-vertering-en-opname')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week2CasusC04DiarreeVerteringEnOpnameQuestionsMap)} meerkeuzevragen over vertering en opname.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap)} meerkeuzevragen over vetvertering en entero-hepatische cyclus.`
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap)} meerkeuzevragen over de lever als fabriek.`
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-sld-en-masld')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap)} meerkeuzevragen over SLD en MASLD.`
+  }
+  if (
+    lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten')
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap)} meerkeuzevragen over auto-immuun gemedieerde leverziekten.`
+  }
+  if (lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap)} meerkeuzevragen over pancreasfysiologie.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap)} meerkeuzevragen over acute en chronische pancreatitis.`
+  }
+  if (lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap)} meerkeuzevragen over advanced endoscopie (EUS en ERCP).`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap)} meerkeuzevragen over dieet bij pancreatitis en pancreasenzymen.`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas')) {
+    const n = getQuestionCount(blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap)
+    if (n === 0) {
+      return 'Er zijn in het bron-document nog geen meerkeuzevragen opgenomen; zodra die in het oefenvragen-docx staan, verschijnen ze hier.'
+    }
+    return `Test je kennis met ${n} meerkeuzevragen over elke arts behandelt obesitas.`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lichaamsbeweging')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap)} meerkeuzevragen over lichaamsbeweging (bariatrische chirurgie en beleid rond obesitas).`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap)} meerkeuzevragen over symptomen, pathofysiologie en diagnostiek van diabetes mellitus type 2.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap)} meerkeuzevragen over langetermijncomplicaties van diabetes mellitus.`
   }
   if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
   if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`

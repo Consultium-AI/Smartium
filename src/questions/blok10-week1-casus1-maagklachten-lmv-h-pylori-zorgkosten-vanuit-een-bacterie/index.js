@@ -1,0 +1,12 @@
+import { blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart01 } from './Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart01'
+import { blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart02 } from './Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart02'
+import { blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart03 } from './Blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart03'
+
+export const blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsMap = {
+  'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie-part01':
+    blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart01,
+  'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie-part02':
+    blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart02,
+  'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie-part03':
+    blok10Week1Casus1MaagklachtenLmvHPyloriZorgkostenVanuitEenBacterieQuestionsPart03,
+}

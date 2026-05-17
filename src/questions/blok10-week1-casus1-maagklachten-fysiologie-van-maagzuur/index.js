@@ -1,11 +1,12 @@
-import { group01ZuursecretieEnParietalecelQuestions } from './Group01ZuursecretieEnParietalecelQuestions'
-import { group02RegulatieEnSignaalstoffenQuestions } from './Group02RegulatieEnSignaalstoffenQuestions'
-import { group03PathologieEnFarmacologieQuestions } from './Group03PathologieEnFarmacologieQuestions'
+import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart01 } from './Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart01'
+import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart02 } from './Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart02'
+import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart03 } from './Blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart03'
 
 export const blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap = {
-  'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur': [
-    ...group01ZuursecretieEnParietalecelQuestions,
-    ...group02RegulatieEnSignaalstoffenQuestions,
-    ...group03PathologieEnFarmacologieQuestions,
-  ],
+  'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur-part01':
+    blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart01,
+  'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur-part02':
+    blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart02,
+  'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur-part03':
+    blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsPart03,
 }

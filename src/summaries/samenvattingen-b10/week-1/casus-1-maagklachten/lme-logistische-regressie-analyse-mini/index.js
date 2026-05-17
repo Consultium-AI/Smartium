@@ -1,0 +1,13 @@
+export { default as SummaryContainer } from './SummaryContainer.jsx';
+export { default as Section01LogistischeRegressieAnalyseMiniSummary } from './Section01LogistischeRegressieAnalyseMiniSummary.jsx';
+export { default as Section02KansEnOddsMiniSummary } from './Section02KansEnOddsMiniSummary.jsx';
+export { default as Section03RiskRatioEnOddsRatioMiniSummary } from './Section03RiskRatioEnOddsRatioMiniSummary.jsx';
+export { default as Section04WaaromGeenLineaireRegressieMiniSummary } from './Section04WaaromGeenLineaireRegressieMiniSummary.jsx';
+export { default as Section05LogitEnSCurveMiniSummary } from './Section05LogitEnSCurveMiniSummary.jsx';
+export { default as Section06InterpretatieVanCoefficientenMiniSummary } from './Section06InterpretatieVanCoefficientenMiniSummary.jsx';
+export { default as Section07KansBerekenenEnToetsingMiniSummary } from './Section07KansBerekenenEnToetsingMiniSummary.jsx';
+export { default as Section08MeervoudigeLogistischeRegressieMiniSummary } from './Section08MeervoudigeLogistischeRegressieMiniSummary.jsx';
+export { default as Section09PraktischeBeperkingenMiniSummary } from './Section09PraktischeBeperkingenMiniSummary.jsx';
+export { default as Section10AantalVariabelenEnEPVMiniSummary } from './Section10AantalVariabelenEnEPVMiniSummary.jsx';
+export { default as Section11PredictiemodellenMiniSummary } from './Section11PredictiemodellenMiniSummary.jsx';
+export { default as Section12ClassificatieSensitiviteitSpecificiteitEnRocMiniSummary } from './Section12ClassificatieSensitiviteitSpecificiteitEnRocMiniSummary.jsx';

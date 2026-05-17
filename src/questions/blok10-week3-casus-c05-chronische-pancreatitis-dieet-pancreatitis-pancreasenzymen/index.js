@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen-part01':
+    blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen-part02':
+    blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsPart02,
+}

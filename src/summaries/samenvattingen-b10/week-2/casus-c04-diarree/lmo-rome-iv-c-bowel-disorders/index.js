@@ -1,0 +1,1 @@
+export { default as Blok10Week2CasusC04DiarreeLmoRomeIvCBowelDisordersSummary } from './Blok10Week2CasusC04DiarreeLmoRomeIvCBowelDisordersSummary'

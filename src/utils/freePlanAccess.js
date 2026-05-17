@@ -14,14 +14,19 @@ function getBlok5CasusNumberFromLme(lmeId) {
   return Number.isFinite(casusNr) ? casusNr : null
 }
 
-/** Blok 10: casus 1 gratis, casus 2 (alle weken) alleen met premium. */
-function isBlok10Casus2Lme(lmeId) {
-  return Boolean(lmeId && typeof lmeId === 'string' && /^blok10-week\d+-casus2-/.test(lmeId))
+/**
+ * Blok 10: alleen week-casus 1 (Maagklachten, `…-casus1-…`) is gratis.
+ * `casus2`, `casus-c03`, enz. zijn premium (zelfde als “casus 2 en verder”).
+ */
+function isBlok10PremiumCasusLme(lmeId) {
+  if (!lmeId || typeof lmeId !== 'string') return false
+  if (!lmeId.startsWith('blok10-week')) return false
+  return !/^blok10-week\d+-casus1-/.test(lmeId)
 }
 
 /**
- * `casus-random-${blok}-w${week}-c${casusIndex}` — casusIndex is 0-based (c0 = eerste casus).
- * Alleen blok 10 casus 1 (index 0) is gratis mee te oefenen zonder premium.
+ * `casus-random-${blok}-w${week}-c${casusIndex}` — indices 0-based (w0 = week 1, c0 = eerste casus).
+ * Blok 10: alleen week 1 + eerste casus (Maagklachten) is gratis zonder premium.
  */
 function parseCasusRandomParam(lmeParam) {
   const suffix = lmeParam.replace('casus-random-', '')
@@ -42,7 +47,7 @@ export function isKorteSamenvattingLme(lmeId) {
 
 export function isFreePlanBlockedLme(lmeId) {
   if (isKorteSamenvattingLme(lmeId)) return true
-  if (isBlok10Casus2Lme(lmeId)) return true
+  if (isBlok10PremiumCasusLme(lmeId)) return true
   const casusNr = getBlok5CasusNumberFromLme(lmeId)
   if (!casusNr) return false
   return BLOCKED_BLOK5_CASUS_FOR_FREE.has(casusNr)
@@ -56,14 +61,14 @@ export function isFreePlanBlockedPracticeLme(lmeParam) {
   if (lmeParam.startsWith('casus-random-')) {
     const parsed = parseCasusRandomParam(lmeParam)
     if (!parsed) return true
-    if (parsed.blokKey === 'blok10' && parsed.casusIdx === 0) return false
+    if (parsed.blokKey === 'blok10' && parsed.weekIdx === 0 && parsed.casusIdx === 0) return false
     return true
   }
   return isFreePlanBlockedLme(lmeParam)
 }
 
-export function isFreePlanCasusRandomPracticeUnlocked(blokKey, casusIdx) {
-  return blokKey === 'blok10' && casusIdx === 0
+export function isFreePlanCasusRandomPracticeUnlocked(blokKey, weekIdx, casusIdx) {
+  return blokKey === 'blok10' && weekIdx === 0 && casusIdx === 0
 }
 
 export function isFreePlanAllowedExam(blok, examNr) {

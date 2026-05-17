@@ -228,6 +228,44 @@ import Blok10Week1Casus2PassageklachtenLmeChemoradiatieSummary from '../summarie
 import Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-kindergerelateerde-ziekten/Blok10Week1Casus2PassageklachtenLmeKindergerelateerdeZiektenSummary'
 import Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lme-motiliteit-van-de-bovenste-tractus-digestivus/Blok10Week1Casus2PassageklachtenLmeMotiliteitVanDeBovensteTractusDigestivusSummary'
 import Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusSummary from '../summaries/samenvattingen-b10/week-1/casus-2-passageklachten/casusbijeenkomst/lmv-chirurgische-behandeling-van-aandoeningen-aan-de-bovenste-tractus-digestivus/Blok10Week1Casus2PassageklachtenLmvChirurgischeBehandelingVanAandoeningenAanDeBovensteTractusDigestivusSummary'
+import Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-acute-buik-en-acute-buikpijn/Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnSummary'
+import Blok10Week2CasusC03RectaalBloedverliesFlankerendOnderwijsLmoZelfstudieDifferentiaalDiagnoseVanAcuteBuikpijnSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/flankerend-onderwijs/lmo-zelfstudie-differentiaal-diagnose-van-acute-buikpijn/Blok10Week2CasusC03RectaalBloedverliesFlankerendOnderwijsLmoZelfstudieDifferentiaalDiagnoseVanAcuteBuikpijnSummary'
+import Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-bevolkingsonderzoek-darmkanker/Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerSummary'
+import Blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-colorectaalcarcinoom/Blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomSummary'
+import Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-endoscopische-resectietechnieken/Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenSummary'
+import Blok10Week2CasusC03RectaalBloedverliesErfelijkeDarmkankerSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-erfelijke-darmkanker/Blok10Week2CasusC03RectaalBloedverliesErfelijkeDarmkankerSummary'
+import Blok10Week2CasusC03RectaalBloedverliesRectaalBloedverliesSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lme-rectaal-bloedverlies/Blok10Week2CasusC03RectaalBloedverliesRectaalBloedverliesSummary'
+import Blok10Week2CasusC03RectaalBloedverliesLmoBasisOncologischeChirurgieColoncarcinoomSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/lmo-basis-oncologische-chirurgie-coloncarcinoom/Blok10Week2CasusC03RectaalBloedverliesLmoBasisOncologischeChirurgieColoncarcinoomSummary'
+import Blok10Week2CasusC03RectaalBloedverliesLmvPrehabilitatieVoorEenOperatieSummary from '../summaries/samenvattingen-b10/week-2/casus-c03-rectaal-bloedverlies/casus-bijeenkomst/lmv-prehabilitatie-voor-een-operatie/Blok10Week2CasusC03RectaalBloedverliesLmvPrehabilitatieVoorEenOperatieSummary'
+import Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lme-aanhoudende-buikklachten/Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenSummary'
+import Blok10Week2CasusC04DiarreeMalabsorptieSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lme-malabsorptie/Blok10Week2CasusC04DiarreeMalabsorptieSummary'
+import Blok10Week2CasusC04DiarreeMorbusCrohnSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lme-morbus-crohn/Blok10Week2CasusC04DiarreeMorbusCrohnSummary'
+import Blok10Week2CasusC04DiarreeVerteringEnOpnameSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lme-vertering-en-opname/Blok10Week2CasusC04DiarreeVerteringEnOpnameSummary'
+import Blok10Week2CasusC04DiarreeMicroscopischeAnatomieVanMaagTotAnusSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lme-microscopische-anatomie-van-maag-tot-anus/Blok10Week2CasusC04DiarreeMicroscopischeAnatomieVanMaagTotAnusSummary'
+import Blok10Week2CasusC04DiarreeLmoRomeIvCBowelDisordersSummary from '../summaries/samenvattingen-b10/week-2/casus-c04-diarree/lmo-rome-iv-c-bowel-disorders/Blok10Week2CasusC04DiarreeLmoRomeIvCBowelDisordersSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmePancreasfysiologieSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-pancreasfysiologie/Blok10Week3CasusC05ChronischePancreatitisLmePancreasfysiologieSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmeAcuteEnChronischePancreatitisSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-acute-en-chronische-pancreatitis/Blok10Week3CasusC05ChronischePancreatitisLmeAcuteEnChronischePancreatitisSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmeAdvancedEndoscopieEusErcpSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-advanced-endoscopie-eus-ercp/Blok10Week3CasusC05ChronischePancreatitisLmeAdvancedEndoscopieEusErcpSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmeDieetPancreatitisPancreasenzymenSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-dieet-pancreatitis-pancreasenzymen/Blok10Week3CasusC05ChronischePancreatitisLmeDieetPancreatitisPancreasenzymenSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmePancreascarcinoomSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-pancreascarcinoom/Blok10Week3CasusC05ChronischePancreatitisLmePancreascarcinoomSummary'
+import Blok10Week3CasusC05ChronischePancreatitisLmeMicroscopischeAnatomiePancreasSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-microscopische-anatomie-pancreas/Blok10Week3CasusC05ChronischePancreatitisLmeMicroscopischeAnatomiePancreasSummary'
+import Blok10Week3CasusC06DmType1LmeSymptomenPathofysiologieDiagnostiekDm1Summary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/lme-symptomen-pathofysiologie-diagnostiek-dm1/Blok10Week3CasusC06DmType1LmeSymptomenPathofysiologieDiagnostiekDm1Summary'
+import Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/lme-acute-ontregelingen-dm1/Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary'
+import Blok10Week4CasusC07LeververvettingLmeVetverteringEnterohepatischeCyclusSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-vetvertering-enterohepatische-cyclus/Blok10Week4CasusC07LeververvettingLmeVetverteringEnterohepatischeCyclusSummary'
+import Blok10Week4CasusC07LeververvettingLmeDeLeverAlsFabriekSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-de-lever-als-fabriek/Blok10Week4CasusC07LeververvettingLmeDeLeverAlsFabriekSummary'
+import Blok10Week4CasusC07LeververvettingLmeSldEnMasldSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-sld-en-masld/Blok10Week4CasusC07LeververvettingLmeSldEnMasldSummary'
+import Blok10Week4CasusC07LeververvettingLmeAutoimmuunGemedieerdeLeverziektenSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-autoimmuun-gemedieerde-leverziekten/Blok10Week4CasusC07LeververvettingLmeAutoimmuunGemedieerdeLeverziektenSummary'
+import Blok10Week4CasusC07LeververvettingLmeAbcdeViraleHepatitisSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-abcde-virale-hepatitis/Blok10Week4CasusC07LeververvettingLmeAbcdeViraleHepatitisSummary'
+import Blok10Week4CasusC08LevercirroseLmeEndoscopieBasisEnBloedingenSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/lme-endoscopie-basis-en-bloedingen/Blok10Week4CasusC08LevercirroseLmeEndoscopieBasisEnBloedingenSummary'
+import Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/lme-levercirrose-en-complicaties/Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary'
+import Blok10Week5CasusC09ObesitasLmeChirurgischeObesitasbehandelingenSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-chirurgische-obesitasbehandelingen/Blok10Week5CasusC09ObesitasLmeChirurgischeObesitasbehandelingenSummary'
+import Blok10Week5CasusC09ObesitasLmeElkeArtsBehandeltObesitasSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-elke-arts-behandelt-obesitas/Blok10Week5CasusC09ObesitasLmeElkeArtsBehandeltObesitasSummary'
+import Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-lichaamsbeweging/Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary'
+import Blok10Week5CasusC10DmType2LmeSymptomenPathofysiologieDiagnostiekDm2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-symptomen-pathofysiologie-diagnostiek-dm2/Blok10Week5CasusC10DmType2LmeSymptomenPathofysiologieDiagnostiekDm2Summary'
+import Blok10Week5CasusC10DmType2LmeLangetermijnComplicatiesDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-langetermijn-complicaties-diabetes/Blok10Week5CasusC10DmType2LmeLangetermijnComplicatiesDiabetesSummary'
+import Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-leefstijl-voeding-preventie-dm2/Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary'
+import Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-lipiden-lipoproteinen-metabole-dysregulatie/Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary'
+import Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-remissie-van-diabetes/Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary'
 
 const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
   'Casus 1: De huid als succesvolle barrière': new Set([
@@ -1399,6 +1437,288 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   name: 'Chirurgische behandeling van aandoeningen aan de bovenste tractus digestivus',
                   available: true,
                   moduleKind: 'lmv',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Week 2',
+          cases: [
+            {
+              name: 'Casus C03: Rectaal bloedverlies',
+              lmes: [
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn',
+                  name: 'Acute buik en acute buikpijn',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-lmo-zelfstudie-differentiaal-diagnose-van-acute-buikpijn',
+                  name: 'Zelfstudie differentiaal diagnose van acute buikpijn',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker',
+                  name: 'Bevolkingsonderzoek darmkanker',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom',
+                  name: 'Colorectaal carcinoom',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken',
+                  name: 'Endoscopische resectietechnieken',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-erfelijke-darmkanker',
+                  name: 'Erfelijke darmkanker',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-rectaal-bloedverlies',
+                  name: 'Rectaal bloedverlies',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-lmo-basis-oncologische-chirurgie-coloncarcinoom',
+                  name: 'Basis oncologische chirurgie (coloncarcinoom)',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week2-casus-c03-rectaal-bloedverlies-lmv-prehabilitatie-voor-een-operatie',
+                  name: 'Prehabilitatie voor een operatie',
+                  available: true,
+                  moduleKind: 'lmv',
+                },
+              ],
+            },
+            {
+              name: 'Casus C04: Diarree',
+              lmes: [
+                {
+                  id: 'blok10-week2-casus-c04-diarree-aanhoudende-buikklachten',
+                  name: 'Aanhoudende buikklachten',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c04-diarree-malabsorptie',
+                  name: 'Malabsorptie',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c04-diarree-morbus-crohn',
+                  name: 'Morbus Crohn',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c04-diarree-vertering-en-opname',
+                  name: 'Vertering en opname',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week2-casus-c04-diarree-microscopische-anatomie-van-maag-tot-anus',
+                  name: 'Microscopische anatomie van maag tot anus',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Week 3',
+          cases: [
+            {
+              name: 'Casus C05: Chronische pancreatitis',
+              lmes: [
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie',
+                  name: 'Pancreasfysiologie',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis',
+                  name: 'Acute en chronische pancreatitis',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp',
+                  name: 'Advanced endoscopie (EUS en ERCP)',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen',
+                  name: 'Dieet, pancreatitis en pancreasenzymen',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-pancreascarcinoom',
+                  name: 'Pancreascarcinoom',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-microscopische-anatomie-pancreas',
+                  name: 'Microscopische anatomie van de pancreas',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+            {
+              name: 'Casus C06: DM type 1',
+              lmes: [
+                {
+                  id: 'blok10-week3-casus-c06-dm-type1-symptomen-pathofysiologie-diagnostiek-dm1',
+                  name: 'Symptomen, pathofysiologie en diagnostiek van diabetes mellitus type 1',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c06-dm-type1-acute-ontregelingen-dm1',
+                  name: 'Acute ontregelingen bij diabetes mellitus type 1',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Week 4',
+          cases: [
+            {
+              name: 'Casus C07: Leververvetting',
+              lmes: [
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus',
+                  name: 'Vetvertering en entero-hepatische cyclus',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek',
+                  name: 'De lever als fabriek',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-sld-en-masld',
+                  name: 'SLD en MASLD',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten',
+                  name: 'Auto-immuun gemedieerde leverziekten',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-abcde-virale-hepatitis',
+                  name: 'ABCDE virale hepatitis',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+            {
+              name: 'Casus C08: Levercirrose',
+              lmes: [
+                {
+                  id: 'blok10-week4-casus-c08-levercirrose-endoscopie-basis-en-bloedingen',
+                  name: 'Endoscopie basis en bloedingen',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c08-levercirrose-levercirrose-en-complicaties',
+                  name: 'Levercirrose en complicaties',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Week 5',
+          cases: [
+            {
+              name: 'Casus C09: Obesitas',
+              lmes: [
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-chirurgische-obesitasbehandelingen',
+                  name: 'Chirurgische obesitasbehandelingen',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas',
+                  name: 'Elke arts behandelt obesitas',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-lichaamsbeweging',
+                  name: 'Lichaamsbeweging',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+            {
+              name: 'Casus C10: DM type 2',
+              lmes: [
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
+                  name: 'Symptomen, pathofysiologie en diagnostiek van diabetes mellitus type 2',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
+                  name: 'Langetermijncomplicaties van diabetes mellitus',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-leefstijl-voeding-preventie-dm2',
+                  name: 'Leefstijl, voeding en preventie bij diabetes mellitus type 2',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-lipiden-lipoproteinen-metabole-dysregulatie',
+                  name: 'Lipiden, lipoproteinen en metabole dysregulatie',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-remissie-van-diabetes',
+                  name: 'Remissie van diabetes',
+                  available: true,
+                  moduleKind: 'lme',
                 },
               ],
             },
@@ -2750,7 +3070,311 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
-  if (activeLme === 'blok9-week1-casus1-acute-nierschade') {
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-acute-buik-en-acute-buikpijn') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesAcuteBuikEnAcuteBuikpijnSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-lmo-zelfstudie-differentiaal-diagnose-van-acute-buikpijn') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesFlankerendOnderwijsLmoZelfstudieDifferentiaalDiagnoseVanAcuteBuikpijnSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-colorectaalcarcinoom') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesColorectaalcarcinoomSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-endoscopische-resectietechnieken') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesEndoscopischeResectietechniekenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-erfelijke-darmkanker') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesErfelijkeDarmkankerSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-rectaal-bloedverlies') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesRectaalBloedverliesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-lmo-basis-oncologische-chirurgie-coloncarcinoom') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesLmoBasisOncologischeChirurgieColoncarcinoomSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c03-rectaal-bloedverlies-lmv-prehabilitatie-voor-een-operatie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC03RectaalBloedverliesLmvPrehabilitatieVoorEenOperatieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-aanhoudende-buikklachten') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeAanhoudendeBuikklachtenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-malabsorptie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeMalabsorptieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-morbus-crohn') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeMorbusCrohnSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-vertering-en-opname') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeVerteringEnOpnameSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-microscopische-anatomie-van-maag-tot-anus') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeMicroscopischeAnatomieVanMaagTotAnusSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week2-casus-c04-diarree-lmo-rome-iv-c-bowel-disorders') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week2CasusC04DiarreeLmoRomeIvCBowelDisordersSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmePancreasfysiologieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmeAcuteEnChronischePancreatitisSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmeAdvancedEndoscopieEusErcpSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmeDieetPancreatitisPancreasenzymenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-pancreascarcinoom') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmePancreascarcinoomSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-microscopische-anatomie-pancreas') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisLmeMicroscopischeAnatomiePancreasSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c06-dm-type1-symptomen-pathofysiologie-diagnostiek-dm1') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC06DmType1LmeSymptomenPathofysiologieDiagnostiekDm1Summary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c06-dm-type1-acute-ontregelingen-dm1') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingLmeVetverteringEnterohepatischeCyclusSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingLmeDeLeverAlsFabriekSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-sld-en-masld') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingLmeSldEnMasldSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingLmeAutoimmuunGemedieerdeLeverziektenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-abcde-virale-hepatitis') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingLmeAbcdeViraleHepatitisSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c08-levercirrose-endoscopie-basis-en-bloedingen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC08LevercirroseLmeEndoscopieBasisEnBloedingenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c08-levercirrose-levercirrose-en-complicaties') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-chirurgische-obesitasbehandelingen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasLmeChirurgischeObesitasbehandelingenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasLmeElkeArtsBehandeltObesitasSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-lichaamsbeweging') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2LmeSymptomenPathofysiologieDiagnostiekDm2Summary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2LmeLangetermijnComplicatiesDiabetesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-leefstijl-voeding-preventie-dm2') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-lipiden-lipoproteinen-metabole-dysregulatie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-remissie-van-diabetes') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok9-week1-casus1-acute-nieren-nierschade') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1AcuteNierschadeSummary />

@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp-part01':
+    blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp-part02':
+    blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsPart02,
+}

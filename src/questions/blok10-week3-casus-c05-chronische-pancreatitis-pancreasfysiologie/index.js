@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie-part01':
+    blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie-part02':
+    blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsPart02,
+}

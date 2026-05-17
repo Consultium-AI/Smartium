@@ -1,0 +1,9 @@
+import { blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart01 } from './Blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart01'
+import { blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart02 } from './Blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart02'
+
+export const blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap = {
+  'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2-part01':
+    blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart01,
+  'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2-part02':
+    blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsPart02,
+}

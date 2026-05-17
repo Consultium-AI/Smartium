@@ -1,0 +1,12 @@
+import { blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart01 } from './Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart01'
+import { blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart02 } from './Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart02'
+import { blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart03 } from './Blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart03'
+
+export const blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsMap = {
+  'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori-part01':
+    blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart01,
+  'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori-part02':
+    blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart02,
+  'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori-part03':
+    blok10Week1Casus1MaagklachtenLmoKumarClarkPathofysiologieHPyloriQuestionsPart03,
+}

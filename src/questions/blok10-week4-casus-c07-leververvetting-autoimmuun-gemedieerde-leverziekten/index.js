@@ -1,0 +1,9 @@
+import { blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart01 } from './Blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart01'
+import { blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart02 } from './Blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart02'
+
+export const blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap = {
+  'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten-part01':
+    blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart01,
+  'blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten-part02':
+    blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsPart02,
+}

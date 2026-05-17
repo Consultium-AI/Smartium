@@ -1,0 +1,11 @@
+import { blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart01 } from './Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart01'
+import { blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart02 } from './Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart02'
+import { blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart03 } from './Blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart03'
+
+export const blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsMap = {
+  'blok10-week2-casus-c03-rectaal-bloedverlies-bevolkingsonderzoek-darmkanker': [
+    ...blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart01,
+    ...blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart02,
+    ...blok10Week2CasusC03RectaalBloedverliesBevolkingsonderzoekDarmkankerQuestionsPart03,
+  ],
+}
