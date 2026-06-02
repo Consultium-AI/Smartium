@@ -89,6 +89,8 @@ import {
 } from '../utils/accountProgressStorage'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { useReward } from '../context/RewardContext'
+import { COIN_REWARDS } from '../lib/rewardSystem'
 import { formatPracticeBlokSubtitle } from '../utils/blokRollupStats'
 import { isFreePlanBlockedLme, isFreePlanBlockedPracticeLme, isFreePlanCasusRandomPracticeUnlocked } from '../utils/freePlanAccess'
 import {
@@ -105,85 +107,8 @@ import {
   buildBlokWrongAnswersParam,
 } from './PracticeQuestionsRegistry'
 import { collectWrongAnsweredQuestionsForBlok, countWrongAnsweredQuestionsForBlok } from '../utils/practiceBlokWrongAnswers'
-
-const FLANKEREND_LME_IDS_BY_CASE = {
-  'Casus 1: De huid als succesvolle barrière': new Set([
-    'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
-  ]),
-  'Casus 2: De veranderde barrière': new Set([
-    'blok5-week1-casus2-provoke',
-    'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
-    'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie',
-  ]),
-  'Casus 4: Donkere vlek': new Set([
-    'blok5-week2-casus4-chronische-ontsteking',
-    'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
-  ]),
-  'Casus 5: De verdachte huid': new Set([
-    'blok5-week3-casus5-milieu-en-gezondheid',
-    'blok5-week3-casus5-leefstijl-en-kanker',
-  ]),
-  'Casus 6: Knobbel in de borst': new Set([
-    'blok5-week3-casus6-het-slechtnieuwsgesprek',
-  ]),
-  'Casus 7: Zwelling van de lies en/of een dik been': new Set([
-    'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten',
-  ]),
-  'Casus 8: Zwelling in de oksel': new Set([
-    'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
-    'blok5-week4-casus8-volksgezondheidsindicatoren-dalys',
-    'blok5-week4-casus8-introductiemodule-planetary-health',
-    'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
-  ]),
-  'Casus 9: Patiënt met auto-immuunziekte': new Set([
-    'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
-    'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
-    'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
-    'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
-    'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
-    'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
-  ]),
-  'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik': new Set([
-    'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
-  ]),
-  'Casus 13: Multipel myeloom': new Set([
-    'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
-    'blok5-week6-casus13-transplantatiegeneeskunde',
-  ]),
-  'Casus 1: Patiënt met acute nierschade': new Set([
-    'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten',
-    'blok9-week1-casus1-acute-nierschade-verdieping',
-  ]),
-  'Casus 2: Patiënt met chronische nierschade': new Set([
-    'blok9-week1-casus2-chronische-nierschade-verdieping',
-    'blok9-week1-casus2-nierfunctievervangende-therapie',
-    'blok9-week1-casus2-ethiek-van-orgaantransplantatie',
-  ]),
-  'Casus 3: Patiënt met ernstig verstoorde elektrolyten': new Set([
-    'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping',
-    'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping',
-  ]),
-  'Casus 4: De vrouw die maar 20 meter kan lopen': new Set([
-    'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools',
-    'blok9-week2-casus4-preoperatieve-screening',
-    'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie',
-  ]),
-  'Casus 5: Patiënt met hypertensie': new Set([
-    'blok9-week3-casus5-ai-act',
-  ]),
-  'Casus 6: Volwassene met pijn op de borst': new Set([
-    'blok9-week3-casus6-cvrm',
-  ]),
-  'Casus 8: Een leuk feestje': new Set([
-    'blok9-week4-casus8-passende-zorg-op-de-intensive-care',
-  ]),
-  'Casus 10: Atriumfibrilleren': new Set([
-    'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren',
-    'blok9-week5-casus10-syncope',
-    'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties',
-    'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
-  ]),
-}
+import { splitCasusModules } from '../utils/courseModuleKind'
+import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
 
@@ -192,6 +117,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const lmeParam = searchParams.get('lme')
   const { user, loading: authLoading } = useAuth()
   const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const { awardCoins } = useReward()
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedPracticeLme(lmeParam)
@@ -359,6 +285,11 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     setSelectedAnswers(prev => ({ ...prev, [questionId]: letter }))
     // Immediately reveal the answer after selection
     setRevealedAnswers(prev => ({ ...prev, [questionId]: true }))
+    // Award coins for a correct answer
+    const q = questions.find(q => q.id === questionId)
+    if (q && q.correctAnswer === letter) {
+      awardCoins(COIN_REWARDS.CORRECT_PRACTICE_ANSWER, 'Goed beantwoord')
+    }
   }
 
   const handleNext = () => {
@@ -420,27 +351,6 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     }
     
     return "border-navy-200 dark:border-slate-600 bg-white dark:bg-slate-800/50 text-navy-700 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-500/50 hover:bg-primary-50/50 dark:hover:bg-primary-500/10"
-  }
-
-  const splitCasusModules = (casus) => {
-    const flankerendIds = FLANKEREND_LME_IDS_BY_CASE[casus.name]
-    if (!flankerendIds) {
-      return {
-        casusbijeenkomstItems: casus.lmes,
-        flankerendItems: [],
-      }
-    }
-
-    const casusbijeenkomstItems = []
-    const flankerendItems = []
-    for (const lmeItem of casus.lmes) {
-      if (flankerendIds.has(lmeItem.id)) {
-        flankerendItems.push(lmeItem)
-      } else {
-        casusbijeenkomstItems.push(lmeItem)
-      }
-    }
-    return { casusbijeenkomstItems, flankerendItems }
   }
 
   const lmeProgressById = useMemo(() => {
@@ -566,7 +476,10 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   }
 
   const renderCaseSections = (casus, blokKey, weekIdx, casusIdx) => {
-    const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(casus)
+    const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(
+      casus,
+      FLANKEREND_MODULE_IDS_BY_CASE,
+    )
     const sectionDefs = [
       { key: 'casusbijeenkomst', title: 'Casusbijeenkomst', items: casusbijeenkomstItems },
       { key: 'flankerend', title: 'Flankerend onderwijs', items: flankerendItems },
@@ -625,7 +538,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           <motion.div
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-8 md:mb-10 max-w-3xl mx-auto"
+            className="mb-8 md:mb-10 max-w-3xl mx-auto flex flex-wrap items-center justify-between gap-3"
           >
             <Link
               to={
@@ -646,6 +559,28 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                     : 'Terug naar samenvatting'}
               </span>
             </Link>
+            {!isRandomMode(lmeParam) && !lmeParam?.startsWith('blok-fouten-') && (prevPracticeLme || nextPracticeLme) ? (
+              <div className="flex items-center gap-2">
+                {prevPracticeLme ? (
+                  <Link
+                    to={`/oefenvragen?lme=${prevPracticeLme}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-500/50 transition-colors text-sm"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    Vorige module
+                  </Link>
+                ) : null}
+                {nextPracticeLme ? (
+                  <Link
+                    to={`/oefenvragen?lme=${nextPracticeLme}`}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 hover:border-primary-300 dark:hover:border-primary-500/50 transition-colors text-sm"
+                  >
+                    Volgende module
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                ) : null}
+              </div>
+            ) : null}
           </motion.div>
         )}
 

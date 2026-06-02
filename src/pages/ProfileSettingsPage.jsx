@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
-import { CalendarClock, CreditCard, Loader2, Lock, Save, User, X } from 'lucide-react'
+import { CalendarClock, CreditCard, Loader2, Lock, Save, User, X, Flame } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ParticleBackground from '../components/ParticleBackground'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { useReward } from '../context/RewardContext'
 import { DEFAULT_PFP_OPTIONS, DEFAULT_PFP_URL, normalizePfpUrl } from '../constants/defaultPfps'
+import { REWARD_PFPS, getRewardPfpById } from '../constants/rewardPfps'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { redirectToRenewalCheckout } from '../lib/billingApi'
 
@@ -21,6 +23,16 @@ function profileSettingsErrorMessage(err) {
 export default function ProfileSettingsPage() {
   const { user, loading, updateUserProfile } = useAuth()
   const { hasAccess, plan, paidUntil, subscriptionStopped, stopSubscription } = useAccess()
+  const {
+    coins,
+    totalCoinsEarned,
+    streak,
+    unlockedPfps,
+    selectedRewardPfp,
+    purchasePfp,
+    activateRewardPfp,
+    deactivateRewardPfp,
+  } = useReward()
   const [displayName, setDisplayName] = useState('')
   const [photoURL, setPhotoURL] = useState(DEFAULT_PFP_URL)
   const [saving, setSaving] = useState(false)
@@ -28,7 +40,9 @@ export default function ProfileSettingsPage() {
   const [renewalPayLoading, setRenewalPayLoading] = useState(false)
   const [error, setError] = useState('')
   const [saved, setSaved] = useState(false)
+  const [buyError, setBuyError] = useState('')
   const canUsePremiumPfps = hasAccess || plan === 'admin' || plan === 'vip'
+  const hasUnlimitedCoinWallAccess = plan === 'vip' || plan === 'admin'
 
   useEffect(() => {
     setDisplayName(user?.displayName || '')
@@ -190,26 +204,37 @@ export default function ProfileSettingsPage() {
               <div>
                 <p className="mb-1.5 block text-sm font-medium text-navy-800 dark:text-slate-200">Profielfoto</p>
                 <div className="flex items-center gap-4">
-                  <img
-                    src={photoURL || DEFAULT_PFP_URL}
-                    alt="Profielfoto preview"
-                    className="h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-600"
-                    onError={(event) => {
-                      event.currentTarget.onerror = null
-                      event.currentTarget.src = DEFAULT_PFP_URL
-                    }}
-                  />
+                  {selectedRewardPfp && getRewardPfpById(selectedRewardPfp) ? (
+                    <img
+                      src={getRewardPfpById(selectedRewardPfp).image}
+                      alt="Profielfoto preview"
+                      className="h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-600"
+                    />
+                  ) : (
+                    <img
+                      src={photoURL || DEFAULT_PFP_URL}
+                      alt="Profielfoto preview"
+                      className="h-24 w-24 rounded-full border border-slate-200 object-cover dark:border-slate-600"
+                      onError={(event) => {
+                        event.currentTarget.onerror = null
+                        event.currentTarget.src = DEFAULT_PFP_URL
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5 lg:grid-cols-6">
                   {DEFAULT_PFP_OPTIONS.map((option) => {
-                    const isActive = option === (photoURL || DEFAULT_PFP_URL)
+                    const isActive = !selectedRewardPfp && option === (photoURL || DEFAULT_PFP_URL)
                     const isPremiumPfp = option !== DEFAULT_PFP_URL
                     const isLocked = isPremiumPfp && !canUsePremiumPfps
                     return (
                       <button
                         key={option}
                         type="button"
-                        onClick={() => setPhotoURL(option)}
+                        onClick={() => {
+                          setPhotoURL(option)
+                          deactivateRewardPfp()
+                        }}
                         disabled={isLocked}
                         className={`h-20 w-20 appearance-none overflow-hidden rounded-full border-2 p-0.5 transition ${
                           isActive
@@ -253,6 +278,104 @@ export default function ProfileSettingsPage() {
                 Opslaan
               </button>
             </form>
+
+            {/* ── Coins & rewards ── */}
+            {user && (
+              <div className="mt-8 rounded-2xl border border-slate-200/80 bg-slate-50/65 p-5 dark:border-slate-700/60 dark:bg-slate-900/60">
+                <div className="mb-4">
+                  <h2 className="text-base font-semibold text-navy-900 dark:text-white">Coins</h2>
+                  <p className="text-xs text-navy-500 dark:text-slate-400">Verdien coins door te oefenen en tentamens te halen.</p>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-700 dark:bg-slate-900/70">
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Saldo</p>
+                    <p className="mt-1 text-2xl font-bold text-navy-900 dark:text-white">{coins.toLocaleString('nl-NL')}</p>
+                    <p className="text-[11px] text-slate-400 dark:text-slate-500">{totalCoinsEarned.toLocaleString('nl-NL')} totaal verdiend</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-white p-3.5 dark:border-slate-700 dark:bg-slate-900/70">
+                    <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                      <Flame className="h-3.5 w-3.5 text-orange-500" strokeWidth={2} /> Streak
+                    </p>
+                    <p className="mt-1 text-2xl font-bold text-navy-900 dark:text-white">
+                      {streak} {streak === 1 ? 'dag' : 'dagen'}
+                    </p>
+                  </div>
+                </div>
+
+                {canUsePremiumPfps ? (
+                  <div className="mt-5 border-t border-slate-200 pt-5 dark:border-slate-700">
+                    <p className="mb-3 text-sm font-medium text-navy-800 dark:text-slate-200">Coin shop</p>
+                    {buyError && <p className="mb-2 text-xs font-medium text-rose-600 dark:text-rose-400">{buyError}</p>}
+                    <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-6">
+                      {REWARD_PFPS.map((pfp) => {
+                        const isOwned = unlockedPfps.includes(pfp.id) || hasUnlimitedCoinWallAccess
+                        const isActive = selectedRewardPfp === pfp.id
+                        const canAfford = coins >= pfp.cost
+                        return (
+                          <button
+                            key={pfp.id}
+                            type="button"
+                            onClick={() => {
+                              setBuyError('')
+                              if (isOwned) {
+                                if (isActive) {
+                                  deactivateRewardPfp()
+                                } else {
+                                  activateRewardPfp(pfp.id)
+                                }
+                                return
+                              }
+                              const result = purchasePfp(pfp.id, pfp.cost)
+                              if (result.success) {
+                                activateRewardPfp(pfp.id)
+                              } else if (result.reason === 'insufficient_coins') {
+                                setBuyError(`Niet genoeg coins. Nodig: ${pfp.cost.toLocaleString('nl-NL')}.`)
+                              }
+                            }}
+                            className={`group relative aspect-square w-full overflow-hidden rounded-full border-2 transition ${
+                              isActive
+                                ? 'border-primary-500 ring-2 ring-primary-400/40'
+                                : isOwned
+                                  ? 'border-emerald-400 hover:border-primary-400'
+                                  : canAfford
+                                    ? 'border-slate-200 hover:border-primary-400 dark:border-slate-600'
+                                    : 'cursor-not-allowed border-slate-200 opacity-50 dark:border-slate-700'
+                            }`}
+                            title={
+                              isOwned
+                                ? isActive
+                                  ? 'Actief — klik om te deactiveren'
+                                  : 'Klik om te activeren'
+                                : `${pfp.label} — ${pfp.cost.toLocaleString('nl-NL')} coins`
+                            }
+                          >
+                            <img src={pfp.image} alt={pfp.label} className="h-full w-full object-cover" />
+                            {!isOwned && (
+                              <span className="absolute inset-0 flex items-center justify-center bg-black/35">
+                                <Lock className="h-3.5 w-3.5 text-white" strokeWidth={2.2} />
+                              </span>
+                            )}
+                            {!isOwned && (
+                              <span className="absolute inset-x-0 bottom-0 bg-black/55 px-1 py-0.5 text-[9px] font-semibold text-white opacity-0 transition group-hover:opacity-100">
+                                {pfp.cost.toLocaleString('nl-NL')}
+                              </span>
+                            )}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-5 border-t border-slate-200 pt-4 dark:border-slate-700">
+                    <p className="text-xs text-navy-500 dark:text-slate-400">
+                      <Lock className="mr-1 inline h-3 w-3" strokeWidth={2} />
+                      Coin shop is beschikbaar voor premium gebruikers.
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="mt-8 rounded-2xl border border-slate-200/80 bg-slate-50/65 p-5 dark:border-slate-700/60 dark:bg-slate-900/60">
               <div className="mb-4 flex items-center gap-2.5">

@@ -1,4 +1,6 @@
-﻿import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
+﻿import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
+import { splitCasusModules } from '../utils/courseModuleKind'
+import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
 import { lme2QuestionsMap } from '../questions/lme2-virale-verwekkers-gastro-enteritis'
@@ -96,6 +98,10 @@ import { blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap } from '../que
 import { blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten'
 import { blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas'
 import { blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lichaamsbeweging'
+import {
+  BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS,
+  getCasusbijeenkomstQuestions,
+} from '../questions/blok5CasusbijeenkomstQuestionsRegistry.js'
 import { blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap } from '../questions/blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud'
 import { blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereQuestionsMap } from '../questions/blok5-week1-casus1-externe-verstorende-factoren-op-de-huidbarriere'
 import { blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidQuestionsMap } from '../questions/blok5-week1-casus1-hoe-werkt-een-geneesmiddel-via-de-huid'
@@ -429,6 +435,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 1: De huid als succesvolle barrière',
             lmes: [
               {
+                id: 'blok5-week1-casus1-casusbijeenkomst',
+                name: 'De huid als succesvolle barrière',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week1-casus1-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb',
                 name: 'Huidtypen met invloed van UVA en UVB',
                 type: 'simple',
@@ -463,6 +476,13 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 2: De veranderde barrière',
             lmes: [
+              {
+                id: 'blok5-week1-casus2-casusbijeenkomst',
+                name: 'De veranderde barrière',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week1-casus2-casusbijeenkomst'],
+              },
+
               {
                 id: 'blok5-week1-casus2-lmo-eczeem',
                 name: 'Eczeem',
@@ -533,6 +553,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 3: Paarse vlek',
             lmes: [
               {
+                id: 'blok5-week2-casus3-casusbijeenkomst',
+                name: 'Paarse vlek',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week2-casus3-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week2-casus3-begripsbepaling-dermatologische-uitingen',
                 name: 'Begripsbepaling dermatologische uitingen',
                 type: 'simple',
@@ -568,6 +595,13 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 4: Donkere vlek',
             lmes: [
+              {
+                id: 'blok5-week2-casus4-casusbijeenkomst',
+                name: 'Donkere vlek',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week2-casus4-casusbijeenkomst'],
+              },
+
               {
                 id: 'blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen',
                 name: 'Goedaardige en kwaadaardige huidafwijkingen',
@@ -664,6 +698,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 6: Knobbel in de borst',
             lmes: [
               {
+                id: 'blok5-week3-casus6-casusbijeenkomst',
+                name: 'Knobbel in de borst',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week3-casus6-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom',
                 name: 'Radiologische diagnostiek mammacarcinoom',
                 type: 'simple',
@@ -711,6 +752,12 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 7: Zwelling van de lies en/of een dik been',
             lmes: [
               {
+                id: 'blok5-week4-casus7-casusbijeenkomst',
+                name: 'Zwelling van de lies en/of een dik been',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week4-casus7-casusbijeenkomst'],
+              },
+              {
                 id: 'blok5-week4-casus7-flebologische-aandoeningen',
                 name: 'Flebologische aandoeningen',
                 type: 'simple',
@@ -747,6 +794,13 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 8: Zwelling in de oksel',
             lmes: [
+              {
+                id: 'blok5-week4-casus8-casusbijeenkomst',
+                name: 'Zwelling in de oksel',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week4-casus8-casusbijeenkomst'],
+              },
+
               {
                 id: 'blok5-week4-casus8-lymfeklierdissectie',
                 name: 'Lymfeklierdissectie',
@@ -813,6 +867,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 9: Patiënt met auto-immuunziekte',
             lmes: [
               {
+                id: 'blok5-week5-casus9-casusbijeenkomst',
+                name: 'Patiënt met auto-immuunziekte',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week5-casus9-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week5-casus9-pathogenese-auto-immuunziekten',
                 name: 'Pathogenese auto-immuunziekten',
                 type: 'simple',
@@ -871,6 +932,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 10: Patiënt met auto-inflammatoire ziekte',
             lmes: [
               {
+                id: 'blok5-week5-casus10-casusbijeenkomst',
+                name: 'Patiënt met auto-inflammatoire ziekte',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week5-casus10-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie',
                 name: 'Principes en klinische aspecten van auto-inflammatie',
                 type: 'simple',
@@ -892,6 +960,13 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik',
             lmes: [
+              {
+                id: 'blok5-week6-casus11-casusbijeenkomst',
+                name: 'Kind met algehele malaise, koorts en zwelling in de buik',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week6-casus11-casusbijeenkomst'],
+              },
+
               {
                 id: 'blok5-week5-casus11-introductie-kinderoncologie',
                 name: 'Introductie kinderoncologie',
@@ -940,6 +1015,13 @@ export const practiceQuestionsCourseStructure = {
             name: 'Casus 12: Verwarde patiënt met griepachtige klachten',
             lmes: [
               {
+                id: 'blok5-week6-casus12-casusbijeenkomst',
+                name: 'Verwarde patiënt met griepachtige klachten',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week6-casus12-casusbijeenkomst'],
+              },
+
+              {
                 id: 'blok5-week6-casus12-gaswisseling-hb-o2-co2-co',
                 name: 'Gaswisseling Hb, O2, CO2, CO',
                 type: 'simple',
@@ -968,6 +1050,13 @@ export const practiceQuestionsCourseStructure = {
           {
             name: 'Casus 13: Multipel myeloom',
             lmes: [
+              {
+                id: 'blok5-week6-casus13-casusbijeenkomst',
+                name: 'Multipel myeloom',
+                type: 'simple',
+                questionsMap: BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS['blok5-week6-casus13-casusbijeenkomst'],
+              },
+
               {
                 id: 'blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken',
                 name: 'Botopbouw, botafbraak en pathologische breuken',
@@ -1728,15 +1817,25 @@ export const practiceQuestionsCourseStructure = {
   },
 }
 
+function practiceIdsForLmeItem(lmeItem) {
+  if (lmeItem.type === 'simple') return [lmeItem.id]
+  if (lmeItem.questionsMap) return getImagesFromMap(lmeItem.questionsMap).map((img) => img.id)
+  return []
+}
+
+function orderedCasusLmeItems(casus) {
+  const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(
+    casus,
+    FLANKEREND_MODULE_IDS_BY_CASE,
+  )
+  return [...casusbijeenkomstItems, ...flankerendItems]
+}
+
 export const PRACTICE_QUESTION_ORDER = Object.values(practiceQuestionsCourseStructure)
-  .flatMap(blok => blok.weeks)
-  .flatMap(week => week.cases)
-  .flatMap(casus => casus.lmes)
-  .flatMap(lmeItem => (
-    lmeItem.type === 'simple'
-      ? [lmeItem.id]
-      : getImagesFromMap(lmeItem.questionsMap).map(img => img.id)
-  ))
+  .flatMap((blok) => blok.weeks)
+  .flatMap((week) => week.cases)
+  .flatMap((casus) => orderedCasusLmeItems(casus))
+  .flatMap((lmeItem) => practiceIdsForLmeItem(lmeItem))
 
 /** Alle leaf-LME-id's (incl. image-sets) voor één blok — zelfde volgorde als het cursusoverzicht. */
 export function getPracticeLmeIdsForBlok(blokKey) {
@@ -1745,12 +1844,8 @@ export function getPracticeLmeIdsForBlok(blokKey) {
   const ids = []
   for (const week of blok.weeks) {
     for (const casus of week.cases) {
-      for (const lmeItem of casus.lmes) {
-        if (lmeItem.type === 'simple') {
-          ids.push(lmeItem.id)
-        } else if (lmeItem.questionsMap) {
-          ids.push(...getImagesFromMap(lmeItem.questionsMap).map((img) => img.id))
-        }
+      for (const lmeItem of orderedCasusLmeItems(casus)) {
+        ids.push(...practiceIdsForLmeItem(lmeItem))
       }
     }
   }
@@ -1974,6 +2069,9 @@ export function getPracticeQuestionsForLme(lmeParam) {
   // Casus 13 LME 2: Antibiotica Resistentie (per LME, alle vragen gecombineerd)
   if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return Object.values(casus13Lme2QuestionsMap).flat()
   if (casus13Lme2QuestionsMap[lmeParam]) return casus13Lme2QuestionsMap[lmeParam]
+  const casusCbQ = getCasusbijeenkomstQuestions(lmeParam)
+  if (casusCbQ) return casusCbQ
+
   if (lmeParam === 'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud') {
     return Object.values(blok5Week1Casus1DeHuidbarriereVanJongTotOudQuestionsMap).flat()
   }

@@ -12,6 +12,10 @@ FIREBASE_PROJECT_ID = "smartium-8e7b3"
 STRIPE_PRICE_MONTHLY = "price_1THuz72NJGvegKCX9gOfXLaG"
 STRIPE_PRICE_YEARLY = "price_1THuz72NJGvegKCXJVQMpyqY"
 STRIPE_PAYMENT_METHOD_TYPES = "ideal"
+# Gmail is niet geverifieerd bij Resend — gebruik onboarding@resend.dev tot smartium.nl-domain staat.
+# Overschrijf na domain-verify: Smartium <support@smartium.nl>
+RESEND_FROM = "Smartium <onboarding@resend.dev>"
+FEEDBACK_TO = "smartiumsupport@gmail.com"
 
 # Mode: payment (one-time iDEAL). Frontend toont maandelijks/jaarlijks;
 # user betaalt handmatig opnieuw na 30/365 dagen.

@@ -1,0 +1,242 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNaDezeCasusbijeenkomstMoetJeKunnenUi",
+    "title": "Na deze casusbijeenkomst moet je kunnen uitleggen:",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusEnKlinischeContext",
+    "title": "Casus en klinische context",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectBelangrijkeKlachtenEnBevindingen",
+    "title": "Belangrijke klachten en bevindingen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEenBorstafwijkingKanOpVerschillendeM",
+    "title": "Een borstafwijking kan op verschillende manieren worden ontdekt:",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectInDezeCasusZijnVooralDeVolgendePunte",
+    "title": "In deze casus zijn vooral de volgende punten belangrijk:",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAandachtsvraag",
+    "title": "Aandachtsvraag",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischRedeneren",
+    "title": "Klinisch redeneren",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectVanKlachtNaarBeleid",
+    "title": "Van klacht naar beleid",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDeRedeneringVerlooptInStappen",
+    "title": "De redenering verloopt in stappen:",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDifferentiaaldiagnose",
+    "title": "Differentiaaldiagnose",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBijEenKnobbelInDeBorstDenkJeInElkGev",
+    "title": "Bij een knobbel in de borst denk je in elk geval aan:",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectDiagnostiek",
+    "title": "Diagnostiek",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBeeldvorming",
+    "title": "Beeldvorming",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectMammografie",
+    "title": "Mammografie",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectBelangrijkeBegrippenHierbijZijn",
+    "title": "Belangrijke begrippen hierbij zijn:",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectEchografie",
+    "title": "Echografie",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectMri",
+    "title": "MRI",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectTabel1BeeldvormingBijVerdenkingOpBor",
+    "title": "Tabel 1. Beeldvorming bij verdenking op borstkanker",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectWeefseldiagnostiek",
+    "title": "Weefseldiagnostiek",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectAandachtsvraag2",
+    "title": "Aandachtsvraag",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectBiomarkers",
+    "title": "Biomarkers",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectBijBorstkankerZijnDeVolgendeBiomarke",
+    "title": "Bij borstkanker zijn de volgende biomarkers essentieel:",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectBelangrijkeZiektebeelden",
+    "title": "Belangrijke ziektebeelden",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectInvasiefDuctaalMammacarcinoom",
+    "title": "Invasief ductaal mammacarcinoom",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectHer2EnDeHallmarksOfCancer",
+    "title": "HER2 en de hallmarks of cancer",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectHer2EnOokErPrPassenBijDeHallmark",
+    "title": "HER2 en ook ER/PR passen bij de hallmark:",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectTabel2Her2Classificatie",
+    "title": "Tabel 2. HER2-classificatie",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectBijEen2UitslagWordtAanvullendOnderzo",
+    "title": "Bij een 2+ uitslag wordt aanvullend onderzoek met ISH gedaan:",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectPrognostischeEnPredictieveBetekenis",
+    "title": "Prognostische en predictieve betekenis",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectEenBiomarkerKan",
+    "title": "Een biomarker kan:",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectBehandelingEnBeleid",
+    "title": "Behandeling en beleid",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectDeBehandelingBestaatUitEenCombinatie",
+    "title": "De behandeling bestaat uit een combinatie van:",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectChirurgie",
+    "title": "Chirurgie",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectErZijnTweeHoofdopties",
+    "title": "Er zijn twee hoofdopties:",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectSysteemtherapie",
+    "title": "Systeemtherapie",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectSysteemtherapieKanBestaanUit",
+    "title": "Systeemtherapie kan bestaan uit:",
+    "id": "sect-37"
+  },
+  {
+    "file": "SectHer2GerichteTherapie",
+    "title": "HER2-gerichte therapie,",
+    "id": "sect-38"
+  },
+  {
+    "file": "SectDeKeuzeHangtAfVanDeBiomarkersEnVanDe",
+    "title": "De keuze hangt af van de biomarkers en van de vraag of de behandeling:",
+    "id": "sect-39"
+  },
+  {
+    "file": "SectRadiotherapie",
+    "title": "Radiotherapie",
+    "id": "sect-40"
+  },
+  {
+    "file": "SectBelangrijkIs",
+    "title": "Belangrijk is:",
+    "id": "sect-41"
+  },
+  {
+    "file": "SectTabel3GlobaleBehandellogicaBijGeloka",
+    "title": "Tabel 3. Globale behandellogica bij gelokaliseerd mammacarcinoom",
+    "id": "sect-42"
+  },
+  {
+    "file": "SectBestralingsplanning",
+    "title": "Bestralingsplanning",
+    "id": "sect-43"
+  },
+  {
+    "file": "SectDaarbijWordtGekekenNaar",
+    "title": "Daarbij wordt gekeken naar:",
+    "id": "sect-44"
+  },
+  {
+    "file": "SectBelangrijkeOrganenDieZoVeelMogelijkG",
+    "title": "Belangrijke organen die zo veel mogelijk gespaard moeten worden zijn:",
+    "id": "sect-45"
+  },
+  {
+    "file": "SectAandachtsvraag3",
+    "title": "Aandachtsvraag",
+    "id": "sect-46"
+  },
+  {
+    "file": "SectKlinischeSamenvattingVanDeCasus",
+    "title": "Klinische samenvatting van de casus",
+    "id": "sect-47"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-48"
+  }
+]

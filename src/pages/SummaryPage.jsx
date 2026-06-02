@@ -9,9 +9,13 @@ import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
 import { useAccess } from '../hooks/useAccess'
 import { isFreePlanBlockedLme } from '../utils/freePlanAccess'
 import { useAuth } from '../context/AuthContext'
+import { useReward } from '../context/RewardContext'
+import { COIN_REWARDS } from '../lib/rewardSystem'
 import { getProgressUserId, loadSummarySeenMap, markSummarySeen } from '../utils/accountProgressStorage'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import SummaryCourseModuleLink from '../components/SummaryCourseModuleLink'
+import { splitCasusModules } from '../utils/courseModuleKind'
+import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 import { Header, Footer, SummaryLayout } from './summary/SummaryShared'
 import { lmeMap } from '../data/lmeIndex'
 import { EmbryogeneseSummary } from './summary/SummaryEmbryogenese'
@@ -76,6 +80,7 @@ import Casus12Lme3PatientMedicatieveiligheidSummary from '../summaries/casus12-l
 import Casus12Lme4ZorggerelateerdeInfectiesSummary from '../summaries/casus12-lme4-zorggerelateerde-infecties/Casus12Lme4ZorggerelateerdeInfectiesSummary'
 import Casus13Lme1AntibioticaIntroductieSummary from '../summaries/casus13-lme1-antibiotica-introductie/Casus13Lme1AntibioticaIntroductieSummary'
 import Casus13Lme2AntibioticaResistentieSummary from '../summaries/casus13-lme2-antibiotica-resistentie/Casus13Lme2AntibioticaResistentieSummary'
+import { BLOK5_CASUSBIJEENKOMST_SUMMARIES } from '../summaries/blok5CasusbijeenkomstRegistry.js'
 import Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-1-de-huidbarriere-van-jong-tot-oud/Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary'
 import Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-2-externe-verstorende-factoren-op-de-huidbarriere/Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary'
 import Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-3-hoe-werkt-een-geneesmiddel-via-de-huid/Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary'
@@ -267,101 +272,15 @@ import Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary from '..
 import Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-lipiden-lipoproteinen-metabole-dysregulatie/Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary'
 import Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-remissie-van-diabetes/Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary'
 
-const FLANKEREND_SUMMARY_LME_IDS_BY_CASE = {
-  'Casus 1: De huid als succesvolle barrière': new Set([
-    'blok5-week1-casus1-de-huidbarriere-van-jong-tot-oud',
-  ]),
-  'Casus 2: De veranderde barrière': new Set([
-    'blok5-week1-casus2-provoke',
-    'blok5-week1-casus2-lmv-anafylaxie-type-i-allergie',
-    'blok5-week1-casus2-lmv-centrale-vs-perifere-tolerantie',
-    'blok5-week1-casus2-stm-pathogenese-type-iv-allergie',
-  ]),
-  'Casus 4: Donkere vlek': new Set([
-    'blok5-week2-casus4-chronische-ontsteking',
-    'blok5-week2-casus4-mri-en-pet-scan-benignemaligne',
-  ]),
-  'Casus 5: De verdachte huid': new Set([
-    'blok5-week3-casus5-milieu-en-gezondheid',
-    'blok5-week3-casus5-leefstijl-en-kanker',
-  ]),
-  'Casus 6: Knobbel in de borst': new Set([
-    'blok5-week3-casus6-familiair-mammacarcinoom',
-    'blok5-week3-casus6-het-slechtnieuwsgesprek',
-    'blok5-week3-casus6-overdiagnose-bij-bevolkingsonderzoek-mammacarcinoom',
-  ]),
-  'Casus 7: Zwelling van de lies en/of een dik been': new Set([
-    'blok5-week4-casus7-lmo-voorbereiding-vow-hoeveel-mag-een-levensjaar-kosten',
-  ]),
-  'Casus 8: Zwelling in de oksel': new Set([
-    'blok5-week4-casus8-lichamelijk-onderzoek-knie-voorbereiding-klv-1-24',
-    'blok5-week4-casus8-volksgezondheidsindicatoren-dalys',
-    'blok5-week4-casus8-introductiemodule-planetary-health',
-    'blok5-week4-casus8-lmv-verworven-stollingsstoornissen',
-  ]),
-  'Casus 9: Patiënt met auto-immuunziekte': new Set([
-    'blok5-week5-casus9-bouw-en-functie-van-de-thymus',
-    'blok5-week5-casus9-lmo-positieve-en-negatieve-selectie',
-    'blok5-week5-casus9-lmo-voorbereiding-vo-ra-klinische-presentatie-en-immuunmechanismen',
-    'blok5-week5-casus9-lmv-introductie-auto-immuniteit-versus-auto-inflammatie',
-    'blok5-week5-casus9-lmv-auto-immuniteit-als-bijwerking-bij-immunotherapie',
-    'blok5-week5-casus9-lmv-patient-met-sle-samenvatting',
-  ]),
-  'Casus 11: Kind met algehele malaise, koorts en zwelling in de buik': new Set([
-    'blok5-week5-casus11-over-leven-na-kanker-op-kinderleeftijd',
-  ]),
-  'Casus 13: Multipel myeloom': new Set([
-    'blok5-week6-casus13-celtherapie-als-behandeling-voor-maligniteiten',
-    'blok5-week6-casus13-transplantatiegeneeskunde',
-  ]),
-  'Casus 1: Patiënt met acute nierschade': new Set([
-    'blok9-week1-casus1-glomerulaire-en-tubulaire-nierziekten',
-    'blok9-week1-casus1-acute-nierschade-verdieping',
-  ]),
-  'Casus 2: Patiënt met chronische nierschade': new Set([
-    'blok9-week1-casus2-chronische-nierschade-verdieping',
-    'blok9-week1-casus2-nierfunctievervangende-therapie',
-    'blok9-week1-casus2-ethiek-van-orgaantransplantatie',
-  ]),
-  'Casus 3: Patiënt met ernstig verstoorde elektrolyten': new Set([
-    'blok9-week2-casus3-stoornissen-kalium-en-zuur-base-evenwicht-verdieping',
-    'blok9-week2-casus3-stoornissen-water-en-volumebalans-verdieping',
-  ]),
-  'Casus 4: De vrouw die maar 20 meter kan lopen': new Set([
-    'blok9-week2-casus4-mdr-juridische-aspecten-medische-tools',
-    'blok9-week2-casus4-preoperatieve-screening',
-    'blok9-week2-casus4-ct-scans-beoordelen-vow-toegepaste-anatomie',
-  ]),
-  'Casus 5: Patiënt met hypertensie': new Set([
-    'blok9-week3-casus5-ai-act',
-  ]),
-  'Casus 6: Volwassene met pijn op de borst': new Set([
-    'blok9-week3-casus6-cvrm',
-  ]),
-  'Casus 8: Een leuk feestje': new Set([
-    'blok9-week4-casus8-passende-zorg-op-de-intensive-care',
-    'blok9-week4-casus8-lineare-regressielijn',
-  ]),
-  'Casus 10: Atriumfibrilleren': new Set([
-    'blok9-week5-casus10-leefstijl-als-therapie-voor-atriumfibrilleren',
-    'blok9-week5-casus10-syncope',
-    'blok9-week5-casus10-elektrofysiologisch-onderzoek-en-ablaties',
-    'blok9-week5-casus10-ritmestoornissen-bij-kinderen',
-  ]),
-  'Casus 1: Maagklachten': new Set([
-    'blok10-week1-casus1-maagklachten-lmo-kumar-clark-pathofysiologie-h-pylori',
-    'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
-    'blok10-week1-casus1-maagklachten-lmv-ppi',
-  ]),
-}
-
 // Main Summary Page Component
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
+const SUMMARY_COMPLETION_MS = 3 * 60 * 1000
 
 const SummaryPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
   const lme = searchParams.get('lme') || 'index'
   const { user, loading: authLoading } = useAuth()
+  const { awardCoins } = useReward()
   const progressUserId = getProgressUserId(user, authLoading)
   const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
   const { hasAccess, plan, loading: accessLoading } = useAccess()
@@ -403,9 +322,22 @@ const SummaryPage = ({ forcedBlok = null }) => {
 
   useEffect(() => {
     if (progressUserId == null || !lme || lme === 'index' || isBlockedDirectLme) return
-    markSummarySeen(progressUserId, lme)
-    setSeenMap(loadSummarySeenMap(progressUserId))
-  }, [progressUserId, lme, isBlockedDirectLme])
+
+    const currentMap = loadSummarySeenMap(progressUserId)
+    if (currentMap[lme]) return
+
+    const timer = window.setTimeout(() => {
+      const mapBefore = loadSummarySeenMap(progressUserId)
+      const isFirstRead = !mapBefore[lme]
+      markSummarySeen(progressUserId, lme)
+      setSeenMap(loadSummarySeenMap(progressUserId))
+      if (isFirstRead) {
+        awardCoins(COIN_REWARDS.FIRST_SUMMARY_READ, 'Samenvatting gelezen')
+      }
+    }, SUMMARY_COMPLETION_MS)
+
+    return () => window.clearTimeout(timer)
+  }, [progressUserId, lme, isBlockedDirectLme, awardCoins])
 
   useEffect(() => {
     const onCloudSynced = (e) => {
@@ -610,6 +542,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 1: De huid als succesvolle barrière",
               lmes: [
                 {
+                  id: "blok5-week1-casus1-casusbijeenkomst",
+                  name: "De huid als succesvolle barrière",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week1-casus1-huidtypen-met-invloed-van-uva-en-uvb",
                   name: "Huidtypen met invloed van UVA en UVB",
                   available: true,
@@ -639,6 +578,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: "Casus 2: De veranderde barrière",
               lmes: [
+                {
+                  id: "blok5-week1-casus2-casusbijeenkomst",
+                  name: "De veranderde barrière",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
                 {
                   id: "blok5-week1-casus2-lmo-eczeem",
                   name: "Eczeem",
@@ -700,6 +646,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 3: Paarse vlek",
               lmes: [
                 {
+                  id: "blok5-week2-casus3-casusbijeenkomst",
+                  name: "Paarse vlek",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week2-casus3-begripsbepaling-dermatologische-uitingen",
                   name: "Begripsbepaling dermatologische uitingen",
                   available: true,
@@ -730,6 +683,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: "Casus 4: Donkere vlek",
               lmes: [
+                {
+                  id: "blok5-week2-casus4-casusbijeenkomst",
+                  name: "Donkere vlek",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
                 {
                   id: "blok5-week2-casus4-goedaardige-en-kwaadaardige-huidafwijkingen",
                   name: "Goedaardige en kwaadaardige huidafwijkingen",
@@ -813,6 +773,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 6: Knobbel in de borst",
               lmes: [
                 {
+                  id: "blok5-week3-casus6-casusbijeenkomst",
+                  name: "Knobbel in de borst",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom",
                   name: "Radiologische diagnostiek mammacarcinoom",
                   available: true,
@@ -853,6 +820,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 7: Zwelling van de lies en of een dik been",
               lmes: [
                 {
+                  id: "blok5-week4-casus7-casusbijeenkomst",
+                  name: "Zwelling van de lies en/of een dik been",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week4-casus7-flebologische-aandoeningen",
                   name: "Flebologische aandoeningen",
                   available: true,
@@ -884,6 +858,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: "Casus 8: Zwelling in de oksel",
               lmes: [
+                {
+                  id: "blok5-week4-casus8-casusbijeenkomst",
+                  name: "Zwelling in de oksel",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
                 {
                   id: "blok5-week4-casus8-lymfeklierdissectie",
                   name: "Lymfeklierdissectie",
@@ -941,6 +922,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 9: Patiënt met auto-immuunziekte",
               lmes: [
                 {
+                  id: "blok5-week5-casus9-casusbijeenkomst",
+                  name: "Patiënt met auto-immuunziekte",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week5-casus9-pathogenese-auto-immuunziekten",
                   name: "Pathogenese auto-immuunziekten",
                   available: true,
@@ -991,6 +979,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 10: Patiënt met auto-inflammatoire ziekte",
               lmes: [
                 {
+                  id: "blok5-week5-casus10-casusbijeenkomst",
+                  name: "Patiënt met auto-inflammatoire ziekte",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week5-casus10-principes-en-klinische-aspecten-van-auto-inflammatie",
                   name: "Principes en klinische aspecten van auto-inflammatie",
                   available: true,
@@ -1010,6 +1005,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: "Casus 11: Kind met algehele malaise, koorts en zwelling in de buik",
               lmes: [
+                {
+                  id: "blok5-week6-casus11-casusbijeenkomst",
+                  name: "Kind met algehele malaise, koorts en zwelling in de buik",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
                 {
                   id: "blok5-week5-casus11-introductie-kinderoncologie",
                   name: "Introductie kinderoncologie",
@@ -1053,6 +1055,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
               name: "Casus 12: Verwarde patiënt met griepachtige klachten",
               lmes: [
                 {
+                  id: "blok5-week6-casus12-casusbijeenkomst",
+                  name: "Verwarde patiënt met griepachtige klachten",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
+                {
                   id: "blok5-week6-casus12-gaswisseling-hb-o2-co2-co",
                   name: "Gaswisseling Hb, O2, CO2, CO",
                   available: true,
@@ -1077,6 +1086,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: "Casus 13: Multipel myeloom",
               lmes: [
+                {
+                  id: "blok5-week6-casus13-casusbijeenkomst",
+                  name: "Multipel myeloom",
+                  available: true,
+                  moduleKind: "casusbijeenkomst",
+                },
+
                 {
                   id: "blok5-week6-casus13-botopbouw-botafbraak-en-pathologische-breuken",
                   name: "Botopbouw, botafbraak en pathologische breuken",
@@ -1734,27 +1750,6 @@ const SummaryPage = ({ forcedBlok = null }) => {
       name: `Afbeelding ${i + 1}`
     }))
 
-  const splitCasusModules = (casus) => {
-    const flankerendIds = FLANKEREND_SUMMARY_LME_IDS_BY_CASE[casus.name]
-    if (!flankerendIds) {
-      return {
-        casusbijeenkomstItems: casus.lmes,
-        flankerendItems: [],
-      }
-    }
-
-    const casusbijeenkomstItems = []
-    const flankerendItems = []
-    for (const lmeItem of casus.lmes) {
-      if (flankerendIds.has(lmeItem.id)) {
-        flankerendItems.push(lmeItem)
-      } else {
-        casusbijeenkomstItems.push(lmeItem)
-      }
-    }
-    return { casusbijeenkomstItems, flankerendItems }
-  }
-
   const renderSummaryModule = (lmeItem, key) => {
     const progressIds = lmeItem.progressLmeIds || [lmeItem.id]
     const seen = hasAccountProgress && progressIds.some((id) => Boolean(seenMap[id]))
@@ -1827,7 +1822,10 @@ const SummaryPage = ({ forcedBlok = null }) => {
   }
 
   const renderCaseSections = (casus) => {
-    const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(casus)
+    const { casusbijeenkomstItems, flankerendItems } = splitCasusModules(
+      casus,
+      FLANKEREND_MODULE_IDS_BY_CASE,
+    )
     const sections = [
       { key: 'casusbijeenkomst', title: 'Casusbijeenkomst', items: casusbijeenkomstItems },
       { key: 'flankerend', title: 'Flankerend onderwijs', items: flankerendItems },
@@ -2275,6 +2273,21 @@ const SummaryPage = ({ forcedBlok = null }) => {
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus13Lme2AntibioticaResistentieSummary />
         </SummaryLayout>
+    )
+  }
+
+
+  if (BLOK5_CASUSBIJEENKOMST_SUMMARIES[activeLme]) {
+    const CasusbijeenkomstSummary = BLOK5_CASUSBIJEENKOMST_SUMMARIES[activeLme]
+    return (
+      <SummaryLayout
+        lmeId={activeLme}
+        lmeName={lmeMap[activeLme]?.name || 'Casusbijeenkomst'}
+        activeLmeId={activeLme}
+        onVariantSwitch={handleVariantSwitch}
+      >
+        <CasusbijeenkomstSummary />
+      </SummaryLayout>
     )
   }
 

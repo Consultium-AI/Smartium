@@ -1,0 +1,257 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNaDezeCasusbijeenkomstMoetJeKunnen",
+    "title": "Na deze casusbijeenkomst moet je kunnen:",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusEnKlinischeContext",
+    "title": "Casus en klinische context",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDeKernVanDeBijeenkomstIsDaaromSteeds",
+    "title": "De kern van de bijeenkomst is daarom steeds dezelfde klinische vraag:",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPsoriasisPresentatieEnKlinischeReden",
+    "title": "Psoriasis: presentatie en klinische redenering",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPsoriasisGeeftMeestal",
+    "title": "Psoriasis geeft meestal:",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBelangrijkeBevindingenBijPsoriasis",
+    "title": "Belangrijke bevindingen bij psoriasis",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBijPsoriasisHorenInDezeCasusVooral",
+    "title": "Bij psoriasis horen in deze casus vooral:",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectTabel1KernverschijnselenBijPsoriasis",
+    "title": "Tabel 1. Kernverschijnselen bij psoriasis in deze casus",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectArtritisPsoriaticaEnDePestScore",
+    "title": "Artritis psoriatica en de PEST-score",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDeVragenGaanOver",
+    "title": "De vragen gaan over:",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBehandelingVanPsoriasis",
+    "title": "Behandeling van psoriasis",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectLokaleEnSystemischeBehandeling",
+    "title": "Lokale en systemische behandeling",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectTabel2BiologicalsBijPsoriasis",
+    "title": "Tabel 2. Biologicals bij psoriasis",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectErWordtOokEenOntwikkelingBeschrevenV",
+    "title": "Er wordt ook een ontwikkeling beschreven van oudere naar nieuwere biologicals:",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectBelangrijkeOverwegingenBijBehandelin",
+    "title": "Belangrijke overwegingen bij behandeling van psoriasis",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectInDezeCasusSpelenMeerderePraktischeP",
+    "title": "In deze casus spelen meerdere praktische punten mee:",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectEczeemDeVeranderdeHuidbarriRe",
+    "title": "Eczeem: de veranderde huidbarrière",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectSmerenIsDaaromEssentieel",
+    "title": "Smeren is daarom essentieel:",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectAtopischEczeemEnEczeemaHerpeticum",
+    "title": "Atopisch eczeem en eczeema herpeticum",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectDeHuidafwijkingenZijnBeschrevenAls",
+    "title": "De huidafwijkingen zijn beschreven als:",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectContactallergieEnVoedselallergie",
+    "title": "Contactallergie en voedselallergie",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectBijDezePatiNtWordtOokGedachtAan",
+    "title": "Bij deze patiënt wordt ook gedacht aan:",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectBehandelingVanEczeem",
+    "title": "Behandeling van eczeem",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectDeBehandelingBestaatUitMeerdereOnder",
+    "title": "De behandeling bestaat uit meerdere onderdelen:",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectSmeerEnWasadvies",
+    "title": "Smeer- en wasadvies",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectAanvullendOnderzoek",
+    "title": "Aanvullend onderzoek",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectPcrOpEenVesikelBijVerdenkingOpHsv",
+    "title": "PCR op een vesikel bij verdenking op HSV",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectMedicamenteuzeBehandeling",
+    "title": "Medicamenteuze behandeling",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectPurpuraVasculitisEnHematoom",
+    "title": "Purpura, vasculitis en hematoom",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectPurpuraKanOntstaanBij",
+    "title": "Purpura kan ontstaan bij:",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectIgaVasculitis",
+    "title": "IgA-vasculitis",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectTypischeKenmerkenZijn",
+    "title": "Typische kenmerken zijn:",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectIgaDepositiesBijImmunofluorescentie",
+    "title": "IgA-deposities bij immunofluorescentie",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectTabel3TypischeKenmerkenVanIgaVasculi",
+    "title": "Tabel 3. Typische kenmerken van IgA-vasculitis",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectBehandelingEnFollowUp",
+    "title": "Behandeling en follow-up",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectBelangrijkIsControleVanDeNierfunctie",
+    "title": "Belangrijk is **controle van de nierfunctie**:",
+    "id": "sect-37"
+  },
+  {
+    "file": "SectHemofilieAEnStollingsonderzoek",
+    "title": "Hemofilie A en stollingsonderzoek",
+    "id": "sect-38"
+  },
+  {
+    "file": "SectDeAangevraagdeOnderzoekenZijn",
+    "title": "De aangevraagde onderzoeken zijn:",
+    "id": "sect-39"
+  },
+  {
+    "file": "SectAptt",
+    "title": "APTT",
+    "id": "sect-40"
+  },
+  {
+    "file": "SectPt",
+    "title": "PT",
+    "id": "sect-41"
+  },
+  {
+    "file": "SectVwf",
+    "title": "VWF",
+    "id": "sect-42"
+  },
+  {
+    "file": "SectDeConclusieIsMildeHemofilieA",
+    "title": "De conclusie is **milde hemofilie A**:",
+    "id": "sect-43"
+  },
+  {
+    "file": "SectKliniekVanHemofilie",
+    "title": "Kliniek van hemofilie",
+    "id": "sect-44"
+  },
+  {
+    "file": "SectDeErnstHangtAfVanDeFactoractiviteit",
+    "title": "De ernst hangt af van de factoractiviteit:",
+    "id": "sect-45"
+  },
+  {
+    "file": "SectBehandelingVanHemofilieA",
+    "title": "Behandeling van hemofilie A",
+    "id": "sect-46"
+  },
+  {
+    "file": "SectTabel4HemofilieAInHetKort",
+    "title": "Tabel 4. Hemofilie A in het kort",
+    "id": "sect-47"
+  },
+  {
+    "file": "SectVonWillebrandziekteType2N",
+    "title": "Von Willebrandziekte type 2N",
+    "id": "sect-48"
+  },
+  {
+    "file": "SectSamenvattingVanDeKern",
+    "title": "Samenvatting van de kern",
+    "id": "sect-49"
+  },
+  {
+    "file": "SectDezeCasusbijeenkomstLaatZienDatHuida",
+    "title": "Deze casusbijeenkomst laat zien dat huidafwijkingen verschillende oorzaken kunnen hebben:",
+    "id": "sect-50"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-51"
+  }
+]

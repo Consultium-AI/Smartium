@@ -1,0 +1,187 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNaDezeCasusbijeenkomstMoetJeKunnenUi",
+    "title": "Na deze casusbijeenkomst moet je kunnen uitleggen:",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusEnKlinischeContext",
+    "title": "Casus en klinische context",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDeOpbouwVanDeHuid",
+    "title": "De opbouw van de huid",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDeHuidBestaatGlobaalUitDrieLagen",
+    "title": "De huid bestaat globaal uit drie lagen:",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeEpidermisBevatVerschillendeCeltype",
+    "title": "De epidermis bevat verschillende celtypen:",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectVraagje",
+    "title": "Vraagje",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeLagenVanDeEpidermis",
+    "title": "De lagen van de epidermis",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDeEpidermisIsOpgebouwdUitVerschillen",
+    "title": "De epidermis is opgebouwd uit verschillende strata:",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBarriEfectLeidtTotInflammatie",
+    "title": "Barrièредefect leidt tot inflammatie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectAlsDeBarriReBeschadigdRaaktGebeurtOn",
+    "title": "Als de barrière beschadigd raakt, gebeurt onder andere het volgende:",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectInflammatieLeidtWeerTotVerdereBarriR",
+    "title": "Inflammatie leidt weer tot verdere barrièrestoring",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectOntstekingMaaktDeBarriReVervolgensNo",
+    "title": "Ontsteking maakt de barrière vervolgens nog slechter:",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectIl4EnIl13VerminderenDeFilaggrineExpr",
+    "title": "IL-4 en IL-13 verminderen de filaggrine-expressie;",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectVraagje2",
+    "title": "Vraagje",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectIrritatiefContacteczeem",
+    "title": "Irritatief contacteczeem",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectMechanisme",
+    "title": "Mechanisme",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectAllergischContacteczeemAlsDifferenti",
+    "title": "Allergisch contacteczeem als differentiaaldiagnose",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectMechanisme2",
+    "title": "Mechanisme",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectDeStappenZijn",
+    "title": "De stappen zijn:",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectVerschilInNOogopslag",
+    "title": "Verschil in één oogopslag",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectKlinischRedenerenBijDeSchilder",
+    "title": "Klinisch redeneren bij de schilder",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectDeSchilderKomtLaterTerugMet",
+    "title": "De schilder komt later terug met:",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectBelangrijkeDenkstap",
+    "title": "Belangrijke denkstap",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectBijEenSchilderMoetJeDusDenkenAan",
+    "title": "Bij een schilder moet je dus denken aan:",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectOmgevingsfactorenDieDeHuidBeschadige",
+    "title": "Omgevingsfactoren die de huid beschadigen",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectUvStraling",
+    "title": "UV-straling",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectVraagje3",
+    "title": "Vraagje",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectPreventieEnBescherming",
+    "title": "Preventie en bescherming",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectBeschermendeMaatregelen",
+    "title": "Beschermende maatregelen",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectSpf50GebruikenVooralBijEenLichteHuid",
+    "title": "SPF 50+ gebruiken, vooral bij een lichte huid;",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectBelangrijkeZiektebeelden",
+    "title": "Belangrijke ziektebeelden",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectIrritatiefContacteczeem2",
+    "title": "Irritatief contacteczeem",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectAllergischContacteczeem",
+    "title": "Allergisch contacteczeem",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectAtopischEczeem",
+    "title": "Atopisch eczeem",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectFototoxischeReactie",
+    "title": "Fototoxische reactie",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-37"
+  }
+]

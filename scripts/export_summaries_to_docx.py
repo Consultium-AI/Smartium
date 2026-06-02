@@ -13,7 +13,10 @@ Gebruik:
   pip install python-docx
   python scripts/export_summaries_to_docx.py
 
-Output (standaard): output/summary_exports/Blok3_Week_1.docx, Blok4_Week_1.docx, ...
+Output (standaard): output/summary_exports/Blok3_Week_1.docx, Blok4_Week_1.docx, Blok5_Week_1.docx, ...
+
+Blok 5 (en andere blokken met volledige lme-id's) worden automatisch uit courseStructure
+in SummaryPage.jsx gelezen; blok 3/4 staan nog handmatig in COURSE_WEEKS.
 """
 
 from __future__ import annotations
@@ -35,6 +38,25 @@ PAGES_DIR = ROOT / "src" / "pages"
 SUMMARY_PAGE = PAGES_DIR / "SummaryPage.jsx"
 SUMMARY_SUBDIR = PAGES_DIR / "summary"
 SUMMARIES_DIR = ROOT / "src" / "summaries"
+
+
+def as_extended_path(path: Path) -> Path:
+    """Windows MAX_PATH (260): langere paden via \\\\?\\ prefix."""
+    if sys.platform != "win32":
+        return path
+    resolved = path.resolve()
+    text = str(resolved)
+    if len(text) >= 260 and not text.startswith("\\\\?\\"):
+        return Path("\\\\?\\" + text)
+    return resolved
+
+
+def path_is_file(path: Path) -> bool:
+    return as_extended_path(path).is_file()
+
+
+def read_text_file(path: Path) -> str:
+    return as_extended_path(path).read_text(encoding="utf-8")
 
 
 # Zelfde hiërarchie als courseStructure in SummaryPage.jsx (handmatig gesynchroniseerd).
@@ -359,6 +381,60 @@ COURSE_WEEKS: list[tuple[str, str, str, list[tuple[str, str, str]]]] = [
     ),
 ]
 
+# Blokken waarvan week/LME-lijst uit SummaryPage.jsx courseStructure komt.
+AUTO_COURSE_BLOKS = ("blok5",)
+
+
+def parse_course_structure_blok(text: str, blok_id: str) -> list[tuple[str, str, str, list[tuple[str, str, str]]]]:
+    """
+    Haalt (blok_id, blok_name, week_name, [(case_name, lme_id, lme_title), ...]) uit courseStructure.
+    """
+    start = text.find(f"{blok_id}: {{")
+    if start == -1:
+        return []
+
+    # Volgende top-level blok-sleutel na dit blok (blok9, blok10, …).
+    next_blok = re.search(
+        rf"\n\s{{4}}(blok\d+|embryo|week\d+|\w+):\s*\{{",
+        text[start + len(blok_id) + 3 :],
+    )
+    end = start + len(blok_id) + 3 + next_blok.start() if next_blok else len(text)
+    section = text[start:end]
+
+    blok_name_m = re.search(r'name:\s*"([^"]+)"', section)
+    blok_name = blok_name_m.group(1) if blok_name_m else blok_id
+
+    weeks: list[tuple[str, str, str, list[tuple[str, str, str]]]] = []
+    week_parts = re.split(r'\{\s*name:\s*"(Week \d+)"\s*,\s*cases:\s*\[', section)
+    for i in range(1, len(week_parts), 2):
+        week_name = week_parts[i]
+        week_body = week_parts[i + 1]
+
+        case_parts = re.split(r'\{\s*name:\s*"(Casus[^"]+)"\s*,\s*lmes:\s*\[', week_body)
+        entries: list[tuple[str, str, str]] = []
+        for j in range(1, len(case_parts), 2):
+            case_name = case_parts[j]
+            case_body = case_parts[j + 1]
+            for m in re.finditer(
+                r'id:\s*"([^"]+)"\s*,\s*name:\s*"((?:\\"|[^"])*)"\s*,\s*available:',
+                case_body,
+            ):
+                lme_id = m.group(1)
+                lme_title = m.group(2).replace('\\"', '"')
+                entries.append((case_name, lme_id, lme_title))
+
+        weeks.append((blok_id, blok_name, week_name, entries))
+
+    return weeks
+
+
+def all_course_weeks() -> list[tuple[str, str, str, list[tuple[str, str, str]]]]:
+    text = SUMMARY_PAGE.read_text(encoding="utf-8")
+    auto: list[tuple[str, str, str, list[tuple[str, str, str]]]] = []
+    for blok_id in AUTO_COURSE_BLOKS:
+        auto.extend(parse_course_structure_blok(text, blok_id))
+    return list(COURSE_WEEKS) + auto
+
 
 def parse_summary_page_routing() -> tuple[dict[str, str], dict[str, Path]]:
     """lme_id -> component_name, component_name -> source file (relative to src/pages)."""
@@ -378,7 +454,7 @@ def parse_summary_page_routing() -> tuple[dict[str, str], dict[str, Path]]:
         return matches[-1] if matches else None
 
     lme_to_component: dict[str, str] = {}
-    parts = re.split(r"\n  if \(lme === ", text)
+    parts = re.split(r"\n  if \(activeLme === ", text)
     for chunk in parts[1:]:
         m_id = re.match(r"'([^']+)'\)", chunk)
         if not m_id:
@@ -423,9 +499,9 @@ def parse_summary_page_routing() -> tuple[dict[str, str], dict[str, Path]]:
 
 def resolve_js_path(rel_from_pages: Path) -> Path:
     resolved = (PAGES_DIR / rel_from_pages).resolve()
-    if not resolved.is_file():
+    if not path_is_file(resolved):
         alt = resolved.with_suffix(".tsx")
-        if alt.is_file():
+        if path_is_file(alt):
             return alt
     return resolved
 
@@ -630,6 +706,75 @@ def ordered_image_imports(main_jsx: str) -> list[str]:
     return re.findall(r'from ["\']\./(Image\d+\w*Summary)["\']', main_jsx)
 
 
+def ordered_sect_components(summary_content: str, comp: str) -> list[str]:
+    """Sect01… componenten in leesvolgorde uit SummaryLayout-children."""
+    main_body = extract_arrow_body(summary_content, comp) or summary_content
+    _, children = extract_summary_layout_parts(main_body)
+    return re.findall(r"<(Sect\d+\w*)\s*/>", children)
+
+
+def extract_default_export_body(content: str) -> str | None:
+    """Body na return (…) in export default function …()."""
+    m = re.search(
+        r"export\s+default\s+function\s+\w+\s*\([^)]*\)\s*\{([\s\S]*)\}\s*$",
+        content.strip(),
+    )
+    if not m:
+        return None
+    inner = m.group(1)
+    ret = re.search(r"return\s*\(\s*([\s\S]*)\s*\)\s*;?\s*$", inner.strip())
+    return ret.group(1) if ret else inner
+
+
+def jsx_file_to_linear_text(content: str, comp_name: str | None = None) -> str:
+    body = extract_arrow_body(content, comp_name) if comp_name else None
+    if body is None:
+        body = extract_default_export_body(content)
+    if body is None:
+        body = content
+    return jsx_body_to_full_text(body)
+
+
+def load_summary_with_parts(content: str, comp: str, folder: Path) -> str:
+    main_body = extract_arrow_body(content, comp) or content
+    attrs_wrap, _ = extract_summary_layout_parts(main_body)
+    pre = summary_layout_header_lines(attrs_wrap)
+    if pre:
+        pre = pre + "\n\n---\n\n"
+
+    images = ordered_image_imports(content)
+    if images:
+        toc_titles = extract_titles_from_toc(content)
+        chunks: list[str] = []
+        for i, mod in enumerate(images):
+            title = toc_titles[i] if i < len(toc_titles) else f"Onderdeel {i + 1}"
+            ip = folder / f"{mod}.jsx"
+            if not path_is_file(ip):
+                chunks.append(f"## {title}\n\n[Bestand ontbreekt: {ip.name}]")
+                continue
+            inner = read_text_file(ip)
+            txt = jsx_file_to_linear_text(inner, mod)
+            chunks.append(f"## {title}\n\n{txt}")
+        return pre + "\n\n".join(chunks)
+
+    sects = ordered_sect_components(content, comp)
+    if sects:
+        toc_titles = extract_titles_from_toc(content)
+        chunks = []
+        for i, sect in enumerate(sects):
+            title = toc_titles[i] if i < len(toc_titles) else sect
+            ip = folder / f"{sect}.jsx"
+            if not path_is_file(ip):
+                chunks.append(f"## {title}\n\n[Bestand ontbreekt: {ip.name}]")
+                continue
+            inner = read_text_file(ip)
+            txt = jsx_file_to_linear_text(inner)
+            chunks.append(f"## {title}\n\n{txt}")
+        return pre + "\n\n".join(chunks)
+
+    return jsx_body_to_full_text(main_body)
+
+
 # SummaryPage importeert casus12-lme1 als namespace (* as …); geen directe component→pad mapping.
 LME_FALLBACK_FILES: dict[str, tuple[str, Path]] = {
     "casus12-lme1-antibioticaresistentie-en-therapie": (
@@ -661,46 +806,11 @@ def load_main_module_text(
             return f"[Geen import-pad voor component {comp}]"
         path = resolve_js_path(rel)
 
-    if not path.is_file():
+    if not path_is_file(path):
         return f"[Bestand ontbreekt: {path}]"
 
-    content = path.read_text(encoding="utf-8")
-    body = extract_arrow_body(content, comp)
-    if body is None:
-        # hele bestand (kleine exports)
-        body = content
-
-    images = ordered_image_imports(content)
-    if not images:
-        return jsx_body_to_full_text(body)
-
-    toc_titles = extract_titles_from_toc(content)
-    chunks: list[str] = []
-    folder = path.parent
-    for i, mod in enumerate(images):
-        title = (
-            toc_titles[i]
-            if i < len(toc_titles)
-            else f"Onderdeel {i + 1}"
-        )
-        ip = folder / f"{mod}.jsx"
-        if not ip.is_file():
-            chunks.append(f"## {title}\n\n[Bestand ontbreekt: {ip.name}]")
-            continue
-        inner = ip.read_text(encoding="utf-8")
-        comp_img = mod  # e.g. Image01IntroductieSummary
-        ib = extract_arrow_body(inner, comp_img)
-        if ib is None:
-            ib = inner
-        txt = jsx_body_to_full_text(ib)
-        chunks.append(f"## {title}\n\n{txt}")
-
-    main_body = extract_arrow_body(content, comp) or content
-    attrs_wrap, _ = extract_summary_layout_parts(main_body)
-    pre = summary_layout_header_lines(attrs_wrap)
-    if pre:
-        pre = pre + "\n\n---\n\n"
-    return pre + "\n\n".join(chunks)
+    content = read_text_file(path)
+    return load_summary_with_parts(content, comp, path.parent)
 
 
 def append_formatted_plaintext_to_doc(doc: Document, text: str) -> None:
@@ -763,7 +873,7 @@ def build_week_documents(
     )
     missing: list[str] = []
 
-    for blok_id, blok_name, week_name, entries in COURSE_WEEKS:
+    for blok_id, blok_name, week_name, entries in all_course_weeks():
         for case_name, lme_id, lme_title in entries:
             text = load_main_module_text(lme_id, lme_to_component, component_to_file)
             if text.startswith("["):

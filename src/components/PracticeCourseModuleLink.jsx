@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2, ClipboardCheck, ChevronRight, Lock, Timer } from 'lucide-react'
+import { resolveModuleKind } from '../utils/courseModuleKind'
 import { getSummaryModuleLinkStyles } from '../utils/summaryModuleLinkStyles'
 
 export default function PracticeCourseModuleLink({
@@ -11,7 +12,7 @@ export default function PracticeCourseModuleLink({
   showProgress = false,
 }) {
   const locked = showPremiumLocks && isBlocked(lmeItem.id)
-  const s = getSummaryModuleLinkStyles(lmeItem.moduleKind)
+  const s = getSummaryModuleLinkStyles(resolveModuleKind(lmeItem))
 
   return (
     <Link

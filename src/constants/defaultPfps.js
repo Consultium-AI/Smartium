@@ -31,7 +31,6 @@ const PREMIUM_PFP_IDS = [
 ]
 
 const PREMIUM_SPECIAL_PFPS = [
-  `${basePath}${PFP_ASSETS_DIR}/pfp_hamza.jpeg`,
   `${basePath}${PFP_ASSETS_DIR}/pfp_lucy.jpeg`,
 ]
 

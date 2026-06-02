@@ -1,0 +1,272 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNaDezeCasusbijeenkomstMoetJe",
+    "title": "Na deze casusbijeenkomst moet je:",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusEnKlinischeContext",
+    "title": "Casus en klinische context",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectBelangrijkeKlachtenEnBevindingen",
+    "title": "Belangrijke klachten en bevindingen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectCasus1KindMetPurpura",
+    "title": "Casus 1: kind met purpura",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeKlachtenEnBevindingenDieBelangrijk",
+    "title": "De klachten en bevindingen die belangrijk zijn:",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCasus2TienerMetPaarseVerkleuringEnZw",
+    "title": "Casus 2: tiener met paarse verkleuring en zwelling",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHierZijnDeBelangrijkstePunten",
+    "title": "Hier zijn de belangrijkste punten:",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectKlinischRedeneren",
+    "title": "Klinisch redeneren",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectCasus1VanPurpuraNaarVasculitis",
+    "title": "Casus 1: van purpura naar vasculitis",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDeHuisartsLaatAanvullendOnderzoekDoe",
+    "title": "De huisarts laat aanvullend onderzoek doen. De eerste uitslagen zijn:",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectCrp40",
+    "title": "CRP 40;",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectCasus2VanVerkleuringNaarBloedingspro",
+    "title": "Casus 2: van verkleuring naar bloedingsprobleem of vasculitis",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectDifferentiaaldiagnose",
+    "title": "Differentiaaldiagnose",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectTabel1BelangrijksteDenkrichtingenBij",
+    "title": "Tabel 1. Belangrijkste denkrichtingen bij paarse huidafwijkingen",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectDiagnostiek",
+    "title": "Diagnostiek",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectDeDrieGoedeAanvullendeBepalingenZijn",
+    "title": "De drie goede aanvullende bepalingen zijn:",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectCasus2AanvullendOnderzoekBijVerdenki",
+    "title": "Casus 2: aanvullend onderzoek bij verdenking op bloedingsprobleem",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectBijDe17JarigeJongenWordenDeVolgendeB",
+    "title": "Bij de 17-jarige jongen worden de volgende bepalingen bekeken:",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectPt",
+    "title": "PT;",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectAptt",
+    "title": "APTT;",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectHb",
+    "title": "Hb;",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectVwfAg",
+    "title": "VWF:Ag;",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectVwfRco",
+    "title": "VWF:Rco;",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectFviiiC",
+    "title": "FVIII:C;",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectHiermeeWordtGekekenNaar",
+    "title": "Hiermee wordt gekeken naar:",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectTabel2WaaromDezeBepalingen",
+    "title": "Tabel 2. Waarom deze bepalingen?",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectHistopathologie",
+    "title": "Histopathologie",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectBijDeEersteCasusWordtGevraagdNaarDeP",
+    "title": "Bij de eerste casus wordt gevraagd naar de PA-bevindingen. De notities noemen:",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectBelangrijkeZiektebeelden",
+    "title": "Belangrijke ziektebeelden",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectVasculitisBijHetKind",
+    "title": "Vasculitis bij het kind",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectKenmerkendZijn",
+    "title": "Kenmerkend zijn:",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectBloedingsprobleemVonWillebrandAchtig",
+    "title": "Bloedingsprobleem / von Willebrand-achtige diagnostiek",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectBeleidEnBehandeling",
+    "title": "Beleid en behandeling",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectCasus1VasculitisEnFollowUp",
+    "title": "Casus 1: vasculitis en follow-up",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectCasus2BeleidBijBloedingsneiging",
+    "title": "Casus 2: beleid bij bloedingsneiging",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectMelanoomKernstofUitDeCasusbespreking",
+    "title": "Melanoom: kernstof uit de casusbespreking",
+    "id": "sect-37"
+  },
+  {
+    "file": "SectBelangrijkeBegrippen",
+    "title": "Belangrijke begrippen",
+    "id": "sect-38"
+  },
+  {
+    "file": "SectTabel3WatIsBelangrijkBijMelanoom",
+    "title": "Tabel 3. Wat is belangrijk bij melanoom?",
+    "id": "sect-39"
+  },
+  {
+    "file": "SectStadiRingEnPrognose",
+    "title": "Stadiëring en prognose",
+    "id": "sect-40"
+  },
+  {
+    "file": "SectBijSatellietlaesies",
+    "title": "Bij satellietlaesies:",
+    "id": "sect-41"
+  },
+  {
+    "file": "SectBijEenAndereCasus",
+    "title": "Bij een andere casus:",
+    "id": "sect-42"
+  },
+  {
+    "file": "SectBehandelingVanMelanoom",
+    "title": "Behandeling van melanoom",
+    "id": "sect-43"
+  },
+  {
+    "file": "SectStadiumIii",
+    "title": "Stadium III",
+    "id": "sect-44"
+  },
+  {
+    "file": "SectVoorMelanoomInStadiumIiiIsDeAanbevol",
+    "title": "Voor melanoom in stadium III is de aanbevolen aanpak:",
+    "id": "sect-45"
+  },
+  {
+    "file": "SectAdjuvanteSystemischeTherapie",
+    "title": "Adjuvante systemische therapie",
+    "id": "sect-46"
+  },
+  {
+    "file": "SectBelangrijkePunten",
+    "title": "Belangrijke punten:",
+    "id": "sect-47"
+  },
+  {
+    "file": "SectFollowUpBijMelanoom",
+    "title": "Follow-up bij melanoom",
+    "id": "sect-48"
+  },
+  {
+    "file": "SectFollowUpIsBelangrijkOm",
+    "title": "Follow-up is belangrijk om:",
+    "id": "sect-49"
+  },
+  {
+    "file": "SectSamenvattingVanDeMelanoomcasussen",
+    "title": "Samenvatting van de melanoomcasussen",
+    "id": "sect-50"
+  },
+  {
+    "file": "SectBijEenNieuwePigmentvlekNaEenEerderMe",
+    "title": "Bij een nieuwe pigmentvlek na een eerder melanoom moet je onderscheid maken tussen:",
+    "id": "sect-51"
+  },
+  {
+    "file": "SectMogelijkeHulpmiddelen",
+    "title": "Mogelijke hulpmiddelen:",
+    "id": "sect-52"
+  },
+  {
+    "file": "SectRolVanDeVerschillendeSpecialismen",
+    "title": "Rol van de verschillende specialismen",
+    "id": "sect-53"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-54"
+  }
+]

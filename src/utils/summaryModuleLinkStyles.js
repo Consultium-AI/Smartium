@@ -41,6 +41,15 @@ const STYLES = {
     titleHover: 'group-hover:text-orange-900 dark:group-hover:text-orange-300',
     chevronHover: 'group-hover:text-orange-600 dark:group-hover:text-orange-400',
   },
+  casusbijeenkomst: {
+    hoverBorder: 'hover:border-rose-400/70 dark:hover:border-rose-500/45',
+    hoverShadow: 'dark:hover:shadow-rose-950/20',
+    hoverBg: 'hover:bg-rose-50/50',
+    iconWrap: 'bg-rose-100 dark:bg-rose-500/15 dark:ring-1 dark:ring-rose-500/20',
+    iconText: 'text-rose-800 dark:text-rose-400',
+    titleHover: 'group-hover:text-rose-900 dark:group-hover:text-rose-300',
+    chevronHover: 'group-hover:text-rose-600 dark:group-hover:text-rose-400',
+  },
 }
 
 export function getSummaryModuleLinkStyles(kind) {
@@ -49,6 +58,7 @@ export function getSummaryModuleLinkStyles(kind) {
 }
 
 export function summaryModuleKindLabel(kind) {
+  if (kind === 'casusbijeenkomst') return 'Casusbijeenkomst'
   if (kind === 'lmo') return 'LMO'
   if (kind === 'stm') return 'STM'
   if (kind === 'lmv') return 'LMV'
@@ -62,6 +72,8 @@ export function summaryModuleHeaderBadgeClass(kind) {
     lmo: 'bg-sky-100 dark:bg-sky-500/15 dark:ring-1 dark:ring-sky-500/25 text-sky-900 dark:text-sky-300',
     stm: 'bg-violet-100 dark:bg-violet-500/15 dark:ring-1 dark:ring-violet-500/25 text-violet-900 dark:text-violet-300',
     lmv: 'bg-orange-100 dark:bg-orange-500/15 dark:ring-1 dark:ring-orange-500/25 text-orange-900 dark:text-orange-300',
+    casusbijeenkomst:
+      'bg-rose-100 dark:bg-rose-500/15 dark:ring-1 dark:ring-rose-500/25 text-rose-900 dark:text-rose-300',
   }
   return map[k]
 }

@@ -19,8 +19,10 @@ import {
 import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { useReward } from '../context/RewardContext'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
+import { getRewardPfpById } from '../constants/rewardPfps'
 
 const navItems = [
   { name: 'Home', href: '/', icon: Home },
@@ -93,6 +95,22 @@ function userDisplayTitle(user) {
 }
 
 function UserAvatar({ user, className = '' }) {
+  const { selectedRewardPfp } = useReward()
+
+  if (selectedRewardPfp) {
+    const pfp = getRewardPfpById(selectedRewardPfp)
+    if (pfp?.image) {
+      return (
+        <img
+          src={pfp.image}
+          alt=""
+          aria-hidden
+          className={`rounded-full object-cover ${className}`}
+        />
+      )
+    }
+  }
+
   const photo = user?.photoURL?.trim() || DEFAULT_PFP_URL
   return (
     <img

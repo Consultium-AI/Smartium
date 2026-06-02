@@ -18,6 +18,9 @@ import ContentProtectionWrapper from './components/ContentProtectionWrapper'
 import AccountRoute from './components/AccountRoute'
 import ScrollToTopRoutes from './components/ScrollToTopRoutes'
 import SubscriptionRenewalModal from './components/SubscriptionRenewalModal'
+import { RewardProvider } from './context/RewardContext'
+import CoinNotification from './components/CoinNotification'
+import FeedbackButton from './components/FeedbackButton'
 
 // Home page component - Clean, professional layout
 const HomePage = () => (
@@ -49,9 +52,12 @@ const getBasename = () => {
 function App() {
   return (
     <Router basename={getBasename()}>
+      <RewardProvider>
       <div className="relative min-h-screen overflow-hidden bg-[#f8f9fb] dark:bg-gradient-to-b dark:from-[#0c1018] dark:via-[#0a0d12] dark:to-[#080b10] transition-colors duration-300">
         <ScrollToTopRoutes />
         <SubscriptionRenewalModal />
+        <CoinNotification />
+        <FeedbackButton />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/oefenvragen" element={<ContentProtectionWrapper><PracticeQuestionsPage /></ContentProtectionWrapper>} />
@@ -76,6 +82,7 @@ function App() {
           <Route path="/settings/profile" element={<ProfileSettingsPage />} />
         </Routes>
       </div>
+      </RewardProvider>
     </Router>
   )
 }

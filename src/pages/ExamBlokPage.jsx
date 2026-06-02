@@ -36,6 +36,8 @@ import {
 } from '../utils/accountProgressStorage'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
+import { useReward } from '../context/RewardContext'
+import { COIN_REWARDS } from '../lib/rewardSystem'
 import { getExamsForBlok } from '../registry/examBlokRegistry'
 import { isFreePlanAllowedExam } from '../utils/freePlanAccess'
 
@@ -373,6 +375,7 @@ function GradeResultBlok({ exam, answers, cesuur, onReset, onReview }) {
 function ExamBlokActive({ blok, exam, examNr }) {
   const { user, loading: authLoading } = useAuth()
   const { hasAccess, plan, loading: accessLoading } = useAccess()
+  const { awardCoins } = useReward()
   const hasPaidAccess = !accessLoading && hasAccess && plan !== 'free'
   const progressUserId = getProgressUserId(user, authLoading)
 
@@ -566,6 +569,15 @@ function ExamBlokActive({ blok, exam, examNr }) {
                 setAnswers((prev) => markAllRevealed(exam, prev))
               }
               setSubmitted(true)
+              // Award coins based on grade
+              const grade = calculateGradeBlok(earned, exam.totalPoints, exam.cesuur ?? 0.6)
+              if (grade >= 9.0) {
+                awardCoins(COIN_REWARDS.EXAM_EXCELLENT, 'Uitstekend tentamen!')
+              } else if (grade >= 7.0) {
+                awardCoins(COIN_REWARDS.EXAM_GOOD, 'Goed tentamen!')
+              } else if (grade >= 5.5) {
+                awardCoins(COIN_REWARDS.EXAM_PASS, 'Tentamen gehaald!')
+              }
             }}
             className="mt-4 w-full sm:w-auto px-5 py-2.5 bg-primary-500 text-white rounded-xl font-bold text-sm"
           >

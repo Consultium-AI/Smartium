@@ -87,8 +87,8 @@ const Footer = () => {
               <p>Nederland</p>
               <p>
               </p>
-              <a href="tel:01036031123" className="hover:text-navy-900 dark:hover:text-white transition-colors">
-                  010 360 31123
+              <a href="tel:0103603123" className="hover:text-navy-900 dark:hover:text-white transition-colors">
+                  010 360 3123
                 </a>
                 <p><a href="mailto:SmartiumSupport@gmail.com" className="hover:text-navy-900 dark:hover:text-white transition-colors">
                   SmartiumSupport@gmail.com</a>

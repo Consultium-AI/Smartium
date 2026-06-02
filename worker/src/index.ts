@@ -14,6 +14,8 @@ export interface Env {
   RESEND_API_KEY?: string
   /** bv. Smartium <factuur@jouwdomein.nl> (Resend: geverifieerd afzenderdomein) */
   RESEND_FROM?: string
+  /** Ontvanger voor gebruikersfeedback (standaard support-mail) */
+  FEEDBACK_TO?: string
 }
 
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
@@ -95,6 +97,91 @@ async function sendPaymentConfirmationEmail(
     return false
   }
   return true
+}
+
+const FEEDBACK_CATEGORY_LABELS: Record<string, string> = {
+  bug: 'Bug / fout',
+  idea: 'Idee / verbetering',
+  other: 'Overig',
+}
+
+async function sendFeedbackEmail(
+  env: Env,
+  opts: { message: string; category: string; page: string; userEmail: string }
+): Promise<boolean> {
+  const key = env.RESEND_API_KEY?.trim()
+  const from = env.RESEND_FROM?.trim()
+  const to = (env.FEEDBACK_TO || 'smartiumsupport@gmail.com').trim().toLowerCase()
+  if (!key || !from) return false
+
+  const categoryLabel = FEEDBACK_CATEGORY_LABELS[opts.category] || opts.category
+  const replyLine = opts.userEmail
+    ? `<p><strong>Contact:</strong> ${escapeHtml(opts.userEmail)}</p>`
+    : '<p><em>Geen e-mail opgegeven.</em></p>'
+  const html = `<p>Nieuwe feedback via Smartium:</p>
+<p><strong>Categorie:</strong> ${escapeHtml(categoryLabel)}<br/>
+<strong>Pagina:</strong> ${escapeHtml(opts.page || '/')}</p>
+${replyLine}
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:1rem 0"/>
+<p style="white-space:pre-wrap">${escapeHtml(opts.message)}</p>`
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${key}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      reply_to: opts.userEmail || undefined,
+      subject: `Smartium feedback: ${categoryLabel}`,
+      html,
+    }),
+  })
+  if (!res.ok) {
+    const t = await res.text()
+    console.error('Resend feedback failed:', res.status, t)
+    return false
+  }
+  return true
+}
+
+async function handleFeedback(request: Request, env: Env, origin: string): Promise<Response> {
+  if (!env.RESEND_API_KEY?.trim() || !env.RESEND_FROM?.trim()) {
+    return json(origin, { error: 'Feedback is tijdelijk niet beschikbaar.' }, 503)
+  }
+
+  let body: unknown
+  try {
+    body = await request.json()
+  } catch {
+    return json(origin, { error: 'Ongeldige aanvraag.' }, 400)
+  }
+
+  const raw = body && typeof body === 'object' ? (body as Record<string, unknown>) : {}
+  const message = typeof raw.message === 'string' ? raw.message.trim() : ''
+  const page = typeof raw.page === 'string' ? raw.page.trim().slice(0, 500) : ''
+  const userEmail = typeof raw.userEmail === 'string' ? raw.userEmail.trim().slice(0, 320) : ''
+  const categoryRaw = typeof raw.category === 'string' ? raw.category.trim() : 'other'
+  const category = categoryRaw in FEEDBACK_CATEGORY_LABELS ? categoryRaw : 'other'
+
+  if (message.length < 10) {
+    return json(origin, { error: 'Bericht is te kort (minimaal 10 tekens).' }, 400)
+  }
+  if (message.length > 2000) {
+    return json(origin, { error: 'Bericht is te lang (maximaal 2000 tekens).' }, 400)
+  }
+  if (userEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail)) {
+    return json(origin, { error: 'Ongeldig e-mailadres.' }, 400)
+  }
+
+  const sent = await sendFeedbackEmail(env, { message, category, page, userEmail })
+  if (!sent) {
+    return json(origin, { error: 'Versturen mislukt. Probeer het later opnieuw.' }, 502)
+  }
+
+  return json(origin, { ok: true })
 }
 
 function toFirestoreDocId(input: string): string {
@@ -927,6 +1014,10 @@ export default {
 
     if (url.pathname === '/api/recover-access' && request.method === 'POST') {
       return handleRecoverAccess(request, env, origin)
+    }
+
+    if (url.pathname === '/api/feedback' && request.method === 'POST') {
+      return handleFeedback(request, env, origin)
     }
 
     if (url.pathname !== '/api/chat' || request.method !== 'POST') {

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { BookOpen, CheckCircle2, ChevronRight, Clock, Lock } from 'lucide-react'
+import { resolveModuleKind } from '../utils/courseModuleKind'
 import { getSummaryModuleLinkStyles } from '../utils/summaryModuleLinkStyles'
 
 export default function SummaryCourseModuleLink({ lmeItem, showPremiumLocks, isBlocked, seen = false }) {
-  const s = getSummaryModuleLinkStyles(lmeItem.moduleKind)
+  const s = getSummaryModuleLinkStyles(resolveModuleKind(lmeItem))
   const locked = showPremiumLocks && isBlocked(lmeItem.id)
 
   const cardClassName = `group flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all ${
