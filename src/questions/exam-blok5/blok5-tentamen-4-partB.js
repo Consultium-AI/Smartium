@@ -1,0 +1,310 @@
+/** Blok 5 oefententamen 4 — casussen 4–6 */
+
+export const blok5Tentamen4PartB = [
+  {
+    id: 'casus-4',
+    title: 'Casus 4 – Mammacarcinoom',
+    totalPoints: 12,
+    scenario:
+      'Een 54-jarige vrouw wordt verwezen naar de mammapoli vanwege een palpabele afwijking in de rechter borst.',
+    questions: [
+      {
+        id: '4a',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke beeldvorming is het meest passend als eerste stap in de diagnostiek?',
+        options: [
+          { letter: 'A', text: 'Mammografie, zo nodig aangevuld met echografie' },
+          { letter: 'B', text: 'Alleen PET/CT' },
+          { letter: 'C', text: 'Alleen MRI' },
+          { letter: 'D', text: 'Alleen CT-thorax' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Mammografie met zo nodig echografie is de standaard eerste stap.',
+      },
+      {
+        id: '4b',
+        type: 'koppelvraag',
+        points: 2.0,
+        question: 'Match de biomarker aan de meest passende therapierichting.',
+        items: ['ER-positief', 'HER2-positief', 'Triple-negatief'],
+        matchOptions: [
+          { letter: 'A', text: 'Endocriene therapie' },
+          { letter: 'B', text: 'Anti-HER2-gerichte therapie' },
+          { letter: 'C', text: 'Geen directe doelgerichte koppeling' },
+        ],
+        correctMapping: { 0: 'A', 1: 'B', 2: 'C' },
+        explanation: 'ER+ → endocriene therapie; HER2+ → anti-HER2; triple-negatief → geen directe doelgerichte koppeling.',
+      },
+      {
+        id: '4c',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over ductaal carcinoom in situ (DCIS) is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Het is per definitie benigne' },
+          { letter: 'B', text: 'Het is een niet-invasieve maligniteit' },
+          { letter: 'C', text: 'Het geeft standaard afstandsmetastasen' },
+          { letter: 'D', text: 'Het wordt nooit behandeld' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'DCIS is een niet-invasieve maligniteit.',
+      },
+      {
+        id: '4d',
+        type: 'open',
+        points: 2.0,
+        question: 'Wat is het verschil tussen neo-adjuvante en adjuvante therapie?',
+        wordLimit: 25,
+        rubric: 'Score: 1p neo-adjuvant vóór operatie; 1p adjuvant na operatie/lokale therapie.',
+        modelAnswer: 'Neo-adjuvant = vóór operatie; adjuvant = ná operatie of na lokale behandeling.',
+        explanation: 'Neo-adjuvant = vóór operatie; adjuvant = na operatie.',
+      },
+      {
+        id: '4e',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question: 'Welke modaliteiten kunnen onderdeel zijn van de behandeling van mammacarcinoom?',
+        options: [
+          { letter: 'A', text: 'Chirurgie' },
+          { letter: 'B', text: 'Radiotherapie' },
+          { letter: 'C', text: 'Endocriene therapie' },
+          { letter: 'D', text: 'Anti-HER2-therapie' },
+          { letter: 'E', text: 'Alleen antibiotica' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'D'],
+        explanation: 'Chirurgie, radiotherapie, endocriene en anti-HER2-therapie zijn standaard behandelmodaliteiten.',
+      },
+      {
+        id: '4f',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Een patiënt heeft uitgebreide afstandsmetastasen.\nWelk behandeldoel staat dan meestal voorop?',
+        options: [
+          { letter: 'A', text: 'Curatie' },
+          { letter: 'B', text: 'Levensverlenging en symptoomcontrole' },
+          { letter: 'C', text: 'Alleen lokale radicaliteit van de primaire tumor' },
+          { letter: 'D', text: 'Geen behandeling meer mogelijk' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Bij uitgebreide metastasen is palliatieve intentie gebruikelijk: levensverlenging en symptoomcontrole.',
+      },
+    ],
+  },
+  {
+    id: 'casus-5',
+    title: 'Casus 5 – Sociale geneeskunde',
+    totalPoints: 15,
+    scenario:
+      'Een gezin woont in een recent gerenoveerde huurwoning. Sinds de renovatie zijn er klachten van hoofdpijn, vermoeidheid en benauwdheid, vooral ’s ochtends.',
+    questions: [
+      {
+        id: '5a',
+        type: 'open',
+        points: 2.0,
+        question: 'Wat is het verschil tussen woning en woonomgeving?',
+        wordLimit: 20,
+        rubric:
+          'Score: 1p woning = huis/binnenmilieu; 1p woonomgeving = omgeving rondom woning/buitenmilieu.',
+        modelAnswer:
+          'Woning = het huis zelf; woonomgeving = de omgeving rondom de woning, zoals lucht, bodem en buurtfactoren.',
+        explanation: 'Woning = binnenmilieu; woonomgeving = buitenmilieu rondom de woning.',
+      },
+      {
+        id: '5b',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Wie is in eerste instantie verantwoordelijk voor het verhelpen van een technisch gebrek aan een huurwoning?',
+        options: [
+          { letter: 'A', text: 'De GGD' },
+          { letter: 'B', text: 'De huurder' },
+          { letter: 'C', text: 'De verhuurder' },
+          { letter: 'D', text: 'De huisarts' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'De verhuurder is verantwoordelijk voor technische gebreken aan een huurwoning.',
+      },
+      {
+        id: '5c',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Welke stof moet je bij hoofdpijn en sufheid in combinatie met verbrandingstoestellen direct overwegen?',
+        options: [
+          { letter: 'A', text: 'Koolmonoxide' },
+          { letter: 'B', text: 'Asbest' },
+          { letter: 'C', text: 'Ozon' },
+          { letter: 'D', text: 'Lood' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Bij verbrandingstoestellen en neurologische klachten denk aan koolmonoxide.',
+      },
+      {
+        id: '5d',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question: 'Welke symptomen passen bij inhalatieletsel?',
+        options: [
+          { letter: 'A', text: 'Heesheid' },
+          { letter: 'B', text: 'Stridor' },
+          { letter: 'C', text: 'Dyspneu' },
+          { letter: 'D', text: 'Roet in mond of neus' },
+          { letter: 'E', text: 'Pijnloze cervicale klier' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'D'],
+        explanation: 'Heesheid, stridor, dyspneu en roet passen bij inhalatieletsel.',
+      },
+      {
+        id: '5e',
+        type: 'rekenvraag',
+        points: 3.0,
+        question: `Een aandoening veroorzaakt in een populatie:
+8 verloren levensjaren door vroegtijdige sterfte
+5 jaren geleefd met beperking
+
+Bereken het aantal DALY's.`,
+        correctValue: 13,
+        tolerance: 0.01,
+        rubric: 'Score: YLL = 8, YLD = 5, DALY = 13.',
+        modelAnswer: 'YLL = 8, YLD = 5, DALY = 8 + 5 = 13',
+        explanation: 'DALY = YLL + YLD = 8 + 5 = 13.',
+      },
+      {
+        id: '5f',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Waaruit bestaat een DALY?',
+        options: [
+          { letter: 'A', text: 'YLL + YLD' },
+          { letter: 'B', text: 'Incidentie + prevalentie' },
+          { letter: 'C', text: 'Sensitiviteit + specificiteit' },
+          { letter: 'D', text: 'Pijn + mortaliteit' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'DALY = Years of Life Lost (YLL) + Years Lived with Disability (YLD).',
+      },
+      {
+        id: '5g',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Welke instantie heeft in Nederland een belangrijke publieke rol bij gezondheidsrisico’s in de leefomgeving?',
+        options: [
+          { letter: 'A', text: 'GGD' },
+          { letter: 'B', text: 'UWV' },
+          { letter: 'C', text: 'KNMG' },
+          { letter: 'D', text: 'Zorgverzekeraar' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'De GGD heeft een belangrijke publieke rol bij gezondheidsrisico’s in de leefomgeving.',
+      },
+    ],
+  },
+  {
+    id: 'casus-6',
+    title: 'Casus 6 – Psoriasis',
+    totalPoints: 12,
+    scenario:
+      'Een 19-jarige vrouw komt op het spreekuur met scherp begrensde erythemateuze plaques met schilfering op strekzijden. Zij heeft daarnaast sinds enkele maanden pijn en stijfheid van enkele vingers.',
+    questions: [
+      {
+        id: '6a',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Wat is de primaire efflorescentie bij psoriasis vulgaris?',
+        options: [
+          { letter: 'A', text: 'Maculae' },
+          { letter: 'B', text: 'Papels en plaques' },
+          { letter: 'C', text: 'Noduli' },
+          { letter: 'D', text: 'Bullae' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Psoriasis vulgaris presenteert zich primair met papels en plaques.',
+      },
+      {
+        id: '6b',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question:
+          'Waar moet je bij lichamelijk onderzoek van patiënten met psoriasis extra goed op letten?',
+        options: [
+          { letter: 'A', text: 'Nagels' },
+          { letter: 'B', text: 'Gewrichten' },
+          { letter: 'C', text: 'Ogen' },
+          { letter: 'D', text: 'Gebit' },
+          { letter: 'E', text: 'Haren' },
+        ],
+        correctAnswers: ['A', 'B', 'C'],
+        explanation: 'Nagelafwijkingen, gewrichtsklachten en ogen (uveitis) zijn relevant bij psoriasis.',
+      },
+      {
+        id: '6c',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke bevinding past goed bij artritis psoriatica?',
+        options: [
+          { letter: 'A', text: 'Dactylitis' },
+          { letter: 'B', text: 'Alleen mechanische pijn na sporten' },
+          { letter: 'C', text: 'Verdwijnen van klachten na nachtrust' },
+          { letter: 'D', text: 'Altijd symmetrische DIP-sparing' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Dactylitis is een kenmerkende bevinding bij artritis psoriatica.',
+      },
+      {
+        id: '6d',
+        type: 'koppelvraag',
+        points: 2.0,
+        question: 'Sleep de juiste diagnose naar patiënt 1, 2 of 3.',
+        items: [
+          'Patiënt 1: kleine druppelvormige laesies na infectie',
+          'Patiënt 2: plaques op strekzijden met schilfering',
+          'Patiënt 3: erytheem in plooien, weinig schilfering',
+        ],
+        matchOptions: [
+          { letter: 'A', text: 'Psoriasis guttata' },
+          { letter: 'B', text: 'Psoriasis inversa' },
+          { letter: 'C', text: 'Psoriasis vulgaris' },
+        ],
+        correctMapping: { 0: 'A', 1: 'C', 2: 'B' },
+        explanation: 'Patiënt 1 → guttata; patiënt 2 → vulgaris; patiënt 3 → inversa.',
+      },
+      {
+        id: '6e',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question:
+          'Welke therapieën komen bij onvoldoende effect van topische therapie in aanmerking?',
+        options: [
+          { letter: 'A', text: 'Methotrexaat' },
+          { letter: 'B', text: 'Ciclosporine' },
+          { letter: 'C', text: 'Acitretine' },
+          { letter: 'D', text: 'Lichttherapie' },
+          { letter: 'E', text: 'Alleen antibiotica' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'D'],
+        explanation: 'Systemische therapieën en lichttherapie komen in aanmerking na onvoldoende topicaal effect.',
+      },
+      {
+        id: '6f',
+        type: 'koppelvraag',
+        points: 2.0,
+        question: 'Match het klinisch kenmerk met het best passende histologische kenmerk.',
+        items: ['Schilfering', 'Erytheem', 'Pustels'],
+        matchOptions: [
+          { letter: 'A', text: 'Parakeratose' },
+          { letter: 'B', text: 'Gedilateerde capillairen' },
+          { letter: 'C', text: 'Epidermale collectie neutrofielen' },
+        ],
+        correctMapping: { 0: 'A', 1: 'B', 2: 'C' },
+        explanation: 'Schilfering → parakeratose; erytheem → capillairen; pustels → neutrofielen.',
+      },
+    ],
+  },
+]

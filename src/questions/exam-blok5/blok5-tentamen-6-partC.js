@@ -1,0 +1,316 @@
+/** Blok 5 oefententamen 6 — casussen 7–9 */
+
+export const blok5Tentamen6PartC = [
+  {
+    id: 'casus-7',
+    title: 'Casus 7 – Mammacarcinoom',
+    totalPoints: 12,
+    scenario:
+      'Een 51-jarige vrouw wordt gediagnosticeerd met mammacarcinoom. In het MDO worden lokale en systemische behandelopties besproken.',
+    questions: [
+      {
+        id: '7a',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Wat is het belangrijkste doel van neo-adjuvante behandeling?',
+        options: [
+          { letter: 'A', text: 'Behandeling na operatie om recidief te verlagen' },
+          { letter: 'B', text: 'Tumor verkleinen of downstagen vóór lokale therapie' },
+          { letter: 'C', text: 'Alleen palliatieve symptoomcontrole' },
+          { letter: 'D', text: 'Alleen screening op metastasen' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Neo-adjuvant = tumor verkleinen/downstagen vóór lokale therapie.',
+      },
+      {
+        id: '7b',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question: 'Welke combinatie biomarker → behandeling is juist?',
+        options: [
+          { letter: 'A', text: 'ER-positief → endocriene therapie' },
+          { letter: 'B', text: 'HER2-positief → anti-HER2-therapie' },
+          { letter: 'C', text: 'Triple-negatief → standaard endocriene therapie' },
+          { letter: 'D', text: 'Receptorstatus beïnvloedt behandelkeuze' },
+          { letter: 'E', text: 'HER2-negatief betekent automatisch geen systemische therapie' },
+        ],
+        correctAnswers: ['A', 'B', 'D'],
+        explanation: 'ER+ → endocriene therapie; HER2+ → anti-HER2; receptorstatus beïnvloedt keuze.',
+      },
+      {
+        id: '7c',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over radiotherapie is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Radiotherapie kan onderdeel zijn van curatieve lokale behandeling' },
+          { letter: 'B', text: 'Radiotherapie vervangt altijd chirurgie' },
+          { letter: 'C', text: 'Radiotherapie is alleen palliatief' },
+          { letter: 'D', text: 'Radiotherapie heeft geen bijwerkingen' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Radiotherapie kan onderdeel zijn van curatieve lokale behandeling.',
+      },
+      {
+        id: '7d',
+        type: 'open',
+        points: 2.0,
+        question:
+          'Waarom kan anti-hormonale therapie zinvol zijn bij een ER-positief mammacarcinoom?',
+        wordLimit: 25,
+        rubric:
+          'Score: 1p ER-positief/hormoonafhankelijk; 1p remt tumorgroei/verlaagt recidief- of progressierisico.',
+        modelAnswer:
+          'Bij ER-positieve tumoren kan anti-hormonale therapie hormoonafhankelijke tumorgroei remmen en zo recidief of progressie verminderen.',
+        explanation: 'Anti-hormonale therapie remt oestrogeengedreven tumorgroei bij ER+ tumoren.',
+      },
+      {
+        id: '7e',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over DCIS is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Het is een niet-invasieve maligniteit' },
+          { letter: 'B', text: 'Het geeft altijd afstandsmetastasen' },
+          { letter: 'C', text: 'Het is een benigne cyste' },
+          { letter: 'D', text: 'Het is een huidtumor' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'DCIS is een niet-invasieve maligniteit.',
+      },
+      {
+        id: '7f',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Een patiënt heeft uitgebreide afstandsmetastasen.\nWelk behandeldoel staat dan meestal voorop?',
+        options: [
+          { letter: 'A', text: 'Curatie' },
+          { letter: 'B', text: 'Levensverlenging en symptoomcontrole' },
+          { letter: 'C', text: 'Alleen lokale radicaliteit' },
+          { letter: 'D', text: 'Geen medische behandeling meer mogelijk' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Bij uitgebreide metastasen: palliatieve intentie (levensverlenging en symptoomcontrole).',
+      },
+    ],
+  },
+  {
+    id: 'casus-8',
+    title: 'Casus 8 – Immunologie / endocriene auto-immuniteit',
+    totalPoints: 14,
+    scenario:
+      'Een 15-jarige jongen heeft polyurie, polydipsie en gewichtsverlies. Een andere patiënt heeft klachten passend bij hyperthyreoïdie.',
+    questions: [
+      {
+        id: '8a',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over type 1 diabetes mellitus is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Het is een auto-immuunziekte van de bètacellen' },
+          { letter: 'B', text: 'Het is uitsluitend een ziekte van volwassenen' },
+          { letter: 'C', text: 'Het ontstaat pas als 5% van de bètacellen verloren is' },
+          { letter: 'D', text: 'Auto-antistoffen spelen nooit een rol' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'T1DM is een auto-immuunziekte gericht tegen bètacellen.',
+      },
+      {
+        id: '8b',
+        type: 'koppelvraag',
+        points: 2.0,
+        question: 'Match het stadium van T1DM aan het best passende kenmerk.',
+        items: ['Stadium 1', 'Stadium 2', 'Stadium 3'],
+        matchOptions: [
+          { letter: 'A', text: 'Abnormale glucosewaarden, nog geen formele diagnose' },
+          { letter: 'B', text: 'Klinische diabetes, insuline nodig' },
+          { letter: 'C', text: 'Auto-antistoffen en immuunactivatie, nog geen duidelijke diabetes' },
+        ],
+        correctMapping: { 0: 'C', 1: 'A', 2: 'B' },
+        explanation: 'Stadium 1 → antistoffen; stadium 2 → abnormale glucose; stadium 3 → klinische diabetes.',
+      },
+      {
+        id: '8c',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over Graves is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Receptorstimulerende auto-antistoffen spelen een rol' },
+          { letter: 'B', text: 'Het leidt typisch tot hypothyreoïdie door destructie' },
+          { letter: 'C', text: 'Auto-antistoffen spelen geen rol' },
+          { letter: 'D', text: 'Het is een vorm van FMF' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Graves = stimulerende auto-antistoffen tegen TSH-receptor.',
+      },
+      {
+        id: '8d',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Welke uitspraak over Hashimoto-thyreoïditis is het meest correct?',
+        options: [
+          { letter: 'A', text: 'Het gaat gepaard met destructie van schildklierweefsel en hypothyreoïdie' },
+          { letter: 'B', text: 'Het is een vasculitis van de aorta' },
+          { letter: 'C', text: 'Het berust uitsluitend op pyroptose' },
+          { letter: 'D', text: 'Het is identiek aan Graves' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Hashimoto leidt tot schildklierdestructie en hypothyreoïdie.',
+      },
+      {
+        id: '8e',
+        type: 'open',
+        points: 2.0,
+        question:
+          'Wat is het verschil tussen diagnostische en pathofysiologische auto-antistoffen?',
+        wordLimit: 30,
+        rubric:
+          'Score: 1p diagnostische functie; 1p directe rol in ziekteproces.',
+        modelAnswer:
+          'Diagnostische auto-antistoffen helpen bij het stellen van een diagnose; pathofysiologische auto-antistoffen dragen zelf direct bij aan het ziekteproces.',
+        explanation: 'Diagnostisch = diagnose; pathofysiologisch = direct ziekteveroorzakend.',
+      },
+      {
+        id: '8f',
+        type: 'koppelvraag',
+        points: 2.0,
+        question: 'Match het gen aan de best passende functie.',
+        items: ['AIRE', 'FOXP3', 'CTLA-4'],
+        matchOptions: [
+          { letter: 'A', text: 'Minder expressie van zelfantigenen in thymus' },
+          { letter: 'B', text: 'Minder Tregs' },
+          { letter: 'C', text: 'Minder rem op T-celactivatie' },
+        ],
+        correctMapping: { 0: 'A', 1: 'B', 2: 'C' },
+        explanation: 'AIRE → zelfantigenen in thymus; FOXP3 → Tregs; CTLA-4 → rem op T-celactivatie.',
+      },
+      {
+        id: '8g',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question: 'Welke mechanismen kunnen bijdragen aan het verdwijnen van immunologische tolerantie?',
+        options: [
+          { letter: 'A', text: 'Moleculaire mimicry' },
+          { letter: 'B', text: 'Bystander activatie' },
+          { letter: 'C', text: 'Neoantigenen' },
+          { letter: 'D', text: 'Vrijkomen van afgeschermde auto-antigenen' },
+          { letter: 'E', text: 'Alleen compressietherapie' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'D'],
+        explanation:
+          'Moleculaire mimicry, bystander activatie, neoantigenen en afgeschermde antigenen kunnen tolerantie doorbreken.',
+      },
+    ],
+  },
+  {
+    id: 'casus-9',
+    title: 'Casus 9 – Immunologie / checkpointremmers en autoinflammatie',
+    totalPoints: 15,
+    scenario:
+      'Een patiënt met gemetastaseerd melanoom gebruikt checkpointremmers en ontwikkelt endocriene klachten. Een andere patiënt heeft recidiverende koortsaanvallen en buikpijn passend bij een autoinflammatoire aandoening.',
+    questions: [
+      {
+        id: '9a',
+        type: 'meerkeuze',
+        points: 2.0,
+        question: 'Waarom kunnen checkpointremmers auto-immuunachtige bijwerkingen geven?',
+        options: [
+          { letter: 'A', text: 'Omdat zij de rem op T-celactivatie kunnen wegnemen' },
+          { letter: 'B', text: 'Omdat zij altijd B-cellen elimineren' },
+          { letter: 'C', text: 'Omdat zij het pyrine-inflammasoom direct blokkeren' },
+          { letter: 'D', text: 'Omdat zij de huidbarrière herstellen' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Checkpointremmers wegnemen rem op T-celactivatie, wat auto-immuunachtige bijwerkingen kan geven.',
+      },
+      {
+        id: '9b',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Welke diagnose past het best bij recidiverende koorts en buikpijn bij een patiënt van Mediterrane afkomst?',
+        options: [
+          { letter: 'A', text: 'FMF' },
+          { letter: 'B', text: 'Graves' },
+          { letter: 'C', text: 'Hashimoto' },
+          { letter: 'D', text: 'Bowen' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Recidiverende koorts en buikpijn bij Mediterrane afkomst passen bij FMF.',
+      },
+      {
+        id: '9c',
+        type: 'open',
+        points: 2.0,
+        question:
+          'Welke twee cytokinen worden vooral geproduceerd na activatie van het inflammasoom?\nGeef twee korte antwoorden.',
+        wordLimit: 15,
+        rubric: 'Score: 1p IL-1β; 1p IL-18.',
+        modelAnswer: 'IL-1β en IL-18',
+        explanation: 'Na inflammasoomactivatie worden vooral IL-1β en IL-18 geproduceerd.',
+      },
+      {
+        id: '9d',
+        type: 'open',
+        points: 2.0,
+        question: 'Wat is pyroptose?',
+        wordLimit: 20,
+        rubric:
+          'Score: 1p inflammatoire celdood; 1p inflammasoom / poriën / vrijkomen inhoud.',
+        modelAnswer:
+          'Inflammatoire celdood na inflammasoomactivatie, met membraanporiën en vrijkomen van pro-inflammatoire intracellulaire inhoud.',
+        explanation: 'Pyroptose = inflammatoire celdood via het inflammasoom.',
+      },
+      {
+        id: '9e',
+        type: 'meerdere_antwoorden',
+        points: 2.0,
+        partialCreditOnlyCorrect: true,
+        question: 'Welke uitspraken over FMF zijn juist?',
+        options: [
+          { letter: 'A', text: 'Het is een erfelijke autoinflammatoire aandoening' },
+          { letter: 'B', text: 'Het pyrine-inflammasoom speelt een rol' },
+          { letter: 'C', text: 'Colchicine is standaardbehandeling' },
+          { letter: 'D', text: 'Het is per definitie een antistofziekte' },
+          { letter: 'E', text: 'De aanvallen zijn vaak recidiverend' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'E'],
+        explanation: 'FMF is erfelijk autoinflammatoir, pyrine-inflammasoom, colchicine, recidiverende aanvallen.',
+      },
+      {
+        id: '9f',
+        type: 'meerkeuze',
+        points: 2.0,
+        question:
+          'Welke ziekte is het best passend bij een verworven autoinflammatoire aandoening met vaak monoklonale IgM-component?',
+        options: [
+          { letter: 'A', text: 'Schnitzler' },
+          { letter: 'B', text: 'Graves' },
+          { letter: 'C', text: 'T1DM' },
+          { letter: 'D', text: 'GPA' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'De ziekte van Schnitzler is een verworven autoinflammatoire aandoening met vaak monoklonaal IgM.',
+      },
+      {
+        id: '9g',
+        type: 'koppelvraag',
+        points: 3.0,
+        question: 'Sleep de onderdelen van VEXAS naar de juiste letter.',
+        items: ['Vacuolen', 'E1-enzym', 'X-gebonden', 'Auto-inflammatoir', 'Somatisch'],
+        matchOptions: [
+          { letter: 'V', text: 'V' },
+          { letter: 'E', text: 'E' },
+          { letter: 'X', text: 'X' },
+          { letter: 'A', text: 'A' },
+          { letter: 'S', text: 'S' },
+        ],
+        correctMapping: { 0: 'V', 1: 'E', 2: 'X', 3: 'A', 4: 'S' },
+        explanation: 'V = vacuolen; E = E1-enzym; X = X-gebonden; A = auto-inflammatoir; S = somatisch. 0,6p per item.',
+      },
+    ],
+  },
+]
