@@ -14,6 +14,7 @@
     "automation:export-user-access-to-excel": "node scripts/exportFirebaseUserAccessToExcel.mjs",
     "automation:watch-user-access-to-excel": "node scripts/watchFirebaseUserAccessToExcel.mjs",
     "grant-vip": "node scripts/grantVipAccessByEmail.mjs",
+    "grant-premium": "node scripts/grantPaidAccessByEmail.mjs",
     "reset-pfp-default-except-vip": "node scripts/resetDefaultPfpExceptVip.mjs"
   },
   "dependencies": {

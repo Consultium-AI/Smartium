@@ -7,6 +7,8 @@
  *   node scripts/grantPaidAccessByEmail.mjs monthly user@voorbeeld.nl
  *   node scripts/grantPaidAccessByEmail.mjs --from-now monthly user@voorbeeld.nl
  *     (negeert bestaande paidUntil; 30/365 dagen vanaf nu — handig bij plan-correctie)
+ *   node scripts/grantPaidAccessByEmail.mjs --days 7 monthly user@voorbeeld.nl
+ *     (exact aantal dagen toevoegen i.p.v. standaard 30/365)
  *   node scripts/grantPaidAccessByEmail.mjs --dry-run yearly user@voorbeeld.nl
  */
 
@@ -16,7 +18,15 @@ import { initFirebaseAdmin, toMillis } from './lib/firebaseUserAccessExport.mjs'
 const args = process.argv.slice(2)
 const dryRun = args.includes('--dry-run')
 const fromNow = args.includes('--from-now')
-const rest = args.filter((a) => a !== '--dry-run' && a !== '--from-now')
+const daysIdx = args.indexOf('--days')
+const customDays = daysIdx >= 0 ? Number(args[daysIdx + 1]) : null
+const rest = args.filter(
+  (a, i) =>
+    a !== '--dry-run' &&
+    a !== '--from-now' &&
+    a !== '--days' &&
+    !(daysIdx >= 0 && (i === daysIdx + 1 || i === daysIdx)),
+)
 
 const planArg = rest.find((a) => a === 'yearly' || a === 'monthly')
 const plan = planArg || 'yearly'
@@ -30,7 +40,10 @@ if (emails.length === 0) {
   process.exit(1)
 }
 
-const durationMs = (plan === 'yearly' ? 365 : 30) * 24 * 60 * 60 * 1000
+const defaultDays = plan === 'yearly' ? 365 : 30
+const durationDays =
+  customDays != null && Number.isFinite(customDays) && customDays > 0 ? customDays : defaultDays
+const durationMs = durationDays * 24 * 60 * 60 * 1000
 
 await initFirebaseAdmin()
 const auth = admin.auth()
