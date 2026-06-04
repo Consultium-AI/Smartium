@@ -1,7 +1,7 @@
 const BLOCKED_BLOK5_CASUS_FOR_FREE = new Set([5, 7, 9, 11, 13])
 
-/** Blok 5 oefententamens 3–6 alleen met premium (1–2 gratis). */
-export const BLOK5_PREMIUM_EXAM_NUMBERS = new Set([3, 4, 5, 6])
+/** Blok 5 oefententamens 3–5 alleen met premium (1–2 gratis). */
+export const BLOK5_PREMIUM_EXAM_NUMBERS = new Set([3, 4, 5])
 
 const FREE_ALLOWED_EXAMS_BY_BLOK = {
   4: new Set([1, 2]),

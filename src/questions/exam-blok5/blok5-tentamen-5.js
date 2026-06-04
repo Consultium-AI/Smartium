@@ -8,7 +8,7 @@ export const blok5Tentamen5 = {
   tentamenNr: 5,
   title: 'Oefententamen 5',
   subtitle: 'Bedreigingen van binnenuit en buitenaf',
-  totalPoints: 139,
+  totalPoints: 135,
   cesuur: 0.6,
   casussen: [
     ...blok5Tentamen5PartA,
