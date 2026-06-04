@@ -12,6 +12,7 @@ import {
   Stethoscope,
   GraduationCap,
   Lock,
+  Loader2,
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
@@ -712,8 +713,18 @@ export default function ExamBlokPage({ blokNumber = 5 }) {
   const exams = getExamsForBlok(blok)
   const exam = examNr >= 1 && examNr <= exams.length ? exams[examNr - 1] : null
 
-  if (exam && !accessLoading && !hasPaidAccess && !isFreePlanAllowedExam(blok, examNr)) {
-    return <Navigate to={gradePathForBlok(blok)} replace />
+  const requiresPremium = exam && !isFreePlanAllowedExam(blok, examNr)
+
+  if (requiresPremium && accessLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <Loader2 className="h-8 w-8 animate-spin text-primary-500" strokeWidth={2} />
+      </div>
+    )
+  }
+
+  if (requiresPremium && !hasPaidAccess) {
+    return <Navigate to="/billing" replace />
   }
 
   if (!examNr || !exam) {

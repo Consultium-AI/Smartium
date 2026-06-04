@@ -30,7 +30,7 @@ const INCLUDED = [
 const FREE_INCLUDED = [
   'Beperkte toegang tot samenvattingen',
   'Beperkte toegang tot oefenvragen',
-  'Beperkte toegang tot tentamens',
+  'Blok 5: tentamen 1–2; overige tentamens premium',
   'Beperkt aantal tokens voor Smartium AI Chat',
 ]
 
