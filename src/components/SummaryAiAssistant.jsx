@@ -2,8 +2,12 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MessageSquare, Lock, Sparkles, Send, Loader2, X } from 'lucide-react'
+import { MessageSquare, Lock, Sparkles, Send, Loader2, X, Highlighter } from 'lucide-react'
 import { fetchSummaryChatCompletion, parseReferences, normalizeAiDisplayText } from '../utils/practiceExamAi'
+import { useAuth } from '../context/AuthContext'
+import { getProgressUserId } from '../utils/accountProgressStorage'
+import { useSummaryHighlights } from '../hooks/useSummaryHighlights'
+import { HIGHLIGHT_COLORS, resolveHighlightRange, supportsCssCustomHighlight } from '../utils/summaryHighlightDom'
 
 function cleanDisplayText(displayText, hasRefs) {
   if (!displayText) return displayText
@@ -49,6 +53,8 @@ function AiText({ text }) {
 }
 
 export default function SummaryAiAssistant({ lmeId, lmeName, hasPaidAccess, children }) {
+  const { user, loading: authLoading } = useAuth()
+  const progressUserId = getProgressUserId(user, authLoading)
   const containerRef = useRef(null)
   const chatRef = useRef(null)
   const inputRef = useRef(null)
@@ -56,6 +62,18 @@ export default function SummaryAiAssistant({ lmeId, lmeName, hasPaidAccess, chil
   const popupRef = useRef(null)
   const threadRef = useRef([])
   const inFlightRef = useRef(false)
+  const selectionRangeRef = useRef(null)
+  const selectionTimerRef = useRef(null)
+
+  const { highlights, addHighlight, removeHighlight } = useSummaryHighlights({
+    containerRef,
+    lmeId,
+    userId: progressUserId,
+  })
+  const highlightsRef = useRef(highlights)
+  useEffect(() => {
+    highlightsRef.current = highlights
+  }, [highlights])
 
   const [popup, setPopup] = useState(null)
   const [chatOpen, setChatOpen] = useState(false)
@@ -69,46 +87,118 @@ export default function SummaryAiAssistant({ lmeId, lmeName, hasPaidAccess, chil
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [thread, sending])
 
-  // Text selection popup
+  // Text selection popup (markering + optioneel AI)
   useEffect(() => {
-    if (!hasPaidAccess) return
     const container = containerRef.current
     if (!container) return
 
-    const onMouseUp = () => {
-      const sel = window.getSelection()
-      if (!sel || sel.isCollapsed || !sel.toString().trim()) return
-
-      const range = sel.getRangeAt(0)
-      if (!container.contains(range.commonAncestorContainer)) return
-      // Don't trigger popup inside the chat panel
-      if (chatRef.current && chatRef.current.contains(range.commonAncestorContainer)) return
-
-      const text = sel.toString().trim()
-      if (text.length < 3 || text.length > 2000) return
-
+    const showSelectPopup = (range, text) => {
       const rect = range.getBoundingClientRect()
-      const containerRect = container.getBoundingClientRect()
+      if (!rect.width && !rect.height) return
 
+      selectionRangeRef.current = range.cloneRange()
       setPopup({
-        x: rect.left + rect.width / 2 - containerRect.left,
-        y: rect.top - containerRect.top - 8,
+        x: rect.left + rect.width / 2,
+        y: rect.top - 10,
         text,
+        mode: 'select',
       })
     }
 
-    const onMouseDown = (e) => {
-      if (popupRef.current && popupRef.current.contains(e.target)) return
-      setPopup(null)
+    const onSelectionChange = () => {
+      if (selectionTimerRef.current) clearTimeout(selectionTimerRef.current)
+      selectionTimerRef.current = setTimeout(() => {
+        selectionTimerRef.current = null
+        const sel = window.getSelection()
+        if (!sel || sel.isCollapsed || sel.rangeCount === 0) return
+
+        const range = sel.getRangeAt(0)
+        if (!container.contains(range.commonAncestorContainer)) return
+        if (chatRef.current?.contains(range.commonAncestorContainer)) return
+
+        const anchor = range.commonAncestorContainer
+        const insideMark =
+          !supportsCssCustomHighlight() &&
+          (anchor.nodeType === Node.ELEMENT_NODE
+            ? anchor.closest('mark[data-highlight-id]')
+            : anchor.parentElement?.closest('mark[data-highlight-id]')) != null
+        if (insideMark) return
+
+        const text = sel.toString().trim()
+        if (text.length < 2 || text.length > 2000) return
+        showSelectPopup(range, text)
+      }, 120)
     }
 
-    container.addEventListener('mouseup', onMouseUp)
-    document.addEventListener('mousedown', onMouseDown)
-    return () => {
-      container.removeEventListener('mouseup', onMouseUp)
-      document.removeEventListener('mousedown', onMouseDown)
+    const onPointerDown = (e) => {
+      if (popupRef.current?.contains(e.target)) return
+      if (selectionTimerRef.current) {
+        clearTimeout(selectionTimerRef.current)
+        selectionTimerRef.current = null
+      }
+      setPopup(null)
+      selectionRangeRef.current = null
     }
-  }, [hasPaidAccess])
+
+    const findHighlightAtPoint = (x, y) => {
+      for (const highlight of highlightsRef.current) {
+        const range = resolveHighlightRange(container, highlight)
+        if (!range) continue
+        for (const rect of range.getClientRects()) {
+          if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+            return highlight
+          }
+        }
+      }
+      return null
+    }
+
+    const onContentClick = (e) => {
+      if (chatRef.current?.contains(e.target)) return
+
+      if (!supportsCssCustomHighlight()) {
+        const mark = e.target.closest?.('mark[data-highlight-id]')
+        if (!mark || !container.contains(mark)) return
+        e.preventDefault()
+        e.stopPropagation()
+        const rect = mark.getBoundingClientRect()
+        setPopup({
+          x: rect.left + rect.width / 2,
+          y: rect.top - 10,
+          mode: 'remove',
+          highlightId: mark.dataset.highlightId,
+          text: mark.textContent?.trim() || '',
+        })
+        selectionRangeRef.current = null
+        window.getSelection()?.removeAllRanges()
+        return
+      }
+
+      const hit = findHighlightAtPoint(e.clientX, e.clientY)
+      if (!hit) return
+      e.preventDefault()
+      setPopup({
+        x: e.clientX,
+        y: e.clientY - 10,
+        mode: 'remove',
+        highlightId: hit.id,
+        text: hit.text || '',
+      })
+      selectionRangeRef.current = null
+      window.getSelection()?.removeAllRanges()
+    }
+
+    document.addEventListener('selectionchange', onSelectionChange)
+    document.addEventListener('mousedown', onPointerDown)
+    container.addEventListener('click', onContentClick)
+
+    return () => {
+      if (selectionTimerRef.current) clearTimeout(selectionTimerRef.current)
+      document.removeEventListener('selectionchange', onSelectionChange)
+      document.removeEventListener('mousedown', onPointerDown)
+      container.removeEventListener('click', onContentClick)
+    }
+  }, [])
 
   const openChatWithQuestion = useCallback((question) => {
     setChatOpen(true)
@@ -158,28 +248,90 @@ export default function SummaryAiAssistant({ lmeId, lmeName, hasPaidAccess, chil
     openChatWithQuestion(`Ik lees de samenvatting en begrijp het volgende stuk niet goed:\n\n"${popup.text}"\n\nKun je dit uitleggen?`)
   }, [popup, openChatWithQuestion])
 
+  const handleHighlight = useCallback(
+    (colorId) => {
+      const range = selectionRangeRef.current
+      if (!range) return
+      addHighlight(range, colorId)
+      setPopup(null)
+      selectionRangeRef.current = null
+      window.getSelection()?.removeAllRanges()
+    },
+    [addHighlight]
+  )
+
+  const handleRemoveHighlight = useCallback(() => {
+    if (!popup?.highlightId) return
+    removeHighlight(popup.highlightId)
+    setPopup(null)
+  }, [popup, removeHighlight])
+
   return (
     <div ref={containerRef} className="relative">
       {children}
 
-      {/* Text selection popup */}
-      {hasPaidAccess && popup && (
+      {/* Text selection / highlight popup */}
+      {popup && (
         <div
           ref={popupRef}
-          className="absolute z-50"
+          className="fixed z-[100] pointer-events-auto"
           style={{
             left: `${popup.x}px`,
             top: `${popup.y}px`,
             transform: 'translate(-50%, -100%)',
           }}
         >
-          <button
-            onClick={handleSelectionAsk}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-medium shadow-lg hover:bg-slate-800 dark:hover:bg-white transition-colors whitespace-nowrap"
-          >
-            <MessageSquare className="w-3.5 h-3.5" />
-            Vraag AI
-          </button>
+          <div className="rounded-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-xl ring-1 ring-black/10 dark:ring-white/10 overflow-hidden">
+            {popup.mode === 'remove' ? (
+              <button
+                type="button"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={handleRemoveHighlight}
+                className="flex items-center gap-2 px-3.5 py-2.5 text-sm font-medium hover:bg-slate-800 dark:hover:bg-white/90 transition-colors whitespace-nowrap"
+              >
+                <X className="w-3.5 h-3.5" />
+                Markering verwijderen
+              </button>
+            ) : (
+              <div className="flex items-stretch divide-x divide-slate-700/60 dark:divide-slate-300/40">
+                <div className="flex items-center gap-1.5 px-2.5 py-2">
+                  <Highlighter className="w-3.5 h-3.5 shrink-0 opacity-80" aria-hidden />
+                  {HIGHLIGHT_COLORS.map((color) => (
+                    <button
+                      key={color.id}
+                      type="button"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => handleHighlight(color.id)}
+                      className="h-7 w-7 rounded-lg border-2 border-white/30 dark:border-slate-900/20 transition-transform hover:scale-105 active:scale-95"
+                      style={{
+                        backgroundColor:
+                          color.id === 'yellow'
+                            ? '#fde68a'
+                            : color.id === 'green'
+                              ? '#a7f3d0'
+                              : color.id === 'pink'
+                                ? '#fbcfe8'
+                                : '#bae6fd',
+                      }}
+                      title={`Markeer ${color.label.toLowerCase()}`}
+                      aria-label={`Markeer ${color.label.toLowerCase()}`}
+                    />
+                  ))}
+                </div>
+                {hasPaidAccess ? (
+                  <button
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={handleSelectionAsk}
+                    className="flex items-center gap-2 px-3.5 py-2 text-sm font-medium hover:bg-slate-800 dark:hover:bg-white/90 transition-colors whitespace-nowrap"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    Vraag AI
+                  </button>
+                ) : null}
+              </div>
+            )}
+          </div>
           <div className="w-3 h-3 bg-slate-900 dark:bg-slate-100 rotate-45 mx-auto -mt-1.5" />
         </div>
       )}

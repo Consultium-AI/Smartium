@@ -10,6 +10,7 @@ const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
 const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
 const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
+const PREFIX_SUMMARY_HIGHLIGHTS = 'smartium_summary_hl_v1'
 const COLLECTION = 'userProgress'
 
 let debounceTimer = null
@@ -51,10 +52,12 @@ function collectBundledProgress(userId) {
   const exams = {}
   const examBlok = {}
   const summarySeen = {}
+  const summaryHighlights = {}
   const prefixP = `${PREFIX_PRACTICE}:${userId}:`
   const prefixE = `${PREFIX_EXAM}:${userId}:`
   const prefixEb = `${PREFIX_EXAM_BLOK}:${userId}:`
   const summaryKey = `${PREFIX_SUMMARY_READ}:${userId}`
+  const highlightsKey = `${PREFIX_SUMMARY_HIGHLIGHTS}:${userId}`
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i)
@@ -97,12 +100,23 @@ function collectBundledProgress(userId) {
         } catch {
           /* skip */
         }
+      } else if (k === highlightsKey) {
+        const raw = localStorage.getItem(k)
+        if (!raw) continue
+        try {
+          const parsed = JSON.parse(raw)
+          if (parsed && typeof parsed === 'object') {
+            Object.assign(summaryHighlights, parsed)
+          }
+        } catch {
+          /* skip */
+        }
       }
     }
     const chatsJson = localStorage.getItem(getChatStorageKey(userId))
-    return { practice, exams, examBlok, summarySeen, chatsJson: chatsJson || null }
+    return { practice, exams, examBlok, summarySeen, summaryHighlights, chatsJson: chatsJson || null }
   } catch {
-    return { practice: {}, exams: {}, examBlok: {}, summarySeen: {}, chatsJson: null }
+    return { practice: {}, exams: {}, examBlok: {}, summarySeen: {}, summaryHighlights: {}, chatsJson: null }
   }
 }
 
@@ -128,6 +142,14 @@ function applyBundledProgressToLocal(userId, bundle) {
       const summaryKey = `${PREFIX_SUMMARY_READ}:${userId}`
       const localSummary = JSON.parse(localStorage.getItem(summaryKey) || '{}')
       localStorage.setItem(summaryKey, JSON.stringify({ ...(bundle.summarySeen || {}), ...(localSummary || {}) }))
+    }
+    if (bundle.summaryHighlights && typeof bundle.summaryHighlights === 'object') {
+      const highlightsKey = `${PREFIX_SUMMARY_HIGHLIGHTS}:${userId}`
+      const localHighlights = JSON.parse(localStorage.getItem(highlightsKey) || '{}')
+      localStorage.setItem(
+        highlightsKey,
+        JSON.stringify({ ...(bundle.summaryHighlights || {}), ...(localHighlights || {}) })
+      )
     }
     if (bundle.chatsJson && typeof bundle.chatsJson === 'string') {
       localStorage.setItem(getChatStorageKey(userId), bundle.chatsJson)
@@ -155,8 +177,12 @@ function mergeServerWithLocal(localBundle, serverData) {
   for (const [k, v] of Object.entries(localBundle.summarySeen || {})) {
     if (!(k in summarySeen) && v) summarySeen[k] = v
   }
+  const summaryHighlights = { ...(serverData.summaryHighlights || {}) }
+  for (const [k, v] of Object.entries(localBundle.summaryHighlights || {})) {
+    if (!(k in summaryHighlights) && v) summaryHighlights[k] = v
+  }
   const chatsJson = serverData.chatsJson || localBundle.chatsJson || null
-  return { practice, exams, examBlok, summarySeen, chatsJson }
+  return { practice, exams, examBlok, summarySeen, summaryHighlights, chatsJson }
 }
 
 async function pushProgressToCloudInternal(uid) {
@@ -185,6 +211,7 @@ async function pushProgressToCloudInternal(uid) {
       exams: stripForFirestore(bundle.exams),
       examBlok: stripForFirestore(bundle.examBlok),
       summarySeen: stripForFirestore(bundle.summarySeen),
+      summaryHighlights: stripForFirestore(bundle.summaryHighlights),
       chatsJson: bundle.chatsJson ?? null,
       syncedFrom: 'smartium-web',
       updatedAt: serverTimestamp(),
@@ -231,6 +258,7 @@ export async function hydrateFromCloud(uid) {
         exams: d.exams,
         examBlok: d.examBlok,
         summarySeen: d.summarySeen,
+        summaryHighlights: d.summaryHighlights,
         chatsJson: d.chatsJson,
       })
       applyBundledProgressToLocal(uid, merged)

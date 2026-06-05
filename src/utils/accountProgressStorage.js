@@ -10,6 +10,8 @@ const PREFIX_EXAM = 'smartium_exam_v1'
 const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
 /** Gelezen samenvattingen per account */
 const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
+/** Tekstmarkeringen in samenvattingen per account */
+const PREFIX_SUMMARY_HIGHLIGHTS = 'smartium_summary_hl_v1'
 /** Oude globale chatsleutel (vóór per-account) */
 export const LEGACY_CHAT_STORAGE_KEY = 'smartium-chat-chats'
 
@@ -36,6 +38,10 @@ function storageKeyExam(userId, examNumber) {
 
 function storageKeyExamBlok(userId, blok, examNr) {
   return `${PREFIX_EXAM_BLOK}:${userId}:${blok}:${examNr}`
+}
+
+function storageKeySummaryHighlights(userId) {
+  return `${PREFIX_SUMMARY_HIGHLIGHTS}:${userId}`
 }
 
 function storageKeySummaryRead(userId) {
@@ -188,9 +194,17 @@ function clearGuestScopedData(guestId) {
   const ePref = `${PREFIX_EXAM}:${guestId}:`
   const ebPref = `${PREFIX_EXAM_BLOK}:${guestId}:`
   const sKey = storageKeySummaryRead(guestId)
+  const hlKey = storageKeySummaryHighlights(guestId)
   const chatKey = getChatStorageKey(guestId)
   for (const key of keys) {
-    if (key.startsWith(pPref) || key.startsWith(ePref) || key.startsWith(ebPref) || key === chatKey || key === sKey) {
+    if (
+      key.startsWith(pPref) ||
+      key.startsWith(ePref) ||
+      key.startsWith(ebPref) ||
+      key === chatKey ||
+      key === sKey ||
+      key === hlKey
+    ) {
       try {
         localStorage.removeItem(key)
       } catch {
@@ -217,6 +231,8 @@ export function migrateGuestDataToUser(guestId, newUserId) {
     const prefixEb = `${PREFIX_EXAM_BLOK}:${guestId}:`
     const summaryGuest = storageKeySummaryRead(guestId)
     const summaryUser = storageKeySummaryRead(newUserId)
+    const hlGuest = storageKeySummaryHighlights(guestId)
+    const hlUser = storageKeySummaryHighlights(newUserId)
     for (const key of allKeys) {
       if (key.startsWith(prefixP)) {
         const suffix = key.slice(prefixP.length)
@@ -250,6 +266,14 @@ export function migrateGuestDataToUser(guestId, newUserId) {
       const userMap = safeParse(localStorage.getItem(summaryUser)) || {}
       if (guestMap && typeof guestMap === 'object') {
         localStorage.setItem(summaryUser, JSON.stringify({ ...guestMap, ...userMap }))
+      }
+    }
+    const gHlRaw = localStorage.getItem(hlGuest)
+    if (gHlRaw) {
+      const guestHl = safeParse(gHlRaw)
+      const userHl = safeParse(localStorage.getItem(hlUser)) || {}
+      if (guestHl && typeof guestHl === 'object') {
+        localStorage.setItem(hlUser, JSON.stringify({ ...guestHl, ...userHl }))
       }
     }
     clearGuestScopedData(guestId)

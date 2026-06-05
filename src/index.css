@@ -39,6 +39,46 @@ body {
   color: #e8edf4;
 }
 
+mark.smartium-hl {
+  cursor: pointer;
+}
+
+::highlight(smartium-hl-yellow) {
+  background-color: rgba(250, 204, 21, 0.55);
+  color: inherit;
+}
+
+::highlight(smartium-hl-green) {
+  background-color: rgba(110, 231, 183, 0.55);
+  color: inherit;
+}
+
+::highlight(smartium-hl-pink) {
+  background-color: rgba(251, 182, 206, 0.55);
+  color: inherit;
+}
+
+::highlight(smartium-hl-blue) {
+  background-color: rgba(125, 211, 252, 0.55);
+  color: inherit;
+}
+
+.dark ::highlight(smartium-hl-yellow) {
+  background-color: rgba(250, 204, 21, 0.32);
+}
+
+.dark ::highlight(smartium-hl-green) {
+  background-color: rgba(52, 211, 153, 0.28);
+}
+
+.dark ::highlight(smartium-hl-pink) {
+  background-color: rgba(244, 114, 182, 0.28);
+}
+
+.dark ::highlight(smartium-hl-blue) {
+  background-color: rgba(56, 189, 248, 0.28);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
