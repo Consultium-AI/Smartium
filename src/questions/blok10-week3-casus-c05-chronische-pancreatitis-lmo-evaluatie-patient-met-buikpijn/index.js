@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn-part01':
+    blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn-part02':
+    blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsPart02,
+}

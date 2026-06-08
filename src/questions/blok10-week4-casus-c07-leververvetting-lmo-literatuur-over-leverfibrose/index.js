@@ -1,0 +1,9 @@
+import { blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart01 } from './Blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart01'
+import { blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart02 } from './Blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart02'
+
+export const blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap = {
+  'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose-part01':
+    blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart01,
+  'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose-part02':
+    blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsPart02,
+}

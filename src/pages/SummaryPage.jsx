@@ -254,23 +254,38 @@ import Blok10Week3CasusC05ChronischePancreatitisLmeAdvancedEndoscopieEusErcpSumm
 import Blok10Week3CasusC05ChronischePancreatitisLmeDieetPancreatitisPancreasenzymenSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-dieet-pancreatitis-pancreasenzymen/Blok10Week3CasusC05ChronischePancreatitisLmeDieetPancreatitisPancreasenzymenSummary'
 import Blok10Week3CasusC05ChronischePancreatitisLmePancreascarcinoomSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-pancreascarcinoom/Blok10Week3CasusC05ChronischePancreatitisLmePancreascarcinoomSummary'
 import Blok10Week3CasusC05ChronischePancreatitisLmeMicroscopischeAnatomiePancreasSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/lme-microscopische-anatomie-pancreas/Blok10Week3CasusC05ChronischePancreatitisLmeMicroscopischeAnatomiePancreasSummary'
+import Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoEvaluatiePatientMetBuikpijnSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/flankerend-onderwijs/lmo-evaluatie-patient-met-buikpijn/Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoEvaluatiePatientMetBuikpijnSummary'
+import Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoGestuurdeZelfstudieOverzichtsartikelSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/flankerend-onderwijs/lmo-gestuurde-zelfstudie-overzichtsartikel/Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoGestuurdeZelfstudieOverzichtsartikelSummary'
+import Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoPitchPatientMetChronischePancreatitisSummary from '../summaries/samenvattingen-b10/week-3/casus-c05-chronische-pancreatitis/flankerend-onderwijs/lmo-pitch-patient-met-chronische-pancreatitis/Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoPitchPatientMetChronischePancreatitisSummary'
 import Blok10Week3CasusC06DmType1LmeSymptomenPathofysiologieDiagnostiekDm1Summary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/lme-symptomen-pathofysiologie-diagnostiek-dm1/Blok10Week3CasusC06DmType1LmeSymptomenPathofysiologieDiagnostiekDm1Summary'
 import Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/lme-acute-ontregelingen-dm1/Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary'
+import Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoEndocrieneRegulatieKhVetEnEiwitstofwisselingSummary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/flankerend-onderwijs/lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling/Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoEndocrieneRegulatieKhVetEnEiwitstofwisselingSummary'
+import Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoExogeneInsulinesSummary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/flankerend-onderwijs/lmo-exogene-insulines/Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoExogeneInsulinesSummary'
+import Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoRegulatieVanMetabolismeEnzymkinetiekSummary from '../summaries/samenvattingen-b10/week-3/casus-c06-dm-type1/flankerend-onderwijs/lmo-regulatie-van-metabolisme-enzymkinetiek/Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoRegulatieVanMetabolismeEnzymkinetiekSummary'
 import Blok10Week4CasusC07LeververvettingLmeVetverteringEnterohepatischeCyclusSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-vetvertering-enterohepatische-cyclus/Blok10Week4CasusC07LeververvettingLmeVetverteringEnterohepatischeCyclusSummary'
 import Blok10Week4CasusC07LeververvettingLmeDeLeverAlsFabriekSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-de-lever-als-fabriek/Blok10Week4CasusC07LeververvettingLmeDeLeverAlsFabriekSummary'
 import Blok10Week4CasusC07LeververvettingLmeSldEnMasldSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-sld-en-masld/Blok10Week4CasusC07LeververvettingLmeSldEnMasldSummary'
 import Blok10Week4CasusC07LeververvettingLmeAutoimmuunGemedieerdeLeverziektenSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-autoimmuun-gemedieerde-leverziekten/Blok10Week4CasusC07LeververvettingLmeAutoimmuunGemedieerdeLeverziektenSummary'
 import Blok10Week4CasusC07LeververvettingLmeAbcdeViraleHepatitisSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/lme-abcde-virale-hepatitis/Blok10Week4CasusC07LeververvettingLmeAbcdeViraleHepatitisSummary'
+import Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoConsultEenBredeBlik2VoorbereidingKlv229SourceDocument from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/flankerend-onderwijs/lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29/Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoConsultEenBredeBlik2VoorbereidingKlv229SourceDocument'
+import Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoLiteratuurOverLeverfibroseSummary from '../summaries/samenvattingen-b10/week-4/casus-c07-leververvetting/flankerend-onderwijs/lmo-literatuur-over-leverfibrose/Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoLiteratuurOverLeverfibroseSummary'
 import Blok10Week4CasusC08LevercirroseLmeEndoscopieBasisEnBloedingenSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/lme-endoscopie-basis-en-bloedingen/Blok10Week4CasusC08LevercirroseLmeEndoscopieBasisEnBloedingenSummary'
 import Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/lme-levercirrose-en-complicaties/Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary'
+import Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvHccSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/flankerend-onderwijs/lmv-hcc/Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvHccSummary'
+import Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvLevertransplantatieSummary from '../summaries/samenvattingen-b10/week-4/casus-c08-levercirrose/flankerend-onderwijs/lmv-levertransplantatie/Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvLevertransplantatieSummary'
 import Blok10Week5CasusC09ObesitasLmeChirurgischeObesitasbehandelingenSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-chirurgische-obesitasbehandelingen/Blok10Week5CasusC09ObesitasLmeChirurgischeObesitasbehandelingenSummary'
 import Blok10Week5CasusC09ObesitasLmeElkeArtsBehandeltObesitasSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-elke-arts-behandelt-obesitas/Blok10Week5CasusC09ObesitasLmeElkeArtsBehandeltObesitasSummary'
 import Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/lme-lichaamsbeweging/Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary'
+import Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoMedicamenteuzeObesitasbehandelingenSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/flankerend-onderwijs/lmo-medicamenteuze-obesitasbehandelingen/Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoMedicamenteuzeObesitasbehandelingenSummary'
+import Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNietMedicamenteuzeObesitasbehandelingenSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/flankerend-onderwijs/lmo-niet-medicamenteuze-obesitasbehandelingen/Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNietMedicamenteuzeObesitasbehandelingenSummary'
+import Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNutritionalAssessmentSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/flankerend-onderwijs/lmo-nutritional-assessment/Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNutritionalAssessmentSummary'
+import Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmvLevenMetObesitasSummary from '../summaries/samenvattingen-b10/week-5/casus-c09-obesitas/flankerend-onderwijs/lmv-leven-met-obesitas/Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmvLevenMetObesitasSummary'
 import Blok10Week5CasusC10DmType2LmeSymptomenPathofysiologieDiagnostiekDm2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-symptomen-pathofysiologie-diagnostiek-dm2/Blok10Week5CasusC10DmType2LmeSymptomenPathofysiologieDiagnostiekDm2Summary'
 import Blok10Week5CasusC10DmType2LmeLangetermijnComplicatiesDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-langetermijn-complicaties-diabetes/Blok10Week5CasusC10DmType2LmeLangetermijnComplicatiesDiabetesSummary'
 import Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-leefstijl-voeding-preventie-dm2/Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary'
 import Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-lipiden-lipoproteinen-metabole-dysregulatie/Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary'
 import Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-remissie-van-diabetes/Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary'
+import Blok10Week5CasusC10DmType2FlankerendOnderwijsLmoMedicamenteuzeBehandelingVanDiabetesType2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/flankerend-onderwijs/lmo-medicamenteuze-behandeling-van-diabetes-type-2/Blok10Week5CasusC10DmType2FlankerendOnderwijsLmoMedicamenteuzeBehandelingVanDiabetesType2Summary'
 
 // Main Summary Page Component
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
@@ -1599,6 +1614,24 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   available: true,
                   moduleKind: 'lme',
                 },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn',
+                  name: 'Evaluatie patiënt met buikpijn',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel',
+                  name: 'Gestuurde zelfstudie – overzichtsartikel',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis',
+                  name: 'Pitch patiënt met chronische pancreatitis',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
               ],
             },
             {
@@ -1615,6 +1648,24 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   name: 'Acute ontregelingen bij diabetes mellitus type 1',
                   available: true,
                   moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling',
+                  name: 'Endocriene regulatie KH-, vet- en eiwitstofwisseling',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines',
+                  name: 'Exogene insulines',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek',
+                  name: 'Regulatie van metabolisme enzymkinetiek',
+                  available: true,
+                  moduleKind: 'lmo',
                 },
               ],
             },
@@ -1656,6 +1707,18 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   available: true,
                   moduleKind: 'lme',
                 },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29',
+                  name: 'Consult Een brede blik 2 (voorbereiding KLV 2.29)',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose',
+                  name: 'Literatuur over leverfibrose',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
               ],
             },
             {
@@ -1672,6 +1735,18 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   name: 'Levercirrose en complicaties',
                   available: true,
                   moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week4-casus-c08-levercirrose-lmv-hcc',
+                  name: 'HCC',
+                  available: true,
+                  moduleKind: 'lmv',
+                },
+                {
+                  id: 'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie',
+                  name: 'Levertransplantatie',
+                  available: true,
+                  moduleKind: 'lmv',
                 },
               ],
             },
@@ -1700,6 +1775,30 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   name: 'Lichaamsbeweging',
                   available: true,
                   moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen',
+                  name: 'Medicamenteuze obesitasbehandelingen',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen',
+                  name: 'Niet-medicamenteuze obesitasbehandelingen',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment',
+                  name: 'Nutritional assessment',
+                  available: true,
+                  moduleKind: 'lmo',
+                },
+                {
+                  id: 'blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas',
+                  name: 'Leven met obesitas',
+                  available: true,
+                  moduleKind: 'lmv',
                 },
               ],
             },
@@ -1735,6 +1834,12 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   name: 'Remissie van diabetes',
                   available: true,
                   moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+                  name: 'Medicamenteuze behandeling van diabetes type 2',
+                  available: true,
+                  moduleKind: 'lmo',
                 },
               ],
             },
@@ -3251,6 +3356,30 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoEvaluatiePatientMetBuikpijnSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoGestuurdeZelfstudieOverzichtsartikelSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC05ChronischePancreatitisFlankerendOnderwijsLmoPitchPatientMetChronischePancreatitisSummary />
+      </SummaryLayout>
+    )
+  }
+
   if (activeLme === 'blok10-week3-casus-c06-dm-type1-symptomen-pathofysiologie-diagnostiek-dm1') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
@@ -3263,6 +3392,30 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
         <Blok10Week3CasusC06DmType1LmeAcuteOntregelingenDm1Summary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoEndocrieneRegulatieKhVetEnEiwitstofwisselingSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoExogeneInsulinesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week3CasusC06DmType1FlankerendOnderwijsLmoRegulatieVanMetabolismeEnzymkinetiekSummary />
       </SummaryLayout>
     )
   }
@@ -3307,6 +3460,22 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoConsultEenBredeBlik2VoorbereidingKlv229SourceDocument />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC07LeververvettingFlankerendOnderwijsLmoLiteratuurOverLeverfibroseSummary />
+      </SummaryLayout>
+    )
+  }
+
   if (activeLme === 'blok10-week4-casus-c08-levercirrose-endoscopie-basis-en-bloedingen') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
@@ -3319,6 +3488,22 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
         <Blok10Week4CasusC08LevercirroseLmeLevercirroseEnComplicatiesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c08-levercirrose-lmv-hcc') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvHccSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week4CasusC08LevercirroseFlankerendOnderwijsLmvLevertransplantatieSummary />
       </SummaryLayout>
     )
   }
@@ -3343,6 +3528,38 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
         <Blok10Week5CasusC09ObesitasLmeLichaamsbewegingSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoMedicamenteuzeObesitasbehandelingenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNietMedicamenteuzeObesitasbehandelingenSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmoNutritionalAssessmentSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC09ObesitasFlankerendOnderwijsLmvLevenMetObesitasSummary />
       </SummaryLayout>
     )
   }
@@ -3383,6 +3600,14 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
         <Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10Week5CasusC10DmType2FlankerendOnderwijsLmoMedicamenteuzeBehandelingVanDiabetesType2Summary />
       </SummaryLayout>
     )
   }

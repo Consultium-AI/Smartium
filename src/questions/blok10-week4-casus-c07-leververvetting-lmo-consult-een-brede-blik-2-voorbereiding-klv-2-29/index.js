@@ -1,0 +1,9 @@
+import { blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart01 } from './Blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart01'
+import { blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart02 } from './Blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart02'
+
+export const blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap = {
+  'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29-part01':
+    blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart01,
+  'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29-part02':
+    blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsPart02,
+}

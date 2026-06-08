@@ -86,4 +86,31 @@ export const FLANKEREND_MODULE_IDS_BY_CASE = {
     'blok10-week1-casus1-maagklachten-lmv-h-pylori-zorgkosten-vanuit-een-bacterie',
     'blok10-week1-casus1-maagklachten-lmv-ppi',
   ]),
+  'Casus C05: Chronische pancreatitis': new Set([
+    'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn',
+    'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel',
+    'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis',
+  ]),
+  'Casus C06: DM type 1': new Set([
+    'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling',
+    'blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines',
+    'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek',
+  ]),
+  'Casus C07: Leververvetting': new Set([
+    'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29',
+    'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose',
+  ]),
+  'Casus C08: Levercirrose': new Set([
+    'blok10-week4-casus-c08-levercirrose-lmv-hcc',
+    'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie',
+  ]),
+  'Casus C09: Obesitas': new Set([
+    'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen',
+    'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen',
+    'blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment',
+    'blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas',
+  ]),
+  'Casus C10: DM type 2': new Set([
+    'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+  ]),
 }

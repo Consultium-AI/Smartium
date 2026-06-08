@@ -1,0 +1,9 @@
+import { blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart01 } from './Blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart01'
+import { blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart02 } from './Blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart02'
+
+export const blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap = {
+  'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen-part01':
+    blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart01,
+  'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen-part02':
+    blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsPart02,
+}

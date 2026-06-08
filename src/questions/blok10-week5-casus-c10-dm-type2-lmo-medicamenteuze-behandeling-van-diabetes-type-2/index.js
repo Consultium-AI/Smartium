@@ -1,0 +1,9 @@
+import { blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart01 } from './Blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart01'
+import { blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart02 } from './Blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart02'
+
+export const blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap = {
+  'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2-part01':
+    blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart01,
+  'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2-part02':
+    blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsPart02,
+}

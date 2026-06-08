@@ -1,0 +1,9 @@
+import { blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart01 } from './Blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart01'
+import { blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart02 } from './Blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart02'
+
+export const blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap = {
+  'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel-part01':
+    blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart01,
+  'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel-part02':
+    blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsPart02,
+}

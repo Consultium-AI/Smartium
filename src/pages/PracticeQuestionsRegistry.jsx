@@ -69,6 +69,7 @@ import { blok10Week1Casus1MaagklachtenEndoscopieBasisEnBloedingenQuestionsMap } 
 import { blok10Week1Casus1MaagklachtenFysiologieVanMaagzuurQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur'
 import { blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2'
 import { blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes'
+import { blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap } from '../questions/blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2'
 import { blok10Week1Casus1MaagklachtenLeefstijlBijRefluxQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-leefstijl-bij-reflux'
 import { blok10Week1Casus1MaagklachtenLogistischeRegressieAnalyseQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-logistische-regressie-analyse'
 import { blok10Week1Casus1MaagklachtenRefluxBijKinderenQuestionsMap } from '../questions/blok10-week1-casus1-maagklachten-reflux-bij-kinderen'
@@ -92,12 +93,26 @@ import { blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap
 import { blok10Week3CasusC05ChronischePancreatitisAcuteEnChronischePancreatitisQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-acute-en-chronische-pancreatitis'
 import { blok10Week3CasusC05ChronischePancreatitisAdvancedEndoscopieEusErcpQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-advanced-endoscopie-eus-ercp'
 import { blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-dieet-pancreatitis-pancreasenzymen'
+import { blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn'
+import { blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel'
+import { blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap } from '../questions/blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis'
+import { blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap } from '../questions/blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling'
+import { blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap } from '../questions/blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines'
+import { blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap } from '../questions/blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek'
 import { blok10Week4CasusC07LeververvettingVetverteringEnterohepatischeCyclusQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-vetvertering-enterohepatische-cyclus'
 import { blok10Week4CasusC07LeververvettingDeLeverAlsFabriekQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-de-lever-als-fabriek'
 import { blok10Week4CasusC07LeververvettingSldEnMasldQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-sld-en-masld'
 import { blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten'
+import { blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29'
+import { blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap } from '../questions/blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose'
+import { blok10Week4CasusC08LevercirroseLmvHccQuestionsMap } from '../questions/blok10-week4-casus-c08-levercirrose-lmv-hcc'
+import { blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap } from '../questions/blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie'
 import { blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas'
 import { blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lichaamsbeweging'
+import { blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen'
+import { blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen'
+import { blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment'
+import { blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap } from '../questions/blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas'
 import {
   BLOK5_CASUSBIJEENKOMST_QUESTIONS_MAPS,
   getCasusbijeenkomstQuestions,
@@ -1732,6 +1747,58 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap:
                   blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap,
               },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn',
+                name: 'Evaluatie patiënt met buikpijn',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel',
+                name: 'Gestuurde zelfstudie – overzichtsartikel',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis',
+                name: 'Pitch patiënt met chronische pancreatitis',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap,
+              },
+            ],
+          },
+          {
+            name: 'Casus C06: DM type 1',
+            lmes: [
+              {
+                id: 'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling',
+                name: 'Endocriene regulatie KH-, vet- en eiwitstofwisseling',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines',
+                name: 'Exogene insulines',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap,
+              },
+              {
+                id: 'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek',
+                name: 'Regulatie van metabolisme enzymkinetiek',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap,
+              },
             ],
           },
         ],
@@ -1768,6 +1835,41 @@ export const practiceQuestionsCourseStructure = {
                 questionsMap:
                   blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap,
               },
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29',
+                name: 'Consult Een brede blik 2 (voorbereiding KLV 2.29)',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap,
+              },
+              {
+                id: 'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose',
+                name: 'Literatuur over leverfibrose',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap,
+              },
+            ],
+          },
+          {
+            name: 'Casus C08: Levercirrose',
+            lmes: [
+              {
+                id: 'blok10-week4-casus-c08-levercirrose-lmv-hcc',
+                name: 'HCC',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok10Week4CasusC08LevercirroseLmvHccQuestionsMap,
+              },
+              {
+                id: 'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie',
+                name: 'Levertransplantatie',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap,
+              },
             ],
           },
         ],
@@ -1790,6 +1892,34 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 questionsMap: blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap,
               },
+              {
+                id: 'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen',
+                name: 'Medicamenteuze obesitasbehandelingen',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen',
+                name: 'Niet-medicamenteuze obesitasbehandelingen',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment',
+                name: 'Nutritional Assessment',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap: blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas',
+                name: 'Leven met obesitas',
+                type: 'simple',
+                moduleKind: 'lmv',
+                questionsMap: blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap,
+              },
             ],
           },
           {
@@ -1808,6 +1938,14 @@ export const practiceQuestionsCourseStructure = {
                 type: 'simple',
                 questionsMap:
                   blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap,
+              },
+              {
+                id: 'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+                name: 'Medicamenteuze behandeling van diabetes type 2',
+                type: 'simple',
+                moduleKind: 'lmo',
+                questionsMap:
+                  blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap,
               },
             ],
           },
@@ -2859,6 +2997,36 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap[lmeParam]) {
     return blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap[lmeParam]
   }
+  if (
+    lmeParam === 'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29'
+  ) {
+    return Object.values(
+      blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap,
+    ).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose') {
+    return Object.values(
+      blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c08-levercirrose-lmv-hcc') {
+    return Object.values(blok10Week4CasusC08LevercirroseLmvHccQuestionsMap).flat()
+  }
+  if (blok10Week4CasusC08LevercirroseLmvHccQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC08LevercirroseLmvHccQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie') {
+    return Object.values(blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap).flat()
+  }
+  if (blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap[lmeParam]) {
+    return blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas') {
     return Object.values(blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap).flat()
   }
@@ -2871,6 +3039,30 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap[lmeParam]) {
     return blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap[lmeParam]
   }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen') {
+    return Object.values(blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen') {
+    return Object.values(blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment') {
+    return Object.values(blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas') {
+    return Object.values(blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap).flat()
+  }
+  if (blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap[lmeParam]) {
+    return blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap[lmeParam]
+  }
   if (lmeParam === 'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2') {
     return Object.values(blok10Week5CasusC10DmType2SymptomenPathofysiologieDiagnostiekDm2QuestionsMap).flat()
   }
@@ -2882,6 +3074,12 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap[lmeParam]) {
     return blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2') {
+    return Object.values(blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap).flat()
+  }
+  if (blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap[lmeParam]) {
+    return blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap[lmeParam]
   }
   if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie') {
     return Object.values(blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap).flat()
@@ -2906,6 +3104,66 @@ export function getPracticeQuestionsForLme(lmeParam) {
   }
   if (blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap[lmeParam]) {
     return blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn') {
+    return Object.values(
+      blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap[lmeParam]
+  }
+  if (
+    lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel'
+  ) {
+    return Object.values(
+      blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap,
+    ).flat()
+  }
+  if (
+    blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap[lmeParam]
+  ) {
+    return blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap[
+      lmeParam
+    ]
+  }
+  if (
+    lmeParam === 'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis'
+  ) {
+    return Object.values(
+      blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap,
+    ).flat()
+  }
+  if (
+    blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap[lmeParam]
+  ) {
+    return blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap[
+      lmeParam
+    ]
+  }
+  if (
+    lmeParam === 'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling'
+  ) {
+    return Object.values(
+      blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines') {
+    return Object.values(blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap).flat()
+  }
+  if (blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap[lmeParam]
+  }
+  if (lmeParam === 'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek') {
+    return Object.values(
+      blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap,
+    ).flat()
+  }
+  if (blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap[lmeParam]) {
+    return blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap[lmeParam]
   }
   // Default (incl. alle-random): show all questions combined
   const blok3Count = embryogeneseQuestions.length + beeldvormingQuestions.length + extraembryonaalQuestions.length + extremiteitenQuestions.length
@@ -3647,10 +3905,38 @@ export function getPracticeTitleForLme(lmeParam) {
     return 'SLD en MASLD'
   if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-autoimmuun-gemedieerde-leverziekten'))
     return 'Auto-immuun gemedieerde leverziekten'
+  if (
+    lmeParam?.startsWith(
+      'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29',
+    )
+  ) {
+    return 'Consult Een brede blik 2 (voorbereiding KLV 2.29)'
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose')) {
+    return 'Literatuur over leverfibrose'
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c08-levercirrose-lmv-hcc')) {
+    return 'HCC'
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie')) {
+    return 'Levertransplantatie'
+  }
   if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas'))
     return 'Elke arts behandelt obesitas'
   if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lichaamsbeweging'))
     return 'Lichaamsbeweging'
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen')) {
+    return 'Medicamenteuze obesitasbehandelingen'
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen')) {
+    return 'Niet-medicamenteuze obesitasbehandelingen'
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment')) {
+    return 'Nutritional Assessment'
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas')) {
+    return 'Leven met obesitas'
+  }
   if (
     lmeParam?.startsWith(
       'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
@@ -3660,6 +3946,13 @@ export function getPracticeTitleForLme(lmeParam) {
   }
   if (lmeParam?.startsWith('blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes'))
     return 'Langetermijncomplicaties van diabetes mellitus'
+  if (
+    lmeParam?.startsWith(
+      'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+    )
+  ) {
+    return 'Medicamenteuze behandeling van diabetes type 2'
+  }
   if (
     lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie')
   ) {
@@ -3683,6 +3976,42 @@ export function getPracticeTitleForLme(lmeParam) {
     )
   ) {
     return 'Dieet, pancreatitis en pancreasenzymen'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn',
+    )
+  ) {
+    return 'Evaluatie patiënt met buikpijn'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel',
+    )
+  ) {
+    return 'Gestuurde zelfstudie – overzichtsartikel'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis',
+    )
+  ) {
+    return 'Pitch patiënt met chronische pancreatitis'
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling',
+    )
+  ) {
+    return 'Endocriene regulatie KH-, vet- en eiwitstofwisseling'
+  }
+  if (lmeParam?.startsWith('blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines')) {
+    return 'Exogene insulines'
+  }
+  if (
+    lmeParam?.startsWith('blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek')
+  ) {
+    return 'Regulatie van metabolisme enzymkinetiek'
   }
   if (lmeParam === 'alle-random') return 'Alle vragen (random)'
   if (lmeParam?.startsWith('casus-random-')) {
@@ -4417,6 +4746,22 @@ export function getPracticeSubtitleForLme(lmeParam) {
   ) {
     return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingAutoimmuunGemedieerdeLeverziektenQuestionsMap)} meerkeuzevragen over auto-immuun gemedieerde leverziekten.`
   }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week4-casus-c07-leververvetting-lmo-consult-een-brede-blik-2-voorbereiding-klv-2-29',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingLmoConsultEenBredeBlik2VoorbereidingKlv229QuestionsMap)} vragen over bovenbuikpijn en differentiaaldiagnose (inclusief een open vraag met modelantwoord).`
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c07-leververvetting-lmo-literatuur-over-leverfibrose')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC07LeververvettingLmoLiteratuurOverLeverfibroseQuestionsMap)} vragen over leverfibrose (inclusief een open vraag met modelantwoord).`
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c08-levercirrose-lmv-hcc')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC08LevercirroseLmvHccQuestionsMap)} meerkeuzevragen over hepatocellulair carcinoom (HCC).`
+  }
+  if (lmeParam?.startsWith('blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week4CasusC08LevercirroseLmvLevertransplantatieQuestionsMap)} meerkeuzevragen over levertransplantatie.`
+  }
   if (lmeParam?.startsWith('blok10-week3-casus-c05-chronische-pancreatitis-pancreasfysiologie')) {
     return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisPancreasfysiologieQuestionsMap)} meerkeuzevragen over pancreasfysiologie.`
   }
@@ -4437,6 +4782,42 @@ export function getPracticeSubtitleForLme(lmeParam) {
   ) {
     return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisDieetPancreatitisPancreasenzymenQuestionsMap)} meerkeuzevragen over dieet bij pancreatitis en pancreasenzymen.`
   }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-evaluatie-patient-met-buikpijn',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisLmoEvaluatiePatientMetBuikpijnQuestionsMap)} meerkeuzevragen over de evaluatie van een patiënt met buikpijn.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-gestuurde-zelfstudie-overzichtsartikel',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisLmoGestuurdeZelfstudieOverzichtsartikelQuestionsMap)} meerkeuzevragen over chronische pancreatitis (overzichtsartikel).`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c05-chronische-pancreatitis-lmo-pitch-patient-met-chronische-pancreatitis',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC05ChronischePancreatitisLmoPitchPatientMetChronischePancreatitisQuestionsMap)} vragen over het patiëntenperspectief bij chronische pancreatitis (inclusief een open vraag met modelantwoord).`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week3-casus-c06-dm-type1-lmo-endocriene-regulatie-kh-vet-en-eiwitstofwisseling',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC06DmType1LmoEndocrieneRegulatieKhVetEnEiwitstofwisselingQuestionsMap)} meerkeuzevragen over endocriene regulatie van koolhydraat-, vet- en eiwitstofwisseling.`
+  }
+  if (lmeParam?.startsWith('blok10-week3-casus-c06-dm-type1-lmo-exogene-insulines')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC06DmType1LmoExogeneInsulinesQuestionsMap)} vragen over exogene insulines (inclusief een open vraag met modelantwoord).`
+  }
+  if (
+    lmeParam?.startsWith('blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek')
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap)} meerkeuzevragen over regulatie van metabolisme en enzymkinetiek.`
+  }
   if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas')) {
     const n = getQuestionCount(blok10Week5CasusC09ObesitasElkeArtsBehandeltObesitasQuestionsMap)
     if (n === 0) {
@@ -4446,6 +4827,18 @@ export function getPracticeSubtitleForLme(lmeParam) {
   }
   if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lichaamsbeweging')) {
     return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLichaamsbewegingQuestionsMap)} meerkeuzevragen over lichaamsbeweging (bariatrische chirurgie en beleid rond obesitas).`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLmoMedicamenteuzeObesitasbehandelingenQuestionsMap)} meerkeuzevragen over medicamenteuze obesitasbehandelingen.`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLmoNietMedicamenteuzeObesitasbehandelingenQuestionsMap)} meerkeuzevragen over niet-medicamenteuze obesitasbehandelingen.`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmo-nutritional-assessment')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLmoNutritionalAssessmentQuestionsMap)} meerkeuzevragen over nutritional assessment.`
+  }
+  if (lmeParam?.startsWith('blok10-week5-casus-c09-obesitas-lmv-leven-met-obesitas')) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC09ObesitasLmvLevenMetObesitasQuestionsMap)} meerkeuzevragen over leven met obesitas (stigma, vooroordelen en patiëntervaring).`
   }
   if (
     lmeParam?.startsWith(
@@ -4460,6 +4853,13 @@ export function getPracticeSubtitleForLme(lmeParam) {
     )
   ) {
     return `Test je kennis met ${getQuestionCount(blok10Week5CasusC10DmType2LangetermijnComplicatiesDiabetesQuestionsMap)} meerkeuzevragen over langetermijncomplicaties van diabetes mellitus.`
+  }
+  if (
+    lmeParam?.startsWith(
+      'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+    )
+  ) {
+    return `Test je kennis met ${getQuestionCount(blok10Week5CasusC10DmType2LmoMedicamenteuzeBehandelingVanDiabetesType2QuestionsMap)} meerkeuzevragen over medicamenteuze behandeling van diabetes type 2.`
   }
   if (lme5QuestionsMap[lmeParam]) return `Test je kennis met ${lme5QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over schimmelinfecties.`
   if (lme6QuestionsMap[lmeParam]) return `Test je kennis met ${lme6QuestionsMap[lmeParam]?.length || 0} meerkeuzevragen over de milt.`

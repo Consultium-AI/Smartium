@@ -1,0 +1,9 @@
+import { blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart01 } from './Blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart01'
+import { blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart02 } from './Blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart02'
+
+export const blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsMap = {
+  'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek-part01':
+    blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart01,
+  'blok10-week3-casus-c06-dm-type1-lmo-regulatie-van-metabolisme-enzymkinetiek-part02':
+    blok10Week3CasusC06DmType1LmoRegulatieVanMetabolismeEnzymkinetiekQuestionsPart02,
+}
