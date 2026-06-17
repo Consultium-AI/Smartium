@@ -8,6 +8,12 @@ import {
   buyRewardPfp,
   setSelectedRewardPfp,
 } from '../lib/rewardSystem'
+import { isWaifuPremiumUser } from '../utils/waifuPremiumUser'
+import {
+  WAIFU_PRACTICE_CORRECT_LABEL,
+  pickRandomWaifuPraiseLine,
+} from '../constants/waifuPremiumUsers'
+import { pickRandomWaifuAvatar } from '../utils/waifuAvatars'
 
 const RewardContext = createContext(null)
 
@@ -41,12 +47,21 @@ export function RewardProvider({ children }) {
     refreshRewardData()
   }, [refreshRewardData])
 
-  const showNotification = useCallback((text) => {
+  const showNotification = useCallback((text, options = {}) => {
     const id = ++notifIdRef.current
-    setNotifications(prev => [...prev, { id, text }])
+    setNotifications((prev) => [
+      ...prev,
+      {
+        id,
+        text,
+        waifu: Boolean(options.waifu),
+        waifuAvatar: options.waifuAvatar ?? null,
+        coins: options.coins ?? null,
+      },
+    ])
     setTimeout(() => {
-      setNotifications(prev => prev.filter(n => n.id !== id))
-    }, 2800)
+      setNotifications((prev) => prev.filter((n) => n.id !== id))
+    }, options.waifu ? 4200 : 2800)
   }, [])
 
   /**
@@ -59,7 +74,19 @@ export function RewardProvider({ children }) {
     const updated = addCoins(userId, amount)
     if (!updated) return
     setRewardData(updated)
-    showNotification(`+${amount} 🪙${label ? ` — ${label}` : ''}`)
+
+    const isWaifuPracticeCorrect =
+      isWaifuPremiumUser(user) && label === WAIFU_PRACTICE_CORRECT_LABEL
+
+    if (isWaifuPracticeCorrect) {
+      showNotification(pickRandomWaifuPraiseLine(), {
+        waifu: true,
+        waifuAvatar: pickRandomWaifuAvatar(),
+        coins: amount,
+      })
+    } else {
+      showNotification(`+${amount} 🪙${label ? ` — ${label}` : ''}`)
+    }
 
     // Update streak once per day (no-op if already done today)
     const { bonusCoins, milestoneDay, data: streakData } = updateStreak(userId)
@@ -69,7 +96,7 @@ export function RewardProvider({ children }) {
         showNotification(`🔥 ${milestoneDay}-daagse streak! +${bonusCoins} bonus!`)
       }
     }
-  }, [userId, showNotification])
+  }, [userId, user, showNotification])
 
   /**
    * Spend coins to purchase a reward pfp.

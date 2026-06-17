@@ -9,6 +9,7 @@ import {
   FlaskConical
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
+import PracticeMultiBlokSelector from '../components/PracticeMultiBlokSelector'
 import PracticeCourseModuleLink from '../components/PracticeCourseModuleLink'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro from '../components/Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro'
@@ -86,8 +87,12 @@ import {
   loadPracticeProgress,
   savePracticeProgress,
   clearPracticeProgress,
+  isPersistedRandomPracticeMode,
+  isAccountProgressUser,
 } from '../utils/accountProgressStorage'
+import { buildShuffledQuestions } from '../utils/practiceRandomProgress'
 import { useAuth } from '../context/AuthContext'
+import { isWaifuPremiumUser } from '../utils/waifuPremiumUser'
 import { useAccess } from '../hooks/useAccess'
 import { useReward } from '../context/RewardContext'
 import { COIN_REWARDS } from '../lib/rewardSystem'
@@ -115,6 +120,7 @@ const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
 const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
+  const forceNewSession = searchParams.get('nieuw') === '1'
   const { user, loading: authLoading } = useAuth()
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const { awardCoins } = useReward()
@@ -122,7 +128,8 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const isBlockedDirectLme = Boolean(lmeParam) && showPremiumLocks && isFreePlanBlockedPracticeLme(lmeParam)
   const progressUserId = getProgressUserId(user, authLoading)
-  const hasAccountProgress = Boolean(user?.uid) && progressUserId !== null && progressUserId !== 'guest'
+  const hasAccountProgress = isAccountProgressUser(progressUserId)
+  const waifuMode = isWaifuPremiumUser(user)
   const blokParam = searchParams.get('blok')
   const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
   const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
@@ -132,6 +139,8 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     return null
   })
   const [progressVersion, setProgressVersion] = useState(0)
+  const [sessionQuestions, setSessionQuestions] = useState(null)
+  const [questionOrder, setQuestionOrder] = useState(null)
   const currentPracticeIndex = lmeParam ? PRACTICE_QUESTION_ORDER.indexOf(lmeParam) : -1
   const prevPracticeLme = currentPracticeIndex > 0 ? PRACTICE_QUESTION_ORDER[currentPracticeIndex - 1] : null
   const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
@@ -158,7 +167,6 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     return <Navigate to="/oefenvragen" replace />
   }
 
-
   const questions = useMemo(() => {
     if (lmeParam?.startsWith('blok-fouten-')) {
       const blokKey = lmeParam.replace('blok-fouten-', '')
@@ -171,6 +179,9 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
       }
       return arr.map((item, idx) => ({ ...item, id: idx + 1 }))
     }
+    if (isPersistedRandomPracticeMode(lmeParam)) {
+      return sessionQuestions ?? []
+    }
     const q = getPracticeQuestionsForLme(lmeParam)
     if (isRandomMode(lmeParam)) {
       const arr = [...q]
@@ -181,7 +192,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
       return arr.map((item, idx) => ({ ...item, id: idx + 1 }))
     }
     return q
-  }, [lmeParam, progressUserId, progressVersion])
+  }, [lmeParam, progressUserId, progressVersion, sessionQuestions])
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState({})
   const [revealedAnswers, setRevealedAnswers] = useState({})
@@ -194,6 +205,83 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
       setProgressHydrated(false)
       return
     }
+
+    if (isPersistedRandomPracticeMode(lmeParam)) {
+      setProgressHydrated(false)
+      const base = getPracticeQuestionsForLme(lmeParam)
+      if (!base.length) {
+        setSessionQuestions([])
+        setQuestionOrder([])
+        setCurrentQuestion(0)
+        setSelectedAnswers({})
+        setRevealedAnswers({})
+        setExplanations({})
+        setExplanationRequests({})
+        setProgressHydrated(true)
+        return
+      }
+
+      if (forceNewSession && isAccountProgressUser(progressUserId)) {
+        clearPracticeProgress(progressUserId, lmeParam)
+      }
+
+      const canPersist = isAccountProgressUser(progressUserId)
+      const saved = forceNewSession || !canPersist ? null : loadPracticeProgress(progressUserId, lmeParam)
+      const { questions: built, questionOrder: order } = buildShuffledQuestions(base, saved)
+      setSessionQuestions(built)
+      setQuestionOrder(order)
+
+      const maxIdx = Math.max(0, built.length - 1)
+      if (saved?.questionOrder?.length === base.length) {
+        setCurrentQuestion(
+          typeof saved.currentQuestion === 'number'
+            ? Math.min(Math.max(0, saved.currentQuestion), maxIdx)
+            : 0,
+        )
+        setSelectedAnswers(
+          saved.selectedAnswers && typeof saved.selectedAnswers === 'object'
+            ? saved.selectedAnswers
+            : {},
+        )
+        setRevealedAnswers(
+          saved.revealedAnswers && typeof saved.revealedAnswers === 'object'
+            ? saved.revealedAnswers
+            : {},
+        )
+        setExplanations(
+          saved.explanations && typeof saved.explanations === 'object' ? saved.explanations : {},
+        )
+        setExplanationRequests(
+          saved.explanationRequests && typeof saved.explanationRequests === 'object'
+            ? saved.explanationRequests
+            : {},
+        )
+      } else {
+        setCurrentQuestion(0)
+        setSelectedAnswers({})
+        setRevealedAnswers({})
+        setExplanations({})
+        setExplanationRequests({})
+        if (canPersist) {
+          savePracticeProgress(progressUserId, lmeParam, {
+            v: 2,
+            questionOrder: order,
+            currentQuestion: 0,
+            selectedAnswers: {},
+            revealedAnswers: {},
+            explanations: {},
+            explanationRequests: {},
+            updatedAt: Date.now(),
+          })
+        }
+      }
+      setProgressHydrated(true)
+      return
+    }
+
+    setSessionQuestions(null)
+    setQuestionOrder(null)
+
     if (!lmeParam || isRandomMode(lmeParam)) {
       setProgressHydrated(true)
       return
@@ -233,10 +321,31 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
       setExplanationRequests({})
     }
     setProgressHydrated(true)
-  }, [progressUserId, lmeParam, questions.length])
+  }, [progressUserId, lmeParam, questions.length, forceNewSession, progressVersion])
 
   useEffect(() => {
-    if (!progressHydrated || progressUserId === null || !lmeParam || isRandomMode(lmeParam)) {
+    if (!progressHydrated || progressUserId === null || !lmeParam) {
+      return
+    }
+
+    if (isPersistedRandomPracticeMode(lmeParam)) {
+      if (!questionOrder?.length || !isAccountProgressUser(progressUserId)) return
+      const timer = setTimeout(() => {
+        savePracticeProgress(progressUserId, lmeParam, {
+          v: 2,
+          questionOrder,
+          currentQuestion,
+          selectedAnswers,
+          revealedAnswers,
+          explanations,
+          explanationRequests,
+          updatedAt: Date.now(),
+        })
+      }, 400)
+      return () => clearTimeout(timer)
+    }
+
+    if (isRandomMode(lmeParam)) {
       return
     }
     const timer = setTimeout(() => {
@@ -254,6 +363,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     progressHydrated,
     progressUserId,
     lmeParam,
+    questionOrder,
     currentQuestion,
     selectedAnswers,
     revealedAnswers,
@@ -310,7 +420,22 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     setExplanations({})
     setExplanationRequests({})
     setCurrentQuestion(0)
-    if (progressUserId && lmeParam && !isRandomMode(lmeParam)) {
+    if (progressUserId && lmeParam && isPersistedRandomPracticeMode(lmeParam) && isAccountProgressUser(progressUserId)) {
+      const base = getPracticeQuestionsForLme(lmeParam)
+      const { questions: built, questionOrder: order } = buildShuffledQuestions(base, null)
+      setSessionQuestions(built)
+      setQuestionOrder(order)
+      savePracticeProgress(progressUserId, lmeParam, {
+        v: 2,
+        questionOrder: order,
+        currentQuestion: 0,
+        selectedAnswers: {},
+        revealedAnswers: {},
+        explanations: {},
+        explanationRequests: {},
+        updatedAt: Date.now(),
+      })
+    } else if (progressUserId && lmeParam && !isRandomMode(lmeParam)) {
       clearPracticeProgress(progressUserId, lmeParam)
     }
   }
@@ -528,11 +653,11 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
+    <div className={waifuMode ? 'waifu-page-shell min-h-screen' : 'min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300'}>
       <Navbar />
       <div className="h-20" />
 
-      <main className={`container-custom ${lmeParam ? 'py-10 md:py-16' : 'py-8 md:py-12'}`}>
+      <main className={`relative ${waifuMode ? 'z-[5]' : 'z-[2]'} container-custom ${lmeParam ? 'py-10 md:py-16' : 'py-8 md:py-12'}`}>
         {/* Back to Summary / Overzicht */}
         {lmeParam && (
           <motion.div
@@ -590,8 +715,15 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           animate={{ opacity: 1, y: 0 }}
           className={`text-center ${lmeParam ? 'mb-10 md:mb-14 max-w-3xl mx-auto space-y-4' : 'mb-8 max-w-3xl mx-auto'}`}
         >
-          <h1 className={`text-3xl font-bold text-slate-900 dark:text-slate-50 tracking-tight ${lmeParam ? 'mb-3' : 'mb-1'}`}>
-            {getPracticeTitleForLme(lmeParam)} <span className="text-accent-500 dark:text-accent-400">Oefenvragen</span>
+          <h1
+            className={`text-3xl font-bold tracking-tight ${lmeParam ? 'mb-3' : 'mb-1'} ${
+              waifuMode ? 'waifu-hero-title' : 'text-slate-900 dark:text-slate-50'
+            }`}
+          >
+            {getPracticeTitleForLme(lmeParam)}{' '}
+            <span className={waifuMode ? 'text-fuchsia-500 dark:text-pink-300' : 'text-accent-500 dark:text-accent-400'}>
+              Oefenvragen {waifuMode ? '♡' : ''}
+            </span>
           </h1>
           <p className={`text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto ${lmeParam ? 'leading-relaxed' : ''}`}>
             {getPracticeSubtitleForLme(lmeParam)}
@@ -819,6 +951,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                 </div>
               )}
               {!forcedBlokKey && (
+                <>
                 <div className="mt-8 space-y-10 text-left">
                   <section aria-labelledby="practice-index-ba1-heading">
                     <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
@@ -906,6 +1039,17 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                     </div>
                   </section>
                 </div>
+                <div className="mt-10 max-w-3xl mx-auto text-left">
+                  <PracticeMultiBlokSelector
+                    showPremiumLocks={showPremiumLocks}
+                    progressUserId={progressUserId}
+                    hasAccountProgress={hasAccountProgress}
+                    isLoggedIn={Boolean(user?.uid)}
+                    refreshKey={lmeParam ?? 'overview'}
+                    waifuMode={waifuMode}
+                  />
+                </div>
+                </>
               )}
               {forcedBlokKey && (
             <>

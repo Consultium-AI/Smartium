@@ -2059,7 +2059,13 @@ export function getLmeQuestionCount(lmeItem) {
 }
 
 export function isRandomMode(param) {
-  return param === 'alle-random' || param?.startsWith('casus-random-') || param?.startsWith('blok-random-') || param?.startsWith('blok-fouten-')
+  return (
+    param === 'alle-random' ||
+    param?.startsWith('casus-random-') ||
+    param?.startsWith('blok-random-') ||
+    param?.startsWith('blokken-random-') ||
+    param?.startsWith('blok-fouten-')
+  )
 }
 
 function collectQuestionsForCasus(casus) {
@@ -2106,8 +2112,43 @@ export function buildBlokRandomParam(blokKey) {
   return `blok-random-${blokKey}`
 }
 
+/** Meerdere blokken: `blokken-random-blok3+blok5+blok10` */
+export function parseBlokkenRandomParam(lmeParam) {
+  if (!lmeParam?.startsWith('blokken-random-')) return []
+  const suffix = lmeParam.replace('blokken-random-', '')
+  if (!suffix) return []
+  return suffix.split('+').filter(Boolean)
+}
+
+export function buildBlokkenRandomParam(blokKeys) {
+  const keys = [...new Set(blokKeys)].filter(Boolean).sort()
+  return keys.length ? `blokken-random-${keys.join('+')}` : ''
+}
+
+export function collectQuestionsForBlokken(blokKeys) {
+  const allQuestions = []
+  for (const key of blokKeys) {
+    allQuestions.push(...collectQuestionsForBlok(key))
+  }
+  return allQuestions
+}
+
+export function getPracticeQuestionCountForBlok(blokKey) {
+  return collectQuestionsForBlok(blokKey).length
+}
+
+export function formatPracticeBlokKeysLabel(blokKeys) {
+  const labels = blokKeys.map((k) => {
+    const n = k.match(/^blok(\d+)$/)?.[1]
+    return n ? `Blok ${n}` : k
+  })
+  if (labels.length <= 1) return labels[0] || ''
+  if (labels.length === 2) return `${labels[0]} en ${labels[1]}`
+  return `${labels.slice(0, -1).join(', ')} en ${labels[labels.length - 1]}`
+}
+
 export function getPracticeQuestionsForLme(lmeParam) {
-  // Handle casus-random and blok-random
+  // Handle casus-random, blok-random and blokken-random
   if (lmeParam?.startsWith('casus-random-')) {
     const { blokKey, weekIdx, casusIdx } = parseCasusRandomParam(lmeParam)
     const blok = practiceQuestionsCourseStructure[blokKey]
@@ -2117,6 +2158,9 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (lmeParam?.startsWith('blok-random-')) {
     const blokKey = lmeParam.replace('blok-random-', '')
     return collectQuestionsForBlok(blokKey)
+  }
+  if (lmeParam?.startsWith('blokken-random-')) {
+    return collectQuestionsForBlokken(parseBlokkenRandomParam(lmeParam))
   }
   if (lmeParam?.startsWith('blok-fouten-')) {
     return []
@@ -4024,6 +4068,13 @@ export function getPracticeTitleForLme(lmeParam) {
     const blok = practiceQuestionsCourseStructure[blokKey]
     return blok?.name || 'Blokvragen'
   }
+  if (lmeParam?.startsWith('blokken-random-')) {
+    const keys = parseBlokkenRandomParam(lmeParam)
+    if (keys.length === 1) {
+      return practiceQuestionsCourseStructure[keys[0]]?.name || 'Blokvragen'
+    }
+    return formatPracticeBlokKeysLabel(keys)
+  }
   if (lmeParam?.startsWith('blok-fouten-')) {
     const blokKey = lmeParam.replace('blok-fouten-', '')
     const blok = practiceQuestionsCourseStructure[blokKey]
@@ -4934,6 +4985,11 @@ export function getPracticeSubtitleForLme(lmeParam) {
   if (lmeParam?.startsWith('blok-random-')) {
     const q = getPracticeQuestionsForLme(lmeParam)
     return `Oefen alle ${q.length} vragen van dit blok.`
+  }
+  if (lmeParam?.startsWith('blokken-random-')) {
+    const keys = parseBlokkenRandomParam(lmeParam)
+    const q = getPracticeQuestionsForLme(lmeParam)
+    return `Oefen alle ${q.length} vragen uit ${formatPracticeBlokKeysLabel(keys)} in willekeurige volgorde.`
   }
   if (lmeParam?.startsWith('blok-fouten-')) {
     return 'Alle meerkeuzevragen die je in dit blok fout had (volgens je opgeslagen voortgang), in willekeurige volgorde.'

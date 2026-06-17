@@ -1,0 +1,250 @@
+/* Waifu premium — collage achtergrond + lichte glass UI */
+
+.waifu-premium-mode,
+html.waifu-premium-mode body {
+  background: transparent !important;
+}
+
+.waifu-site-bg {
+  background: #ffb8d5;
+}
+
+.waifu-site-bg__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.waifu-site-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 20%,
+    transparent 75%,
+    rgba(255, 182, 213, 0.08) 100%
+  );
+  pointer-events: none;
+}
+
+.waifu-premium-mode {
+  background: transparent !important;
+}
+
+/* Laat waifu-collage zichtbaar — geen opaque hero/section achtergronden */
+html.waifu-premium-mode section.relative.overflow-hidden > .pointer-events-none.absolute.inset-0.-z-10 {
+  display: none;
+}
+
+.waifu-premium-mode {
+  --waifu-bg-deep: #ffb8d5;
+  --waifu-bg-mid: #ffc9e0;
+  --waifu-accent: #ff5da2;
+  --waifu-accent-2: #c084fc;
+  --waifu-accent-3: #67e8f9;
+  --waifu-glass: rgba(255, 255, 255, 0.58);
+  --waifu-glass-border: rgba(255, 105, 180, 0.35);
+  --waifu-text: #4a1942;
+  --waifu-text-muted: #7c3a6b;
+  color: var(--waifu-text);
+}
+
+.waifu-gallery-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 93, 162, 0.22);
+  background: linear-gradient(165deg, rgba(30, 16, 48, 0.92) 0%, rgba(12, 6, 22, 0.95) 100%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.waifu-gallery-card--muted {
+  opacity: 0.22;
+  filter: blur(0.3px);
+}
+
+.waifu-gallery-card--compact .waifu-gallery-card__portrait {
+  flex: 1;
+  padding: 6px 8px 4px;
+}
+
+.waifu-gallery-card__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 42%);
+  pointer-events: none;
+}
+
+.waifu-gallery-card__portrait {
+  flex: 1;
+  min-height: 0;
+  padding: 8px 10px 2px;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 93, 162, 0.12), transparent 65%);
+}
+
+.waifu-gallery-card__meta {
+  padding: 6px 8px 8px;
+  border-top: 1px solid rgba(255, 93, 162, 0.15);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.waifu-gallery-card__name {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fce7f3;
+  line-height: 1.2;
+}
+
+.waifu-gallery-card__series {
+  display: block;
+  font-size: 8px;
+  color: rgba(196, 181, 253, 0.75);
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waifu-glass {
+  background: var(--waifu-glass) !important;
+  border-color: var(--waifu-glass-border) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 12px 40px rgba(255, 105, 180, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.waifu-premium-mode .waifu-page-shell {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+}
+
+.waifu-premium-mode .bg-white,
+.waifu-premium-mode .bg-white\/90,
+.waifu-premium-mode .bg-white\/80,
+.waifu-premium-mode .bg-white\/70 {
+  background: rgba(255, 255, 255, 0.58) !important;
+  color: var(--waifu-text);
+}
+
+.waifu-premium-mode .dark\:bg-slate-900\/80,
+.waifu-premium-mode .dark\:bg-slate-900\/50,
+.waifu-premium-mode .dark\:bg-slate-800\/50,
+.waifu-premium-mode .dark\:bg-slate-800\/40 {
+  background: rgba(255, 255, 255, 0.58) !important;
+}
+
+.waifu-premium-mode .text-slate-900,
+.waifu-premium-mode .dark\:text-slate-100,
+.waifu-premium-mode .text-slate-800 {
+  color: var(--waifu-text) !important;
+}
+
+.waifu-premium-mode .text-slate-500,
+.waifu-premium-mode .dark\:text-slate-400,
+.waifu-premium-mode .text-slate-600 {
+  color: var(--waifu-text-muted) !important;
+}
+
+.waifu-premium-mode .border-slate-200,
+.waifu-premium-mode .dark\:border-slate-700,
+.waifu-premium-mode .border-slate-200\/90 {
+  border-color: rgba(255, 93, 162, 0.18) !important;
+}
+
+.waifu-featured-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .waifu-featured-strip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.waifu-hero-panel {
+  border: 1px solid rgba(255, 105, 180, 0.35);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.waifu-hero-title {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  background: linear-gradient(90deg, #db2777, #c026d3, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.waifu-sakura-petal {
+  user-select: none;
+  will-change: transform;
+  filter: drop-shadow(0 0 6px rgba(255, 93, 162, 0.4));
+}
+
+/* Navbar + footer in gallery mode */
+html.waifu-premium-mode header.fixed,
+html.waifu-premium-mode nav.fixed,
+.waifu-premium-mode .fixed.top-0.left-0.right-0.z-50 {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(255, 105, 180, 0.35) !important;
+  box-shadow: 0 4px 24px rgba(255, 105, 180, 0.15) !important;
+  backdrop-filter: blur(12px);
+}
+
+.waifu-premium-mode .footer-section-bg,
+.waifu-premium-mode .cta-section-bg,
+.waifu-premium-mode .hero-section-bg {
+  background: transparent !important;
+}
+
+.waifu-premium-mode main {
+  position: relative;
+}
+
+/* Sasuga toast — circular avatar + speech bubble */
+.waifu-sasuga-toast {
+  filter: drop-shadow(0 8px 24px rgba(255, 105, 180, 0.35));
+}
+
+.waifu-sasuga-avatar img {
+  border-radius: 9999px;
+}
+
+.waifu-sasuga-bubble__tail {
+  position: absolute;
+  right: -10px;
+  bottom: 18px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(2px 0 0 rgba(249, 168, 212, 0.8));
+}
+
+.waifu-sasuga-bubble__tail::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid #fff;
+}

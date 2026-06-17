@@ -20,6 +20,11 @@ export function getProgressUserId(user, authLoading) {
   return user?.uid ?? 'guest'
 }
 
+/** Echte account (Firebase uid of demo:…), niet anonieme gast-sessie. */
+export function isAccountProgressUser(userId) {
+  return Boolean(userId && userId !== 'guest')
+}
+
 function safeParse(raw) {
   try {
     return JSON.parse(raw)
@@ -104,8 +109,14 @@ export function markSummarySeen(userId, lmeId) {
   scheduleCloudIfNeeded(userId)
 }
 
+export function isPersistedRandomPracticeMode(lmeParam) {
+  return lmeParam?.startsWith('blok-random-') || lmeParam?.startsWith('blokken-random-')
+}
+
 export function loadPracticeProgress(userId, lmeParam) {
-  if (!userId || !lmeParam || isRandomMode(lmeParam)) return null
+  if (!userId || !lmeParam) return null
+  if (isPersistedRandomPracticeMode(lmeParam) && !isAccountProgressUser(userId)) return null
+  if (isRandomMode(lmeParam) && !isPersistedRandomPracticeMode(lmeParam)) return null
   const data = safeParse(localStorage.getItem(storageKeyPractice(userId, lmeParam)))
   if (!data || typeof data !== 'object') return null
   return data
@@ -119,7 +130,9 @@ function scheduleCloudIfNeeded(userId) {
 }
 
 export function savePracticeProgress(userId, lmeParam, payload) {
-  if (!userId || !lmeParam || isRandomMode(lmeParam)) return
+  if (!userId || !lmeParam) return
+  if (isPersistedRandomPracticeMode(lmeParam) && !isAccountProgressUser(userId)) return
+  if (isRandomMode(lmeParam) && !isPersistedRandomPracticeMode(lmeParam)) return
   try {
     localStorage.setItem(storageKeyPractice(userId, lmeParam), JSON.stringify(payload))
   } catch {

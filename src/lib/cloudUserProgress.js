@@ -159,12 +159,29 @@ function applyBundledProgressToLocal(userId, bundle) {
   }
 }
 
+function practiceProgressUpdatedAt(entry) {
+  if (!entry || typeof entry !== 'object') return 0
+  return typeof entry.updatedAt === 'number' ? entry.updatedAt : 0
+}
+
+function mergePracticeMaps(serverMap, localMap) {
+  const merged = { ...(serverMap || {}) }
+  for (const [key, localEntry] of Object.entries(localMap || {})) {
+    const serverEntry = merged[key]
+    if (!serverEntry) {
+      if (localEntry) merged[key] = localEntry
+      continue
+    }
+    if (practiceProgressUpdatedAt(localEntry) > practiceProgressUpdatedAt(serverEntry)) {
+      merged[key] = localEntry
+    }
+  }
+  return merged
+}
+
 /** Server-keys winnen; lokale keys die de server niet heeft blijven behouden. */
 function mergeServerWithLocal(localBundle, serverData) {
-  const practice = { ...(serverData.practice || {}) }
-  for (const [k, v] of Object.entries(localBundle.practice)) {
-    if (!(k in practice) && v) practice[k] = v
-  }
+  const practice = mergePracticeMaps(serverData.practice, localBundle.practice)
   const exams = { ...(serverData.exams || {}) }
   for (const [k, v] of Object.entries(localBundle.exams)) {
     if (!(k in exams) && v) exams[k] = v

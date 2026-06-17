@@ -89,6 +89,7 @@ export function isFreePlanBlockedPracticeLme(lmeParam) {
   if (!lmeParam || typeof lmeParam !== 'string') return false
   if (lmeParam.startsWith('blok-fouten-')) return true
   if (lmeParam.startsWith('blok-random-')) return true
+  if (lmeParam.startsWith('blokken-random-')) return true
   if (lmeParam.startsWith('casus-random-')) {
     const parsed = parseCasusRandomParam(lmeParam)
     if (!parsed) return true
