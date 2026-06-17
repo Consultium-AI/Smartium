@@ -74,7 +74,7 @@ import Casus10Lme2ImmunomodulatieSummary from '../summaries/casus10-lme2-immunom
 import Casus10Lme3RechtvaardigingSummary from '../summaries/casus10-lme3-rechtvaardiging-dwang-en-drang-morele-dilemmas/Casus10Lme3RechtvaardigingSummary'
 import Casus10Lme4WiskundeVaccinatieSummary from '../summaries/casus10-lme4-waarom-hoge-vaccinatiegraad-wiskunde-vaccinatie/Casus10Lme4WiskundeVaccinatieSummary'
 import Casus11Lme1LeefstijlSummary from '../summaries/casus11-lme1-leefstijl-en-immuunsysteem/Casus11Lme1LeefstijlSummary'
-import * as Casus12LME1Summaries from '../summaries/casus12-lme1-antibioticaresistentie-en-therapie'
+import Casus12Lme1AntibioticaresistentieSummary from '../summaries/casus12-lme1-antibioticaresistentie-en-therapie/Casus12Lme1AntibioticaresistentieSummary'
 import Casus12Lme2SepsisSummary from '../summaries/casus12-lme2-sepsis/Casus12Lme2SepsisSummary'
 import Casus12Lme3PatientMedicatieveiligheidSummary from '../summaries/casus12-lme3-patient-en-medicatieveiligheid/Casus12Lme3PatientMedicatieveiligheidSummary'
 import Casus12Lme4ZorggerelateerdeInfectiesSummary from '../summaries/casus12-lme4-zorggerelateerde-infecties/Casus12Lme4ZorggerelateerdeInfectiesSummary'
@@ -1758,18 +1758,9 @@ const SummaryPage = ({ forcedBlok = null }) => {
             {
               name: 'Casus C09: Obesitas',
               lmes: [
-                {
-                  id: 'blok10-week5-casus-c09-obesitas-chirurgische-obesitasbehandelingen',
-                  name: 'Chirurgische obesitasbehandelingen',
-                  available: true,
-                  moduleKind: 'lme',
-                },
-                {
-                  id: 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas',
-                  name: 'Elke arts behandelt obesitas',
-                  available: true,
-                  moduleKind: 'lme',
-                },
+                // LME 38 (Chirurgische obesitasbehandelingen) en LME 39 (Elke arts behandelt
+                // obesitas) tijdelijk verborgen: er is nog geen ingevuld bronmateriaal, alleen
+                // placeholder-samenvattingen. Terugzetten zodra de bron beschikbaar is.
                 {
                   id: 'blok10-week5-casus-c09-obesitas-lichaamsbeweging',
                   name: 'Lichaamsbeweging',
@@ -1823,12 +1814,8 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   available: true,
                   moduleKind: 'lme',
                 },
-                {
-                  id: 'blok10-week5-casus-c10-dm-type2-lipiden-lipoproteinen-metabole-dysregulatie',
-                  name: 'Lipiden, lipoproteinen en metabole dysregulatie',
-                  available: true,
-                  moduleKind: 'lme',
-                },
+                // LME 44 (Lipiden, lipoproteinen en metabole dysregulatie) tijdelijk verborgen:
+                // nog geen ingevuld bronmateriaal, alleen een placeholder-samenvatting.
                 {
                   id: 'blok10-week5-casus-c10-dm-type2-remissie-van-diabetes',
                   name: 'Remissie van diabetes',
@@ -2345,6 +2332,22 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Casus11Lme1LeefstijlSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Casus12Lme1AntibioticaresistentieSummary />
+        </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'casus12-lme2-sepsis') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+          <Casus12Lme2SepsisSummary />
         </SummaryLayout>
     )
   }
@@ -3612,7 +3615,7 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
-  if (activeLme === 'blok9-week1-casus1-acute-nieren-nierschade') {
+  if (activeLme === 'blok9-week1-casus1-acute-nierschade') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week1Casus1AcuteNierschadeSummary />
@@ -4000,22 +4003,6 @@ const SummaryPage = ({ forcedBlok = null }) => {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
           <Blok9Week5Casus10RitmestoornissenBijKinderenSummary />
-        </SummaryLayout>
-    )
-  }
-
-  if (activeLme === 'casus12-lme2-sepsis') {
-    return (
-      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
-          <Casus12Lme2SepsisSummary />
-        </SummaryLayout>
-    )
-  }
-
-  if (activeLme === 'casus12-lme1-antibioticaresistentie-en-therapie') {
-    return (
-      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
-          <Casus12Lme1AntibioticaresistentieSummary />
         </SummaryLayout>
     )
   }

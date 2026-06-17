@@ -382,7 +382,7 @@ COURSE_WEEKS: list[tuple[str, str, str, list[tuple[str, str, str]]]] = [
 ]
 
 # Blokken waarvan week/LME-lijst uit SummaryPage.jsx courseStructure komt.
-AUTO_COURSE_BLOKS = ("blok5",)
+AUTO_COURSE_BLOKS = ("blok5", "blok9", "blok10")
 
 
 def parse_course_structure_blok(text: str, blok_id: str) -> list[tuple[str, str, str, list[tuple[str, str, str]]]]:
@@ -401,26 +401,27 @@ def parse_course_structure_blok(text: str, blok_id: str) -> list[tuple[str, str,
     end = start + len(blok_id) + 3 + next_blok.start() if next_blok else len(text)
     section = text[start:end]
 
-    blok_name_m = re.search(r'name:\s*"([^"]+)"', section)
-    blok_name = blok_name_m.group(1) if blok_name_m else blok_id
+    blok_name_m = re.search(r"""name:\s*["']([^"']+)["']""", section)
+    blok_name = blok_name_m.group(1).strip() if blok_name_m else blok_id
 
     weeks: list[tuple[str, str, str, list[tuple[str, str, str]]]] = []
-    week_parts = re.split(r'\{\s*name:\s*"(Week \d+)"\s*,\s*cases:\s*\[', section)
+    # Quote-agnostisch: blok5/9 gebruiken dubbele quotes, blok10 enkele quotes.
+    week_parts = re.split(r"""\{\s*name:\s*["'](Week \d+)["']\s*,\s*cases:\s*\[""", section)
     for i in range(1, len(week_parts), 2):
         week_name = week_parts[i]
         week_body = week_parts[i + 1]
 
-        case_parts = re.split(r'\{\s*name:\s*"(Casus[^"]+)"\s*,\s*lmes:\s*\[', week_body)
+        case_parts = re.split(r"""\{\s*name:\s*["'](Casus[^"']+)["']\s*,\s*lmes:\s*\[""", week_body)
         entries: list[tuple[str, str, str]] = []
         for j in range(1, len(case_parts), 2):
             case_name = case_parts[j]
             case_body = case_parts[j + 1]
             for m in re.finditer(
-                r'id:\s*"([^"]+)"\s*,\s*name:\s*"((?:\\"|[^"])*)"\s*,\s*available:',
+                r"""id:\s*(["'])(?P<id>(?:\\.|(?!\1).)*)\1\s*,\s*name:\s*(["'])(?P<name>(?:\\.|(?!\3).)*)\3\s*,\s*available:""",
                 case_body,
             ):
-                lme_id = m.group(1)
-                lme_title = m.group(2).replace('\\"', '"')
+                lme_id = m.group("id")
+                lme_title = m.group("name").replace('\\"', '"').replace("\\'", "'")
                 entries.append((case_name, lme_id, lme_title))
 
         weeks.append((blok_id, blok_name, week_name, entries))
@@ -507,7 +508,10 @@ def resolve_js_path(rel_from_pages: Path) -> Path:
 
 
 def extract_arrow_body(content: str, component_name: str) -> str | None:
-    """Functiebody na `=> {` (werkt ook bij `({ standalone = true }) =>`)."""
+    """
+    Functiebody na de pijl. Ondersteunt zowel block-body `=> { … }` (blok9) als
+    impliciete return met haakjes `=> ( <JSX/> )` (blok10).
+    """
     needle = f"const {component_name}"
     idx = content.find(needle)
     if idx == -1:
@@ -515,19 +519,28 @@ def extract_arrow_body(content: str, component_name: str) -> str | None:
     arrow = content.find("=>", idx)
     if arrow == -1:
         return None
-    brace_start = content.find("{", arrow)
-    if brace_start == -1:
+
+    j = arrow + 2
+    while j < len(content) and content[j] in " \t\r\n":
+        j += 1
+    if j >= len(content):
         return None
+
+    open_ch = content[j]
+    close_ch = {"{": "}", "(": ")"}.get(open_ch)
+    if close_ch is None:
+        return None
+
     depth = 0
-    i = brace_start
+    i = j
     while i < len(content):
         c = content[i]
-        if c == "{":
+        if c == open_ch:
             depth += 1
-        elif c == "}":
+        elif c == close_ch:
             depth -= 1
             if depth == 0:
-                return content[brace_start + 1 : i]
+                return content[j + 1 : i]
         i += 1
     return None
 
@@ -707,10 +720,37 @@ def ordered_image_imports(main_jsx: str) -> list[str]:
 
 
 def ordered_sect_components(summary_content: str, comp: str) -> list[str]:
-    """Sect01… componenten in leesvolgorde uit SummaryLayout-children."""
+    """Sect01…/Section01… componenten in leesvolgorde uit SummaryLayout-children."""
     main_body = extract_arrow_body(summary_content, comp) or summary_content
     _, children = extract_summary_layout_parts(main_body)
-    return re.findall(r"<(Sect\d+\w*)\s*/>", children)
+    # blok9 gebruikt <Sect01…/>, blok10 gebruikt <Section01…/> (in ./sections/).
+    return re.findall(r"<(Sect(?:ion)?\d+\w*)\s*/>", children)
+
+
+def local_component_import_paths(content: str) -> dict[str, str]:
+    """component-naam -> relatief import-pad (bv. './sections/Section01Titel')."""
+    res: dict[str, str] = {}
+    for m in re.finditer(
+        r"""import\s+(\w+)\s+from\s+["'](\.[^"']+)["']""", content
+    ):
+        res[m.group(1)] = m.group(2)
+    return res
+
+
+def resolve_sect_file(folder: Path, sect: str, import_paths: dict[str, str]) -> Path:
+    """Bepaal het .jsx-bestand voor een sectiecomponent via het import-pad, met fallbacks."""
+    rel = import_paths.get(sect)
+    if rel:
+        candidate = (folder / rel)
+        if candidate.suffix.lower() != ".jsx":
+            candidate = candidate.with_suffix(".jsx")
+        if path_is_file(candidate):
+            return candidate
+    # Fallbacks: zelfde map of ./sections/
+    for cand in (folder / f"{sect}.jsx", folder / "sections" / f"{sect}.jsx"):
+        if path_is_file(cand):
+            return cand
+    return folder / f"{sect}.jsx"
 
 
 def extract_default_export_body(content: str) -> str | None:
@@ -726,12 +766,104 @@ def extract_default_export_body(content: str) -> str | None:
     return ret.group(1) if ret else inner
 
 
+def _md_inline_to_text(t: str) -> str:
+    """Verwijder markdown-vetmarkeringen (**…**) uit Inline/PBody-tekst."""
+    return t.replace("**", "")
+
+
+def _extract_string_list(segment: str) -> list[str]:
+    """Alle string-literals (backtick/'/\") in bronvolgorde uit één rij."""
+    cells: list[str] = []
+    for m in re.finditer(
+        r"`((?:\\`|[^`])*)`|'((?:\\'|[^'])*)'|\"((?:\\\"|[^\"])*)\"", segment
+    ):
+        val = m.group(1)
+        if val is None:
+            val = m.group(2)
+        if val is None:
+            val = m.group(3)
+        cells.append(_md_inline_to_text(val or ""))
+    return cells
+
+
+def _datatable_array_to_html(arr_text: str) -> str:
+    """[[kop…],[rij…],…] (JS-array) -> eenvoudige <table> voor de bestaande tabel-linearisatie."""
+    rows = re.findall(r"\[((?:[^\[\]])*)\]", arr_text)
+    if not rows:
+        return ""
+    html = ["<table>"]
+    for ri, row in enumerate(rows):
+        cells = _extract_string_list(row)
+        tag = "th" if ri == 0 else "td"
+        html.append("<tr>" + "".join(f"<{tag}>{c}</{tag}>" for c in cells) + "</tr>")
+    html.append("</table>")
+    return "\n" + "".join(html) + "\n"
+
+
+def resolve_const_arrays(content: str) -> dict[str, str]:
+    """const NAME = [ … ] -> arraytekst (balanced brackets), voor <DataTable rows={NAME} />."""
+    res: dict[str, str] = {}
+    for m in re.finditer(r"const\s+([A-Za-z_]\w*)\s*=\s*\[", content):
+        name = m.group(1)
+        start = content.index("[", m.end() - 1)
+        depth = 0
+        i = start
+        while i < len(content):
+            c = content[i]
+            if c == "[":
+                depth += 1
+            elif c == "]":
+                depth -= 1
+                if depth == 0:
+                    res[name] = content[start : i + 1]
+                    break
+            i += 1
+    return res
+
+
+def expand_section_shared_components(body: str, full_content: str) -> str:
+    """
+    Blok 10-secties houden tekst in SectionShared-componenten met template-literals:
+      <Inline>{`tekst`}</Inline>, <PBody text={`…`} />, <DataTable rows={[…] of NAME} />.
+    Zet die om naar gewone HTML vóór strip_jsx_exprs, zodat de tekst behouden blijft.
+    """
+    consts = resolve_const_arrays(full_content)
+
+    def rows_ident(m: re.Match) -> str:
+        arr = consts.get(m.group(1))
+        return "rows={" + arr + "}" if arr else m.group(0)
+
+    body = re.sub(r"rows=\{([A-Za-z_]\w*)\}", rows_ident, body)
+    body = re.sub(
+        r"<DataTable\s+rows=\{(\[[\s\S]*?\])\}\s*/>",
+        lambda m: _datatable_array_to_html(m.group(1)),
+        body,
+    )
+
+    def pbody(m: re.Match) -> str:
+        txt = m.group(1)
+        return "".join(
+            f"<p>{_md_inline_to_text(line.strip())}</p>"
+            for line in txt.split("\n")
+            if line.strip()
+        )
+
+    body = re.sub(r"<PBody\s+text=\{`([\s\S]*?)`\}\s*/>", pbody, body)
+    body = re.sub(
+        r"<Inline>\s*\{`([\s\S]*?)`\}\s*</Inline>",
+        lambda m: _md_inline_to_text(m.group(1)),
+        body,
+    )
+    return body
+
+
 def jsx_file_to_linear_text(content: str, comp_name: str | None = None) -> str:
     body = extract_arrow_body(content, comp_name) if comp_name else None
     if body is None:
         body = extract_default_export_body(content)
     if body is None:
         body = content
+    body = expand_section_shared_components(body, content)
     return jsx_body_to_full_text(body)
 
 
@@ -760,10 +892,11 @@ def load_summary_with_parts(content: str, comp: str, folder: Path) -> str:
     sects = ordered_sect_components(content, comp)
     if sects:
         toc_titles = extract_titles_from_toc(content)
+        import_paths = local_component_import_paths(content)
         chunks = []
         for i, sect in enumerate(sects):
             title = toc_titles[i] if i < len(toc_titles) else sect
-            ip = folder / f"{sect}.jsx"
+            ip = resolve_sect_file(folder, sect, import_paths)
             if not path_is_file(ip):
                 chunks.append(f"## {title}\n\n[Bestand ontbreekt: {ip.name}]")
                 continue

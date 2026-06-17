@@ -168,8 +168,9 @@ const SUMMARY_ORDER_SUFFIX = [
   'blok10-week4-casus-c08-levercirrose-levercirrose-en-complicaties',
   'blok10-week4-casus-c08-levercirrose-lmv-hcc',
   'blok10-week4-casus-c08-levercirrose-lmv-levertransplantatie',
-  'blok10-week5-casus-c09-obesitas-chirurgische-obesitasbehandelingen',
-  'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas',
+  // 'blok10-week5-casus-c09-obesitas-chirurgische-obesitasbehandelingen' (LME 38) en
+  // 'blok10-week5-casus-c09-obesitas-elke-arts-behandelt-obesitas' (LME 39) tijdelijk
+  // verborgen: nog geen ingevuld bronmateriaal (alleen placeholder-samenvattingen).
   'blok10-week5-casus-c09-obesitas-lichaamsbeweging',
   'blok10-week5-casus-c09-obesitas-lmo-medicamenteuze-obesitasbehandelingen',
   'blok10-week5-casus-c09-obesitas-lmo-niet-medicamenteuze-obesitasbehandelingen',
@@ -178,7 +179,8 @@ const SUMMARY_ORDER_SUFFIX = [
   'blok10-week5-casus-c10-dm-type2-symptomen-pathofysiologie-diagnostiek-dm2',
   'blok10-week5-casus-c10-dm-type2-langetermijn-complicaties-diabetes',
   'blok10-week5-casus-c10-dm-type2-leefstijl-voeding-preventie-dm2',
-  'blok10-week5-casus-c10-dm-type2-lipiden-lipoproteinen-metabole-dysregulatie',
+  // 'blok10-week5-casus-c10-dm-type2-lipiden-lipoproteinen-metabole-dysregulatie' (LME 44)
+  // tijdelijk verborgen: nog geen ingevuld bronmateriaal (alleen placeholder-samenvatting).
   'blok10-week5-casus-c10-dm-type2-remissie-van-diabetes',
   'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
 ]
