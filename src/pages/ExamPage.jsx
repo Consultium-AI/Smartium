@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
-import { ArrowRight, Shield, Sparkles, Activity } from 'lucide-react'
+import { ArrowRight, Shield, Sparkles, Activity, Stethoscope } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import { getProgressUserId } from '../utils/accountProgressStorage'
 import { useAuth } from '../context/AuthContext'
@@ -32,6 +32,14 @@ const TENTAMEN_BA2_CARDS = [
     Icon: Activity,
     iconBg: 'bg-teal-100 dark:bg-teal-500/20',
     iconColor: 'text-teal-600 dark:text-teal-400',
+  },
+  {
+    to: '/tentamen-blok10',
+    title: 'Blok 10',
+    subtitle: 'Maag-Darm-Lever',
+    Icon: Stethoscope,
+    iconBg: 'bg-amber-100 dark:bg-amber-500/20',
+    iconColor: 'text-amber-600 dark:text-amber-400',
   },
 ]
 
@@ -117,7 +125,7 @@ const ExamSelection = () => {
                 Bachelorjaar 2
               </h2>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                Blok 9
+                Blokken 9 en 10
               </p>
             </div>
             <div className="flex flex-col gap-3.5">

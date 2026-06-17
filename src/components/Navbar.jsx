@@ -69,6 +69,7 @@ const navItems = [
       ]},
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/tentamen-blok9' },
+        { name: 'Blok 10', href: '/tentamen-blok10' },
       ]},
     ],
   },

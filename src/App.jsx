@@ -77,6 +77,7 @@ function App() {
           <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />
           <Route path="/tentamen-blok5" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={5} /></ContentProtectionWrapper>} />
           <Route path="/tentamen-blok9" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper>} />
+          <Route path="/tentamen-blok10" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={10} /></ContentProtectionWrapper>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/billing" element={<BillingPage />} />
           <Route path="/settings/profile" element={<ProfileSettingsPage />} />

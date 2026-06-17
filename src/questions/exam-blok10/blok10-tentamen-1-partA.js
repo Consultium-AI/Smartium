@@ -1,0 +1,327 @@
+/** Blok 10 oefententamen 1 — casussen 1–2 · bron: Tentamen A VRAGEN + antwoordmodel (40 p totaal) */
+
+export const blok10Tentamen1PartA = [
+  {
+    id: 'casus-1',
+    title: 'Casus 1 – Patiënt met retrosternale klachten',
+    totalPoints: 10,
+    scenario:
+      'Een 48-jarige man presenteert zich op de polikliniek met sinds 8 maanden brandend maagzuur en zure regurgitatie, vooral ’s nachts en na late maaltijden. Hij heeft overgewicht. Hij gebruikt omeprazol, maar geeft aan dat dit nauwelijks helpt.',
+    questions: [
+      {
+        id: '1a',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wat is bij deze patiënt de eerste stap in het beleid?',
+        options: [
+          { letter: 'A', text: 'Direct fundoplicatie plannen' },
+          { letter: 'B', text: 'Controleren of de PPI correct en therapietrouw wordt ingenomen' },
+          { letter: 'C', text: 'Meteen impedantiemeting verrichten' },
+          { letter: 'D', text: 'Standaard antibiotica geven tegen H. pylori' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Eerst controleren of de PPI correct en therapietrouw wordt ingenomen.',
+      },
+      {
+        id: '1b',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Welk symptoom is een alarmsymptoom waarbij gastroscopie altijd is aangewezen?',
+        options: [
+          { letter: 'A', text: 'Zuurbranden na vet eten' },
+          { letter: 'B', text: 'Opboeren' },
+          { letter: 'C', text: 'Dysfagie' },
+          { letter: 'D', text: 'Klachten vooral in rugligging' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Dysfagie is een alarmsymptoom waarbij gastroscopie altijd is aangewezen.',
+      },
+      {
+        id: '1c',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Bij een patiënt met niet-bewezen GERD en persisterende klachten kan 24-uurs pH-metrie worden overwogen. Wat moet vooraf met de PPI gebeuren?',
+        options: [
+          { letter: 'A', text: 'PPI gewoon doorgebruiken tot het onderzoek' },
+          { letter: 'B', text: 'PPI minimaal 7 dagen tevoren stoppen' },
+          { letter: 'C', text: 'PPI alleen op de onderzoeksdag overslaan' },
+          { letter: 'D', text: 'PPI verdubbelen in de week voorafgaand aan het onderzoek' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'PPI minimaal 7 dagen vóór pH-metrie stoppen bij niet-bewezen GERD.',
+      },
+      {
+        id: '1d',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Welke diagnose past het best bij normale zure blootstelling maar positieve symptoomassociatie?',
+        options: [
+          { letter: 'A', text: 'Functionele heartburn' },
+          { letter: 'B', text: 'Refluxhypersensitiviteit' },
+          { letter: 'C', text: 'Barrett-oesofagus' },
+          { letter: 'D', text: 'Achalasie' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Refluxhypersensitiviteit = normale zure blootstelling met positieve symptoomassociatie.',
+      },
+      {
+        id: '1e',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Welke extra medicatie kan vooral worden overwogen bij nachtelijk zuurbranden ondanks PPI?',
+        options: [
+          { letter: 'A', text: 'Famotidine' },
+          { letter: 'B', text: 'Loperamide' },
+          { letter: 'C', text: 'Lactulose' },
+          { letter: 'D', text: 'Ursodeoxycholzuur' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Famotidine kan worden overwogen bij nachtelijk zuurbranden ondanks PPI.',
+      },
+      {
+        id: '1f',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wanneer kan chirurgie bij bewezen GERD worden overwogen?',
+        options: [
+          { letter: 'A', text: 'Alleen bij patiënten jonger dan 30 jaar' },
+          {
+            letter: 'B',
+            text: 'Bij medicatiefalen, PPI-intolerantie of complicaties zoals peptische strictuur',
+          },
+          { letter: 'C', text: 'Alleen als er geen reflux meer aantoonbaar is' },
+          { letter: 'D', text: 'Alleen bij patiënten zonder hernia diafragmatica' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          'Chirurgie kan bij bewezen GERD worden overwogen bij medicatiefalen, PPI-intolerantie of complicaties.',
+      },
+      {
+        id: '1g',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Een andere patiënt presenteert zich met progressieve dysfagie voor vast en vloeibaar voedsel. Er is verdenking op een motiliteitsstoornis van de slokdarm.\n\nWelke uitspraak past het best bij achalasie?',
+        options: [
+          { letter: 'A', text: 'De LES ontspant te gemakkelijk en de peristaltiek is versterkt' },
+          { letter: 'B', text: 'De LES ontspant onvoldoende en normale peristaltiek ontbreekt' },
+          { letter: 'C', text: 'De pylorus ontspant onvoldoende door vagusschade' },
+          { letter: 'D', text: 'De maaglediging is versneld door hypersensitiviteit' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Achalasie = onvoldoende LES-relaxatie en afwezige normale peristaltiek.',
+      },
+      {
+        id: '1h',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wat is de belangrijkste diagnostische test om achalasie te bevestigen?',
+        options: [
+          { letter: 'A', text: 'Echo bovenbuik' },
+          { letter: 'B', text: 'Colonoscopie' },
+          { letter: 'C', text: 'Hoge-resolutiemanometrie' },
+          { letter: 'D', text: 'CT-colonografie' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Hoge-resolutiemanometrie bevestigt achalasie.',
+      },
+      {
+        id: '1i',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Bij een gastroscopie wegens langdurige refluxklachten wordt een afwijkend slijmvliesbeeld in de distale slokdarm gezien.\n\nHoe herken je Barrett-oesofagus endoscopisch het best?',
+        options: [
+          { letter: 'A', text: 'Als zwarte necrotische plaques' },
+          { letter: 'B', text: 'Als zalmroze verkleuring van het slokdarmepitheel' },
+          { letter: 'C', text: 'Als witte pseudomembranen' },
+          { letter: 'D', text: 'Als een ringvormige strictuur' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Barrett herken je endoscopisch als zalmroze verkleuring van het slokdarmepitheel.',
+      },
+      {
+        id: '1j',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wat is de voorkeursbehandeling bij hooggradige dysplasie in Barrett-oesofagus?',
+        options: [
+          { letter: 'A', text: 'Alleen controle na 5 jaar' },
+          {
+            letter: 'B',
+            text: 'Endoscopische eradicatietherapie: resectie zichtbare laesies + ablatie resterend Barrett-slijmvlies',
+          },
+          { letter: 'C', text: 'Meteen palliatieve slokdarmstent' },
+          { letter: 'D', text: 'Alleen antacida zo nodig' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          'Bij hooggradige dysplasie: endoscopische eradicatietherapie met resectie en ablatie van resterend Barrett-slijmvlies.',
+      },
+    ],
+  },
+  {
+    id: 'casus-2',
+    title: 'Casus 2 – Patiënt met afwijkende leverwaarden',
+    totalPoints: 10,
+    scenario:
+      'Een 56-jarige vrouw wordt verwezen door de huisarts wegens afwijkende leverenzymen. Zij heeft type 2 diabetes mellitus, obesitas en dyslipidemie. Op echo is leververvetting gezien. Ze gebruikt daarnaast sinds 10 dagen amoxicilline/clavulaanzuur voor een luchtweginfectie.',
+    questions: [
+      {
+        id: '2a',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Welke classificatie past het best bij leververvetting plus minimaal één metabole risicofactor?',
+        options: [
+          { letter: 'A', text: 'ALD' },
+          { letter: 'B', text: 'MASLD' },
+          { letter: 'C', text: 'HILI' },
+          { letter: 'D', text: 'Auto-immuunhepatitis' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'MASLD = leververvetting + minimaal één metabole risicofactor.',
+      },
+      {
+        id: '2b',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Waarom wordt geen massascreening van de algemene bevolking op SLD/MASLD aanbevolen?',
+        options: [
+          { letter: 'A', text: 'Omdat simpele steatose nooit voorkomt' },
+          {
+            letter: 'B',
+            text: 'Vanwege veel fout-positieven, onnodige ongerustheid en overbelasting van de zorg',
+          },
+          { letter: 'C', text: 'Omdat leverfibrose alleen met biopt zichtbaar is' },
+          { letter: 'D', text: 'Omdat screening alleen zin heeft bij icterus' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Geen massascreening door fout-positieven, onnodige ongerustheid en zorgbelasting.',
+      },
+      {
+        id: '2c',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Vanaf welk fibrosestadium spreekt de stof van klinisch relevante fibrose?',
+        options: [
+          { letter: 'A', text: 'F0' },
+          { letter: 'B', text: 'F1' },
+          { letter: 'C', text: 'F2' },
+          { letter: 'D', text: 'F4' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Vanaf F2 is sprake van klinisch relevante fibrose.',
+      },
+      {
+        id: '2d',
+        type: 'meerdere_antwoorden',
+        points: 1.0,
+        partialCreditOnlyCorrect: true,
+        pointsPerCorrect: 0.25,
+        question: 'Welke patiënten komen in aanmerking voor gerichte screening op fibrose bij SLD?',
+        options: [
+          { letter: 'A', text: 'Patiënten met type 2 diabetes' },
+          { letter: 'B', text: 'Patiënten met obesitas of viscerale adipositas' },
+          { letter: 'C', text: 'Patiënten met metabool syndroom' },
+          { letter: 'D', text: 'Iedereen zonder risicofactoren' },
+          { letter: 'E', text: 'Patiënten met een combinatie van metabole risicofactoren' },
+        ],
+        correctAnswers: ['A', 'B', 'C', 'E'],
+        explanation:
+          'Gerichte screening bij type 2 diabetes, obesitas/viscerale adipositas, metabool syndroom en combinatie van metabole risicofactoren.',
+      },
+      {
+        id: '2e',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Welke twee hoofdgroepen van niet-invasieve diagnostiek van leverfibrose noemt de stof?',
+        options: [
+          { letter: 'A', text: 'Serumgebaseerde scores en elastografie' },
+          { letter: 'B', text: 'ERCP en EUS' },
+          { letter: 'C', text: 'Colonoscopie en sigmoïdoscopie' },
+          { letter: 'D', text: 'Alleen leverbiopt en MRI' },
+        ],
+        correctAnswer: 'A',
+        explanation: 'Niet-invasieve diagnostiek: serumgebaseerde scores en elastografie.',
+      },
+      {
+        id: '2f',
+        type: 'meerkeuze',
+        points: 1.0,
+        question:
+          'Welk gewichtsdoel wordt genoemd voor verbetering van MASH/leverontsteking bij MASLD met overgewicht of obesitas?',
+        options: [
+          { letter: 'A', text: '1–2%' },
+          { letter: 'B', text: '3–5%' },
+          { letter: 'C', text: '7–10%' },
+          { letter: 'D', text: '>20%' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Gewichtsverlies van 7–10% wordt genoemd voor verbetering van MASH/leverontsteking.',
+      },
+      {
+        id: '2g',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wat is de eerste stap bij vermoeden op DILI/HILI?',
+        options: [
+          { letter: 'A', text: 'Herstarten van het verdachte middel ter bevestiging' },
+          { letter: 'B', text: 'Direct starten met langdurige antibiotica' },
+          { letter: 'C', text: 'Stoppen van het verdachte middel' },
+          { letter: 'D', text: 'Meteen levertransplantatie aanvragen' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Eerste stap bij DILI/HILI: stoppen met het verdachte middel.',
+      },
+      {
+        id: '2h',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Welk labpatroon past het best bij cholestatische geneesmiddelgeïnduceerde leverschade?',
+        options: [
+          { letter: 'A', text: 'ASAT/ALAT sterk verhoogd, AF/GGT licht verhoogd' },
+          {
+            letter: 'B',
+            text: 'AF/GGT sterk verhoogd, bilirubine verhoogd, ASAT/ALAT minimaal verhoogd',
+          },
+          { letter: 'C', text: 'Alleen lipase verhoogd' },
+          { letter: 'D', text: 'Alleen albumine verlaagd' },
+        ],
+        correctAnswer: 'B',
+        explanation:
+          'Cholestatisch patroon: AF/GGT sterk verhoogd, bilirubine verhoogd en ASAT/ALAT relatief minder verhoogd.',
+      },
+      {
+        id: '2i',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Wat is het antidotum bij paracetamolgeïnduceerde leverschade?',
+        options: [
+          { letter: 'A', text: 'Octreotide' },
+          { letter: 'B', text: 'Lactulose' },
+          { letter: 'C', text: 'Acetylcysteïne' },
+          { letter: 'D', text: 'Ciprofloxacine' },
+        ],
+        correctAnswer: 'C',
+        explanation: 'Antidotum bij paracetamolintoxicatie: acetylcysteïne.',
+      },
+      {
+        id: '2j',
+        type: 'meerkeuze',
+        points: 1.0,
+        question: 'Waarom moet je alcoholgebruik altijd expliciet navragen bij steatotische leverziekte?',
+        options: [
+          { letter: 'A', text: 'Alleen voor de BMI-berekening' },
+          { letter: 'B', text: 'Omdat het de classificatie, behandeling en prognose beïnvloedt' },
+          { letter: 'C', text: 'Alleen om HCC uit te sluiten' },
+          { letter: 'D', text: 'Omdat alcohol geen rol speelt bij leverfibrose' },
+        ],
+        correctAnswer: 'B',
+        explanation: 'Alcoholgebruik beïnvloedt classificatie, behandeling en prognose.',
+      },
+    ],
+  },
+]
