@@ -3,6 +3,9 @@ const BLOCKED_BLOK5_CASUS_FOR_FREE = new Set([5, 7, 9, 11, 13])
 /** Blok 5 oefententamens 3–5 alleen met premium (1–2 gratis). */
 export const BLOK5_PREMIUM_EXAM_NUMBERS = new Set([3, 4, 5])
 
+/** Blok 10 oefententamens 3–5 alleen met premium (1–2 gratis). */
+export const BLOK10_PREMIUM_EXAM_NUMBERS = new Set([3, 4, 5])
+
 const FREE_ALLOWED_EXAMS_BY_BLOK = {
   4: new Set([1, 2]),
   5: new Set([1, 2]),
@@ -112,10 +115,15 @@ export function isBlok5PremiumExam(examNr) {
   return BLOK5_PREMIUM_EXAM_NUMBERS.has(Number(examNr))
 }
 
+export function isBlok10PremiumExam(examNr) {
+  return BLOK10_PREMIUM_EXAM_NUMBERS.has(Number(examNr))
+}
+
 export function isFreePlanAllowedExam(blok, examNr) {
   const b = Number(blok)
   const nr = Number(examNr)
   if (b === 5 && isBlok5PremiumExam(nr)) return false
+  if (b === 10 && isBlok10PremiumExam(nr)) return false
   const allowed = FREE_ALLOWED_EXAMS_BY_BLOK[b]
   if (!allowed) return true
   return allowed.has(nr)

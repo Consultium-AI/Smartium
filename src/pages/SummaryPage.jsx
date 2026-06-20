@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import {
   FileText, Home, BookOpen, Clock, ChevronDown, ChevronRight,
-  GraduationCap, Calendar, Stethoscope, ClipboardCheck, Shield, Droplets, Layers, Lock, CheckCircle2, FlaskConical
+  GraduationCap, ClipboardCheck, Shield, Droplets, Layers, Lock, CheckCircle2, FlaskConical
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { formatSummaryBlokSubtitle } from '../utils/blokRollupStats'
@@ -14,6 +14,7 @@ import { COIN_REWARDS } from '../lib/rewardSystem'
 import { getProgressUserId, loadSummarySeenMap, markSummarySeen } from '../utils/accountProgressStorage'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import SummaryCourseModuleLink from '../components/SummaryCourseModuleLink'
+import SummaryCourseWeekTree from '../components/SummaryCourseWeekTree'
 import { splitCasusModules } from '../utils/courseModuleKind'
 import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 import { Header, Footer, SummaryLayout } from './summary/SummaryShared'
@@ -286,6 +287,8 @@ import Blok10Week5CasusC10DmType2LmeLeefstijlVoedingPreventieDm2Summary from '..
 import Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-lipiden-lipoproteinen-metabole-dysregulatie/Blok10Week5CasusC10DmType2LmeLipidenLipoproteinenMetaboleDysregulatieSummary'
 import Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/lme-remissie-van-diabetes/Blok10Week5CasusC10DmType2LmeRemissieVanDiabetesSummary'
 import Blok10Week5CasusC10DmType2FlankerendOnderwijsLmoMedicamenteuzeBehandelingVanDiabetesType2Summary from '../summaries/samenvattingen-b10/week-5/casus-c10-dm-type2/flankerend-onderwijs/lmo-medicamenteuze-behandeling-van-diabetes-type-2/Blok10Week5CasusC10DmType2FlankerendOnderwijsLmoMedicamenteuzeBehandelingVanDiabetesType2Summary'
+import Blok10CookedSamenvattingHeleBlokSummary from '../summaries/samenvattingen-b10/cooked-samenvatting-hele-blok/Blok10CookedSamenvattingHeleBlokSummary'
+import Blok10StampfeitjesHeleBlokSummary from '../summaries/samenvattingen-b10/stampfeitjes-hele-blok/Blok10StampfeitjesHeleBlokSummary'
 
 // Main Summary Page Component
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
@@ -1376,6 +1379,28 @@ const SummaryPage = ({ forcedBlok = null }) => {
     blok10: {
       name: 'Blok 10: Maag-Darm-Lever ',
       weeks: [
+        {
+          name: 'Blokoverzicht',
+          cases: [
+            {
+              name: 'Compacte samenvatting hele blok',
+              lmes: [
+                {
+                  id: 'blok10-cooked-samenvatting-hele-blok',
+                  name: 'Cooked samenvatting - hele blok 10',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+                {
+                  id: 'blok10-stampfeitjes-hele-blok',
+                  name: 'Irritante stampfeitjes - hele blok 10',
+                  available: true,
+                  moduleKind: 'lme',
+                },
+              ],
+            },
+          ],
+        },
         {
           name: 'Week 1',
           cases: [
@@ -3615,6 +3640,22 @@ const SummaryPage = ({ forcedBlok = null }) => {
     )
   }
 
+  if (activeLme === 'blok10-cooked-samenvatting-hele-blok') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10CookedSamenvattingHeleBlokSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (activeLme === 'blok10-stampfeitjes-hele-blok') {
+    return (
+      <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
+        <Blok10StampfeitjesHeleBlokSummary />
+      </SummaryLayout>
+    )
+  }
+
   if (activeLme === 'blok9-week1-casus1-acute-nierschade') {
     return (
       <SummaryLayout lmeId={activeLme} lmeName={lmeMap[activeLme]?.name || activeLme} activeLmeId={activeLme} onVariantSwitch={handleVariantSwitch}>
@@ -4198,29 +4239,12 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
                   <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    {courseStructure.blok3.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                        <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-primary-500 dark:bg-primary-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-primary-500/20 dark:ring-primary-400/30" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                          </div>
-                        </div>
-
-                        {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-5 last:mb-0">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                              </div>
-                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                            </div>
-
-                            {renderCaseSections(casus)}
-                          </div>
-                        ))}
-
+                    <SummaryCourseWeekTree
+                      blokKey="blok3"
+                      weeks={courseStructure.blok3.weeks}
+                      accentVariant="primary"
+                      renderCaseSections={renderCaseSections}
+                      renderWeekFooter={() => (
                         <Link to="/oefenvragen" className="block ml-0 sm:ml-2 mt-4">
                           <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
                             bg-accent-50 dark:bg-accent-500/10
@@ -4241,8 +4265,8 @@ const SummaryPage = ({ forcedBlok = null }) => {
                             <ChevronRight className="w-4 h-4 text-accent-600 dark:text-accent-400 shrink-0" />
                           </div>
                         </Link>
-                      </div>
-                    ))}
+                      )}
+                    />
                   </div>
                 </motion.div>
               )}
@@ -4288,30 +4312,13 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
                   <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    {courseStructure.blok4.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="mb-8 last:mb-0 border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                        <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-indigo-500 dark:bg-indigo-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-indigo-500/20 dark:ring-indigo-400/30" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                          </div>
-                        </div>
-
-                        {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-5 last:mb-0">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                              </div>
-                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                            </div>
-
-                            {renderCaseSections(casus)}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                    <SummaryCourseWeekTree
+                      blokKey="blok4"
+                      weeks={courseStructure.blok4.weeks}
+                      accentVariant="indigo"
+                      weekSpacing="loose"
+                      renderCaseSections={renderCaseSections}
+                    />
                   </div>
                 </motion.div>
               )}
@@ -4361,30 +4368,12 @@ const SummaryPage = ({ forcedBlok = null }) => {
                       title="Weekoverzicht blok 5 — BA1 2025–26"
                       pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
                     />
-                    {courseStructure.blok5.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                        <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-rose-500 dark:bg-rose-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-rose-500/20 dark:ring-rose-400/30" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                          </div>
-                        </div>
-
-                        {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-5 last:mb-0">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                              </div>
-                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                            </div>
-
-                            {renderCaseSections(casus)}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                    <SummaryCourseWeekTree
+                      blokKey="blok5"
+                      weeks={courseStructure.blok5.weeks}
+                      accentVariant="rose"
+                      renderCaseSections={renderCaseSections}
+                    />
                   </div>
                 </motion.div>
               )}
@@ -4451,30 +4440,12 @@ const SummaryPage = ({ forcedBlok = null }) => {
                       title="Weekoverzicht blok 9 — BA2 2025–26"
                       pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
                     />
-                    {courseStructure.blok9.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                        <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-cyan-500 dark:bg-cyan-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-cyan-500/20 dark:ring-cyan-400/30" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                          </div>
-                        </div>
-
-                        {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-5 last:mb-0">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                              </div>
-                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                            </div>
-
-                            {renderCaseSections(casus)}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                    <SummaryCourseWeekTree
+                      blokKey="blok9"
+                      weeks={courseStructure.blok9.weeks}
+                      accentVariant="cyan"
+                      renderCaseSections={renderCaseSections}
+                    />
                   </div>
                 </motion.div>
               )}
@@ -4520,30 +4491,12 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                 >
                   <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    {courseStructure.blok10.weeks.map((week, weekIndex) => (
-                      <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                        <div className="flex items-center gap-3 mb-4 -ml-7">
-                          <div className="w-3 h-3 rounded-full bg-violet-500 dark:bg-violet-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-violet-500/20 dark:ring-violet-400/30" />
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                            <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                            <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                          </div>
-                        </div>
-
-                        {week.cases.map((casus, casusIndex) => (
-                          <div key={casusIndex} className="mb-5 last:mb-0">
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                              </div>
-                              <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                            </div>
-
-                            {renderCaseSections(casus)}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                    <SummaryCourseWeekTree
+                      blokKey="blok10"
+                      weeks={courseStructure.blok10.weeks}
+                      accentVariant="violet"
+                      renderCaseSections={renderCaseSections}
+                    />
                   </div>
                 </motion.div>
               )}

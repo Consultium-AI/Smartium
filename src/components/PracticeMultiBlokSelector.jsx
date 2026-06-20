@@ -117,18 +117,18 @@ export default function PracticeMultiBlokSelector({
       aria-labelledby="practice-multi-blok-heading"
       className={
         waifuMode
-          ? 'mb-10 rounded-3xl border border-pink-500/30 p-5 shadow-lg shadow-fuchsia-500/10 waifu-glass sm:p-6'
+          ? 'mb-10 sm:p-1'
           : 'mb-10 rounded-2xl border border-slate-200/90 bg-white/90 p-5 shadow-sm ring-1 ring-slate-900/5 dark:border-slate-700/90 dark:bg-slate-900/80 dark:ring-white/5 sm:p-6'
       }
     >
-      <div className="mb-5 text-left">
+      <div className={`mb-5 text-left ${waifuMode ? 'waifu-practice-inset rounded-2xl p-4 sm:p-5' : ''}`}>
         <h2
           id="practice-multi-blok-heading"
-          className={`text-lg font-bold ${waifuMode ? 'text-pink-900 dark:text-pink-100' : 'text-slate-900 dark:text-slate-100'}`}
+          className={`text-lg font-bold ${waifuMode ? 'waifu-practice-heading' : 'text-slate-900 dark:text-slate-100'}`}
         >
           {waifuMode ? '✧ Studeer voor meerdere blokken ✧' : 'Studeer voor meerdere blokken'}
         </h2>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+        <p className={`mt-1 text-sm ${waifuMode ? 'waifu-practice-subtitle' : 'text-slate-500 dark:text-slate-400'}`}>
           Selecteer één of meer blokken. Je krijgt willekeurige oefenvragen uit alle LM&apos;s van die
           blokken.
         </p>
@@ -154,6 +154,8 @@ export default function PracticeMultiBlokSelector({
               onClick={() => toggleBlok(key)}
               aria-pressed={isSelected}
               className={`flex items-start gap-3 rounded-xl border p-4 text-left transition-all ${
+                waifuMode ? 'waifu-practice-inset waifu-practice-blok-btn' : ''
+              } ${
                 isSelected
                   ? `border-transparent bg-slate-50 ring-2 ${ring} dark:bg-slate-800/90`
                   : 'border-slate-200/90 bg-white hover:border-slate-300 dark:border-slate-700/90 dark:bg-slate-900/50 dark:hover:border-slate-600'
@@ -189,7 +191,7 @@ export default function PracticeMultiBlokSelector({
       </div>
 
       <div className="mt-5 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-        <div className="text-sm text-slate-500 dark:text-slate-400">
+        <div className={`text-sm ${waifuMode ? 'waifu-practice-outside' : 'text-slate-500 dark:text-slate-400'}`}>
           {selectedKeys.length === 0
             ? resumeSessions.length > 0
               ? 'Kies blokken voor een nieuwe sessie.'
@@ -206,7 +208,7 @@ export default function PracticeMultiBlokSelector({
                     value={selectedResumeParam ?? ''}
                     onChange={(e) => setSelectedResumeParam(e.target.value)}
                     aria-label="Kies een sessie om verder te gaan"
-                    className="w-full appearance-none rounded-xl border border-slate-200 bg-white py-3 pl-3 pr-9 text-sm font-semibold text-slate-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200"
+                    className={`w-full appearance-none rounded-xl border border-slate-200 bg-white py-3 pl-3 pr-9 text-sm font-semibold text-slate-700 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200${waifuMode ? ' waifu-practice-inset' : ''}`}
                   >
                     {resumeSessions.map((session) => (
                       <option key={session.lmeParam} value={session.lmeParam}>
@@ -220,7 +222,7 @@ export default function PracticeMultiBlokSelector({
                   />
                 </div>
               ) : (
-                <span className="rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-3 text-sm font-semibold tabular-nums text-slate-700 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200">
+                <span className={`rounded-xl border border-slate-200/90 bg-slate-50 px-3 py-3 text-sm font-semibold tabular-nums text-slate-700 dark:border-slate-600 dark:bg-slate-800/80 dark:text-slate-200${waifuMode ? ' waifu-practice-inset' : ''}`}>
                   {selectedResume.shortLabel}
                 </span>
               )}

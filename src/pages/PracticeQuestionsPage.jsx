@@ -130,6 +130,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const progressUserId = getProgressUserId(user, authLoading)
   const hasAccountProgress = isAccountProgressUser(progressUserId)
   const waifuMode = isWaifuPremiumUser(user)
+  const waifuInset = waifuMode ? ' waifu-practice-inset' : ''
   const blokParam = searchParams.get('blok')
   const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
   const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
@@ -653,7 +654,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   }
 
   return (
-    <div className={waifuMode ? 'waifu-page-shell min-h-screen' : 'min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300'}>
+    <div className={waifuMode ? 'waifu-page-shell waifu-practice-page min-h-screen' : 'min-h-screen bg-gradient-to-br from-cream-50 via-white to-primary-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300'}>
       <Navbar />
       <div className="h-20" />
 
@@ -713,19 +714,19 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-center ${lmeParam ? 'mb-10 md:mb-14 max-w-3xl mx-auto space-y-4' : 'mb-8 max-w-3xl mx-auto'}`}
+          className={`text-center ${lmeParam ? 'mb-10 md:mb-14 max-w-3xl mx-auto space-y-4' : 'mb-8 max-w-3xl mx-auto'} ${waifuMode ? 'waifu-practice-inset waifu-practice-hero' : ''}`}
         >
           <h1
             className={`text-3xl font-bold tracking-tight ${lmeParam ? 'mb-3' : 'mb-1'} ${
-              waifuMode ? 'waifu-hero-title' : 'text-slate-900 dark:text-slate-50'
+              waifuMode ? 'waifu-practice-title' : 'text-slate-900 dark:text-slate-50'
             }`}
           >
             {getPracticeTitleForLme(lmeParam)}{' '}
-            <span className={waifuMode ? 'text-fuchsia-500 dark:text-pink-300' : 'text-accent-500 dark:text-accent-400'}>
+            <span className={waifuMode ? 'text-pink-600' : 'text-accent-500 dark:text-accent-400'}>
               Oefenvragen {waifuMode ? '♡' : ''}
             </span>
           </h1>
-          <p className={`text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto ${lmeParam ? 'leading-relaxed' : ''}`}>
+          <p className={`text-sm max-w-lg mx-auto ${lmeParam ? 'leading-relaxed' : ''} ${waifuMode ? 'waifu-practice-subtitle' : 'text-slate-500 dark:text-slate-400'}`}>
             {getPracticeSubtitleForLme(lmeParam)}
           </p>
           {lmeParam?.startsWith('blok10-week2-casus-c04-diarree-aanhoudende-buikklachten') && (
@@ -963,7 +964,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                       </p>
                     </div>
                     <div className="flex flex-col gap-4">
-                      <Link to="/oefenvragen-blok3" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors">
+                      <Link to="/oefenvragen-blok3" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors${waifuInset}`}>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-500/20">
                             <GraduationCap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
@@ -975,7 +976,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto" />
                         </div>
                       </Link>
-                      <Link to="/oefenvragen-blok4" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors">
+                      <Link to="/oefenvragen-blok4" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors${waifuInset}`}>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20">
                             <Shield className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -987,7 +988,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 ml-auto" />
                         </div>
                       </Link>
-                      <Link to="/oefenvragen-blok5" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors sm:col-span-2">
+                      <Link to="/oefenvragen-blok5" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors sm:col-span-2${waifuInset}`}>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-500/20">
                             <Sparkles className="w-5 h-5 text-rose-600 dark:text-rose-400" />
@@ -1012,7 +1013,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                       </p>
                     </div>
                     <div className="flex flex-col gap-4">
-                      <Link to="/oefenvragen-blok9" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-teal-400/70 transition-colors">
+                      <Link to="/oefenvragen-blok9" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-teal-400/70 transition-colors${waifuInset}`}>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-teal-100 dark:bg-teal-500/20">
                             <Activity className="w-5 h-5 text-teal-600 dark:text-teal-400" />
@@ -1024,7 +1025,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                           <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-teal-500 ml-auto" />
                         </div>
                       </Link>
-                      <Link to="/oefenvragen-blok10" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors">
+                      <Link to="/oefenvragen-blok10" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors${waifuInset}`}>
                         <div className="flex items-center gap-3">
                           <div className="p-2.5 rounded-xl bg-violet-100 dark:bg-violet-500/20">
                             <FlaskConical className="w-5 h-5 text-violet-600 dark:text-violet-400" />
@@ -1056,7 +1057,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
             <div className="mt-8 space-y-4 text-left">
               {/* Blok 3 */}
               {forcedBlokKey === 'blok3' && (
-              <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+              <div id="section-blok3" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -1130,7 +1131,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
 
               {/* Blok 4 */}
               {forcedBlokKey === 'blok4' && (
-              <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+              <div id="section-blok4" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -1204,7 +1205,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
 
               {/* Blok 5 */}
               {forcedBlokKey === 'blok5' && (
-              <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+              <div id="section-blok5" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -1282,7 +1283,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
 
               {/* Blok 9 */}
               {forcedBlokKey === 'blok9' && (
-              <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+              <div id="section-blok9" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -1360,7 +1361,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
 
               {/* Blok 10 */}
               {forcedBlokKey === 'blok10' && (
-              <div id="section-blok10" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
+              <div id="section-blok10" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
                 <button
                   type="button"
                   onClick={() => {
@@ -1466,7 +1467,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl mx-auto mb-10 rounded-2xl border border-navy-100 dark:border-slate-600 bg-white/90 dark:bg-slate-800/50 px-6 py-8 text-center"
+            className={`max-w-3xl mx-auto mb-10 rounded-2xl border border-navy-100 dark:border-slate-600 bg-white/90 dark:bg-slate-800/50 px-6 py-8 text-center${waifuInset}`}
           >
             <p className="text-navy-700 dark:text-slate-300 font-medium">
               {lmeParam?.startsWith('blok-fouten-')
@@ -1487,7 +1488,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl mx-auto mb-10 rounded-2xl border border-navy-100 dark:border-slate-600 bg-white/90 dark:bg-slate-800/50 px-6 py-8 text-center"
+            className={`max-w-3xl mx-auto mb-10 rounded-2xl border border-navy-100 dark:border-slate-600 bg-white/90 dark:bg-slate-800/50 px-6 py-8 text-center${waifuInset}`}
           >
             <p className="text-navy-700 dark:text-slate-300 font-medium">
               Voor dit onderdeel staan er nog geen meerkeuzevragen in de dataset.
@@ -1584,7 +1585,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
             transition={{ duration: 0.2 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="bg-white dark:bg-slate-800/50 rounded-3xl shadow-soft-lg border border-navy-100 dark:border-slate-600 overflow-hidden">
+            <div className={`bg-white dark:bg-slate-800/50 rounded-3xl shadow-soft-lg border border-navy-100 dark:border-slate-600 overflow-hidden${waifuInset}`}>
               {/* Question Header */}
               <div className="px-6 py-4 bg-gradient-to-r from-navy-50 to-primary-50 dark:from-slate-800 dark:to-slate-700/50 border-b border-navy-100 dark:border-slate-600">
                 <div className="flex items-center justify-between">

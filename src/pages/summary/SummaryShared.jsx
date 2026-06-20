@@ -183,6 +183,8 @@ const SUMMARY_ORDER_SUFFIX = [
   // tijdelijk verborgen: nog geen ingevuld bronmateriaal (alleen placeholder-samenvatting).
   'blok10-week5-casus-c10-dm-type2-remissie-van-diabetes',
   'blok10-week5-casus-c10-dm-type2-lmo-medicamenteuze-behandeling-van-diabetes-type-2',
+  'blok10-cooked-samenvatting-hele-blok',
+  'blok10-stampfeitjes-hele-blok',
 ]
 
 export const SUMMARY_ORDER = [
