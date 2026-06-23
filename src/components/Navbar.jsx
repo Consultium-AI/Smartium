@@ -155,7 +155,7 @@ const Navbar = () => {
   const tickingRef = useRef(false)
   const location = useLocation()
 
-  // Flashcards = VIP easter egg; waifu-achtergrond is een aparte, kleinere set.
+  // Flashcards: waifu (2 Gmail) + gewone VIP — waifu-achtergrond blijft apart.
   const hasFlashcardsAccess = isFlashcardsVipUser(user)
   const visibleNavItems = hasFlashcardsAccess ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
 

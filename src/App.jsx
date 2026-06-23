@@ -41,7 +41,7 @@ const HomePage = ({ waifuMode }) => (
   </>
 )
 
-/** Flashcards alleen voor VIP-accounts (niet hetzelfde als waifu-achtergrond). */
+/** Flashcards: waifu-accounts + gewone VIP (geen waifu-theme vereist). */
 function FlashcardsVipRoute({ children }) {
   const { user, loading } = useAuth()
   if (loading) return null
