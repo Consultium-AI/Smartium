@@ -21,7 +21,7 @@ import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { useReward } from '../context/RewardContext'
-import { isFlashcardsVipUser } from '../utils/waifuPremiumUser'
+import { hasFlashcardsAccess } from '../utils/waifuPremiumUser'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 import { getRewardPfpById } from '../constants/rewardPfps'
@@ -142,7 +142,7 @@ function UserAvatar({ user, className = '' }) {
 const Navbar = () => {
   const { isDark, toggleTheme } = useTheme()
   const { user, loading: authLoading, signOut } = useAuth()
-  const { plan, paidUntil, subscriptionStopped, loading: accessLoading } = useAccess()
+  const { hasAccess, plan, paidUntil, subscriptionStopped, loading: accessLoading } = useAccess()
   const { showRenewalReminder } = getSubscriptionRenewalState(plan, paidUntil, subscriptionStopped)
   const showBillingRenewalBadge = Boolean(user && !authLoading && !accessLoading && showRenewalReminder)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -155,9 +155,9 @@ const Navbar = () => {
   const tickingRef = useRef(false)
   const location = useLocation()
 
-  // Flashcards: waifu (2 Gmail) + gewone VIP — waifu-achtergrond blijft apart.
-  const hasFlashcardsAccess = isFlashcardsVipUser(user)
-  const visibleNavItems = hasFlashcardsAccess ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
+  // Flashcards: alle premium/VIP-accounts — waifu-achtergrond blijft apart (2 Gmail).
+  const hasFlashcardsTab = Boolean(user && !accessLoading && hasFlashcardsAccess(hasAccess, plan))
+  const visibleNavItems = hasFlashcardsTab ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
 
   useEffect(() => {
     const syncScrolledState = () => {

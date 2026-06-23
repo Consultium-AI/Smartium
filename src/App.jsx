@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
-import { isWaifuPremiumUser, isFlashcardsVipUser } from './utils/waifuPremiumUser'
+import { isWaifuPremiumUser, hasFlashcardsAccess } from './utils/waifuPremiumUser'
+import { useAccess } from './hooks/useAccess'
+import { Loader2 } from 'lucide-react'
 import WaifuSiteBackground from './components/waifu/WaifuSiteBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -41,11 +43,27 @@ const HomePage = ({ waifuMode }) => (
   </>
 )
 
-/** Flashcards: waifu-accounts + gewone VIP (geen waifu-theme vereist). */
+/** Flashcards: alle premium/VIP-accounts (waifu-theme blijft apart). */
 function FlashcardsVipRoute({ children }) {
-  const { user, loading } = useAuth()
-  if (loading) return null
-  if (!isFlashcardsVipUser(user)) return <Navigate to="/" replace />
+  const { user, loading: authLoading } = useAuth()
+  const { hasAccess, plan, loading: accessLoading } = useAccess()
+
+  if (authLoading || accessLoading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[#f8f9fb] dark:bg-[#0a0d12]">
+        <Loader2 className="h-8 w-8 animate-spin text-primary-500" strokeWidth={2} />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return <Navigate to={`/login?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`} replace />
+  }
+
+  if (!hasFlashcardsAccess(hasAccess, plan)) {
+    return <Navigate to="/billing" replace />
+  }
+
   return children
 }
 
