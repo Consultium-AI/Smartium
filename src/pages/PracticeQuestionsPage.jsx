@@ -5,12 +5,13 @@ import {
   ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
   RotateCcw, Trophy, Target, BookOpen,
   CheckCircle, XCircle, ArrowLeft,
-  Calendar, Stethoscope, GraduationCap, Shield, Loader2, Activity, Sparkles, Lock,
+  GraduationCap, Shield, Loader2, Activity, Sparkles, Lock,
   FlaskConical
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import PracticeMultiBlokSelector from '../components/PracticeMultiBlokSelector'
 import PracticeCourseModuleLink from '../components/PracticeCourseModuleLink'
+import SummaryCourseWeekTree from '../components/SummaryCourseWeekTree'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro from '../components/Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro'
 import Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro from '../components/Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro'
@@ -1093,28 +1094,15 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                       className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
                       <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        {practiceQuestionsCourseStructure.blok3.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                            <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-primary-500 dark:bg-primary-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-primary-500/20 dark:ring-primary-400/30" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                              </div>
-                            </div>
-                            {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-5 last:mb-0">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                                  </div>
-                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                                </div>
-                                {renderCaseSections(casus, 'blok3', weekIndex, casusIndex)}
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                        <SummaryCourseWeekTree
+                          blokKey="blok3"
+                          pageScope="practice"
+                          weeks={practiceQuestionsCourseStructure.blok3.weeks}
+                          accentVariant="primary"
+                          renderCaseSections={(casus, weekIndex, casusIndex) =>
+                            renderCaseSections(casus, 'blok3', weekIndex, casusIndex)
+                          }
+                        />
                         <Link
                           to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok3')}`}
                           className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-primary-300 dark:border-primary-600/50 text-primary-700 dark:text-primary-400 hover:border-primary-500 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10'}`}
@@ -1167,28 +1155,16 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                       className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
                       <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        {practiceQuestionsCourseStructure.blok4.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="mb-8 last:mb-0 border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                            <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-indigo-500 dark:bg-indigo-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-indigo-500/20 dark:ring-indigo-400/30" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                              </div>
-                            </div>
-                            {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-5 last:mb-0">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                                  </div>
-                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                                </div>
-                                {renderCaseSections(casus, 'blok4', weekIndex, casusIndex)}
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                        <SummaryCourseWeekTree
+                          blokKey="blok4"
+                          pageScope="practice"
+                          weeks={practiceQuestionsCourseStructure.blok4.weeks}
+                          accentVariant="indigo"
+                          weekSpacing="loose"
+                          renderCaseSections={(casus, weekIndex, casusIndex) =>
+                            renderCaseSections(casus, 'blok4', weekIndex, casusIndex)
+                          }
+                        />
                         <Link
                           to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok4')}`}
                           className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-indigo-300 dark:border-indigo-600/50 text-indigo-700 dark:text-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'}`}
@@ -1245,28 +1221,15 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                           title="Weekoverzicht blok 5 — BA1 2025–26"
                           pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
                         />
-                        {practiceQuestionsCourseStructure.blok5.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                            <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-rose-500 dark:bg-rose-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-rose-500/20 dark:ring-rose-400/30" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                              </div>
-                            </div>
-                            {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-5 last:mb-0">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                                  </div>
-                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                                </div>
-                                {renderCaseSections(casus, 'blok5', weekIndex, casusIndex)}
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                        <SummaryCourseWeekTree
+                          blokKey="blok5"
+                          pageScope="practice"
+                          weeks={practiceQuestionsCourseStructure.blok5.weeks}
+                          accentVariant="rose"
+                          renderCaseSections={(casus, weekIndex, casusIndex) =>
+                            renderCaseSections(casus, 'blok5', weekIndex, casusIndex)
+                          }
+                        />
                         <Link
                           to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok5')}`}
                           className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-rose-300 dark:border-rose-600/50 text-rose-700 dark:text-rose-400 hover:border-rose-500 dark:hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10'}`}
@@ -1323,28 +1286,15 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                           title="Weekoverzicht blok 9 — BA2 2025–26"
                           pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
                         />
-                        {practiceQuestionsCourseStructure.blok9.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                            <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-teal-500 dark:bg-teal-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-teal-500/20 dark:ring-teal-400/30" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                              </div>
-                            </div>
-                            {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-5 last:mb-0">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                                  </div>
-                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                                </div>
-                                {renderCaseSections(casus, 'blok9', weekIndex, casusIndex)}
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                        <SummaryCourseWeekTree
+                          blokKey="blok9"
+                          pageScope="practice"
+                          weeks={practiceQuestionsCourseStructure.blok9.weeks}
+                          accentVariant="teal"
+                          renderCaseSections={(casus, weekIndex, casusIndex) =>
+                            renderCaseSections(casus, 'blok9', weekIndex, casusIndex)
+                          }
+                        />
                         <Link
                           to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok9')}`}
                           className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-teal-300 dark:border-teal-600/50 text-teal-700 dark:text-teal-400 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-500/10'}`}
@@ -1397,28 +1347,15 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                       className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
                     >
                       <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        {practiceQuestionsCourseStructure.blok10.weeks.map((week, weekIndex) => (
-                          <div key={weekIndex} className="border-l-2 border-slate-200 dark:border-slate-600 pl-5 ml-5">
-                            <div className="flex items-center gap-3 mb-4 -ml-7">
-                              <div className="w-3 h-3 rounded-full bg-violet-500 dark:bg-violet-400 border-4 border-white dark:border-slate-950 shadow-sm ring-2 ring-violet-500/20 dark:ring-violet-400/30" />
-                              <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-800/90 dark:border dark:border-slate-700/80 rounded-lg">
-                                <Calendar className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                                <span className="font-medium text-slate-700 dark:text-slate-200 text-sm">{week.name}</span>
-                              </div>
-                            </div>
-                            {week.cases.map((casus, casusIndex) => (
-                              <div key={casusIndex} className="mb-5 last:mb-0">
-                                <div className="flex items-center gap-3 mb-3">
-                                  <div className="p-2 bg-amber-100 dark:bg-amber-500/15 dark:ring-1 dark:ring-amber-500/25 rounded-lg">
-                                    <Stethoscope className="w-4 h-4 text-amber-800 dark:text-amber-400" />
-                                  </div>
-                                  <span className="font-medium text-slate-800 dark:text-slate-200 text-sm">{casus.name}</span>
-                                </div>
-                                {renderCaseSections(casus, 'blok10', weekIndex, casusIndex)}
-                              </div>
-                            ))}
-                          </div>
-                        ))}
+                        <SummaryCourseWeekTree
+                          blokKey="blok10"
+                          pageScope="practice"
+                          weeks={practiceQuestionsCourseStructure.blok10.weeks}
+                          accentVariant="violet"
+                          renderCaseSections={(casus, weekIndex, casusIndex) =>
+                            renderCaseSections(casus, 'blok10', weekIndex, casusIndex)
+                          }
+                        />
                         <Link
                           to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok10')}`}
                           className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-violet-300 dark:border-violet-600/50 text-violet-700 dark:text-violet-400 hover:border-violet-500 dark:hover:border-violet-500 hover:bg-violet-50 dark:hover:bg-violet-500/10'}`}

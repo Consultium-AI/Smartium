@@ -3,21 +3,53 @@ import { useCallback, useEffect, useState } from 'react'
 function loadState(storageKey) {
   try {
     const raw = localStorage.getItem(storageKey)
-    if (!raw) return { weeks: [], cases: [] }
+    if (raw === null) return null
     const parsed = JSON.parse(raw)
     return {
       weeks: Array.isArray(parsed.weeks) ? parsed.weeks : [],
       cases: Array.isArray(parsed.cases) ? parsed.cases : [],
     }
   } catch {
-    return { weeks: [], cases: [] }
+    return null
   }
 }
 
-export function useSummaryTreeCollapse(blokKey) {
-  const storageKey = `smartium-summary-collapse-${blokKey}`
-  const [collapsedWeeks, setCollapsedWeeks] = useState(() => new Set(loadState(storageKey).weeks))
-  const [collapsedCases, setCollapsedCases] = useState(() => new Set(loadState(storageKey).cases))
+function buildAllCollapsed(weeks, weekId, caseId) {
+  const weeksSet = new Set()
+  const casesSet = new Set()
+  weeks.forEach((week, weekIndex) => {
+    weeksSet.add(weekId(weekIndex))
+    week.cases.forEach((_, caseIndex) => {
+      casesSet.add(caseId(weekIndex, caseIndex))
+    })
+  })
+  return { weeks: weeksSet, cases: casesSet }
+}
+
+export function useCourseTreeCollapse(blokKey, pageScope, weeks) {
+  const storageKey = `smartium-${pageScope}-collapse-v2-${blokKey}`
+
+  const weekId = useCallback((weekIndex) => `${blokKey}-w-${weekIndex}`, [blokKey])
+  const caseId = useCallback(
+    (weekIndex, caseIndex) => `${blokKey}-w-${weekIndex}-c-${caseIndex}`,
+    [blokKey],
+  )
+
+  const [collapsedWeeks, setCollapsedWeeks] = useState(() => {
+    const saved = loadState(storageKey)
+    if (saved === null) {
+      return buildAllCollapsed(weeks, weekId, caseId).weeks
+    }
+    return new Set(saved.weeks)
+  })
+
+  const [collapsedCases, setCollapsedCases] = useState(() => {
+    const saved = loadState(storageKey)
+    if (saved === null) {
+      return buildAllCollapsed(weeks, weekId, caseId).cases
+    }
+    return new Set(saved.cases)
+  })
 
   useEffect(() => {
     localStorage.setItem(
@@ -28,12 +60,6 @@ export function useSummaryTreeCollapse(blokKey) {
       }),
     )
   }, [storageKey, collapsedWeeks, collapsedCases])
-
-  const weekId = useCallback((weekIndex) => `${blokKey}-w-${weekIndex}`, [blokKey])
-  const caseId = useCallback(
-    (weekIndex, caseIndex) => `${blokKey}-w-${weekIndex}-c-${caseIndex}`,
-    [blokKey],
-  )
 
   const isWeekExpanded = useCallback(
     (weekIndex) => !collapsedWeeks.has(weekId(weekIndex)),
@@ -82,9 +108,9 @@ export function useSummaryTreeCollapse(blokKey) {
   const expandAllCases = useCallback(() => setCollapsedCases(new Set()), [])
 
   const collapseAllCases = useCallback(
-    (weeks) => {
+    (weekList) => {
       const ids = []
-      weeks.forEach((week, weekIndex) => {
+      weekList.forEach((week, weekIndex) => {
         week.cases.forEach((_, caseIndex) => {
           ids.push(caseId(weekIndex, caseIndex))
         })
@@ -104,4 +130,9 @@ export function useSummaryTreeCollapse(blokKey) {
     expandAllCases,
     collapseAllCases,
   }
+}
+
+/** @deprecated Use useCourseTreeCollapse */
+export function useSummaryTreeCollapse(blokKey, weeks = []) {
+  return useCourseTreeCollapse(blokKey, 'summary', weeks)
 }

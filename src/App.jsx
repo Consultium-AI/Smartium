@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import { isWaifuPremiumUser } from './utils/waifuPremiumUser'
 import WaifuSiteBackground from './components/waifu/WaifuSiteBackground'
@@ -11,6 +11,7 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 import ParticleBackground from './components/ParticleBackground'
 import PracticeQuestionsPage from './pages/PracticeQuestionsPage'
+import FlashcardsPage from './pages/FlashcardsPage'
 import SummaryPage from './pages/SummaryPage'
 import ChatPage from './pages/ChatPage'
 import ExamPage from './pages/ExamPage'
@@ -39,6 +40,14 @@ const HomePage = ({ waifuMode }) => (
     <Footer />
   </>
 )
+
+/** Flashcards zijn een easter-egg feature: alleen zichtbaar voor de 2 waifu-accounts. */
+function WaifuOnlyRoute({ children }) {
+  const { user, loading } = useAuth()
+  if (loading) return null
+  if (!isWaifuPremiumUser(user)) return <Navigate to="/" replace />
+  return children
+}
 
 const getBasename = () => {
   const baseUrl = import.meta.env.BASE_URL
@@ -82,6 +91,8 @@ function App() {
               <Route path="/summary-blok5" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok10" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards" element={<WaifuOnlyRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></WaifuOnlyRoute>} />
+              <Route path="/flashcards-blok10" element={<WaifuOnlyRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></WaifuOnlyRoute>} />
               <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
               <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />

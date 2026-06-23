@@ -8,6 +8,7 @@ import {
   ClipboardCheck,
   Home,
   Bot,
+  Brain,
   GraduationCap,
   ChevronDown,
   Sun,
@@ -20,6 +21,7 @@ import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { useReward } from '../context/RewardContext'
+import { isWaifuPremiumUser } from '../utils/waifuPremiumUser'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 import { getRewardPfpById } from '../constants/rewardPfps'
@@ -70,6 +72,16 @@ const navItems = [
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/tentamen-blok9' },
         { name: 'Blok 10', href: '/tentamen-blok10' },
+      ]},
+    ],
+  },
+  {
+    name: 'Flashcards',
+    href: '/flashcards',
+    icon: Brain,
+    subGroups: [
+      { label: 'Ba2', links: [
+        { name: 'Blok 10', href: '/flashcards-blok10' },
       ]},
     ],
   },
@@ -142,6 +154,10 @@ const Navbar = () => {
   const isScrolledRef = useRef(false)
   const tickingRef = useRef(false)
   const location = useLocation()
+
+  // Flashcards = waifu-only easter egg; voor andere gebruikers verbergen.
+  const isWaifu = isWaifuPremiumUser(user)
+  const visibleNavItems = isWaifu ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
 
   useEffect(() => {
     const syncScrolledState = () => {
@@ -248,7 +264,7 @@ const Navbar = () => {
           {/* Desktop nav */}
           <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
             <div className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-slate-200/90 bg-slate-100/90 p-1 shadow-inner dark:border-slate-600/50 dark:bg-slate-900/80 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-              {navItems.map((item) =>
+              {visibleNavItems.map((item) =>
                 item.subGroups ? (
                   <div key={item.name} className="relative group">
                     <Link
@@ -419,7 +435,7 @@ const Navbar = () => {
             >
               <div className="container-custom max-h-[min(70vh,32rem)] overflow-y-auto py-3">
                 <div className="flex flex-col gap-0.5 pb-2">
-                  {navItems.map((item) =>
+                  {visibleNavItems.map((item) =>
                     item.subGroups ? (
                       <div key={item.name} className="py-0.5">
                         <div className="flex items-center gap-1 rounded-xl px-2 py-1">

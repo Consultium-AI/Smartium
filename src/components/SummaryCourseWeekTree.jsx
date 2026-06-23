@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Calendar, ChevronDown, ChevronRight, Stethoscope } from 'lucide-react'
-import { useSummaryTreeCollapse } from '../hooks/useSummaryTreeCollapse'
+import { useCourseTreeCollapse } from '../hooks/useCourseTreeCollapse'
 
 const ACCENT_VARIANTS = {
   primary: {
@@ -19,6 +19,10 @@ const ACCENT_VARIANTS = {
     dot: 'bg-cyan-500 dark:bg-cyan-400',
     ring: 'ring-cyan-500/20 dark:ring-cyan-400/30',
   },
+  teal: {
+    dot: 'bg-teal-500 dark:bg-teal-400',
+    ring: 'ring-teal-500/20 dark:ring-teal-400/30',
+  },
   violet: {
     dot: 'bg-violet-500 dark:bg-violet-400',
     ring: 'ring-violet-500/20 dark:ring-violet-400/30',
@@ -32,6 +36,7 @@ function countLmes(casus) {
 export default function SummaryCourseWeekTree({
   blokKey,
   weeks,
+  pageScope = 'summary',
   accentVariant = 'primary',
   renderCaseSections,
   renderWeekFooter,
@@ -47,7 +52,7 @@ export default function SummaryCourseWeekTree({
     collapseAllWeeks,
     expandAllCases,
     collapseAllCases,
-  } = useSummaryTreeCollapse(blokKey)
+  } = useCourseTreeCollapse(blokKey, pageScope, weeks)
 
   const hasMultipleWeeks = weeks.length > 1
   const totalCases = weeks.reduce((n, week) => n + week.cases.length, 0)
@@ -178,7 +183,7 @@ export default function SummaryCourseWeekTree({
                               transition={{ duration: 0.18 }}
                               className="overflow-hidden"
                             >
-                              {renderCaseSections(casus)}
+                              {renderCaseSections(casus, weekIndex, casusIndex)}
                             </motion.div>
                           ) : null}
                         </AnimatePresence>

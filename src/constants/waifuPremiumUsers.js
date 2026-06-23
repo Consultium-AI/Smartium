@@ -30,8 +30,11 @@ export function pickRandomWaifuPraiseLine() {
 
 export const WAIFU_PRACTICE_CORRECT_LABEL = 'Goed beantwoord'
 
-/** Site-wide achtergrond voor premium waifu-accounts */
+/** Site-wide achtergrond voor premium waifu-accounts (desktop = landscape collage) */
 export const WAIFU_PREMIUM_BG_URL = `${import.meta.env.BASE_URL}waifu/waifu-premium-bg.png?v=2`
+
+/** Mobiele variant: portret-collage die niet uitzoomt op smalle schermen */
+export const WAIFU_PREMIUM_BG_MOBILE_URL = `${import.meta.env.BASE_URL}waifu/waifu-premium-bg-mobile.png?v=1`
 
 /**
  * CSS/SVG-only waifu tiles — geïnspireerd op gallery-layout (waifu.im).

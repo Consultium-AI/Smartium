@@ -18,6 +18,14 @@ html.waifu-premium-mode body {
   object-position: center center;
 }
 
+/* Mobiel: smal/hoog scherm → collage bovenaan verankeren zodat er meer
+   van de collage zichtbaar blijft i.p.v. een sterk uitvergroot midden. */
+@media (max-width: 768px) {
+  .waifu-site-bg__photo {
+    object-position: top center;
+  }
+}
+
 .waifu-site-bg__overlay {
   position: absolute;
   inset: 0;
