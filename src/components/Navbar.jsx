@@ -21,7 +21,7 @@ import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { useReward } from '../context/RewardContext'
-import { isWaifuPremiumUser } from '../utils/waifuPremiumUser'
+import { isFlashcardsVipUser } from '../utils/waifuPremiumUser'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 import { getRewardPfpById } from '../constants/rewardPfps'
@@ -155,9 +155,9 @@ const Navbar = () => {
   const tickingRef = useRef(false)
   const location = useLocation()
 
-  // Flashcards = waifu-only easter egg; voor andere gebruikers verbergen.
-  const isWaifu = isWaifuPremiumUser(user)
-  const visibleNavItems = isWaifu ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
+  // Flashcards = VIP easter egg; waifu-achtergrond is een aparte, kleinere set.
+  const hasFlashcardsAccess = isFlashcardsVipUser(user)
+  const visibleNavItems = hasFlashcardsAccess ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
 
   useEffect(() => {
     const syncScrolledState = () => {

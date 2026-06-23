@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
-import { isWaifuPremiumUser } from './utils/waifuPremiumUser'
+import { isWaifuPremiumUser, isFlashcardsVipUser } from './utils/waifuPremiumUser'
 import WaifuSiteBackground from './components/waifu/WaifuSiteBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -41,11 +41,11 @@ const HomePage = ({ waifuMode }) => (
   </>
 )
 
-/** Flashcards zijn een easter-egg feature: alleen zichtbaar voor de 2 waifu-accounts. */
-function WaifuOnlyRoute({ children }) {
+/** Flashcards alleen voor VIP-accounts (niet hetzelfde als waifu-achtergrond). */
+function FlashcardsVipRoute({ children }) {
   const { user, loading } = useAuth()
   if (loading) return null
-  if (!isWaifuPremiumUser(user)) return <Navigate to="/" replace />
+  if (!isFlashcardsVipUser(user)) return <Navigate to="/" replace />
   return children
 }
 
@@ -91,8 +91,8 @@ function App() {
               <Route path="/summary-blok5" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok10" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
-              <Route path="/flashcards" element={<WaifuOnlyRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></WaifuOnlyRoute>} />
-              <Route path="/flashcards-blok10" element={<WaifuOnlyRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></WaifuOnlyRoute>} />
+              <Route path="/flashcards" element={<FlashcardsVipRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></FlashcardsVipRoute>} />
+              <Route path="/flashcards-blok10" element={<FlashcardsVipRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></FlashcardsVipRoute>} />
               <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
               <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />

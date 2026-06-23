@@ -1,4 +1,4 @@
-import { WAIFU_PREMIUM_EMAILS } from '../constants/waifuPremiumUsers'
+import { WAIFU_PREMIUM_EMAILS, FLASHCARDS_VIP_EMAILS } from '../constants/waifuPremiumUsers'
 
 export function normalizeWaifuEmail(email) {
   return typeof email === 'string' ? email.trim().toLowerCase() : ''
@@ -7,4 +7,10 @@ export function normalizeWaifuEmail(email) {
 export function isWaifuPremiumUser(user) {
   const email = normalizeWaifuEmail(user?.email)
   return email.length > 0 && WAIFU_PREMIUM_EMAILS.has(email)
+}
+
+/** Flashcards-tab en routes — breder dan waifu-theme (geen achtergrond vereist). */
+export function isFlashcardsVipUser(user) {
+  const email = normalizeWaifuEmail(user?.email)
+  return email.length > 0 && FLASHCARDS_VIP_EMAILS.has(email)
 }

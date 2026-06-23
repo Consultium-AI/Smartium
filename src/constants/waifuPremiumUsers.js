@@ -1,7 +1,14 @@
-/** Easter-egg accounts: anime waifu theme + Sasuga coin toast. */
+/** Easter-egg accounts: anime waifu theme + Sasuga coin toast (alleen deze 2). */
 export const WAIFU_PREMIUM_EMAILS = new Set([
   'gogusaiyens@gmail.com',
   'hamzaelgourari2004@gmail.com',
+])
+
+/** VIP-accounts met toegang tot Flashcards (waifu-achtergrond niet inbegrepen). */
+export const FLASHCARDS_VIP_EMAILS = new Set([
+  'gogusaiyens@gmail.com',
+  'hamzaelgourari2004@gmail.com',
+  'hamzaelgourari2004@outlook.com',
 ])
 
 export const WAIFU_CORRECT_ANSWER_MESSAGE = 'Sasuga Hamuza-dono ♡'
