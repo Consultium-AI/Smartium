@@ -9,6 +9,7 @@ export const FLASHCARDS_VIP_EMAILS = new Set([
   'gogusaiyens@gmail.com',
   'hamzaelgourari2004@gmail.com',
   'hamzaelgourari2004@outlook.com',
+  'enjinkarui@gmail.com',
 ])
 
 export const WAIFU_CORRECT_ANSWER_MESSAGE = 'Sasuga Hamuza-dono ♡'
