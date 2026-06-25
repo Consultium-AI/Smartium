@@ -21,7 +21,6 @@ import { useTheme } from '../context/ThemeContext'
 import { useAuth } from '../context/AuthContext'
 import { useAccess } from '../hooks/useAccess'
 import { useReward } from '../context/RewardContext'
-import { hasFlashcardsAccess } from '../utils/waifuPremiumUser'
 import { getSubscriptionRenewalState } from '../lib/subscriptionRenewal'
 import { DEFAULT_PFP_URL } from '../constants/defaultPfps'
 import { getRewardPfpById } from '../constants/rewardPfps'
@@ -155,8 +154,8 @@ const Navbar = () => {
   const tickingRef = useRef(false)
   const location = useLocation()
 
-  // Flashcards: alle premium/VIP-accounts — waifu-achtergrond blijft apart (2 Gmail).
-  const hasFlashcardsTab = Boolean(user && !accessLoading && hasFlashcardsAccess(hasAccess, plan))
+  // Flashcards: elk ingelogd account (gratis en premium).
+  const hasFlashcardsTab = Boolean(user && !accessLoading)
   const visibleNavItems = hasFlashcardsTab ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
 
   useEffect(() => {

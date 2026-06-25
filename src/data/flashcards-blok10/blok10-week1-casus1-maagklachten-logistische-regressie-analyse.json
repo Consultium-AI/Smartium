@@ -1,0 +1,1499 @@
+{
+  "lmeId": "blok10-week1-casus1-maagklachten-logistische-regressie-analyse",
+  "lmeName": "Logistische regressie analyse",
+  "block": "Blok 10: Maag-Darm-Lever",
+  "week": "Week 1",
+  "case": "Casus 1: Maagklachten",
+  "moduleKind": "lme",
+  "model": "gpt-5-mini",
+  "generatedAt": "2026-06-25T09:34:59.559Z",
+  "sourceChars": 11244,
+  "metadata": {
+    "generator": "smartium_anki_card_generator",
+    "version": "1.0",
+    "language": "nl",
+    "block_name": "Blok 10: Maag-Darm-Lever",
+    "week": "Week 1",
+    "case_number": "Casus 1",
+    "case_title": "Maagklachten",
+    "lme_title": "Logistische regressie analyse",
+    "source_documents": [
+      "LME Logistische regressie (geleverde tekst)"
+    ],
+    "generation_mode": "lme_draft",
+    "target_platform": "smartium",
+    "anki_export_possible": true
+  },
+  "deck_structure": {
+    "deck": "GNK",
+    "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+    "recommended_anki_deck_path": "GNK::Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+    "recommended_smartium_path": "blok10/week1/casus-1-logistische-regressie"
+  },
+  "learning_goal_map": [
+    {
+      "learning_goal_id": "LG1",
+      "learning_goal_text": "Uitleggen wat logistische regressie is en wanneer je het toepast.",
+      "covered_by_card_ids": [
+        "B10W1_LR_001",
+        "B10W1_LR_002",
+        "B10W1_LR_003"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG2",
+      "learning_goal_text": "Verschil tussen kans (probability) en odds en hoe je beide berekent.",
+      "covered_by_card_ids": [
+        "B10W1_LR_004",
+        "B10W1_LR_005",
+        "B10W1_LR_006"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG3",
+      "learning_goal_text": "Risk ratio (RR) en odds ratio (OR) berekenen en interpreteren.",
+      "covered_by_card_ids": [
+        "B10W1_LR_007",
+        "B10W1_LR_008",
+        "B10W1_LR_009"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG4",
+      "learning_goal_text": "De logit-transformatie, S-curve en terugtransformatie naar p begrijpen.",
+      "covered_by_card_ids": [
+        "B10W1_LR_010",
+        "B10W1_LR_011",
+        "B10W1_LR_012"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG5",
+      "learning_goal_text": "Coëfficiënten interpreteren (OR = e^b) voor binaire en continue voorspellers.",
+      "covered_by_card_ids": [
+        "B10W1_LR_013",
+        "B10W1_LR_014",
+        "B10W1_LR_015",
+        "B10W1_LR_016"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG6",
+      "learning_goal_text": "Toetsen en betrouwbaarheidsintervallen bij logistische regressie (Wald, 95%-BI).",
+      "covered_by_card_ids": [
+        "B10W1_LR_017",
+        "B10W1_LR_018",
+        "B10W1_LR_019"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG7",
+      "learning_goal_text": "Meervoudige logistische regressie: confounding, multicollineariteit en praktische problemen.",
+      "covered_by_card_ids": [
+        "B10W1_LR_020",
+        "B10W1_LR_021",
+        "B10W1_LR_022",
+        "B10W1_LR_023"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG8",
+      "learning_goal_text": "Complete separatie herkennen en mogelijke oplossingen (inclusief Firth).",
+      "covered_by_card_ids": [
+        "B10W1_LR_024",
+        "B10W1_LR_025"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG9",
+      "learning_goal_text": "Een predictiemodel als classifier gebruiken: confusion matrix, sensitiviteit, specificiteit, cutoff en ROC/AUC.",
+      "covered_by_card_ids": [
+        "B10W1_LR_026",
+        "B10W1_LR_027",
+        "B10W1_LR_028",
+        "B10W1_LR_029",
+        "B10W1_LR_030",
+        "B10W1_LR_031"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG10",
+      "learning_goal_text": "Praktische aandachtspunten bij variabelekeuze en modelstabiliteit (vuistregel sectie is vermeld maar niet gespecificeerd in bron).",
+      "covered_by_card_ids": [
+        "B10W1_LR_032"
+      ],
+      "coverage_status": "partially_covered"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "B10W1_LR_001",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "Logistische regressie gebruik je wanneer de uitkomst binair is: de uitkomst is steeds {{c1::ja/nee::voorbeeld}} (bijv. GORZ wel of niet aanwezig).",
+      "front": "",
+      "back": "",
+      "extra": "Definitie en toepassingsgebied.",
+      "optional_clarification": "",
+      "source_anchor": "Wat is logistische regressie?",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "casus1",
+        "lme_logistische_regressie",
+        "definitie",
+        "basic",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_002",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG1",
+        "LG4"
+      ],
+      "cloze_text": "Bij logistische regressie wil je de {{c1::kans (p)::wat voorspellen}} op de uitkomst voorspellen, waarbij 0 ≤ p ≤ {{c1::1}}.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk: voorspelde kans moet tussen 0 en 1 blijven.",
+      "optional_clarification": "",
+      "source_anchor": "Wat is logistische regressie? (kans tussen 0 en 1)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "kans",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_003",
+      "card_type": "front_back",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG1",
+        "LG4"
+      ],
+      "cloze_text": "",
+      "front": "Waarom gebruik je geen lineaire regressie voor een binaire uitkomst?",
+      "back": "Omdat lineaire regressie voorspelde waarden kan geven buiten [0,1] en niet goed omgaat met de niet-lineaire relatie tussen voorspellers en kans; de logit-transformatie maakt een lineair model op de log-odds mogelijk.",
+      "extra": "Front/Back gebruikt omdat dit een 'waarom'-vraag is.",
+      "optional_clarification": "",
+      "source_anchor": "Waarom geen lineaire regressie bij een binaire uitkomst?",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "vergelijking",
+        "front_back",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_004",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "De kans (probability) is het aandeel mensen met de gebeurtenis: P = aantal gebeurtenissen / {{c1::totaal}}.",
+      "front": "",
+      "back": "",
+      "extra": "Basisdefinitie kans.",
+      "optional_clarification": "",
+      "source_anchor": "Kans definitie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "kans",
+        "basic",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "feit",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_005",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "De odds is de verhouding van de kans dat de gebeurtenis optreedt en de kans dat hij niet optreedt: odds = {{c1::p/(1-p)}}.",
+      "front": "",
+      "back": "",
+      "extra": "Odds als verhouding wel versus niet.",
+      "optional_clarification": "",
+      "source_anchor": "Odds definitie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "odds",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "feit",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_006",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "Als 138 van de 420 personen GORZ hebben, is de kans ongeveer {{c1::0,33}} en de odds ongeveer {{c2::0,49}}.",
+      "front": "",
+      "back": "",
+      "extra": "Rekenvoorbeeld uit bron (138/420 ≈ 0,33 en 138/282 ≈ 0,49).",
+      "optional_clarification": "",
+      "source_anchor": "Voorbeeld kans en odds (138/420)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "voorbeeld",
+        "calculation",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "feit",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_007",
+      "card_type": "cloze",
+      "card_subtype": "table_mapping",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "De risk ratio (RR) vergelijkt {{c1::kansen}} tussen twee groepen, de odds ratio (OR) vergelijkt {{c1::odds}} tussen twee groepen.",
+      "front": "",
+      "back": "",
+      "extra": "Verschil in interpretatie RR vs OR.",
+      "optional_clarification": "",
+      "source_anchor": "Risk ratio en odds ratio (overzicht maten)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "rr_or",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "vergelijking",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_008",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "In het voorbeeld is RR = {{c1::1,72}} en OR = {{c2::2,50}} (rokers vs niet-rokers voor GORZ).",
+      "front": "",
+      "back": "",
+      "extra": "Concrete voorbeeldwaarden uit de bron.",
+      "optional_clarification": "",
+      "source_anchor": "Risk ratio en odds ratio (voorbeeld waarden)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "rr_or_example",
+        "exam_fact",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "percentage",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_009",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "RR is intuïtiever dan OR omdat RR direct over {{c1::kansen}} gaat; OR lijkt vaak sterker van effect, vooral bij {{c1::frequente uitkomsten}}.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk om bij interpretatie in acht te nemen.",
+      "optional_clarification": "",
+      "source_anchor": "Interpretatie van RR en OR",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "interpretatie",
+        "clinical_pitfall",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_010",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "De logit is gedefinieerd als {{c1::ln(p/(1-p))}} en kan waarden aannemen van {{c2::-\\u221E tot +\\u221E}}.",
+      "front": "",
+      "back": "",
+      "extra": "Logit maakt lineair modelleren op log-odds mogelijk.",
+      "optional_clarification": "",
+      "source_anchor": "De logit-transformatie en de S-curve",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "logit",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "definition",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_011",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "Van de logit kun je terugtransformeren naar de kans met p = {{c1::e^{logit}}}/(1+{{c1::e^{logit}}}).",
+      "front": "",
+      "back": "",
+      "extra": "Formule voor terugtransformatie naar p (S-curve).",
+      "optional_clarification": "",
+      "source_anchor": "Formule voor p uit logit",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "p_formule",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_012",
+      "card_type": "cloze",
+      "card_subtype": "sequence",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "De relatie tussen voorspeller X en de kans p is {{c1::lineair in de log-odds}} maar {{c1::niet-lineair}} in de kans; dat geeft de typische {{c1::S-vorm}} (sigmoïde).",
+      "front": "",
+      "back": "",
+      "extra": "Waarom de S-curve ontstaat.",
+      "optional_clarification": "",
+      "source_anchor": "Logit-transformatie en S-curve",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "svorm",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_013",
+      "card_type": "cloze",
+      "card_subtype": "mapping",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "De odds ratio (OR) hoort bij een coëfficiënt b en is gelijk aan {{c1::e^{b}}}.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk voor interpretatie van regressie-output.",
+      "optional_clarification": "",
+      "source_anchor": "Interpretatie van coëfficiënten (OR = e^b)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "or_efb",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_014",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Voor een binaire voorspeller met b = 0,67 geldt OR = e^{0,67} ≈ {{c1::2}}, wat betekent dat de odds bij blootstelling ongeveer {{c1::2}} keer zo groot zijn.",
+      "front": "",
+      "back": "",
+      "extra": "Voorbeeld uit bron (roken voorbeeld).",
+      "optional_clarification": "",
+      "source_anchor": "Binaire voorspellers voorbeeld (b = 0,67)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "binary_predictor",
+        "example",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_015",
+      "card_type": "cloze",
+      "card_subtype": "mapping",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Bij een continue voorspeller betekent OR per 1 eenheid toename: OR = e^{b}. Bijvoorbeeld b = 0,05 → OR = e^{0,05} ≈ {{c1::1,05}} (dus ~{{c1::5%}} toename per eenheid).",
+      "front": "",
+      "back": "",
+      "extra": "Uitleg hoe je OR van continue variabele interpreteert.",
+      "optional_clarification": "",
+      "source_anchor": "Continue voorspellers (leeftijd voorbeeld)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "continuous",
+        "interpretatie",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_016",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "In het BMI-voorbeeld met b = 0,12 is OR = e^{0,12} ≈ {{c1::1,13}}, wat betekent ~{{c1::13%}} toename in odds per 1 punt BMI.",
+      "front": "",
+      "back": "",
+      "extra": "Concrete interpretatie BMI-voorbeeld.",
+      "optional_clarification": "",
+      "source_anchor": "BMI voorbeeld (b = 0,12)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "bmi",
+        "example",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_017",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "De Wald-toets gebruikt als toetsingsgrootheid Z = {{c1::beta / SE}} om te beoordelen of een coëfficiënt significant verschillend is van nul.",
+      "front": "",
+      "back": "",
+      "extra": "Wald-toetsformule.",
+      "optional_clarification": "",
+      "source_anchor": "Wald-toets",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "wald",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_018",
+      "card_type": "cloze",
+      "card_subtype": "cutoff_value",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Het 95%-betrouwbaarheidsinterval voor een OR bereken je met BI = {{c1::e^{\\u03b2 \\u00b1 1,96 \\cdot SE}}}.",
+      "front": "",
+      "back": "",
+      "extra": "BI voor OR via exponentiatie van beta ± 1,96*SE.",
+      "optional_clarification": "",
+      "source_anchor": "Betrouwbaarheidsinterval (formule)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "ci",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "afkapwaarde",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_019",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Als een 95%-BI van een OR de waarde {{c1::1,0}} bevat, is het effect niet statistisch significant volgens dat interval.",
+      "front": "",
+      "back": "",
+      "extra": "Gebruik BI naast p-waarde; klein effect kan significant zijn maar klinisch onbelangrijk.",
+      "optional_clarification": "",
+      "source_anchor": "Betrouwbaarheidsinterval interpretatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "ci_interpretatie",
+        "clinical_pitfall",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_020",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "In een meervoudig logistisch model geeft elke coëfficiënt het effect van één variabele weer {{c1::terwijl de andere variabelen constant blijven}}.",
+      "front": "",
+      "back": "",
+      "extra": "Basisprincipe van multivariaat modelinterpretatie.",
+      "optional_clarification": "",
+      "source_anchor": "Meervoudige logistische regressie (interpretatie)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "meervoudig",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_021",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "Multicollineariteit zorgt ervoor dat de standaardfouten {{c1::groot}} worden en het moeilijk wordt om te bepalen welke variabele echt verantwoordelijk is; dit controleer je met de {{c1::VIF}}.",
+      "front": "",
+      "back": "",
+      "extra": "Praktische impact van sterk samenhangende voorspellers.",
+      "optional_clarification": "",
+      "source_anchor": "Praktische aandachtspunten (multicollineariteit en VIF)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "multicollineariteit",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_022",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "In het meervoudig model op GORZ waren de ORs: BMI {{c1::1,13}}, geslacht {{c2::1,59}}, roken {{c3::2,14}} en leeftijd {{c4::1,04}}.",
+      "front": "",
+      "back": "",
+      "extra": "Praktisch voorbeeld van interpretatie in meervoudig model.",
+      "optional_clarification": "",
+      "source_anchor": "Voorbeeld meervoudig model (ORs lijst)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "meervoudig_example",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_023",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "Confounding is wanneer een derde factor een verband tussen twee variabelen {{c1::vertekent}}; in een meervoudig model corrigeer je hiervoor door {{c1::meerdere voorspellers tegelijk}} op te nemen.",
+      "front": "",
+      "back": "",
+      "extra": "Concept confounding en waarom meervoudig modelleren helpt.",
+      "optional_clarification": "",
+      "source_anchor": "Meervoudige logistische regressie (confounding)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "confounding",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_024",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "Complete separatie treedt op wanneer één voorspeller de uitkomst {{c1::perfect}} splitst (bijv. alle rokers hebben GORZ en geen enkele niet-roker heeft GORZ), waardoor coëfficiënten naar {{c1::oneindig}} kunnen lopen.",
+      "front": "",
+      "back": "",
+      "extra": "Herkenningspunt: waarschuwingen in software zoals niet-convergentie.",
+      "optional_clarification": "",
+      "source_anchor": "Complete separatie (definitie en voorbeeld)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "complete_separatie",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "pathophysiology",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_025",
+      "card_type": "cloze",
+      "card_subtype": "treatment",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "Mogelijke oplossingen voor complete separatie zijn: {{c1::categorieën samenvoegen}}, {{c1::variabele verwijderen}} of {{c1::een penalized methode gebruiken zoals Firth}}.",
+      "front": "",
+      "back": "",
+      "extra": "Standaard oplossingen genoemd in de bron.",
+      "optional_clarification": "",
+      "source_anchor": "Complete separatie (oplossingen)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "complete_separatie_oplossingen",
+        "intermediate",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "behandeling",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_026",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Bij classificatie met een predictiemodel kies je een drempel c; standaard wordt vaak {{c1::c = 0,5}} gebruikt: als p ≥ c → positief.",
+      "front": "",
+      "back": "",
+      "extra": "Drempel is aanpasbaar afhankelijk van klinische consequenties.",
+      "optional_clarification": "",
+      "source_anchor": "Keuze van cut-off (c = 0,5)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "cutoff",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_027",
+      "card_type": "image_occlusion_suggestion",
+      "card_subtype": "anatomy",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "",
+      "front": "",
+      "back": "",
+      "extra": "",
+      "optional_clarification": "",
+      "source_anchor": "Confusion matrix tabel",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "image_occlusion",
+        "confusion_matrix",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "beeldvorming",
+      "review_flag": "",
+      "quality_notes": "",
+      "image_occlusion_suggestion": {
+        "suggestion_id": "IOS_B10W1_LR_001",
+        "source_image_description": "Confusion matrix: 2x2 tabel met rijen Werkelijk (ja/nee) en kolommen Voorspeld (ja/nee), cellen TP, FP, FN, TN.",
+        "what_to_mask": [
+          "TP",
+          "FP",
+          "FN",
+          "TN"
+        ],
+        "what_to_show": "Rijen en kolommen labels (Werkelijk ja/nee, Voorspeld ja/nee)",
+        "why_this_is_useful": "Visualiseert waar sensitiviteit en specificiteit vandaan komen; goed voor snelle herkenning van TP/FP/FN/TN.",
+        "related_learning_goal_ids": [
+          "LG9"
+        ],
+        "tags": [
+          "confusion_matrix",
+          "image_occlusion",
+          "high_yield"
+        ]
+      }
+    },
+    {
+      "card_id": "B10W1_LR_028",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Sensitiviteit = {{c1::TP/(TP+FN)}} en geeft het vermogen om echte zieken {{c1::goed}} te herkennen.",
+      "front": "",
+      "back": "",
+      "extra": "Formule sensitiviteit uit confusion matrix.",
+      "optional_clarification": "",
+      "source_anchor": "Sensitiviteit definitie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "sensitiviteit",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_029",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Specificiteit = {{c1::TN/(TN+FP)}} en geeft het vermogen om gezonde mensen {{c1::goed}} als gezond aan te merken.",
+      "front": "",
+      "back": "",
+      "extra": "Formule specificiteit uit confusion matrix.",
+      "optional_clarification": "",
+      "source_anchor": "Specificiteit definitie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "specificiteit",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_030",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Als je de cut-off verlaagt, zal de sensitiviteit meestal {{c1::stijgen}} en de specificiteit {{c1::dalen}}.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk bij afwegingen waar gemiste diagnoses gevaarlijk zijn.",
+      "optional_clarification": "",
+      "source_anchor": "Classificatie, cut-off effect op sensitiviteit/specificiteit",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "cutoff_effect",
+        "clinical_pitfall",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_031",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "De AUC (area under the ROC-curve) is 0,5 bij {{c1::geen discriminatie}} en 1 bij {{c1::perfecte discriminatie}}.",
+      "front": "",
+      "back": "",
+      "extra": "Probabilistische interpretatie van AUC in bron aanwezig.",
+      "optional_clarification": "",
+      "source_anchor": "ROC-curve en AUC",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "roc_auc",
+        "basic",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "beeldvorming",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B10W1_LR_032",
+      "card_type": "cloze",
+      "card_subtype": "optional_clarification",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG10"
+      ],
+      "cloze_text": "De sectie 'Vuistregel voor aantal variabelen' wordt genoemd in de bron, maar er staat {{c1::geen concrete vuistregel}} in de geleverde tekst (inhoud niet gespecificeerd).",
+      "front": "",
+      "back": "",
+      "extra": "Deze kaart markeert dat de bron geen expliciete vuistregel geeft; eventuele numerieke vuistregels mogen alleen als optional_clarification en zijn niet toetsbaar zonder bron.",
+      "optional_clarification": "Niet toetsbaar: er is geen afkapwaarde of aantal genoemd in de bron. Als er gewenst is, kan later een kaart met een specifieke vuistregel worden toegevoegd mits bronvermelding.",
+      "source_anchor": "Sectie Vuistregel voor aantal variabelen (niet gespecificeerd)",
+      "source_type": "optional_clarification",
+      "source_priority": "supportive",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "vuistregel",
+        "optional_clarification",
+        "low"
+      ],
+      "difficulty": "basic",
+      "priority": "low",
+      "exam_yield": "low",
+      "card_function": "optional_clarification",
+      "review_flag": "external_knowledge_not_testable",
+      "quality_notes": "Bron vermeldt sectie maar geeft geen getal; kaart niet toetsbaar."
+    },
+    {
+      "card_id": "B10W1_LR_033",
+      "card_type": "image_occlusion_suggestion",
+      "card_subtype": "anatomy",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG4",
+        "LG9"
+      ],
+      "cloze_text": "",
+      "front": "",
+      "back": "",
+      "extra": "",
+      "optional_clarification": "",
+      "source_anchor": "ROC-curve illustratie (S-curve en ROC-voorbeeld)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "image_occlusion",
+        "roc_curve",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "beeldvorming",
+      "review_flag": "",
+      "quality_notes": "",
+      "image_occlusion_suggestion": {
+        "suggestion_id": "IOS_B10W1_LR_002",
+        "source_image_description": "S-vorm (sigmoïde) curve met X-as voorspeller en Y-as kans p; markeer punten laag X (p ~0) en hoog X (p ~1).",
+        "what_to_mask": [
+          "laag_X_label",
+          "hoog_X_label",
+          "middenpunt"
+        ],
+        "what_to_show": "Curve en assenlabels",
+        "why_this_is_useful": "Visualiseert de S-vorm van de kans door logit-transformatie; helpt onderscheid maken tussen lineair in log-odds en niet-lineair in p.",
+        "related_learning_goal_ids": [
+          "LG4"
+        ],
+        "tags": [
+          "svorm",
+          "image_occlusion",
+          "high_yield"
+        ]
+      }
+    },
+    {
+      "card_id": "B10W1_LR_034",
+      "card_type": "cloze",
+      "card_subtype": "example",
+      "deck": "GNK",
+      "subdeck": "Blok 10 - Maag-Darm-Lever::Week 1::Casus 1 - Maagklachten::Logistische regressie analyse",
+      "week": "Week 1",
+      "case_number": "Casus 1",
+      "case_title": "Maagklachten",
+      "lme_title": "Logistische regressie analyse",
+      "learning_goal_ids": [
+        "LG5",
+        "LG4"
+      ],
+      "cloze_text": "Met het model ln(p/(1-p)) = -2,8 + 0,05·leeftijd geeft het voorbeeld voor leeftijd 50 een kans p ≈ {{c1::0,43}}.",
+      "front": "",
+      "back": "",
+      "extra": "Praktisch rekensample uit de bron; stappen: logit berekenen, exponentiëren en delen door 1+e^{logit}.",
+      "optional_clarification": "",
+      "source_anchor": "Voorbeeld kans berekenen (leeftijd 50)",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok10",
+        "week1",
+        "lme_logistische_regressie",
+        "voorbeeld_berekening",
+        "calculation",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    }
+  ],
+  "image_occlusion_suggestions": [
+    {
+      "suggestion_id": "IOS_B10W1_LR_001",
+      "source_image_description": "Confusion matrix: 2x2 tabel met rijen Werkelijk (ja/nee) en kolommen Voorspeld (ja/nee), cellen TP, FP, FN, TN.",
+      "what_to_mask": [
+        "TP",
+        "FP",
+        "FN",
+        "TN"
+      ],
+      "what_to_show": "Rijen en kolommen labels (Werkelijk ja/nee, Voorspeld ja/nee)",
+      "why_this_is_useful": "Visualiseert waar sensitiviteit en specificiteit vandaan komen; goed voor snelle herkenning van TP/FP/FN/TN.",
+      "related_learning_goal_ids": [
+        "LG9"
+      ],
+      "tags": [
+        "confusion_matrix",
+        "image_occlusion",
+        "high_yield"
+      ]
+    },
+    {
+      "suggestion_id": "IOS_B10W1_LR_002",
+      "source_image_description": "S-vorm (sigmoïde) curve: X-as voorspeller, Y-as kans p; annotaties laag X (p dichtbij 0), midden (p 0,5), hoog X (p dichtbij 1).",
+      "what_to_mask": [
+        "laag_X_label",
+        "midden_label",
+        "hoog_X_label"
+      ],
+      "what_to_show": "Curve en assenlabels",
+      "why_this_is_useful": "Helpt studenten de transformatie logit → p visueel te koppelen aan het concept van lineair in log-odds en S-curve in p.",
+      "related_learning_goal_ids": [
+        "LG4"
+      ],
+      "tags": [
+        "svorm",
+        "image_occlusion",
+        "high_yield"
+      ]
+    },
+    {
+      "suggestion_id": "IOS_B10W1_LR_003",
+      "source_image_description": "ROC-curve voorbeeld met AUC ingevuld; maskeer de AUC waarde en laat de curve zien.",
+      "what_to_mask": [
+        "AUC_value"
+      ],
+      "what_to_show": "ROC-curve lijn",
+      "why_this_is_useful": "Test begrip van AUC-interpretatie en herkenning van goede versus slechte discriminatie.",
+      "related_learning_goal_ids": [
+        "LG9"
+      ],
+      "tags": [
+        "roc_curve",
+        "image_occlusion",
+        "high_yield"
+      ]
+    }
+  ],
+  "quality_control_report": {
+    "total_cards": 34,
+    "cloze_cards": 31,
+    "front_back_cards": 1,
+    "image_occlusion_suggestions": 3,
+    "learning_goals_total": 10,
+    "learning_goals_fully_covered": 9,
+    "learning_goals_partially_covered": 1,
+    "learning_goals_not_covered": 0,
+    "medical_correctness_check": "passed",
+    "source_fidelity_check": "passed",
+    "style_check": "passed",
+    "overlap_check": "passed",
+    "cards_needing_review": [
+      "B10W1_LR_032"
+    ],
+    "missing_or_weak_areas": [
+      "Sectie 'Vuistregel voor aantal variabelen' is genoemd in de bron maar bevat geen numerieke vuistregel; daarom is dekking hiervan slechts gedeeltelijk en de kaart is gemarkeerd als optional_clarification."
+    ],
+    "recommended_next_step": "Als er een specifieke vuistregel gewenst is (bv. events per variable), voeg die kaart pas toe als een concrete bronwaarde wordt geleverd. Verder: indien gewenst extra oefenkaarten met berekeningen (stap-voor-stap) toevoegen."
+  },
+  "optional_anki_tsv": {
+    "included": false,
+    "columns": [
+      "cloze_text",
+      "extra",
+      "tags"
+    ],
+    "tsv_content": ""
+  }
+}

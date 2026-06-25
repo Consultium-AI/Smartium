@@ -24,12 +24,14 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import mammoth from 'mammoth'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const SUMMARIES_ROOT = path.join(ROOT, 'src', 'summaries', 'samenvattingen-b10')
 const OUTPUT_DIR = path.join(ROOT, 'src', 'data', 'flashcards-blok10')
-const MASTERPROMPT_PATH = path.join(__dirname, 'lib', 'smartium-anki-masterprompt.txt')
+// Masterprompt = de .docx in de projectroot (wordt runtime naar platte tekst geëxtraheerd).
+const MASTERPROMPT_PATH = path.join(ROOT, 'SMARTIUM ANKI CARD GENERATOR MASTERPROMPT.docx')
 
 const MODEL = 'gpt-5-mini'
 const OPENAI_URL = 'https://api.openai.com/v1/chat/completions'
@@ -40,38 +42,82 @@ const PROXY_ORIGIN = 'http://localhost:5174'
 // gpt-5-mini is een reasoning-model: ruim budget voor redeneer- + uitvoertokens.
 const MAX_COMPLETION_TOKENS = 32000
 
-// ─── LME-register voor Blok 10 ──────────────────────────────────────────────
-// Volgorde = volgorde op de website (zie src/pages/SummaryPage.jsx, blok10).
-// `dir` is relatief t.o.v. SUMMARIES_ROOT. Nieuwe LME's toevoegen = één regel.
-const BLOK10_LMES = [
-  {
-    id: 'blok10-week1-casus1-maagklachten-endoscopie-basis-en-bloedingen',
-    name: 'Endoscopie basis en bloedingen',
-    week: 'Week 1',
-    case: 'Casus 1: Maagklachten',
-    moduleKind: 'lme',
-    dir: 'week-1/casus-1-maagklachten/casusbijeenkomst/lme-endoscopie-basis-en-bloedingen',
-  },
-  {
-    id: 'blok10-week1-casus1-maagklachten-fysiologie-van-maagzuur',
-    name: 'Fysiologie van maagzuur',
-    week: 'Week 1',
-    case: 'Casus 1: Maagklachten',
-    moduleKind: 'lme',
-    dir: 'week-1/casus-1-maagklachten/lme-fysiologie-van-maagzuur',
-  },
-  {
-    id: 'blok10-week1-casus1-maagklachten-leefstijl-bij-reflux',
-    name: 'Leefstijl bij reflux',
-    week: 'Week 1',
-    case: 'Casus 1: Maagklachten',
-    moduleKind: 'lme',
-    dir: 'week-1/casus-1-maagklachten/lme-leefstijl-bij-reflux',
-  },
-  // ── Verder uitbreiden met de overige Blok 10-LME's (zelfde vorm) ──
-]
-
+// ─── LME-register voor Blok 10 (auto-discovery) ─────────────────────────────
+// Het register wordt opgebouwd door SUMMARIES_ROOT te doorlopen: elke modulemap
+// (basismap met prefix lme-/lmo-/lmv-/stm-, niet de "-mini"-varianten) met .jsx
+// bron wordt een deck. Metadata (week/casus/naam/id) volgt uit het pad, exact
+// volgens de bestaande naamgeving. Nieuwe LME toevoegen = niets, hij verschijnt
+// vanzelf zodra de samenvattingsmap bestaat.
 const BLOK_NAME = 'Blok 10: Maag-Darm-Lever'
+
+const MODULE_PREFIX_RE = /^(lme|lmo|lmv|stm)-/
+
+function capitalizeFirst(s) {
+  return s.length ? s[0].toUpperCase() + s.slice(1) : s
+}
+
+function hasJsx(absDir) {
+  for (const entry of fs.readdirSync(absDir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (hasJsx(path.join(absDir, entry.name))) return true
+    } else if (entry.isFile() && entry.name.endsWith('.jsx')) {
+      return true
+    }
+  }
+  return false
+}
+
+// Bouw deck-metadata uit een relatief modulepad t.o.v. SUMMARIES_ROOT.
+function lmeFromRelDir(relDir) {
+  const segs = relDir.split('/')
+  const base = segs[segs.length - 1]
+  const kind = (base.match(MODULE_PREFIX_RE) || [])[1] || 'lme'
+  const moduleBase = base.replace(MODULE_PREFIX_RE, '')
+
+  const weekSeg = segs.find((s) => /^week-\d+/.test(s)) || 'week-0'
+  const weekNum = parseInt(weekSeg.replace('week-', ''), 10) || 0
+
+  const casusSeg = segs.find((s) => s.startsWith('casus-')) || 'casus-0-overig'
+  const cParts = casusSeg.split('-') // ["casus", "<num>", ...title]
+  const cToken = cParts[1] || '0'
+  const caseNum = parseInt((cToken.match(/\d+/) || ['0'])[0], 10)
+  const caseTitle = capitalizeFirst(cParts.slice(2).join(' ')) || 'Overig'
+  const casusSlug = `casus${cToken}-${cParts.slice(2).join('-')}`
+
+  return {
+    id: `blok10-week${weekNum}-${casusSlug}-${moduleBase}`,
+    name: capitalizeFirst(moduleBase.replace(/-/g, ' ')),
+    week: `Week ${weekNum}`,
+    case: `Casus ${caseNum}: ${caseTitle}`,
+    moduleKind: kind,
+    dir: relDir,
+  }
+}
+
+// Doorloop SUMMARIES_ROOT en verzamel alle unieke modulemappen (dedup op id).
+function discoverLmes() {
+  const found = []
+  const walk = (absDir, relParts) => {
+    for (const entry of fs.readdirSync(absDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue
+      const childAbs = path.join(absDir, entry.name)
+      const childRel = [...relParts, entry.name].join('/')
+      if (MODULE_PREFIX_RE.test(entry.name) && !entry.name.endsWith('-mini')) {
+        if (hasJsx(childAbs)) found.push(lmeFromRelDir(childRel))
+        // Niet verder afdalen: secties horen bij deze module.
+      } else {
+        walk(childAbs, [...relParts, entry.name])
+      }
+    }
+  }
+  walk(SUMMARIES_ROOT, [])
+
+  const byId = new Map()
+  for (const lme of found) if (!byId.has(lme.id)) byId.set(lme.id, lme)
+  return [...byId.values()].sort((a, b) => a.dir.localeCompare(b.dir))
+}
+
+const BLOK10_LMES = discoverLmes()
 
 // ─── CLI-argumenten ─────────────────────────────────────────────────────────
 function parseArgs(argv) {
@@ -93,6 +139,18 @@ function loadApiKey() {
     return process.env.OPENAI_API_KEY.trim()
   }
   return null
+}
+
+// ─── Masterprompt laden uit de .docx ────────────────────────────────────────
+// De masterprompt staat in een Word-bestand; mammoth extraheert de platte tekst.
+async function loadMasterprompt() {
+  if (!fs.existsSync(MASTERPROMPT_PATH)) {
+    throw new Error(`Masterprompt ontbreekt: ${MASTERPROMPT_PATH}`)
+  }
+  const { value } = await mammoth.extractRawText({ path: MASTERPROMPT_PATH })
+  const text = value.trim()
+  if (!text) throw new Error('Masterprompt-.docx leverde lege tekst op.')
+  return text
 }
 
 // ─── Bron-extractie: JSX → leesbare tekst ───────────────────────────────────
@@ -278,7 +336,7 @@ async function main() {
   const apiKey = loadApiKey()
   const engine = apiKey ? 'direct OpenAI (OPENAI_API_KEY)' : `proxy (${PROXY_URL})`
 
-  const masterprompt = fs.readFileSync(MASTERPROMPT_PATH, 'utf8')
+  const masterprompt = await loadMasterprompt()
 
   let targets = BLOK10_LMES
   if (args.only) targets = targets.filter((l) => l.id === args.only)
@@ -300,6 +358,13 @@ async function main() {
       continue
     }
     const sourceText = extractSourceText(absDir)
+
+    // Lege/bijna-lege bron levert geen zinnige kaarten op → overslaan.
+    if (sourceText.length < 50) {
+      console.error(`✗ ${lme.id}: bron te kort (${sourceText.length} tekens) — overgeslagen`)
+      continue
+    }
+
     process.stdout.write(`→ ${lme.name} (${sourceText.length} tekens bron) ... `)
 
     if (args.dryRun) {

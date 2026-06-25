@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
-import { isWaifuPremiumUser, hasFlashcardsAccess } from './utils/waifuPremiumUser'
-import { useAccess } from './hooks/useAccess'
-import { Loader2 } from 'lucide-react'
+import { isWaifuPremiumUser } from './utils/waifuPremiumUser'
+import AccountRoute from './components/AccountRoute'
 import WaifuSiteBackground from './components/waifu/WaifuSiteBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -22,7 +21,6 @@ import LoginPage from './pages/LoginPage'
 import BillingPage from './pages/BillingPage'
 import ProfileSettingsPage from './pages/ProfileSettingsPage'
 import ContentProtectionWrapper from './components/ContentProtectionWrapper'
-import AccountRoute from './components/AccountRoute'
 import ScrollToTopRoutes from './components/ScrollToTopRoutes'
 import SubscriptionRenewalModal from './components/SubscriptionRenewalModal'
 import { RewardProvider } from './context/RewardContext'
@@ -42,30 +40,6 @@ const HomePage = ({ waifuMode }) => (
     <Footer />
   </>
 )
-
-/** Flashcards: alle premium/VIP-accounts (waifu-theme blijft apart). */
-function FlashcardsVipRoute({ children }) {
-  const { user, loading: authLoading } = useAuth()
-  const { hasAccess, plan, loading: accessLoading } = useAccess()
-
-  if (authLoading || accessLoading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f8f9fb] dark:bg-[#0a0d12]">
-        <Loader2 className="h-8 w-8 animate-spin text-primary-500" strokeWidth={2} />
-      </div>
-    )
-  }
-
-  if (!user) {
-    return <Navigate to={`/login?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`} replace />
-  }
-
-  if (!hasFlashcardsAccess(hasAccess, plan)) {
-    return <Navigate to="/billing" replace />
-  }
-
-  return children
-}
 
 const getBasename = () => {
   const baseUrl = import.meta.env.BASE_URL
@@ -109,8 +83,8 @@ function App() {
               <Route path="/summary-blok5" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok10" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
-              <Route path="/flashcards" element={<FlashcardsVipRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></FlashcardsVipRoute>} />
-              <Route path="/flashcards-blok10" element={<FlashcardsVipRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></FlashcardsVipRoute>} />
+              <Route path="/flashcards" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/flashcards-blok10" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></AccountRoute>} />
               <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
               <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />
