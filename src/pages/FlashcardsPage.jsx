@@ -15,7 +15,7 @@ import {
 import Navbar from '../components/Navbar'
 import { useAuth } from '../context/AuthContext'
 import { useReward } from '../context/RewardContext'
-import { getProgressUserId } from '../utils/accountProgressStorage'
+import { getProgressUserId, loadFlashcardSession, loadFlashcardSessionMap, saveFlashcardSession, clearFlashcardSession } from '../utils/accountProgressStorage'
 import {
   getFlashcardBlocks,
   getDeckById,
@@ -33,6 +33,50 @@ import {
 } from '../utils/flashcardSrs'
 
 const ALL_DECK_ID = '__all__'
+
+function isValidQueue(queue, itemCount) {
+  return (
+    Array.isArray(queue) &&
+    queue.length > 0 &&
+    queue.every((i) => Number.isInteger(i) && i >= 0 && i < itemCount)
+  )
+}
+
+function restoreInProgressSession(saved, itemCount, buildInitialQueue) {
+  if (!saved || saved.v !== 1 || saved.inProgress !== true || saved.itemCount !== itemCount) {
+    return null
+  }
+  if (!isValidQueue(saved.queue, itemCount)) return null
+  const doneIds = Array.isArray(saved.doneIds)
+    ? saved.doneIds.filter((i) => Number.isInteger(i) && i >= 0 && i < itemCount)
+    : []
+  return {
+    queue: saved.queue,
+    doneIds: new Set(doneIds),
+    stats:
+      saved.stats && typeof saved.stats === 'object'
+        ? { reviewed: saved.stats.reviewed || 0, coins: saved.stats.coins || 0 }
+        : { reviewed: 0, coins: 0 },
+  }
+}
+
+function sessionProgressFromSaved(saved, total) {
+  if (!saved || typeof saved !== 'object') return null
+  if (saved.inProgress) {
+    const doneCount = Array.isArray(saved.doneIds) ? saved.doneIds.length : 0
+    if (doneCount === 0 && !isValidQueue(saved.queue, total)) return null
+    return { started: true, completed: false, doneCount, total: saved.itemCount ?? total }
+  }
+  if (saved.completed) {
+    return {
+      started: true,
+      completed: true,
+      doneCount: saved.doneCount ?? saved.itemCount ?? total,
+      total: saved.itemCount ?? total,
+    }
+  }
+  return null
+}
 
 /* Tailwind-klassen per beoordelingskleur (statisch zodat Tailwind ze meebuildt). */
 const RATING_BTN = {
@@ -73,12 +117,14 @@ function ClozeContent({ segments, revealed }) {
 }
 
 /* ─── Studie-viewer met spaced repetition ─────────────────────────── */
-function StudyView({ session, userId, onExit }) {
+function StudyView({ session, sessionId, userId, onExit }) {
   const { awardCoins } = useReward()
   const items = session.items // [{ deckId, lmeName, card(normalized), raw }]
+  const canPersist = Boolean(userId)
 
   // SRS-status (lokale kopie die we naar storage schrijven).
   const srsRef = useRef(loadSrs(userId))
+  const [sessionHydrated, setSessionHydrated] = useState(false)
 
   // Beginvolgorde: kaarten die "due" zijn eerst, daarna de rest.
   const buildInitialQueue = useCallback(() => {
@@ -92,20 +138,70 @@ function StudyView({ session, userId, onExit }) {
     return [...due, ...later]
   }, [items])
 
-  const [queue, setQueue] = useState(buildInitialQueue)
+  const [queue, setQueue] = useState([])
   const [revealed, setRevealed] = useState(false)
   const [doneIds, setDoneIds] = useState(() => new Set())
   const [stats, setStats] = useState({ reviewed: 0, coins: 0 })
 
+  useEffect(() => {
+    setSessionHydrated(false)
+    srsRef.current = loadSrs(userId)
+    const saved = canPersist ? loadFlashcardSession(userId, sessionId) : null
+    const restored = restoreInProgressSession(saved, items.length, buildInitialQueue)
+    if (restored) {
+      setQueue(restored.queue)
+      setDoneIds(restored.doneIds)
+      setStats(restored.stats)
+    } else {
+      setQueue(buildInitialQueue())
+      setDoneIds(new Set())
+      setStats({ reviewed: 0, coins: 0 })
+    }
+    setRevealed(false)
+    setSessionHydrated(true)
+  }, [userId, sessionId, items, canPersist, buildInitialQueue])
+
+  const persistSession = useCallback(
+    (nextQueue, nextDoneIds, nextStats, { inProgress, completed = false } = { inProgress: true }) => {
+      if (!canPersist) return
+      saveFlashcardSession(userId, sessionId, {
+        v: 1,
+        inProgress,
+        completed,
+        itemCount: items.length,
+        queue: nextQueue,
+        doneIds: [...nextDoneIds],
+        doneCount: nextDoneIds.size,
+        stats: nextStats,
+        updatedAt: Date.now(),
+      })
+    },
+    [canPersist, userId, sessionId, items.length]
+  )
+
+  useEffect(() => {
+    if (!sessionHydrated || !canPersist || queue.length === 0) return
+    const timer = setTimeout(() => {
+      persistSession(queue, doneIds, stats, { inProgress: true })
+    }, 400)
+    return () => clearTimeout(timer)
+  }, [sessionHydrated, canPersist, queue, doneIds, stats, persistSession])
+
   const restart = useCallback(() => {
+    if (canPersist) clearFlashcardSession(userId, sessionId)
     setRevealed(false)
     setDoneIds(new Set())
     setStats({ reviewed: 0, coins: 0 })
     setQueue(buildInitialQueue())
-  }, [buildInitialQueue])
+  }, [buildInitialQueue, canPersist, userId, sessionId])
 
   const currentIndex = queue[0]
   const item = currentIndex != null ? items[currentIndex] : null
+
+  useEffect(() => {
+    if (item || !sessionHydrated || !canPersist) return
+    persistSession([], doneIds, stats, { inProgress: false, completed: true })
+  }, [item, sessionHydrated, canPersist, doneIds, stats, persistSession])
 
   const rate = useCallback(
     (rating) => {
@@ -142,6 +238,7 @@ function StudyView({ session, userId, onExit }) {
 
   // Sneltoetsen: spatie/enter = onthullen, 1-5 = beoordelen.
   useEffect(() => {
+    if (!sessionHydrated) return undefined
     const onKey = (e) => {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault()
@@ -152,7 +249,15 @@ function StudyView({ session, userId, onExit }) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [revealed, rate])
+  }, [sessionHydrated, revealed, rate])
+
+  if (!sessionHydrated) {
+    return (
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <p className="text-sm text-slate-500 dark:text-slate-400">Voortgang laden…</p>
+      </div>
+    )
+  }
 
   const total = items.length
   const done = doneIds.size
@@ -340,7 +445,7 @@ function StudyView({ session, userId, onExit }) {
 }
 
 /* ─── Deck-overzicht ─────────────────────────────────────────────── */
-function DeckBrowser({ blocks, totalCards, onSelect }) {
+function DeckBrowser({ blocks, totalCards, progressById, onSelect }) {
   return (
     <div className="max-w-5xl mx-auto px-4">
       <div className="text-center mb-10">
@@ -369,6 +474,16 @@ function DeckBrowser({ blocks, totalCards, onSelect }) {
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 Alle {totalCards} kaarten uit elke LME door elkaar, met spaced repetition.
               </p>
+              {progressById[ALL_DECK_ID]?.started && !progressById[ALL_DECK_ID]?.completed ? (
+                <p className="mt-1 text-xs font-medium text-sky-700 dark:text-sky-300">
+                  Hervat · {progressById[ALL_DECK_ID].doneCount}/{progressById[ALL_DECK_ID].total} geleerd
+                </p>
+              ) : null}
+              {progressById[ALL_DECK_ID]?.completed ? (
+                <p className="mt-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">
+                  Laatste sessie af · {progressById[ALL_DECK_ID].doneCount}/{progressById[ALL_DECK_ID].total}
+                </p>
+              ) : null}
             </div>
           </div>
         </button>
@@ -396,7 +511,9 @@ function DeckBrowser({ blocks, totalCards, onSelect }) {
                       <BookOpen className="w-4 h-4" /> {c.name}
                     </p>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      {c.decks.map((deck) => (
+                      {c.decks.map((deck) => {
+                        const progress = progressById[deck.lmeId]
+                        return (
                         <button
                           key={deck.lmeId}
                           type="button"
@@ -414,8 +531,19 @@ function DeckBrowser({ blocks, totalCards, onSelect }) {
                           <h4 className="font-bold text-slate-900 dark:text-slate-100 leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors">
                             {deck.lmeName}
                           </h4>
+                          {progress?.started && !progress.completed ? (
+                            <p className="mt-2 text-[11px] font-medium text-sky-700 dark:text-sky-300">
+                              Hervat · {progress.doneCount}/{progress.total} geleerd
+                            </p>
+                          ) : null}
+                          {progress?.completed ? (
+                            <p className="mt-2 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">
+                              Laatste sessie af · {progress.doneCount}/{progress.total}
+                            </p>
+                          ) : null}
                         </button>
-                      ))}
+                        )
+                      })}
                     </div>
                   </div>
                 ))}
@@ -438,6 +566,33 @@ export default function FlashcardsPage() {
     []
   )
   const [selectedId, setSelectedId] = useState(null)
+  const [progressVersion, setProgressVersion] = useState(0)
+
+  useEffect(() => {
+    const onCloudSynced = (event) => {
+      if (!userId || userId === 'guest') return
+      const syncedUid = event?.detail?.uid
+      if (!syncedUid || syncedUid === userId) {
+        setProgressVersion((v) => v + 1)
+      }
+    }
+    window.addEventListener('smartium-cloud-synced', onCloudSynced)
+    return () => window.removeEventListener('smartium-cloud-synced', onCloudSynced)
+  }, [userId])
+
+  const progressById = useMemo(() => {
+    if (!userId) return {}
+    const sessions = loadFlashcardSessionMap(userId)
+    const map = {}
+    for (const deck of allFlashcardDecks) {
+      const total = deck.cards?.length || 0
+      const progress = sessionProgressFromSaved(sessions[deck.lmeId], total)
+      if (progress) map[deck.lmeId] = progress
+    }
+    const allProgress = sessionProgressFromSaved(sessions[ALL_DECK_ID], totalCards)
+    if (allProgress) map[ALL_DECK_ID] = allProgress
+    return map
+  }, [userId, progressVersion, totalCards])
 
   const session = useMemo(() => {
     if (!selectedId) return null
@@ -473,11 +628,20 @@ export default function FlashcardsPage() {
           <StudyView
             key={selectedId}
             session={session}
+            sessionId={selectedId}
             userId={userId}
-            onExit={() => setSelectedId(null)}
+            onExit={() => {
+              setSelectedId(null)
+              setProgressVersion((v) => v + 1)
+            }}
           />
         ) : (
-          <DeckBrowser blocks={blocks} totalCards={totalCards} onSelect={setSelectedId} />
+          <DeckBrowser
+            blocks={blocks}
+            totalCards={totalCards}
+            progressById={userId ? progressById : {}}
+            onSelect={setSelectedId}
+          />
         )}
       </main>
     </>

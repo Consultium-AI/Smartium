@@ -6,7 +6,8 @@
  * - Per kaart bewaren we box/ease/interval/due in localStorage, gescoped per user.
  */
 
-const PREFIX = 'smartium_flashcard_srs_v1'
+import { storageKeyFlashcardSrs } from './accountProgressStorage'
+
 const DAY_MS = 24 * 60 * 60 * 1000
 
 // Beoordelingslabels (1 = slecht onthouden, 5 = perfect).
@@ -37,14 +38,10 @@ function defaultCardState() {
   return { box: 0, ease: 2.5, intervalDays: 0, due: 0, reps: 0, lastRating: 0, reviewedAt: 0 }
 }
 
-function storageKey(userId) {
-  return `${PREFIX}:${userId}`
-}
-
 export function loadSrs(userId) {
   if (!userId) return {}
   try {
-    const raw = localStorage.getItem(storageKey(userId))
+    const raw = localStorage.getItem(storageKeyFlashcardSrs(userId))
     return raw ? JSON.parse(raw) : {}
   } catch {
     return {}
@@ -52,11 +49,16 @@ export function loadSrs(userId) {
 }
 
 export function saveSrs(userId, state) {
-  if (!userId || userId === 'guest') return
+  if (!userId) return
   try {
-    localStorage.setItem(storageKey(userId), JSON.stringify(state))
+    localStorage.setItem(storageKeyFlashcardSrs(userId), JSON.stringify(state))
   } catch {
     /* quota / private mode — negeer */
+  }
+  if (userId !== 'guest') {
+    import('../lib/cloudUserProgress')
+      .then((m) => m.scheduleCloudProgressSync(userId))
+      .catch(() => {})
   }
 }
 

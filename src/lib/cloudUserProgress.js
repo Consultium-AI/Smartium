@@ -4,13 +4,14 @@
  */
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore'
 import { auth, db, isFirebaseConfigured } from './firebase'
-import { getChatStorageKey } from '../utils/accountProgressStorage'
+import { getChatStorageKey, PREFIX_FLASHCARD_SRS } from '../utils/accountProgressStorage'
 
 const PREFIX_PRACTICE = 'smartium_practice_v1'
 const PREFIX_EXAM = 'smartium_exam_v1'
 const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
 const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
 const PREFIX_SUMMARY_HIGHLIGHTS = 'smartium_summary_hl_v1'
+const PREFIX_FLASHCARD_SESSION = 'smartium_flashcard_session_v1'
 const COLLECTION = 'userProgress'
 
 let debounceTimer = null
@@ -53,11 +54,15 @@ function collectBundledProgress(userId) {
   const examBlok = {}
   const summarySeen = {}
   const summaryHighlights = {}
+  const flashcardSessions = {}
+  let flashcardSrs = null
   const prefixP = `${PREFIX_PRACTICE}:${userId}:`
   const prefixE = `${PREFIX_EXAM}:${userId}:`
   const prefixEb = `${PREFIX_EXAM_BLOK}:${userId}:`
+  const prefixFcSess = `${PREFIX_FLASHCARD_SESSION}:${userId}:`
   const summaryKey = `${PREFIX_SUMMARY_READ}:${userId}`
   const highlightsKey = `${PREFIX_SUMMARY_HIGHLIGHTS}:${userId}`
+  const flashcardSrsKey = `${PREFIX_FLASHCARD_SRS}:${userId}`
   try {
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i)
@@ -89,6 +94,23 @@ function collectBundledProgress(userId) {
         } catch {
           /* skip */
         }
+      } else if (k.startsWith(prefixFcSess)) {
+        const sessionId = k.slice(prefixFcSess.length)
+        const raw = localStorage.getItem(k)
+        if (!raw) continue
+        try {
+          flashcardSessions[sessionId] = JSON.parse(raw)
+        } catch {
+          /* skip */
+        }
+      } else if (k === flashcardSrsKey) {
+        const raw = localStorage.getItem(k)
+        if (!raw) continue
+        try {
+          flashcardSrs = JSON.parse(raw)
+        } catch {
+          /* skip */
+        }
       } else if (k === summaryKey) {
         const raw = localStorage.getItem(k)
         if (!raw) continue
@@ -114,9 +136,27 @@ function collectBundledProgress(userId) {
       }
     }
     const chatsJson = localStorage.getItem(getChatStorageKey(userId))
-    return { practice, exams, examBlok, summarySeen, summaryHighlights, chatsJson: chatsJson || null }
+    return {
+      practice,
+      exams,
+      examBlok,
+      summarySeen,
+      summaryHighlights,
+      flashcardSessions,
+      flashcardSrs,
+      chatsJson: chatsJson || null,
+    }
   } catch {
-    return { practice: {}, exams: {}, examBlok: {}, summarySeen: {}, summaryHighlights: {}, chatsJson: null }
+    return {
+      practice: {},
+      exams: {},
+      examBlok: {},
+      summarySeen: {},
+      summaryHighlights: {},
+      flashcardSessions: {},
+      flashcardSrs: null,
+      chatsJson: null,
+    }
   }
 }
 
@@ -154,6 +194,14 @@ function applyBundledProgressToLocal(userId, bundle) {
     if (bundle.chatsJson && typeof bundle.chatsJson === 'string') {
       localStorage.setItem(getChatStorageKey(userId), bundle.chatsJson)
     }
+    for (const [sessionId, data] of Object.entries(bundle.flashcardSessions || {})) {
+      if (data && typeof data === 'object') {
+        localStorage.setItem(`${PREFIX_FLASHCARD_SESSION}:${userId}:${sessionId}`, JSON.stringify(data))
+      }
+    }
+    if (bundle.flashcardSrs && typeof bundle.flashcardSrs === 'object') {
+      localStorage.setItem(`${PREFIX_FLASHCARD_SRS}:${userId}`, JSON.stringify(bundle.flashcardSrs))
+    }
   } catch {
     /* quota */
   }
@@ -179,6 +227,43 @@ function mergePracticeMaps(serverMap, localMap) {
   return merged
 }
 
+function flashcardSessionUpdatedAt(entry) {
+  if (!entry || typeof entry !== 'object') return 0
+  return typeof entry.updatedAt === 'number' ? entry.updatedAt : 0
+}
+
+function mergeFlashcardSessionMaps(serverMap, localMap) {
+  const merged = { ...(serverMap || {}) }
+  for (const [key, localEntry] of Object.entries(localMap || {})) {
+    const serverEntry = merged[key]
+    if (!serverEntry) {
+      if (localEntry) merged[key] = localEntry
+      continue
+    }
+    if (flashcardSessionUpdatedAt(localEntry) > flashcardSessionUpdatedAt(serverEntry)) {
+      merged[key] = localEntry
+    }
+  }
+  return merged
+}
+
+function mergeFlashcardSrs(serverSrs, localSrs) {
+  if (!serverSrs || typeof serverSrs !== 'object') return localSrs || {}
+  if (!localSrs || typeof localSrs !== 'object') return serverSrs
+  const merged = { ...serverSrs }
+  for (const [key, localEntry] of Object.entries(localSrs)) {
+    const serverEntry = merged[key]
+    if (!serverEntry) {
+      merged[key] = localEntry
+      continue
+    }
+    const localAt = localEntry?.reviewedAt || 0
+    const serverAt = serverEntry?.reviewedAt || 0
+    if (localAt >= serverAt) merged[key] = localEntry
+  }
+  return merged
+}
+
 /** Server-keys winnen; lokale keys die de server niet heeft blijven behouden. */
 function mergeServerWithLocal(localBundle, serverData) {
   const practice = mergePracticeMaps(serverData.practice, localBundle.practice)
@@ -198,8 +283,22 @@ function mergeServerWithLocal(localBundle, serverData) {
   for (const [k, v] of Object.entries(localBundle.summaryHighlights || {})) {
     if (!(k in summaryHighlights) && v) summaryHighlights[k] = v
   }
+  const flashcardSessions = mergeFlashcardSessionMaps(
+    serverData.flashcardSessions,
+    localBundle.flashcardSessions
+  )
+  const flashcardSrs = mergeFlashcardSrs(serverData.flashcardSrs, localBundle.flashcardSrs)
   const chatsJson = serverData.chatsJson || localBundle.chatsJson || null
-  return { practice, exams, examBlok, summarySeen, summaryHighlights, chatsJson }
+  return {
+    practice,
+    exams,
+    examBlok,
+    summarySeen,
+    summaryHighlights,
+    flashcardSessions,
+    flashcardSrs,
+    chatsJson,
+  }
 }
 
 async function pushProgressToCloudInternal(uid) {
@@ -223,12 +322,14 @@ async function pushProgressToCloudInternal(uid) {
   await setDoc(
     ref,
     {
-      v: 2,
+      v: 3,
       practice: stripForFirestore(bundle.practice),
       exams: stripForFirestore(bundle.exams),
       examBlok: stripForFirestore(bundle.examBlok),
       summarySeen: stripForFirestore(bundle.summarySeen),
       summaryHighlights: stripForFirestore(bundle.summaryHighlights),
+      flashcardSessions: stripForFirestore(bundle.flashcardSessions),
+      flashcardSrs: stripForFirestore(bundle.flashcardSrs || {}),
       chatsJson: bundle.chatsJson ?? null,
       syncedFrom: 'smartium-web',
       updatedAt: serverTimestamp(),
@@ -276,6 +377,8 @@ export async function hydrateFromCloud(uid) {
         examBlok: d.examBlok,
         summarySeen: d.summarySeen,
         summaryHighlights: d.summaryHighlights,
+        flashcardSessions: d.flashcardSessions,
+        flashcardSrs: d.flashcardSrs,
         chatsJson: d.chatsJson,
       })
       applyBundledProgressToLocal(uid, merged)

@@ -12,6 +12,10 @@ const PREFIX_EXAM_BLOK = 'smartium_exam_blok_v2'
 const PREFIX_SUMMARY_READ = 'smartium_summary_read_v1'
 /** Tekstmarkeringen in samenvattingen per account */
 const PREFIX_SUMMARY_HIGHLIGHTS = 'smartium_summary_hl_v1'
+/** Flashcard spaced-repetition per account (één map per user) */
+export const PREFIX_FLASHCARD_SRS = 'smartium_flashcard_srs_v1'
+/** Flashcard-studiesessie per deck (hervatten waar je gebleven was) */
+const PREFIX_FLASHCARD_SESSION = 'smartium_flashcard_session_v1'
 /** Oude globale chatsleutel (vóór per-account) */
 export const LEGACY_CHAT_STORAGE_KEY = 'smartium-chat-chats'
 
@@ -51,6 +55,14 @@ function storageKeySummaryHighlights(userId) {
 
 function storageKeySummaryRead(userId) {
   return `${PREFIX_SUMMARY_READ}:${userId}`
+}
+
+function storageKeyFlashcardSession(userId, sessionId) {
+  return `${PREFIX_FLASHCARD_SESSION}:${userId}:${sessionId}`
+}
+
+export function storageKeyFlashcardSrs(userId) {
+  return `${PREFIX_FLASHCARD_SRS}:${userId}`
 }
 
 export function loadExamBlokProgress(userId, blok, examNr) {
@@ -147,6 +159,48 @@ export function clearPracticeProgress(userId, lmeParam) {
   scheduleCloudIfNeeded(userId)
 }
 
+export function loadFlashcardSession(userId, sessionId) {
+  if (!userId || !sessionId) return null
+  const data = safeParse(localStorage.getItem(storageKeyFlashcardSession(userId, sessionId)))
+  if (!data || typeof data !== 'object') return null
+  return data
+}
+
+export function saveFlashcardSession(userId, sessionId, payload) {
+  if (!userId || !sessionId) return
+  try {
+    localStorage.setItem(storageKeyFlashcardSession(userId, sessionId), JSON.stringify(payload))
+  } catch {
+    /* quota / private mode */
+  }
+  scheduleCloudIfNeeded(userId)
+}
+
+export function clearFlashcardSession(userId, sessionId) {
+  if (!userId || !sessionId) return
+  localStorage.removeItem(storageKeyFlashcardSession(userId, sessionId))
+  scheduleCloudIfNeeded(userId)
+}
+
+/** Alle opgeslagen flashcard-sessies voor voortgang in het deck-overzicht. */
+export function loadFlashcardSessionMap(userId) {
+  const out = {}
+  if (!userId) return out
+  const prefix = `${PREFIX_FLASHCARD_SESSION}:${userId}:`
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (!key || !key.startsWith(prefix)) continue
+      const sessionId = key.slice(prefix.length)
+      const data = safeParse(localStorage.getItem(key))
+      if (data && typeof data === 'object') out[sessionId] = data
+    }
+  } catch {
+    /* ignore */
+  }
+  return out
+}
+
 export function loadExamProgress(userId, examNumber) {
   if (!userId || !examNumber) return null
   const data = safeParse(localStorage.getItem(storageKeyExam(userId, examNumber)))
@@ -206,6 +260,8 @@ function clearGuestScopedData(guestId) {
   const pPref = `${PREFIX_PRACTICE}:${guestId}:`
   const ePref = `${PREFIX_EXAM}:${guestId}:`
   const ebPref = `${PREFIX_EXAM_BLOK}:${guestId}:`
+  const fcSessPref = `${PREFIX_FLASHCARD_SESSION}:${guestId}:`
+  const fcSrsKey = storageKeyFlashcardSrs(guestId)
   const sKey = storageKeySummaryRead(guestId)
   const hlKey = storageKeySummaryHighlights(guestId)
   const chatKey = getChatStorageKey(guestId)
@@ -214,6 +270,8 @@ function clearGuestScopedData(guestId) {
       key.startsWith(pPref) ||
       key.startsWith(ePref) ||
       key.startsWith(ebPref) ||
+      key.startsWith(fcSessPref) ||
+      key === fcSrsKey ||
       key === chatKey ||
       key === sKey ||
       key === hlKey
@@ -242,6 +300,9 @@ export function migrateGuestDataToUser(guestId, newUserId) {
     const prefixP = `${PREFIX_PRACTICE}:${guestId}:`
     const prefixE = `${PREFIX_EXAM}:${guestId}:`
     const prefixEb = `${PREFIX_EXAM_BLOK}:${guestId}:`
+    const prefixFcSess = `${PREFIX_FLASHCARD_SESSION}:${guestId}:`
+    const fcSrsGuest = storageKeyFlashcardSrs(guestId)
+    const fcSrsUser = storageKeyFlashcardSrs(newUserId)
     const summaryGuest = storageKeySummaryRead(guestId)
     const summaryUser = storageKeySummaryRead(newUserId)
     const hlGuest = storageKeySummaryHighlights(guestId)
@@ -265,7 +326,17 @@ export function migrateGuestDataToUser(guestId, newUserId) {
         if (!localStorage.getItem(dest)) {
           localStorage.setItem(dest, localStorage.getItem(key))
         }
+      } else if (key.startsWith(prefixFcSess)) {
+        const suffix = key.slice(prefixFcSess.length)
+        const dest = `${PREFIX_FLASHCARD_SESSION}:${newUserId}:${suffix}`
+        if (!localStorage.getItem(dest)) {
+          localStorage.setItem(dest, localStorage.getItem(key))
+        }
       }
+    }
+    const gFcSrs = localStorage.getItem(fcSrsGuest)
+    if (gFcSrs && !localStorage.getItem(fcSrsUser)) {
+      localStorage.setItem(fcSrsUser, gFcSrs)
     }
     const gChat = getChatStorageKey(guestId)
     const uChat = getChatStorageKey(newUserId)
