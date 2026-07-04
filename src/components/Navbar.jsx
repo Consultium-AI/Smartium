@@ -79,7 +79,12 @@ const navItems = [
     href: '/flashcards',
     icon: Brain,
     subGroups: [
+      { label: 'Ba1', links: [
+        { name: 'Blok 4', href: '/flashcards-blok4' },
+        { name: 'Blok 5', href: '/flashcards-blok5' },
+      ]},
       { label: 'Ba2', links: [
+        { name: 'Blok 9', href: '/flashcards-blok9' },
         { name: 'Blok 10', href: '/flashcards-blok10' },
       ]},
     ],

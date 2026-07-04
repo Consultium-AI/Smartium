@@ -2,16 +2,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo, useEffect } from 'react'
 import { Link, Navigate, useSearchParams } from 'react-router-dom'
 import { 
-  ClipboardCheck, ChevronLeft, ChevronRight, ChevronDown,
+  ClipboardCheck, ChevronLeft, ChevronRight,
   RotateCcw, Trophy, Target, BookOpen,
   CheckCircle, XCircle, ArrowLeft,
-  GraduationCap, Shield, Loader2, Activity, Sparkles, Lock,
-  FlaskConical
+  Loader2, Lock, Infinity as InfinityIcon
 } from 'lucide-react'
 import Navbar from '../components/Navbar'
 import PracticeMultiBlokSelector from '../components/PracticeMultiBlokSelector'
 import PracticeCourseModuleLink from '../components/PracticeCourseModuleLink'
-import SummaryCourseWeekTree from '../components/SummaryCourseWeekTree'
+import { CourseBlockIndex } from '../components/course/CourseOverviewLayout'
+import CourseForcedBlokView from '../components/course/CourseForcedBlokView'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro from '../components/Blok5Week2Casus4SystemischeTherapieVanMelanoomPracticeIntro'
 import Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro from '../components/Blok5Week4Casus8ErysipelasEnCellulitisPracticeIntro'
@@ -118,6 +118,17 @@ import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase
 
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
 
+const PRACTICE_BLOK_WEEKOVERZICHT = {
+  blok5: {
+    title: 'Weekoverzicht blok 5 — BA1 2025–26',
+    pdfFileName: 'weekoverzicht-blok5-ba1-25-26.pdf',
+  },
+  blok9: {
+    title: 'Weekoverzicht blok 9 — BA2 2025–26',
+    pdfFileName: 'weekoverzicht-blok9-ba2-25-26.pdf',
+  },
+}
+
 const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const [searchParams] = useSearchParams()
   const lmeParam = searchParams.get('lme')
@@ -132,14 +143,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const hasAccountProgress = isAccountProgressUser(progressUserId)
   const waifuMode = isWaifuPremiumUser(user)
   const waifuInset = waifuMode ? ' waifu-practice-inset' : ''
-  const blokParam = searchParams.get('blok')
   const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
-  const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
-  const selectedOverviewBlok = forcedBlokKey || urlBlokKey
-  const [expandedBlok, setExpandedBlok] = useState(() => {
-    if (selectedOverviewBlok) return selectedOverviewBlok
-    return null
-  })
   const [progressVersion, setProgressVersion] = useState(0)
   const [sessionQuestions, setSessionQuestions] = useState(null)
   const [questionOrder, setQuestionOrder] = useState(null)
@@ -148,22 +152,6 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
   const nextPracticeLme = currentPracticeIndex >= 0 && currentPracticeIndex < PRACTICE_QUESTION_ORDER.length - 1
     ? PRACTICE_QUESTION_ORDER[currentPracticeIndex + 1]
     : null
-
-  useEffect(() => {
-    if (selectedOverviewBlok) {
-      setExpandedBlok(selectedOverviewBlok)
-      requestAnimationFrame(() => {
-        const el = document.getElementById(`section-${selectedOverviewBlok}`)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
-    } else if (lmeParam?.startsWith('blok5-week')) {
-      setExpandedBlok('blok5')
-    } else if (lmeParam?.startsWith('blok9-week')) {
-      setExpandedBlok('blok9')
-    } else if (lmeParam?.startsWith('blok10-week')) {
-      setExpandedBlok('blok10')
-    }
-  }, [lmeParam, selectedOverviewBlok])
 
   if (isBlockedDirectLme) {
     return <Navigate to="/oefenvragen" replace />
@@ -614,7 +602,7 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
     const totalCasusQuestions = [...casusbijeenkomstItems, ...flankerendItems].reduce((sum, item) => sum + getLmeQuestionCount(item), 0)
 
     return (
-      <div className="ml-0 sm:ml-2 space-y-3">
+      <div className="space-y-3">
         {sectionDefs.map((section) => (
           section.items.length > 0 ? (
             <section key={section.key} className="space-y-2">
@@ -711,11 +699,12 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           </motion.div>
         )}
 
-        {/* Title + cursusoverzicht (zelfde dark-mode patroon als Samenvattingen-index) */}
+        {/* Title (alleen bij actieve module) */}
+        {lmeParam && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className={`text-center ${lmeParam ? 'mb-10 md:mb-14 max-w-3xl mx-auto space-y-4' : 'mb-8 max-w-3xl mx-auto'} ${waifuMode ? 'waifu-practice-inset waifu-practice-hero' : ''}`}
+          className={`text-center mb-10 md:mb-14 max-w-3xl mx-auto space-y-4 ${waifuMode ? 'waifu-practice-inset waifu-practice-hero' : ''}`}
         >
           <h1
             className={`text-3xl font-bold tracking-tight ${lmeParam ? 'mb-3' : 'mb-1'} ${
@@ -939,464 +928,133 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
           {lmeParam === 'blok5-week8-casus15-lmo-voorbereiding-vow-palliatieve-zorg' && (
             <Blok5Week8Casus15LmoVoorbereidingVowPalliatieveZorgPracticeIntro />
           )}
-          {!lmeParam && (
-            <>
-              {forcedBlokKey && (
-                <div className="mb-6">
-                  <Link
-                    to="/oefenvragen"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    <ChevronRight className="w-4 h-4 rotate-180" />
-                    Terug naar alle blokken
-                  </Link>
-                </div>
-              )}
-              {!forcedBlokKey && (
-                <>
-                <div className="mt-8 space-y-10 text-left">
-                  <section aria-labelledby="practice-index-ba1-heading">
-                    <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                      <h2 id="practice-index-ba1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                        Bachelorjaar 1
-                      </h2>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        Blokken 3, 4 en 5
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                      <Link to="/oefenvragen-blok3" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors${waifuInset}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-500/20">
-                            <GraduationCap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                          </div>
-                          <div className="min-w-0">
-                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok3.name}</h2>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok3)}</p>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto" />
-                        </div>
-                      </Link>
-                      <Link to="/oefenvragen-blok4" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors${waifuInset}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20">
-                            <Shield className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                          </div>
-                          <div className="min-w-0">
-                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok4.name}</h2>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok4)}</p>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 ml-auto" />
-                        </div>
-                      </Link>
-                      <Link to="/oefenvragen-blok5" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors sm:col-span-2${waifuInset}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-500/20">
-                            <Sparkles className="w-5 h-5 text-rose-600 dark:text-rose-400" />
-                          </div>
-                          <div className="min-w-0">
-                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok5.name}</h2>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok5)}</p>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 ml-auto" />
-                        </div>
-                      </Link>
-                    </div>
-                  </section>
-
-                  <section aria-labelledby="practice-index-ba2-heading">
-                    <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                      <h2 id="practice-index-ba2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                        Bachelorjaar 2
-                      </h2>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                        Blok 9 en Blok 10
-                      </p>
-                    </div>
-                    <div className="flex flex-col gap-4">
-                      <Link to="/oefenvragen-blok9" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-teal-400/70 transition-colors${waifuInset}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl bg-teal-100 dark:bg-teal-500/20">
-                            <Activity className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-                          </div>
-                          <div className="min-w-0">
-                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok9.name}</h2>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok9)}</p>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-teal-500 ml-auto" />
-                        </div>
-                      </Link>
-                      <Link to="/oefenvragen-blok10" className={`group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors${waifuInset}`}>
-                        <div className="flex items-center gap-3">
-                          <div className="p-2.5 rounded-xl bg-violet-100 dark:bg-violet-500/20">
-                            <FlaskConical className="w-5 h-5 text-violet-600 dark:text-violet-400" />
-                          </div>
-                          <div className="min-w-0">
-                            <h2 className="font-bold text-slate-900 dark:text-slate-100">{practiceQuestionsCourseStructure.blok10.name}</h2>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok10)}</p>
-                          </div>
-                          <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-violet-500 ml-auto" />
-                        </div>
-                      </Link>
-                    </div>
-                  </section>
-                </div>
-                <div className="mt-10 max-w-3xl mx-auto text-left">
-                  <PracticeMultiBlokSelector
-                    showPremiumLocks={showPremiumLocks}
-                    progressUserId={progressUserId}
-                    hasAccountProgress={hasAccountProgress}
-                    isLoggedIn={Boolean(user?.uid)}
-                    refreshKey={lmeParam ?? 'overview'}
-                    waifuMode={waifuMode}
-                  />
-                </div>
-                </>
-              )}
-              {forcedBlokKey && (
-            <>
-            <div className="mt-8 space-y-4 text-left">
-              {/* Blok 3 */}
-              {forcedBlokKey === 'blok3' && (
-              <div id="section-blok3" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (forcedBlokKey) return
-                    setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')
-                  }}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
-                      <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-                    </div>
-                    <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                        {practiceQuestionsCourseStructure.blok3.name}
-                      </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok3)}
-                      </p>
-                    </div>
-                  </div>
-                  {!forcedBlokKey && (
-                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {(forcedBlokKey === 'blok3' || expandedBlok === 'blok3') && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                    >
-                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        <SummaryCourseWeekTree
-                          blokKey="blok3"
-                          pageScope="practice"
-                          weeks={practiceQuestionsCourseStructure.blok3.weeks}
-                          accentVariant="primary"
-                          renderCaseSections={(casus, weekIndex, casusIndex) =>
-                            renderCaseSections(casus, 'blok3', weekIndex, casusIndex)
-                          }
-                        />
-                        <Link
-                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok3')}`}
-                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-primary-300 dark:border-primary-600/50 text-primary-700 dark:text-primary-400 hover:border-primary-500 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-500/10'}`}
-                        >
-                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
-                          Oefen alle vragen van Blok 3
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              )}
-
-              {/* Blok 4 */}
-              {forcedBlokKey === 'blok4' && (
-              <div id="section-blok4" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (forcedBlokKey) return
-                    setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')
-                  }}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
-                      <Shield className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                    </div>
-                    <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                        {practiceQuestionsCourseStructure.blok4.name}
-                      </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok4)}
-                      </p>
-                    </div>
-                  </div>
-                  {!forcedBlokKey && (
-                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {(forcedBlokKey === 'blok4' || expandedBlok === 'blok4') && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                    >
-                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        <SummaryCourseWeekTree
-                          blokKey="blok4"
-                          pageScope="practice"
-                          weeks={practiceQuestionsCourseStructure.blok4.weeks}
-                          accentVariant="indigo"
-                          weekSpacing="loose"
-                          renderCaseSections={(casus, weekIndex, casusIndex) =>
-                            renderCaseSections(casus, 'blok4', weekIndex, casusIndex)
-                          }
-                        />
-                        <Link
-                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok4')}`}
-                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-indigo-300 dark:border-indigo-600/50 text-indigo-700 dark:text-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/10'}`}
-                        >
-                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
-                          Oefen alle vragen van Blok 4
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              )}
-
-              {/* Blok 5 */}
-              {forcedBlokKey === 'blok5' && (
-              <div id="section-blok5" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (forcedBlokKey) return
-                    setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')
-                  }}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-rose-100 dark:bg-rose-500/25 rounded-xl">
-                      <Sparkles className="w-6 h-6 text-rose-600 dark:text-rose-300" />
-                    </div>
-                    <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                        {practiceQuestionsCourseStructure.blok5.name}
-                      </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok5)}
-                      </p>
-                    </div>
-                  </div>
-                  {!forcedBlokKey && (
-                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {(forcedBlokKey === 'blok5' || expandedBlok === 'blok5') && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                    >
-                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        <BlokWeekoverzichtPanel
-                          title="Weekoverzicht blok 5 — BA1 2025–26"
-                          pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
-                        />
-                        <SummaryCourseWeekTree
-                          blokKey="blok5"
-                          pageScope="practice"
-                          weeks={practiceQuestionsCourseStructure.blok5.weeks}
-                          accentVariant="rose"
-                          renderCaseSections={(casus, weekIndex, casusIndex) =>
-                            renderCaseSections(casus, 'blok5', weekIndex, casusIndex)
-                          }
-                        />
-                        <Link
-                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok5')}`}
-                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-rose-300 dark:border-rose-600/50 text-rose-700 dark:text-rose-400 hover:border-rose-500 dark:hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10'}`}
-                        >
-                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
-                          Oefen alle vragen van Blok 5
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              )}
-
-              {/* Blok 9 */}
-              {forcedBlokKey === 'blok9' && (
-              <div id="section-blok9" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (forcedBlokKey) return
-                    setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')
-                  }}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-teal-100 dark:bg-teal-500/30 rounded-xl">
-                      <Activity className="w-6 h-6 text-teal-600 dark:text-teal-400" />
-                    </div>
-                    <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                        {practiceQuestionsCourseStructure.blok9.name}
-                      </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok9)}
-                      </p>
-                    </div>
-                  </div>
-                  {!forcedBlokKey && (
-                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {(forcedBlokKey === 'blok9' || expandedBlok === 'blok9') && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                    >
-                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        <BlokWeekoverzichtPanel
-                          title="Weekoverzicht blok 9 — BA2 2025–26"
-                          pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
-                        />
-                        <SummaryCourseWeekTree
-                          blokKey="blok9"
-                          pageScope="practice"
-                          weeks={practiceQuestionsCourseStructure.blok9.weeks}
-                          accentVariant="teal"
-                          renderCaseSections={(casus, weekIndex, casusIndex) =>
-                            renderCaseSections(casus, 'blok9', weekIndex, casusIndex)
-                          }
-                        />
-                        <Link
-                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok9')}`}
-                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-teal-300 dark:border-teal-600/50 text-teal-700 dark:text-teal-400 hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-500/10'}`}
-                        >
-                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
-                          Oefen alle vragen van Blok 9
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              )}
-
-              {/* Blok 10 */}
-              {forcedBlokKey === 'blok10' && (
-              <div id="section-blok10" className={`bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24${waifuInset}`}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (forcedBlokKey) return
-                    setExpandedBlok(expandedBlok === 'blok10' ? null : 'blok10')
-                  }}
-                  className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-violet-100 dark:bg-violet-500/30 rounded-xl">
-                      <FlaskConical className="w-6 h-6 text-violet-600 dark:text-violet-400" />
-                    </div>
-                    <div className="text-left">
-                      <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                        {practiceQuestionsCourseStructure.blok10.name}
-                      </h2>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        {formatPracticeBlokSubtitle(practiceQuestionsCourseStructure.blok10)}
-                      </p>
-                    </div>
-                  </div>
-                  {!forcedBlokKey && (
-                    <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok10' ? 'rotate-180' : ''}`} />
-                  )}
-                </button>
-                <AnimatePresence>
-                  {(forcedBlokKey === 'blok10' || expandedBlok === 'blok10') && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                    >
-                      <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                        <SummaryCourseWeekTree
-                          blokKey="blok10"
-                          pageScope="practice"
-                          weeks={practiceQuestionsCourseStructure.blok10.weeks}
-                          accentVariant="violet"
-                          renderCaseSections={(casus, weekIndex, casusIndex) =>
-                            renderCaseSections(casus, 'blok10', weekIndex, casusIndex)
-                          }
-                        />
-                        <Link
-                          to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam('blok10')}`}
-                          className={`mt-4 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed text-sm font-medium transition-all ${showPremiumLocks ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500' : 'border-violet-300 dark:border-violet-600/50 text-violet-700 dark:text-violet-400 hover:border-violet-500 dark:hover:border-violet-500 hover:bg-violet-50 dark:hover:bg-violet-500/10'}`}
-                        >
-                          {showPremiumLocks ? <Lock className="w-4 h-4" /> : <RotateCcw className="w-4 h-4" />}
-                          Oefen alle vragen van Blok 10
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              )}
-            </div>
-            <div className="mt-6 max-w-3xl mx-auto">
-              <Link
-                to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokWrongAnswersParam(forcedBlokKey)}`}
-                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm transition-colors ${
-                  showPremiumLocks
-                    ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500'
-                    : 'border-dashed border-amber-300/80 dark:border-amber-600/50 text-amber-900 dark:text-amber-200/90 bg-amber-50/80 dark:bg-amber-950/25 hover:border-amber-400 dark:hover:border-amber-500'
-                }`}
-              >
-                {showPremiumLocks ? <Lock className="w-4 h-4 shrink-0" /> : <XCircle className="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" />}
-                <span className="text-left font-medium">
-                  Oefen alle foute antwoorden van dit blok
-                  {wrongAnswersCountForForcedBlok != null && (
-                    <span className="block font-normal text-slate-600 dark:text-slate-400 mt-0.5">
-                      {wrongAnswersCountForForcedBlok === 0
-                        ? 'Nog geen opgeslagen foute antwoorden — maak eerst oefenvragen met zichtbare uitslag.'
-                        : `${wrongAnswersCountForForcedBlok} vraag${wrongAnswersCountForForcedBlok === 1 ? '' : 'en'} in willekeurige volgorde`}
-                    </span>
-                  )}
-                </span>
-              </Link>
-            </div>
-            </>
-              )}
-            </>
-          )}
         </motion.div>
+        )}
+
+        {!lmeParam && !forcedBlokKey && (
+          <>
+            <CourseBlockIndex
+              pageTitle="Oefenvragen"
+              pageSubtitle="Test je kennis per blok, week en module — kies een blok om te beginnen."
+              className={`text-left${waifuInset}`}
+              sections={[
+                {
+                  title: 'Bachelorjaar 1',
+                  subtitle: 'Blokken 3, 4 en 5',
+                  headingId: 'practice-index-ba1-heading',
+                  blocks: (['blok3', 'blok4', 'blok5']).map((key) => ({
+                    to: `/oefenvragen-${key}`,
+                    label: practiceQuestionsCourseStructure[key].name,
+                    meta: formatPracticeBlokSubtitle(practiceQuestionsCourseStructure[key]),
+                    className: waifuInset,
+                  })),
+                },
+                {
+                  title: 'Bachelorjaar 2',
+                  subtitle: 'Blok 9 en Blok 10',
+                  headingId: 'practice-index-ba2-heading',
+                  blocks: (['blok9', 'blok10']).map((key) => ({
+                    to: `/oefenvragen-${key}`,
+                    label: practiceQuestionsCourseStructure[key].name,
+                    meta: formatPracticeBlokSubtitle(practiceQuestionsCourseStructure[key]),
+                    className: waifuInset,
+                  })),
+                },
+              ]}
+            />
+            <div className="mt-10 max-w-3xl mx-auto text-left">
+              <PracticeMultiBlokSelector
+                showPremiumLocks={showPremiumLocks}
+                progressUserId={progressUserId}
+                hasAccountProgress={hasAccountProgress}
+                isLoggedIn={Boolean(user?.uid)}
+                refreshKey="overview"
+                waifuMode={waifuMode}
+              />
+            </div>
+          </>
+        )}
+
+        {!lmeParam && forcedBlokKey && (() => {
+          const blok = practiceQuestionsCourseStructure[forcedBlokKey]
+          if (!blok) return null
+          const weekoverzicht = PRACTICE_BLOK_WEEKOVERZICHT[forcedBlokKey]
+          const blokQuestionCount = getPracticeQuestionsForLme(buildBlokRandomParam(forcedBlokKey)).length
+          return (
+            <CourseForcedBlokView
+              backTo="/oefenvragen"
+              backLabel="Terug naar alle blokken"
+              title={blok.name}
+              statsLine={formatPracticeBlokSubtitle(blok)}
+              blokKey={forcedBlokKey}
+              pageScope="practice"
+              weeks={blok.weeks}
+              beforeTree={
+                weekoverzicht ? (
+                  <div className="mb-6">
+                    <BlokWeekoverzichtPanel
+                      title={weekoverzicht.title}
+                      pdfFileName={weekoverzicht.pdfFileName}
+                    />
+                  </div>
+                ) : null
+              }
+              heroAction={
+                blokQuestionCount > 0 ? (
+                  <Link
+                    to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokRandomParam(forcedBlokKey)}`}
+                    className={`group w-full mb-6 block text-left rounded-2xl border border-primary-200 dark:border-primary-500/40 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-500/10 dark:to-accent-500/10 p-5 hover:shadow-soft transition-all${waifuInset}`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="p-3 rounded-2xl bg-primary-500 text-white shrink-0">
+                        <InfinityIcon className="w-5 h-5" />
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-300">
+                          Heel {blok.name} oefenen
+                        </h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          Alle {blokQuestionCount} vragen uit dit blok door elkaar
+                        </p>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-primary-500 shrink-0" />
+                    </div>
+                  </Link>
+                ) : null
+              }
+              renderCaseSections={(casus, weekIndex, casusIndex) =>
+                renderCaseSections(casus, forcedBlokKey, weekIndex, casusIndex)
+              }
+              renderSearchModule={(lmeItem, key) => renderCourseModule(lmeItem, key)}
+              afterTree={
+                <Link
+                  to={showPremiumLocks ? '/billing' : `/oefenvragen?lme=${buildBlokWrongAnswersParam(forcedBlokKey)}`}
+                  className={`mt-6 flex items-center gap-3 rounded-2xl border px-4 py-3 text-sm transition-colors ${
+                    showPremiumLocks
+                      ? 'border-slate-300 dark:border-slate-700 text-slate-400 dark:text-slate-500'
+                      : 'border-dashed border-amber-300/80 dark:border-amber-600/50 text-amber-900 dark:text-amber-200/90 bg-amber-50/80 dark:bg-amber-950/25 hover:border-amber-400 dark:hover:border-amber-500'
+                  }${waifuInset}`}
+                >
+                  {showPremiumLocks ? (
+                    <Lock className="w-4 h-4 shrink-0" />
+                  ) : (
+                    <XCircle className="w-4 h-4 shrink-0 text-amber-600 dark:text-amber-400" />
+                  )}
+                  <span className="text-left font-medium">
+                    Oefen alle foute antwoorden van dit blok
+                    {wrongAnswersCountForForcedBlok != null && (
+                      <span className="block font-normal text-slate-600 dark:text-slate-400 mt-0.5">
+                        {wrongAnswersCountForForcedBlok === 0
+                          ? 'Nog geen opgeslagen foute antwoorden — maak eerst oefenvragen met zichtbare uitslag.'
+                          : `${wrongAnswersCountForForcedBlok} vraag${wrongAnswersCountForForcedBlok === 1 ? '' : 'en'} in willekeurige volgorde`}
+                      </span>
+                    )}
+                  </span>
+                </Link>
+              }
+            />
+          )
+        })()}
 
         {lmeParam &&
           isRandomMode(lmeParam) &&

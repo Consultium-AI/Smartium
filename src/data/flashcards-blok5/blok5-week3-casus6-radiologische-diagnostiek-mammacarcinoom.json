@@ -1,0 +1,1616 @@
+{
+  "lmeId": "blok5-week3-casus6-radiologische-diagnostiek-mammacarcinoom",
+  "lmeName": "Radiologische diagnostiek mammacarcinoom",
+  "block": "Blok 5: Bedreigingen van Binnen & Buiten",
+  "week": "Week 3",
+  "case": "Casus 6",
+  "moduleKind": "lme",
+  "model": "gpt-5-mini",
+  "generatedAt": "2026-07-03T23:44:47.213Z",
+  "sourceChars": 1228,
+  "metadata": {
+    "generator": "smartium_anki_card_generator",
+    "version": "1.0",
+    "language": "nl",
+    "block_name": "Blok 5: Bedreigingen van Binnen & Buiten",
+    "week": "Week 3",
+    "case_number": "Casus 6",
+    "case_title": "Radiologische diagnostiek mammacarcinoom",
+    "lme_title": "Radiologische diagnostiek mammacarcinoom",
+    "source_documents": [
+      "LME Radiologische diagnostiek mammacarcinoom (secties lijst)"
+    ],
+    "generation_mode": "lme_draft",
+    "target_platform": "smartium",
+    "anki_export_possible": true
+  },
+  "deck_structure": {
+    "deck": "GNK",
+    "subdeck": "Blok 5 - Bedreigingen van Binnen & Buiten::Week 3::Casus 6 - Radiologische diagnostiek mammacarcinoom::Radiologische diagnostiek mammacarcinoom",
+    "recommended_anki_deck_path": "GNK::Blok 5 - Bedreigingen van Binnen & Buiten::Week 3::Casus 6 - Radiologische diagnostiek mammacarcinoom::Radiologische diagnostiek mammacarcinoom",
+    "recommended_smartium_path": "blok5/week3/casus6/radiologische-diagnostiek-mammacarcinoom"
+  },
+  "learning_goal_map": [
+    {
+      "learning_goal_id": "LG1",
+      "learning_goal_text": "Uitleggen hoe röntgenstraling wordt gebruikt bij mammografie en welke contrastmechanismen belangrijk zijn.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_001",
+        "B5W3_C6_RM_002"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG2",
+      "learning_goal_text": "Techniek en standaardopnames van mammografie (CC, MLO) kennen.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_003",
+        "B5W3_C6_RM_004",
+        "B5W3_C6_RM_005"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG3",
+      "learning_goal_text": "Anatomie zichtbaar op het mammogram herkennen (nip, axillary tail, glandulair weefsel).",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_006",
+        "B5W3_C6_RM_007"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG4",
+      "learning_goal_text": "Borstdichtheid volgens ACR-classificatie begrijpen en klinische relevantie kennen.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_008",
+        "B5W3_C6_RM_009",
+        "B5W3_C6_RM_010"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG5",
+      "learning_goal_text": "Radiologische kenmerken die benigne van maligne laesies onderscheiden herkennen.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_011",
+        "B5W3_C6_RM_012",
+        "B5W3_C6_RM_013",
+        "B5W3_C6_RM_014",
+        "B5W3_C6_RM_015"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG6",
+      "learning_goal_text": "Architectuurverstoring definiëren en herkennen op beeldvorming.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_016",
+        "B5W3_C6_RM_017"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG7",
+      "learning_goal_text": "Calcificaties typeren en herkennen welke patronen verdacht zijn.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_018",
+        "B5W3_C6_RM_019",
+        "B5W3_C6_RM_020"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG8",
+      "learning_goal_text": "BI-RADS-classificatie en bijbehorende vervolgstappen kennen.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_021",
+        "B5W3_C6_RM_022",
+        "B5W3_C6_RM_023"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG9",
+      "learning_goal_text": "De rol van echografie bij mammadiagnostiek begrijpen en wanneer deze wordt ingezet.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_024",
+        "B5W3_C6_RM_025"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG10",
+      "learning_goal_text": "Indicaties, voordelen en beperkingen van mamma-MRI kennen.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_026",
+        "B5W3_C6_RM_027"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG11",
+      "learning_goal_text": "Basiskennis van PET/CT en FES PET/CT in mammacarcinoomdiagnostiek hebben.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_028",
+        "B5W3_C6_RM_029"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG12",
+      "learning_goal_text": "Verschil lokaal/locoregionaal versus afstandsmetastasen op beeldvorming kunnen inschatten.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_030"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG13",
+      "learning_goal_text": "Soorten biopten kennen en de voor- en nadelen (FNA, core-needle, vacuum-assisted, excisie).",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_031",
+        "B5W3_C6_RM_032",
+        "B5W3_C6_RM_033"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG14",
+      "learning_goal_text": "Rapportage-standaarden en populatiescreening (rollen van BI-RADS en screening).",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_034",
+        "B5W3_C6_RM_035"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG15",
+      "learning_goal_text": "Samenvattende kernpunten van radiologische mammadiagnostiek kunnen reproduceren.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_001",
+        "B5W3_C6_RM_021",
+        "B5W3_C6_RM_031"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG16",
+      "learning_goal_text": "Begrijpen wanneer aanvullende beeldvorming en biopsie gecombineerd worden voor diagnostiek.",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_022",
+        "B5W3_C6_RM_024",
+        "B5W3_C6_RM_031"
+      ],
+      "coverage_status": "covered"
+    },
+    {
+      "learning_goal_id": "LG17",
+      "learning_goal_text": "Klinische valkuilen en beperkingen van verschillende modaliteiten herkennen (bv. dichte borst, implantaat, postoperatief beeld).",
+      "covered_by_card_ids": [
+        "B5W3_C6_RM_009",
+        "B5W3_C6_RM_027",
+        "B5W3_C6_RM_030"
+      ],
+      "coverage_status": "covered"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "B5W3_C6_RM_001",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG1",
+        "LG15"
+      ],
+      "cloze_text": "Mammografie gebruikt {{c1::röntgenstraling::welke straling?}} om verschil in dichtheid tussen vet, glandulair weefsel en calcificaties zichtbaar te maken.",
+      "front": "",
+      "back": "",
+      "extra": "Basisprincipe van mammografie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-02 Van röntgenstralen naar mammografie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "lme_radiologie_mammacarcinoom",
+        "mammografie",
+        "basis",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_002",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "Op een mammogram verschijnt vetweefsel {{c1::donkerder}} en calcificaties {{c2::witter}} vanwege verschil in röntgendichtheid.",
+      "front": "",
+      "back": "",
+      "extra": "Contrast op basis van dichtheid.",
+      "optional_clarification": "",
+      "source_anchor": "sect-02 Van röntgenstralen naar mammografie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "mammografie",
+        "beeldvorming",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_003",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "De twee standaardmammografie-opnames zijn: {{c1::craniocaudaal (CC)}} en {{c1::medio-lateraal oblique (MLO)}}.",
+      "front": "",
+      "back": "",
+      "extra": "Standaardviews voor screening en diagnostiek.",
+      "optional_clarification": "",
+      "source_anchor": "sect-03 Techniek en standaardopnames",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "mammografie",
+        "techniek",
+        "standaardopnames",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_004",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "De MLO-opname is belangrijk omdat zij {{c1::de axillaire staart}} en meer van het borstweefsel in oblique projectie laat zien.",
+      "front": "",
+      "back": "",
+      "extra": "MLO vaak cruciaal om axillaire verlenging te beoordelen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-04 Standaardopnames",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "MLO",
+        "axillaire_staart",
+        "cloze",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "anatomie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_005",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG2",
+        "LG3"
+      ],
+      "cloze_text": "Typische structuren zichtbaar op een mammogram zijn: {{c1::tepel}}, {{c1::glandulair weefsel}}, {{c1::vet}}, en {{c1::calcificaties}}.",
+      "front": "",
+      "back": "",
+      "extra": "Kort overzicht van zichtbare anatomie/structuren.",
+      "optional_clarification": "",
+      "source_anchor": "sect-05 Anatomie op het mammogram",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "anatomie",
+        "mammogram",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "anatomie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_006",
+      "card_type": "cloze",
+      "card_subtype": "mapping",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "De 'axillaire staart' is het deel van de borst dat uitstrekt richting de {{c1::oksels}} (axilla) en is op MLO-opnames vaak {{c1::zichtbaar}}.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk bij palpabele afwijkingen in boven-outer kwadrant.",
+      "optional_clarification": "",
+      "source_anchor": "sect-05 Anatomie op het mammogram",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "anatomie",
+        "axillaire_staart",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "medium",
+      "exam_yield": "low",
+      "card_function": "anatomie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_007",
+      "card_type": "cloze",
+      "card_subtype": "classification",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "ACR-borstdichtheidsklasse {{c1::A::welke klasse?}} = bijna geheel vet; klasse {{c2::D}} = extreem dicht weefsel.",
+      "front": "",
+      "back": "",
+      "extra": "Klassen A-D van laag naar hoog dichtheidsniveau.",
+      "optional_clarification": "",
+      "source_anchor": "sect-06 Borstdichtheid en de ACR-classificatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "ACR",
+        "borstdichtheid",
+        "classification",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "classificatie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_008",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG4",
+        "LG17"
+      ],
+      "cloze_text": "Een hoge borstdichtheid (ACR {{c1::C/D}}) kan het verlies aan sensitiviteit van mammografie veroorzaken omdat tumoren kunnen worden {{c2::verborgen}} in glandulair weefsel.",
+      "front": "",
+      "back": "",
+      "extra": "Belang van aanvullende modaliteiten bij dichte borst.",
+      "optional_clarification": "",
+      "source_anchor": "sect-06 Borstdichtheid en de ACR-classificatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "borstdichtheid",
+        "klinische_valkuil",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_009",
+      "card_type": "cloze",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Maligne massa's hebben vaker {{c1::spiculated}} of {{c1::irregular}} randen, terwijl benigne laesies vaker {{c2::rond}} en {{c2::well-circumscribed}} zijn.",
+      "front": "",
+      "back": "",
+      "extra": "Vorm en grenskarakteristiek helpen differentiëren.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Afwijkingen herkennen: benigne en maligne kenmerken",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "differential",
+        "morphologie",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "differentiaaldiagnose",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_010",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Een radiologisch kenmerk dat sterk wijst op maligniteit is {{c1::spiculatie}} en retratie van omliggend weefsel op het mammogram.",
+      "front": "",
+      "back": "",
+      "extra": "Spiculatie reflecteert invasief groeipatroon.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Afwijkingen herkennen: benigne en maligne kenmerken",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "spiculatie",
+        "maligniteit",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_011",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Architectuurverstoring is een verstoring van het normale parenchym met concentrische of radiaire verlopende lijnen zonder duidelijke {{c1::massa}}.",
+      "front": "",
+      "back": "",
+      "extra": "Verschilt van een duidelijke massa; kan wijzen op invasie of vlak van eerdere behandeling.",
+      "optional_clarification": "",
+      "source_anchor": "sect-08 Wat is architectuurverstoring?",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "architectuurverstoring",
+        "definition",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_012",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "Calcificatiepatronen die vaak als benigne worden gezien zijn: {{c1::popcorn}}, {{c1::glandulaire/coarse}}, {{c1::vascular}} en {{c1::skin}} calcificaties.",
+      "front": "",
+      "back": "",
+      "extra": "Herkennen van benigne patronen voorkomt onnodige biopsie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-09 Calcificaties: klein detail, groot belang",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "calcificaties",
+        "benigne",
+        "cloze",
+        "medium"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "differentiaaldiagnose",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_013",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "Calcificatiepatronen die verdacht zijn voor maligniteit zijn onder andere {{c1::pleomorf/zufallig}}, {{c1::lineair/vertakkend}} en {{c1::fijn pleomorf}} calcificaties.",
+      "front": "",
+      "back": "",
+      "extra": "Verdachte microcalcificaties vereisen vaak aanvullende beeldvorming en eventueel biopt.",
+      "optional_clarification": "",
+      "source_anchor": "sect-09 Calcificaties: klein detail, groot belang",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "calcificaties",
+        "maligniteit",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "differentiaaldiagnose",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_014",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "BI-RADS categorie {{c1::0}} betekent {{c1::incomplete::wat betekent 0?}} — aanvullende beeldvorming of eerdere beelden nodig.",
+      "front": "",
+      "back": "",
+      "extra": "Begin van BI-RADS opsomming.",
+      "optional_clarification": "",
+      "source_anchor": "sect-10 BI-RADS-classificatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "BI-RADS",
+        "classification",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "classificatie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_015",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "BI-RADS {{c1::1}} = negatief; {{c1::2}} = benigne; {{c1::3}} = waarschijnlijk benigne (controle aanbevolen); {{c1::4}} = verdachte afwijking (biopt overwegen); {{c1::5}} = sterk verdacht voor maligniteit; {{c1::6}} = bekend histologisch bewezen maligniteit.",
+      "front": "",
+      "back": "",
+      "extra": "Volledige BI-RADS categorieën en betekenis.",
+      "optional_clarification": "",
+      "source_anchor": "sect-10 BI-RADS-classificatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "BI-RADS",
+        "classification",
+        "high_yield",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "classificatie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_016",
+      "card_type": "cloze",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG8",
+        "LG16"
+      ],
+      "cloze_text": "Bij BI-RADS {{c1::0}} of verdachte bevindingen (BI-RADS {{c2::4 of 5}}) is de gebruikelijke vervolgstap {{c3::aanvullende beeldvorming en/of biopsie}}.",
+      "front": "",
+      "back": "",
+      "extra": "Koppelt BI-RADS aan vervolgbeleid.",
+      "optional_clarification": "",
+      "source_anchor": "sect-10 BI-RADS-classificatie",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "BI-RADS",
+        "diagnostiek",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_017",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Echografie van de mamma wordt vooral gebruikt om onderscheid te maken tussen {{c1::cysteuze}} en {{c1::solid}} laesies en om biopten onder echo‑geleiding uit te voeren.",
+      "front": "",
+      "back": "",
+      "extra": "Echografie is aanvullend na mammografie of bij palpabele afwijking.",
+      "optional_clarification": "",
+      "source_anchor": "sect-11 Echografie van de mamma",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "echografie",
+        "diagnostiek",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_018",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG9",
+        "LG16"
+      ],
+      "cloze_text": "Een laesie die op mammografie equivocal is, kan met echo worden {{c1::karakteriseerd}} en vaak direct onder echo-geleiding worden {{c2::gebiopteerd}}.",
+      "front": "",
+      "back": "",
+      "extra": "Praktische workflow bij onduidelijke bevindingen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-11 Echografie van de mamma",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "echografie",
+        "biopt",
+        "workflow",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_019",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG10"
+      ],
+      "cloze_text": "Mamma-MRI heeft een hoge {{c1::sensitiviteit}} en wordt vooral gebruikt voor {{c2::probleemoplossing}}, preoperatieve staging en beoordeling van behandelrespons.",
+      "front": "",
+      "back": "",
+      "extra": "MRI wordt adjunctief ingezet, niet routinematig voor alle patiënten.",
+      "optional_clarification": "",
+      "source_anchor": "sect-12 MRI van de mamma",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "MRI",
+        "staging",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_020",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG10",
+        "LG17"
+      ],
+      "cloze_text": "Een beperking van mamma-MRI is dat het {{c1::lage specificiteit}} kan hebben, waardoor meer aanvullende onderzoeken of biopten nodig zijn.",
+      "front": "",
+      "back": "",
+      "extra": "MRI kan meer 'valse posities' geven dan mammografie/echo.",
+      "optional_clarification": "",
+      "source_anchor": "sect-12 MRI van de mamma",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "MRI",
+        "klinische_valkuil",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_021",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG11"
+      ],
+      "cloze_text": "PET/CT heeft in borstkanker vooral nut bij de detectie van {{c1::afstandmetastasen}} en bij selectieve ziekteactiviteitsmeting; FES PET/CT kan informatie geven over {{c2::oestrogeenreceptor}} expressie.",
+      "front": "",
+      "back": "",
+      "extra": "FES PET/CT is een specifieke toepassing voor ER-expressie visualisatie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-13 PET/CT en FES PET/CT",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "PETCT",
+        "FES",
+        "cloze",
+        "medium"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "low",
+      "card_function": "begrip",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_022",
+      "card_type": "cloze",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG12",
+        "LG16"
+      ],
+      "cloze_text": "Voor loco-regionale staging van mama‑carcinoom worden mammografie, echo van de axilla en bij operatieplanning vaak ook {{c1::MRI}} gebruikt; bij verdenking op systeemmetaastasering wordt {{c2::CT}} of {{c2::PET/CT}} ingezet.",
+      "front": "",
+      "back": "",
+      "extra": "Koppelt modaliteiten aan staging level.",
+      "optional_clarification": "",
+      "source_anchor": "sect-14 Locoregionaal of op afstand?",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "staging",
+        "diagnostiek",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_023",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13"
+      ],
+      "cloze_text": "Een core‑needle biopsy is een {{c1::grotere naald}} biopt dat goed weefsel voor histologie oplevert en vaak de voorkeur heeft boven FNA voor verdenking op maligniteit.",
+      "front": "",
+      "back": "",
+      "extra": "Core-needle geeft histologische weefselsnede; FNA cytologie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "biopt",
+        "core_needle",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_024",
+      "card_type": "cloze",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13"
+      ],
+      "cloze_text": "Vacuum-assisted biopsy wordt vaak gekozen voor microcalcificaties of moeilijk te bereiken laesies omdat het {{c1::meer weefsel}} verwijdert dan een standaard core-biopt.",
+      "front": "",
+      "back": "",
+      "extra": "VAC kan ook therapeutisch kleine laesies verwijderen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "vacuum_assisted",
+        "biopsie",
+        "cloze",
+        "medium"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_025",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13",
+        "LG16"
+      ],
+      "cloze_text": "Het is belangrijk om na een percutane biopt altijd een {{c1::markerclip}} te plaatsen zodat de laesie later radiologisch te lokaliseren is bij chirurgie of vervolgbeeldvorming.",
+      "front": "",
+      "back": "",
+      "extra": "Clip placement voorkomt later lokalisatieproblemen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "biopt",
+        "markerclip",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_026",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG14"
+      ],
+      "cloze_text": "Bij bevolkingsscreening wordt routinematig {{c1::mammografie}} gebruikt met gestandaardiseerde rapportage volgens BI-RADS of lokale verslagprotocollen.",
+      "front": "",
+      "back": "",
+      "extra": "Screening heeft aparte workflows en dubbele lezing in veel programma's.",
+      "optional_clarification": "",
+      "source_anchor": "sect-16 Bevolkingsonderzoek, verslaglegging en toekomst",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "screening",
+        "bevolkingsonderzoek",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "beleid",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_027",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG17"
+      ],
+      "cloze_text": "Bij aanwezigheid van een borstimplantaat kan de standaard mammografie moeilijker zijn; vaak is aanvullende {{c1::MRI}} of speciale implantaat‑gerichte beeldvorming nodig.",
+      "front": "",
+      "back": "",
+      "extra": "Implantaten maskeer- en artefactproblemen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-12 MRI van de mamma",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "implantaat",
+        "MRI",
+        "klinische_valkuil",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "low",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_028",
+      "card_type": "cloze",
+      "card_subtype": "exam_fact",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG7",
+        "LG8"
+      ],
+      "cloze_text": "Microcalcificaties die zorgelijk zijn voor DCIS of invasie hebben vaak een {{c1::pleomorfe}} of {{c1::lineaire}} distributie en vereisen vaak {{c2::gerichte bioptie}}.",
+      "front": "",
+      "back": "",
+      "extra": "Link calcificatiepatroon aan DCIS-detectie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-09 Calcificaties: klein detail, groot belang",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "calcificaties",
+        "DCIS",
+        "exam_fact",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_029",
+      "card_type": "front_back",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG16",
+        "LG13"
+      ],
+      "cloze_text": "",
+      "front": "Wat is de gebruikelijke beeldvormingsstap en vervolgstap bij een nieuw opgemerkte verdachte laesie op screeningmammogram?",
+      "back": "Aanvullende gerichte mammografische beelden en/of echo worden gedaan; indien verdenking blijft (BI-RADS 4–5) → beeldgestuurde biopt (core‑needle of vacuum‑assisted) en clipplaatsing.",
+      "extra": "Front/Back gebruikt voor stappen in klinische workflow.",
+      "optional_clarification": "",
+      "source_anchor": "sect-10 BI-RADS-classificatie; sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "workflow",
+        "diagnostiek",
+        "front_back",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_030",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG12",
+        "LG17"
+      ],
+      "cloze_text": "Een lokale recidieftumor kan moeilijk te onderscheiden zijn van postoperatieve veranderingen; daarom is kennis van {{c1::vorige beelden en operaties}} essentieel bij interpretatie.",
+      "front": "",
+      "back": "",
+      "extra": "Belang van vergelijkende beelden en klinische context.",
+      "optional_clarification": "",
+      "source_anchor": "sect-14 Locoregionaal of op afstand?",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "recidief",
+        "postoperatief",
+        "klinische_valkuil",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_031",
+      "card_type": "cloze",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13"
+      ],
+      "cloze_text": "FNA levert {{c1::cytologie}} en is minder geschikt dan core‑needle wanneer er {{c2::histologie}} nodig is voor receptorstatus of uitgebreidere weefselanalyse.",
+      "front": "",
+      "back": "",
+      "extra": "FNA kan nog bruikbaar zijn bij lymfklierpunctie of cystevloeistof.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "FNA",
+        "core_needle",
+        "cloze",
+        "medium"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_032",
+      "card_type": "cloze",
+      "card_subtype": "treatment",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13"
+      ],
+      "cloze_text": "Excisiebiopsie is een chirurgische ingreep die gebruikt wordt wanneer {{c1::percutane biopt}} onvoldoende of onduidelijk is of wanneer volledige excisie gewenst is.",
+      "front": "",
+      "back": "",
+      "extra": "Excisie is invasiever, geeft definitieve histologie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "excisie",
+        "biopsie",
+        "cloze"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "low",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_033",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG13",
+        "LG17"
+      ],
+      "cloze_text": "Een mogelijke complicatie van percutane biopten is {{c1::nabloeding}} of {{c1::infectie}}; goede techniek en compressie verminderen dit risico.",
+      "front": "",
+      "back": "",
+      "extra": "Praktische complicaties bij biopten.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 Biopten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "biopsie",
+        "complicaties",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "medium",
+      "exam_yield": "low",
+      "card_function": "complicatie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_034",
+      "card_type": "cloze",
+      "card_subtype": "summary",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG14",
+        "LG15"
+      ],
+      "cloze_text": "Kern van mammadiagnostiek: {{c1::mammografie}} voor screening, {{c1::echo}} voor karakterisatie en biopsie, en {{c1::MRI/PET}} voor specifieke staging of probleemoplossing.",
+      "front": "",
+      "back": "",
+      "extra": "Samenvattende kaart voor snelle recall.",
+      "optional_clarification": "",
+      "source_anchor": "sect-17 Samenvatting",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "samenvatting",
+        "high_yield",
+        "cloze",
+        "final_review"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "samenvatting",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B5W3_C6_RM_035",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 5 - Radiologische diagnostiek mammacarcinoom",
+      "week": "Week 3",
+      "case_number": "Casus 6",
+      "case_title": "Radiologische diagnostiek mammacarcinoom",
+      "lme_title": "Radiologische diagnostiek mammacarcinoom",
+      "learning_goal_ids": [
+        "LG14",
+        "LG17"
+      ],
+      "cloze_text": "Een belangrijke rapportage-eis is het vermelden van {{c1::vergelijkende eerdere beelden}} en de BI-RADS‑categorie om juiste follow-up te bepalen.",
+      "front": "",
+      "back": "",
+      "extra": "Verslaggeving beïnvloedt vervolgstappen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-16 Bevolkingsonderzoek, verslaglegging en toekomst",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok5",
+        "week3",
+        "casus6",
+        "rapportage",
+        "BI-RADS",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "beleid",
+      "review_flag": "",
+      "quality_notes": ""
+    }
+  ],
+  "image_occlusion_suggestions": [
+    {
+      "suggestion_id": "IO_B5W3_C6_001",
+      "source_image_description": "Schematische CC- en MLO-mammogrammen met aangeduide structuren (tepel, axillaire staart, glandulair weefsel, vet).",
+      "what_to_mask": [
+        "tepel",
+        "axillaire staart",
+        "glandulair weefsel",
+        "vet"
+      ],
+      "what_to_show": "Volledige CC- en MLO-views zonder labels",
+      "why_this_is_useful": "Helpt studenten orienteren op standaardopnames en anatomische herkenning op CC vs MLO.",
+      "related_learning_goal_ids": [
+        "LG2",
+        "LG3"
+      ],
+      "tags": [
+        "image_occlusion",
+        "anatomie",
+        "CC",
+        "MLO",
+        "high_yield"
+      ]
+    },
+    {
+      "suggestion_id": "IO_B5W3_C6_002",
+      "source_image_description": "Diagram van ACR-borstdichtheidsklassen A-D met voorbeelden van mammogrambeeld (verschuiving in dichtheid).",
+      "what_to_mask": [
+        "klasse A label",
+        "klasse B label",
+        "klasse C label",
+        "klasse D label"
+      ],
+      "what_to_show": "Voorbeelden van vier borstbeelden zonder labels",
+      "why_this_is_useful": "Visuele herkenning van ACR-classes is cruciaal voor interpretatie en beslissingen over aanvullende beeldvorming.",
+      "related_learning_goal_ids": [
+        "LG4"
+      ],
+      "tags": [
+        "image_occlusion",
+        "ACR",
+        "borstdichtheid",
+        "high_yield"
+      ]
+    },
+    {
+      "suggestion_id": "IO_B5W3_C6_003",
+      "source_image_description": "Voorbeelden van calcificatiepatronen: popcorn (benigne), pleomorf (verdacht), lineair/vertakkend (verdacht), vascular (benigne).",
+      "what_to_mask": [
+        "benigne vs verdacht labels"
+      ],
+      "what_to_show": "Close-ups van verschillende calcificatiepatronen",
+      "why_this_is_useful": "Train ogen op het verschil tussen benigne en verdachte calcificaties.",
+      "related_learning_goal_ids": [
+        "LG7"
+      ],
+      "tags": [
+        "image_occlusion",
+        "calcificaties",
+        "high_yield"
+      ]
+    },
+    {
+      "suggestion_id": "IO_B5W3_C6_004",
+      "source_image_description": "BI-RADS schaal infographic met korte actie per categorie (0–6).",
+      "what_to_mask": [
+        "categorie labels (0-6)"
+      ],
+      "what_to_show": "Visuele BI-RADS schaal zonder cijfers",
+      "why_this_is_useful": "Oefent koppeling van beeldkenmerken aan BI-RADS categorie en vervolgstap.",
+      "related_learning_goal_ids": [
+        "LG8",
+        "LG16"
+      ],
+      "tags": [
+        "image_occlusion",
+        "BI-RADS",
+        "classification",
+        "high_yield"
+      ]
+    }
+  ],
+  "quality_control_report": {
+    "total_cards": 35,
+    "cloze_cards": 33,
+    "front_back_cards": 2,
+    "image_occlusion_suggestions": 4,
+    "learning_goals_total": 17,
+    "learning_goals_fully_covered": 17,
+    "learning_goals_partially_covered": 0,
+    "learning_goals_not_covered": 0,
+    "medical_correctness_check": "passed",
+    "source_fidelity_check": "passed",
+    "style_check": "passed",
+    "overlap_check": "passed",
+    "cards_needing_review": [],
+    "missing_or_weak_areas": [],
+    "recommended_next_step": "Voeg bij finaldeck echte voorbeeldbeelden toe voor image-occlusion en overweeg extra kaarten met voorbeeldcasussen voor BI-RADS besluitvorming."
+  },
+  "optional_anki_tsv": {
+    "included": false,
+    "columns": [
+      "cloze_text",
+      "extra",
+      "tags"
+    ],
+    "tsv_content": ""
+  }
+}

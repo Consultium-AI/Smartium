@@ -84,7 +84,10 @@ function App() {
               <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok10" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
               <Route path="/flashcards" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-blok10" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/flashcards-blok4" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok4" /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/flashcards-blok5" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok5" /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/flashcards-blok9" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok9" /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/flashcards-blok10" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok10" /></ContentProtectionWrapper></AccountRoute>} />
               <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
               <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />

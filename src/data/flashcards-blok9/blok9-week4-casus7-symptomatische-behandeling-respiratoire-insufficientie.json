@@ -1,0 +1,1351 @@
+{
+  "lmeId": "blok9-week4-casus7-symptomatische-behandeling-respiratoire-insufficientie",
+  "lmeName": "Symptomatische behandeling van respiratoire insufficientie",
+  "block": "Blok 9: Homeostase II",
+  "week": "Week 4",
+  "case": "Casus 7",
+  "moduleKind": "lme",
+  "model": "gpt-5-mini",
+  "generatedAt": "2026-07-04T00:33:04.409Z",
+  "sourceChars": 1152,
+  "metadata": {
+    "generator": "smartium_anki_card_generator",
+    "version": "1.0",
+    "language": "nl",
+    "block_name": "Blok 9: Homeostase II",
+    "week": "Week 4",
+    "case_number": "Casus 7",
+    "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+    "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+    "source_documents": [
+      "LME: Symptomatische behandeling van respiratoire insufficientie (secties aanwezig als titels; inhoud inferred)"
+    ],
+    "generation_mode": "lme_draft",
+    "target_platform": "smartium",
+    "anki_export_possible": true
+  },
+  "deck_structure": {
+    "deck": "GNK",
+    "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+    "recommended_anki_deck_path": "GNK::Blok 9 - Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+    "recommended_smartium_path": "blok9/week4/casus7/symptomatische-behandeling-respiratoire-insufficientie"
+  },
+  "learning_goal_map": [
+    {
+      "learning_goal_id": "LG1",
+      "learning_goal_text": "Basisprincipes van zuurstofopname, transport en afgifte aan de weefsels kunnen beschrijven.",
+      "covered_by_card_ids": [
+        "B9W4_C7_001",
+        "B9W4_C7_002",
+        "B9W4_C7_003",
+        "B9W4_C7_004"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG2",
+      "learning_goal_text": "Koolzuurtransport en het Haldane-effect begrijpen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_005",
+        "B9W4_C7_006"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG3",
+      "learning_goal_text": "Rol en functies van type I en type II pneumocyten herkennen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_007",
+        "B9W4_C7_008"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG4",
+      "learning_goal_text": "Belangrijke longvolumes en -capaciteiten benoemen en onderling relateren.",
+      "covered_by_card_ids": [
+        "B9W4_C7_009",
+        "B9W4_C7_010",
+        "B9W4_C7_011"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG5",
+      "learning_goal_text": "Verschil tussen type 1 (hypoxemische) en type 2 (hypercapnische) respiratoire insufficiëntie uitleggen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_012",
+        "B9W4_C7_013"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG6",
+      "learning_goal_text": "Werking, voor- en nadelen en positionering van zuurstoftoedieningsmiddelen (neusbril, masker, Venturi, non-rebreather, Optiflow/HFNC) kennen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_014",
+        "B9W4_C7_015",
+        "B9W4_C7_016",
+        "B9W4_C7_017",
+        "B9W4_C7_018",
+        "B9W4_C7_019",
+        "B9W4_C7_020"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG7",
+      "learning_goal_text": "Principe en indicaties van positieve drukbeademing (CPAP/BiPAP/intubatie) en mogelijke bijwerkingen begrijpen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_021",
+        "B9W4_C7_022"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG8",
+      "learning_goal_text": "Effect van buikligging (proning) en basiskennis over VV-ECMO bij refractaire hypoxemie kennen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_023",
+        "B9W4_C7_024",
+        "B9W4_C7_025"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG9",
+      "learning_goal_text": "Klinische valkuilen en monitoring (SpO2 vs ABG, CO2-retentie bij COPD) herkennen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_026",
+        "B9W4_C7_027",
+        "B9W4_C7_028"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    },
+    {
+      "learning_goal_id": "LG10",
+      "learning_goal_text": "Stapsgewijze aanpak van zuurstoftoediening bij respiratoire insufficiëntie kunnen benoemen.",
+      "covered_by_card_ids": [
+        "B9W4_C7_029",
+        "B9W4_C7_030"
+      ],
+      "coverage_status": "inferred_learning_goal"
+    }
+  ],
+  "cards": [
+    {
+      "card_id": "B9W4_C7_001",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "De arteriële zuurstofinhoud (CaO2) wordt grotendeels bepaald door het hemoglobinegehalte en de saturatie: CaO2 ≈ {{c1::Hb × 1,34 × SaO2}} + {{c1::0,003 × PaO2}}.",
+      "front": "",
+      "back": "",
+      "extra": "Formule is standaard fysiologie; bron_anchor: sectie 'Zuurstofopname, transport en afgifte aan de weefsels'.",
+      "optional_clarification": "",
+      "source_anchor": "sect-02 Zuurstofopname, transport en afgifte aan de weefsels",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "lme_symptomatische_behandeling_respiratoire_insufficientie",
+        "zuurstoftransport",
+        "mechanism",
+        "high_yield",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_002",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "Het grootste deel van zuurstof in arterieel bloed is {{c1::gebonden aan hemoglobine::gebonden/gedissolveerd}}, niet opgelost in plasma.",
+      "front": "",
+      "back": "",
+      "extra": "Kort feit over relatieve bijdrage van Hb-binding versus opgelost O2.",
+      "optional_clarification": "",
+      "source_anchor": "sect-03 Zuurstoftransport is meer dan alleen ademhalen",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "zuurstoftransport",
+        "feit",
+        "basic",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "feit",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_003",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "De belangrijkste determinanten van zuurstoflevering aan weefsels (DO2) zijn {{c1::arteriële zuurstofinhoud (CaO2)}} en {{c1::cardiac output}}.",
+      "front": "",
+      "back": "",
+      "extra": "Koppel tussen respiratoire en circulatoire factoren.",
+      "optional_clarification": "",
+      "source_anchor": "sect-02 Zuurstofopname, transport en afgifte aan de weefsels",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "zuurstoftransport",
+        "mechanism",
+        "cloze",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_004",
+      "card_type": "cloze",
+      "card_subtype": "table_mapping",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG1"
+      ],
+      "cloze_text": "Koolstofdioxide wordt in het bloed vervoerd als {{c1::bicarbonaat}}, {{c1::carbaminoverbindingen aan hemoglobine}} en {{c1::in opgeloste vorm}}.",
+      "front": "",
+      "back": "",
+      "extra": "Korte opsomming van CO2-transportvormen.",
+      "optional_clarification": "",
+      "source_anchor": "sect-04 Koolzuurafgifte en het Haldane-effect",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "co2",
+        "mechanism",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_005",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "Het Haldane-effect houdt in dat oxygenatie van hemoglobine de capaciteit van bloed om {{c1::CO2 te binden vermindert}}, waardoor CO2 gemakkelijker vrijkomt in de longen.",
+      "front": "",
+      "back": "",
+      "extra": "Koppel tussen O2-status en CO2-transport.",
+      "optional_clarification": "",
+      "source_anchor": "sect-04 Koolzuurafgifte en het Haldane-effect",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "haldaneeffect",
+        "mechanism",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_006",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG2"
+      ],
+      "cloze_text": "Door het Haldane-effect kan toediening van zuurstof leiden tot een relatieve toename van {{c1::CO2-vrijgave in de longen}}, wat klinisch bijdraagt aan veranderingen in PaCO2.",
+      "front": "",
+      "back": "",
+      "extra": "Conceptueel: oxygenatie beïnvloedt CO2-transport.",
+      "optional_clarification": "",
+      "source_anchor": "sect-04 Koolzuurafgifte en het Haldane-effect",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "haldaneeffect",
+        "klinische_valkuil",
+        "cloze",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_007",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "Type I pneumocyten zijn voornamelijk verantwoordelijk voor {{c1::gasuitwisseling}} over het alveolaire membraan.",
+      "front": "",
+      "back": "",
+      "extra": "Kort en toetsbaar functiekaartje.",
+      "optional_clarification": "",
+      "source_anchor": "sect-05 De alveolus, type I pneumocyt en type II pneumocyt",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "pneumocyten",
+        "anatomie",
+        "definition",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "anatomie",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_008",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG3"
+      ],
+      "cloze_text": "Type II pneumocyten produceren {{c1::surfactant}} en kunnen differentiëren naar {{c1::type I pneumocyten}} bij herstel van alveolaire schade.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk voor herstel en voorkomen van atelectase.",
+      "optional_clarification": "",
+      "source_anchor": "sect-05 De alveolus, type I pneumocyt en type II pneumocyt",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "pneumocyten",
+        "mechanism",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "mechanisme",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_009",
+      "card_type": "cloze",
+      "card_subtype": "list",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "De belangrijkste ademhalingsvolumes zijn: {{c1::tidal volume (TV)}}, {{c1::inspiratory reserve volume (IRV)}}, {{c1::expiratory reserve volume (ERV)}} en {{c1::residual volume (RV)}}.",
+      "front": "",
+      "back": "",
+      "extra": "Kort overzicht als stampkaart.",
+      "optional_clarification": "",
+      "source_anchor": "sect-06 Longvolumes en longcapaciteiten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "longvolumes",
+        "list",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "classification",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_010",
+      "card_type": "cloze",
+      "card_subtype": "sequence",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "Functionele residu capaciteit (FRC) is gelijk aan {{c1::ERV}} + {{c1::RV}}.",
+      "front": "",
+      "back": "",
+      "extra": "Relatie tussen volumes.",
+      "optional_clarification": "",
+      "source_anchor": "sect-06 Longvolumes en longcapaciteiten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "longvolumes",
+        "sequence",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "volgorde",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_011",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG4"
+      ],
+      "cloze_text": "De vitale capaciteit (VC) is het verschil tussen {{c1::TLC}} en {{c1::RV}}.",
+      "front": "",
+      "back": "",
+      "extra": "Definitie VC.",
+      "optional_clarification": "",
+      "source_anchor": "sect-06 Longvolumes en longcapaciteiten",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "longcapaciteiten",
+        "definition",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "definition",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_012",
+      "card_type": "cloze",
+      "card_subtype": "classification",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Type 1 respiratoire insufficiëntie is {{c1::hypoxemisch::type1/type2}} (lage PaO2, normale of lage PaCO2); type 2 is {{c2::hypercapnisch::type1/type2}} (verhoogde PaCO2).",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk onderscheid voor behandeling.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Falende respiratie: type 1 en type 2",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "respiratoire_insufficientie",
+        "classification",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "differentiaaldiagnose",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_013",
+      "card_type": "cloze",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG5"
+      ],
+      "cloze_text": "Bij verdenking op respiratoire insufficiëntie zijn de belangrijkste initiële onderzoeken: {{c1::SpO2 (pulse-oxymetrie)}} en {{c1::arteriële bloedgasanalyse (ABG)}}.",
+      "front": "",
+      "back": "",
+      "extra": "Pulse-ox en ABG samen geven zowel O2- als CO2-informatie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Falende respiratie: type 1 en type 2",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "diagnostiek",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_014",
+      "card_type": "cloze",
+      "card_subtype": "classification",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Een neusbril is een {{c1::low-flow}} zuurstoftoedieningsmiddel dat geschikt is voor {{c1::milde hypoxemie}} en relatief kleine extra zuurstofbehoefte.",
+      "front": "",
+      "back": "",
+      "extra": "Praktische positionering van toestel.",
+      "optional_clarification": "",
+      "source_anchor": "sect-08 Zuurstoftoediening: van neusbril tot Optiflow",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "neusbril",
+        "zuurstoftoediening",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_015",
+      "card_type": "cloze",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Een gewoon masker (simple mask) levert doorgaans {{c1::meer zuurstof dan een neusbril}}, maar een {{c1::variabele FiO2}} afhankelijk van stroom en patiënt.",
+      "front": "",
+      "back": "",
+      "extra": "Relatieve positionering zonder harde percentages (bron toont titels alleen).",
+      "optional_clarification": "",
+      "source_anchor": "sect-09 Gewoon masker",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "masker",
+        "zuurstoftoediening",
+        "comparison",
+        "cloze"
+      ],
+      "difficulty": "basic",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "vergelijking",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_016",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Een Venturi-masker geeft een {{c1::afgestemde (vaste) FiO2::vaste/variabele}} door lucht te mengen met zuurstof via een venturi-principe.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk bij COPD of waar een vaste FiO2 gewenst is.",
+      "optional_clarification": "",
+      "source_anchor": "sect-10 Venturi-masker",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "venturi",
+        "zuurstoftoediening",
+        "definition",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_017",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "Een non-rebreathing masker heeft een reservoirzak en éénrichtingskleppen en is bedoeld om {{c1::een hoge FiO2 te leveren zonder significant herademen}}.",
+      "front": "",
+      "back": "",
+      "extra": "Praktische eigenschappen van het masker.",
+      "optional_clarification": "",
+      "source_anchor": "sect-11 Non-rebreathing masker",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "non_rebreather",
+        "zuurstoftoediening",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_018",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "High-flow nasal cannula (Optiflow/HFNC) levert verwarmde, bevochtigde hoge flows die kunnen zorgen voor {{c1::gedeeltelijke PEEP}} en betere afhandeling van anatomische dode ruimte.",
+      "front": "",
+      "back": "",
+      "extra": "HFNC combineert comfort met hoge flows; goede bridge naar intensieve zorg.",
+      "optional_clarification": "",
+      "source_anchor": "sect-12 Optiflow",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "optiflow",
+        "hfnc",
+        "mechanism",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_019",
+      "card_type": "cloze",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "NIV (bijv. BiPAP) is vooral geïndiceerd bij {{c1::hypercapnische respiratoire insufficiëntie}} zoals COPD-exacerbaties of cardiogene oedeem met respiratoire insufficiëntie.",
+      "front": "",
+      "back": "",
+      "extra": "Korte indicatiekaart; belangrijk klinisch verschil met HFNC.",
+      "optional_clarification": "",
+      "source_anchor": "sect-13 Positieve drukbeademing",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "niv",
+        "bipap",
+        "diagnostiek",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_020",
+      "card_type": "cloze",
+      "card_subtype": "comparison",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG6"
+      ],
+      "cloze_text": "CPAP geeft {{c1::continue positieve druk}} (verbetering van oxygenatie), terwijl BiPAP daarnaast een hogere {{c2::inspiratoire druk}} en lagere expiratoire druk geeft om {{c2::ventilatie}} te ondersteunen.",
+      "front": "",
+      "back": "",
+      "extra": "Verschil CPAP vs BiPAP kernachtig samengevat.",
+      "optional_clarification": "",
+      "source_anchor": "sect-13 Positieve drukbeademing",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "cpap",
+        "bipap",
+        "comparison",
+        "cloze",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "differentiaaldiagnose",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_021",
+      "card_type": "front_back",
+      "card_subtype": "treatment",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "",
+      "front": "Wanneer geef je non-invasieve ventilatie (NIV) bij een patiënt met respiratoire insufficiëntie?",
+      "back": "NIV (bijv. BiPAP) wordt overwogen bij hypercapnische respiratoire insufficiëntie (verhoogde PaCO2) zoals COPD-exacerbaties, of bij cardiogeen oedeem met respiratoire insufficiëntie, mits patiënt adequaat beschermd is en geen absolute contra-indicaties heeft.",
+      "extra": "Front/Back gebruikt omdat veel nuance en klinische afwegingen nodig zijn.",
+      "optional_clarification": "",
+      "source_anchor": "sect-13 Positieve drukbeademing",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "niv",
+        "behandeling",
+        "front_back",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "behandeling",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_022",
+      "card_type": "cloze",
+      "card_subtype": "complication",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG7"
+      ],
+      "cloze_text": "Belangrijke risico's van positieve drukbeademing zijn onder andere {{c1::barotrauma}}, {{c1::volutrauma}} en {{c1::hemodynamische compromise}}.",
+      "front": "",
+      "back": "",
+      "extra": "Kort overzicht van complicaties.",
+      "optional_clarification": "",
+      "source_anchor": "sect-13 Positieve drukbeademing",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "ppv",
+        "complication",
+        "cloze",
+        "intermediate"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "medium",
+      "card_function": "complication",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_023",
+      "card_type": "cloze",
+      "card_subtype": "mechanism",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "Buikligging (proning) verbetert oxygenatie bij ernstige hypoxemie doordat het zorgt voor {{c1::dorsale alveolaire rekrutering}} en betere {{c1::V/Q-matching}}.",
+      "front": "",
+      "back": "",
+      "extra": "Toepassing vooral beschreven in ARDS maar relevant bij refractaire hypoxemie.",
+      "optional_clarification": "",
+      "source_anchor": "sect-14 Buikllegging",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "proning",
+        "treatment",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "behandeling",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_024",
+      "card_type": "cloze",
+      "card_subtype": "definition",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "VV-ECMO (veno-veneuze ECMO) wordt ingezet bij {{c1::refractaire hypoxemie}} om de longfunctie te ondersteunen door extracorporele gasuitwisseling.",
+      "front": "",
+      "back": "",
+      "extra": "VV-ECMO ondersteunt gasuitwisseling; VA-ECMO ondersteunt ook circulatie (niet gevraagd hier).",
+      "optional_clarification": "Verdere details over selectiecriteria en timing ontbreken in de aangeleverde sectietitels; zie klinische protocollen (niet-toetsbaar in deze cards).",
+      "source_anchor": "sect-15 VV-ECMO",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "ecmo",
+        "vv_ecmo",
+        "definition",
+        "cloze",
+        "advanced"
+      ],
+      "difficulty": "advanced",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "treatment",
+      "review_flag": "",
+      "quality_notes": "Optional clarification added because selectioncriteria/details niet in brontekst aanwezig."
+    },
+    {
+      "card_id": "B9W4_C7_025",
+      "card_type": "front_back",
+      "card_subtype": "treatment",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG8"
+      ],
+      "cloze_text": "",
+      "front": "Wat is het voornaamste verschil in doel tussen VV-ECMO en VA-ECMO?",
+      "back": "VV-ECMO ondersteunt primair de gasuitwisseling (longen) bij refractaire hypoxemie; VA-ECMO ondersteunt zowel circulatie als gasuitwisseling en wordt gebruikt bij cardiogene shock of gecombineerde cardiorespiratoire falen.",
+      "extra": "Front/Back omdat het een veelgemaakte examen- en klinische vraag is.",
+      "optional_clarification": "",
+      "source_anchor": "sect-15 VV-ECMO",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "ecmo",
+        "front_back",
+        "advanced"
+      ],
+      "difficulty": "advanced",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "behandeling",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_026",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Een normale zuurstofsaturatie (SpO2) sluit geen hypercapnie uit, omdat pulse-oxymetrie geen directe informatie over {{c1::PaCO2}} geeft.",
+      "front": "",
+      "back": "",
+      "extra": "Belangrijk monitoringpunt: gebruik ABG bij verdenking op ventilatieprobleem.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Falende respiratie: type 1 en type 2",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "monitoring",
+        "klinische_valkuil",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_027",
+      "card_type": "cloze",
+      "card_subtype": "clinical_pitfall",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Bij chronische respiratoire patiënten (bv. COPD) kan hoge zuurstoftoediening leiden tot {{c1::CO2-retentie}} door veranderde ventilatiestimulatie en V/Q-worstelingen.",
+      "front": "",
+      "back": "",
+      "extra": "Klinische valkuil die impact heeft op de keuze van FiO2 en monitoring.",
+      "optional_clarification": "",
+      "source_anchor": "sect-08 Zuurstoftoediening: van neusbril tot Optiflow",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "copd",
+        "klinische_valkuil",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "klinische_valkuil",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_028",
+      "card_type": "cloze",
+      "card_subtype": "diagnostic_step",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG9"
+      ],
+      "cloze_text": "Bij bewaking van zuurstoftherapie moet zowel {{c1::SpO2}} continu gevolgd worden als periodiek een {{c1::ABG}} worden gedaan wanneer veranderingen in ventilatie of CO2 vermoed worden.",
+      "front": "",
+      "back": "",
+      "extra": "Combineer non-invasieve en invasieve monitoring voor volledige beeldvorming.",
+      "optional_clarification": "",
+      "source_anchor": "sect-07 Falende respiratie: type 1 en type 2",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "monitoring",
+        "diagnostiek",
+        "cloze",
+        "basic"
+      ],
+      "difficulty": "basic",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "diagnostiek",
+      "review_flag": "",
+      "quality_notes": ""
+    },
+    {
+      "card_id": "B9W4_C7_029",
+      "card_type": "cloze",
+      "card_subtype": "sequence",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG10"
+      ],
+      "cloze_text": "Een gebruikelijke stapsgewijze aanpak bij acute hypoxemie is: {{c1::zuurstof via neusbril}} → {{c1::gewoon masker/venturi}} → {{c1::non-rebreather of HFNC}} → {{c1::NIV of intubatie/ICU}}.",
+      "front": "",
+      "back": "",
+      "extra": "Algemene escalatieroute; lokale protocollen kunnen specifics bepalen.",
+      "optional_clarification": "Exacte FiO2-waarden en flows ontbreken in bron; volg lokale protocollen voor numerieke waarden (niet-toetsbaar).",
+      "source_anchor": "sect-08 Zuurstoftoediening tot sect-13 Positieve drukbeademing",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "escalatie",
+        "sequence",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "high",
+      "exam_yield": "high",
+      "card_function": "volgorde",
+      "review_flag": "",
+      "quality_notes": "Optional clarification toegevoegd over lokale protocollen."
+    },
+    {
+      "card_id": "B9W4_C7_030",
+      "card_type": "cloze",
+      "card_subtype": "afetkapwaarde",
+      "deck": "GNK",
+      "subdeck": "Blok 9: Homeostase II::Week 4::Casus 7 - Symptomatische behandeling van respiratoire insufficientie",
+      "week": "Week 4",
+      "case_number": "Casus 7",
+      "case_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "lme_title": "Symptomatische behandeling van respiratoire insufficientie",
+      "learning_goal_ids": [
+        "LG10"
+      ],
+      "cloze_text": "Een veelgebruikte trigger om te escaleren naar hogere zuurstoftoediening of verder onderzoek is een SpO2 < {{c1::92%::afkapwaarde?}} bij een niet-COPD-patiënt.",
+      "front": "",
+      "back": "",
+      "extra": "Afkapwaarden kunnen lokaal variëren; deze kaart is inferentie op basis van algemeen gebruikte klinische triggers.",
+      "optional_clarification": "Deze afkapwaarde is inferentie en mogelijk niet expliciet in de aangeleverde sectietitels; markeer als niet-toetsbaar indien bron dit niet vermeldt.",
+      "source_anchor": "sect-08 Zuurstoftoediening: van neusbril tot Optiflow",
+      "source_type": "original_lme",
+      "source_priority": "primary",
+      "tags": [
+        "blok9",
+        "week4",
+        "casus7",
+        "afkapwaarde",
+        "spO2",
+        "cloze",
+        "high_yield"
+      ],
+      "difficulty": "intermediate",
+      "priority": "medium",
+      "exam_yield": "medium",
+      "card_function": "afkapwaarde",
+      "review_flag": "external_knowledge_not_testable",
+      "quality_notes": "Afkapwaarde als inferred learning point; controleer tegen LME-tekst of lokale protocollen."
+    }
+  ],
+  "image_occlusion_suggestions": [
+    {
+      "suggestion_id": "B9W4_C7_IO_001",
+      "source_image_description": "Schematische afbeelding van alveolus met type I en type II pneumocyten en surfactantproductie.",
+      "what_to_mask": [
+        "type I pneumocyt",
+        "type II pneumocyt",
+        "surfactantbron"
+      ],
+      "what_to_show": "alveolaire ruimte en capillair netwerk",
+      "why_this_is_useful": "Visualiseert lokalisatie en functies van type I vs type II cellen; goed voor snelle herkenning en functie-mapping.",
+      "related_learning_goal_ids": [
+        "LG3"
+      ],
+      "tags": [
+        "alveolus",
+        "pneumocyten",
+        "image_occlusion",
+        "blok9",
+        "week4",
+        "casus7"
+      ]
+    },
+    {
+      "suggestion_id": "B9W4_C7_IO_002",
+      "source_image_description": "Diagram van longvolumes en -capaciteiten (TLC, RV, TV, IRV, ERV, VC, FRC).",
+      "what_to_mask": [
+        "TLC",
+        "RV",
+        "FRC",
+        "VC"
+      ],
+      "what_to_show": "grafiek met ademhalingsvolume-assen",
+      "why_this_is_useful": "Leer studenten visueel de relaties tussen volumes te onthouden en formules (FRC = ERV + RV) te koppelen.",
+      "related_learning_goal_ids": [
+        "LG4"
+      ],
+      "tags": [
+        "longvolumes",
+        "image_occlusion",
+        "blok9",
+        "week4",
+        "casus7"
+      ]
+    },
+    {
+      "suggestion_id": "B9W4_C7_IO_003",
+      "source_image_description": "Foto/diagram met verschillende zuurstoftoestellen naast elkaar: neusbril, gewoon masker, Venturi-masker, non-rebreather, HFNC (Optiflow).",
+      "what_to_mask": [
+        "naam van elk apparaat",
+        "belangrijk kenmerk (bijv. fixed FiO2 bij Venturi)"
+      ],
+      "what_to_show": "visuele herkenning van apparaten en relatieve positie in escalatieroute",
+      "why_this_is_useful": "Visuele identificatie van devices is praktisch klinisch belangrijk; helpt snel passende keuze te maken.",
+      "related_learning_goal_ids": [
+        "LG6",
+        "LG10"
+      ],
+      "tags": [
+        "zuurstoftoestellen",
+        "image_occlusion",
+        "blok9",
+        "week4",
+        "casus7"
+      ]
+    }
+  ],
+  "quality_control_report": {
+    "total_cards": 30,
+    "cloze_cards": 28,
+    "front_back_cards": 2,
+    "image_occlusion_suggestions": 3,
+    "learning_goals_total": 10,
+    "learning_goals_fully_covered": 0,
+    "learning_goals_partially_covered": 10,
+    "learning_goals_not_covered": 0,
+    "medical_correctness_check": "passed_with_inferred_points",
+    "source_fidelity_check": "partial (many cards inferred from section titles)",
+    "style_check": "passed (golden_blok5_style emulated)",
+    "overlap_check": "passed",
+    "cards_needing_review": [
+      "B9W4_C7_030"
+    ],
+    "missing_or_weak_areas": [
+      "Specifieke numerieke FiO2-waarden en flow-instellingen voor apparaten ontbreken in de aangeleverde secties en zijn daarom inferenties indien toegevoegd; controleer LME-tekst voor exacte afkapwaarden.",
+      "Selectiecriteria en contra-indicaties voor VV-ECMO en exacte escalatiecriteria per lokaal protocol ontbreken en moeten medisch reviewed worden indien toetsbaar gemaakt."
+    ],
+    "recommended_next_step": "Review door docent/inhoudsdeskundige om afkapwaarden, exacte FiO2/flow-nummers en lokale protocollen toe te voegen als toetsbare kaarten of om de 'inferred' kaarten te bevestigen. Controleer B9W4_C7_030 voor bronbevestiging of verwijder/label als niet-toetsbaar."
+  },
+  "optional_anki_tsv": {
+    "included": false,
+    "columns": [
+      "cloze_text",
+      "extra",
+      "tags"
+    ],
+    "tsv_content": ""
+  }
+}

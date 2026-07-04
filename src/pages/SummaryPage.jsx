@@ -14,7 +14,8 @@ import { COIN_REWARDS } from '../lib/rewardSystem'
 import { getProgressUserId, loadSummarySeenMap, markSummarySeen } from '../utils/accountProgressStorage'
 import BlokWeekoverzichtPanel from '../components/BlokWeekoverzichtPanel'
 import SummaryCourseModuleLink from '../components/SummaryCourseModuleLink'
-import SummaryCourseWeekTree from '../components/SummaryCourseWeekTree'
+import { CourseBlockIndex } from '../components/course/CourseOverviewLayout'
+import CourseForcedBlokView from '../components/course/CourseForcedBlokView'
 import { splitCasusModules } from '../utils/courseModuleKind'
 import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 import { Header, Footer, SummaryLayout } from './summary/SummaryShared'
@@ -292,6 +293,17 @@ import Blok10StampfeitjesHeleBlokSummary from '../summaries/samenvattingen-b10/s
 
 // Main Summary Page Component
 const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
+
+const SUMMARY_BLOK_WEEKOVERZICHT = {
+  blok5: {
+    title: 'Weekoverzicht blok 5 — BA1 2025–26',
+    pdfFileName: 'weekoverzicht-blok5-ba1-25-26.pdf',
+  },
+  blok9: {
+    title: 'Weekoverzicht blok 9 — BA2 2025–26',
+    pdfFileName: 'weekoverzicht-blok9-ba2-25-26.pdf',
+  },
+}
 const SUMMARY_COMPLETION_MS = 3 * 60 * 1000
 
 const SummaryPage = ({ forcedBlok = null }) => {
@@ -305,10 +317,7 @@ const SummaryPage = ({ forcedBlok = null }) => {
   const hasPaidAccess = hasAccess && plan !== 'free'
   const showPremiumLocks = !accessLoading && !hasPaidAccess
   const isBlockedDirectLme = lme !== 'index' && showPremiumLocks && isFreePlanBlockedLme(lme)
-  const blokParam = searchParams.get('blok')
   const forcedBlokKey = VALID_BLOK_KEYS.includes(forcedBlok) ? forcedBlok : null
-  const urlBlokKey = VALID_BLOK_KEYS.includes(blokParam) ? blokParam : null
-  const selectedOverviewBlok = forcedBlokKey || urlBlokKey
   const [activeLme, setActiveLme] = useState(lme)
   useEffect(() => { setActiveLme(lme) }, [lme])
 
@@ -318,20 +327,6 @@ const SummaryPage = ({ forcedBlok = null }) => {
   }
 
   const [seenMap, setSeenMap] = useState({})
-  const [expandedBlok, setExpandedBlok] = useState(() => {
-    if (selectedOverviewBlok) return selectedOverviewBlok
-    return null
-  })
-
-  useEffect(() => {
-    if (selectedOverviewBlok) {
-      setExpandedBlok(selectedOverviewBlok)
-      requestAnimationFrame(() => {
-        const el = document.getElementById(`section-${selectedOverviewBlok}`)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      })
-    }
-  }, [selectedOverviewBlok])
 
   useEffect(() => {
     if (progressUserId == null) return
@@ -1949,7 +1944,7 @@ const SummaryPage = ({ forcedBlok = null }) => {
     ]
 
     return (
-      <div className="ml-0 sm:ml-2 space-y-3">
+      <div className="space-y-3">
         {sections.map((section) => (
           section.items.length > 0 ? (
             <section key={section.key} className="space-y-2">
@@ -4079,435 +4074,82 @@ const SummaryPage = ({ forcedBlok = null }) => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl mx-auto"
         >
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 text-center tracking-tight">
-            Samenvattingen
-          </h1>
-          <p className="text-center text-sm text-slate-500 dark:text-slate-400 mb-8 max-w-lg mx-auto">
-            Kies je bachelorjaar, blok en week — elke module opent de volledige samenvatting.
-          </p>
-
-          {forcedBlokKey && (
-            <div className="mb-6">
-              <Link
-                to="/summary"
-                className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400"
-              >
-                <ChevronRight className="w-4 h-4 rotate-180" />
-                Terug naar alle blokken
-              </Link>
-            </div>
-          )}
-
           {!forcedBlokKey && (
-            <div className="space-y-10">
-              <section aria-labelledby="summary-index-ba1-heading">
-                <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                  <h2 id="summary-index-ba1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                    Bachelorjaar 1
-                  </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    Blokken 3, 4 en 5
-                  </p>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Link to="/summary-blok3" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-primary-400/70 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-primary-100 dark:bg-primary-500/20">
-                        <GraduationCap className="w-5 h-5 text-primary-600 dark:text-primary-400" />
-                      </div>
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok3.name}</h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok3)}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-primary-500 ml-auto" />
-                    </div>
-                  </Link>
-                  <Link to="/summary-blok4" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-indigo-400/70 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-500/20">
-                        <Shield className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                      </div>
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok4.name}</h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok4)}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 ml-auto" />
-                    </div>
-                  </Link>
-                  <Link to="/summary-blok5" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-rose-400/70 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-rose-100 dark:bg-rose-500/20">
-                        <Layers className="w-5 h-5 text-rose-600 dark:text-rose-400" />
-                      </div>
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok5.name}</h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok5)}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 ml-auto" />
-                    </div>
-                  </Link>
-                </div>
-              </section>
-
-              <section aria-labelledby="summary-index-ba2-heading">
-                <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                  <h2 id="summary-index-ba2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                    Bachelorjaar 2
-                  </h2>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    Blok 9 en Blok 10
-                  </p>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Link to="/summary-blok9" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-cyan-400/70 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-cyan-100 dark:bg-cyan-500/20">
-                        <Droplets className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-                      </div>
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok9.name}</h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok9)}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-cyan-500 ml-auto" />
-                    </div>
-                  </Link>
-                  <Link to="/summary-blok10" className="group rounded-2xl border border-slate-200/90 dark:border-slate-700/90 bg-white/90 dark:bg-slate-900/80 p-5 shadow-sm dark:shadow-black/30 hover:border-violet-400/70 transition-colors">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-xl bg-violet-100 dark:bg-violet-500/20">
-                        <FlaskConical className="w-5 h-5 text-violet-600 dark:text-violet-400" />
-                      </div>
-                      <div className="min-w-0">
-                        <h2 className="font-bold text-slate-900 dark:text-slate-100">{courseStructure.blok10.name}</h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">{formatSummaryBlokSubtitle(courseStructure.blok10)}</p>
-                      </div>
-                      <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-violet-500 ml-auto" />
-                    </div>
-                  </Link>
-                </div>
-              </section>
-            </div>
+            <CourseBlockIndex
+              pageTitle="Samenvattingen"
+              pageSubtitle="Kies je bachelorjaar, blok en week — elke module opent de volledige samenvatting."
+              sections={[
+                {
+                  title: 'Bachelorjaar 1',
+                  subtitle: 'Blokken 3, 4 en 5',
+                  headingId: 'summary-index-ba1-heading',
+                  blocks: (['blok3', 'blok4', 'blok5']).map((key) => ({
+                    to: `/summary-${key}`,
+                    label: courseStructure[key].name,
+                    meta: formatSummaryBlokSubtitle(courseStructure[key]),
+                  })),
+                },
+                {
+                  title: 'Bachelorjaar 2',
+                  subtitle: 'Blok 9 en Blok 10',
+                  headingId: 'summary-index-ba2-heading',
+                  blocks: (['blok9', 'blok10']).map((key) => ({
+                    to: `/summary-${key}`,
+                    label: courseStructure[key].name,
+                    meta: formatSummaryBlokSubtitle(courseStructure[key]),
+                  })),
+                },
+              ]}
+            />
           )}
 
-          {forcedBlokKey && (
-          <div className="space-y-10">
-            {(forcedBlokKey === 'blok3' || forcedBlokKey === 'blok4' || forcedBlokKey === 'blok5') && (
-            <section aria-labelledby="bachelor-year-1-heading">
-              <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                <h2 id="bachelor-year-1-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                  Bachelorjaar 1
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  Blokken 3, 4 en 5 — curriculum geneeskunde (Erasmus MC)
-                </p>
-              </div>
-              <div className="space-y-4">
-          {forcedBlokKey === 'blok3' && (
-          <div id="section-blok3" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
-            <button
-              type="button"
-              onClick={() => {
-                if (forcedBlokKey) return
-                setExpandedBlok(expandedBlok === 'blok3' ? null : 'blok3')
-              }}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary-100 dark:bg-primary-500/30 rounded-xl">
-                  <GraduationCap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {courseStructure.blok3.name}
-                  </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {formatSummaryBlokSubtitle(courseStructure.blok3)}
-                  </p>
-                </div>
-              </div>
-              {!forcedBlokKey && (
-                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok3' ? 'rotate-180' : ''}`} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {(forcedBlokKey === 'blok3' || expandedBlok === 'blok3') && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                >
-                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    <SummaryCourseWeekTree
-                      blokKey="blok3"
-                      weeks={courseStructure.blok3.weeks}
-                      accentVariant="primary"
-                      renderCaseSections={renderCaseSections}
-                      renderWeekFooter={() => (
-                        <Link to="/oefenvragen" className="block ml-0 sm:ml-2 mt-4">
-                          <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl border transition-all
-                            bg-accent-50 dark:bg-accent-500/10
-                            border-accent-200/90 dark:border-accent-500/25
-                            hover:border-accent-400 dark:hover:border-accent-400/40
-                            hover:shadow-md dark:hover:shadow-accent-950/20">
-                            <div className="flex items-center gap-3 min-w-0">
-                              <div className="p-2 rounded-lg bg-accent-200/90 dark:bg-accent-500/20 shrink-0">
-                                <ClipboardCheck className="w-4 h-4 text-accent-800 dark:text-accent-300" />
-                              </div>
-                              <div className="min-w-0">
-                                <span className="font-medium text-accent-900 dark:text-accent-200 text-sm">
-                                  Alle oefenvragen
-                                </span>
-                                <p className="text-xs text-accent-700 dark:text-accent-400/90">67 meerkeuzevragen</p>
-                              </div>
+          {forcedBlokKey && (() => {
+            const blok = courseStructure[forcedBlokKey]
+            if (!blok) return null
+            const weekoverzicht = SUMMARY_BLOK_WEEKOVERZICHT[forcedBlokKey]
+            return (
+              <CourseForcedBlokView
+                backTo="/summary"
+                backLabel="Terug naar alle blokken"
+                title={blok.name}
+                statsLine={formatSummaryBlokSubtitle(blok)}
+                blokKey={forcedBlokKey}
+                pageScope="summary"
+                weeks={blok.weeks}
+                beforeTree={
+                  weekoverzicht ? (
+                    <div className="mb-6">
+                      <BlokWeekoverzichtPanel
+                        title={weekoverzicht.title}
+                        pdfFileName={weekoverzicht.pdfFileName}
+                      />
+                    </div>
+                  ) : null
+                }
+                renderCaseSections={renderCaseSections}
+                renderSearchModule={(lmeItem, key) => renderSummaryModule(lmeItem, key)}
+                renderWeekFooter={
+                  forcedBlokKey === 'blok3'
+                    ? () => (
+                        <Link to="/oefenvragen" className="block mt-4">
+                          <div className="group w-full flex items-center gap-3 rounded-xl border border-accent-200/90 dark:border-accent-500/25 bg-accent-50/80 dark:bg-accent-500/10 px-4 py-3 hover:border-accent-400 dark:hover:border-accent-400/40 transition-colors">
+                            <span className="p-2 rounded-lg bg-accent-200/90 dark:bg-accent-500/20 shrink-0">
+                              <ClipboardCheck className="w-4 h-4 text-accent-800 dark:text-accent-300" />
+                            </span>
+                            <div className="flex-1 min-w-0">
+                              <p className="font-semibold text-sm text-accent-900 dark:text-accent-200">Alle oefenvragen</p>
+                              <p className="text-xs text-accent-700 dark:text-accent-400/90">67 meerkeuzevragen</p>
                             </div>
-                            <ChevronRight className="w-4 h-4 text-accent-600 dark:text-accent-400 shrink-0" />
+                            <ChevronRight className="w-4 h-4 text-accent-600 dark:text-accent-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
                           </div>
                         </Link>
-                      )}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          )}
+                      )
+                    : undefined
+                }
+              />
+            )
+          })()}
 
-          {forcedBlokKey === 'blok4' && (
-          <div id="section-blok4" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
-            <button
-              type="button"
-              onClick={() => {
-                if (forcedBlokKey) return
-                setExpandedBlok(expandedBlok === 'blok4' ? null : 'blok4')
-              }}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-indigo-100 dark:bg-indigo-500/30 rounded-xl">
-                  <Shield className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {courseStructure.blok4.name}
-                  </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {formatSummaryBlokSubtitle(courseStructure.blok4)}
-                  </p>
-                </div>
-              </div>
-              {!forcedBlokKey && (
-                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok4' ? 'rotate-180' : ''}`} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {(forcedBlokKey === 'blok4' || expandedBlok === 'blok4') && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                >
-                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    <SummaryCourseWeekTree
-                      blokKey="blok4"
-                      weeks={courseStructure.blok4.weeks}
-                      accentVariant="indigo"
-                      weekSpacing="loose"
-                      renderCaseSections={renderCaseSections}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          )}
-
-          {forcedBlokKey === 'blok5' && (
-          <div id="section-blok5" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
-            <button
-              type="button"
-              onClick={() => {
-                if (forcedBlokKey) return
-                setExpandedBlok(expandedBlok === 'blok5' ? null : 'blok5')
-              }}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-rose-100 dark:bg-rose-500/30 rounded-xl">
-                  <Layers className="w-6 h-6 text-rose-600 dark:text-rose-400" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {courseStructure.blok5.name}
-                  </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {formatSummaryBlokSubtitle(courseStructure.blok5)}
-                  </p>
-                </div>
-              </div>
-              {!forcedBlokKey && (
-                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok5' ? 'rotate-180' : ''}`} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {(forcedBlokKey === 'blok5' || expandedBlok === 'blok5') && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                >
-                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    <BlokWeekoverzichtPanel
-                      title="Weekoverzicht blok 5 — BA1 2025–26"
-                      pdfFileName="weekoverzicht-blok5-ba1-25-26.pdf"
-                    />
-                    <SummaryCourseWeekTree
-                      blokKey="blok5"
-                      weeks={courseStructure.blok5.weeks}
-                      accentVariant="rose"
-                      renderCaseSections={renderCaseSections}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          )}
-              </div>
-            </section>
-            )}
-
-            {(forcedBlokKey === 'blok9' || forcedBlokKey === 'blok10') && (
-            <section aria-labelledby="bachelor-year-2-heading">
-              <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
-                <h2 id="bachelor-year-2-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
-                  Bachelorjaar 2
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  {forcedBlokKey === 'blok10'
-                    ? 'Blok 10 — Maag-Darm-Lever '
-                    : 'Blok 9 — Homeostase II'}
-                </p>
-              </div>
-              <div className="space-y-4">
-
-          {forcedBlokKey === 'blok9' && (
-          <div id="section-blok9" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
-            <button
-              type="button"
-              onClick={() => {
-                if (forcedBlokKey) return
-                setExpandedBlok(expandedBlok === 'blok9' ? null : 'blok9')
-              }}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-cyan-100 dark:bg-cyan-500/30 rounded-xl">
-                  <Droplets className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {courseStructure.blok9.name}
-                  </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {formatSummaryBlokSubtitle(courseStructure.blok9)}
-                  </p>
-                </div>
-              </div>
-              {!forcedBlokKey && (
-                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok9' ? 'rotate-180' : ''}`} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {(forcedBlokKey === 'blok9' || expandedBlok === 'blok9') && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                >
-                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    <BlokWeekoverzichtPanel
-                      title="Weekoverzicht blok 9 — BA2 2025–26"
-                      pdfFileName="weekoverzicht-blok9-ba2-25-26.pdf"
-                    />
-                    <SummaryCourseWeekTree
-                      blokKey="blok9"
-                      weeks={courseStructure.blok9.weeks}
-                      accentVariant="cyan"
-                      renderCaseSections={renderCaseSections}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          )}
-
-          {forcedBlokKey === 'blok10' && (
-          <div id="section-blok10" className="bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm rounded-2xl border border-slate-200/90 dark:border-slate-700/90 shadow-sm dark:shadow-lg dark:shadow-black/40 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5 scroll-mt-24">
-            <button
-              type="button"
-              onClick={() => {
-                if (forcedBlokKey) return
-                setExpandedBlok(expandedBlok === 'blok10' ? null : 'blok10')
-              }}
-              className="w-full flex items-center justify-between p-5 hover:bg-slate-50/90 dark:hover:bg-slate-800/80 transition-colors text-left"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-violet-100 dark:bg-violet-500/30 rounded-xl">
-                  <FlaskConical className="w-6 h-6 text-violet-600 dark:text-violet-400" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
-                    {courseStructure.blok10.name}
-                  </h2>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {formatSummaryBlokSubtitle(courseStructure.blok10)}
-                  </p>
-                </div>
-              </div>
-              {!forcedBlokKey && (
-                <ChevronDown className={`w-5 h-5 text-slate-400 dark:text-slate-500 shrink-0 transition-transform ${expandedBlok === 'blok10' ? 'rotate-180' : ''}`} />
-              )}
-            </button>
-
-            <AnimatePresence>
-              {(forcedBlokKey === 'blok10' || expandedBlok === 'blok10') && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="overflow-hidden border-t border-slate-100 dark:border-slate-800/80"
-                >
-                  <div className="px-5 pb-5 pt-1 bg-slate-50/50 dark:bg-slate-950/40">
-                    <SummaryCourseWeekTree
-                      blokKey="blok10"
-                      weeks={courseStructure.blok10.weeks}
-                      accentVariant="violet"
-                      renderCaseSections={renderCaseSections}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-          )}
-              </div>
-            </section>
-            )}
-          </div>
-          )}
         </motion.div>
       </main>
 
