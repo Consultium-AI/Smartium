@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectFoetaleBewakingWaaromIsHetBelangrijk",
+    "title": "Foetale bewaking: waarom is het belangrijk?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWatRegistreertEenCtg",
+    "title": "Wat registreert een CTG?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectFoetaleHartfrequentieEnOxygenatie",
+    "title": "Foetale hartfrequentie en oxygenatie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectRegistratieVanHetCtg",
+    "title": "Registratie van het CTG",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBetrouwbaarheidVanDeRegistratie",
+    "title": "Betrouwbaarheid van de registratie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHoeBeoordeelJeEenCtg",
+    "title": "Hoe beoordeel je een CTG?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWelkeTypenDeceleratiesZijnEr",
+    "title": "Welke typen deceleraties zijn er?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectUterusactiviteit",
+    "title": "Uterusactiviteit",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFigoClassificatieVanHetCtg",
+    "title": "FIGO-classificatie van het CTG",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWelkBeleidHoortBijWelkCtg",
+    "title": "Welk beleid hoort bij welk CTG?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectAfwijkendCtgHoeDenkJeKlinisch",
+    "title": "Afwijkend CTG: hoe denk je klinisch?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectKlinischeVoorbeeldenInHetKort",
+    "title": "Klinische voorbeelden in het kort",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectKraambedWatHoortBijHetNormaleHerstel",
+    "title": "Kraambed: wat hoort bij het normale herstel?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectFysiologieVanHetKraambed",
+    "title": "Fysiologie van het kraambed",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectInfectiesInHetKraambed",
+    "title": "Infecties in het kraambed",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLactatieEnSpruw",
+    "title": "Lactatie en spruw",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectTromboseInHetKraambed",
+    "title": "Trombose in het kraambed",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

@@ -1,0 +1,11 @@
+import { sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart01 } from './SskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart01'
+import { sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart02 } from './SskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart02'
+import { sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart03 } from './SskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart03'
+
+export const sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsMap = {
+  'sskindgyn-week2-zwangerschapsaandoeningen-buikpijn-en-forse-toename-buikomvang': [
+    ...sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart01,
+    ...sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart02,
+    ...sskindgynWeek2ZwangerschapsaandoeningenBuikpijnEnForseToenameBuikomvangQuestionsPart03,
+  ],
+}

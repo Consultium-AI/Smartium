@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAcuteObstetrieWaaromDitZoBelangrijkI",
+    "title": "Acute obstetrie: waarom dit zo belangrijk is",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectZwangerschapEnPlacentacirculatie",
+    "title": "Zwangerschap en placentacirculatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectMaternaleMortaliteitEnMorbiditeit",
+    "title": "Maternale mortaliteit en morbiditeit",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHetAbcdefPrincipeBijDeZwangere",
+    "title": "Het ABCDEF-principe bij de zwangere",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeAbcdefStappen",
+    "title": "De ABCDEF-stappen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectReanimatieVanDeZwangere",
+    "title": "Reanimatie van de zwangere",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectEclamptischInsult",
+    "title": "Eclamptisch insult",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSolutioPlacentae",
+    "title": "Solutio placentae",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectNavelstrengprolaps",
+    "title": "Navelstrengprolaps",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSchouderdystocie",
+    "title": "Schouderdystocie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

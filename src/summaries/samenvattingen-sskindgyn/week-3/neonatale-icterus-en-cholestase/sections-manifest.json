@@ -1,0 +1,82 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectIcterusNeonatorumEerstDenkenInTypenB",
+    "title": "Icterus neonatorum: eerst denken in typen bilirubine",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOngeconjugeerdeHyperbilirubinemie",
+    "title": "Ongeconjugeerde hyperbilirubinemie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectGeconjugeerdeHyperbilirubinemie",
+    "title": "Geconjugeerde hyperbilirubinemie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHemolyseAlsOorzaakVanIcterus",
+    "title": "Hemolyse als oorzaak van icterus",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAb0Antagonisme",
+    "title": "AB0-antagonisme",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDiagnostiekBijAb0Hemolyse",
+    "title": "Diagnostiek bij AB0-hemolyse",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWaaromKomtAb0AntagonismeNietAltijdEv",
+    "title": "Waarom komt AB0-antagonisme niet altijd even sterk tot uiting?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectEnterohepatischeKringloopBijDePasgeb",
+    "title": "Enterohepatische kringloop bij de pasgeborene",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFototherapieEnWisseltransfusie",
+    "title": "Fototherapie en wisseltransfusie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectGeconjugeerdeHyperbilirubinemieDenkA",
+    "title": "Geconjugeerde hyperbilirubinemie: denk aan galactosemie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectWatIsGalactosemie",
+    "title": "Wat is galactosemie?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectKlinischBeeldVanGalactosemie",
+    "title": "Klinisch beeld van galactosemie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectGalactosemieEnSepsis",
+    "title": "Galactosemie en sepsis",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectPraktischeBenaderingVanEenNeonaatMet",
+    "title": "Praktische benadering van een neonaat met icterus",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-16"
+  }
+]

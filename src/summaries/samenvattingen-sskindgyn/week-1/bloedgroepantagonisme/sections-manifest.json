@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHyperbilirubinemieBijDePasgeborene",
+    "title": "Hyperbilirubinemie bij de pasgeborene",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBloedgroepantagonismeHetBasisprincip",
+    "title": "Bloedgroepantagonisme: het basisprincipe",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDiagnostiekBijDeNeonaat",
+    "title": "Diagnostiek bij de neonaat",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAntistoffenEnDeKlinischeBetekenis",
+    "title": "Antistoffen en de klinische betekenis",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPreventiefBeleidZwangerschapsimmunis",
+    "title": "Preventief beleid: zwangerschapsimmunisatie en cEK-beleid",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBloedproductenAanvragenBijMoederEnKi",
+    "title": "Bloedproducten aanvragen bij moeder en kind",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectVolledigeKruisproefBijNeonaten",
+    "title": "Volledige kruisproef bij neonaten",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectTransfusiereactiesBijJongeKinderen",
+    "title": "Transfusiereacties bij jonge kinderen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

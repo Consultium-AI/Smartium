@@ -5,6 +5,7 @@ import { blok4FlashcardDecks } from './flashcards-blok4'
 import { blok5FlashcardDecks } from './flashcards-blok5'
 import { blok9FlashcardDecks } from './flashcards-blok9'
 import { blok10FlashcardDecks } from './flashcards-blok10'
+import { sskindgynFlashcardDecks } from './flashcards-sskindgyn'
 
 // Alle beschikbare decks, in blokvolgorde (getFlashcardBlocks groepeert op deck.block).
 export const allFlashcardDecks = [
@@ -13,6 +14,7 @@ export const allFlashcardDecks = [
   ...blok5FlashcardDecks,
   ...blok9FlashcardDecks,
   ...blok10FlashcardDecks,
+  ...sskindgynFlashcardDecks,
 ]
 
 // Groepeer decks per blok → week → casus, in bronvolgorde.
@@ -50,7 +52,7 @@ export function getDeckById(lmeId) {
   return allFlashcardDecks.find((d) => d.lmeId === lmeId) || null
 }
 
-export const FLASHCARD_BLOK_KEYS = ['blok4', 'blok5', 'blok9', 'blok10']
+export const FLASHCARD_BLOK_KEYS = ['blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn']
 
 /** Metadata voor het blok-overzicht (/flashcards). */
 export const FLASHCARD_BLOK_INDEX = [
@@ -82,18 +84,26 @@ export const FLASHCARD_BLOK_INDEX = [
     route: '/flashcards-blok10',
     ba: 'Ba2',
   },
+  {
+    key: 'sskindgyn',
+    label: 'Gynaecologie',
+    subtitle: 'Kindergeneeskunde & Gynaecologie',
+    route: '/flashcards-sskindgyn',
+    ba: 'Master',
+  },
 ]
 
-/** Leidt blok-key af uit lmeId (blok4-…, blok10-…) of uit deck.block. */
+/** Leidt blok-key af uit lmeId (blok4-…, blok10-…, sskindgyn-…) of uit deck.block. */
 export function deckBlokKey(deck) {
   if (!deck) return null
   const id = deck.lmeId || ''
-  const fromId = id.match(/^(blok\d+)-/)
+  const fromId = id.match(/^(blok\d+|sskindgyn)-/)
   if (fromId) return fromId[1]
   const block = (deck.block || '').toLowerCase()
   for (const n of [4, 5, 9, 10]) {
     if (block.includes(`blok ${n}`)) return `blok${n}`
   }
+  if (block.includes('kindergeneeskunde') || block.includes('gynaecologie')) return 'sskindgyn'
   return null
 }
 

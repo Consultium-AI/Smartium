@@ -500,6 +500,7 @@ function DeckRow({ deck, progress, onSelect }) {
 function BlockIndexView({ progressById }) {
   const ba1 = FLASHCARD_BLOK_INDEX.filter((b) => b.ba === 'Ba1')
   const ba2 = FLASHCARD_BLOK_INDEX.filter((b) => b.ba === 'Ba2')
+  const master = FLASHCARD_BLOK_INDEX.filter((b) => b.ba === 'Master')
 
   const renderGroup = (title, subtitle, items) => (
     <section className="mb-10">
@@ -554,6 +555,7 @@ function BlockIndexView({ progressById }) {
       </div>
       {renderGroup('Bachelorjaar 1', 'Blokken 4 en 5', ba1)}
       {renderGroup('Bachelorjaar 2', 'Blokken 9 en 10', ba2)}
+      {renderGroup('Master', 'Kindergeneeskunde & Gynaecologie', master)}
     </div>
   )
 }

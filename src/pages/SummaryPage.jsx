@@ -83,6 +83,7 @@ import Casus12Lme4ZorggerelateerdeInfectiesSummary from '../summaries/casus12-lm
 import Casus13Lme1AntibioticaIntroductieSummary from '../summaries/casus13-lme1-antibiotica-introductie/Casus13Lme1AntibioticaIntroductieSummary'
 import Casus13Lme2AntibioticaResistentieSummary from '../summaries/casus13-lme2-antibiotica-resistentie/Casus13Lme2AntibioticaResistentieSummary'
 import { BLOK5_CASUSBIJEENKOMST_SUMMARIES } from '../summaries/blok5CasusbijeenkomstRegistry.js'
+import { SSKINDGYN_SUMMARIES } from '../summaries/sskindgynSummariesRegistry.js'
 import Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-1-de-huidbarriere-van-jong-tot-oud/Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary'
 import Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-2-externe-verstorende-factoren-op-de-huidbarriere/Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary'
 import Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-3-hoe-werkt-een-geneesmiddel-via-de-huid/Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary'
@@ -292,7 +293,7 @@ import Blok10CookedSamenvattingHeleBlokSummary from '../summaries/samenvattingen
 import Blok10StampfeitjesHeleBlokSummary from '../summaries/samenvattingen-b10/stampfeitjes-hele-blok/Blok10StampfeitjesHeleBlokSummary'
 
 // Main Summary Page Component
-const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10']
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn']
 
 const SUMMARY_BLOK_WEEKOVERZICHT = {
   blok5: {
@@ -1854,6 +1855,63 @@ const SummaryPage = ({ forcedBlok = null }) => {
         },
       ],
     },
+    sskindgyn: {
+      name: "Kindergeneeskunde & Gynaecologie",
+      weeks: [
+        {
+          name: "Week 1",
+          cases: [
+            { name: "Acute buikpijn bij jonge vrouw", lmes: [ { id: "sskindgyn-week1-acute-buikpijn-bij-jonge-vrouw", name: "Acute buikpijn bij jonge vrouw", available: true } ] },
+            { name: "Antenatale zorg", lmes: [ { id: "sskindgyn-week1-antenatale-zorg", name: "Antenatale zorg", available: true } ] },
+            { name: "Baring", lmes: [ { id: "sskindgyn-week1-baring", name: "Baring", available: true } ] },
+            { name: "Bloedgroepantagonisme", lmes: [ { id: "sskindgyn-week1-bloedgroepantagonisme", name: "Bloedgroepantagonisme", available: true } ] },
+            { name: "Cyclusstoornissen", lmes: [ { id: "sskindgyn-week1-cyclusstoornissen", name: "Cyclusstoornissen", available: true } ] },
+            { name: "Kraambed", lmes: [ { id: "sskindgyn-week1-kraambed", name: "Kraambed", available: true } ] },
+            { name: "Lichamelijk onderzoek pasgeborene", lmes: [ { id: "sskindgyn-week1-lichamelijk-onderzoek-pasgeborene", name: "Lichamelijk onderzoek pasgeborene", available: true } ] },
+            { name: "Menstruatiestoornissen", lmes: [ { id: "sskindgyn-week1-menstruatiestoornissen", name: "Menstruatiestoornissen", available: true } ] },
+            { name: "Preconceptiezorg", lmes: [ { id: "sskindgyn-week1-preconceptiezorg", name: "Preconceptiezorg", available: true } ] },
+            { name: "Vruchtbaarheid", lmes: [ { id: "sskindgyn-week1-vruchtbaarheid", name: "Vruchtbaarheid", available: true } ] },
+          ]
+        },
+        {
+          name: "Week 2",
+          cases: [
+            { name: "Acute Obstetrie", lmes: [ { id: "sskindgyn-week2-acute-obstetrie", name: "Acute Obstetrie", available: true } ] },
+            { name: "Baring", lmes: [ { id: "sskindgyn-week2-baring", name: "Baring", available: true } ] },
+            { name: "Foetale bewaking", lmes: [ { id: "sskindgyn-week2-foetale-bewaking", name: "Foetale bewaking", available: true } ] },
+            { name: "Foetale groeirestrictie", lmes: [ { id: "sskindgyn-week2-foetale-groeirestrictie", name: "Foetale groeirestrictie", available: true } ] },
+            { name: "HPV Cervix", lmes: [ { id: "sskindgyn-week2-hpv-cervix", name: "HPV Cervix", available: true } ] },
+            { name: "Menopauze", lmes: [ { id: "sskindgyn-week2-menopauze", name: "Menopauze", available: true } ] },
+            { name: "Perinatale sterfte", lmes: [ { id: "sskindgyn-week2-perinatale-sterfte", name: "Perinatale sterfte", available: true } ] },
+            { name: "Prenatale screening en diagnostiek", lmes: [ { id: "sskindgyn-week2-prenatale-screening-en-diagnostiek", name: "Prenatale screening en diagnostiek", available: true } ] },
+            { name: "Prolaps en incontinentie", lmes: [ { id: "sskindgyn-week2-prolaps-en-incontinentie", name: "Prolaps en incontinentie", available: true } ] },
+            { name: "Zwangerschapsaandoeningen - Braken en koorts", lmes: [ { id: "sskindgyn-week2-zwangerschapsaandoeningen-braken-en-koorts", name: "Zwangerschapsaandoeningen - Braken en koorts", available: true } ] },
+            { name: "Zwangerschapsaandoeningen - Buikpijn en forse toename buikomvang", lmes: [ { id: "sskindgyn-week2-zwangerschapsaandoeningen-buikpijn-en-forse-toename-buikomvang", name: "Zwangerschapsaandoeningen - Buikpijn en forse toename buikomvang", available: true } ] },
+          ]
+        },
+        {
+          name: "Week 3",
+          cases: [
+            { name: "Hielprikscreening en metabole afwijkingen", lmes: [ { id: "sskindgyn-week3-hielprikscreening-en-metabole-afwijkingen", name: "Hielprikscreening en metabole afwijkingen", available: true } ] },
+            { name: "Introductie kindermishandeling", lmes: [ { id: "sskindgyn-week3-introductie-kindermishandeling", name: "Introductie kindermishandeling", available: true } ] },
+            { name: "Klinisch kindercardiologisch onderzoek", lmes: [ { id: "sskindgyn-week3-klinisch-kindercardiologisch-onderzoek", name: "Klinisch kindercardiologisch onderzoek", available: true } ] },
+            { name: "Motorische ontwikkeling van de zuigeling", lmes: [ { id: "sskindgyn-week3-motorische-ontwikkeling-van-de-zuigeling", name: "Motorische ontwikkeling van de zuigeling", available: true } ] },
+            { name: "Neonatale icterus en cholestase", lmes: [ { id: "sskindgyn-week3-neonatale-icterus-en-cholestase", name: "Neonatale icterus en cholestase", available: true } ] },
+            { name: "NLS Newborn Life Support", lmes: [ { id: "sskindgyn-week3-nls-newborn-life-support", name: "NLS Newborn Life Support", available: true } ] },
+            { name: "Pre- en dysmaturiteit", lmes: [ { id: "sskindgyn-week3-pre-en-dysmaturiteit", name: "Pre- en dysmaturiteit", available: true } ] },
+          ]
+        },
+        {
+          name: "Week 4",
+          cases: [
+            { name: "Kinderfarmacologie", lmes: [ { id: "sskindgyn-week4-kinderfarmacologie", name: "Kinderfarmacologie", available: true } ] },
+            { name: "Kinderinfectieziekten en immunologie", lmes: [ { id: "sskindgyn-week4-kinderinfectieziekten-en-immunologie", name: "Kinderinfectieziekten en immunologie", available: true } ] },
+            { name: "Kinderlongziekten", lmes: [ { id: "sskindgyn-week4-kinderlongziekten", name: "Kinderlongziekten", available: true } ] },
+            { name: "Zuigeling met koorts en spugen", lmes: [ { id: "sskindgyn-week4-zuigeling-met-koorts-en-spugen", name: "Zuigeling met koorts en spugen", available: true } ] },
+          ]
+        },
+      ],
+    },
   }
 
   const getImageIdsForLme = (baseId, imageCount) =>
@@ -2415,6 +2473,20 @@ const SummaryPage = ({ forcedBlok = null }) => {
         onVariantSwitch={handleVariantSwitch}
       >
         <CasusbijeenkomstSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (SSKINDGYN_SUMMARIES[activeLme]) {
+    const SskindgynSummary = SSKINDGYN_SUMMARIES[activeLme]
+    return (
+      <SummaryLayout
+        lmeId={activeLme}
+        lmeName={lmeMap[activeLme]?.name || 'Samenvatting'}
+        activeLmeId={activeLme}
+        onVariantSwitch={handleVariantSwitch}
+      >
+        <SskindgynSummary />
       </SummaryLayout>
     )
   }
@@ -4094,6 +4166,16 @@ const SummaryPage = ({ forcedBlok = null }) => {
                   subtitle: 'Blok 9 en Blok 10',
                   headingId: 'summary-index-ba2-heading',
                   blocks: (['blok9', 'blok10']).map((key) => ({
+                    to: `/summary-${key}`,
+                    label: courseStructure[key].name,
+                    meta: formatSummaryBlokSubtitle(courseStructure[key]),
+                  })),
+                },
+                {
+                  title: 'Master',
+                  subtitle: 'Kindergeneeskunde & Gynaecologie',
+                  headingId: 'summary-index-master-heading',
+                  blocks: (['sskindgyn']).map((key) => ({
                     to: `/summary-${key}`,
                     label: courseStructure[key].name,
                     meta: formatSummaryBlokSubtitle(courseStructure[key]),

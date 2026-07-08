@@ -1,0 +1,42 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAlgemeneBeoordelingVanHetKind",
+    "title": "Algemene beoordeling van het kind",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHarttonenDeBasis",
+    "title": "Harttonen: de basis",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSystoleEnDiastoleHerkennen",
+    "title": "Systole en diastole herkennen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectSystolischeGeruisen",
+    "title": "Systolische geruisen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDiastolischeGeruisen",
+    "title": "Diastolische geruisen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHartritmeBeoordelen",
+    "title": "Hartritme beoordelen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-08"
+  }
+]

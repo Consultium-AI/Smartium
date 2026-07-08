@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHetLichamelijkOnderzoekVanDePasgebor",
+    "title": "Het lichamelijk onderzoek van de pasgeborene",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHuidEnKleur",
+    "title": "Huid en kleur",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSchedelEnFontanellen",
+    "title": "Schedel en fontanellen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectGelaatOgenOrenNeusEnTong",
+    "title": "Gelaat, ogen, oren, neus en tong",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHals",
+    "title": "Hals",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectThorax",
+    "title": "Thorax",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectAbdomen",
+    "title": "Abdomen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectGenitaliaEnAnus",
+    "title": "Genitalia en anus",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectRug",
+    "title": "Rug",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectExtremiteiten",
+    "title": "Extremiteiten",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectOriNterendNeurologischOnderzoek",
+    "title": "Oriënterend neurologisch onderzoek",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectPraktischeKernVanHetOnderzoek",
+    "title": "Praktische kern van het onderzoek",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAntenataleZorgDoelEnOrganisatie",
+    "title": "Antenatale zorg: doel en organisatie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVaststellenVanDeZwangerschap",
+    "title": "Vaststellen van de zwangerschap",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVerwijzingEnOrganisatieVanZorg",
+    "title": "Verwijzing en organisatie van zorg",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDeEerstePrenataleControle",
+    "title": "De eerste prenatale controle",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekEnEcho",
+    "title": "Lichamelijk onderzoek en echo",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectScreenendLaboratoriumonderzoek",
+    "title": "Screenend laboratoriumonderzoek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectPrenataleScreeningEnDiagnostiek",
+    "title": "Prenatale screening en diagnostiek",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectControlesEnBewakingTijdensDeZwangers",
+    "title": "Controles en bewaking tijdens de zwangerschap",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectWatControleerJeBijElkeZwangerschapsc",
+    "title": "Wat controleer je bij elke zwangerschapscontrole?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectExtraAandachtRond30Weken",
+    "title": "Extra aandacht rond 30 weken",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectCasusEnKlinischeRelevantie",
+    "title": "Casus en klinische relevantie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

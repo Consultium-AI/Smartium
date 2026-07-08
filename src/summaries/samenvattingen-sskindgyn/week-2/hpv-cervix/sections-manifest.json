@@ -1,0 +1,82 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAnatomieVanDeCervix",
+    "title": "Anatomie van de cervix",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWanneerDoeJeCervixcytologie",
+    "title": "Wanneer doe je cervixcytologie?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectTechniekVanHetUitstrijkje",
+    "title": "Techniek van het uitstrijkje",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectClassificatieVanUitstrijkjes",
+    "title": "Classificatie van uitstrijkjes",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHistologischeBetekenisVanCin",
+    "title": "Histologische betekenis van CIN",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectOntstaanVanAfwijkingenHpvEnDysplasie",
+    "title": "Ontstaan van afwijkingen: HPV en dysplasie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBeloopVanEenHpvInfectie",
+    "title": "Beloop van een HPV-infectie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBevolkingsonderzoekBaarmoederhalskan",
+    "title": "Bevolkingsonderzoek baarmoederhalskanker",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectNieuweScreeningsaanpak",
+    "title": "Nieuwe screeningsaanpak",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWatDoeJeBijEenAfwijkendeUitslag",
+    "title": "Wat doe je bij een afwijkende uitslag?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectColposcopie",
+    "title": "Colposcopie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectBehandelingVanPremaligneCervicaleAfw",
+    "title": "Behandeling van premaligne cervicale afwijkingen",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectVerloopVanCin",
+    "title": "Verloop van CIN",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectColposcopischeIndrukWatIsPluisEnWatN",
+    "title": "Colposcopische indruk: wat is pluis en wat niet?",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-16"
+  }
+]

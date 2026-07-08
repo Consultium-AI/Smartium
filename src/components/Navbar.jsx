@@ -41,6 +41,9 @@ const navItems = [
         { name: 'Blok 9', href: '/summary-blok9' },
         { name: 'Blok 10', href: '/summary-blok10' },
       ]},
+      { label: 'Master', links: [
+        { name: 'Gynaecologie', href: '/summary-sskindgyn' },
+      ]},
     ],
   },
   {
@@ -56,6 +59,9 @@ const navItems = [
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/oefenvragen-blok9' },
         { name: 'Blok 10', href: '/oefenvragen-blok10' },
+      ]},
+      { label: 'Master', links: [
+        { name: 'Gynaecologie', href: '/oefenvragen-sskindgyn' },
       ]},
     ],
   },
@@ -86,6 +92,9 @@ const navItems = [
       { label: 'Ba2', links: [
         { name: 'Blok 9', href: '/flashcards-blok9' },
         { name: 'Blok 10', href: '/flashcards-blok10' },
+      ]},
+      { label: 'Master', links: [
+        { name: 'Gynaecologie', href: '/flashcards-sskindgyn' },
       ]},
     ],
   },

@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectMenstruatiestoornissenDeBasisVanDeAn",
+    "title": "Menstruatiestoornissen: de basis van de anamnese",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHevigMenstrueelBloedverlies",
+    "title": "Hevig menstrueel bloedverlies",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeDenkJeOorzakenVanHevigBloedverlie",
+    "title": "Hoe denk je oorzaken van hevig bloedverlies uit?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectMetrorragieIntermenstrueelBloedverli",
+    "title": "Metrorragie, intermenstrueel bloedverlies en de cyclusanamnese",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeHormonaleCyclusInGroteLijnen",
+    "title": "De hormonale cyclus in grote lijnen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectEndometriose",
+    "title": "Endometriose",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekBijVerdenkingOpE",
+    "title": "Lichamelijk onderzoek bij verdenking op endometriose",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBehandelingVanEndometriose",
+    "title": "Behandeling van endometriose",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

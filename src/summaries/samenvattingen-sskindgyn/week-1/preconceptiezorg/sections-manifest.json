@@ -1,0 +1,77 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsPreconceptiezorg",
+    "title": "Wat is preconceptiezorg?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWieKomtInAanmerkingVoorPreconceptiea",
+    "title": "Wie komt in aanmerking voor preconceptieadvies?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAlgemenePreconceptiezorgWatVraagJeUi",
+    "title": "Algemene preconceptiezorg: wat vraag je uit?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekEnAanvullendOnde",
+    "title": "Lichamelijk onderzoek en aanvullend onderzoek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLeefstijlfactorenEnAlgemeneAdviezen",
+    "title": "Leefstijlfactoren en algemene adviezen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAlgemeneVersusSpecialistischePreconc",
+    "title": "Algemene versus specialistische preconceptiezorg",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectMedicatieEnZwangerschap",
+    "title": "Medicatie en zwangerschap",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCasusMetReumatoDeArtritis",
+    "title": "Casus met reumatoïde artritis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectWanneerBeginJeOverPreconceptiezorg",
+    "title": "Wanneer begin je over preconceptiezorg?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSpecialistischeRisicoInventarisatieW",
+    "title": "Specialistische risico-inventarisatie: wat moet je uitvragen?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectCasusMetMeerdereRisicofactoren",
+    "title": "Casus met meerdere risicofactoren",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectWatDoeJeAlsDeRisicoInventarisatieNog",
+    "title": "Wat doe je als de risico-inventarisatie nog niet compleet is?",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectCasusMetDiabetesHartafwijkingEnErfel",
+    "title": "Casus met diabetes, hartafwijking en erfelijke belasting",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-15"
+  }
+]

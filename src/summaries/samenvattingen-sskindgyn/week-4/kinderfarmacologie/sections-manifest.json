@@ -1,0 +1,127 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectGeneesmiddelveiligheidBijKinderen",
+    "title": "Geneesmiddelveiligheid bij kinderen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVeelvoorkomendeVoorschrijffouten",
+    "title": "Veelvoorkomende voorschrijffouten",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectMaximaleDosisVanVolwassenenBlijftBel",
+    "title": "Maximale dosis van volwassenen blijft belangrijk",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectFarmacokinetiekWatDoetHetLichaamMetH",
+    "title": "Farmacokinetiek: wat doet het lichaam met het geneesmiddel?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAbsorptie",
+    "title": "Absorptie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDistributie",
+    "title": "Distributie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectMetabolisme",
+    "title": "Metabolisme",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectEliminatie",
+    "title": "Eliminatie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFarmacodynamiekWatDoetHetGeneesmidde",
+    "title": "Farmacodynamiek: wat doet het geneesmiddel met het lichaam?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectMorfineBijNeonaten",
+    "title": "Morfine bij neonaten",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectAcetylsalicylzuur",
+    "title": "Acetylsalicylzuur",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectGeneesmiddelenEnGroei",
+    "title": "Geneesmiddelen en groei",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectCorticosteroDen",
+    "title": "Corticosteroïden",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectFenobarbital",
+    "title": "Fenobarbital",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectDoxycyclineEnAndereTetracyclines",
+    "title": "Doxycycline en andere tetracyclines",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectCytostaticaEnIfosfamide",
+    "title": "Cytostatica en ifosfamide",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectInformatiebronnenEnOffLabelGebruik",
+    "title": "Informatiebronnen en off-label gebruik",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectOffLabelEnUnlicensed",
+    "title": "Off-label en unlicensed",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectDoserenPerKgPerDagOfPerOppervlakte",
+    "title": "Doseren: per kg, per dag of per oppervlakte",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectToedienvormenBijKinderen",
+    "title": "Toedienvormen bij kinderen",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectHulpstoffen",
+    "title": "Hulpstoffen",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectPraktischeKeuzeVanDosisEnToedienvorm",
+    "title": "Praktische keuze van dosis en toedienvorm",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectVeiligWerkenBijKinderen",
+    "title": "Veilig werken bij kinderen",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-25"
+  }
+]

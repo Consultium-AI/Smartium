@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectPrematuriteitEnDysmaturiteit",
+    "title": "Prematuriteit en dysmaturiteit",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectExtremeVroeggeboorteEnPerinataleCoun",
+    "title": "Extreme vroeggeboorte en perinatale counseling",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectBeoordelingVanDePasgeborene",
+    "title": "Beoordeling van de pasgeborene",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPerinataleAsfyxie",
+    "title": "Perinatale asfyxie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectGroeiEnDysmaturiteit",
+    "title": "Groei en dysmaturiteit",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectVoedingBijDePrematureEnDysmaturePasg",
+    "title": "Voeding bij de premature en dysmature pasgeborene",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHyperbilirubinemieEnFototherapie",
+    "title": "Hyperbilirubinemie en fototherapie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectInfantRespiratoryDistressSyndromeIrd",
+    "title": "Infant Respiratory Distress Syndrome (IRDS)",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectTabel2BelangrijkeKenmerkenVanIrds",
+    "title": "Tabel 2. Belangrijke kenmerken van IRDS",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectPersisterendeDuctusArteriosusPda",
+    "title": "Persisterende ductus arteriosus (PDA)",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectIntraventriculaireHemorrhagieIvh",
+    "title": "Intraventriculaire hemorrhagie (IVH)",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectNecrotiserendeEnterocolitisNec",
+    "title": "Necrotiserende enterocolitis (NEC)",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBronchopulmonaleDysplasieBpd",
+    "title": "Bronchopulmonale dysplasie (BPD)",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectRetinopathieVanDePrematuurRop",
+    "title": "Retinopathie van de prematuur (ROP)",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKlinischeFollowUpEnLangeTermijn",
+    "title": "Klinische follow-up en lange termijn",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-17"
+  }
+]

@@ -1,5 +1,6 @@
 ﻿import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 import { splitCasusModules } from '../utils/courseModuleKind'
+import { SSKINDGYN_QUESTIONS_MAP } from '../questions/sskindgynQuestionsRegistry'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -1953,6 +1954,63 @@ export const practiceQuestionsCourseStructure = {
       },
     ],
   },
+  sskindgyn: {
+    name: "Kindergeneeskunde & Gynaecologie",
+    weeks: [
+      {
+        name: "Week 1",
+        cases: [
+          { name: "Acute buikpijn bij jonge vrouw", lmes: [ { id: "sskindgyn-week1-acute-buikpijn-bij-jonge-vrouw", name: "Acute buikpijn bij jonge vrouw", type: "simple" } ] },
+          { name: "Antenatale zorg", lmes: [ { id: "sskindgyn-week1-antenatale-zorg", name: "Antenatale zorg", type: "simple" } ] },
+          { name: "Baring", lmes: [ { id: "sskindgyn-week1-baring", name: "Baring", type: "simple" } ] },
+          { name: "Bloedgroepantagonisme", lmes: [ { id: "sskindgyn-week1-bloedgroepantagonisme", name: "Bloedgroepantagonisme", type: "simple" } ] },
+          { name: "Cyclusstoornissen", lmes: [ { id: "sskindgyn-week1-cyclusstoornissen", name: "Cyclusstoornissen", type: "simple" } ] },
+          { name: "Kraambed", lmes: [ { id: "sskindgyn-week1-kraambed", name: "Kraambed", type: "simple" } ] },
+          { name: "Lichamelijk onderzoek pasgeborene", lmes: [ { id: "sskindgyn-week1-lichamelijk-onderzoek-pasgeborene", name: "Lichamelijk onderzoek pasgeborene", type: "simple" } ] },
+          { name: "Menstruatiestoornissen", lmes: [ { id: "sskindgyn-week1-menstruatiestoornissen", name: "Menstruatiestoornissen", type: "simple" } ] },
+          { name: "Preconceptiezorg", lmes: [ { id: "sskindgyn-week1-preconceptiezorg", name: "Preconceptiezorg", type: "simple" } ] },
+          { name: "Vruchtbaarheid", lmes: [ { id: "sskindgyn-week1-vruchtbaarheid", name: "Vruchtbaarheid", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 2",
+        cases: [
+          { name: "Acute Obstetrie", lmes: [ { id: "sskindgyn-week2-acute-obstetrie", name: "Acute Obstetrie", type: "simple" } ] },
+          { name: "Baring", lmes: [ { id: "sskindgyn-week2-baring", name: "Baring", type: "simple" } ] },
+          { name: "Foetale bewaking", lmes: [ { id: "sskindgyn-week2-foetale-bewaking", name: "Foetale bewaking", type: "simple" } ] },
+          { name: "Foetale groeirestrictie", lmes: [ { id: "sskindgyn-week2-foetale-groeirestrictie", name: "Foetale groeirestrictie", type: "simple" } ] },
+          { name: "HPV Cervix", lmes: [ { id: "sskindgyn-week2-hpv-cervix", name: "HPV Cervix", type: "simple" } ] },
+          { name: "Menopauze", lmes: [ { id: "sskindgyn-week2-menopauze", name: "Menopauze", type: "simple" } ] },
+          { name: "Perinatale sterfte", lmes: [ { id: "sskindgyn-week2-perinatale-sterfte", name: "Perinatale sterfte", type: "simple" } ] },
+          { name: "Prenatale screening en diagnostiek", lmes: [ { id: "sskindgyn-week2-prenatale-screening-en-diagnostiek", name: "Prenatale screening en diagnostiek", type: "simple" } ] },
+          { name: "Prolaps en incontinentie", lmes: [ { id: "sskindgyn-week2-prolaps-en-incontinentie", name: "Prolaps en incontinentie", type: "simple" } ] },
+          { name: "Zwangerschapsaandoeningen - Braken en koorts", lmes: [ { id: "sskindgyn-week2-zwangerschapsaandoeningen-braken-en-koorts", name: "Zwangerschapsaandoeningen - Braken en koorts", type: "simple" } ] },
+          { name: "Zwangerschapsaandoeningen - Buikpijn en forse toename buikomvang", lmes: [ { id: "sskindgyn-week2-zwangerschapsaandoeningen-buikpijn-en-forse-toename-buikomvang", name: "Zwangerschapsaandoeningen - Buikpijn en forse toename buikomvang", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 3",
+        cases: [
+          { name: "Hielprikscreening en metabole afwijkingen", lmes: [ { id: "sskindgyn-week3-hielprikscreening-en-metabole-afwijkingen", name: "Hielprikscreening en metabole afwijkingen", type: "simple" } ] },
+          { name: "Introductie kindermishandeling", lmes: [ { id: "sskindgyn-week3-introductie-kindermishandeling", name: "Introductie kindermishandeling", type: "simple" } ] },
+          { name: "Klinisch kindercardiologisch onderzoek", lmes: [ { id: "sskindgyn-week3-klinisch-kindercardiologisch-onderzoek", name: "Klinisch kindercardiologisch onderzoek", type: "simple" } ] },
+          { name: "Motorische ontwikkeling van de zuigeling", lmes: [ { id: "sskindgyn-week3-motorische-ontwikkeling-van-de-zuigeling", name: "Motorische ontwikkeling van de zuigeling", type: "simple" } ] },
+          { name: "Neonatale icterus en cholestase", lmes: [ { id: "sskindgyn-week3-neonatale-icterus-en-cholestase", name: "Neonatale icterus en cholestase", type: "simple" } ] },
+          { name: "NLS Newborn Life Support", lmes: [ { id: "sskindgyn-week3-nls-newborn-life-support", name: "NLS Newborn Life Support", type: "simple" } ] },
+          { name: "Pre- en dysmaturiteit", lmes: [ { id: "sskindgyn-week3-pre-en-dysmaturiteit", name: "Pre- en dysmaturiteit", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 4",
+        cases: [
+          { name: "Kinderfarmacologie", lmes: [ { id: "sskindgyn-week4-kinderfarmacologie", name: "Kinderfarmacologie", type: "simple" } ] },
+          { name: "Kinderinfectieziekten en immunologie", lmes: [ { id: "sskindgyn-week4-kinderinfectieziekten-en-immunologie", name: "Kinderinfectieziekten en immunologie", type: "simple" } ] },
+          { name: "Kinderlongziekten", lmes: [ { id: "sskindgyn-week4-kinderlongziekten", name: "Kinderlongziekten", type: "simple" } ] },
+          { name: "Zuigeling met koorts en spugen", lmes: [ { id: "sskindgyn-week4-zuigeling-met-koorts-en-spugen", name: "Zuigeling met koorts en spugen", type: "simple" } ] },
+        ]
+      },
+    ],
+  },
 }
 
 function practiceIdsForLmeItem(lmeItem) {
@@ -2053,6 +2111,7 @@ export function getLmeQuestionCount(lmeItem) {
     if (casus12Lme4QuestionsMap[lmeId]) return casus12Lme4QuestionsMap[lmeId]
     if (casus13Lme1QuestionsMap[lmeId]) return casus13Lme1QuestionsMap[lmeId]
     if (casus13Lme2QuestionsMap[lmeId]) return casus13Lme2QuestionsMap[lmeId]
+    if (SSKINDGYN_QUESTIONS_MAP[lmeId]) return SSKINDGYN_QUESTIONS_MAP[lmeId]
     return null
   })()
   return Array.isArray(q) ? q.length : (q && typeof q === 'object' ? getQuestionCount(q) : 0)
@@ -2251,6 +2310,7 @@ export function getPracticeQuestionsForLme(lmeParam) {
   // Casus 13 LME 2: Antibiotica Resistentie (per LME, alle vragen gecombineerd)
   if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return Object.values(casus13Lme2QuestionsMap).flat()
   if (casus13Lme2QuestionsMap[lmeParam]) return casus13Lme2QuestionsMap[lmeParam]
+  if (SSKINDGYN_QUESTIONS_MAP[lmeParam]) return SSKINDGYN_QUESTIONS_MAP[lmeParam]
   const casusCbQ = getCasusbijeenkomstQuestions(lmeParam)
   if (casusCbQ) return casusCbQ
 

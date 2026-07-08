@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectKoortsBijKinderen",
+    "title": "Koorts bij kinderen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAcuutZiekKindSepsisEnMeningitis",
+    "title": "Acuut ziek kind: sepsis en meningitis",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectRijksvaccinatieprogramma",
+    "title": "Rijksvaccinatieprogramma",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEmpirischeBehandelingMetAntibiotica",
+    "title": "Empirische behandeling met antibiotica",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectRecidiverendeLuchtweginfecties",
+    "title": "Recidiverende luchtweginfecties",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

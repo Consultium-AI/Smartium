@@ -1,0 +1,42 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectUrineIncontinentie",
+    "title": "Urine-incontinentie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectProlaps",
+    "title": "Prolaps",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSteunVanDeBekkenbodem",
+    "title": "Steun van de bekkenbodem",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOnderzoekBijProlaps",
+    "title": "Onderzoek bij prolaps",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeoordelingVanDeErnstVanDeProlaps",
+    "title": "Beoordeling van de ernst van de prolaps",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBehandelingVanProlaps",
+    "title": "Behandeling van prolaps",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-08"
+  }
+]

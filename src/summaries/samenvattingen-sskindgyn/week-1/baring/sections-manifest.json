@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeBaringAlsFysiologischProces",
+    "title": "De baring als fysiologisch proces",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOntsluitingstijdperk",
+    "title": "Ontsluitingstijdperk",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectUitdrijvingstijdperk",
+    "title": "Uitdrijvingstijdperk",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectNageboortetijdperk",
+    "title": "Nageboortetijdperk",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectKlinischeRelevantie",
+    "title": "Klinische relevantie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectPrenataleScreeningHetDoelEnDePlaatsI",
+    "title": "Prenatale screening: het doel en de plaats in de zorg",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEersteTrimesterScreeningEnInvasieveD",
+    "title": "Eerste trimester screening en invasieve diagnostiek",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectNevenbevindingenBijNipt",
+    "title": "Nevenbevindingen bij NIPT",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectInvasievePrenataleDiagnostiek",
+    "title": "Invasieve prenatale diagnostiek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectEenVoorbeeldVanEenNevenbevindingTris",
+    "title": "Een voorbeeld van een nevenbevinding: trisomie 7",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectEtseoTtseoEnGeavanceerdUltrageluidso",
+    "title": "ETSEO, TTSEO en geavanceerd ultrageluidsonderzoek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDetectiekansVanDe20WekenEcho",
+    "title": "Detectiekans van de 20-weken echo",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectGeavanceerdUltrageluidsonderzoekBijN",
+    "title": "Geavanceerd ultrageluidsonderzoek bij nierafwijkingen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectRcadSyndroom",
+    "title": "RCAD-syndroom",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectOligohydramnionEnGevolgenVoorDeFoetu",
+    "title": "Oligohydramnion en gevolgen voor de foetus",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectKlinischeGevolgenNaDeGeboorte",
+    "title": "Klinische gevolgen na de geboorte",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectZwangerschapsafbreking",
+    "title": "Zwangerschapsafbreking",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

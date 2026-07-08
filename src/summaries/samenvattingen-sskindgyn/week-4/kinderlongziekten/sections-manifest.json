@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHetAcuutBenauwdeKind",
+    "title": "Het acuut benauwde kind",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBeoordelingVanDeAdemhaling",
+    "title": "Beoordeling van de ademhaling",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectNormaleVitaleParametersPerLeeftijd",
+    "title": "Normale vitale parameters per leeftijd",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLuchtwegobstructieHoogOfLaag",
+    "title": "Luchtwegobstructie: hoog of laag?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLonggeluiden",
+    "title": "Longgeluiden",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBronchiolitis",
+    "title": "Bronchiolitis",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectLaryngitisSubglottica",
+    "title": "Laryngitis subglottica",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectWestleyCroupScore",
+    "title": "Westley-Croup-score",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectAstmaViraalPiepenEnInhalatietherapie",
+    "title": "Astma, viraal piepen en inhalatietherapie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

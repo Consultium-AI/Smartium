@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWatZijnCyclusstoornissen",
+    "title": "Inleiding: wat zijn cyclusstoornissen?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBegrippenEnDefinities",
+    "title": "Begrippen en definities",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectCyclusanamneseDeBasisVanHetOnderzoek",
+    "title": "Cyclusanamnese: de basis van het onderzoek",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLichamelijkOnderzoek",
+    "title": "Lichamelijk onderzoek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDifferentiaaldiagnoseHormonaleEnAnat",
+    "title": "Differentiaaldiagnose: hormonale en anatomische oorzaken",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDiagnostiek",
+    "title": "Diagnostiek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectVoorbeeldVanDiagnostiekWho3EnPoi",
+    "title": "Voorbeeld van diagnostiek: WHO3 en POI",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectHormoonsubstitutietherapie",
+    "title": "Hormoonsubstitutietherapie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectLeefstijlEnAlgemeneZorg",
+    "title": "Leefstijl en algemene zorg",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectPsychosocialeGevolgen",
+    "title": "Psychosociale gevolgen",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

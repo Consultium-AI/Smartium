@@ -1,0 +1,22 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBuikpijnInDeZwangerschap",
+    "title": "Buikpijn in de zwangerschap",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectMijnBuikGroeitZoSnelObesitasEnDiabet",
+    "title": "Mijn buik groeit zo snel: obesitas en diabetes in de zwangerschap",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-04"
+  }
+]

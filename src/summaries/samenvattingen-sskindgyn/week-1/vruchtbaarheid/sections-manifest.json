@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectVruchtbaarheidBasisbegrippen",
+    "title": "Vruchtbaarheid: basisbegrippen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHoeVaakKomtHetVoor",
+    "title": "Hoe vaak komt het voor?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnamneseBijKinderwens",
+    "title": "Anamnese bij kinderwens",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOorzakenVanVerminderdeVruchtbaarheid",
+    "title": "Oorzaken van verminderde vruchtbaarheid",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekBijDeVrouw",
+    "title": "Lichamelijk onderzoek bij de vrouw",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAanvullendOnderzoekBijDeVrouw",
+    "title": "Aanvullend onderzoek bij de vrouw",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectAanvullendOnderzoekBijDeMan",
+    "title": "Aanvullend onderzoek bij de man",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDeDiagnose",
+    "title": "De diagnose",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectPrognoseVanSpontaneZwangerschap",
+    "title": "Prognose van spontane zwangerschap",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectKanttekeningenBijBehandeling",
+    "title": "Kanttekeningen bij behandeling",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectKernvragenBijSubfertiliteit",
+    "title": "Kernvragen bij subfertiliteit",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

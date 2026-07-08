@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBegrippenRondDeMenopauze",
+    "title": "Begrippen rond de menopauze",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectFysiologieVanDeMenopauze",
+    "title": "Fysiologie van de menopauze",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectOpvliegersEnNachtelijkZweten",
+    "title": "Opvliegers en nachtelijk zweten",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectKlachtenEnGevolgenInDePostmenopauzal",
+    "title": "Klachten en gevolgen in de postmenopauzale fase",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBotmineraaldichtheidEnDxa",
+    "title": "Botmineraaldichtheid en DXA",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBehandelingVanPostmenopauzaleKlachte",
+    "title": "Behandeling van postmenopauzale klachten",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectNietHormonaleAlternatieven",
+    "title": "Niet-hormonale alternatieven",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHormonaleSubstitutietherapieRisicoSE",
+    "title": "Hormonale substitutietherapie: risico’s en contra-indicaties",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

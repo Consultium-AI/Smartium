@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeOpvangVanDePasgeboreneEerstGoedVoo",
+    "title": "De opvang van de pasgeborene: eerst goed voorbereiden",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHetNlsAlgoritmeDeVolgordeVanHandelen",
+    "title": "Het NLS-algoritme: de volgorde van handelen",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHypothermieVoorkomen",
+    "title": "Hypothermie voorkomen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDeEersteLuchtwegstapAirway",
+    "title": "De eerste luchtwegstap: Airway",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBreathingBeademenEnVentileren",
+    "title": "Breathing: beademen en ventileren",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCirculationThoraxcompressies",
+    "title": "Circulation: thoraxcompressies",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectMedicatieEnEvaluatie",
+    "title": "Medicatie en evaluatie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]
