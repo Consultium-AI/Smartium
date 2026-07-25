@@ -787,6 +787,13 @@ export default function FlashcardsPage({ forcedBlok = null }) {
   const [selectedId, setSelectedId] = useState(null)
   const [progressVersion, setProgressVersion] = useState(0)
 
+  // Navigatie naar een ander blok (via de navbar) moet een actieve sessie
+  // altijd sluiten — anders blijft de oude deck zichtbaar omdat de route
+  // wisselt maar dit component-instance en zijn state hetzelfde blijven.
+  useEffect(() => {
+    setSelectedId(null)
+  }, [forcedBlokKey])
+
   useEffect(() => {
     const onCloudSynced = (event) => {
       if (!userId || userId === 'guest') return
