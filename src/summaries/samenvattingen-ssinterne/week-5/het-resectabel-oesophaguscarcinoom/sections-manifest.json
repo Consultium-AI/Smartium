@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWatIsEenResectabelOesophagu",
+    "title": "Inleiding: wat is een resectabel oesophaguscarcinoom?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEpidemiologieEnHistologie",
+    "title": "Epidemiologie en histologie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectKlachtenEnEerstePresentatie",
+    "title": "Klachten en eerste presentatie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDiagnostischProces",
+    "title": "Diagnostisch proces",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeeldvormingEnDisseminatieonderzoek",
+    "title": "Beeldvorming en disseminatieonderzoek",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectResectabiliteitEnOperabiliteit",
+    "title": "Resectabiliteit en operabiliteit",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHetMultidisciplinairOverleg",
+    "title": "Het multidisciplinair overleg",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectNeoadjuvanteChemoradiotherapie",
+    "title": "Neoadjuvante chemoradiotherapie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectRolVanDeVerschillendeSpecialisten",
+    "title": "Rol van de verschillende specialisten",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectToekomstigeOntwikkelingen",
+    "title": "Toekomstige ontwikkelingen",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectCasusDeOuderePatiNtMetPassageklachte",
+    "title": "Casus: de oudere patiënt met passageklachten",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

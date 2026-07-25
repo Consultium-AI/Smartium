@@ -7,6 +7,19 @@ import { useAccess } from '../../hooks/useAccess'
 import { VariantSwitchProvider } from '../../components/SummaryLayout'
 import { lmeMap } from '../../data/lmeIndex'
 import { BLOK5_SUMMARY_MODULE_IDS } from '../../data/blok5SummaryModuleIds.js'
+import { SSKINDGYN_SUMMARIES } from '../../summaries/sskindgynSummariesRegistry.js'
+import { SSINTERNE_SUMMARIES } from '../../summaries/ssinterneSummariesRegistry.js'
+
+const SSKINDGYN_SUMMARY_ORDER = Object.keys(SSKINDGYN_SUMMARIES)
+const SSINTERNE_SUMMARY_ORDER = Object.keys(SSINTERNE_SUMMARIES)
+
+function getSummaryNavigationOrder(lmeId) {
+  const base =
+    typeof lmeId === 'string' && lmeId.endsWith('-mini') ? lmeId.replace(/-mini$/, '') : lmeId
+  if (typeof base === 'string' && base.startsWith('sskindgyn-')) return SSKINDGYN_SUMMARY_ORDER
+  if (typeof base === 'string' && base.startsWith('ssinterne-')) return SSINTERNE_SUMMARY_ORDER
+  return SUMMARY_ORDER
+}
 
 const SUMMARY_ORDER_PREFIX = [
   'embryogenese',
@@ -219,9 +232,11 @@ export const BackButton = () => (
 export const Footer = () => {
   const [searchParams] = useSearchParams()
   const lme = searchParams.get('lme')
-  const currentIndex = lme ? SUMMARY_ORDER.indexOf(lme) : -1
-  const prevLme = currentIndex > 0 ? SUMMARY_ORDER[currentIndex - 1] : null
-  const nextLme = currentIndex >= 0 && currentIndex < SUMMARY_ORDER.length - 1 ? SUMMARY_ORDER[currentIndex + 1] : null
+  const summaryOrder = lme ? getSummaryNavigationOrder(lme) : SUMMARY_ORDER
+  const currentIndex = lme ? summaryOrder.indexOf(lme) : -1
+  const prevLme = currentIndex > 0 ? summaryOrder[currentIndex - 1] : null
+  const nextLme =
+    currentIndex >= 0 && currentIndex < summaryOrder.length - 1 ? summaryOrder[currentIndex + 1] : null
 
   return (
     <footer className="py-8 text-center text-slate-400 text-sm border-t border-slate-200 mt-12">
@@ -261,8 +276,13 @@ export const SummaryLayout = ({ lmeId, lmeName, activeLmeId, onVariantSwitch, ch
   const currentLme = activeLmeId || lmeId
   const prefersMini = typeof currentLme === 'string' && currentLme.endsWith('-mini')
   const fallbackBaseLme = prefersMini ? currentLme.replace(/-mini$/, '') : null
-  const orderAnchorLme = SUMMARY_ORDER.includes(currentLme) ? currentLme : fallbackBaseLme
-  const currentIndex = orderAnchorLme ? SUMMARY_ORDER.indexOf(orderAnchorLme) : -1
+  const summaryOrder = getSummaryNavigationOrder(currentLme)
+  const orderAnchorLme = summaryOrder.includes(currentLme)
+    ? currentLme
+    : fallbackBaseLme && summaryOrder.includes(fallbackBaseLme)
+      ? fallbackBaseLme
+      : null
+  const currentIndex = orderAnchorLme ? summaryOrder.indexOf(orderAnchorLme) : -1
 
   const resolveTargetId = (baseCandidate) => {
     if (!baseCandidate) return null
@@ -273,10 +293,11 @@ export const SummaryLayout = ({ lmeId, lmeName, activeLmeId, onVariantSwitch, ch
     return baseCandidate
   }
 
-  const prevLme = currentIndex > 0 ? resolveTargetId(SUMMARY_ORDER[currentIndex - 1]) : null
-  const nextLme = currentIndex >= 0 && currentIndex < SUMMARY_ORDER.length - 1
-    ? resolveTargetId(SUMMARY_ORDER[currentIndex + 1])
-    : null
+  const prevLme = currentIndex > 0 ? resolveTargetId(summaryOrder[currentIndex - 1]) : null
+  const nextLme =
+    currentIndex >= 0 && currentIndex < summaryOrder.length - 1
+      ? resolveTargetId(summaryOrder[currentIndex + 1])
+      : null
 
   const moduleNavButtons = (position = 'top') => (
     (prevLme || nextLme) ? (

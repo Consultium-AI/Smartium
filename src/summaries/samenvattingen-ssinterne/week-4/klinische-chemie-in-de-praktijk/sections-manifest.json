@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectKlinischeChemieInDePraktijk",
+    "title": "Klinische chemie in de praktijk",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectSerumEnPlasma",
+    "title": "Serum en plasma",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectJuistheidEnPrecisie",
+    "title": "Juistheid en precisie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectInterferentiesStorendeFactorenBijLab",
+    "title": "Interferenties: storende factoren bij laboratoriumonderzoek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSensitiviteitEnSpecificiteit",
+    "title": "Sensitiviteit en specificiteit",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLevermarkers",
+    "title": "Levermarkers",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectPancreasmarkers",
+    "title": "Pancreasmarkers",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectNierfunctieEnNiermarkers",
+    "title": "Nierfunctie en niermarkers",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectKlinischeBetekenisVanLaboratoriumond",
+    "title": "Klinische betekenis van laboratoriumonderzoek",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNierfunctieEnMedicatieDeKernVanHetOn",
+    "title": "Nierfunctie en medicatie: de kern van het onderwerp",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectLithiumWerkingDoseringEnControle",
+    "title": "Lithium: werking, dosering en controle",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectLithiumEnNierfunctiestoornissen",
+    "title": "Lithium en nierfunctiestoornissen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBeleidBijLithiumEnNierfunctiestoorni",
+    "title": "Beleid bij lithium en nierfunctiestoornissen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLithiumEnHydrochloorthiazideEenBelan",
+    "title": "Lithium en hydrochloorthiazide: een belangrijke interactie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAntibioticaBijUrineweginfectieEnVerm",
+    "title": "Antibiotica bij urineweginfectie en verminderde nierfunctie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectFosfomycineAlsAlternatief",
+    "title": "Fosfomycine als alternatief",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectJichtBehandelingMetOogVoorDeNierfunc",
+    "title": "Jicht: behandeling met oog voor de nierfunctie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDeGroteLijnWatMoetJeOnthouden",
+    "title": "De grote lijn: wat moet je onthouden?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

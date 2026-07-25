@@ -1,0 +1,142 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBloedtransfusieInDePraktijk",
+    "title": "Bloedtransfusie in de praktijk",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWanneerDenkJeAanTransfusie",
+    "title": "Wanneer denk je aan transfusie?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWelkeBloedproductenGeefJeBijMassaalB",
+    "title": "Welke bloedproducten geef je bij massaal bloedverlies?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWelkeLaboratoriumbepalingenZijnNodig",
+    "title": "Welke laboratoriumbepalingen zijn nodig?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBloedgroepenEnCompatibiliteit",
+    "title": "Bloedgroepen en compatibiliteit",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHetAboSysteem",
+    "title": "Het ABO-systeem",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWatGebeurtErBijAboIncompatibiliteit",
+    "title": "Wat gebeurt er bij ABO-incompatibiliteit?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHoeWordtDeBloedgroepBepaald",
+    "title": "Hoe wordt de bloedgroep bepaald?",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectRhesusEnAndereBloedgroepsystemen",
+    "title": "Rhesus en andere bloedgroepsystemen",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectIrregulaireAntistoffen",
+    "title": "Irregulaire antistoffen",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectTypeScreenBeleid",
+    "title": "Type & Screen-beleid",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectGeldigheidVanBepalingen",
+    "title": "Geldigheid van bepalingen",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBloedproducten",
+    "title": "Bloedproducten",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectWelkeBloedproductenZijnEr",
+    "title": "Welke bloedproducten zijn er?",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectTrombocytenEnPlasma",
+    "title": "Trombocyten en plasma",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectTrombocytentransfusie",
+    "title": "Trombocytentransfusie",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectPlasma",
+    "title": "Plasma",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectInformedConsent",
+    "title": "Informed consent",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectChronischBloedverlies",
+    "title": "Chronisch bloedverlies",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectTrombocytenBijChronischeSituaties",
+    "title": "Trombocyten bij chronische situaties",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectInlooptijden",
+    "title": "Inlooptijden",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectTransfusiereactiesEnHemovigilantie",
+    "title": "Transfusiereacties en hemovigilantie",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectAcuteEnUitgesteldeHemolyse",
+    "title": "Acute en uitgestelde hemolyse",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectFebrieleNietHemolytischeTransfusiere",
+    "title": "Febriele, niet-hemolytische transfusiereactie",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectTrali",
+    "title": "TRALI",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectInfectieuzeRisicoS",
+    "title": "Infectieuze risico’s",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-28"
+  }
+]

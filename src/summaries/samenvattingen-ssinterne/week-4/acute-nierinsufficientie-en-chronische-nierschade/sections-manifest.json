@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectMetenVanNierfunctie",
+    "title": "Meten van nierfunctie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAcuteNierinsufficiNtie",
+    "title": "Acute nierinsufficiëntie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectPrerenaal",
+    "title": "Prerenaal",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectRenaal",
+    "title": "Renaal",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPostrenaal",
+    "title": "Postrenaal",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectChronischeNierschade",
+    "title": "Chronische nierschade",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectOorzakenVanChronischeNierschade",
+    "title": "Oorzaken van chronische nierschade",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSymptomenEnDiagnostiek",
+    "title": "Symptomen en diagnostiek",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectMetaboleComplicaties",
+    "title": "Metabole complicaties",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectBehandelingVanAcuteNierinsufficiNtie",
+    "title": "Behandeling van acute nierinsufficiëntie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectAcuutOfTochChronisch",
+    "title": "Acuut of toch chronisch?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectPreventie",
+    "title": "Preventie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

@@ -84,6 +84,7 @@ import Casus13Lme1AntibioticaIntroductieSummary from '../summaries/casus13-lme1-
 import Casus13Lme2AntibioticaResistentieSummary from '../summaries/casus13-lme2-antibiotica-resistentie/Casus13Lme2AntibioticaResistentieSummary'
 import { BLOK5_CASUSBIJEENKOMST_SUMMARIES } from '../summaries/blok5CasusbijeenkomstRegistry.js'
 import { SSKINDGYN_SUMMARIES } from '../summaries/sskindgynSummariesRegistry.js'
+import { SSINTERNE_SUMMARIES } from '../summaries/ssinterneSummariesRegistry.js'
 import Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-1-de-huidbarriere-van-jong-tot-oud/Blok5Week1Casus1DeHuidbarriereVanJongTotOudSummary'
 import Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-2-externe-verstorende-factoren-op-de-huidbarriere/Blok5Week1Casus1ExterneVerstorendeFactorenOpDeHuidbarriereSummary'
 import Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary from '../summaries/samenvattingen-blok5/week-1/casus-1-de-huid-als-succesvolle-barriere/lme-3-hoe-werkt-een-geneesmiddel-via-de-huid/Blok5Week1Casus1HoeWerktEenGeneesmiddelViaDeHuidSummary'
@@ -293,7 +294,7 @@ import Blok10CookedSamenvattingHeleBlokSummary from '../summaries/samenvattingen
 import Blok10StampfeitjesHeleBlokSummary from '../summaries/samenvattingen-b10/stampfeitjes-hele-blok/Blok10StampfeitjesHeleBlokSummary'
 
 // Main Summary Page Component
-const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn']
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn', 'ssinterne']
 
 const SUMMARY_BLOK_WEEKOVERZICHT = {
   blok5: {
@@ -1912,6 +1913,90 @@ const SummaryPage = ({ forcedBlok = null }) => {
         },
       ],
     },
+    ssinterne: {
+      name: "Interne Geneeskunde",
+      weeks: [
+      {
+        name: "Week 1",
+        cases: [
+          { name: "ANA Diagnostiek", lmes: [ { id: "ssinterne-week1-ana-diagnostiek", name: "ANA Diagnostiek", available: true } ] },
+          { name: "Artrose artritis", lmes: [ { id: "ssinterne-week1-artrose-artritis", name: "Artrose artritis", available: true } ] },
+          { name: "IG01.5 Thoraxradiologie", lmes: [ { id: "ssinterne-week1-ig01-5-thoraxradiologie", name: "IG01.5 Thoraxradiologie", available: true } ] },
+          { name: "Nucleaire geneeskunde", lmes: [ { id: "ssinterne-week1-nucleaire-geneeskunde", name: "Nucleaire geneeskunde", available: true } ] },
+          { name: "Radiologie van het abdomen", lmes: [ { id: "ssinterne-week1-radiologie-van-het-abdomen", name: "Radiologie van het abdomen", available: true } ] },
+          { name: "Vasculitis", lmes: [ { id: "ssinterne-week1-vasculitis", name: "Vasculitis", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 2",
+        cases: [
+          { name: "Allergische aandoeningen", lmes: [ { id: "ssinterne-week2-allergische-aandoeningen", name: "Allergische aandoeningen", available: true } ] },
+          { name: "Leukemie", lmes: [ { id: "ssinterne-week2-leukemie", name: "Leukemie", available: true } ] },
+          { name: "Multipel Myeloom", lmes: [ { id: "ssinterne-week2-multipel-myeloom", name: "Multipel Myeloom", available: true } ] },
+          { name: "Non Hodgkin Lymfoom", lmes: [ { id: "ssinterne-week2-non-hodgkin-lymfoom", name: "Non Hodgkin Lymfoom", available: true } ] },
+          { name: "Reacties op geneesmiddelen", lmes: [ { id: "ssinterne-week2-reacties-op-geneesmiddelen", name: "Reacties op geneesmiddelen", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 3",
+        cases: [
+          { name: "Astma", lmes: [ { id: "ssinterne-week3-astma", name: "Astma", available: true } ] },
+          { name: "Cardiovasculair risicomanagement", lmes: [ { id: "ssinterne-week3-cardiovasculair-risicomanagement", name: "Cardiovasculair risicomanagement", available: true } ] },
+          { name: "COPD", lmes: [ { id: "ssinterne-week3-copd", name: "COPD", available: true } ] },
+          { name: "Decompensatio cordis", lmes: [ { id: "ssinterne-week3-decompensatio-cordis", name: "Decompensatio cordis", available: true } ] },
+          { name: "Diabetes typen, behandeling, keto-acidose", lmes: [ { id: "ssinterne-week3-diabetes-typen-behandeling-keto-acidose", name: "Diabetes typen, behandeling, keto-acidose", available: true } ] },
+          { name: "ECG", lmes: [ { id: "ssinterne-week3-ecg", name: "ECG", available: true } ] },
+          { name: "Pneumonie", lmes: [ { id: "ssinterne-week3-pneumonie", name: "Pneumonie", available: true } ] },
+          { name: "Ritme- en geleidingsstoornissen", lmes: [ { id: "ssinterne-week3-ritme-en-geleidingsstoornissen", name: "Ritme- en geleidingsstoornissen", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 4",
+        cases: [
+          { name: "Acute nierinsufficiëntie en chronische nierschade", lmes: [ { id: "ssinterne-week4-acute-nierinsufficientie-en-chronische-nierschade", name: "Acute nierinsufficiëntie en chronische nierschade", available: true } ] },
+          { name: "Antibiotica en antimicrobiële resistentie #2", lmes: [ { id: "ssinterne-week4-antibiotica-en-antimicrobiele-resistentie-2", name: "Antibiotica en antimicrobiële resistentie #2", available: true } ] },
+          { name: "Electrolytstoornissen", lmes: [ { id: "ssinterne-week4-electrolytstoornissen", name: "Electrolytstoornissen", available: true } ] },
+          { name: "Klinische chemie in de praktijk", lmes: [ { id: "ssinterne-week4-klinische-chemie-in-de-praktijk", name: "Klinische chemie in de praktijk", available: true } ] },
+          { name: "Nierfunctie en medicatie", lmes: [ { id: "ssinterne-week4-nierfunctie-en-medicatie", name: "Nierfunctie en medicatie", available: true } ] },
+          { name: "Niertransplantatie", lmes: [ { id: "ssinterne-week4-niertransplantatie", name: "Niertransplantatie", available: true } ] },
+          { name: "Sepsis", lmes: [ { id: "ssinterne-week4-sepsis", name: "Sepsis", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 5",
+        cases: [
+          { name: "Chronische hepatitis C", lmes: [ { id: "ssinterne-week5-chronische-hepatitis-c", name: "Chronische hepatitis C", available: true } ] },
+          { name: "Het resectabel oesophaguscarcinoom", lmes: [ { id: "ssinterne-week5-het-resectabel-oesophaguscarcinoom", name: "Het resectabel oesophaguscarcinoom", available: true } ] },
+          { name: "Levercirrose", lmes: [ { id: "ssinterne-week5-levercirrose", name: "Levercirrose", available: true } ] },
+          { name: "Morbus Crohn", lmes: [ { id: "ssinterne-week5-morbus-crohn", name: "Morbus Crohn", available: true } ] },
+          { name: "Screening op darmkanker", lmes: [ { id: "ssinterne-week5-screening-op-darmkanker", name: "Screening op darmkanker", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 6",
+        cases: [
+          { name: "Bijnier dysfunctie", lmes: [ { id: "ssinterne-week6-bijnier-dysfunctie", name: "Bijnier dysfunctie", available: true } ] },
+          { name: "Cognitieve stoornissen", lmes: [ { id: "ssinterne-week6-cognitieve-stoornissen", name: "Cognitieve stoornissen", available: true } ] },
+          { name: "Gezondheidsrisico_s op het werk", lmes: [ { id: "ssinterne-week6-gezondheidsrisico-s-op-het-werk", name: "Gezondheidsrisico_s op het werk", available: true } ] },
+          { name: "Hemofilie", lmes: [ { id: "ssinterne-week6-hemofilie", name: "Hemofilie", available: true } ] },
+          { name: "Hemostase", lmes: [ { id: "ssinterne-week6-hemostase", name: "Hemostase", available: true } ] },
+          { name: "Trombose", lmes: [ { id: "ssinterne-week6-trombose", name: "Trombose", available: true } ] },
+          { name: "Val- en fractuurrisico", lmes: [ { id: "ssinterne-week6-val-en-fractuurrisico", name: "Val- en fractuurrisico", available: true } ] },
+        ]
+      },
+      {
+        name: "Week 7",
+        cases: [
+          { name: "ABCDE methodiek", lmes: [ { id: "ssinterne-week7-abcde-methodiek", name: "ABCDE methodiek", available: true } ] },
+          { name: "Bloedtransfusie", lmes: [ { id: "ssinterne-week7-bloedtransfusie", name: "Bloedtransfusie", available: true } ] },
+          { name: "Circulatoire shock", lmes: [ { id: "ssinterne-week7-circulatoire-shock", name: "Circulatoire shock", available: true } ] },
+          { name: "COMA", lmes: [ { id: "ssinterne-week7-coma", name: "COMA", available: true } ] },
+          { name: "Lichamelijk onderzoek van de man", lmes: [ { id: "ssinterne-week7-lichamelijk-onderzoek-van-de-man", name: "Lichamelijk onderzoek van de man", available: true } ] },
+          { name: "Zuurstof en zuurstoftoediening", lmes: [ { id: "ssinterne-week7-zuurstof-en-zuurstoftoediening", name: "Zuurstof en zuurstoftoediening", available: true } ] },
+        ]
+      },
+      ],
+    },
   }
 
   const getImageIdsForLme = (baseId, imageCount) =>
@@ -2487,6 +2572,20 @@ const SummaryPage = ({ forcedBlok = null }) => {
         onVariantSwitch={handleVariantSwitch}
       >
         <SskindgynSummary />
+      </SummaryLayout>
+    )
+  }
+
+  if (SSINTERNE_SUMMARIES[activeLme]) {
+    const SsinterneSummary = SSINTERNE_SUMMARIES[activeLme]
+    return (
+      <SummaryLayout
+        lmeId={activeLme}
+        lmeName={lmeMap[activeLme]?.name || 'Samenvatting'}
+        activeLmeId={activeLme}
+        onVariantSwitch={handleVariantSwitch}
+      >
+        <SsinterneSummary />
       </SummaryLayout>
     )
   }
@@ -4173,9 +4272,9 @@ const SummaryPage = ({ forcedBlok = null }) => {
                 },
                 {
                   title: 'Master',
-                  subtitle: 'Kindergeneeskunde & Gynaecologie',
+                  subtitle: 'Kindergeneeskunde & Gynaecologie, Interne Geneeskunde',
                   headingId: 'summary-index-master-heading',
-                  blocks: (['sskindgyn']).map((key) => ({
+                  blocks: (['sskindgyn', 'ssinterne']).map((key) => ({
                     to: `/summary-${key}`,
                     label: courseStructure[key].name,
                     meta: formatSummaryBlokSubtitle(courseStructure[key]),

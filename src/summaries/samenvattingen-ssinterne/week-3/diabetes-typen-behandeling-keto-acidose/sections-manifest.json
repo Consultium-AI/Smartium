@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsDiabetesMellitus",
+    "title": "Wat is diabetes mellitus?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectNormaleGlucoseregulatie",
+    "title": "Normale glucoseregulatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDiabetesType1",
+    "title": "Diabetes type 1",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDiabetesType2",
+    "title": "Diabetes type 2",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAcuteOntregelingen",
+    "title": "Acute ontregelingen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHypoglykemie",
+    "title": "Hypoglykemie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectLangeTermijnComplicaties",
+    "title": "Lange termijn complicaties",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDiabetesGravidarum",
+    "title": "Diabetes gravidarum",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDiabeteszorg",
+    "title": "Diabeteszorg",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

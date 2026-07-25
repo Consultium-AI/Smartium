@@ -1,0 +1,92 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHetEcgAlsBasisVanDeCardiologie",
+    "title": "Het ECG als basis van de cardiologie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAnatomieVanHetHart",
+    "title": "Anatomie van het hart",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHetGeleidingssysteem",
+    "title": "Het geleidingssysteem",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVanElektrischeActivatieNaarHetEcg",
+    "title": "Van elektrische activatie naar het ECG",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectActiepotentiaalEnElektrischeEigensch",
+    "title": "Actiepotentiaal en elektrische eigenschappen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectElektriciteitMetenMetAfleidingen",
+    "title": "Elektriciteit meten met afleidingen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDe12AfleidingenVanHetEcg",
+    "title": "De 12 afleidingen van het ECG",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSystematischeBeoordelingVanHetEcg",
+    "title": "Systematische beoordeling van het ECG",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectStap1Ritme",
+    "title": "Stap 1: Ritme",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectStap2Frequentie",
+    "title": "Stap 2: Frequentie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectStap3Geleidingstijden",
+    "title": "Stap 3: Geleidingstijden",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectStap4DeElektrischeHartas",
+    "title": "Stap 4: De elektrische hartas",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectStap5PTopMorfologie",
+    "title": "Stap 5: P-top morfologie",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectStap6QrsMorfologie",
+    "title": "Stap 6: QRS-morfologie",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectStap7StSegmentEnTTop",
+    "title": "Stap 7: ST-segment en T-top",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectConclusieTrekken",
+    "title": "Conclusie trekken",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-18"
+  }
+]

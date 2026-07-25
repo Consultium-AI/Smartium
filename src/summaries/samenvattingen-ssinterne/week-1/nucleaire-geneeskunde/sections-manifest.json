@@ -1,0 +1,102 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNucleaireGeneeskundeDeBasis",
+    "title": "Nucleaire geneeskunde: de basis",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectRenogram",
+    "title": "Renogram",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWatIsEenRenogram",
+    "title": "Wat is een renogram?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectIndicatiesVanEenRenogram",
+    "title": "Indicaties van een renogram",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHoeVerlooptHetOnderzoek",
+    "title": "Hoe verloopt het onderzoek?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBeoordelingVanEenRenogram",
+    "title": "Beoordeling van een renogram",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectFunctieverdelingVanDeNieren",
+    "title": "Functieverdeling van de nieren",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDeCurveVanHetRenogram",
+    "title": "De curve van het renogram",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectRenogramBijNiertransplantatie",
+    "title": "Renogram bij niertransplantatie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectComplicatiesNaNiertransplantatie",
+    "title": "Complicaties na niertransplantatie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectFdgPetCt",
+    "title": "FDG PET/CT",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectWatIsFdgPetCt",
+    "title": "Wat is FDG PET/CT?",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectWaarvoorGebruikJeHet",
+    "title": "Waarvoor gebruik je het?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectWaaromWordtFdgUitgescheidenViaDeNier",
+    "title": "Waarom wordt FDG uitgescheiden via de nieren?",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectVoorbereidingOpHetOnderzoek",
+    "title": "Voorbereiding op het onderzoek",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectHoeVerlooptDeScan",
+    "title": "Hoe verloopt de scan?",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectFysiologischeFdgOpname",
+    "title": "Fysiologische FDG-opname",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectKlinischeVoorbeelden",
+    "title": "Klinische voorbeelden",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-20"
+  }
+]

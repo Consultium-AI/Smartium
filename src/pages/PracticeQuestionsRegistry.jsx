@@ -1,6 +1,7 @@
 ﻿import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 import { splitCasusModules } from '../utils/courseModuleKind'
 import { SSKINDGYN_QUESTIONS_MAP } from '../questions/sskindgynQuestionsRegistry'
+import { SSINTERNE_QUESTIONS_MAP } from '../questions/ssinterneQuestionsRegistry'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -2011,6 +2012,90 @@ export const practiceQuestionsCourseStructure = {
       },
     ],
   },
+  ssinterne: {
+    name: "Interne Geneeskunde",
+    weeks: [
+      {
+        name: "Week 1",
+        cases: [
+          { name: "ANA Diagnostiek", lmes: [ { id: "ssinterne-week1-ana-diagnostiek", name: "ANA Diagnostiek", type: "simple" } ] },
+          { name: "Artrose artritis", lmes: [ { id: "ssinterne-week1-artrose-artritis", name: "Artrose artritis", type: "simple" } ] },
+          { name: "IG01.5 Thoraxradiologie", lmes: [ { id: "ssinterne-week1-ig01-5-thoraxradiologie", name: "IG01.5 Thoraxradiologie", type: "simple" } ] },
+          { name: "Nucleaire geneeskunde", lmes: [ { id: "ssinterne-week1-nucleaire-geneeskunde", name: "Nucleaire geneeskunde", type: "simple" } ] },
+          { name: "Radiologie van het abdomen", lmes: [ { id: "ssinterne-week1-radiologie-van-het-abdomen", name: "Radiologie van het abdomen", type: "simple" } ] },
+          { name: "Vasculitis", lmes: [ { id: "ssinterne-week1-vasculitis", name: "Vasculitis", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 2",
+        cases: [
+          { name: "Allergische aandoeningen", lmes: [ { id: "ssinterne-week2-allergische-aandoeningen", name: "Allergische aandoeningen", type: "simple" } ] },
+          { name: "Leukemie", lmes: [ { id: "ssinterne-week2-leukemie", name: "Leukemie", type: "simple" } ] },
+          { name: "Multipel Myeloom", lmes: [ { id: "ssinterne-week2-multipel-myeloom", name: "Multipel Myeloom", type: "simple" } ] },
+          { name: "Non Hodgkin Lymfoom", lmes: [ { id: "ssinterne-week2-non-hodgkin-lymfoom", name: "Non Hodgkin Lymfoom", type: "simple" } ] },
+          { name: "Reacties op geneesmiddelen", lmes: [ { id: "ssinterne-week2-reacties-op-geneesmiddelen", name: "Reacties op geneesmiddelen", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 3",
+        cases: [
+          { name: "Astma", lmes: [ { id: "ssinterne-week3-astma", name: "Astma", type: "simple" } ] },
+          { name: "Cardiovasculair risicomanagement", lmes: [ { id: "ssinterne-week3-cardiovasculair-risicomanagement", name: "Cardiovasculair risicomanagement", type: "simple" } ] },
+          { name: "COPD", lmes: [ { id: "ssinterne-week3-copd", name: "COPD", type: "simple" } ] },
+          { name: "Decompensatio cordis", lmes: [ { id: "ssinterne-week3-decompensatio-cordis", name: "Decompensatio cordis", type: "simple" } ] },
+          { name: "Diabetes typen, behandeling, keto-acidose", lmes: [ { id: "ssinterne-week3-diabetes-typen-behandeling-keto-acidose", name: "Diabetes typen, behandeling, keto-acidose", type: "simple" } ] },
+          { name: "ECG", lmes: [ { id: "ssinterne-week3-ecg", name: "ECG", type: "simple" } ] },
+          { name: "Pneumonie", lmes: [ { id: "ssinterne-week3-pneumonie", name: "Pneumonie", type: "simple" } ] },
+          { name: "Ritme- en geleidingsstoornissen", lmes: [ { id: "ssinterne-week3-ritme-en-geleidingsstoornissen", name: "Ritme- en geleidingsstoornissen", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 4",
+        cases: [
+          { name: "Acute nierinsufficiëntie en chronische nierschade", lmes: [ { id: "ssinterne-week4-acute-nierinsufficientie-en-chronische-nierschade", name: "Acute nierinsufficiëntie en chronische nierschade", type: "simple" } ] },
+          { name: "Antibiotica en antimicrobiële resistentie #2", lmes: [ { id: "ssinterne-week4-antibiotica-en-antimicrobiele-resistentie-2", name: "Antibiotica en antimicrobiële resistentie #2", type: "simple" } ] },
+          { name: "Electrolytstoornissen", lmes: [ { id: "ssinterne-week4-electrolytstoornissen", name: "Electrolytstoornissen", type: "simple" } ] },
+          { name: "Klinische chemie in de praktijk", lmes: [ { id: "ssinterne-week4-klinische-chemie-in-de-praktijk", name: "Klinische chemie in de praktijk", type: "simple" } ] },
+          { name: "Nierfunctie en medicatie", lmes: [ { id: "ssinterne-week4-nierfunctie-en-medicatie", name: "Nierfunctie en medicatie", type: "simple" } ] },
+          { name: "Niertransplantatie", lmes: [ { id: "ssinterne-week4-niertransplantatie", name: "Niertransplantatie", type: "simple" } ] },
+          { name: "Sepsis", lmes: [ { id: "ssinterne-week4-sepsis", name: "Sepsis", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 5",
+        cases: [
+          { name: "Chronische hepatitis C", lmes: [ { id: "ssinterne-week5-chronische-hepatitis-c", name: "Chronische hepatitis C", type: "simple" } ] },
+          { name: "Het resectabel oesophaguscarcinoom", lmes: [ { id: "ssinterne-week5-het-resectabel-oesophaguscarcinoom", name: "Het resectabel oesophaguscarcinoom", type: "simple" } ] },
+          { name: "Levercirrose", lmes: [ { id: "ssinterne-week5-levercirrose", name: "Levercirrose", type: "simple" } ] },
+          { name: "Morbus Crohn", lmes: [ { id: "ssinterne-week5-morbus-crohn", name: "Morbus Crohn", type: "simple" } ] },
+          { name: "Screening op darmkanker", lmes: [ { id: "ssinterne-week5-screening-op-darmkanker", name: "Screening op darmkanker", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 6",
+        cases: [
+          { name: "Bijnier dysfunctie", lmes: [ { id: "ssinterne-week6-bijnier-dysfunctie", name: "Bijnier dysfunctie", type: "simple" } ] },
+          { name: "Cognitieve stoornissen", lmes: [ { id: "ssinterne-week6-cognitieve-stoornissen", name: "Cognitieve stoornissen", type: "simple" } ] },
+          { name: "Gezondheidsrisico_s op het werk", lmes: [ { id: "ssinterne-week6-gezondheidsrisico-s-op-het-werk", name: "Gezondheidsrisico_s op het werk", type: "simple" } ] },
+          { name: "Hemofilie", lmes: [ { id: "ssinterne-week6-hemofilie", name: "Hemofilie", type: "simple" } ] },
+          { name: "Hemostase", lmes: [ { id: "ssinterne-week6-hemostase", name: "Hemostase", type: "simple" } ] },
+          { name: "Trombose", lmes: [ { id: "ssinterne-week6-trombose", name: "Trombose", type: "simple" } ] },
+          { name: "Val- en fractuurrisico", lmes: [ { id: "ssinterne-week6-val-en-fractuurrisico", name: "Val- en fractuurrisico", type: "simple" } ] },
+        ]
+      },
+      {
+        name: "Week 7",
+        cases: [
+          { name: "ABCDE methodiek", lmes: [ { id: "ssinterne-week7-abcde-methodiek", name: "ABCDE methodiek", type: "simple" } ] },
+          { name: "Bloedtransfusie", lmes: [ { id: "ssinterne-week7-bloedtransfusie", name: "Bloedtransfusie", type: "simple" } ] },
+          { name: "Circulatoire shock", lmes: [ { id: "ssinterne-week7-circulatoire-shock", name: "Circulatoire shock", type: "simple" } ] },
+          { name: "COMA", lmes: [ { id: "ssinterne-week7-coma", name: "COMA", type: "simple" } ] },
+          { name: "Lichamelijk onderzoek van de man", lmes: [ { id: "ssinterne-week7-lichamelijk-onderzoek-van-de-man", name: "Lichamelijk onderzoek van de man", type: "simple" } ] },
+          { name: "Zuurstof en zuurstoftoediening", lmes: [ { id: "ssinterne-week7-zuurstof-en-zuurstoftoediening", name: "Zuurstof en zuurstoftoediening", type: "simple" } ] },
+        ]
+      },
+    ],
+  },
 }
 
 function practiceIdsForLmeItem(lmeItem) {
@@ -2112,6 +2197,7 @@ export function getLmeQuestionCount(lmeItem) {
     if (casus13Lme1QuestionsMap[lmeId]) return casus13Lme1QuestionsMap[lmeId]
     if (casus13Lme2QuestionsMap[lmeId]) return casus13Lme2QuestionsMap[lmeId]
     if (SSKINDGYN_QUESTIONS_MAP[lmeId]) return SSKINDGYN_QUESTIONS_MAP[lmeId]
+    if (SSINTERNE_QUESTIONS_MAP[lmeId]) return SSINTERNE_QUESTIONS_MAP[lmeId]
     return null
   })()
   return Array.isArray(q) ? q.length : (q && typeof q === 'object' ? getQuestionCount(q) : 0)
@@ -2311,6 +2397,7 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (lmeParam === 'casus13-lme2-antibiotica-resistentie') return Object.values(casus13Lme2QuestionsMap).flat()
   if (casus13Lme2QuestionsMap[lmeParam]) return casus13Lme2QuestionsMap[lmeParam]
   if (SSKINDGYN_QUESTIONS_MAP[lmeParam]) return SSKINDGYN_QUESTIONS_MAP[lmeParam]
+  if (SSINTERNE_QUESTIONS_MAP[lmeParam]) return SSINTERNE_QUESTIONS_MAP[lmeParam]
   const casusCbQ = getCasusbijeenkomstQuestions(lmeParam)
   if (casusCbQ) return casusCbQ
 

@@ -1,0 +1,77 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectLevercirroseHetGrotePlaatje",
+    "title": "Levercirrose: het grote plaatje",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOorzakenVanLevercirrose",
+    "title": "Oorzaken van levercirrose",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnamneseEnLichamelijkOnderzoek",
+    "title": "Anamnese en lichamelijk onderzoek",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDiagnostiekBijVerdenkingOpCirrose",
+    "title": "Diagnostiek bij verdenking op cirrose",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeeldvormingEchoEnCt",
+    "title": "Beeldvorming: echo en CT",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHoeStelJeDeDiagnoseCirrose",
+    "title": "Hoe stel je de diagnose cirrose?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectOorzaakVanCirroseVerderUitzoeken",
+    "title": "Oorzaak van cirrose verder uitzoeken",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAscitesEnSpontaneBacteriLePeritoniti",
+    "title": "Ascites en spontane bacteriële peritonitis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectPortaleHypertensieEnComplicaties",
+    "title": "Portale hypertensie en complicaties",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectHepatischeEncefalopathieVaricesbloed",
+    "title": "Hepatische encefalopathie, varicesbloeding en hepatorenaal syndroom",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBehandelingEnBeleid",
+    "title": "Behandeling en beleid",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectPrognoseMeldEnChildPughTurcotte",
+    "title": "Prognose: MELD en Child-Pugh-Turcotte",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectVerloopVanDePatiNt",
+    "title": "Verloop van de patiënt",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-15"
+  }
+]

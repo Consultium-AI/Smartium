@@ -1,0 +1,137 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsVasculitis",
+    "title": "Wat is vasculitis?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVasculitisVanDeKleineVaten",
+    "title": "Vasculitis van de kleine vaten",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoePresenteertEenPatiNtZich",
+    "title": "Hoe presenteert een patiënt zich?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDifferentiaaldiagnoseBijKlachtenOpMe",
+    "title": "Differentiaaldiagnose bij klachten op meerdere orgaansystemen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectGewrichtsklachtenInflammatoirOfNiet",
+    "title": "Gewrichtsklachten: inflammatoir of niet?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAanvullendOnderzoek",
+    "title": "Aanvullend onderzoek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectAncaGeassocieerdeVasculitis",
+    "title": "ANCA-geassocieerde vasculitis",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAncaEnDiagnose",
+    "title": "ANCA en diagnose",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectKlinischeKenmerkenVanGpa",
+    "title": "Klinische kenmerken van GPA",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDiagnostischeCriteriaBijGpa",
+    "title": "Diagnostische criteria bij GPA",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBehandelingVanGpa",
+    "title": "Behandeling van GPA",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectEgpa",
+    "title": "EGPA",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectWanneerDenkJeEraan",
+    "title": "Wanneer denk je eraan?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectDiagnostischeCriteria",
+    "title": "Diagnostische criteria",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKliniekEnPathogenese",
+    "title": "Kliniek en pathogenese",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectBehandelingVanEgpa",
+    "title": "Behandeling van EGPA",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectVasculitisVanDeGroteVaten",
+    "title": "Vasculitis van de grote vaten",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectReuscelarteritis",
+    "title": "Reuscelarteritis",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectKlinischePresentatie",
+    "title": "Klinische presentatie",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectDiagnostiek",
+    "title": "Diagnostiek",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectAfbouwenEnFollowUp",
+    "title": "Afbouwen en follow-up",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectComplicatiesEnAanvullendeDiagnostiek",
+    "title": "Complicaties en aanvullende diagnostiek",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectBijwerkingenVanSteroDen",
+    "title": "Bijwerkingen van steroïden",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectRelapse",
+    "title": "Relapse",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-27"
+  }
+]

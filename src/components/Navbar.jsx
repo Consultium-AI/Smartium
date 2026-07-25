@@ -43,6 +43,7 @@ const navItems = [
       ]},
       { label: 'Master', links: [
         { name: 'Gynaecologie', href: '/summary-sskindgyn' },
+        { name: 'Interne Geneeskunde', href: '/summary-ssinterne' },
       ]},
     ],
   },
@@ -62,6 +63,7 @@ const navItems = [
       ]},
       { label: 'Master', links: [
         { name: 'Gynaecologie', href: '/oefenvragen-sskindgyn' },
+        { name: 'Interne Geneeskunde', href: '/oefenvragen-ssinterne' },
       ]},
     ],
   },
@@ -95,6 +97,7 @@ const navItems = [
       ]},
       { label: 'Master', links: [
         { name: 'Gynaecologie', href: '/flashcards-sskindgyn' },
+        { name: 'Interne Geneeskunde', href: '/flashcards-ssinterne' },
       ]},
     ],
   },
@@ -168,9 +171,7 @@ const Navbar = () => {
   const tickingRef = useRef(false)
   const location = useLocation()
 
-  // Flashcards: elk ingelogd account (gratis en premium).
-  const hasFlashcardsTab = Boolean(user && !accessLoading)
-  const visibleNavItems = hasFlashcardsTab ? navItems : navItems.filter((item) => item.name !== 'Flashcards')
+  const visibleNavItems = navItems
 
   useEffect(() => {
     const syncScrolledState = () => {

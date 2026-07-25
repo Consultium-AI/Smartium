@@ -1,0 +1,42 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHetCardiovasculaireSysteemAlsBasis",
+    "title": "Het cardiovasculaire systeem als basis",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBloeddrukregulatieSnelEnLangzaam",
+    "title": "Bloeddrukregulatie: snel en langzaam",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectBloeddrukEnCardiacOutput",
+    "title": "Bloeddruk en cardiac output",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWatIsCirculatoireShock",
+    "title": "Wat is circulatoire shock?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVierSoortenShock",
+    "title": "Vier soorten shock",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBehandelingVanShock",
+    "title": "Behandeling van shock",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-08"
+  }
+]

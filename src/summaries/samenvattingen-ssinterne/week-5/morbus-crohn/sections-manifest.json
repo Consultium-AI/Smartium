@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsDeZiekteVanCrohn",
+    "title": "Wat is de ziekte van Crohn?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectKlinischePresentatie",
+    "title": "Klinische presentatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDiagnostiekVanCrohn",
+    "title": "Diagnostiek van Crohn",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEndoscopieEnHistologie",
+    "title": "Endoscopie en histologie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBehandelstrategieStepUpEnTopDown",
+    "title": "Behandelstrategie: step-up en top-down",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectInductietherapieEnOnderhoudstherapie",
+    "title": "Inductietherapie en onderhoudstherapie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectMedicatieEnBijwerkingen",
+    "title": "Medicatie en bijwerkingen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectStenoseEnChirurgischeBehandeling",
+    "title": "Stenose en chirurgische behandeling",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFistelsBijCrohn",
+    "title": "Fistels bij Crohn",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectExtraIntestinaleManifestaties",
+    "title": "Extra-intestinale manifestaties",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBelangrijkeKernpunten",
+    "title": "Belangrijke kernpunten",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

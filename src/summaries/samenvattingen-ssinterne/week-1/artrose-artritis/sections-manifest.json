@@ -1,0 +1,167 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAnatomieVanHandEnVoet",
+    "title": "Anatomie van hand en voet",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHandEnPols",
+    "title": "Hand en pols",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVoet",
+    "title": "Voet",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBasalePathofysiologie",
+    "title": "Basale pathofysiologie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSynoviumEnKraakbeen",
+    "title": "Synovium en kraakbeen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectArtrose",
+    "title": "Artrose",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKenmerkenVanArtrose",
+    "title": "Kenmerken van artrose",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectOntstaanVanArtrose",
+    "title": "Ontstaan van artrose",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectTypischeGewrichtenBijArtrose",
+    "title": "Typische gewrichten bij artrose",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectArtritis",
+    "title": "Artritis",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectReumatoDeArtritis",
+    "title": "Reumatoïde artritis",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSeronegatieveArtritis",
+    "title": "Seronegatieve artritis",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectKristalartropathieN",
+    "title": "Kristalartropathieën",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSystematischeBeoordelingVanConventio",
+    "title": "Systematische beoordeling van conventionele beeldvorming",
+    "id": "sect-15"
+  },
+  {
+    "file": "Sect1WekeDelen",
+    "title": "1. Weke delen",
+    "id": "sect-16"
+  },
+  {
+    "file": "Sect2Gewrichtsruimten",
+    "title": "2. Gewrichtsruimten",
+    "id": "sect-17"
+  },
+  {
+    "file": "Sect3VeranderingenVanHetBot",
+    "title": "3. Veranderingen van het bot",
+    "id": "sect-18"
+  },
+  {
+    "file": "Sect4Alignment",
+    "title": "4. Alignment",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectRadiologischeKenmerkenPerAfwijking",
+    "title": "Radiologische kenmerken per afwijking",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectTabel1BelangrijksteRadiologischeKenm",
+    "title": "Tabel 1. Belangrijkste radiologische kenmerken",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectArtroseInDePraktijk",
+    "title": "Artrose in de praktijk",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectRaInDePraktijk",
+    "title": "RA in de praktijk",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectSeronegatieveArtritisInDePraktijk",
+    "title": "Seronegatieve artritis in de praktijk",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectJichtInDePraktijk",
+    "title": "Jicht in de praktijk",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectTypischeStandsafwijkingenEnDeformite",
+    "title": "Typische standsafwijkingen en deformiteiten",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectHanddeformiteiten",
+    "title": "Handdeformiteiten",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectNoduliVanBouchardEnHeberden",
+    "title": "Noduli van Bouchard en Heberden",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectSubluxatieEnAfwijkendeStand",
+    "title": "Subluxatie en afwijkende stand",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectSamenvattendeVergelijking",
+    "title": "Samenvattende vergelijking",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectTabel2VergelijkingVanArtroseEnArtrit",
+    "title": "Tabel 2. Vergelijking van artrose en artritis",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectKlinischeRelevantie",
+    "title": "Klinische relevantie",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-33"
+  }
+]

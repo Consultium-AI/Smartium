@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNierfunctievervangendeTherapieHetGro",
+    "title": "Nierfunctievervangende therapie: het grote plaatje",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHetPredialysetraject",
+    "title": "Het predialysetraject",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWaaromIsNiertransplantatieVaakGunsti",
+    "title": "Waarom is niertransplantatie vaak gunstig?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectNiertransplantatie",
+    "title": "Niertransplantatie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDonornierenLevendeEnOverledenDonor",
+    "title": "Donornieren: levende en overleden donor",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectImmunologischeMatchEnAfstoting",
+    "title": "Immunologische match en afstoting",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectImmuunsuppressieNaTransplantatie",
+    "title": "Immuunsuppressie na transplantatie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHemodialyseEnHemofiltratie",
+    "title": "Hemodialyse en hemofiltratie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectContinueHemofiltratie",
+    "title": "Continue hemofiltratie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectPeritonealeDialyse",
+    "title": "Peritoneale dialyse",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvattendOverzichtVanDeBehandelin",
+    "title": "Samenvattend overzicht van de behandelingen",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

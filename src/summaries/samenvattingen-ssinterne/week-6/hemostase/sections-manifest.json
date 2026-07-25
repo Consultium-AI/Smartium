@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHemostaseHetStoppenVanEenBloeding",
+    "title": "Hemostase: het stoppen van een bloeding",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectPrimaireHemostaseDeTrombocytenplug",
+    "title": "Primaire hemostase: de trombocytenplug",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSecundaireHemostaseVormingVanFibrine",
+    "title": "Secundaire hemostase: vorming van fibrine",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectRemmingEnBalansInDeHemostase",
+    "title": "Remming en balans in de hemostase",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectFibrinolyseHetAfbrekenVanHetStolsel",
+    "title": "Fibrinolyse: het afbreken van het stolsel",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLaboratoriumonderzoekVanDePrimaireHe",
+    "title": "Laboratoriumonderzoek van de primaire hemostase",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectLaboratoriumonderzoekVanDeSecundaire",
+    "title": "Laboratoriumonderzoek van de secundaire hemostase",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectVerlengdePtApttOfTrombinetijd",
+    "title": "Verlengde PT, aPTT of trombinetijd",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectMengproefTekortOfRemmer",
+    "title": "Mengproef: tekort of remmer?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDDimerenEnFibrinolyse",
+    "title": "D-dimeren en fibrinolyse",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectTromboseWatIsHetEnWaaromIsHetBelangr",
+    "title": "Trombose: wat is het en waarom is het belangrijk?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectPathogeneseHoeOntstaatTrombose",
+    "title": "Pathogenese: hoe ontstaat trombose?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectTabel1TriasVanVirchowMetVoorbeelden",
+    "title": "Tabel 1. Trias van Virchow met voorbeelden",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectErfelijkeTrombofilie",
+    "title": "Erfelijke trombofilie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectTabel2BelangrijksteErfelijkeTrombofi",
+    "title": "Tabel 2. Belangrijkste erfelijke trombofiliefactoren",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDiagnostiekBijVerdenkingOpEenTrombos",
+    "title": "Diagnostiek bij verdenking op een trombosebeen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDifferentiaaldiagnoseVanEenDikEnPijn",
+    "title": "Differentiaaldiagnose van een dik en pijnlijk been",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectKunJeMetAlleenAnamneseEnLichamelijkO",
+    "title": "Kun je met alleen anamnese en lichamelijk onderzoek de diagnose stellen?",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectWelkeOnderzoekenGebruikJe",
+    "title": "Welke onderzoeken gebruik je?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectKlinischeBeslisregel",
+    "title": "Klinische beslisregel",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectTabel3KlinischeBeslisregelBijVerdenk",
+    "title": "Tabel 3. Klinische beslisregel bij verdenking DVT",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectDDimeer",
+    "title": "D-dimeer",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectDiagnostischeStrategie",
+    "title": "Diagnostische strategie",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectTabel4DiagnostischeStrategieBijVerde",
+    "title": "Tabel 4. Diagnostische strategie bij verdenking DVT",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectBehandelingVanEenTrombosebeen",
+    "title": "Behandeling van een trombosebeen",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectAntistollingsmiddelen",
+    "title": "Antistollingsmiddelen",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectTabel5AntistollingsmiddelenEnHunWerk",
+    "title": "Tabel 5. Antistollingsmiddelen en hun werking",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectHeparine",
+    "title": "Heparine",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectLmwhEnPentasaccharide",
+    "title": "LMWH en pentasaccharide",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectVitamineKAntagonisten",
+    "title": "Vitamine K-antagonisten",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectDoacS",
+    "title": "DOAC’s",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectTabel6BelangrijksteDoacS",
+    "title": "Tabel 6. Belangrijkste DOAC’s",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectDoacOfVka",
+    "title": "DOAC of VKA?",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectStartVanDeBehandelingNaObjectieveDia",
+    "title": "Start van de behandeling na objectieve diagnose",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectTabel7GebruikelijkeDoseringenVanDoac",
+    "title": "Tabel 7. Gebruikelijke doseringen van DOAC’s bij DVT",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectBloedingenOnderOraleAntistolling",
+    "title": "Bloedingen onder orale antistolling",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectDuurVanDeBehandeling",
+    "title": "Duur van de behandeling",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectTijdelijkeRisicofactoren",
+    "title": "Tijdelijke risicofactoren",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectNietTijdelijkeOfIdiopathischeRisicof",
+    "title": "Niet-tijdelijke of idiopathische risicofactoren",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectDuurBijEenEersteEvent",
+    "title": "Duur bij een eerste event",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectErfelijkeTrombofilieEnRecidiefkans",
+    "title": "Erfelijke trombofilie en recidiefkans",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectPosttrombotischSyndroom",
+    "title": "Posttrombotisch syndroom",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectKlachtenEnVillaltaScore",
+    "title": "Klachten en Villalta-score",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectTabel8VillaltaScore",
+    "title": "Tabel 8. Villalta-score",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectTabel9UitslagVillaltaScore",
+    "title": "Tabel 9. Uitslag Villalta-score",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectBehandelingEnPreventieVanPts",
+    "title": "Behandeling en preventie van PTS",
+    "id": "sect-37"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-38"
+  }
+]

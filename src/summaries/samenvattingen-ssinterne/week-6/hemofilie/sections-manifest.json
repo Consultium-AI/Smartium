@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHemofilieWatIsHetEnHoePresenteertHet",
+    "title": "Hemofilie: wat is het en hoe presenteert het zich?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDiagnostiekBijEenBloedingsneiging",
+    "title": "Diagnostiek bij een bloedingsneiging",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHemofilieEnDragerschap",
+    "title": "Hemofilie en dragerschap",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectKlinischeErnstEnBloedingen",
+    "title": "Klinische ernst en bloedingen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDiagnostiekVanHemofilie",
+    "title": "Diagnostiek van hemofilie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBehandelingVanHemofilie",
+    "title": "Behandeling van hemofilie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDoserenVanStollingsfactoren",
+    "title": "Doseren van stollingsfactoren",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectProfylaxe",
+    "title": "Profylaxe",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvattendPrimaireEnSecundaireHemo",
+    "title": "Samenvattend: primaire en secundaire hemostase",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAnaDiagnostiekBijSysteemziekten",
+    "title": "ANA-diagnostiek bij systeemziekten",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWanneerIsAnaBepalingZinvol",
+    "title": "Wanneer is ANA-bepaling zinvol?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeWordtAnaBepaald",
+    "title": "Hoe wordt ANA bepaald?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAnaPatronenEnHunBetekenis",
+    "title": "ANA-patronen en hun betekenis",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAnaAlsOndersteunendDiagnostischMidde",
+    "title": "ANA als ondersteunend diagnostisch middel",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectMorbusSjGren",
+    "title": "Morbus Sjögren",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSystemischeSclerose",
+    "title": "Systemische sclerose",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectMixedConnectiveTissueDisease",
+    "title": "Mixed connective tissue disease",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSleEnAna",
+    "title": "SLE en ANA",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectKlinischeVoorbeeldenVanAnaInterpreta",
+    "title": "Klinische voorbeelden van ANA-interpretatie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenwerkingEnGerichtAanvragen",
+    "title": "Samenwerking en gericht aanvragen",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

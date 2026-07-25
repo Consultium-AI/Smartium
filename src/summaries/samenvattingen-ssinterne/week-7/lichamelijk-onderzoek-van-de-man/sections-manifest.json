@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleiding",
+    "title": "Inleiding",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAnatomieVanDeMannelijkeGenitalia",
+    "title": "Anatomie van de mannelijke genitalia",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHetLiesgebied",
+    "title": "Het liesgebied",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOnderzoekVanDeGenitalia",
+    "title": "Onderzoek van de genitalia",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectRectaalOnderzoek",
+    "title": "Rectaal onderzoek",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDeProstaatZonesEnKlinischeBetekenis",
+    "title": "De prostaat: zones en klinische betekenis",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectStadiaVanProstaatcarcinoom",
+    "title": "Stadia van prostaatcarcinoom",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

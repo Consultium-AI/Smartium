@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsHyponatriMie",
+    "title": "Wat is hyponatriëmie?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectClassificatieVanHyponatriMie",
+    "title": "Classificatie van hyponatriëmie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHypotoonHypertoonEnPseudohyponatriMi",
+    "title": "Hypotoon, hypertoon en pseudohyponatriëmie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOorzakenDenkInVolumeEnAdh",
+    "title": "Oorzaken: denk in volume en ADH",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAcuteHyponatriMie",
+    "title": "Acute hyponatriëmie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHoeBeoordeelJeDePatiNt",
+    "title": "Hoe beoordeel je de patiënt?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHetDiagnostischAlgoritme",
+    "title": "Het diagnostisch algoritme",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSiadh",
+    "title": "SIADH",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBehandelingVanHyponatriMie",
+    "title": "Behandeling van hyponatriëmie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectBelangrijkeKlinischeAandachtspunten",
+    "title": "Belangrijke klinische aandachtspunten",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

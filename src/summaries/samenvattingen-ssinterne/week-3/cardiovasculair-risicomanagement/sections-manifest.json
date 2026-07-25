@@ -1,0 +1,92 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectCardiovasculairRisicomanagementHetUi",
+    "title": "Cardiovasculair risicomanagement: het uitgangspunt",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWelkeAandoeningenVallenOnderHartEnVa",
+    "title": "Welke aandoeningen vallen onder hart- en vaatziekten?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectRisicofactorenVoorHartEnVaatziekten",
+    "title": "Risicofactoren voor hart- en vaatziekten",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWieKrijgtEenCardiovasculairRisicopro",
+    "title": "Wie krijgt een cardiovasculair risicoprofiel?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectRisicoInschattingWieHeeftEenHoogRisi",
+    "title": "Risico-inschatting: wie heeft een hoog risico?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectScoreEnScore2",
+    "title": "SCORE en SCORE2",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectNumberNeededToTreatEnNumberNeededToH",
+    "title": "Number needed to treat en number needed to harm",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectLeefstijlAltijdDeBasis",
+    "title": "Leefstijl: altijd de basis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectHypertensie",
+    "title": "Hypertensie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWanneerVerwijsJeNaarDeInternist",
+    "title": "Wanneer verwijs je naar de internist?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectTherapieresistenteHypertensie",
+    "title": "Therapieresistente hypertensie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectHypertensieInDeZwangerschap",
+    "title": "Hypertensie in de zwangerschap",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectHypertensiefSpoedgeval",
+    "title": "Hypertensief spoedgeval",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectDyslipidemie",
+    "title": "Dyslipidemie",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectFamiliaireHypercholesterolemie",
+    "title": "Familiaire hypercholesterolemie",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectHypertriglyceridemie",
+    "title": "Hypertriglyceridemie",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-18"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectMultipelMyeloomWatIsHet",
+    "title": "Multipel myeloom: wat is het?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusAlsIngangTotDeDiagnostiek",
+    "title": "Casus als ingang tot de diagnostiek",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectLaboratoriumonderzoekWaarLetJeOp",
+    "title": "Laboratoriumonderzoek: waar let je op?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEiwithspectrumEnMProteNe",
+    "title": "Eiwithspectrum en M-proteïne",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectImmunofixatieWelkTypeMProteNe",
+    "title": "Immunofixatie: welk type M-proteïne?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectKanMultipelMyeloomOokZonderMProteNeB",
+    "title": "Kan multipel myeloom ook zonder M-proteïne bestaan?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBeenmergonderzoekEnAanvullendeDiagno",
+    "title": "Beenmergonderzoek en aanvullende diagnostiek",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDiagnostischeClassificatie",
+    "title": "Diagnostische classificatie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectOrgaanschadeBijMultipelMyeloom",
+    "title": "Orgaanschade bij multipel myeloom",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectPrognoseWaaromZijnCytogenetischeAfwi",
+    "title": "Prognose: waarom zijn cytogenetische afwijkingen belangrijk?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectKlinischeRelevantie",
+    "title": "Klinische relevantie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

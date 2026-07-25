@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectReactiesOpGeneesmiddelenDeBasis",
+    "title": "Reacties op geneesmiddelen: de basis",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVoorspelbareEnOnvoorspelbareReacties",
+    "title": "Voorspelbare en onvoorspelbare reacties",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectOvergevoeligheidsreactiesOpGeneesmid",
+    "title": "Overgevoeligheidsreacties op geneesmiddelen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAllergischeReacties",
+    "title": "Allergische reacties",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPseudoAllergischeReacties",
+    "title": "Pseudo-allergische reacties",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectNsaidSEnAspirine",
+    "title": "NSAID’s en aspirine",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectReactiesOpNsaidS",
+    "title": "Reacties op NSAID’s",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAspirineAlsVoorbeeld",
+    "title": "Aspirine als voorbeeld",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectTabel1OverzichtVanReactiesOpNsaidS",
+    "title": "Tabel 1. Overzicht van reacties op NSAID’s",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectHoeHerkenJeEenGeneesmiddelreactie",
+    "title": "Hoe herken je een geneesmiddelreactie?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectKlinischeBetekenis",
+    "title": "Klinische betekenis",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

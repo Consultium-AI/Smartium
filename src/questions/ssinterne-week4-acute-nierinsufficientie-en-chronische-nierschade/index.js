@@ -1,0 +1,11 @@
+import { ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart01 } from './SsinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart01'
+import { ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart02 } from './SsinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart02'
+import { ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart03 } from './SsinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart03'
+
+export const ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsMap = {
+  'ssinterne-week4-acute-nierinsufficientie-en-chronische-nierschade': [
+    ...ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart01,
+    ...ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart02,
+    ...ssinterneWeek4AcuteNierinsufficientieEnChronischeNierschadeQuestionsPart03,
+  ],
+}

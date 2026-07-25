@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsAstma",
+    "title": "Wat is astma?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDiagnostiekVanAstma",
+    "title": "Diagnostiek van astma",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnamneseBijDyspnoeEnHoest",
+    "title": "Anamnese bij dyspnoe en hoest",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekBijDyspnoe",
+    "title": "Lichamelijk onderzoek bij dyspnoe",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDifferentiaaldiagnose",
+    "title": "Differentiaaldiagnose",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBevestigingVanDeDiagnose",
+    "title": "Bevestiging van de diagnose",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBehandelingVanAstma",
+    "title": "Behandeling van astma",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectVoorlichtingEnBegeleiding",
+    "title": "Voorlichting en begeleiding",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFollowUpEnControle",
+    "title": "Follow-up en controle",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWatAlsDeKlachtenBlijvenBestaan",
+    "title": "Wat als de klachten blijven bestaan?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectRisicofactorenEnBijzondereSituaties",
+    "title": "Risicofactoren en bijzondere situaties",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

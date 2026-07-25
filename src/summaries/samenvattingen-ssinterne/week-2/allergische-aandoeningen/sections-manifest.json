@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDirecteTypeIAllergie",
+    "title": "Directe type I allergie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOvergevoeligheidsreactiesTypeITotEnM",
+    "title": "Overgevoeligheidsreacties: type I tot en met IV",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSensibilisatieEnEffectorfase",
+    "title": "Sensibilisatie en effectorfase",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWelkeKlachtenPassenBijAllergie",
+    "title": "Welke klachten passen bij allergie?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeDriePijlersVanDeDiagnostiek",
+    "title": "De drie pijlers van de diagnostiek",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSeizoensgebondenAllergenen",
+    "title": "Seizoensgebonden allergenen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKruisallergieEnKruisreactiviteit",
+    "title": "Kruisallergie en kruisreactiviteit",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAnafylaxie",
+    "title": "Anafylaxie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectGeneesmiddelenallergie",
+    "title": "Geneesmiddelenallergie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDiagnostiekEnBehandelingVanInhalatie",
+    "title": "Diagnostiek en behandeling van inhalatieallergie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectImmunotherapie",
+    "title": "Immunotherapie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectVoedselallergieEnComponentResolvedDi",
+    "title": "Voedselallergie en component-resolved diagnostics",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvattingVanDeKern",
+    "title": "Samenvatting van de kern",
+    "id": "sect-14"
+  }
+]

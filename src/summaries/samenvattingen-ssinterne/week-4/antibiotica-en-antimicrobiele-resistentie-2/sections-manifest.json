@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBasiskennisAntibioticaUitbreidingVan",
+    "title": "Basiskennis antibiotica: uitbreiding van de lijst",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectGroepPenicillinesPiperacillineTazoba",
+    "title": "Groep penicillines: piperacilline-tazobactam",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectGroepCefalosporinesGeneratiesEnSpect",
+    "title": "Groep cefalosporines: generaties en spectrum",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOverzichtVanDeBelangrijksteSpectrumv",
+    "title": "Overzicht van de belangrijkste spectrumverschillen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectKlinischeToepassingProfylaxeBijMrsa",
+    "title": "Klinische toepassing: profylaxe bij MRSA",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectKlinischeToepassingCommunityAcquired",
+    "title": "Klinische toepassing: community acquired pneumonia",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeToepassingErnstigePneumonie",
+    "title": "Klinische toepassing: ernstige pneumonie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectKlinischeToepassingHospitalAcquiredP",
+    "title": "Klinische toepassing: hospital acquired pneumonia",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectAntimicrobiLeResistentieWaaromIsDitZ",
+    "title": "Antimicrobiële resistentie: waarom is dit zo’n groot probleem?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWatKunnenWeDoenTegenResistentie",
+    "title": "Wat kunnen we doen tegen resistentie?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectWereldwijdeAanpakEnBmro",
+    "title": "Wereldwijde aanpak en BMRO",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectCasuStiekOverResistenteBacteriN",
+    "title": "Casuïstiek over resistente bacteriën",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

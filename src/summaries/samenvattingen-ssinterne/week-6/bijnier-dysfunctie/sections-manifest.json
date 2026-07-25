@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeBijnierEnDeBijnierschors",
+    "title": "De bijnier en de bijnierschors",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAdrenarcheEnPuberteit",
+    "title": "Adrenarche en puberteit",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectRegulatieVanCortisolAndrogenenEnAldo",
+    "title": "Regulatie van cortisol, androgenen en aldosteron",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWatDoetCortisolInHetLichaam",
+    "title": "Wat doet cortisol in het lichaam?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectGlucocorticoDenInDeGeneeskunde",
+    "title": "Glucocorticoïden in de geneeskunde",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSyndroomVanCushingDenkenAanHypercort",
+    "title": "Syndroom van Cushing: denken aan hypercortisolisme",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectOorzakenVanHetSyndroomVanCushing",
+    "title": "Oorzaken van het syndroom van Cushing",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCasus1SyndroomVanCushingDoorEenHypof",
+    "title": "Casus 1: syndroom van Cushing door een hypofyse-adenoom",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBehandelingVanActhAfhankelijkHyperco",
+    "title": "Behandeling van ACTH-afhankelijk hypercortisolisme",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectBijnierschorsinsufficiNtieDeZiekteVa",
+    "title": "Bijnierschorsinsufficiëntie: de ziekte van Addison",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectOorzakenVanBijnierschorsinsufficiNti",
+    "title": "Oorzaken van bijnierschorsinsufficiëntie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectBehandelingVanDeZiekteVanAddison",
+    "title": "Behandeling van de ziekte van Addison",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectAddisoncrisisWaaromIsDitZoGevaarlijk",
+    "title": "Addisoncrisis: waarom is dit zo gevaarlijk?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectKlinischeValkuilInteractieMetRifampi",
+    "title": "Klinische valkuil: interactie met rifampicine",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectPraktischeKernpunten",
+    "title": "Praktische kernpunten",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-17"
+  }
+]

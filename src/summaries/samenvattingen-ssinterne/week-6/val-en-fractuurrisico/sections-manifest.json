@@ -1,0 +1,107 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWaaromDitOnderwerpBelangrij",
+    "title": "Inleiding: waarom dit onderwerp belangrijk is",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectValincidentenWatBedoelenWeErmee",
+    "title": "Valincidenten: wat bedoelen we ermee?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeAnalyseerJeHetValrisico",
+    "title": "Hoe analyseer je het valrisico?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectRisicofactorenVoorVallen",
+    "title": "Risicofactoren voor vallen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectMedicatieEnValrisico",
+    "title": "Medicatie en valrisico",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectOrthostaseEnSyncope",
+    "title": "Orthostase en syncope",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSinusCaroticusSyndroom",
+    "title": "Sinus caroticus syndroom",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBeleidBijEenOudereMetVallen",
+    "title": "Beleid bij een oudere met vallen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectFractuurrisicoEnOsteoporose",
+    "title": "Fractuurrisico en osteoporose",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectHoeVaakKomtOsteoporoseVoor",
+    "title": "Hoe vaak komt osteoporose voor?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectRisicofactorenVoorOsteoporose",
+    "title": "Risicofactoren voor osteoporose",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectDiagnostiekVanOsteoporose",
+    "title": "Diagnostiek van osteoporose",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectWanneerVraagJeEenDxaAan",
+    "title": "Wanneer vraag je een DXA aan?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectFraxScore",
+    "title": "FRAX-score",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectLaboratoriumonderzoekBijVerdenkingOp",
+    "title": "Laboratoriumonderzoek bij verdenking op secundaire osteoporose",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectBehandelingVanOsteoporose",
+    "title": "Behandeling van osteoporose",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectAandachtspuntenBijBisfosfonaten",
+    "title": "Aandachtspunten bij bisfosfonaten",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectAtypischeFemurfractuur",
+    "title": "Atypische femurfractuur",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectSamenvattendKlinischBeeldVanDeCasus",
+    "title": "Samenvattend klinisch beeld van de casus",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-21"
+  }
+]

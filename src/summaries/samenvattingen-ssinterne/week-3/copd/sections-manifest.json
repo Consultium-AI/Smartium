@@ -1,0 +1,42 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDefinitieEnEpidemiologie",
+    "title": "Definitie en epidemiologie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVanDefinitieNaarPathofysiologie",
+    "title": "Van definitie naar pathofysiologie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSymptomenEnDiagnose",
+    "title": "Symptomen en diagnose",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPrognoseEnSystemischeEffecten",
+    "title": "Prognose en systemische effecten",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAcuteExacerbatieCopd",
+    "title": "Acute exacerbatie COPD",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-08"
+  }
+]

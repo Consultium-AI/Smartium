@@ -78,6 +78,7 @@ function App() {
               <Route path="/oefenvragen-blok9" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/oefenvragen-blok10" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
               <Route path="/oefenvragen-sskindgyn" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="sskindgyn" /></ContentProtectionWrapper>} />
+              <Route path="/oefenvragen-ssinterne" element={<ContentProtectionWrapper><PracticeQuestionsPage forcedBlok="ssinterne" /></ContentProtectionWrapper>} />
               <Route path="/summary" element={<ContentProtectionWrapper><SummaryPage /></ContentProtectionWrapper>} />
               <Route path="/summary-blok3" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok3" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok4" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok4" /></ContentProtectionWrapper>} />
@@ -85,12 +86,14 @@ function App() {
               <Route path="/summary-blok9" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
               <Route path="/summary-blok10" element={<ContentProtectionWrapper><SummaryPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
               <Route path="/summary-sskindgyn" element={<ContentProtectionWrapper><SummaryPage forcedBlok="sskindgyn" /></ContentProtectionWrapper>} />
-              <Route path="/flashcards" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-blok4" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok4" /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-blok5" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok5" /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-blok9" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok9" /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-blok10" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="blok10" /></ContentProtectionWrapper></AccountRoute>} />
-              <Route path="/flashcards-sskindgyn" element={<AccountRoute><ContentProtectionWrapper><FlashcardsPage forcedBlok="sskindgyn" /></ContentProtectionWrapper></AccountRoute>} />
+              <Route path="/summary-ssinterne" element={<ContentProtectionWrapper><SummaryPage forcedBlok="ssinterne" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards" element={<ContentProtectionWrapper><FlashcardsPage /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-blok4" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="blok4" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-blok5" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="blok5" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-blok9" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="blok9" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-blok10" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="blok10" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-sskindgyn" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="sskindgyn" /></ContentProtectionWrapper>} />
+              <Route path="/flashcards-ssinterne" element={<ContentProtectionWrapper><FlashcardsPage forcedBlok="ssinterne" /></ContentProtectionWrapper>} />
               <Route path="/chat" element={<AccountRoute><ChatPage /></AccountRoute>} />
               <Route path="/tentamen" element={<ContentProtectionWrapper><ExamPage /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok4" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={4} /></ContentProtectionWrapper>} />

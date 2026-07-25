@@ -1,0 +1,142 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsDeAbcdeMethodiek",
+    "title": "Wat is de ABCDE-methodiek?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWerkwijzeBinnenElkeStap",
+    "title": "Werkwijze binnen elke stap",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAAirway",
+    "title": "A: Airway",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDoelVanDeA",
+    "title": "Doel van de A",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeoordelingVanDeLuchtweg",
+    "title": "Beoordeling van de luchtweg",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectInterventiesBijDeA",
+    "title": "Interventies bij de A",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBBreathing",
+    "title": "B: Breathing",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDoelVanDeB",
+    "title": "Doel van de B",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBeoordelingVanDeAdemhaling",
+    "title": "Beoordeling van de ademhaling",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectInterventiesBijDeB",
+    "title": "Interventies bij de B",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectCCirculation",
+    "title": "C: Circulation",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectDoelVanDeC",
+    "title": "Doel van de C",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectKijkenLuisterenEnVoelen",
+    "title": "Kijken, luisteren en voelen",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectMonitoring",
+    "title": "Monitoring",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectInterventiesBijDeC",
+    "title": "Interventies bij de C",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectDDisabilities",
+    "title": "D: Disabilities",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectDoelVanDeD",
+    "title": "Doel van de D",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectOnderzoekspuntenBijDeD",
+    "title": "Onderzoekspunten bij de D",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectEExposureEnvironment",
+    "title": "E: Exposure / Environment",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectDoelVanDeE",
+    "title": "Doel van de E",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectBeoordeling",
+    "title": "Beoordeling",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectInterventiesBijDeE",
+    "title": "Interventies bij de E",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectAanvullendOnderzoekEnLogRoll",
+    "title": "Aanvullend onderzoek en log roll",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectAmpleAnamnese",
+    "title": "AMPLE-anamnese",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectOverdrachtSbar",
+    "title": "Overdracht: SBAR",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectDocumentatie",
+    "title": "Documentatie",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-28"
+  }
+]

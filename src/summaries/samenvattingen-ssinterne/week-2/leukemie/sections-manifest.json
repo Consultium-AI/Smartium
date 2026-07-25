@@ -1,0 +1,42 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectLeukemieHetGroteBeeld",
+    "title": "Leukemie: het grote beeld",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDiagnostiekBijVerdenkingOpLeukemie",
+    "title": "Diagnostiek bij verdenking op leukemie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAcuteLeukemieAmlEnAll",
+    "title": "Acute leukemie: AML en ALL",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAcuteLymfatischeLeukemiePrecursorBAl",
+    "title": "Acute lymfatische leukemie: precursor B-ALL en Philadelphia-chromosoom",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectChronischeLymfatischeLeukemieCll",
+    "title": "Chronische lymfatische leukemie: CLL",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectChronischeMyeloDeLeukemieCml",
+    "title": "Chronische myeloïde leukemie: CML",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-08"
+  }
+]

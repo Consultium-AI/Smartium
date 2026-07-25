@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWaaromRadiologieVanHetAbdomenBelangr",
+    "title": "Waarom radiologie van het abdomen belangrijk is",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOriNtatieOpEenCtAbdomen",
+    "title": "Oriëntatie op een CT-abdomen",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnatomieOpDeBuikoverzichtfoto",
+    "title": "Anatomie op de buikoverzichtfoto",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectSystematiekBijEenCtAbdomen",
+    "title": "Systematiek bij een CT-abdomen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBelangrijkeOrganenOpDeCt",
+    "title": "Belangrijke organen op de CT",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBelangrijkeBloedvatenOpDeCt",
+    "title": "Belangrijke bloedvaten op de CT",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeCasuStiek",
+    "title": "Klinische casuïstiek",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

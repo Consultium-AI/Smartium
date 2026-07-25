@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectIntroductieWatIsEenNonHodgkinLymfoom",
+    "title": "Introductie: wat is een non-Hodgkin lymfoom?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectKlinischePresentatie",
+    "title": "Klinische presentatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDiagnostiekEerstZekerheidKrijgen",
+    "title": "Diagnostiek: eerst zekerheid krijgen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHistologieEnImmunofenotypeBijDlbcl",
+    "title": "Histologie en immunofenotype bij DLBCL",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectAanvullendOnderzoekVoorStadiRingEnPr",
+    "title": "Aanvullend onderzoek voor stadiëring en prognose",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectPetScan",
+    "title": "PET-scan",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBeenmergonderzoek",
+    "title": "Beenmergonderzoek",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectFishEnMyc",
+    "title": "FISH en MYC",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectStadiRingVolgensLugano",
+    "title": "Stadiëring volgens Lugano",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectTabel1LuganoCriteria",
+    "title": "Tabel 1. Lugano-criteria",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectRisicostratificatieDeInternationaleP",
+    "title": "Risicostratificatie: de Internationale Prognostische Index",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectTabel2InternationalePrognostischeInd",
+    "title": "Tabel 2. Internationale Prognostische Index",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSubtypenVanDlbcl",
+    "title": "Subtypen van DLBCL",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectBehandelingVanDlbcl",
+    "title": "Behandeling van DLBCL",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKlinischeBetekenisVanDePrognose",
+    "title": "Klinische betekenis van de prognose",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-17"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingRitmeEnGeleidingsstoornisse",
+    "title": "Inleiding: ritme- en geleidingsstoornissen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBasisfysiologieVanHetHartritme",
+    "title": "Basisfysiologie van het hartritme",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectMechanismenVanAritmie",
+    "title": "Mechanismen van aritmie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectIndelingVanRitmestoornissen",
+    "title": "Indeling van ritmestoornissen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeBelangrijksteRitmestoornissen",
+    "title": "De belangrijkste ritmestoornissen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAvGeleidingsstoornissen",
+    "title": "AV-geleidingsstoornissen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSupraventriculaireTachycardieN",
+    "title": "Supraventriculaire tachycardieën",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBehandelingVanRitmestoornissen",
+    "title": "Behandeling van ritmestoornissen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectKlinischePrioriteringOpDeSeh",
+    "title": "Klinische prioritering op de SEH",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

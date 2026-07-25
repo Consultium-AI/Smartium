@@ -22,6 +22,11 @@ SS1B5-smartium met vos/
 SS1B10-smartium/
 SS1B10/
 SS2B9/
+SSKindgyn-20260707T103027Z-3-001/
+SSInterne-20260724T145544Z-1-001/
+tech -*/
+.cursor/sskindgyn-cache/
+.cursor/ssinterne-cache/
 
 # Wrangler dev bundles (regenerated locally)
 worker/.wrangler/

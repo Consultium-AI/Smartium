@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectPneumonieHetKlinischeBeeld",
+    "title": "Pneumonie: het klinische beeld",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusAlsUitgangspunt",
+    "title": "Casus als uitgangspunt",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDifferentiaaldiagnoseBijKoortsEnDysp",
+    "title": "Differentiaaldiagnose bij koorts en dyspnoe",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEersteOnderzoekBijVerdenkingPneumoni",
+    "title": "Eerste onderzoek bij verdenking pneumonie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBelangrijkAanvullendOnderzoek",
+    "title": "Belangrijk aanvullend onderzoek",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLaboratoriumEnArteriLeBloedgas",
+    "title": "Laboratorium en arteriële bloedgas",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectXThoraxBijPneumonie",
+    "title": "X-thorax bij pneumonie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectTabel2XThoraxpatronenEnBetekenis",
+    "title": "Tabel 2. X-thoraxpatronen en betekenis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectVanViralePneumonieNaarSuperinfectie",
+    "title": "Van virale pneumonie naar superinfectie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectTabel3VerwekkerEnGrambeeld",
+    "title": "Tabel 3. Verwekker en Grambeeld",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectWelkeVirussenEnBacteriNPassenHierbij",
+    "title": "Welke virussen en bacteriën passen hierbij?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectBehandelingVanErnstigeCap",
+    "title": "Behandeling van ernstige CAP",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectTabel4BehandelingInDezeCasus",
+    "title": "Tabel 4. Behandeling in deze casus",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectDefinitieveUitslagenEnEinddiagnose",
+    "title": "Definitieve uitslagen en einddiagnose",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKlinischeKern",
+    "title": "Klinische kern",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-17"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectXThoraxTechniekEnUitgangspunten",
+    "title": "X-thorax: techniek en uitgangspunten",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectKwaliteitVanDeThoraxfoto",
+    "title": "Kwaliteit van de thoraxfoto",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnatomieOpDeXThorax",
+    "title": "Anatomie op de X-thorax",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLongkwabbenEnFissuren",
+    "title": "Longkwabben en fissuren",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSystematischeBeoordelingVanDeXThorax",
+    "title": "Systematische beoordeling van de X-thorax",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCtThoraxWindowsettings",
+    "title": "CT-thorax: windowsettings",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectCtProtocollen",
+    "title": "CT-protocollen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectLongembolieprotocol",
+    "title": "Longembolieprotocol",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectAnatomieOpCt",
+    "title": "Anatomie op CT",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectKlinischeRelevantie",
+    "title": "Klinische relevantie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

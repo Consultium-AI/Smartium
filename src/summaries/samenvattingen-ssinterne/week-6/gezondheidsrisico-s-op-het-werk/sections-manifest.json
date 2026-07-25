@@ -1,0 +1,107 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectOndervoedingWaaromIsDitBelangrijk",
+    "title": "Ondervoeding: waarom is dit belangrijk?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCasusMevrouwDeVries",
+    "title": "Casus: mevrouw De Vries",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectEnergiebehoefteEnVeroudering",
+    "title": "Energiebehoefte en veroudering",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBmiGewichtsverliesEnMortaliteit",
+    "title": "BMI, gewichtsverlies en mortaliteit",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectScreeningOpOndervoeding",
+    "title": "Screening op ondervoeding",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAlbumineWelPrognostischNietDiagnosti",
+    "title": "Albumine: wel prognostisch, niet diagnostisch voor voedingstoestand",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectGevolgenVanOndervoeding",
+    "title": "Gevolgen van ondervoeding",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSarcopenieVerliesVanSpiermassaEnSpie",
+    "title": "Sarcopenie: verlies van spiermassa en spierkracht",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDiagnoseVanSarcopenie",
+    "title": "Diagnose van sarcopenie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectBehandelingVanSarcopenieEnOndervoedi",
+    "title": "Behandeling van sarcopenie en ondervoeding",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectRolVanDeDiTist",
+    "title": "Rol van de diëtist",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectEiwitEnChronischeNierinsufficiNtie",
+    "title": "Eiwit en chronische nierinsufficiëntie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectGezondheidsrisicoSOpHetWerk",
+    "title": "Gezondheidsrisico’s op het werk",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectArbeidshygiNeEnPreventie",
+    "title": "Arbeidshygiëne en preventie",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectBeroepenEnGezondheidsrisicoS",
+    "title": "Beroepen en gezondheidsrisico’s",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectGezondheidsrisicoSInDeZorg",
+    "title": "Gezondheidsrisico’s in de zorg",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectVeiligEnSlimWerkenInDeZorg",
+    "title": "Veilig en slim werken in de zorg",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectDeCoassistent",
+    "title": "De coassistent",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectKernkwaliteitenValkuilenEnSamenwerki",
+    "title": "Kernkwaliteiten, valkuilen en samenwerking",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-21"
+  }
+]

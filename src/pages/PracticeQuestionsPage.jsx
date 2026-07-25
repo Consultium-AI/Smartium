@@ -116,7 +116,7 @@ import { collectWrongAnsweredQuestionsForBlok, countWrongAnsweredQuestionsForBlo
 import { splitCasusModules } from '../utils/courseModuleKind'
 import { FLANKEREND_MODULE_IDS_BY_CASE } from '../data/flankerendModuleIdsByCase'
 
-const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn']
+const VALID_BLOK_KEYS = ['blok3', 'blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn', 'ssinterne']
 
 const PRACTICE_BLOK_WEEKOVERZICHT = {
   blok5: {
@@ -962,9 +962,9 @@ const PracticeQuestionsPage = ({ forcedBlok = null }) => {
                 },
                 {
                   title: 'Master',
-                  subtitle: 'Kindergeneeskunde & Gynaecologie',
+                  subtitle: 'Kindergeneeskunde & Gynaecologie, Interne Geneeskunde',
                   headingId: 'practice-index-master-heading',
-                  blocks: (['sskindgyn']).map((key) => ({
+                  blocks: (['sskindgyn', 'ssinterne']).map((key) => ({
                     to: `/oefenvragen-${key}`,
                     label: practiceQuestionsCourseStructure[key].name,
                     meta: formatPracticeBlokSubtitle(practiceQuestionsCourseStructure[key]),

@@ -1,0 +1,107 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectZuurstofVanBuitenNaarBinnen",
+    "title": "Zuurstof: van buiten naar binnen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAtmosferischeDrukEnPartiLeZuurstofdr",
+    "title": "Atmosferische druk en partiële zuurstofdruk",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVanAlveolusNaarArterieelBloed",
+    "title": "Van alveolus naar arterieel bloed",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHoeZuurstofInHetBloedWordtVervoerd",
+    "title": "Hoe zuurstof in het bloed wordt vervoerd",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHemoglobineAlsBelangrijksteZuurstofd",
+    "title": "Hemoglobine als belangrijkste zuurstofdrager",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectZuurstofdissociatiecurve",
+    "title": "Zuurstofdissociatiecurve",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHypoxemieDeBelangrijksteOorzaken",
+    "title": "Hypoxemie: de belangrijkste oorzaken",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDiffusiestoornis",
+    "title": "Diffusiestoornis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectShunt",
+    "title": "Shunt",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectVentilatiePerfusieMismatch",
+    "title": "Ventilatie-perfusie mismatch",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectHypoventilatie",
+    "title": "Hypoventilatie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectZuurstofEnSaturatieMeten",
+    "title": "Zuurstof en saturatie meten",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBloedgasanalyse",
+    "title": "Bloedgasanalyse",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectZuurstoftoediening",
+    "title": "Zuurstoftoediening",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectZuurstofmasker",
+    "title": "Zuurstofmasker",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectVenturiMasker",
+    "title": "Venturi-masker",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectNonRebreathingMasker",
+    "title": "Non-rebreathing masker",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectHighFlowNasalCannula",
+    "title": "High flow nasal cannula",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectPraktischeKeuzeEnStreefwaarden",
+    "title": "Praktische keuze en streefwaarden",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-21"
+  }
+]

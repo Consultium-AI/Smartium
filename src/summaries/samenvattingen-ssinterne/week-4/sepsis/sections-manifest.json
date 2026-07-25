@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsSepsis",
+    "title": "Wat is sepsis?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectQsofaEnSofa",
+    "title": "qSOFA en SOFA",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWaaromIsSnelleHerkenningZoBelangrijk",
+    "title": "Waarom is snelle herkenning zo belangrijk?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectCasus1FlebitisMetSepsisEnMrsa",
+    "title": "Casus 1: flebitis met sepsis en MRSA",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBloedkweekAfnemenEnVerwerken",
+    "title": "Bloedkweek: afnemen en verwerken",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCasus2PatiNtMetDwarslaesieEnUrosepsi",
+    "title": "Casus 2: patiënt met dwarslaesie en urosepsis",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectCasus3PatiNteMetDiarreeEnToxineGemed",
+    "title": "Casus 3: patiënte met diarree en toxine-gemedieerde sepsis",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]
