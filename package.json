@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "validate:exams": "node scripts/validate-exams.mjs",
     "preview": "vite preview",
     "secrets:github": "node scripts/push-github-secrets.mjs",
     "automation:export-user-access-status": "node scripts/exportFirebaseUserAccessStatus.mjs",

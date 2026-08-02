@@ -100,6 +100,7 @@ function App() {
               <Route path="/tentamen-blok5" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={5} /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok9" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={9} /></ContentProtectionWrapper>} />
               <Route path="/tentamen-blok10" element={<ContentProtectionWrapper><ExamBlokPage blokNumber={10} /></ContentProtectionWrapper>} />
+              <Route path="/tentamen-ssinterne" element={<ContentProtectionWrapper><ExamBlokPage blokNumber="ssinterne" blokLabel="Interne Geneeskunde" /></ContentProtectionWrapper>} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/billing" element={<BillingPage />} />
               <Route path="/settings/profile" element={<ProfileSettingsPage />} />

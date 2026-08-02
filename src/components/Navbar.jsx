@@ -80,6 +80,9 @@ const navItems = [
         { name: 'Blok 9', href: '/tentamen-blok9' },
         { name: 'Blok 10', href: '/tentamen-blok10' },
       ]},
+      { label: 'Master', links: [
+        { name: 'Interne Geneeskunde', href: '/tentamen-ssinterne' },
+      ]},
     ],
   },
   {

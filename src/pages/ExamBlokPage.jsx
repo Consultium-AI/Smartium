@@ -57,10 +57,19 @@ function seededRandom(seed) {
   }
 }
 
+/** Bloknummer of blok-slug (master) omzetten naar een stabiel getal voor de seed. */
+function blokSeed(blok) {
+  if (typeof blok === 'number') return blok
+  let h = 0
+  const s = String(blok)
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) >>> 0
+  return h % 100_000
+}
+
 function questionShuffleSeed(exam, qid) {
   let h = 0
   for (let i = 0; i < qid.length; i++) h = ((h << 5) - h + qid.charCodeAt(i)) >>> 0
-  return exam.blok * 1_000_003 + exam.tentamenNr * 79_919 + h
+  return blokSeed(exam.blok) * 1_000_003 + exam.tentamenNr * 79_919 + h
 }
 
 function computeEarned(exam, answers) {
@@ -130,7 +139,7 @@ function casusEarned(casus, answers) {
 }
 
 function gradePathForBlok(blok) {
-  return `/tentamen-blok${blok}`
+  return typeof blok === 'number' ? `/tentamen-blok${blok}` : `/tentamen-${blok}`
 }
 
 function getExamProgressMeta(exam, savedProgress) {
@@ -158,7 +167,7 @@ function getExamProgressMeta(exam, savedProgress) {
 }
 
 // ─── Selection ─────────────────────────────────────────────────
-function ExamBlokSelection({ blok }) {
+function ExamBlokSelection({ blok, blokLabel }) {
   const { user, loading: authLoading } = useAuth()
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
@@ -192,7 +201,7 @@ function ExamBlokSelection({ blok }) {
           className="mb-10 max-w-3xl mx-auto text-center"
         >
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-1 tracking-tight">
-            <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> Blok {blok}
+            <span className="text-primary-500 dark:text-primary-400">Oefententamens</span> {blokLabel ?? `Blok ${blok}`}
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto">
             Casusgerichte toetsen met punten naar het officiële antwoordmodel
@@ -703,9 +712,9 @@ function ExamBlokActive({ blok, exam, examNr }) {
 }
 
 // ─── Export main page ──────────────────────────────────────────
-export default function ExamBlokPage({ blokNumber = 5 }) {
+export default function ExamBlokPage({ blokNumber = 5, blokLabel }) {
   const [searchParams] = useSearchParams()
-  const blok = Number(blokNumber) || 5
+  const blok = Number.isFinite(Number(blokNumber)) ? Number(blokNumber) : String(blokNumber)
   const examNr = parseInt(searchParams.get('nr'), 10)
   const { hasAccess, plan, loading: accessLoading } = useAccess()
   const hasPaidAccess = hasAccess && plan !== 'free'
@@ -728,7 +737,7 @@ export default function ExamBlokPage({ blokNumber = 5 }) {
   }
 
   if (!examNr || !exam) {
-    return <ExamBlokSelection blok={blok} />
+    return <ExamBlokSelection blok={blok} blokLabel={blokLabel} />
   }
 
   return (
@@ -748,7 +757,7 @@ export default function ExamBlokPage({ blokNumber = 5 }) {
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-navy-900 dark:text-slate-100">
             {exam.title}{' '}
-            <span className="text-primary-500 dark:text-primary-400">Blok {blok}</span>
+            <span className="text-primary-500 dark:text-primary-400">{blokLabel ?? `Blok ${blok}`}</span>
           </h1>
           <p className="text-sm text-navy-500 dark:text-slate-400 mt-1">{exam.subtitle}</p>
           <p className="text-xs text-navy-500 dark:text-slate-500 mt-1">{exam.totalPoints} punten · {exam.casussen.length} casussen</p>

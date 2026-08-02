@@ -43,6 +43,17 @@ const TENTAMEN_BA2_CARDS = [
   },
 ]
 
+const TENTAMEN_MASTER_CARDS = [
+  {
+    to: '/tentamen-ssinterne',
+    title: 'Interne Geneeskunde',
+    subtitle: 'Dwarsdoorsnede week 1 t/m 7',
+    Icon: Stethoscope,
+    iconBg: 'bg-sky-100 dark:bg-sky-500/20',
+    iconColor: 'text-sky-600 dark:text-sky-400',
+  },
+]
+
 // ─── Exam Selection (Blok 4, 5 & 9) ──────────────────────────────
 const ExamSelection = () => {
   const { user, loading: authLoading } = useAuth()
@@ -135,6 +146,50 @@ const ExamSelection = () => {
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.22, delay: 0.1 + i * 0.05 }}
+                >
+                  <Link
+                    to={b.to}
+                    className="group relative flex min-w-0 items-center gap-4 rounded-xl border border-slate-200/90 bg-white px-4 py-4 transition-all duration-200 sm:px-5 sm:py-4
+                      hover:border-slate-300 hover:bg-slate-50/90
+                      dark:border-slate-700/90 dark:bg-slate-900/50 dark:hover:border-slate-600 dark:hover:bg-slate-900/80
+                      active:scale-[0.995]"
+                  >
+                    <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${b.iconBg}`}>
+                      <b.Icon className={`w-5 h-5 ${b.iconColor}`} />
+                    </div>
+                    <div className="min-w-0 flex-1 text-left">
+                      <h3 className="font-medium text-slate-900 dark:text-slate-100 text-[15px] leading-snug">
+                        {b.title}
+                      </h3>
+                      <p className="mt-0.5 text-[13px] leading-snug text-slate-500 dark:text-slate-500">
+                        {b.subtitle}
+                      </p>
+                    </div>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center text-slate-400 transition-colors group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} />
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          <section aria-labelledby="exam-index-master-heading">
+            <div className="mb-4 px-1 border-b border-slate-200/80 dark:border-slate-700/80 pb-3">
+              <h2 id="exam-index-master-heading" className="text-base font-bold text-slate-800 dark:text-slate-100">
+                Master
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                Coschappen
+              </p>
+            </div>
+            <div className="flex flex-col gap-3.5">
+              {TENTAMEN_MASTER_CARDS.map((b, i) => (
+                <motion.div
+                  key={b.to}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.22, delay: 0.2 + i * 0.05 }}
                 >
                   <Link
                     to={b.to}
