@@ -1,0 +1,97 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectZorgOpAfstandWatBedoelenWeErmee",
+    "title": "Zorg op afstand: wat bedoelen we ermee?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeHuidigeStandVanZaken",
+    "title": "De huidige stand van zaken",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWaaromZorgOpAfstand",
+    "title": "Waarom zorg op afstand?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVoordelenVoorDeArts",
+    "title": "Voordelen voor de arts",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectWaaromIsDitVoorDeArtsHandig",
+    "title": "Waarom is dit voor de arts handig?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectNadelenVanZorgOpAfstand",
+    "title": "Nadelen van zorg op afstand",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectVoordelenEnNadelenNaastElkaar",
+    "title": "Voordelen en nadelen naast elkaar",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectWatIsNodigVoorThuismeten",
+    "title": "Wat is nodig voor thuismeten?",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectMeetapparatuur",
+    "title": "Meetapparatuur",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDigitaalPlatformOfApp",
+    "title": "Digitaal platform of app",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectAanDeSlagMetEenPlan",
+    "title": "Aan de slag met een plan",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSuccesfactorenEnValkuilenBijImplemen",
+    "title": "Succesfactoren en valkuilen bij implementatie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBelangrijkeSuccesfactoren",
+    "title": "Belangrijke succesfactoren",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSuccesfactorenEnAandachtspuntenInNOv",
+    "title": "Succesfactoren en aandachtspunten in één overzicht",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectVerdereOntwikkelingVanZorgOpAfstand",
+    "title": "Verdere ontwikkeling van zorg op afstand",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectMogelijkeStappenInDeVerdereOntwikkel",
+    "title": "Mogelijke stappen in de verdere ontwikkeling",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectOverzichtVanDeVerdereOntwikkeling",
+    "title": "Overzicht van de verdere ontwikkeling",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-19"
+  }
+]

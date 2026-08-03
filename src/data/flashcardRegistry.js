@@ -3,6 +3,7 @@
 import { blok3FlashcardDecks } from './flashcards-blok3'
 import { blok4FlashcardDecks } from './flashcards-blok4'
 import { blok5FlashcardDecks } from './flashcards-blok5'
+import { blok6FlashcardDecks } from './flashcards-blok6'
 import { blok9FlashcardDecks } from './flashcards-blok9'
 import { blok10FlashcardDecks } from './flashcards-blok10'
 import { sskindgynFlashcardDecks } from './flashcards-sskindgyn'
@@ -13,6 +14,7 @@ export const allFlashcardDecks = [
   ...blok3FlashcardDecks,
   ...blok4FlashcardDecks,
   ...blok5FlashcardDecks,
+  ...blok6FlashcardDecks,
   ...blok9FlashcardDecks,
   ...blok10FlashcardDecks,
   ...sskindgynFlashcardDecks,
@@ -54,7 +56,7 @@ export function getDeckById(lmeId) {
   return allFlashcardDecks.find((d) => d.lmeId === lmeId) || null
 }
 
-export const FLASHCARD_BLOK_KEYS = ['blok4', 'blok5', 'blok9', 'blok10', 'sskindgyn', 'ssinterne']
+export const FLASHCARD_BLOK_KEYS = ['blok4', 'blok5', 'blok6', 'blok9', 'blok10', 'sskindgyn', 'ssinterne']
 
 /** Metadata voor het blok-overzicht (/flashcards). */
 export const FLASHCARD_BLOK_INDEX = [
@@ -71,6 +73,13 @@ export const FLASHCARD_BLOK_INDEX = [
     subtitle: 'Bedreigingen van Binnen & Buiten',
     route: '/flashcards-blok5',
     ba: 'Ba1',
+  },
+  {
+    key: 'blok6',
+    label: 'Blok 6',
+    subtitle: 'Blok 6',
+    route: '/flashcards-blok6',
+    ba: 'Ba2',
   },
   {
     key: 'blok9',
@@ -109,7 +118,7 @@ export function deckBlokKey(deck) {
   const fromId = id.match(/^(blok\d+|sskindgyn|ssinterne)-/)
   if (fromId) return fromId[1]
   const block = (deck.block || '').toLowerCase()
-  for (const n of [4, 5, 9, 10]) {
+  for (const n of [4, 5, 6, 9, 10]) {
     if (block.includes(`blok ${n}`)) return `blok${n}`
   }
   if (block.includes('kindergeneeskunde') || block.includes('gynaecologie')) return 'sskindgyn'

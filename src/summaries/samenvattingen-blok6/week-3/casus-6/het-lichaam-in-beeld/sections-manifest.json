@@ -1,0 +1,162 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectVlakkenEnRichtingenInDeRadiologie",
+    "title": "Vlakken en richtingen in de radiologie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeDrieBelangrijksteAnatomischeVlakke",
+    "title": "De drie belangrijkste anatomische vlakken",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectRichtingstermen",
+    "title": "Richtingstermen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBeeldoriNtatie",
+    "title": "Beeldoriëntatie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectRNtgenfotoSDeBasisVanMedischeBeeldvo",
+    "title": "Röntgenfoto’s: de basis van medische beeldvorming",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHoeWerktEenRNtgenfoto",
+    "title": "Hoe werkt een röntgenfoto?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectToepassingenVanRNtgen",
+    "title": "Toepassingen van röntgen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectVoorEnNadelenVanRNtgen",
+    "title": "Voor- en nadelen van röntgen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDeXThorax",
+    "title": "De X-thorax",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectCtScanDwarsdoorsnedenMetRNtgenstrali",
+    "title": "CT-scan: dwarsdoorsneden met röntgenstraling",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectHoeWerktCt",
+    "title": "Hoe werkt CT?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectToepassingenVanCt",
+    "title": "Toepassingen van CT",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectVoorEnNadelenVanCt",
+    "title": "Voor- en nadelen van CT",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectContrastfasenBijCt",
+    "title": "Contrastfasen bij CT",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKlinischVoorbeeldCtBijHoofdletsel",
+    "title": "Klinisch voorbeeld: CT bij hoofdletsel",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectMriBeeldvormingMetMagneetveldenEnRad",
+    "title": "MRI: beeldvorming met magneetvelden en radiogolven",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectHoeWerktMri",
+    "title": "Hoe werkt MRI?",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectT1EnT2",
+    "title": "T1 en T2",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectToepassingenVanMri",
+    "title": "Toepassingen van MRI",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectVeiligheidBijMri",
+    "title": "Veiligheid bij MRI",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectVoorEnNadelenVanMri",
+    "title": "Voor- en nadelen van MRI",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectKlinischVoorbeeldMriBijRugklachten",
+    "title": "Klinisch voorbeeld: MRI bij rugklachten",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectEchografieBeeldvormingMetGeluidsgolv",
+    "title": "Echografie: beeldvorming met geluidsgolven",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectHoeWerktEchografie",
+    "title": "Hoe werkt echografie?",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectBelangrijkeEchobegrippen",
+    "title": "Belangrijke echobegrippen",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectToepassingenVanEchografie",
+    "title": "Toepassingen van echografie",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectVoorEnNadelenVanEchografie",
+    "title": "Voor- en nadelen van echografie",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectKlinischVoorbeeldAcuteBuikpijn",
+    "title": "Klinisch voorbeeld: acute buikpijn",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectFoetaleEchografie",
+    "title": "Foetale echografie",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectVergelijkingVanDeBeeldvormendeTechni",
+    "title": "Vergelijking van de beeldvormende technieken",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-32"
+  }
+]

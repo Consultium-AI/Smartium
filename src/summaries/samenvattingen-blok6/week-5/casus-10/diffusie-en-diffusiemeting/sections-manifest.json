@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectGaswisselingInDeLongVentilatieDiffus",
+    "title": "Gaswisseling in de long: ventilatie, diffusie en perfusie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeWetVanFick",
+    "title": "De wet van Fick",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWaaromKoolmonoxideWordtGebruikt",
+    "title": "Waarom koolmonoxide wordt gebruikt",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHoeDeDlcoWordtGemeten",
+    "title": "Hoe de DLCO wordt gemeten",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectInterpretatieVanDlcoVaEnKco",
+    "title": "Interpretatie van DLCO, VA en KCO",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectFactorenDieDlcoBeNvloeden",
+    "title": "Factoren die DLCO beïnvloeden",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeBetekenis",
+    "title": "Klinische betekenis",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

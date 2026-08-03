@@ -2,6 +2,7 @@
 import { splitCasusModules } from '../utils/courseModuleKind'
 import { SSKINDGYN_QUESTIONS_MAP } from '../questions/sskindgynQuestionsRegistry'
 import { SSINTERNE_QUESTIONS_MAP } from '../questions/ssinterneQuestionsRegistry'
+import { BLOK6_QUESTIONS_MAP } from '../questions/blok6QuestionsRegistry'
 import { lme5QuestionsMap } from '../questions/lme5-schimmelinfecties'
 import { lme6QuestionsMap } from '../questions/lme6-voorbereiding-vow-milt'
 import { lme1QuestionsMap } from '../questions/lme1-parasitaire-verwekkers-gastro-enteritis'
@@ -1955,6 +1956,117 @@ export const practiceQuestionsCourseStructure = {
       },
     ],
   },
+  blok6: {
+    name: "Blok 6",
+    weeks: [
+      {
+        name: "Week 1",
+        cases: [
+          { name: "Casus 1: Tarzan en Jane krijgen pillen", lmes: [
+            { id: "blok6-week1-casus1-farmacodynamiek", name: "Farmacodynamiek", type: "simple" },
+            { id: "blok6-week1-casus1-farmacokinetiek", name: "Farmacokinetiek", type: "simple" },
+            { id: "blok6-week1-casus1-lichaamscompartimenten", name: "Lichaamscompartimenten", type: "simple" },
+            { id: "blok6-week1-casus1-voorbereiding-vow-farmacologische-regulatie-azs-deel-1-2", name: "Voorbereiding VOW Farmacologische Regulatie AZS deel 1&2", type: "simple" },
+          ] },
+          { name: "Casus 2: De magische wereld van glomeruli en tubuli en de regulatie van GFR", lmes: [
+            { id: "blok6-week1-casus2-e-health-thuismonitoren", name: "E-health - thuismonitoren", type: "simple" },
+            { id: "blok6-week1-casus2-inleiding-in-de-nierfysiologie", name: "Inleiding in de nierfysiologie", type: "simple" },
+            { id: "blok6-week1-casus2-regulatie-van-de-glomerulaire-filtratie-gfr", name: "Regulatie van de glomerulaire filtratie (GFR)", type: "simple" },
+            { id: "blok6-week1-casus2-regulatie-van-het-raas-systeem-en-de-bloeddruk", name: "Regulatie van het RAAS-systeem en de bloeddruk", type: "simple" },
+            { id: "blok6-week1-casus2-voorbereiding-vow-argumenteren-kun-je-leren-1", name: "Voorbereiding VOW Argumenteren kun je leren 1", type: "simple" },
+          ] },
+        ]
+      },
+      {
+        name: "Week 2",
+        cases: [
+          { name: "Casus 3: Wat een elektrolytstoornis!", lmes: [
+            { id: "blok6-week2-casus3-aanvullende-functies-van-de-niertubulus", name: "Aanvullende functies van de niertubulus", type: "simple" },
+            { id: "blok6-week2-casus3-e-health-thuismonitoring-2", name: "E-health Thuismonitoring 2", type: "simple" },
+            { id: "blok6-week2-casus3-homeostase-van-natrium-kalium-en-zuur-base", name: "Homeostase van natrium, kalium en zuur-base", type: "simple" },
+            { id: "blok6-week2-casus3-introductie-homeostase", name: "Introductie homeostase", type: "simple" },
+            { id: "blok6-week2-casus3-regulatie-van-de-kalium-balans", name: "Regulatie van de kalium balans", type: "simple" },
+            { id: "blok6-week2-casus3-regulatie-van-de-natrium-en-waterbalans", name: "Regulatie van de natrium- en waterbalans", type: "simple" },
+            { id: "blok6-week2-casus3-regulatie-van-de-zuur-base-balans", name: "Regulatie van de zuur-base balans", type: "simple" },
+          ] },
+          { name: "Casus 4: Patiënt met dikke voeten en urine-afwijkingen", lmes: [
+            { id: "blok6-week2-casus4-anatomie-van-het-urogenitaal-stelsel", name: "Anatomie van het urogenitaal stelsel", type: "simple" },
+            { id: "blok6-week2-casus4-diagnostiek-in-de-nefrologie", name: "Diagnostiek in de nefrologie", type: "simple" },
+            { id: "blok6-week2-casus4-e-health-wearables", name: "E-health wearables", type: "simple" },
+            { id: "blok6-week2-casus4-hematurie", name: "Hematurie", type: "simple" },
+            { id: "blok6-week2-casus4-proteinurie", name: "Proteinurie", type: "simple" },
+            { id: "blok6-week2-casus4-proteinurie-en-hematurie", name: "Proteinurie en hematurie", type: "simple" },
+            { id: "blok6-week2-casus4-voorbereiding-vow-diagnostiek-bij-acute-nierschade", name: "Voorbereiding VOW Diagnostiek bij acute nierschade", type: "simple" },
+          ] },
+        ]
+      },
+      {
+        name: "Week 3",
+        cases: [
+          { name: "Casus 5: De schrik slaat je om het hart", lmes: [
+            { id: "blok6-week3-casus5-achd-adult-congenital-heart-disease", name: "ACHD (Adult Congenital Heart Disease)", type: "simple" },
+            { id: "blok6-week3-casus5-anatomie-van-het-hart", name: "Anatomie van het hart", type: "simple" },
+            { id: "blok6-week3-casus5-basis-ecg", name: "Basis ECG", type: "simple" },
+            { id: "blok6-week3-casus5-de-normale-bouw-en-werking-van-het-hart", name: "De normale bouw en werking van het hart", type: "simple" },
+            { id: "blok6-week3-casus5-farmacologie", name: "Farmacologie", type: "simple" },
+            { id: "blok6-week3-casus5-het-blauwe-kind", name: "Het blauwe kind", type: "simple" },
+            { id: "blok6-week3-casus5-voorbereiding-vow-pathologie-van-het-hart-en-bloedvaten", name: "Voorbereiding VOW pathologie van het hart en bloedvaten", type: "simple" },
+          ] },
+          { name: "Casus 6: Een patiënt met een ruis", lmes: [
+            { id: "blok6-week3-casus6-cardiale-beeldvorming", name: "Cardiale beeldvorming", type: "simple" },
+            { id: "blok6-week3-casus6-het-lichaam-in-beeld", name: "Het lichaam in beeld", type: "simple" },
+            { id: "blok6-week3-casus6-mri-en-pet-scan-benignemaligne", name: "MRI en PET-scan Benignemaligne", type: "simple" },
+          ] },
+        ]
+      },
+      {
+        name: "Week 4",
+        cases: [
+          { name: "Casus 7: Ademnood", lmes: [
+            { id: "blok6-week4-casus7-pathofysiologie-van-astma-en-behandeling", name: "Pathofysiologie van astma en behandeling", type: "simple" },
+            { id: "blok6-week4-casus7-pathofysiologie-van-copd-en-longemfyseem-en-behandeling", name: "Pathofysiologie van COPD en longemfyseem en behandeling", type: "simple" },
+            { id: "blok6-week4-casus7-voorbereiding-vow-spirometrie-longmechanica-en-longafbeeldingen", name: "Voorbereiding VOW Spirometrie, longmechanica en longafbeeldingen", type: "simple" },
+          ] },
+          { name: "Casus 8: Pijn en benauwd", lmes: [
+            { id: "blok6-week4-casus8-circulatie-van-de-longen", name: "Circulatie van de longen", type: "simple" },
+            { id: "blok6-week4-casus8-longembolien", name: "Longemboliën", type: "simple" },
+            { id: "blok6-week4-casus8-pneumothorax", name: "Pneumothorax", type: "simple" },
+            { id: "blok6-week4-casus8-voorbereiding-vow-anatomie-van-de-luchtwegen-en-circulatie", name: "Voorbereiding VOW Anatomie van de luchtwegen en circulatie", type: "simple" },
+          ] },
+        ]
+      },
+      {
+        name: "Week 5",
+        cases: [
+          { name: "Casus 9: Het falend hart", lmes: [
+            { id: "blok6-week5-casus9-hartfalen-aanpakken-van-leefregels-tot-chirurgie", name: "Hartfalen aanpakken! Van leefregels tot chirurgie", type: "simple" },
+            { id: "blok6-week5-casus9-hartfalen-van-symptoom-naar-diagnose", name: "Hartfalen Van symptoom naar diagnose", type: "simple" },
+            { id: "blok6-week5-casus9-het-falende-hart-mechanismen-en-gevolgen", name: "Het Falende Hart Mechanismen en Gevolgen", type: "simple" },
+          ] },
+          { name: "Casus 10: Kortademigheid bij inspanning", lmes: [
+            { id: "blok6-week5-casus10-beroepsgebonden-aandoeningen", name: "Beroepsgebonden aandoeningen", type: "simple" },
+            { id: "blok6-week5-casus10-diffusie-en-diffusiemeting", name: "Diffusie en diffusiemeting", type: "simple" },
+            { id: "blok6-week5-casus10-hypersensitivity-pneumonitis-hpeaa", name: "Hypersensitivity pneumonitis (HPEAA)", type: "simple" },
+            { id: "blok6-week5-casus10-interstitial-lung-disease", name: "Interstitial Lung Disease", type: "simple" },
+            { id: "blok6-week5-casus10-kennis-van-radiologie-hrct", name: "Kennis van radiologie HRCT", type: "simple" },
+            { id: "blok6-week5-casus10-longtransplantatie", name: "Longtransplantatie", type: "simple" },
+            { id: "blok6-week5-casus10-participatiewetgeving", name: "Participatiewetgeving", type: "simple" },
+            { id: "blok6-week5-casus10-sarcoidose", name: "Sarcoïdose", type: "simple" },
+            { id: "blok6-week5-casus10-voorbereiding-vow-arbo-casuistiek", name: "Voorbereiding VOW Arbo casuïstiek", type: "simple" },
+          ] },
+        ]
+      },
+      {
+        name: "Week 6",
+        cases: [
+          { name: "Casus 11: Uitgeput!", lmes: [
+            { id: "blok6-week6-casus11-stoornissen-in-zuur-base-balans", name: "Stoornissen in zuur-base balans", type: "simple" },
+          ] },
+        ]
+      },
+    ]
+  },
+
   sskindgyn: {
     name: "Kindergeneeskunde & Gynaecologie",
     weeks: [
@@ -2198,6 +2310,7 @@ export function getLmeQuestionCount(lmeItem) {
     if (casus13Lme2QuestionsMap[lmeId]) return casus13Lme2QuestionsMap[lmeId]
     if (SSKINDGYN_QUESTIONS_MAP[lmeId]) return SSKINDGYN_QUESTIONS_MAP[lmeId]
     if (SSINTERNE_QUESTIONS_MAP[lmeId]) return SSINTERNE_QUESTIONS_MAP[lmeId]
+    if (BLOK6_QUESTIONS_MAP[lmeId]) return BLOK6_QUESTIONS_MAP[lmeId]
     return null
   })()
   return Array.isArray(q) ? q.length : (q && typeof q === 'object' ? getQuestionCount(q) : 0)
@@ -2398,6 +2511,7 @@ export function getPracticeQuestionsForLme(lmeParam) {
   if (casus13Lme2QuestionsMap[lmeParam]) return casus13Lme2QuestionsMap[lmeParam]
   if (SSKINDGYN_QUESTIONS_MAP[lmeParam]) return SSKINDGYN_QUESTIONS_MAP[lmeParam]
   if (SSINTERNE_QUESTIONS_MAP[lmeParam]) return SSINTERNE_QUESTIONS_MAP[lmeParam]
+  if (BLOK6_QUESTIONS_MAP[lmeParam]) return BLOK6_QUESTIONS_MAP[lmeParam]
   const casusCbQ = getCasusbijeenkomstQuestions(lmeParam)
   if (casusCbQ) return casusCbQ
 

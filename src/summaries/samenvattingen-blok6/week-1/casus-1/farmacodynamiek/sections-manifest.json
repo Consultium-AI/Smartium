@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectReceptorfarmacologie",
+    "title": "Receptorfarmacologie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectLigandbindingEnReceptorbezetting",
+    "title": "Ligandbinding en receptorbezetting",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectPotentieEnEffectiviteit",
+    "title": "Potentie en effectiviteit",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAntagonisten",
+    "title": "Antagonisten",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSchildplotEnCompetitiefReversibelAnt",
+    "title": "Schildplot en competitief reversibel antagonisme",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

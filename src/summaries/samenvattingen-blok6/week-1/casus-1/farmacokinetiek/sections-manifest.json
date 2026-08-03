@@ -1,0 +1,67 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectFarmacologieEnFarmacokinetiek",
+    "title": "Farmacologie en farmacokinetiek",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectAdmeInHetKort",
+    "title": "ADME in het kort",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAbsorptie",
+    "title": "Absorptie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDistributie",
+    "title": "Distributie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectMetabolisme",
+    "title": "Metabolisme",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectEliminatie",
+    "title": "Eliminatie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectInvloedVanToedieningsvormen",
+    "title": "Invloed van toedieningsvormen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectInvloedVanLeverfunctiestoornissenOpA",
+    "title": "Invloed van leverfunctiestoornissen op ADME",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectInvloedVanNierfunctiestoornissenOpAd",
+    "title": "Invloed van nierfunctiestoornissen op ADME",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectMorbideObesitasEnAdme",
+    "title": "Morbide obesitas en ADME",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvattendeVergelijkingVanDeDrieSi",
+    "title": "Samenvattende vergelijking van de drie situaties",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-13"
+  }
+]

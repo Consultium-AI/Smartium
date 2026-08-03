@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectCtThoraxBasisVanBeeldvorming",
+    "title": "CT-thorax: basis van beeldvorming",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHoeWordtEenCtThoraxGemaakt",
+    "title": "Hoe wordt een CT-thorax gemaakt?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAnatomieOpCtThorax",
+    "title": "Anatomie op CT-thorax",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHrctHighResolutionComputedTomography",
+    "title": "HRCT: High Resolution Computed Tomography",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeoordelingVanLongenOpCt",
+    "title": "Beoordeling van longen op CT",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectWaarZittenDeAfwijkingen",
+    "title": "Waar zitten de afwijkingen?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectSamenvattendLerenKijkenNaarEenCtVanD",
+    "title": "Samenvattend leren kijken naar een CT van de thorax",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

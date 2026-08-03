@@ -1,0 +1,97 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectGeneesmiddelenEnLichaamscompartiment",
+    "title": "Geneesmiddelen en lichaamscompartimenten",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWaaromLichaamsbouwBelangrijkIs",
+    "title": "Waarom lichaamsbouw belangrijk is",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVerdelingOverCompartimentenEnDistrib",
+    "title": "Verdeling over compartimenten en distributievolume",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectTabel1VerbandTussenEigenschappenEnDi",
+    "title": "Tabel 1. Verband tussen eigenschappen en distributievolume",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVoorbeeldenVanGeneesmiddelen",
+    "title": "Voorbeelden van geneesmiddelen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectWaarZitHetGeneesmiddelDanVooral",
+    "title": "Waar zit het geneesmiddel dan vooral?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectTabel3VerdelingVanGeneesmiddelenOver",
+    "title": "Tabel 3. Verdeling van geneesmiddelen over compartimenten",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectPlasmaconcentratiecurvesNaToediening",
+    "title": "Plasmaconcentratiecurves na toediening",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectIntraveneusVersusOraal",
+    "title": "Intraveneus versus oraal",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectVerdelingOverMeerdereCompartimenten",
+    "title": "Verdeling over meerdere compartimenten",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectWaaromIsDatBelangrijk",
+    "title": "Waarom is dat belangrijk?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectInvloedVanLichaamsgewichtEnObesitas",
+    "title": "Invloed van lichaamsgewicht en obesitas",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectWaaromVerandertDeHalfwaardetijd",
+    "title": "Waarom verandert de halfwaardetijd?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectEffectVanLeeftijd",
+    "title": "Effect van leeftijd",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectEffectVanGeneesmiddeleninteracties",
+    "title": "Effect van geneesmiddeleninteracties",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectTabel5EffectVanFactorenOpCmaxT12EnVd",
+    "title": "Tabel 5. Effect van factoren op Cmax, T1/2 en Vd",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectSamenvattendBeeldVanDeCurve",
+    "title": "Samenvattend beeld van de curve",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-19"
+  }
+]

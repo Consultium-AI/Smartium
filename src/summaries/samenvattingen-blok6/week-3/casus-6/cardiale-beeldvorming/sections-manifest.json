@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBeeldvormingVanHetHartWaaromIsDitBel",
+    "title": "Beeldvorming van het hart: waarom is dit belangrijk?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWatIsCardialeCt",
+    "title": "Wat is cardiale CT?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeWordtCardialeCtGescand",
+    "title": "Hoe wordt cardiale CT gescand?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWanneerGebruikJeCardialeCtWelEnWanne",
+    "title": "Wanneer gebruik je cardiale CT wel en wanneer niet?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVoorEnNadelenVanCardialeCt",
+    "title": "Voor- en nadelen van cardiale CT",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectAnatomieVanDeCoronairenOpCt",
+    "title": "Anatomie van de coronairen op CT",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectCtKalkscoreWatMeetJeHiermee",
+    "title": "CT-kalkscore: wat meet je hiermee?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCtaCoronairenWatKunJeErmee",
+    "title": "CTA coronairen: wat kun je ermee?",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBeoordeelbaarheidVanDeCoronairen",
+    "title": "Beoordeelbaarheid van de coronairen",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectKlinischeVoorbeeldenVanCta",
+    "title": "Klinische voorbeelden van CTA",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

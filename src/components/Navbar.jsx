@@ -38,6 +38,7 @@ const navItems = [
         { name: 'Blok 5', href: '/summary-blok5' },
       ]},
       { label: 'Ba2', links: [
+        { name: 'Blok 6', href: '/summary-blok6' },
         { name: 'Blok 9', href: '/summary-blok9' },
         { name: 'Blok 10', href: '/summary-blok10' },
       ]},
@@ -58,6 +59,7 @@ const navItems = [
         { name: 'Blok 5', href: '/oefenvragen-blok5' },
       ]},
       { label: 'Ba2', links: [
+        { name: 'Blok 6', href: '/oefenvragen-blok6' },
         { name: 'Blok 9', href: '/oefenvragen-blok9' },
         { name: 'Blok 10', href: '/oefenvragen-blok10' },
       ]},
@@ -95,6 +97,7 @@ const navItems = [
         { name: 'Blok 5', href: '/flashcards-blok5' },
       ]},
       { label: 'Ba2', links: [
+        { name: 'Blok 6', href: '/flashcards-blok6' },
         { name: 'Blok 9', href: '/flashcards-blok9' },
         { name: 'Blok 10', href: '/flashcards-blok10' },
       ]},

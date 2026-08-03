@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectGlomerulaireFiltratieHetBasisprincip",
+    "title": "Glomerulaire filtratie: het basisprincipe",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectRenaleBloeddoorstromingEnAutoregulat",
+    "title": "Renale bloeddoorstroming en autoregulatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHormonaleRegulatieVanDeGfr",
+    "title": "Hormonale regulatie van de GFR",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectMedicatieEnKlinischeGevolgen",
+    "title": "Medicatie en klinische gevolgen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectWaaromDezeRegulatieBelangrijkIs",
+    "title": "Waarom deze regulatie belangrijk is",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

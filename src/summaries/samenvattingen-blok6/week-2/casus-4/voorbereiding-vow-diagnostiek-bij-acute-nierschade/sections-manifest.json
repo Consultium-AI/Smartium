@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectEchografieInDeNefrologie",
+    "title": "Echografie in de nefrologie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBelangrijksteIndicatiesVoorEenNierEc",
+    "title": "Belangrijkste indicaties voor een nier-echo",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWatKunJeMetEenEchoWelEnNietBeantwoor",
+    "title": "Wat kun je met een echo wel en niet beantwoorden?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBeperkingenEnContraIndicaties",
+    "title": "Beperkingen en contra-indicaties",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPlaatsVanEchografieInHetDiagnostisch",
+    "title": "Plaats van echografie in het diagnostisch traject",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCasusAcuteNierschadeBijEenVrouwMetMa",
+    "title": "Casus: acute nierschade bij een vrouw met maligniteitsvoorgeschiedenis",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWatAlsDeEchoGeenAfwijkingenLaatZien",
+    "title": "Wat als de echo geen afwijkingen laat zien?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectReflectieOpDeKeuzeVoorEchografie",
+    "title": "Reflectie op de keuze voor echografie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

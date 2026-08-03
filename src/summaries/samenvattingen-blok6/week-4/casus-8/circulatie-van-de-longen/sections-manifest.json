@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeTweeCirculatiesInDeLongen",
+    "title": "De twee circulaties in de longen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeBronchialeCirculatie",
+    "title": "De bronchiale circulatie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDePulmonaleCirculatie",
+    "title": "De pulmonale circulatie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDeRouteVanHetBloedDoorHetHartEnDeLon",
+    "title": "De route van het bloed door het hart en de longen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectPulmonaleEnBronchialeCirculatieNietH",
+    "title": "Pulmonale en bronchiale circulatie: niet hetzelfde",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDeFysiologischeShunt",
+    "title": "De fysiologische shunt",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBelangrijkeBegrippenOmTeOnthouden",
+    "title": "Belangrijke begrippen om te onthouden",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvattendBeeld",
+    "title": "Samenvattend beeld",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

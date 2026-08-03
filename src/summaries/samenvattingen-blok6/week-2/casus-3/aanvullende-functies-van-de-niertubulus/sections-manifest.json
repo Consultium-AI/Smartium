@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeNierAlsOrgaanMetMeerdereFuncties",
+    "title": "De nier als orgaan met meerdere functies",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEpoProductieInDeNier",
+    "title": "EPO-productie in de nier",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectCalciumfosfaathuishouding",
+    "title": "Calciumfosfaathuishouding",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectMagnesiumhuishouding",
+    "title": "Magnesiumhuishouding",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSamenvattendVerbandTussenDeDrieFunct",
+    "title": "Samenvattend verband tussen de drie functies",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

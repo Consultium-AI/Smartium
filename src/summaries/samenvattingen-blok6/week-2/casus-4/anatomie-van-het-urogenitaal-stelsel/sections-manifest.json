@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeNierenEnHunLigging",
+    "title": "De nieren en hun ligging",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOpbouwVanDeNier",
+    "title": "Opbouw van de nier",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectBloedvoorzieningVanDeNier",
+    "title": "Bloedvoorziening van de nier",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDeUreter",
+    "title": "De ureter",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVesicaUrinariaDeBlaas",
+    "title": "Vesica urinaria: de blaas",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLiggingVanDeBlaasTenOpzichteVanAnder",
+    "title": "Ligging van de blaas ten opzichte van andere organen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeUrethraEnDeSluitspier",
+    "title": "De urethra en de sluitspier",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectOverzichtVanDeBelangrijksteKernpunte",
+    "title": "Overzicht van de belangrijkste kernpunten",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

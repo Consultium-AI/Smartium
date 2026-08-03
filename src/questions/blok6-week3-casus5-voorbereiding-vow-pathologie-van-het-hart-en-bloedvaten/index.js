@@ -1,0 +1,11 @@
+import { blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart01 } from './Blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart01'
+import { blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart02 } from './Blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart02'
+import { blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart03 } from './Blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart03'
+
+export const blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsMap = {
+  'blok6-week3-casus5-voorbereiding-vow-pathologie-van-het-hart-en-bloedvaten': [
+    ...blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart01,
+    ...blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart02,
+    ...blok6Week3Casus5VoorbereidingVowPathologieVanHetHartEnBloedvatenQuestionsPart03,
+  ],
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectOnderdelenVanHetHart",
+    "title": "Onderdelen van het hart",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectCoronairvatenEnBloedvoorzieningVanHe",
+    "title": "Coronairvaten en bloedvoorziening van het hart",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHartskeletEnVentielvlak",
+    "title": "Hartskelet en ventielvlak",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPrikkelgeleidingssysteem",
+    "title": "Prikkelgeleidingssysteem",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectInnervatieVanHetHart",
+    "title": "Innervatie van het hart",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLiggingVanHetHartInDeThorax",
+    "title": "Ligging van het hart in de thorax",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectPericardiumEnPericardholte",
+    "title": "Pericardium en pericardholte",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAnatomieInDoorsnedesEnKlinischeBeeld",
+    "title": "Anatomie in doorsnedes en klinische beelden",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

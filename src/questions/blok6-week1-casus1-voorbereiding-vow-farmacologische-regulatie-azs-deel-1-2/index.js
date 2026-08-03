@@ -1,0 +1,11 @@
+import { blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart01 } from './Blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart01'
+import { blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart02 } from './Blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart02'
+import { blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart03 } from './Blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart03'
+
+export const blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsMap = {
+  'blok6-week1-casus1-voorbereiding-vow-farmacologische-regulatie-azs-deel-1-2': [
+    ...blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart01,
+    ...blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart02,
+    ...blok6Week1Casus1VoorbereidingVowFarmacologischeRegulatieAzsDeel12QuestionsPart03,
+  ],
+}

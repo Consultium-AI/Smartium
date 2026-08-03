@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWatZijnBeroepsgebondenInter",
+    "title": "Inleiding: wat zijn beroepsgebonden interstitiële longaandoeningen?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHoeVaakKomtHetVoor",
+    "title": "Hoe vaak komt het voor?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectIndelingVanBeroepsgebondenIld",
+    "title": "Indeling van beroepsgebonden ILD",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectEpidemiologieEnKlinischeRelevantie",
+    "title": "Epidemiologie en klinische relevantie",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDiagnostischeAanpak",
+    "title": "Diagnostische aanpak",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectPreventie",
+    "title": "Preventie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

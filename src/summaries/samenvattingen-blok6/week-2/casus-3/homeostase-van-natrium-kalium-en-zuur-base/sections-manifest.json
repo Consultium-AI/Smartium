@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectIntegratieVanNatriumKaliumEnZuurBase",
+    "title": "Integratie van natrium, kalium en zuur-base",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHyperkaliMieEnMetaboleAcidoseBijChro",
+    "title": "Hyperkaliëmie en metabole acidose bij chronische nierschade",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHyponatriMieHypokaliMieEnMetaboleAlk",
+    "title": "Hyponatriëmie, hypokaliëmie en metabole alkalose door lisdiuretica",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHypernatriMieHyperkaliMieEnKetoacido",
+    "title": "Hypernatriëmie, hyperkaliëmie en ketoacidose bij insulinetekort",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeSamenhangTussenDeStoornissen",
+    "title": "De samenhang tussen de stoornissen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

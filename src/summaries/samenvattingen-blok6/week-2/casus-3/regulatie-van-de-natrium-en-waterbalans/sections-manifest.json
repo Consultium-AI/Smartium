@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectRegulatieVanDeNatriumEnWaterbalansHe",
+    "title": "Regulatie van de natrium- en waterbalans: het grote plaatje",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectNatriumbalansWaarWordtNatriumTerugge",
+    "title": "Natriumbalans: waar wordt natrium teruggeresorbeerd?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHormonenDieDeNatriumbalansSturen",
+    "title": "Hormonen die de natriumbalans sturen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWaterbalansOsmolaliteitAlsStuurmecha",
+    "title": "Waterbalans: osmolaliteit als stuurmechanisme",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectWaterreabsorptieOsmotischeGradiNtEnA",
+    "title": "Waterreabsorptie, osmotische gradiënt en ADH",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectFysischeTransportprocessenInDeNier",
+    "title": "Fysische transportprocessen in de nier",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeGlomerulaireFiltratiebarriRe",
+    "title": "De glomerulaire filtratiebarrière",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectIntegratieVanNatriumEnWaterbalans",
+    "title": "Integratie van natrium- en waterbalans",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

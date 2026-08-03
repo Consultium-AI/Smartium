@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWaaromUrineonderzoekZoNutti",
+    "title": "Inleiding: waarom urineonderzoek zo nuttig is",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHematurieZichtbaarOfMicroscopisch",
+    "title": "Hematurie: zichtbaar of microscopisch",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectRodeUrineIsNietAltijdHemoglobine",
+    "title": "Rode urine is niet altijd hemoglobine",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectKruisreactiviteitVanDeUrinstick",
+    "title": "Kruisreactiviteit van de urinstick",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectProteNurieAlbumineOfIetsAnders",
+    "title": "Proteïnurie: albumine of iets anders?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectParaproteNenEenKlassiekeInstinker",
+    "title": "Paraproteïnen: een klassieke instinker",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeGlomerulaireFiltratiebarriReWaarom",
+    "title": "De glomerulaire filtratiebarrière: waarom eiwit normaal wordt tegengehouden",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectNefrotischSyndroomWanneerDeFiltratie",
+    "title": "Nefrotisch syndroom: wanneer de filtratiebarrière lekt",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectHematurieVanNefrologischeOorsprong",
+    "title": "Hematurie van nefrologische oorsprong",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectMinderBekendeOorzakenVanHematurie",
+    "title": "Minder bekende oorzaken van hematurie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingTotHartfalen",
+    "title": "Inleiding tot hartfalen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectPrognoseEnMaatschappelijkeImpact",
+    "title": "Prognose en maatschappelijke impact",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSystolischeEnDiastolischeFunctie",
+    "title": "Systolische en diastolische functie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBelangrijkeBegrippen",
+    "title": "Belangrijke begrippen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHoeMetenWeDitInDePraktijk",
+    "title": "Hoe meten we dit in de praktijk?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSystolischeDysfunctie",
+    "title": "Systolische dysfunctie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDiastolischeDysfunctie",
+    "title": "Diastolische dysfunctie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCompensatiemechanismenBijHartfalen",
+    "title": "Compensatiemechanismen bij hartfalen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSympathischZenuwstelsel",
+    "title": "Sympathisch zenuwstelsel",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectRaas",
+    "title": "RAAS",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectNatriuretischePeptiden",
+    "title": "Natriuretische peptiden",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectPreloadEnAfterload",
+    "title": "Preload en afterload",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectForwardFailureEnBackwardFailure",
+    "title": "Forward failure en backward failure",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectBackwardFailure",
+    "title": "Backward failure",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectForwardFailure",
+    "title": "Forward failure",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectAcuutEnChronischHartfalen",
+    "title": "Acuut en chronisch hartfalen",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectKlinischeIndelingOpBasisVanEjectiefr",
+    "title": "Klinische indeling op basis van ejectiefractie",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectHfref",
+    "title": "HFrEF",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectHfmref",
+    "title": "HFmrEF",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectHfpef",
+    "title": "HFpEF",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-22"
+  }
+]

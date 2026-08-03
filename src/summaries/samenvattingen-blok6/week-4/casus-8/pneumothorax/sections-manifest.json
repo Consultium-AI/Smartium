@@ -1,0 +1,77 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsEenPneumothorax",
+    "title": "Wat is een pneumothorax?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectKlachtenEnLichamelijkOnderzoek",
+    "title": "Klachten en lichamelijk onderzoek",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectOorzakenVanEenPneumothorax",
+    "title": "Oorzaken van een pneumothorax",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPrimairSpontanePneumothorax",
+    "title": "Primair spontane pneumothorax",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSecundairSpontanePneumothorax",
+    "title": "Secundair spontane pneumothorax",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectEpidemiologie",
+    "title": "Epidemiologie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDiagnostiekBeeldvorming",
+    "title": "Diagnostiek: beeldvorming",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHerkennenOpDeXThorax",
+    "title": "Herkennen op de X-thorax",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBehandelingVanPneumothorax",
+    "title": "Behandeling van pneumothorax",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDrainageOpnameEnVerdereBehandeling",
+    "title": "Drainage, opname en verdere behandeling",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectRecidiefEnPreventie",
+    "title": "Recidief en preventie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectLeefstijladviezen",
+    "title": "Leefstijladviezen",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectKlinischVoorbeeld",
+    "title": "Klinisch voorbeeld",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-15"
+  }
+]

@@ -1,0 +1,11 @@
+import { blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart01 } from './Blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart01'
+import { blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart02 } from './Blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart02'
+import { blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart03 } from './Blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart03'
+
+export const blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsMap = {
+  'blok6-week4-casus7-pathofysiologie-van-copd-en-longemfyseem-en-behandeling': [
+    ...blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart01,
+    ...blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart02,
+    ...blok6Week4Casus7PathofysiologieVanCopdEnLongemfyseemEnBehandelingQuestionsPart03,
+  ],
+}

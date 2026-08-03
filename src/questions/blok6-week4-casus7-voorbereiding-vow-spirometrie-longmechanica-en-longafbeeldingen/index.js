@@ -1,0 +1,11 @@
+import { blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart01 } from './Blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart01'
+import { blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart02 } from './Blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart02'
+import { blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart03 } from './Blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart03'
+
+export const blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsMap = {
+  'blok6-week4-casus7-voorbereiding-vow-spirometrie-longmechanica-en-longafbeeldingen': [
+    ...blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart01,
+    ...blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart02,
+    ...blok6Week4Casus7VoorbereidingVowSpirometrieLongmechanicaEnLongafbeeldingenQuestionsPart03,
+  ],
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectLongtransplantatieWatIsHetEnWaaromGe",
+    "title": "Longtransplantatie: wat is het en waarom gebeurt het?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWelkeZiektenKunnenAanleidingZijn",
+    "title": "Welke ziekten kunnen aanleiding zijn?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWanneerKomtEenPatiNtInAanmerking",
+    "title": "Wanneer komt een patiënt in aanmerking?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVerwijzenScreenenEnOpDeWachtlijstKom",
+    "title": "Verwijzen, screenen en op de wachtlijst komen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDoelVanDeTransplantatie",
+    "title": "Doel van de transplantatie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectContraIndicatiesWanneerKanHetNiet",
+    "title": "Contra-indicaties: wanneer kan het niet?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectAbsoluteContraIndicaties",
+    "title": "Absolute contra-indicaties",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectRelatieveContraIndicaties",
+    "title": "Relatieve contra-indicaties",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectCasusdenkenVanKlachtenNaarTransplant",
+    "title": "Casusdenken: van klachten naar transplantatie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWachtenOpEenDonorlong",
+    "title": "Wachten op een donorlong",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectZiekOfOpgenomenZijnBetekentNietAutom",
+    "title": "Ziek of opgenomen zijn betekent niet automatisch dat transplantatie niet meer kan",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectLongaanbodEnDeOperatie",
+    "title": "Longaanbod en de operatie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectAcceptatieEnAfstotingVanHetOrgaan",
+    "title": "Acceptatie en afstoting van het orgaan",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectImmunosuppressie",
+    "title": "Immunosuppressie",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectAcuteEnChronischeRejectie",
+    "title": "Acute en chronische rejectie",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectUitkomstenNaLongtransplantatie",
+    "title": "Uitkomsten na longtransplantatie",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectOverleving",
+    "title": "Overleving",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectOorzakenVanOverlijden",
+    "title": "Oorzaken van overlijden",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectComplicaties",
+    "title": "Complicaties",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectVroegeEnOperatieveComplicaties",
+    "title": "Vroege en operatieve complicaties",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectInfectieuzeComplicaties",
+    "title": "Infectieuze complicaties",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectMedicamenteuzeComplicaties",
+    "title": "Medicamenteuze complicaties",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectNieuweTechniekenEvlp",
+    "title": "Nieuwe technieken: EVLP",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectWatIsEvlp",
+    "title": "Wat is EVLP?",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-26"
+  }
+]

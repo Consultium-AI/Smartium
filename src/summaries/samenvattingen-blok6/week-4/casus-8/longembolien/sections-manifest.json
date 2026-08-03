@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectPathofysiologieVanLongembolieN",
+    "title": "Pathofysiologie van longembolieën",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEpidemiologie",
+    "title": "Epidemiologie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectKlinischePresentatieEnRisicofactoren",
+    "title": "Klinische presentatie en risicofactoren",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectDiagnostiek",
+    "title": "Diagnostiek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBehandeling",
+    "title": "Behandeling",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHestiaScore",
+    "title": "Hestia-score",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeToepassing",
+    "title": "Klinische toepassing",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

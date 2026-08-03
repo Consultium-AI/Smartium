@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectOverzichtVanHetAdemhalingsapparaat",
+    "title": "Overzicht van het ademhalingsapparaat",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectLarynxLiggingEnKlinischBelang",
+    "title": "Larynx: ligging en klinisch belang",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectTracheaBouwEnFunctie",
+    "title": "Trachea: bouw en functie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectRelatieVanTracheaOesophagusEnZenuwen",
+    "title": "Relatie van trachea, oesophagus en zenuwen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBronchiaalboomEnLongsegmenten",
+    "title": "Bronchiaalboom en longsegmenten",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBloedvoorzieningVanDeLongen",
+    "title": "Bloedvoorziening van de longen",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHilumVanDeLong",
+    "title": "Hilum van de long",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDeThoraxVormOpeningEnBescherming",
+    "title": "De thorax: vorm, opening en bescherming",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDiafragmaEnAdemhaling",
+    "title": "Diafragma en ademhaling",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectPleuraEnPleuraholte",
+    "title": "Pleura en pleuraholte",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectMediastinumZenuwenEnGroteVaten",
+    "title": "Mediastinum, zenuwen en grote vaten",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectAnatomischeDoorsnedenEnCtInterpretat",
+    "title": "Anatomische doorsneden en CT-interpretatie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

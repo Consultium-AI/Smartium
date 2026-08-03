@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWearablesVanMetenNaarInterventie",
+    "title": "Wearables: van meten naar interventie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeCommerciLeMarktVanWearables",
+    "title": "De commerciële markt van wearables",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectValiditeitVanWearables",
+    "title": "Validiteit van wearables",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectFitnessTrackersEnActiviteit",
+    "title": "Fitness-trackers en activiteit",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDetectieVanAtriumfibrillerenMetWeara",
+    "title": "Detectie van atriumfibrilleren met wearables",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSensitiviteitEnPositiefPredictieveWa",
+    "title": "Sensitiviteit en positief predictieve waarde",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeBetekenisVanAfDetectie",
+    "title": "Klinische betekenis van AF-detectie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectKritischBeoordelenVanLiteratuur",
+    "title": "Kritisch beoordelen van literatuur",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectThuismonitoringWatIsHetEnWaaromWordt",
+    "title": "Thuismonitoring: wat is het en waarom wordt het ingezet?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectVoorbeeldenVanThuismonitoring",
+    "title": "Voorbeelden van thuismonitoring",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectWerktThuismonitoring",
+    "title": "Werkt thuismonitoring?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectInvasiefMonitoren",
+    "title": "Invasief monitoren",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectHospitalAtHomeZorgThuisAlsAlternatie",
+    "title": "Hospital at Home: zorg thuis als alternatief voor opname",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectVirtueelZiekenhuisMeerDanAlleenMeten",
+    "title": "Virtueel ziekenhuis: meer dan alleen meten",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWatZeggenDeKostenEnDeHaalbaarheid",
+    "title": "Wat zeggen de kosten en de haalbaarheid?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectPatiNtervaringenMetThuismonitoring",
+    "title": "Patiëntervaringen met thuismonitoring",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectAanbevelingenEnImplementatie",
+    "title": "Aanbevelingen en implementatie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

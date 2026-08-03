@@ -1,0 +1,132 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectInleidingWatIsAchd",
+    "title": "Inleiding: wat is ACHD?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWaaromIsDitKlinischBelangrijk",
+    "title": "Waarom is dit klinisch belangrijk?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectEmbryonaleOntwikkelingVanHetHart",
+    "title": "Embryonale ontwikkeling van het hart",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectOorzakenVanAangeborenHartafwijkingen",
+    "title": "Oorzaken van aangeboren hartafwijkingen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectEpidemiologieWelkeAfwijkingenKomenHe",
+    "title": "Epidemiologie: welke afwijkingen komen het vaakst voor?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectMeerVolwassenenMetAchd",
+    "title": "Meer volwassenen met ACHD",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectVentrikelseptumdefectVsd",
+    "title": "Ventrikelseptumdefect (VSD)",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHemodynamischeEffectenVanEenVsd",
+    "title": "Hemodynamische effecten van een VSD",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBehandelingVanEenVsd",
+    "title": "Behandeling van een VSD",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectAtriumseptumdefectAsd",
+    "title": "Atriumseptumdefect (ASD)",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectAnatomischeTypenAsd",
+    "title": "Anatomische typen ASD",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectHemodynamischeEffectenVanEenAsd",
+    "title": "Hemodynamische effecten van een ASD",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectBehandelingVanEenAsd",
+    "title": "Behandeling van een ASD",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectOpenDuctusBotalliPda",
+    "title": "Open ductus Botalli / PDA",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectHemodynamischeEffectenVanEenPda",
+    "title": "Hemodynamische effecten van een PDA",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectBehandelingVanEenPda",
+    "title": "Behandeling van een PDA",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectTetralogieVanFallot",
+    "title": "Tetralogie van Fallot",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectWaaromGeeftDitCyanose",
+    "title": "Waarom geeft dit cyanose?",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectBehandelingVanTetralogieVanFallot",
+    "title": "Behandeling van tetralogie van Fallot",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectLangeTermijnComplicatiesNaCorrectie",
+    "title": "Lange termijn complicaties na correctie",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectLevenMetEenAangeborenHartafwijkingLa",
+    "title": "Leven met een aangeboren hartafwijking: late complicaties",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectWelkeLateComplicatiesKomenVoor",
+    "title": "Welke late complicaties komen voor?",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectKlinischRedenerenWanneerWordtEenAfwi",
+    "title": "Klinisch redeneren: wanneer wordt een afwijking ontdekt?",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekWelkBeeldPastBij",
+    "title": "Lichamelijk onderzoek: welk beeld past bij welke afwijking?",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-26"
+  }
+]

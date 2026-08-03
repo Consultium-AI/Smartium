@@ -1,0 +1,47 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWaaromBehandelenWeHartfalen",
+    "title": "Waarom behandelen we hartfalen?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeVierMedicamenteuzePijlersBijHfref",
+    "title": "De vier medicamenteuze pijlers bij HFrEF",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeBouwJeHfrefMedicatieOp",
+    "title": "Hoe bouw je HFrEF-medicatie op?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBehandelingVanAcuutHartfalen",
+    "title": "Behandeling van acuut hartfalen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVerschillenTussenHfrefHfmrefEnHfpef",
+    "title": "Verschillen tussen HFrEF, HFmrEF en HFpEF",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLeefregelsZelfzorgEnMonitoring",
+    "title": "Leefregels, zelfzorg en monitoring",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectGeavanceerdeTherapieN",
+    "title": "Geavanceerde therapieën",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-09"
+  }
+]

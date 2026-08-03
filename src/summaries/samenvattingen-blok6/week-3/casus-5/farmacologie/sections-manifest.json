@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBTablokkersHetBasisidee",
+    "title": "Bètablokkers: het basisidee",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectFarmacodynamiekVanDeBTablokkers",
+    "title": "Farmacodynamiek van de bètablokkers",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectFarmacokinetiekVanDeBTablokkers",
+    "title": "Farmacokinetiek van de bètablokkers",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectMetoprololAtenololEnPropranololInDeP",
+    "title": "Metoprolol, atenolol en propranolol in de praktijk",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSelectiviteitVanAtenololWatLaatHetMo",
+    "title": "Selectiviteit van atenolol: wat laat het model zien?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectVergelijkingTussenAtenololEnMetoprol",
+    "title": "Vergelijking tussen atenolol en metoprolol",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeRelevantieVanBTablokkersBij",
+    "title": "Klinische relevantie van bètablokkers bij hartfalen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenvattendOverzichtVanDeBelangrijk",
+    "title": "Samenvattend overzicht van de belangrijkste verschillen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

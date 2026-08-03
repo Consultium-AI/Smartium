@@ -1,0 +1,82 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectNucleaireGeneeskundeBeeldvormingVanF",
+    "title": "Nucleaire geneeskunde: beeldvorming van functie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectFdgPetCtWatMeetJeEigenlijk",
+    "title": "FDG PET/CT: wat meet je eigenlijk?",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectCardialeVoorbereiding",
+    "title": "Cardiale voorbereiding",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHoeVerlooptEenFdgPetCt",
+    "title": "Hoe verloopt een FDG PET/CT?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectFdgPetCtInDeOncologie",
+    "title": "FDG PET/CT in de oncologie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectCasuStiekTumorInfectieEnInflammatie",
+    "title": "Casuïstiek: tumor, infectie en inflammatie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectMelanoomBeeldvormingEnStadiRing",
+    "title": "Melanoom: beeldvorming en stadiëring",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectInguinaleHerniaBasisbegrip",
+    "title": "Inguinale hernia: basisbegrip",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectEchoVanDeLiesEnVervolgonderzoek",
+    "title": "Echo van de lies en vervolgonderzoek",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectWaaromGeenFdgPetCtVoorHersenmetastas",
+    "title": "Waarom geen FDG PET/CT voor hersenmetastasen?",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectMriBeeldvormingVanWekeDelen",
+    "title": "MRI: beeldvorming van weke delen",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectMriBijMelanoomEnHersenmetastasen",
+    "title": "MRI bij melanoom en hersenmetastasen",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSentinelNodeProcedureBijMelanoom",
+    "title": "Sentinel node-procedure bij melanoom",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectValkuilenBijFdgPetCt",
+    "title": "Valkuilen bij FDG PET/CT",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-16"
+  }
+]

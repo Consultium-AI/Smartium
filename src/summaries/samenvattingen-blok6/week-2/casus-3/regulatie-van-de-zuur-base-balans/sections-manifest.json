@@ -1,0 +1,87 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBasisprincipesVanDeZuurBaseBalans",
+    "title": "Basisprincipes van de zuur-base balans",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectBuffersystemen",
+    "title": "Buffersystemen",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVluchtigeEnNietVluchtigeZuren",
+    "title": "Vluchtige en niet-vluchtige zuren",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectMechanismenVanRegulatieDeLongen",
+    "title": "Mechanismen van regulatie: de longen",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectBeperkingVanDeLongen",
+    "title": "Beperking van de longen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectMechanismenVanRegulatieDeNieren",
+    "title": "Mechanismen van regulatie: de nieren",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectEerstGefiltreerdBicarbonaatTerugwinn",
+    "title": "Eerst: gefiltreerd bicarbonaat terugwinnen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDaarnaNettoZuurUitscheidenInDeVerzam",
+    "title": "Daarna: netto zuur uitscheiden in de verzamelbuis",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectHoeWerktDeHAtpaseSamenMetAndereTrans",
+    "title": "Hoe werkt de H+-ATPase samen met andere transporters?",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectNh3Nh4HuishoudingInDeNier",
+    "title": "NH3/NH4+-huishouding in de nier",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectVormingInDeProximaleTubulus",
+    "title": "Vorming in de proximale tubulus",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectHeropnameEnGebruikVerderop",
+    "title": "Heropname en gebruik verderop",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectNettoBicarbonaatvormingEnZuurExcreti",
+    "title": "Netto bicarbonaatvorming en zuur-excretie",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvattendOverzichtVanDeNierInDeZu",
+    "title": "Samenvattend overzicht van de nier in de zuur-base balans",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectKlinischeRelevantie",
+    "title": "Klinische relevantie",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-17"
+  }
+]

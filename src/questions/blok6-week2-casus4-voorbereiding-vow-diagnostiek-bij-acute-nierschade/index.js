@@ -1,0 +1,11 @@
+import { blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart01 } from './Blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart01'
+import { blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart02 } from './Blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart02'
+import { blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart03 } from './Blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart03'
+
+export const blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsMap = {
+  'blok6-week2-casus4-voorbereiding-vow-diagnostiek-bij-acute-nierschade': [
+    ...blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart01,
+    ...blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart02,
+    ...blok6Week2Casus4VoorbereidingVowDiagnostiekBijAcuteNierschadeQuestionsPart03,
+  ],
+}

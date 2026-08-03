@@ -1,0 +1,77 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsAstma",
+    "title": "Wat is astma?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEpidemiologie",
+    "title": "Epidemiologie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeOntstaatAstma",
+    "title": "Hoe ontstaat astma?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPathofysiologieVanAstma",
+    "title": "Pathofysiologie van astma",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectFenotypenEndotyperingEnBiomarkers",
+    "title": "Fenotypen, endotypering en biomarkers",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSymptomenEnDiagnostiek",
+    "title": "Symptomen en diagnostiek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBehandelingVanAstma",
+    "title": "Behandeling van astma",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectPatiNteducatie",
+    "title": "Patiënteducatie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectTriggersVermijden",
+    "title": "Triggers vermijden",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectRokenBewegenEnGewicht",
+    "title": "Roken, bewegen en gewicht",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectMedicamenteuzeBehandeling",
+    "title": "Medicamenteuze behandeling",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectLongaanvalAstma",
+    "title": "Longaanval astma",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectErnstigAstma",
+    "title": "Ernstig astma",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-15"
+  }
+]

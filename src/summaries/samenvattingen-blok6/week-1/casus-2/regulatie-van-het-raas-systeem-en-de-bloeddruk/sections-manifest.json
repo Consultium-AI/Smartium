@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectRaasEnDeBasisVanBloeddrukregulatie",
+    "title": "RAAS en de basis van bloeddrukregulatie",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHoeHetRaasIsOpgebouwd",
+    "title": "Hoe het RAAS is opgebouwd",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectEffectenVanAngiotensineIi",
+    "title": "Effecten van angiotensine II",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectAldosteronEnDeNier",
+    "title": "Aldosteron en de nier",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectWanneerWordtHetRaasGeactiveerd",
+    "title": "Wanneer wordt het RAAS geactiveerd?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectRemmingVanHetRaasMetMedicatie",
+    "title": "Remming van het RAAS met medicatie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischeToepassingVanRaasRemming",
+    "title": "Klinische toepassing van RAAS-remming",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectNierfunctieEnRaasRemming",
+    "title": "Nierfunctie en RAAS-remming",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectCombinatiesEnRisicoS",
+    "title": "Combinaties en risico’s",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvattendOverzichtVanDeBelangrijk",
+    "title": "Samenvattend overzicht van de belangrijkste verbanden",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

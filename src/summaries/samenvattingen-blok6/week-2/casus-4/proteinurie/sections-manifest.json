@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeGlomerulaireFiltratiebarriRe",
+    "title": "De glomerulaire filtratiebarrière",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOorzakenVanProteNurie",
+    "title": "Oorzaken van proteïnurie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDiagnostiekVanProteNurie",
+    "title": "Diagnostiek van proteïnurie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectFysischeTransportprocessenInDeNier",
+    "title": "Fysische transportprocessen in de nier",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectProteNurieEnNatriumEnVolumeregulatie",
+    "title": "Proteïnurie en natrium- en volumeregulatie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectZuurBasebalansEnDeNier",
+    "title": "Zuur-basebalans en de nier",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectEpoEnDeNier",
+    "title": "EPO en de nier",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCalciumFosfaatbalansEnRenaleOsteodys",
+    "title": "Calcium-fosfaatbalans en renale osteodystrofie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

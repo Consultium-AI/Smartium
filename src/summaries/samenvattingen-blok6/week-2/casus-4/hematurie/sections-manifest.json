@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHematurieWatBetekentHetEnWaaromIsHet",
+    "title": "Hematurie: wat betekent het en waarom is het belangrijk?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDifferentiaaldiagnoseBijHematurie",
+    "title": "Differentiaaldiagnose bij hematurie",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectAanvullendOnderzoekBijHematurie",
+    "title": "Aanvullend onderzoek bij hematurie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBlaaskankerPresentatieEnDiagnostiek",
+    "title": "Blaaskanker: presentatie en diagnostiek",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectNietSpierinvasiefEnSpierinvasiefBlaa",
+    "title": "Niet-spierinvasief en spierinvasief blaaskarcinoom",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectTumorgraadEnRisicoclassificatie",
+    "title": "Tumorgraad en risicoclassificatie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBehandelingVanNietSpierinvasiefBlaas",
+    "title": "Behandeling van niet-spierinvasief blaaskarcinoom",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBehandelingVanSpierinvasiefBlaaskarc",
+    "title": "Behandeling van spierinvasief blaaskarcinoom",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectUrineafleidingEnComplicatiesOpLangeT",
+    "title": "Urineafleiding en complicaties op lange termijn",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectPrognoseEnKlinischeRelevantie",
+    "title": "Prognose en klinische relevantie",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

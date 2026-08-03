@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsCopd",
+    "title": "Wat is COPD?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectEpidemiologieEnZiektelast",
+    "title": "Epidemiologie en ziektelast",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectOntstaanVanCopdRisicofactorenEnOorza",
+    "title": "Ontstaan van COPD: risicofactoren en oorzaken",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectPathofysiologieVanCopd",
+    "title": "Pathofysiologie van COPD",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDiagnostiekVanCopd",
+    "title": "Diagnostiek van COPD",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekEnAanvullendOnde",
+    "title": "Lichamelijk onderzoek en aanvullend onderzoek",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectBehandelingVanCopd",
+    "title": "Behandeling van COPD",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBehandelingVanEenCopdExacerbatie",
+    "title": "Behandeling van een COPD-exacerbatie",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

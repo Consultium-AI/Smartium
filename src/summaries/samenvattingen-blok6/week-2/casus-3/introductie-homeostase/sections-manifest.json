@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsHomeostase",
+    "title": "Wat is homeostase?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectHomeostatischGereguleerdeVariabelen",
+    "title": "Homeostatisch gereguleerde variabelen",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectNietHomeostatischGereguleerdeVariabe",
+    "title": "Niet-homeostatisch gereguleerde variabelen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVoorbeeldenVanHetVerschil",
+    "title": "Voorbeelden van het verschil",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDe5KenmerkenVanEenHomeostatischSyste",
+    "title": "De 5 kenmerken van een homeostatisch systeem",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHetAlgemeneSchemaVanHomeostase",
+    "title": "Het algemene schema van homeostase",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectThermoregulatieAlsVoorbeeld",
+    "title": "Thermoregulatie als voorbeeld",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBloedglucoseAlsHomeostatischeVariabe",
+    "title": "Bloedglucose als homeostatische variabele",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectNietElkNegatiefFeedbacksysteemIsHome",
+    "title": "Niet elk negatief feedbacksysteem is homeostatisch",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSetpointsKunnenVeranderenKoorts",
+    "title": "Setpoints kunnen veranderen: koorts",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectHiRarchieTussenHomeostatischeVariabe",
+    "title": "Hiërarchie tussen homeostatische variabelen",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectSamenvattendOverzichtVanDeHiRarchie",
+    "title": "Samenvattend overzicht van de hiërarchie",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

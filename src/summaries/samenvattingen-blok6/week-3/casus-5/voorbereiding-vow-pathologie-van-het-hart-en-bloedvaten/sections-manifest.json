@@ -1,0 +1,52 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectBloedvatenHetAlgemeneBouwplan",
+    "title": "Bloedvaten: het algemene bouwplan",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectArteriNVanElastischNaarMusculair",
+    "title": "Arteriën: van elastisch naar musculair",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectArteriolenCapillairenEnVenulenDeMicr",
+    "title": "Arteriolen, capillairen en venulen: de microcirculatie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVenenTerugNaarHetHart",
+    "title": "Venen: terug naar het hart",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectVoedingVanDeVaatwandVasaVasorum",
+    "title": "Voeding van de vaatwand: vasa vasorum",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectKlinischeRelevantieVanDeMicrocircula",
+    "title": "Klinische relevantie van de microcirculatie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectHerkennenVanBloedvatenInHistologisch",
+    "title": "Herkennen van bloedvaten in histologische coupes",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectCasusHypertensieHarthypertrofieEnGol",
+    "title": "Casus: hypertensie, harthypertrofie en Goldblattfenomeen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-10"
+  }
+]

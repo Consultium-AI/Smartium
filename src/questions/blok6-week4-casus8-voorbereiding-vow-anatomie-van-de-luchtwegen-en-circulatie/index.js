@@ -1,0 +1,11 @@
+import { blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart01 } from './Blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart01'
+import { blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart02 } from './Blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart02'
+import { blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart03 } from './Blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart03'
+
+export const blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsMap = {
+  'blok6-week4-casus8-voorbereiding-vow-anatomie-van-de-luchtwegen-en-circulatie': [
+    ...blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart01,
+    ...blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart02,
+    ...blok6Week4Casus8VoorbereidingVowAnatomieVanDeLuchtwegenEnCirculatieQuestionsPart03,
+  ],
+}

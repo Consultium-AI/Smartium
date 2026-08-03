@@ -1,0 +1,97 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectSarcoDoseWatVoorZiekteIsHet",
+    "title": "Sarcoïdose: wat voor ziekte is het?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectGranulomenEnOntsteking",
+    "title": "Granulomen en ontsteking",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectEpidemiologieEnDemografie",
+    "title": "Epidemiologie en demografie",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectLeeftijdEnGeslacht",
+    "title": "Leeftijd en geslacht",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectEtniciteitEnErnst",
+    "title": "Etniciteit en ernst",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectGenetischeAchtergrond",
+    "title": "Genetische achtergrond",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectKlinischePresentatieWaaromIsSarcoDos",
+    "title": "Klinische presentatie: waarom is sarcoïdose zo veelzijdig?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectPulmonaleKlachten",
+    "title": "Pulmonale klachten",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectToevalligeOntdekking",
+    "title": "Toevallige ontdekking",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectRadiologischeStadiaVanSarcoDose",
+    "title": "Radiologische stadia van sarcoïdose",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectExtrapulmonaleBetrokkenheid",
+    "title": "Extrapulmonale betrokkenheid",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectHuidafwijkingenEnTypischeBeelden",
+    "title": "Huidafwijkingen en typische beelden",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectLFgrenSyndroom",
+    "title": "Löfgren-syndroom",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectDiagnostischeAanpakEnBehandeling",
+    "title": "Diagnostische aanpak en behandeling",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectWanneerIsBehandelingNodig",
+    "title": "Wanneer is behandeling nodig?",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectMedicamenteuzeBehandeling",
+    "title": "Medicamenteuze behandeling",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectIndicatiesVoorBehandelingVanExtrapul",
+    "title": "Indicaties voor behandeling van extrapulmonale sarcoïdose",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-19"
+  }
+]

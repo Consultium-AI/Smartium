@@ -1,0 +1,112 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHartfalenHetBasisidee",
+    "title": "Hartfalen: het basisidee",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectKlachtenBijHartfalen",
+    "title": "Klachten bij hartfalen",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectVeelvoorkomendeKlachten",
+    "title": "Veelvoorkomende klachten",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectTypischeEnMinderTypischeKlachten",
+    "title": "Typische en minder typische klachten",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectLichamelijkOnderzoekBijHartfalen",
+    "title": "Lichamelijk onderzoek bij hartfalen",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectVitaleFuncties",
+    "title": "Vitale functies",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectTekenenBijLichamelijkOnderzoek",
+    "title": "Tekenen bij lichamelijk onderzoek",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAcutePresentatiesVanHartfalen",
+    "title": "Acute presentaties van hartfalen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectNyhaClassificatie",
+    "title": "NYHA-classificatie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectKlinischRedenerenEnDifferentiaaldiag",
+    "title": "Klinisch redeneren en differentiaaldiagnose",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectWaaromIsKlinischRedenerenNodig",
+    "title": "Waarom is klinisch redeneren nodig?",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectPreTestProbability",
+    "title": "Pre-test probability",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectWatPleitVoorHartfalen",
+    "title": "Wat pleit voor hartfalen?",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectWatPastEerderBijEenAndereOorzaak",
+    "title": "Wat past eerder bij een andere oorzaak?",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectAanvullendeDiagnostiek",
+    "title": "Aanvullende diagnostiek",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectWaaromAanvullendOnderzoek",
+    "title": "Waarom aanvullend onderzoek?",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectNtProbnp",
+    "title": "NT-proBNP",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectEcg",
+    "title": "ECG",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectEchocardiografie",
+    "title": "Echocardiografie",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectDiagnostischeVolgorde",
+    "title": "Diagnostische volgorde",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-22"
+  }
+]

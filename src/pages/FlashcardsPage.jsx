@@ -554,7 +554,7 @@ function BlockIndexView({ progressById }) {
         </p>
       </div>
       {renderGroup('Bachelorjaar 1', 'Blokken 4 en 5', ba1)}
-      {renderGroup('Bachelorjaar 2', 'Blokken 9 en 10', ba2)}
+      {renderGroup('Bachelorjaar 2', 'Blokken 6, 9 en 10', ba2)}
       {renderGroup('Master', 'Kindergeneeskunde & Gynaecologie, Interne Geneeskunde', master)}
     </div>
   )

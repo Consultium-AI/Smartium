@@ -1,0 +1,82 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectHetAutonomeZenuwstelselInGroteLijnen",
+    "title": "Het autonome zenuwstelsel in grote lijnen",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectOpbouwVanHetAutonomeZenuwstelsel",
+    "title": "Opbouw van het autonome zenuwstelsel",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectNeurotransmittersEnReceptoren",
+    "title": "Neurotransmitters en receptoren",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectParasympathischSysteemAcetylcholineE",
+    "title": "Parasympathisch systeem: acetylcholine en muscarine-receptoren",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectSympathischSysteemNoradrenalineEnAdr",
+    "title": "Sympathisch systeem: noradrenaline en adrenerge receptoren",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectWaaromStaatErSomsNeInPlaatsVanNa",
+    "title": "Waarom staat er soms NE in plaats van NA?",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeBijnierEnHetSympathischeSysteem",
+    "title": "De bijnier en het sympathische systeem",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBotulinetoxineA",
+    "title": "Botulinetoxine A",
+    "id": "sect-09"
+  },
+  {
+    "file": "Sect1AdrenoceptorEffectenEnGebruik",
+    "title": "α1-adrenoceptor: effecten en gebruik",
+    "id": "sect-10"
+  },
+  {
+    "file": "Sect1Adrenoceptorantagonisten",
+    "title": "α1-adrenoceptorantagonisten",
+    "id": "sect-11"
+  },
+  {
+    "file": "Sect2AdrenoceptorRemmingViaNegatieveFeed",
+    "title": "α2-adrenoceptor: remming via negatieve feedback",
+    "id": "sect-12"
+  },
+  {
+    "file": "Sect2AdrenoceptorOntspanningEnStofwissel",
+    "title": "β2-adrenoceptor: ontspanning en stofwisseling",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectKlinischGebruikVan2Adrenoceptoragoni",
+    "title": "Klinisch gebruik van β2-adrenoceptoragonisten",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectCardiovasculaireRegulatieDoorHetAuto",
+    "title": "Cardiovasculaire regulatie door het autonome zenuwstelsel",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-16"
+  }
+]

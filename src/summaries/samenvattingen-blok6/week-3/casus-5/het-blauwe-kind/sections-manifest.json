@@ -1,0 +1,57 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWatIsCyanose",
+    "title": "Wat is cyanose?",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectNormaleZuurstofsaturatieInDeBloedsom",
+    "title": "Normale zuurstofsaturatie in de bloedsomloop",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHoeHerkenJeCyanose",
+    "title": "Hoe herken je cyanose?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWaaromKomtCyanoseVoorBijAangeborenHa",
+    "title": "Waarom komt cyanose voor bij aangeboren hartafwijkingen?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectTetralogieVanFallot",
+    "title": "Tetralogie van Fallot",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectPulmonaalstenoseEnSouffle",
+    "title": "Pulmonaalstenose en souffle",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectAssociatieMetSyndromen",
+    "title": "Associatie met syndromen",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectHypoxicSpellsBijTetralogieVanFallot",
+    "title": "Hypoxic spells bij Tetralogie van Fallot",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectOperatieEnDaarna",
+    "title": "Operatie en daarna",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-11"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "Sect1HemodynamiekEnBloeddrukregulatie",
+    "title": "1. Hemodynamiek en bloeddrukregulatie",
+    "id": "sect-02"
+  },
+  {
+    "file": "Sect2FunctioneleAnatomieVanHetHart",
+    "title": "2. Functionele anatomie van het hart",
+    "id": "sect-03"
+  },
+  {
+    "file": "Sect3CardialeElektrofysiologieEnExcitati",
+    "title": "3. Cardiale elektrofysiologie en excitatie-contractie koppeling",
+    "id": "sect-04"
+  },
+  {
+    "file": "Sect4HartcyclusEnPvLoop",
+    "title": "4. Hartcyclus en PV-loop",
+    "id": "sect-05"
+  },
+  {
+    "file": "Sect5HartOnderStress",
+    "title": "5. Hart onder stress",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectHemodynamiekDrukFlowEnWeerstand",
+    "title": "Hemodynamiek: druk, flow en weerstand",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectWeerstandEnDeWetVanPoiseuille",
+    "title": "Weerstand en de Wet van Poiseuille",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectBloeddrukEnDruktypes",
+    "title": "Bloeddruk en druktypes",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDruktypes",
+    "title": "Druktypes",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectCompliantieVanBloedvaten",
+    "title": "Compliantie van bloedvaten",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectBasisBloeddrukregulatie",
+    "title": "Basis bloeddrukregulatie",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectBaroreceptorreflex",
+    "title": "Baroreceptorreflex",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectRaas",
+    "title": "RAAS",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectAnatomieVanHetHartEnDeGroteVaten",
+    "title": "Anatomie van het hart en de grote vaten",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectDeHartkleppen",
+    "title": "De hartkleppen",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectDeBloedsomloop",
+    "title": "De bloedsomloop",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectGroteVaten",
+    "title": "Grote vaten",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectCoronaireCirculatie",
+    "title": "Coronaire circulatie",
+    "id": "sect-19"
+  },
+  {
+    "file": "SectDeCardialeCyclus",
+    "title": "De cardiale cyclus",
+    "id": "sect-20"
+  },
+  {
+    "file": "SectDiastoleVullenVanDeVentrikels",
+    "title": "Diastole: vullen van de ventrikels",
+    "id": "sect-21"
+  },
+  {
+    "file": "SectSystoleEjectieVanBloed",
+    "title": "Systole: ejectie van bloed",
+    "id": "sect-22"
+  },
+  {
+    "file": "SectEcgEnHarttonen",
+    "title": "ECG en harttonen",
+    "id": "sect-23"
+  },
+  {
+    "file": "SectEcgGolven",
+    "title": "ECG-golven",
+    "id": "sect-24"
+  },
+  {
+    "file": "SectEcgIntervallen",
+    "title": "ECG-intervallen",
+    "id": "sect-25"
+  },
+  {
+    "file": "SectHarttonen",
+    "title": "Harttonen",
+    "id": "sect-26"
+  },
+  {
+    "file": "SectJvp",
+    "title": "JVP",
+    "id": "sect-27"
+  },
+  {
+    "file": "SectElektrofysiologiePacemakercellenEnMy",
+    "title": "Elektrofysiologie: pacemakercellen en myocyten",
+    "id": "sect-28"
+  },
+  {
+    "file": "SectHetGeleidingssysteem",
+    "title": "Het geleidingssysteem",
+    "id": "sect-29"
+  },
+  {
+    "file": "SectPacemakercellen",
+    "title": "Pacemakercellen",
+    "id": "sect-30"
+  },
+  {
+    "file": "SectMyocyten",
+    "title": "Myocyten",
+    "id": "sect-31"
+  },
+  {
+    "file": "SectEcgEnActiepotentialen",
+    "title": "ECG en actiepotentialen",
+    "id": "sect-32"
+  },
+  {
+    "file": "SectExcitatieContractieKoppeling",
+    "title": "Excitatie-contractie koppeling",
+    "id": "sect-33"
+  },
+  {
+    "file": "SectStappenVanDeECKoppeling",
+    "title": "Stappen van de E-C koppeling",
+    "id": "sect-34"
+  },
+  {
+    "file": "SectRelaxatie",
+    "title": "Relaxatie",
+    "id": "sect-35"
+  },
+  {
+    "file": "SectRefractairePeriode",
+    "title": "Refractaire periode",
+    "id": "sect-36"
+  },
+  {
+    "file": "SectAutonomeInvloedOpHetHart",
+    "title": "Autonome invloed op het hart",
+    "id": "sect-37"
+  },
+  {
+    "file": "SectSympathicus",
+    "title": "Sympathicus",
+    "id": "sect-38"
+  },
+  {
+    "file": "SectParasympathicus",
+    "title": "Parasympathicus",
+    "id": "sect-39"
+  },
+  {
+    "file": "SectVentriculaireFunctiePreloadAfterload",
+    "title": "Ventriculaire functie: preload, afterload, slagvolume en Frank-Starling",
+    "id": "sect-40"
+  },
+  {
+    "file": "SectPreload",
+    "title": "Preload",
+    "id": "sect-41"
+  },
+  {
+    "file": "SectAfterload",
+    "title": "Afterload",
+    "id": "sect-42"
+  },
+  {
+    "file": "SectSlagvolume",
+    "title": "Slagvolume",
+    "id": "sect-43"
+  },
+  {
+    "file": "SectFrankStarlingMechanisme",
+    "title": "Frank-Starling mechanisme",
+    "id": "sect-44"
+  },
+  {
+    "file": "SectDePvLoop",
+    "title": "De PV-loop",
+    "id": "sect-45"
+  },
+  {
+    "file": "SectEffectVanPreload",
+    "title": "Effect van preload",
+    "id": "sect-46"
+  },
+  {
+    "file": "SectEffectVanAfterload",
+    "title": "Effect van afterload",
+    "id": "sect-47"
+  },
+  {
+    "file": "SectEffectVanContractiliteit",
+    "title": "Effect van contractiliteit",
+    "id": "sect-48"
+  },
+  {
+    "file": "SectEspvrEnEdpvr",
+    "title": "ESPVR en EDPVR",
+    "id": "sect-49"
+  },
+  {
+    "file": "SectEspvr",
+    "title": "ESPVR",
+    "id": "sect-50"
+  },
+  {
+    "file": "SectEdpvr",
+    "title": "EDPVR",
+    "id": "sect-51"
+  },
+  {
+    "file": "SectRechterventrikelVersusLinkerventrike",
+    "title": "Rechterventrikel versus linkerventrikel",
+    "id": "sect-52"
+  },
+  {
+    "file": "SectKlepafwijkingenEnPvLoop",
+    "title": "Klepafwijkingen en PV-loop",
+    "id": "sect-53"
+  },
+  {
+    "file": "SectAortastenose",
+    "title": "Aortastenose",
+    "id": "sect-54"
+  },
+  {
+    "file": "SectAortaregurgitatie",
+    "title": "Aortaregurgitatie",
+    "id": "sect-55"
+  },
+  {
+    "file": "SectMitralisstenose",
+    "title": "Mitralisstenose",
+    "id": "sect-56"
+  },
+  {
+    "file": "SectMitralisinsufficiNtie",
+    "title": "Mitralisinsufficiëntie",
+    "id": "sect-57"
+  },
+  {
+    "file": "SectHartOnderStressInspanningEnZwangersc",
+    "title": "Hart onder stress: inspanning en zwangerschap",
+    "id": "sect-58"
+  },
+  {
+    "file": "SectInspanning",
+    "title": "Inspanning",
+    "id": "sect-59"
+  },
+  {
+    "file": "SectZwangerschap",
+    "title": "Zwangerschap",
+    "id": "sect-60"
+  },
+  {
+    "file": "SectMwhoClassificatie",
+    "title": "mWHO-classificatie",
+    "id": "sect-61"
+  },
+  {
+    "file": "SectZorgEnMedicatie",
+    "title": "Zorg en medicatie",
+    "id": "sect-62"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-63"
+  }
+]

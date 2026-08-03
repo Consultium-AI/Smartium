@@ -1,0 +1,37 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectRadiologischeDiagnostiekBijNierziekt",
+    "title": "Radiologische diagnostiek bij nierziekten",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectSamenvattendBeeldVanDeRadiologischeD",
+    "title": "Samenvattend beeld van de radiologische diagnostiek",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectNierbiopsieWaaromEnWanneer",
+    "title": "Nierbiopsie: waarom en wanneer?",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVeiligheidEnContraIndicatiesWaarMoet",
+    "title": "Veiligheid en contra-indicaties: waar moet je op letten?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeRolVanDeNierbiopsieInDeBehandeling",
+    "title": "De rol van de nierbiopsie in de behandeling",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-07"
+  }
+]

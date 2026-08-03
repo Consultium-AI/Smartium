@@ -1,0 +1,62 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectAdemmechanicaHoeLuchtDeLongenInEnUit",
+    "title": "Ademmechanica: hoe lucht de longen in en uit gaat",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectElastischeEigenschappenVanDeLong",
+    "title": "Elastische eigenschappen van de long",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectSpirometrieMetenVanLongvolumesEnLuch",
+    "title": "Spirometrie: meten van longvolumes en luchtstromen",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectBelangrijksteSpirometrieparameters",
+    "title": "Belangrijkste spirometrieparameters",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectNormaalObstructiefOfRestrictief",
+    "title": "Normaal, obstructief of restrictief?",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectStatischeLongvolumes",
+    "title": "Statische longvolumes",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectReferentiewaardenZiekOfGezond",
+    "title": "Referentiewaarden: ziek of gezond?",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAstmaAanvullendeDiagnostiek",
+    "title": "Astma: aanvullende diagnostiek",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectBetrouwbaarheidVanSpirometrie",
+    "title": "Betrouwbaarheid van spirometrie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectFlowVolumecurveEnZiektebeelden",
+    "title": "Flow-volumecurve en ziektebeelden",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-12"
+  }
+]

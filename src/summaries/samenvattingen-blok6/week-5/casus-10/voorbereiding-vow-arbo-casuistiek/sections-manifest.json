@@ -1,0 +1,97 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectWetgevingRondArbeidZiekteEnVerzuim",
+    "title": "Wetgeving rond arbeid, ziekte en verzuim",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectRisqueProfessionelEnRisqueSocial",
+    "title": "Risque professionel en risque social",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectDuurVanDeUitkeringEnLoondoorbetaling",
+    "title": "Duur van de uitkering en loondoorbetaling",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectVerschillenTussenSectoren",
+    "title": "Verschillen tussen sectoren",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectDeWetVerbeteringPoortwachter",
+    "title": "De Wet Verbetering Poortwachter",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectArbowetEnAndereBeschermendeWetgeving",
+    "title": "Arbowet en andere beschermende wetgeving",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectDeRolVanDeBedrijfsarts",
+    "title": "De rol van de bedrijfsarts",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectSamenwerkingMetAndereArtsen",
+    "title": "Samenwerking met andere artsen",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectCasusKarelKortademigheidVermoeidheid",
+    "title": "Casus Karel: kortademigheid, vermoeidheid en re-integratie",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectVerzuimbegeleidingBijKarel",
+    "title": "Verzuimbegeleiding bij Karel",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectReIntegratieEnSamenwerking",
+    "title": "Re-integratie en samenwerking",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectBeroepsziekten",
+    "title": "Beroepsziekten",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectOorzakenEnVoorbeelden",
+    "title": "Oorzaken en voorbeelden",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectHoofdgroepenVanBeroepsziekten",
+    "title": "Hoofdgroepen van beroepsziekten",
+    "id": "sect-15"
+  },
+  {
+    "file": "SectVaststellenVanEenBeroepsziekte",
+    "title": "Vaststellen van een beroepsziekte",
+    "id": "sect-16"
+  },
+  {
+    "file": "SectPreventieEnMaatregelenOpDeWerkplek",
+    "title": "Preventie en maatregelen op de werkplek",
+    "id": "sect-17"
+  },
+  {
+    "file": "SectBeroepsziektenPerBeroep",
+    "title": "Beroepsziekten per beroep",
+    "id": "sect-18"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-19"
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectSocialeZekerheidEnArbeidsongeschikth",
+    "title": "Sociale zekerheid en arbeidsongeschiktheid",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectWerknemersverzekeringenBijZiekteEnAr",
+    "title": "Werknemersverzekeringen bij ziekte en arbeidsongeschiktheid",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectHetUwv",
+    "title": "Het UWV",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectHetMedischArbeidsongeschiktheidscrit",
+    "title": "Het medisch arbeidsongeschiktheidscriterium",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectZiekteverzuimEnReIntegratie",
+    "title": "Ziekteverzuim en re-integratie",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectBegeleidingVanVangnettersInDeZiektew",
+    "title": "Begeleiding van vangnetters in de Ziektewet",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectInterventiesBijVerzuimEnReIntegratie",
+    "title": "Interventies bij verzuim en re-integratie",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectAlcoholproblematiekEnInterventies",
+    "title": "Alcoholproblematiek en interventies",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDeArbeidsongeschiktheidsbeoordeling",
+    "title": "De arbeidsongeschiktheidsbeoordeling",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDeVerzekeringsgeneeskundigeBeoordeli",
+    "title": "De verzekeringsgeneeskundige beoordeling",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectDeFunctioneleMogelijkhedenLijst",
+    "title": "De Functionele Mogelijkheden Lijst",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectDeArbeidskundigeBeoordeling",
+    "title": "De arbeidskundige beoordeling",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-14"
+  }
+]

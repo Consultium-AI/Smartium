@@ -1,0 +1,77 @@
+[
+  {
+    "file": "SectLeerdoelen",
+    "title": "Leerdoelen",
+    "id": "sect-01"
+  },
+  {
+    "file": "SectDeNierAlsFilterEnTransportsysteem",
+    "title": "De nier als filter- en transportsysteem",
+    "id": "sect-02"
+  },
+  {
+    "file": "SectDeGlomerulaireFiltratiebarriRe",
+    "title": "De glomerulaire filtratiebarrière",
+    "id": "sect-03"
+  },
+  {
+    "file": "SectLadingselectiviteitEnGrootteSelectiv",
+    "title": "Ladingselectiviteit en grootte-selectiviteit",
+    "id": "sect-04"
+  },
+  {
+    "file": "SectWatGebeurtWaarInDeGlomerulus",
+    "title": "Wat gebeurt waar in de glomerulus?",
+    "id": "sect-05"
+  },
+  {
+    "file": "SectFysischeTransportprocessenInDeNier",
+    "title": "Fysische transportprocessen in de nier",
+    "id": "sect-06"
+  },
+  {
+    "file": "SectDeTubulusSegmentenEnHunFunctie",
+    "title": "De tubulus: segmenten en hun functie",
+    "id": "sect-07"
+  },
+  {
+    "file": "SectProximaleTubulus",
+    "title": "Proximale tubulus",
+    "id": "sect-08"
+  },
+  {
+    "file": "SectDunneDeelVanDeLisVanHenle",
+    "title": "Dunne deel van de lis van Henle",
+    "id": "sect-09"
+  },
+  {
+    "file": "SectDikkeDeelVanDeLisVanHenle",
+    "title": "Dikke deel van de lis van Henle",
+    "id": "sect-10"
+  },
+  {
+    "file": "SectDistaleTubulus",
+    "title": "Distale tubulus",
+    "id": "sect-11"
+  },
+  {
+    "file": "SectVerzamelbuis",
+    "title": "Verzamelbuis",
+    "id": "sect-12"
+  },
+  {
+    "file": "SectOverzichtVanDeSegmenten",
+    "title": "Overzicht van de segmenten",
+    "id": "sect-13"
+  },
+  {
+    "file": "SectSamenhangEnKlinischeBetekenis",
+    "title": "Samenhang en klinische betekenis",
+    "id": "sect-14"
+  },
+  {
+    "file": "SectSamenvatting",
+    "title": "Samenvatting",
+    "id": "sect-15"
+  }
+]
